@@ -1,0 +1,211 @@
+\section*{Przydatne rzeczy do zadań z~granicami ciągów i szeregów}
+\subsubsection*{Wzory na sumę pierwszych~\(n\) wyrazów}
+\begin{itemize}
+    \item w~ciągu arytmetycznym:
+        \begin{equation*}
+            S_n = \frac{a_1 + a_n}{2} \cdot n
+        \end{equation*}
+    \item w~ciągu geometrycznym:
+        \begin{equation*}
+            \begin{cases}
+                na_1 & q = 1\\
+                \frac{1 - q^n}{1 - q} \cdot a_1 & q \neq 1
+            \end{cases}
+        \end{equation*}
+\end{itemize}
+\subsubsection*{Wyciąganie wspólnego czynnika z~licznika i~mianownika}
+\begin{equation*}
+    \begin{split}
+        \limit \frac{1^2 + 2^2 + 3^3 + \ldots + n^2}{6n^3 - n^2 + 2n + 1} &= \limit \frac{\frac{n(n+1)(2n+1)}{6}}{6n^3 - n^2 + 2n + 1}\\
+            &= \limit \frac{2n^3 + 3n^2 + n}{36n^3 - 6n^2 + 12n + 6}\\
+            &= \limit \frac{\cancel{n^3}\parens{2 + \converges{0}{\frac{3}{n}} + \converges{0}{\frac{1}{n^2}}}}{\cancel{n^3}\parens{36 - \converges*{0}{\frac{6}{n}} + \converges*{0}{\frac{12}{n^2}} + \converges*{0}{\frac{6}{n^3}}}} = \frac{1}{18}
+    \end{split}
+\end{equation*}
+\subsubsection*{Rozwinięcie do wzoru skróconego mnożenia}
+\begin{equation*}
+    \begin{split}
+        \limit \parens{\sqrt{n^2 + n} - \sqrt{n^2 - n}} &= \limit \frac{\parens{\sqrt{n^2 + n} - \sqrt{n^2 - n}}\parens{\sqrt{n^2 + n} + \sqrt{n^2 - n}}}{\sqrt{n^2 + n} + \sqrt{n^2 - n}}\\
+            &= \limit \frac{\parens{\sqrt{n^2 + n}}^2 - \parens{\sqrt{n^2 - n}}^2}{\sqrt{n^2 + n} + \sqrt{n^2 - n}}\\
+            &= \limit \frac{2n}{\sqrt{n^2 + n} + \sqrt{n^2 - n}}\\
+            &= \limit \frac{2n}{n\sqrt{1 + \converges*{0}{\frac{1}{n}}} + n\sqrt{1 - \converges*{0}{\frac{1}{n}}}}\\
+            &= \limit \frac{2\cancel{n}}{\cancel{n} + \cancel{n}}\\
+            &= 1
+    \end{split}
+\end{equation*}
+\subsubsection*{Suma teleskopowa}
+\begin{equation*}
+    \begin{split}
+        \limit &\frac{1}{\sqrt{n}}\parens{\frac{1}{\sqrt{1}+\sqrt{2}} + \frac{1}{\sqrt{2}+\sqrt{3}} + \ldots + \frac{1}{\sqrt{n-1}+\sqrt{n}}}\\
+        &= \limit \frac{1}{\sqrt{n}}\parens{\frac{\sqrt{1}-\sqrt{2}}{\parens{\sqrt{1}+\sqrt{2}}\parens{\sqrt{1}-\sqrt{2}}} + \frac{\sqrt{2}-\sqrt{3}}
+            {\parens{\sqrt{2}+\sqrt{3}}\parens{\sqrt{2}-\sqrt{3}}} + \ldots + \frac{\sqrt{n-1}-\sqrt{n}}{\parens{\sqrt{n-1}+\sqrt{n}}\parens{\sqrt{n-1}
+            -\sqrt{n}}}}\\
+        &= \limit \frac{1}{\sqrt{n}}\parens{\frac{\sqrt{1}-\sqrt{2}}{1 - 2} + \frac{\sqrt{2}-\sqrt{3}}{2 - 3} + \ldots + \frac{\sqrt{n-1}-\sqrt{n}}
+            {n-1-n}}\\
+        &= \limit \frac{1}{\sqrt{n}}\parens{\frac{\sqrt{1}-\sqrt{2}}{-1} + \frac{\sqrt{2}-\sqrt{3}}{-1} + \ldots + \frac{\sqrt{n-1}-\sqrt{n}}{-1}}\\
+        &= \limit -\frac{1}{\sqrt{n}}\parens{\sqrt{1} - \sqrt{2} + \sqrt{2} - \sqrt{3} + \sqrt{3} - \ldots - \sqrt{n-1} + \sqrt{n-1} - \sqrt{n}}\\
+        &= \limit \frac{\sqrt{n} - 1}{\sqrt{n}}\\
+        &= \limit \parens{1 - \converges{0}{\frac{1}{\sqrt{n}}}}\\
+        &= 1
+    \end{split}
+\end{equation*}
+\subsubsection*{Iloczyn teleskopowy}
+\begin{equation*}
+    \begin{split}
+        \limit &\parens{1 - \frac{4}{1^2}}\parens{1 - \frac{4}{3^2}}\parens{1 - \frac{4}{5^2}}\cdot\ldots\cdot\parens{1 - \frac{4}{(2n-1)^2}}\\
+            &= \limit \frac{1^2 - 4}{1^2}\cdot\frac{3^2 - 4}{3^2}\cdot\frac{5^2 - 4}{5^2}\cdot\ldots\cdot\frac{(2n-1)^2 - 4}{(2n-1)^2}\\
+            &= \limit \frac{(1 - 2)(1 + 2)}{1^2}\cdot\frac{(3 - 2)(3 + 2)}{3^2}\cdot\frac{(5 - 2)(5 + 2)}{5^2}\cdot\ldots\cdot\frac{(2n - 1 - 2)(2n - 1
+                + 2)}{(2n-1)^2}\\
+            &= \limit \frac{-1\cdot\cancel{3}}{1^{\cancel{2}}}\cdot\frac{\cancel{1}\cdot\cancel{5}}{\cancel{3^2}}\cdot\frac{\cancel{3}\cdot\cancel{7}}
+                {\cancel{5^2}}\cdot\cancel{\ldots}\cdot\frac{\cancel{(2n-5)}\cancel{(2n-1)}}{\cancel{(2n-3)^2}}\cdot\frac{\cancel{(2n-3)}(2n+1)}{(2n-1)^
+                {\cancel{2}}}\\
+            &= \limit -\frac{2n+1}{2n-1}\\
+            &= \limit -\frac{\cancel{n}\parentheses{2 + \converges{0}{\frac{1}{n}}}}{\cancel{n}\parens{2 - \converges*{0}{\frac{1}{n}}}}\\
+            &= -1
+    \end{split}
+\end{equation*}
+\subsubsection*{Granice z~\(e\)}
+\begin{itemize}
+    \item najprostsza:
+        \begin{equation*}
+            \limit \parens{1 + \frac{1}{n}}^n = e
+        \end{equation*}
+    \item ogólniej:
+        \begin{equation*}
+            \limit a_n = \pm \infty \implies \limit \parens{1 + \frac{1}{a_n}}^{a_n} = e
+        \end{equation*}
+    \item najbardziej ogólnie:
+        \begin{gather*}
+            \limit a_n = \pm \infty\\
+            \begin{split}
+                \limit \parens{1 + \frac{k}{a_n}}^{a_n} &= \limit \parens{1 + \frac{1}{\frac{1}{k}a_n}}^{\frac{1}{k}a_n \cdot k}
+                    = \limit \parens{\parens{1 + \frac{1}{\converges*{+\infty}{\frac{1}{k}a_n}}}^{\converges{+\infty}{\frac{1}{k}a_n}}}^k\\
+                    &= e^k
+            \end{split}
+        \end{gather*}
+\end{itemize}
+\subsubsection*{Twierdzenie o~trzech ciągach}
+Jeżeli \(\limit a_n = \limit c_n = g\) i~od pewnego \(n\) zachodzi \(a_n \leq b_n \leq c_n\), to \(\limit b_n = g\).\\
+Przykład:
+\begin{equation*}
+    \limit \sqrt[n]{2\cdot3^n + 5\cdot8^n}
+        = \limit 8\sqrt[n]{2\cdot\frac{3^n}{8^n} + 5}
+        = \limit 8\sqrt[n]{2\cdot\parens{\frac{3}{8}}^n + 5}
+\end{equation*}
+Ponieważ dla każdego \(n \in \natural\) zachodzi nierówność
+\begin{gather*}
+    5 \leq 2\cdot\parens{\frac{3}{8}}^n + 5 \leq 8\\
+    \sqrt[n]{5} \leq \sqrt[n]{2\cdot\parentheses{\frac{3}{8}}^n + 5} \leq \sqrt[n]{8}
+\end{gather*}
+Ponieważ \(\limit\sqrt[n]{5} = 1\) i~\(\limit\sqrt[n]{8} = 1\), to z twierdzenia o trzech ciągach również \(\limit\sqrt[n]{2\cdot\parens{\frac{3}{8}}^n + 5} = 1\).
+\subsubsection*{Twierdzenie Stolza}
+Mamy dane ciągi \(\sequence{a_n}\) i~\(\sequence{b_n}\). Jeśli ciąg \(\sequence{a_n}\) jest rosnący, \(\limit a_n = +\infty\) i~\(\limit \frac{b_{n} - b_{n-1}}{a_n - a_{n-1}}\) istnieje (może być liczbą lub nieskończonością), to
+\begin{equation*}
+    \limit \frac{b_n}{a_n} = \limit \frac{b_{n} - b_{n-1}}{a_{n} - a_{n-1}}
+\end{equation*}
+Przykład:
+\begin{equation*}
+    \limit \frac{1}{n^{k+1}}\parens{k! + \frac{(k+1)!}{1!} + \ldots + \frac{(k+n)!}{n!}},\quad k\in\natural
+\end{equation*}
+Zdefiniujmy ciągi
+\begin{description}
+    \item \(a_n = n^{k+1}\) -- zauważmy, że jest rosnący i~\(\limit a_n = +\infty\)
+    \item \(b_n = \parens{k! + \frac{(k+1)!}{1!} + \ldots + \frac{(k+n)!}{n!}}\)
+\end{description}
+Obliczmy granicę
+\begin{equation*}
+    \begin{split}
+        \limit &\frac{b_n - b_{n-1}}{a_n - a_{n-1}} = \frac{\parens{k! + \frac{(k+1)!}{1!} + \ldots + \frac{(k+n-1)!}{(n-1)!} + \frac{(k+n)!}{n!}}
+            - \parens{k! + \frac{(k+1)!}{1!} + \ldots + \frac{(k+n-1)!}{(n-1)!}}}{n^{k+1} - (n-1)^{k+1}}\\
+        &= \limit \frac{\frac{(k+n)!}{n!}}{n^{k+1} - (n-1)^{k+1}}\\
+        &= \limit \frac{\frac{\cancel{n!}\cdot(n+1)(n+2)\cdot\ldots\cdot(n+k)}{\cancel{n!}}}{\underbrace{\parens{n-(n-1)}}_1\parens{n^k + n^{k-1}(n-1)
+            + n^{k-2}(n-1)^2 + \ldots + n^2(n-1)^{k-2} + n(n-1)^{k-1} + (n-1)^k}}\\
+        &= \limit \frac{(n+1)(n+2)\cdot\ldots\cdot(n+k)}{\underbrace{n^k + n^{k-1}(n-1) + n^{k-2}(n-1)^2 + \ldots + n^2(n-1)^{k-2} + n(n-1)^{k-1} + (n-1)^k}_{\textrm{liczba składników jest tutaj stała równa \(k+1\), a więc niezależna od \(n\)}}}\\
+        &= \limit \frac{n^k + \overbrace{\ldots}^{\textrm{wyrażenia z \(n\) stopnia mniejszego niż \(k\)}}}{n^k + n^{k-1}(n-1) + n^{k-2}(n-1)^2 + \ldots + n^2(n-1)^{k-2} + n(n-1)^{k-1} + (n-1)^k}\\
+        &= \limit \frac{1 + \overbrace{\ldots}^{\textrm{dążą do \(0\), bo były stopnia mniejszego niż \(k\)}}}{\underbrace{\converges*{1}{\frac{n^k}{n^k}} + \converges*{1}{\frac{(n-1)}{n}} + \converges*{1}{\frac{(n-1)^2}{n^2}} + \ldots + \converges*{1}{\frac{(n-1)^{k-2}}{n^{k-2}}} + \converges*{1}{\frac{(n-1)^{k-1}}{n^{k-1}}} + \converges*{1}{\frac{(n-1)^{k}}{n^k}}}_{\textrm{każdy z \(k+1\) składników dąży do \(1\), zatem granicą mianownika jest po prostu \(k+1\)}}} = \frac{1}{k+1}
+    \end{split}
+\end{equation*}
+Na mocy twierdzenia Stolza
+\begin{equation*}
+    \limit \frac{1}{n^{k+1}}\parens{k! + \frac{(k+1)!}{1!} + \ldots + \frac{(k+n)!}{n!}}
+        = \limit \frac{b_n}{a_n}
+        = \limit \frac{b_n - b_{n-1}}{a_n - a_{n-1}}
+        = \frac{1}{k+1}
+\end{equation*}
+\subsubsection*{Trzy szybkie twierdzenia}
+\begin{itemize}
+    \item \(\sequence{a_n}\) jest ograniczony, i~\(\limit b_n = 0 \implies \limit a_nb_n = 0\)
+    \item \(\sequence{a_n}\) jest zbieżny \(\implies \sequence{a_n}\) jest ograniczony\\
+        W~drugą stronę nie działa, np. ciąg \(a_n = (-1)^n\) jest ograniczony ale rozbieżny.
+    \item \(\sequence{a_n}\) jest ograniczony i~monotoniczny \(\implies \sequence{a_n}\) jest zbieżny
+\end{itemize}
+\subsubsection*{Obliczanie granicy ciągu rekurencyjnego}
+\begin{equation*}
+    a_1 = 3,\qquad a_{n+1} = \frac{1}{2}\parens{a_n + \frac{2}{a_n}}
+\end{equation*}
+\begin{enumerate}[label={\arabic*\degree}]
+    \item Obliczenie hipotetycznej granicy: \textit{Hipoteza:} \(\limit a_n = \lambda \in \real\)
+        \begin{gather*}
+            a_{n+1} = \frac{1}{2}\parens{a_n + \frac{2}{a_n}}\\
+            \lambda = \frac{1}{2}\parens{\lambda + \frac{2}{\lambda}}\\
+            2\lambda = \lambda + \frac{2}{\lambda} \implies \lambda^2 = 2 \implies \lambda = \sqrt{2} \lor \lambda = -\sqrt{2}
+        \end{gather*}
+    \item Ograniczenia (w~tym przypadku dolne): Widać, że wszystkie wyrazy sa dodatnie. Możemy zobaczyć, jak zachowują się początkowe wyrazy:
+        \begin{equation*}
+            a_2 = \frac{1}{2}\parens{3 + \frac{2}{3}} = \frac{11}{6} > \sqrt{2}
+        \end{equation*}
+        Z~nierówności między średnią arytmetyczną i~geometryczną mamy dla \(n \geq 2\):
+        \begin{gather*}
+            \frac{1}{2}\parens{a_{n-1} + \frac{2}{a_{n-1}}} \geq \sqrt{a_{n-1} \cdot \frac{2}{a_{n-1}}} = \sqrt{2}\\
+            a_n \geq \sqrt{2}
+        \end{gather*}
+        Wyrazy \(\sequence{a_n}\) są wymierne, czyli właściwie zachodzi \(a_n > \sqrt{2}\). Czyli granica \(\lambda = -\sqrt{2}\) odpada.
+    \item Sprawdzenie monotoniczności --- \(\sequence{a_n}\) jest słabo malejący:
+        \begin{equation*}
+            a_{n+1} - a_n = \frac{1}{2}\parens{a_n + \frac{2}{a_n}} - a_n = \frac{\overset{< 0, \text{ bo } a_n > \sqrt{2}}{2 - a_n^2}}{\underset{> 0}{a_n}} < 0
+        \end{equation*}
+\end{enumerate}
+Zatem ciąg zbliża się od góry do \(\sqrt{2}\) i~to jest właśnie jego granica.
+\subsubsection*{Szereg geometryczny}
+\begin{description}
+    \item \(\sequence{a_n}\) -- nieskończony ciąg geometryczny
+    \item szeregiem geometrycznym nazywamy ciąg sum częściowych \(S_n\) pierwszych \(n\) wyrazów ciągu \(\sequence{a_n}\)
+        \begin{equation*}
+            S_n = \begin{cases}
+                a_1\cdot\frac{1-q^n}{1-q} & \iff q \neq 1\\
+                n\cdot a_1 & \iff q = 1
+            \end{cases}
+        \end{equation*}
+\end{description}
+\subsubsection*{Możliwe przypadki zbieżności szeregu geometrycznego}
+\begin{enumerate}[label*=\arabic*.]
+    \item \(a_1 = 0 \implies\) szereg geometryczny zbieżny do \(0\)
+    \item \(a_1 \neq 0\)
+        \begin{enumerate}[label*=\arabic*.]
+            \item \(q = 1 \implies\) szereg rozbieżny do \(\sgn\parens{a_1}\cdot\parens{+\infty}\)
+            \item \(q \neq 1\)
+                \begin{equation*}
+                    \series a_n = \limit a_1\cdot\frac{1-q^n}{1-q}
+                \end{equation*}
+                \begin{enumerate}[label*=\arabic*]
+                    \item \(q > 1\)
+                        \begin{gather*}
+                            \limit q^n = +\infty\\
+                            \limit a_1\cdot\frac{1-\converges{+\infty}{q^n}}{1-q} = \pm\infty \implies \textrm{szereg rozbieżny do } \pm\infty
+                        \end{gather*}
+                    \item \(q < -1\)
+                        \begin{equation*}
+                            \limit q^n\textrm{ nie istnieje, bo ciąg jest naprzemienny}
+                        \end{equation*}
+                        Zatem \(S_n\) nie ma granicy.
+                    \item \(q = -1 \implies q^n = (-1)^n\) nie ma granicy \(\implies\) szereg geometryczny rozbieżny
+                    \item \(-1 < q < 1\)
+                        \begin{gather*}
+                            \limit q^n = 0\\
+                            \series a_n = \limit a_1\cdot\frac{1-\converges{0}{q^n}}{1-q} = \frac{a_1}{1-q}
+                        \end{gather*}
+                \end{enumerate}
+        \end{enumerate}
+\end{enumerate}
+\subsubsection*{Twierdzenie}
+Szereg geometryczny \(\series a_n\) jest zbieżny \(\iff a_1 = 0\) (zbieżny do \(0\)) lub \(\abs{q} < 1\) (zbieżny do \(\frac{a_1}{1-q}\)).
+\subsubsection*{Wyrazy szeregu można poprzestawiać tylko jeżeli wszystkie są dodatnie!}
