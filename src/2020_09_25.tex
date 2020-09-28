@@ -1,0 +1,241 @@
+\subsection*{Zestaw~V (zadania otwarte)}
+\subsubsection*{Zadanie~1.}
+Wiemy, że równanie \(ax^2 + bx + c = 0\) ma dwa pierwiastki, z~których jeden jest całkowitą wielokrotnością drugiego. Skoro to równanie kwadratowe, to \(a \neq 0\). Przyjmijmy, że pierwiastki to \(\xi\) oraz~\(n\xi\). Możemy również zastosować wzory Viete'a:
+\begin{gather*}
+    \xi + n\xi = \frac{-b}{a}\\
+    \xi \cdot n\xi = n\xi^2 = \frac{c}{a} \implies a\xi^2 = \frac{c}{n}
+\end{gather*}
+Następnie możemy dokonać przekształceń i~podstawień:
+\begin{gather*}
+    \frac{b^2}{a^2} = \parens{\frac{-b}{a}}^2 = (\xi + n\xi)^2 = \xi^2(n + 1)^2\\
+    b^2 = a^2\xi^2(n + 1)^2 = a \cdot a\xi^2(n + 1)^2 = a \cdot \frac{c}{n}(n + 1)^2 = \frac{(n + 1)^2}{n}ac
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~2.}
+\begin{gather*}
+    5x^2 + 12m^2x + 3x - 3m^2 - 1 = 0\\
+    5x^2 + \parens{12m^2 + 3}x - \parens{3m^2 + 1} = 0
+\end{gather*}
+Pokażmy najpierw, że dla każdej wartości \(m\) równanie ma dwa pierwiastki:
+\begin{equation*}
+    \Delta = \parens{12m^2 + 3}^2 + 4 \cdot 5 \cdot \parens{3m^2 + 1} > 0
+\end{equation*}
+Przyjmijmy, że te pierwiastki to \(x_1\) oraz \(x_2\). Chcemy pokazać, że
+\begin{equation*}
+    \frac{1}{x_1} + \frac{1}{x_2} = \frac{x_1 + x_2}{x_1x_2} < 4
+\end{equation*}
+Możemy skorzystać z~wzorów Viete'a:
+\begin{gather*}
+    x_1 + x_2 = \frac{-\parens{12m^2 + 3}}{5} = \frac{-12m^2 - 3}{5}\\
+    x_1x_2 = \frac{-\parens{3m^2 + 1}}{5} = \frac{-3m^2 - 1}{5}\\
+    \frac{x_1 + x_2}{x_1x_2} = \frac{\frac{-12m^2 - 3}{5}}{\frac{-3m^2 - 1}{5}} = \frac{12m^2 + 3}{3m^2 + 1} = 4 - {}\underbrace{\frac{1}{3m^2 + 1}}_{> 0} < 4
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~3.}
+Chcemy pokazać, że równanie
+\begin{equation*}
+    \cos^2{x}\sin{x} + \sqrt{3}\sin^2{x} + 2\sin{x} = 3\tan{\frac{\pi}{3}}
+\end{equation*}
+nie ma rozwiązań. Prawą stronę możemy wyznaczyć wprost, ponieważ \(\tan{\frac{\pi}{3}} = \sqrt{3}\), czyli prawa strona jest równa \(3\sqrt{3}\). Obecna postać równania jest następująca:
+\begin{equation*}
+    \cos^2{x}\sin{x} + \sqrt{3}\sin^2{x} + 2\sin{x} = 3\sqrt{3}
+\end{equation*}
+\subsubsection*{Zadanie~4.}
+Chcemy pokazać, że
+\begin{gather*}
+    \log_{2}{\frac{4}{x^2 + 2}} \leq \log_{x^2 + 2}{2}\\
+    \log_{2}{4} - \log_{2}\parens{x^2 + 2} \leq \log_{x^2 + 2}2\\
+    2 - \log_{2}\parens{x^2 + 2} \leq \log_{x^2 + 2}2\\
+    2 - \log_{2}\parens{x^2 + 2} \leq \frac{1}{\log_{2}\parens{x^2 + 2}}
+\end{gather*}
+Ponieważ kwadrat liczby rzeczywistej jest zawsze nieujemny, to \(x^2 + 2 \geq 2\), a~zatem \(\log_{2}\parens{x^2 + 2} \geq 1 > 0\). Możemy dokonać podstawienia \(\psi = \log_{2}\parens{x^2 + 2}\) i~pomnożyć obie strony nierówności przez \(\psi\), ponieważ jest ono dodatnie:
+\begin{gather*}
+    2 - \psi \leq \frac{1}{\psi}\\
+    2\psi - \psi^2 \leq 1\\
+    \psi^2 - 2\psi + 1 \geq 0\\
+    (\psi - 1)^2 \geq 0
+\end{gather*}
+Ostatnia nierówność jest oczywiście prawdziwa, a~wszystkie przejścia były równoważne, zatem teza również jest prawdziwa.
+\qed
+\subsubsection*{Zadanie~5.}
+\begin{equation*}
+    \sqrt{2x + 12} = \sqrt{x + \sqrt{13}} + \sqrt{x - \sqrt{13}}
+\end{equation*}
+Podnosimy obie strony do kwadratu:
+\begin{gather*}
+    2x + 12 = x + 13 + 2\sqrt{x^2 - 13} + x - 13\\
+    2\sqrt{x^2 - 13} = 12\\
+    \sqrt{x^2 - 13} = 6\\
+    x^2 - 13 = 36\\
+    x^2 = 49\\
+    x = 7 \lor x = -7
+\end{gather*}
+Jednak gdy \(x = -7\), to wszystkie liczby pod pierwiastkami, czyli \(2x + 12 = -2\), \(x + \sqrt{13} < -3\) oraz \(x - \sqrt{13} < -10\) są ujemne, więc pierwiastki w~równaniu nie istnieją. Zatem jedynym rozwiązaniem jest \(x = 7\).
+\subsubsection*{Zadanie~6.}
+\begin{equation*}
+    -x^2 + 3x + \abs{x - 4} = m
+\end{equation*}
+Rozważmy dwa przypadki przedziałów, w~których może leżeć \(x\):
+\begin{proofcases}
+    \item \(x < 4\)
+        \begin{gather*}
+            -x^2 + 3x - x + 4 = m\\
+            x^2 - 2x + (m - 4) = 0
+        \end{gather*}
+        Równanie kwadratowe ma jedno rozwiązanie wtedy i~tylko wtedy, gdy \(\Delta = 0\).
+        \begin{gather*}
+            \Delta = (-2)^2 - 4 \cdot 1 \cdot (m - 4) = 0\\
+            4 - 4m + 16 = 0\\
+            4m = 20\\
+            m = 5
+        \end{gather*}
+        Wtedy równanie ma postać
+        \begin{gather*}
+            x^2 - 2x + 1 = 0\\
+            (x - 1)^2 = 0
+            x = 1 < 4
+        \end{gather*}
+        Otrzymane przy \(m = 5\) rozwiązanie należy do rozważanego przedziału, zatem \(m = 5\) faktycznie spełnia warunki zadania.
+    \item \(x \geq 4\)
+        \begin{gather*}
+            -x^2 + 3x + x - 4 = m\\
+            x^2 - 4x + (m + 4) = 0
+        \end{gather*}
+        Równanie kwadratowe ma jedno rozwiązanie wtedy i~tylko wtedy, gdy \(\Delta = 0\).
+        \begin{gather*}
+            \Delta = (-4)^2 - 4 \cdot 1 \cdot (m + 4) = 0\\
+            16 - 4m - 16 = 0\\
+            -4m = 0\\
+            m = 0
+        \end{gather*}
+        Wtedy równanie ma postać
+        \begin{gather*}
+            x^2 - 4x + 4 = 0\\
+            (x - 2)^2 = 0\\
+            x = 2 < 4 \text{ (!)}
+        \end{gather*}
+        Otrzymane przy \(m = 0\) rozwiązanie nie należy do rozważanego przedziału, zatem \(m = 0\) nie spełnia warunków zadania.
+\end{proofcases}
+Zatem jedynym parametrem \(m\), dla którego równanie ma jedno rozwiązanie, jest \(m = 5\).
+\subsubsection*{Zadanie~7.}
+\begin{equation*}
+    \begin{cases}
+        x^2 + y^2 - 2x - 4y - 5 = 0 \iff x^2 - 2x + 1 + y^2 - 4y + 4 - 10 = 0 \iff (x - 1)^2 + (y - 2)^2 = 10\\
+        y + 1 = \abs{x - 2} \iff y = \abs{x - 2} - 1
+    \end{cases}
+\end{equation*}
+Pierwsze równanie opisuje okrąg o~środku w~punkcie \((1; 2)\) i~promieniu \(\sqrt{10}\). Drugie równanie opisuje wykres funkcji \(\abs{x}\) przesunięty o~wektor \([2; -1]\).
+\begin{mathfigure*}
+    \coordinate (circleCenter) at (1, 2);
+    \drawcoordsystem{-5.5, -2.5}{8.5, 8.5};
+    \draw[ultra thick, ForestGreen] (circleCenter) circle (\fpeval{sqrt(10)});
+    \draw[ultra thick, red, samples=300, smooth, domain=-5:8] plot (\x, {(abs(\x - 2) - 1)});
+    \node[ForestGreen] at (1, 5.5) [right]{\((x - 1)^2 + (y - 2)^2 = 10\)};
+    \node[red] at (7, 2.5) {\(y = \abs{x - 2} - 1\)};
+    \fillpoint*{circleCenter}[\(S = (1; 2)\)];
+    \fillpoint*{4, 1}[\((4; 1)\)][below right];
+    \fillpoint*{2, -1}[\((2; -1)\)][below];
+    \fillpoint*{-2, 3}[\((-2; 3)\)][left];
+\end{mathfigure*}
+Punkty przecięcia opisanych krzywych to \((-2; 3), (4; 1), (2; -1)\). Oznacza to, że są trzy pary rozwiązań:
+\begin{equation*}
+    \begin{cases}
+        x = -2\\
+        y = 3
+    \end{cases}
+    \lor
+    \begin{cases}
+        x = 2\\
+        y = -1
+    \end{cases}
+    \lor
+    \begin{cases}
+        x = 4\\
+        y = 1
+    \end{cases}
+\end{equation*}
+\subsubsection*{Zadanie~8.}
+Dziedziną nierówności
+\begin{equation*}
+    \abs{\frac{x^2}{x^2 - 4}} < 1
+\end{equation*}
+jest zbiór \(\real \setminus \set{-2, 2}\), ponieważ mianownik po lewej stronie musi być różny od \(0\). Licznik na pewno jest nieujemny, ponieważ kwadrat liczby rzeczywistej jest zawsze nieujemny. Rozważmy dwa przypadki:
+\begin{proofcases}
+    \item mianownik jest ujemy: \(x^2 - 4 < 0 \iff x \in \open{-2}{2}\):
+        \begin{gather*}
+            -\frac{x^2}{x^2 - 4} < 1\\
+            \frac{x^2}{4 - x^2} < 1
+        \end{gather*}
+        W~tej postaci mianownik na pewno jest dodatni, więc możemy obie strony nierówności pomnożyć przez \(\parens{4 - x^2}\):
+        \begin{gather*}
+            4 - x^2 > x^2\\
+            2x^2 < 4\\
+            x^2 < 2\\
+            x \in \open{-\sqrt{2}}{\sqrt{2}} \subset \open{-2}{2}
+        \end{gather*}
+        Ponieważ otrzymane rozwiązanie zawiera się w~rozważanym przedziale, to istotnie jednym z~rozwiązań jest przedział \(x \in \open{-\sqrt{2}}{\sqrt{2}}\).
+    \item mianownik jest dodatni: \(x^2 - 4 > 0 \iff x \in \open{-\infty}{-2} \cup \open{2}{+\infty}\):
+        \begin{equation*}
+            \frac{x^2}{x^2 - 4} < 1
+        \end{equation*}
+        Skoro mianownik jest dodatni, to możemy obie strony równania pomnożyć przez \(\parens{x^2 - 4}\):
+        \begin{gather*}
+            x^2 < x^2 - 4\\
+            0 < -4 \text{ sprzeczność!}
+        \end{gather*}
+        Otrzymaliśmy rozwiązanie sprzeczne, więc w~tym przypadku (gdy mianownik jest dodatni) rozwiązania nie istnieją.
+\end{proofcases}
+Zatem rozwiązaniem jest \(x \in \open{-\sqrt{2}}{\sqrt{2}}\).
+\subsubsection*{Zadanie~9.}
+\begin{equation*}
+    \begin{cases}
+        2x - 4y = -2\\
+        x + ay = 3a
+    \end{cases}
+\end{equation*}
+Możemy rozwiązać ten układ metodą wyznacznikową:
+\begin{equation*}
+    W = \begin{vmatrix}
+        2 & -4\\
+        1 & a
+    \end{vmatrix}
+        = 2a + 4
+\end{equation*}
+Układ ma rozwiązania wtedy i~tylko wtedy, gdy \(W \neq 0\):
+\begin{gather*}
+    2a + 4 \neq 0\\
+    a \neq -2
+\end{gather*}
+Teraz obliczamy wyznaczniki \(x\) i~\(y\):
+\begin{gather*}
+    W_x = \begin{vmatrix}
+        -2 & -4\\
+        3a & a
+    \end{vmatrix}
+        = -2a + 12a
+        = 10a\\
+    W_y = \begin{vmatrix}
+        2 & -2\\
+        1 & 3a
+    \end{vmatrix}
+        = 6a + 2
+\end{gather*}
+Gdy \(a \neq -2\), rozwiązaniami tego równania są liczby
+\begin{gather*}
+    \begin{cases}
+        x = \frac{W_x}{W} = \frac{10a}{2a + 4} = \frac{5a}{a + 2}\\
+        y = \frac{W_y}{W} = \frac{6a + 2}{2a + 4} = \frac{3a + 1}{a + 2}
+    \end{cases}
+\end{gather*}
+Chcemy, aby rozwiązania były przeciwnych znaków, czyli
+\begin{gather*}
+    xy < 0\\
+    \frac{5a}{a + 2} \cdot \frac{3a + 1}{a + 2} < 0\\
+    \frac{5a(3a + 1)}{(a + 2)^2} < 0\\
+    5a(3a + 1)(a + 2)^2 < 0
+\end{gather*}
+Pierwiastkami tego wielomianu są: \(0\), \(-\frac{1}{3}\) oraz \(-2\) z~krotnością \(2\). Wpółczynnik przy najwyższej potędze \(a\) jest dodatni, więc wielomian wygląda mniej więcej tak:
+\begin{mathfigure*}
+    \drawvec (-8, 0) -- (8, 0);
+    \draw[thick, xscale=3] (-3, 1) .. controls (-2, -0.3) .. (-1, 1) .. controls (-0.66, 1.4) .. (-0.33, 0) .. controls (-0.13, -1) .. (0, 0) .. controls (0.06, 0.5) .. (0.22, 2);
+\end{mathfigure*}
