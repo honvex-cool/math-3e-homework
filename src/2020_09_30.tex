@@ -1,0 +1,536 @@
+\subsection*{Zestaw~VIII (zadania otwarte)}
+\subsubsection*{Zadanie~1.}
+Skoro objętość tego pudełka wynosi \(\text{długość} \times \text{szerokość} \times \text{głębokość} = 56\), to jeśli głębokość tego pudełka oznaczymy przez \(d\), to~zachodzi
+\begin{equation*}
+    8 \cdot x \cdot d = 56 \implies d = \frac{7}{x}
+\end{equation*}
+Zatem wymiary tego pudełka to \(8 \times x \times \frac{7}{x}\). Zapiszmy pole powierzchni bocznej pudełka jako funkcję zmiennej \(x\):
+\begin{gather*}
+    D = \open{0}{8}\\
+    S\pars{x} = 2 \cdot 8 \cdot x + 2 \cdot 8 \cdot \frac{7}{x} + 2 \cdot x \cdot \frac{7}{x}
+        = 2\pars{8 \cdot x + 8 \cdot \frac{7}{x} + 7}
+\end{gather*}
+Aby wymiary pudełka były całkowite, \(x\) musi być całkowite i~dzielić \(7\), więc \(x = 1 \nlor x = 7\). Oznacza to, że wymiary tego pudełka to \(8 \times 7 \times 1\) lub \(8 \times 1 \times 7\), czyli właściwie jest to to samo pudełko. Obliczmy pole powierzchni bocznej w~tych sytuacjach:
+\begin{gather*}
+    S\pars{1} = 2\pars{8 \cdot 1 + 8 \cdot \frac{7}{1} + 7} = 2\pars{8 + 56 + 7} = 142 \in \integer\\
+    S\pars{7} = 2\pars{8 \cdot 7 + 8 \cdot \frac{7}{7} + 7} = 2\pars{56 + 8 + 7} = 142 \in \integer
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~2.}
+\begin{equation*}
+    f\pars{x} = \frac{1}{3}\pars{8x^3 + 12x^2 - 2x - 3} = \frac{8x^3 + 12x^2 - 2x - 3}{3} = \frac{8x^3 - 2x}{3} + 4x^2 - 1
+\end{equation*}
+Dowód sprowadza się do pokazania, że dla całkowitych \(x\) wartość funkcji \(f\pars{x}\) również jest całkowita. Skoro \(4x^2 \in \integer\) i~\(1 \in \integer\), to wystarczy pokazać, że dla każdego całkowitego \(x\) liczba \(8x^3 - 2x\) jest podzielna przez \(3\). Ponieważ czynnik \(2\) nie wpływa na podzielność przez \(3\), wystarczy udowodnić, że \(4x^3 - x\) jest podzielne przez \(3\), czyli że dla każdego całkowitego \(x\) zachodzi
+\begin{equation*}
+    x^3 \equiv x \pmod{3}
+\end{equation*}
+Możemy to łatwo sprawdzić rozważając trzy przypadki reszt \(\bmod\ 3\):
+\begin{gather*}
+    x \equiv 0 \pmod{3} \implies x^3 \equiv 0^3 \equiv 0 \equiv x \pmod{3}\\
+    x \equiv 1 \pmod{3} \implies x^3 \equiv 1^3 \equiv 1 \equiv x \pmod{3}\\
+    x \equiv 2 \pmod{3} \implies x^3 \equiv 2^3 \equiv 8 \equiv 2 \equiv 2 \pmod{3}
+\end{gather*}
+To sprawdzenie kończy rozwiązanie zadania.
+\qed
+\subsubsection*{Zadanie~3.}
+\begin{gather*}
+    f\pars{x} = \abs{2x - 1} - \abs{x + 1}\\
+    x \in \real
+\end{gather*}
+Aby pokazać, że ciąg \(a_n = f\pars{n}\) dla \(n \in \set{1, 2, 3, \ldots}\) jest ciągiem arytmetycznym, wystarczy sprawdzić, że dla każdego \(n\) zachodzi warunek
+\begin{gather*}
+    2a_{n + 1} = a_n + a_{n + 2}\\
+    2f\pars{n + 1} = f\pars{n} + f\pars{n + 2}\\
+    2\pars{\abs{2\pars{n + 1} - 1} - \abs{\pars{n + 1} + 1}} = \pars{\abs{2n - 1} - \abs{n + 1}} + \pars{\abs{2\pars{n + 2} - 1} - \abs{\pars{n + 2} + 1}}\\
+    2\pars{\abs{2n + 1} - \abs{n + 2}} = \pars{\abs{2n - 1} - \abs{n + 1}} + \pars{\abs{2n + 3} - \abs{n + 3}}
+\end{gather*}
+Ponieważ dla \(n \geq 1\) liczby \(2n + 1, n + 2, 2n - 1, n + 1, 2n + 3, n + 3\) są dodatnie, można opuścić wartości bezwzględne bez zmian:
+\begin{gather*}
+    2\pars{2n + 1 - n  - 2} = \pars{2n - 1 - n - 1} + \pars{2n + 3 - n - 3}\\
+    2\pars{n - 1} = \pars{n - 2} + n\\
+    2n - 2 = 2n - 2
+\end{gather*}
+Doszliśmy do równości prawdziwej, a~wszystkie przejścia były równoważne, zatem początkowa równość musiała również być prawdziwa, czyli \(\sequence{a_n}\) jest ciągiem arytmetycznym.
+\qed
+\subsubsection*{Zadanie~4.}
+\begin{equation*}
+    f\pars{x} = 1 + \frac{x}{x - 2} + \pars{\frac{x}{x - 2}}^2 + \pars{\frac{x}{x - 2}}^3 + \ldots
+\end{equation*}
+Jest to szereg geometryczny o~pierwszym wyrazie równym \(1\) i~ilorazie równym \(q = \frac{x}{x - 2}\). Skoro jest zbieżny i~pierwszy wyraz jest różny od \(0\), to musi być spełniony warunek
+\begin{align*}
+    \abs{q} < 1\\
+    \abs{\frac{x}{x - 2}} < 1\\
+    \frac{x}{x - 2} < 1 &\wland \frac{x}{x - 2} > -1\\
+    \frac{x}{x - 2} - \frac{x - 2}{x - 2} < 0 &\wland \frac{x}{x - 2} + \frac{x - 2}{x - 2} > 0\\
+    \frac{2}{x - 2} < 0 &\wland \frac{2x - 2}{x - 2} > 0\\
+    x - 2 < 0 &\wland \pars{x - 1}\pars{x - 2} > 0\\
+    x \in \open{-\infty}{2} &\wland x \in \open{-\infty}{1} \cup \open{2}{+\infty}\\
+    & x \in \open{-\infty}{1}
+\end{align*}
+Zatem dziedziną funkcji jest przedział \(\open{-\infty}{1}\). Suma szeregu geometrycznego jest równa
+\begin{equation*}
+    f\pars{x}
+        = \frac{a_1}{1 - q}
+        = \frac{1}{1 - \frac{x}{x - 2}}
+        = \frac{1}{\frac{x - 2}{x - 2} - \frac{x}{x - 2}}
+        = \frac{1}{\frac{-2}{x - 2}}
+        = \frac{2 - x}{2}
+\end{equation*}
+Chcemy zatem pokazać prawdziwość nierówności
+\begin{gather*}
+    f\pars{x} > \frac{1}{2}\\
+    \frac{2 - x}{2} > \frac{1}{2}\\
+    2 - x > 1\\
+    x < 1
+\end{gather*}
+Ostatnia nierówność jest prawdziwa, co pokazaliśmy wyznaczając dziedzinę funkcji. Wszystkie przejścia były równoważne, więc nierówność \(f\pars{x} > \frac{1}{2}\) również jest prawdziwa.
+\qed
+\subsubsection*{Zadanie~5.}
+\begin{equation*}
+    f\pars{x} = \frac{x^2\pars{x + 3}\pars{x^2 - 1}}{\sqrt{2x^2 + 5x - 3}}
+\end{equation*}
+Aby funkcja była określona dla \(x\), musi zachodzić nierówność
+\begin{gather*}
+    2x^2 + 5x - 3 > 0\\
+    \Delta = 5^2 - 4 \cdot 2 \cdot \pars{-3} = 25 + 24 = 49\\
+    \sqrt{\Delta} = 7\\
+    x_1 = \frac{-5 - \sqrt{\Delta}}{4} = \frac{-5 - 7}{4} = \frac{-12}{4} = -3\\
+    x_2 = \frac{-5 + \sqrt{\Delta}}{4} = \frac{-5 + 7}{4} = \frac{2}{4} = \frac{1}{2}
+\end{gather*}
+Zatem \(D = \open{-\infty}{-3} \cup \open{\frac{1}{2}}{+\infty}\). Funkcja ta przyjmuje wartość zero wtedy i~tylko wtedy, gdy licznik ułamka przyjmuje wartość \(0\):
+\begin{gather*}
+    x^2\pars{x + 3}\pars{x^2 - 1} = 0\\
+    \pars{x + 3}\pars{x + 1}x^2\pars{x - 1} = 0\\
+    x \in \set{-3, -1, 0, 1}
+\end{gather*}
+\subsubsection*{Zadanie~6.}
+\begin{equation*}
+    f\pars{x} = 7\pars{x^3 + x + 2}\pars{x - 5}^2
+        = 7\pars{x + 1}\pars{x^2 - x + 2}\pars{x - 5}^2
+\end{equation*}
+Zauważmy, że wielomian \(x^2 - x + 2\) nie ma pierwiastków rzeczywistych, ponieważ \(\Delta = \pars{-1}^2 - 4 \cdot 1 \cdot 2 = 1 - 8 = -7 < 0\). Chcemy rozwiązać nierówność
+\begin{gather*}
+    7\pars{x + 1}\pars{x - 5}^2\pars{x^2 - x + 2} \leq 0\\
+    \pars{x + 1}\pars{x - 5}^2\pars{x^2 - x + 2} \leq 0
+\end{gather*}
+Możemy naszkicować wykres wielomianu:
+\begin{mathfigure*}
+    \drawvec (-4, 0) -- (7, 0);
+    \draw (-3, -2) -- (0, 1) .. controls (2, 2.6) and (4.4, -1.84) .. (7, 1);
+    \fillpoint*{-1, 0}[\(-1\)][below];
+    \fillpoint*{5, 0}[\(5\)][below];
+    \node[red] at (-3, -0.5) {\Huge\(-\)};
+    \node[ForestGreen] at (1, 0.5) {\Huge\(+\)};
+    \node[ForestGreen] at (7, 0.5) {\Huge\(+\)};
+\end{mathfigure*}
+Z~wykresu odczytujemy, że \(x \in \rightclosed{-\infty}{-1} \cup \set{5}\).
+\subsubsection*{Zadanie~7.}
+\begin{equation*}
+    x^2 - (a - 2)x - a + 5 = 0
+\end{equation*}
+Aby równanie miało dwa pierwiastki (być może jeden dwukrotny), musi zachodzić warunek
+\begin{gather*}
+    \Delta \geq 0\\
+    \Delta = \pars{-\pars{a - 2}}^2 - 4 \cdot 1 \cdot \pars{-a + 5}
+        = a^2 - 4a + 4 + 4a - 20
+        = a^2 - 16
+        = \pars{a + 4}\pars{a - 4}\\
+    \pars{a + 4}\pars{a - 4} \geq 0\\
+    a \in \rightclosed{-\infty}{-4} \cup \leftclosed{4}{+\infty}
+\end{gather*}
+Zatem dziedziną funkcji \(f\) jest suma przedziałów \(D = \rightclosed{-\infty}{-4} \cup \leftclosed{4}{+\infty}\).
+\begin{equation*}
+    f\pars{a}
+        = x_1^2 + x_2^2
+        = \pars{x_1 + x_2}^2 - 2x_1x_2
+\end{equation*}
+Z~wzorów Viete'a wiemy, że
+\begin{gather*}
+    x_1 + x_2 = a - 2\\
+    x_1x_2 = -a + 5
+\end{gather*}
+Możemy teraz podstawić:
+\begin{gather*}
+    f\pars{a}
+        = \pars{x_1 + x_2}^2 - 2x_1x_2
+        = \pars{a - 2}^2 - 2\pars{-a + 5}
+        = a^2 - 4a + 4 + 2a - 10
+        = a^2 - 2a - 6\\
+    f\pars{a} = a^2 - 2a - 6
+\end{gather*}
+Szukamy zatem najmniejszej wartości funkcji \(f\) należącej do jej dziedziny. Ramiona paraboli sa skierowane do góry, więc funkcja posiada globalną wartość najmniejszą dla argumentu \(p = \frac{-\pars{-2}}{2 \cdot 1} = 1 \not\in D\). Zatem wartości najmniejszej będziemy poszukiwać na krawędziach przedziałów tworzących dziedzinę:
+\begin{gather*}
+    f\pars{-4} = \pars{-4}^2 - 2 \cdot \pars{-4} - 6 = 16 + 8 - 6 = 18\\
+    f\pars{4} = 4^2 - 2 \cdot 4 - 6 = 16 - 8 - 6 = 2
+\end{gather*}
+Zatem najmniejszą wartością funkcji \(f\) jest \(2\), przyjmowana dla \(a = 4 \in D\).
+\subsubsection*{Zadanie~8.}
+\begin{equation*}
+    f\pars{x}
+        = \frac{\abs{x} - 3}{\abs{x} - 2}
+        = -\frac{1}{\abs{x} - 2} + 1
+\end{equation*}
+Chcemy wiedzieć, dla jakich wartości \(b\) równanie
+\begin{equation*}
+    -\frac{1}{\abs{x} - 2} + 1 = x + b
+\end{equation*}
+ma dwa rozwiązania.
+Aby narysować wykres tej funkcji, dokonamy następujących przekształceń wykresu funkcji \(\frac{1}{x}\):
+\begin{equation*}
+    y = \frac{1}{x}
+    \overset{T\brackets{2; -1}}{\longrightarrow}
+    y = \frac{1}{x - 2} - 1
+    \overset{S_{Ox}}{\longrightarrow}
+    y = -\frac{1}{x - 2} + 1
+    \overset{S_{\textrm{cz.}Oy}}{\longrightarrow}
+    y = -\frac{1}{\abs{x} - 2} + 1
+\end{equation*}
+\begin{description}
+    \item[\(y = \frac{1}{x}\)] --- podstawowa funkcja:
+        \begin{mathfigure*}
+            \drawcoordsystem{-4, -4}{4, 4};
+            \draw[thick, ForestGreen, domain=-4:-0.25, samples=50, smooth] plot (\x, {1/\x});
+            \draw[thick, ForestGreen, domain=0.25:4, samples=50, smooth] plot (\x, {1/\x});
+        \end{mathfigure*}
+    \item[\(y = \frac{1}{x - 2} - 1\)] --- translacja o~wektor \(\brackets{2; -1}\):
+        \begin{description}
+            \item[miejsce zerowe]
+                \begin{gather*}
+                    \frac{1}{x - 2} - 1 = 0\\
+                    \frac{1}{x - 2} = 1\\
+                    x - 2 = 1\\
+                    x = 3
+                \end{gather*}
+            \item[asymptota pionowa]
+                \begin{equation*}
+                    x = 2
+                \end{equation*}
+            \item[asymptota pozioma]
+                \begin{gather*}
+                    y = \limit[x \to \pm\infty] \pars{\frac{1}{x - 1} - 1}\\
+                    y = -1
+                \end{gather*}
+            \item[wartość w~zerze]
+                \begin{equation*}
+                    \frac{1}{0 - 2} - 1 = -\frac{1}{2} - 1 = -\frac{3}{2}
+                \end{equation*}
+        \end{description}
+        \begin{mathfigure*}
+            \drawcoordsystem{-4, -4}{4, 4};
+            \draw[thick, RoyalBlue, domain=-4:1.668, samples=50, smooth] plot (\x, {1/(\x - 2) - 1});
+            \draw[thick, RoyalBlue, domain=2.2:4] plot (\x, {1/(\x - 2) - 1});
+            \draw[dashed, thick] (2, 4) -- (2, -4);
+            \draw[dashed, thick] (-4, -1) -- (4, -1);
+            \fillpoint*{3, 0}[\(\parens{3; 0}\)][above right];
+            \fillpoint*{0, -1.5}[\(\parens{0; -\frac{3}{2}}\)][below left];
+        \end{mathfigure*}
+    \item[\(y = -\frac{1}{x - 2} + 1\)] --- symetria względem osi \(Ox\):
+        \begin{mathfigure*}
+            \drawcoordsystem{-4, -4}{4, 4};
+            \draw[thick, red, domain=-4:1.668, samples=50, smooth] plot (\x, {-1/(\x - 2) + 1});
+            \draw[thick, red, domain=2.2:4] plot (\x, {-1/(\x - 2) + 1});
+            \draw[dashed, thick] (2, 4) -- (2, -4);
+            \draw[dashed, thick] (-4, 1) -- (4, 1);
+            \fillpoint*{3, 0}[\(\parens{3; 0}\)][above left];
+            \fillpoint*{0, 1.5}[\(\parens{0; \frac{3}{2}}\)][above left];
+        \end{mathfigure*}
+    \item[\(y = -\frac{1}{\abs{x} - 2} + 1\)] --- odbicie symetryczne fragmentu znajdującego się na prawo od osi \(Oy\):
+        \begin{mathfigure*}
+            \drawcoordsystem{-4, -4}{4, 4};
+            \draw[thick, Orange, domain=0:1.668, samples=50, smooth] plot (\x, {-1/(abs(\x) - 2) + 1});
+            \draw[thick, Orange, domain=2.2:4] plot (\x, {-1/(abs(\x) - 2) + 1});
+            \draw[thick, Orange, domain=-1.668:0, samples=50, smooth] plot (\x, {-1/(abs(\x) - 2) + 1});
+            \draw[thick, Orange, domain=-4:-2.2] plot (\x, {-1/(abs(\x) - 2) + 1});
+            \draw[thick, dashed] (-2, 4) -- (-2, -4);
+            \draw[thick, dashed] (2, 4) -- (2, -4);
+            \draw[thick, dashed] (-4, 1) -- (4, 1);
+            \fillpoint*{0, 1.5}[\(\pars{0; \frac{3}{2}}\)][right];
+            \fillpoint*{3, 0}[\(\pars{3; 0}\)][above left];
+            \fillpoint*{-3, 0}[\(\pars{-3; 0}\)][above right];
+        \end{mathfigure*}
+\end{description}
+\subsubsection*{Zadanie~9.}
+\begin{equation*}
+    f\pars{x} = \abs{2^{x - 4} - 1} + 1
+\end{equation*}
+Aby narysować wykres tej funkcji, dokonamy następujących przekształceń wykresu funkcji \(2^x\):
+\begin{equation*}
+    y = 2^x
+    \overset{T\brackets{4; -1}}{\longrightarrow}
+    y = 2^{x - 4} - 1
+    \overset{S_{\textrm{cz.}Ox}}{\longrightarrow}
+    y = \abs{2^{x - 4} - 1}
+    \overset{T\brackets{0; 1}}{\longrightarrow}
+    y = \abs{2^{x - 4} - 1} + 1
+\end{equation*}
+\begin{description}
+    \item[\(y = 2^x\)] --- funkcja podstawowa
+        \begin{mathfigure*}
+            \drawcoordsystem{-4, -1}{4, 4};
+            \draw[domain=-4:2, thick, ForestGreen, samples=50, smooth] plot (\x, {2^\x});
+        \end{mathfigure*}
+    \item[\(y = 2^{x - 4} - 1\)] --- translacja o~wektor \(\brackets{4; -1}\)
+        \begin{description}
+            \item[asymptota pozioma]
+                \begin{equation*}
+                    y = 0
+                \end{equation*}
+            \item[miejsce zerowe]
+                \begin{gather*}
+                    2^{x - 4} - 1 = 0\\
+                    2^{x - 4} = 1\\
+                    x - 4 = 0\\
+                    x = 4
+                \end{gather*}
+            \item[wartość w~zerze]
+                \begin{equation*}
+                    2^{0 - 4} - 1 = 2^{-4} - 1 = \frac{1}{16} - 1 = -\frac{15}{16}
+                \end{equation*}
+        \end{description}
+        \begin{mathfigure*}
+            \drawcoordsystem{-4, -2}{6, 4};
+            \draw[domain=-4:6, thick, RoyalBlue, samples=50, smooth] plot (\x, {2^(\x - 4) - 1});
+            \draw[thick, dashed] (-4, -1) -- (6, -1);
+            \fillpoint*{4, 0}[\(\pars{4; 0}\)][above left];
+            \fillpoint*{0, -15/16}[\(\pars{0; -\frac{15}{16}}\)][below right];
+        \end{mathfigure*}
+    \item[\(y = \abs{2^{x - 4} - 1}\)] --- odbicie symetryczne fragmentu znajdującego się poniżej osi \(Ox\)
+        \begin{mathfigure*}
+            \drawcoordsystem{-4, -1}{6, 4};
+            \draw[domain=-4:6, thick, red, samples=120, smooth] plot (\x, {abs(2^(\x - 4) - 1)});
+            \draw[thick, dashed] (-4, 1) -- (6, 1);
+            \fillpoint*{4, 0}[\(\pars{4; 0}\)][below];
+            \fillpoint*{0, 15/16}[\(\pars{0; \frac{15}{16}}\)][above right];
+        \end{mathfigure*}
+    \item[\(y = \abs{2^{x - 4} - 1} + 1\)] --- translacja o~wektor \(\brackets{0; 1}\)
+        \begin{mathfigure*}
+            \drawcoordsystem{-4, -2}{6, 4};
+            \draw[domain=-4:6, thick, Orange, samples=120, smooth] plot (\x, {abs(2^(\x - 4) - 1) + 1});
+            \draw[ForestGreen] (-4, 2) node[above right]{\(m = 2\)} -- (6, 2);
+            \draw[ForestGreen] (-4, 3) node[above right]{\(m > 2\)} -- (6, 3);
+            \draw[ForestGreen] (-4, 1) node[above right]{\(m = 1\)} -- (6, 1);
+            \draw[red] (-4, 1.5) -- (6, 1.5) node[below left]{\tiny\(1 < m < 2\)} node[above left]{\tiny\(0\) rozw.};
+            \draw[red] (-4, -1) node[above right]{\(m < 1\)} -- (6, -1) node[above left]{\(0\) rozw.};
+            \fillpoint*{0, 31/16}[\(\pars{0; \frac{31}{16}}\)][above right];
+            \fillpoint*{4, 1}[\(\pars{4; 1}\)][below];
+            \fillpoint[1][ForestGreen][ForestGreen]{5, 2};
+        \end{mathfigure*}
+\end{description}
+Dokonujemy podstawienia \(m \coloneqq \abs{c}\). Z~wykresu odczytujemy, że równanie \(f\pars{x} = m\) ma jedno rozwiązanie wtedy i~tylko wtedy, gdy \(m = 1 \nlor m \geq 2\). Zatem
+\begin{gather*}
+    m = 1 \wlor m \geq 2\\
+    \abs{c} = 1 \wlor \abs{c} \geq 2\\
+    c = 1 \lor c = -1 \wlor c \geq 2 \lor c \leq -2
+\end{gather*}
+Zatem \(c \in \rightclosed{-\infty}{-2} \cup \set{-1, 1} \cup \leftclosed{2}{+\infty}\).
+\subsubsection*{Zadanie~10.}
+Skoro funkcja \(f\) jest funkcją liniową, to ma postać
+\begin{equation*}
+    f\pars{x} = ax + b
+\end{equation*}
+Jeśli ma jedno miejsce zerowe, to jest ono równe \(-\frac{b}{a}\). Zatem mamy układ równań
+\begin{gather*}
+    \begin{cases}
+        x_0 = \abs{f\pars{0}}\\
+        f\pars{-1} = 3
+    \end{cases}\\
+    \begin{cases}
+        -\frac{b}{a} = \abs{a \cdot 0 + b}\\
+        a \cdot \pars{-1} + b = 3
+    \end{cases}\\
+    \begin{cases}
+        -\frac{b}{a} = \abs{b}\\
+        -a + b = 3 \implies b = a + 3
+    \end{cases}\\
+    -\frac{a + 3}{a} = \abs{a + 3}
+\end{gather*}
+Rozważmy dwa przypadki:
+\begin{proofcases}
+    \item \(a \geq -3\):
+        \begin{gather*}
+            -\frac{a + 3}{a} = a + 3\\
+            a^2 + 4a + 3 = 0\\
+            \pars{a + 1}\pars{a + 3} = 0\\
+            a = -1 \geq -3 \lor a = -3 \geq -3\\
+            \begin{cases}
+                a = -1\\
+                b = 2
+            \end{cases}
+            \wlor
+            \begin{cases}
+                a = -3\\
+                b = 0
+            \end{cases}\\
+            f\pars{x} = -x + 2 \wlor f\pars{x} = -3x
+        \end{gather*}
+    \item \(a < -3\)
+        \begin{gather*}
+            -\frac{a + 3}{a} = -a - 3\\
+            a + 3 = a^2 + 3a\\
+            a^2 + 2a - 3 = 0\\
+            \pars{a + 3}\pars{a - 1} = 0\\
+            a = -3 \lor a = 1
+        \end{gather*}
+\end{proofcases}
+Zatem dwa możliwe wzory tej funkcji to
+\begin{gather*}
+    f\pars{x} = -x + 2 \wlor f\pars{x} = -3x
+\end{gather*}
+\subsubsection*{Zadanie~11.}
+\begin{equation*}
+    f\pars{x} = \sqrt{\log_{\frac{1}{3}} \frac{2x - 3}{x + 1}}
+\end{equation*}
+\begin{itemize}
+    \item mianownik ułamka musi być różny od \(0\), więc \(x \neq -1\)
+    \item logarytmowana liczba musi być dodatnia
+        \begin{gather*}
+            \frac{2x - 3}{x + 1} > 0\\
+            \pars{x + 1}\pars{2x - 3} > 0\\
+            x \in \open{-\infty}{-1} \cup \open{\frac{3}{2}}{+\infty}
+        \end{gather*}
+    \item wyrażenie pod pierwiastkiem musi być nieujemne, czyli \(\log_{\frac{1}{3}} \frac{2x - 3}{x + 1} \geq 0\). Ponieważ podstawa logarytmu jest mniejsza od \(1\), to musi zachodzić
+        \begin{gather*}
+            \frac{2x - 3}{x + 1} \leq 1\\
+            \frac{2x - 3}{x + 1} - \frac{x + 1}{x + 1} \leq 0\\
+            \frac{x - 4}{x + 1} \leq 0\\
+            \pars{x + 1}\pars{x - 4} \leq 0\\
+            x \in \closed{-1}{4}
+        \end{gather*}
+\end{itemize}
+Po wzięciu części wspólnej tych przedziałów, dziedziną funkcji \(f\) jest \(D = \rightclosed{\frac{3}{2}}{4}\).
+\subsubsection*{Zadanie~12.}
+\begin{gather*}
+    f\pars{x}
+        = \sin x - \cos^2 x - 1
+        = \sin x - \pars{1 - \sin^2 x} - 1
+        = \sin x - 1 + \sin^2 x - 1
+        = \sin^2x + \sin x - 2\\
+    D = \real
+\end{gather*}
+Możemy podstawić \(t \coloneqq \sin x\) i~znaleźć najmniejszą wartość funkcji kwadratowej
+\begin{equation*}
+    t^2 + t - 2
+\end{equation*}
+Ponieważ współczynnik przy \(t^2\) jest dodatni, ramiona paraboli są skierowane w~górę, więc funkcja posiada wartość najmniejszą równą \(\frac{-\Delta}{4a} = -\frac{9}{4}\) przyjmowaną dla \(t = -\frac{1}{2} \in D\).
+\begin{gather*}
+    t = -\frac{1}{2}\\
+    \sin x = -\frac{1}{2}\\
+    x = 2k\pi + \frac{7\pi}{6} \wlor x = 2k\pi + \frac{11\pi}{6} \qquad \text{gdzie \(k \in \integer\)}
+\end{gather*}
+\subsubsection*{Zadanie~30.09.3.}
+\begin{enumerate}[label={\alph*)}]
+    \item
+        \begin{equation*}
+            \limit[x \to 0^-] \frac{\sin x}{\abs{x}}
+                = \indeterminate{\frac{0}{0}}
+                = \limit[x \to 0^-] \frac{\sin x}{-x}
+                = -\limit[x \to 0^-] \frac{\sin x}{x}
+                = -1
+        \end{equation*}
+    \item
+        \begin{equation*}
+            \begin{split}
+                \limit[x \to 0^-] \frac{1 - \cos x}{x\abs{x}}
+                    &= \indeterminate{\frac{0}{0}}
+                    = \limit[x \to 0^-] \frac{\cos 0 - \cos{x}}{x \cdot \pars{-x}}
+                    = \limit[x \to 0^-] \frac{-2\sin\frac{0 + x}{2}\sin\frac{0 - x}{2}}{x \cdot \pars{-x}}
+                    = \limit[x \to 0^-] \frac{-2\sin\frac{x}{2}\sin\frac{-x}{2}}{x \cdot \pars{-x}}\\
+                    &= -2\pars{\limit[x \to 0^-] \frac{\sin\frac{x}{2}}{x}}\pars{\limit[x \to 0^-] \frac{\sin\frac{-x}{2}}{-x}}
+                    = -2 \cdot \frac{1}{2} \cdot \frac{1}{2}
+                    = -\frac{1}{2}
+            \end{split}
+        \end{equation*}
+    \item
+        \begin{equation*}
+            \begin{split}
+                \limit[x \to 0^+] \frac{\sin 6x}{\abs{\tan 2x}}
+                    &= \indeterminate{\frac{0}{0}}
+                    = \limit[x \to 0^+] \frac{\sin\pars{2x + 4x}}{\tan{2x}}
+                    = \limit[x \to 0^+] \frac{\sin 2x \cos 4x + \sin 4x \cos 2x}{\frac{\sin 2x}{\cos 2x}}\\
+                    &= \limit[x \to 0^+] \frac{\cancel{\sin 2x} \cos 4x + 2 \cancel{\sin 2x} \cos 2x \cos 2x}{\frac{\cancel{\sin 2x}}{\cos 2x}}
+                    = \limit[x \to 0^+] \frac{\cos 4x + 2 \cos^2 2x}{\frac{1}{\cos 2x}}\\
+                    &= \frac{\cos 0 + 2 \cos^2 0}{\frac{1}{\cos 0}}
+                    = \frac{1 + 2 \cdot 1}{\frac{1}{1}}
+                    = 3
+            \end{split}
+        \end{equation*}
+    \item
+        \begin{equation*}
+            \begin{split}
+                \limit[x \to 0^-] \frac{\abs{\tan x}}{\sqrt{x + 1} - 1}
+                    = \indeterminate{\frac{0}{0}}
+                    &= \limit[x \to 0^-] \frac{-\tan x \cdot \pars{\sqrt{x + 1} + 1}}{x + 1 - 1}
+                    = \limit[x \to 0^-] \frac{-\frac{\sin x}{\cos x} \cdot \pars{\sqrt{x + 1} + 1}}{x}\\
+                    &= -\pars{\limit[x \to 0^-] \frac{\sin x}{x}}\pars{\limit[x \to 0^-] \frac{\sqrt{x + 1} + 1}{\cos x}}
+                    = -1 \cdot \frac{\sqrt{0 + 1} + 1}{\cos 0}
+                    = -1 \cdot \frac{2}{1}
+                    = -2
+            \end{split}
+        \end{equation*}
+    \item
+        \begin{equation*}
+                \limit[x \to 0^+] \frac{x + \abs{x}}{\tan 2x}
+                    = \indeterminate{\frac{0}{0}}
+                    = \limit[x \to 0^+] \frac{x + x}{\frac{\sin 2x}{\cos 2x}}
+                    = \limit[x \to 0^+] \frac{2x}{\frac{\sin 2x}{\cos 2x}}
+                    = \pars{\limit[x \to 0^+] \frac{2x}{\sin{2x}}}{\limit[x \to 0^+] \cos 2x}
+                    = 1 \cdot \cos\pars{2 \cdot 0}
+                    = 1 \cdot 1
+                    = 1
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~30.09.4.}
+\begin{enumerate}[label={\alph*)}]
+    \addtocounter{enumi}{6}
+    \item
+        \begin{gather*}
+            f\pars{x} = \begin{cases}
+                \frac{x + 3}{\pars{x - 4}^2} & \iff x \neq 4\\
+                -5 & \iff x = 4
+            \end{cases}\\
+            \limit[x \to 4^-] f\pars{x}
+                = \limit[x \to 4^-] \frac{x + 3}{\pars{x - 4}^2}
+                = \frac{4 + 3}{\pars{0^-}^2}
+                = +\infty\\
+            \limit[x \to 4^+] f\pars{x}
+                = \limit[x \to 4^+] \frac{x + 3}{\pars{x - 4}^2}
+                = \frac{4 + 3}{\pars{0^+}^2}
+                = +\infty\\
+            \limit[x \to 4^-] f\pars{x} = \limit[x \to 4^+] f\pars{x}
+        \end{gather*}
+        Istnieje granica funkcji \(f\) w~punkcie \(x_0 = 4\), ponieważ istnieją w~nim obydwie granice jednostronne i~są one równe.
+        \begin{equation*}
+            \limit[x \to 4] f\pars{x} = +\infty
+        \end{equation*}
+    \item
+        \begin{gather*}
+            f\pars{x} = \begin{cases}
+                \frac{x - \abs{x}}{x + \abs{x}} & \iff x > 0\\
+                0 & \iff x = 0\\
+                \frac{x^2 + 2x}{x^2 - 3x} & \iff x < 0
+            \end{cases}\\
+            \limit[x \to 0^-] f\pars{x}
+                = \limit[x \to 0^-] \frac{x^2 + 2x}{x^2 - 3x}
+                = \indeterminate{\frac{0}{0}}
+                = \limit[x \to 0^-] \frac{\cancel{x}\pars{x + 2}}{\cancel{x}\pars{x - 3}}
+                = \limit[x \to 0^-] \frac{x + 2}{x - 3}
+                = \frac{0 + 2}{0 - 3}
+                = -\frac{2}{3}\\
+            \limit[x \to 0^+] f\pars{x}
+                = \limit[x \to 0^+] \frac{x - \abs{x}}{x + \abs{x}}
+                = \limit[x \to 0^+] \frac{x - x}{x + x}
+                = \limit[x \to 0^+] \frac{\cancel{x}\pars{1 - 1}}{\cancel{x}\pars{1 + 1}}
+                = \frac{0}{2}
+                = 0\\
+            \limit[x \to 0^-] f\pars{x} \neq \limit[x \to 0^+] f\pars{x}
+        \end{gather*}
+        Istnieją jednostronne granice funkcji \(f\) w~punkcie \(x_0 = 0\), ale są one różne, więc granica funkcji \(f\) w~tym punkcie nie istnieje.
+    \item
+        \begin{gather*}
+            f\pars{x} = \begin{cases}
+                \frac{x^2 - x - 6}{x^2 + 2x} & \iff x < -2\\
+                5 & \iff x = -2\\
+                \frac{-3x^2 - 2x + 8}{4x^2 + 20x + 24} & \iff x > -2
+            \end{cases}
+        \end{gather*}
+\end{enumerate}

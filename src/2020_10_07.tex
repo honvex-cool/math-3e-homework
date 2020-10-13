@@ -1,0 +1,212 @@
+\subsubsection*{Twierdzenie}
+Założenie:
+\begin{equation*}
+    \exists a > 0\colon \open{x_0 - a}{x_0 + a} \subseteq D_f
+\end{equation*}
+Wtedy
+\begin{equation}
+    f \text{ jest ciągła w~} x_0 \iff \limit[x \to x_0] f\pars{x} = f\pars{x_0} \label{continuity}
+\end{equation}
+\subsubsection*{Zadanie~2.2.}
+\begin{itemize}
+    \item[b)]
+        \begin{gather*}
+            f\pars{x} = \begin{cases}
+                \frac{x^2 - 4}{x + 2} & \iff x \neq -2\\
+                -4 \iff x = -2
+            \end{cases}\\
+            D_f = \real\\
+            x_0 = -2
+        \end{gather*}
+        Obliczmy granicę:
+        \begin{equation*}
+            \limit[x \to -2^\pm] f\pars{x}
+                = \limit[x \to -2^\pm] \frac{x^2 - 4}{x + 2}
+                = \indeterminate{\frac{0}{0^\pm}}
+                = \limit[x \to -2^\pm] \frac{\cancel{\pars{x + 2}}\pars{x - 2}}{\cancel{x + 2}}
+                = \limit[x \to -2^\pm] \pars{x - 2}
+                = -4
+        \end{equation*}
+        Zatem skoro
+        \begin{gather*}
+            f\pars{x_0} = -2 = \limit[x \to x_0] f\pars{x}
+        \end{gather*}
+        to na mocy twierdzenia (\ref{continuity}) funkcja \(f\) jest ciągła w~puncie \(x_0 = -2\).
+    \item[c)]
+        \begin{gather*}
+            f\pars{x} = \begin{cases}
+                \cos\pars{\frac{1}{x}} & \iff x \neq 0\\
+                1 & \iff x = 0
+            \end{cases}\\
+            D_f = \real\\
+            x_0 = 0
+        \end{gather*}
+        Na mocy twierdzenia (\ref{continuity}), aby funkcja była ciągła w~punkcie \(x_0 = 0\), wartość tej funkcji w~tym punkcie musi być równa granicy w~tym punkcie. Jednak granice
+        \begin{gather*}
+            \limit[x \to 0^-] f\pars{x} = \limit[x \to 0^-] \cos\pars{\frac{1}{x}}\\
+            \limit[x \to 0^+] f\pars{x} = \limit[x \to 0^+] \cos\pars{\frac{1}{x}}
+        \end{gather*}
+        nie istnieją. Zatem funkcja \(f\) nie jest ciągła w~punkcie \(x_0 = 0\).
+\end{itemize}
+\subsubsection*{Zadanie~2.3.}
+\begin{itemize}
+    \item[c)]
+        \begin{gather*}
+            f\pars{x} = \begin{cases}
+                x\sin\pars{\frac{1}{x}} & \iff x \neq 0\\
+                0 & \iff x = 0
+            \end{cases}\\
+            D_f = \real
+        \end{gather*}
+        Ponieważ złożenie i~iloczyn funkcji ciągłych jest funkcją ciągłą, a~\(x\), \(\sin x\) i~\(\frac{1}{x},\ x \in \real \setminus \set{0}\) są funkcjami ciągłymi, to funkcja \(x\sin\pars{\frac{1}{x}}\) jest ciągła w~swojej dziedzinie \(D = \real \setminus \set{0}\). Zatem jedyny problem z~ciągłością funkcji \(f\) może wystąpić w~punkcie \(x_0 = 0\). Policzmy zatem granice:
+        \begin{gather*}
+            \limit[x \to 0^\pm] f\pars{x}
+                = \limit[x \to 0^\pm] \converges{0}{x}\overbrace{\sin\pars{\frac{1}{x}}}^{\text{ograniczone}}
+                = 0\\
+            \limit[x \to 0] f\pars{x} = 0 = f\pars{0}
+        \end{gather*}
+        Zatem na mocy twierdzenia (\ref{continuity}) funkcja jest ciągła w~punkcie \(x_0 = 0\). Jest zatem ciągła w~całej swojej dziedzinie.
+    \item[d)]
+        \begin{gather*}
+            f\pars{x} = \begin{cases}
+                \sin \pi x & \iff x \in \rational\\
+                0 & \iff x \in \irrational
+            \end{cases}\\
+            D_f = \real
+        \end{gather*}
+        Najpierw pokażemy, że funkcja jest ciągła w~\(\integer\):
+        \begin{gather*}
+            x_0 \in \integer \subset \rational\\
+            \limit[x \to x_0] f\pars{x} = \limit[x \to x_0] \sin \pi x_0 = 0\\
+            \limit[x \to x_0] f\pars{x} = 0 = f\pars{x_0}
+        \end{gather*}
+        Zatem na mocy twierdzenia (\ref{continuity}) funkcja \(f\) jest ciągła w~każdym punkcie \(x_0 \in \integer\). Pokażemy teraz, że nie jest ciągła w~\(\rational \setminus \integer\). W~tym celu załóżmy, że \(x_0 \in \rational \setminus \integer\), czyli \(\sin \pi x_0 \neq 0\), oraz zdefiniujmy ciąg
+        \begin{equation*}
+            a_n = x_0 - \frac{1}{n\pi}
+        \end{equation*}
+        Widzimy, że
+        \begin{equation*}
+            \limit a_n = \limit \pars{x_0 - \converges{0}{\frac{1}{n\pi}}} = x_0
+        \end{equation*}
+        oraz \(\forall n \in \natural_{> 0}\colon a_n \in \irrational\), ponieważ \(x_0 \in \rational\) i~\(\frac{1}{n\pi} \in \irrational\). Zatem
+        \begin{equation*}
+            \limit f\pars{a_n} = 0 \neq f\pars{x_0}
+        \end{equation*}
+        Czyli z~definicji wg Heinego, funkcja nie jest ciągła w~żadnym punkcie \(x_0 \in \rational \setminus \integer\).
+    \item[g)]
+        \begin{gather*}
+            f\pars{x} = \begin{cases}
+                \frac{x\pars{x + \cos x}}{x + \sin x} & \iff x \neq 0\\
+                0 & \iff x = 0
+            \end{cases}
+        \end{gather*}
+        Pokażemy najpierw, że dziedziną tej funkcji jest \(\real\), czyli że
+        \begin{equation*}
+            x + \sin x = 0 \iff x = 0
+        \end{equation*}
+        Zauważmy, że gdy \(\abs{x} > 1\), to \(\sin x\) na pewno nie zdoła zredukować \(x\) do \(0\), ponieważ \(-1 \leq \sin x \leq 1\). Natomiast gdy \(x \in \leftclosed{-1}{0}\), to \(x < 0\) i~\(\sin x < 0\), zatem \(x + \sin x < 0\). Gdy \(x \in \rightclosed{0}{1}\), to \(x \leq 0\) i~\(\sin x > 0\), więc \(x + \sin x > 0\). Teraz rozważmy ciągłość. Funkcja \(\frac{x\pars{x + \cos x}}{x + \sin x}\) jest ciągła w~swojej dziedzinie \(\real \setminus \set{0}\). Jedyny problem może więc występować dla \(x = 0\). Policzmy zatem granice:
+        \begin{gather*}
+            \limit[x \to 0^\pm] f\pars{x}
+                = \limit[x \to 0^\pm] \frac{x\pars{x + \cos x}}{x + \sin x}
+                = \indeterminate{\frac{0}{0}}
+                = \limit[x \to 0^\pm] \frac{x + \cos x}{1 + \converges*{1}{\frac{\sin x}{x}}}
+                = \frac{0 + 1}{1 + 1}
+                = \frac{1}{2}\\
+            \limit[x \to 0] f\pars{x}
+                = \frac{1}{2} \neq 0 = f\pars{0}
+        \end{gather*}
+        Zatem na mocy twierdzenia (\ref{continuity}) funkcja \(f\) jest ciągła w~\(\real \setminus \set{0}\).
+\end{itemize}
+\subsubsection*{Zadanie~2.4.}
+\begin{itemize}
+    \item[a)]
+        \begin{gather*}
+            f\pars{x} = \sgn{x} = \begin{cases}
+                -1 & \iff x < 0\\
+                0 & \iff x = 0\\
+                1 & \iff x > 0
+            \end{cases}\\
+            D_f = \real
+        \end{gather*}
+        Funkcja dla \(x < 0\) jest po prostu stałą funkcją liniową, więc jest w~tym zbiorze ciągła. Podobnie dla \(x > 0\). Brak ciągłości może wystąpić jedynie dla \(x_0 = 0\). Rzeczywiście:
+        \begin{gather*}
+            \limit[x \to 0^-] f\pars{x} = -1\\
+            \limit[x \to 0^+] f\pars{x} = 1\\
+            f\pars{0} = 0\\
+            -1 \neq 0 \neq 1
+        \end{gather*}
+        Zatem na mocy twierdzenia (\ref{continuity}) funkcja \(f\) nie jest ciągła w~punkcie \(x_0 = 0\).
+    \item[b)]
+        \begin{gather*}
+            f\pars{x} = \fractional{x} = x - \floor{x}\\
+            D_f = \real
+        \end{gather*}
+        Dla \(x \in \integer\) funkcja przyjmuje wartość \(0\), natomiast dla \(x \not\in \integer\) jest to funkcja będąca fragmentem funkcji liniowej o~współczynniku kierunkowym równym \(1\), zatem jest ciągła. Przyjmijmy \(x_0 \in \integer\):
+        \begin{gather*}
+            \limit[x \to x_0^-] f\pars{x} = 1\\
+            \limit[x \to x_0^+] f\pars{x} = 0\\
+            \limit[x \to x_0^-] f\pars{x} \neq \limit[x \to x_0^+] f\pars{x} = f\pars{x_0}
+        \end{gather*}
+        Zatem na mocy twierdzenia (\ref{continuity}) funkcja \(f\) nie jest ciągła we wszystkich punktach \(x_0 \in \integer\).
+    \item[f)]
+        \begin{gather*}
+            f\pars{x} = \frac{1}{\sqrt{1 - x^2}}\\
+            1 - x^2 > 0\\
+            x^2 < 1\\
+            x \in \open{-1}{1}\\
+            D_f = \open{-1}{1}
+        \end{gather*}
+        Funkcja pierwiastkowa i~wymierna są ciągłe, zatem ich złożenie również jest ciągłe. Oznacza to, że funkcja \(f\) jest ciągła w~całej swojej dziedzinie \(D_f = \open{-1}{1}\).
+\end{itemize}
+\subsubsection*{Zadanie~2.5.}
+\begin{itemize}
+    \item[c)]
+        \begin{gather*}
+            f\pars{x} = \begin{cases}
+                x^2 & \iff x \in \rational\\
+                -x^2 & \iff x \in \irrational
+            \end{cases}\\
+            D_f = \real
+        \end{gather*}
+        Zauważmy, że funkcja nie jest ciągła dla każdego punktu \(x_0 \in \rational\), ponieważ możemy zdefiniować ciąg
+        \begin{equation*}
+            a_n = x_0 - \frac{1}{n\pi}
+        \end{equation*}
+        dążący do \(x_0\), ale wszystkie jego wyrazy są niewymierne. Zatem
+        \begin{gather*}
+            \limit a_n = x_0\\
+            \limit f\pars{a_n} = -x_0^2 \neq x_0^2 = f\pars{x_0}
+        \end{gather*}
+        Jedynym wyjątkiem jest tutaj \(x_0 = 0\). Poza tym punktem funkcja jest z~definicji nieciągła w~każdym punkcie \(x_0 \in \rational\). Analogicznie pokażemy, że funkcja nie jest ciągła dla każdego punktu \(x_0 \in \irrational\). Możemy zdefiniować ciąg
+        \begin{equation*}
+            a_n = \floor{10^n x_0} \cdot \frac{1}{10^n}
+        \end{equation*}
+        który dąży do \(x_0\), ale jego wyrazy są wymierne. Zatem
+        \begin{gather*}
+            \limit a_n = x_0\\
+            \limit f\pars{a_n} = x_0^2 \neq -x_0^2 = f\pars{x_0}
+        \end{gather*}
+        Czyli funkcja jest z~definicji nieciągła w~każdym punkcie \(x_0 \in \irrational\).
+\end{itemize}
+\subsubsection*{Zadanie~2.15.}
+\begin{gather*}
+    f\pars{x} = \begin{cases}
+        \frac{\sin\floor{\pars{6a^2 + 3}x}}{\pars{2a^2 + 1}x} & \iff x \neq 0\\
+        3 & \iff x = 0
+    \end{cases}
+    D = \real\\
+    x_0 = 0
+\end{gather*}
+Obliczmy granice:
+\begin{gather*}
+    \limit[x \to 0^+] f\pars{x}
+        = \limit[x \to 0^+] \frac{\sin\floor{\pars{6a^2 + 3}x}}{\pars{2a^2 + 1}x}
+        = \limit[x \to 0^+] \frac{0}{\pars{2a^2 + 1}x}
+        = 0\\
+    \limit[x \to 0^-] f\pars{x}
+        = \limit[x \to 0^-] \frac{\sin\floor{\pars{6a^2 + 3}x}}{\pars{2a^2 + 1}x}
+        = \limit[x \to 0^-] \frac{-1}{\pars{2a^2 + 1}x}
+        = \frac{-1}{0^-}
+        = +\infty\\
+\end{gather*}
+\(\limit[x \to 0] f\pars{x}\) nie istnieje, zatem na mocy twierdzenia (\ref{continuity}) funkcja \(f\) nie jest ciągła w~punkcie \(x_0 = 0\) dla każdego \(a \in \real\).

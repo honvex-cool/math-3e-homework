@@ -1,0 +1,310 @@
+\subsection*{Zestaw~XI (Zadania otwarte)}
+\subsubsection*{Zadanie~1.}
+\begin{equation*}
+    a_n = \frac{5 - n}{2n + 3}
+\end{equation*}
+Aby pokazać, że ciąg jest malejący, pokażemy, że dla każdego \(n \in \natural_{> 0}\)
+\begin{gather*}
+    a_{n + 1} < a_n\\
+    a_{n + 1} - a_n < 0\\
+    \begin{split}
+        a_{n + 1} - a_n
+            &= \frac{5 - \pars{n + 1}}{2\pars{n + 1} + 3} - \frac{5 - n}{2n + 3}
+            = \frac{4 - n}{2n + 5} - \frac{5 - n}{2n + 3}
+            = \frac{\pars{4 - n}\pars{2n + 3}}{\pars{2n + 5}\pars{2n + 3}} - \frac{\pars{5 - n}\pars{2n + 5}}{\pars{2n + 5}\pars{2n + 3}}\\
+            &= \frac{-2n^2 + 5n + 12}{\pars{2n + 5}\pars{2n + 3}} - \frac{5n - 2n^2 + 25}{\pars{2n + 5}\pars{2n + 3}}
+            = \frac{\overbrace{-13}^{< 0}}{\underbrace{\pars{2n + 5}\pars{2n + 3}}_{> 0}} < 0
+    \end{split}
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~2.}
+\begin{equation*}
+    f\pars{x} = 1 + x + x^2 + x^3 + \ldots
+\end{equation*}
+Jest to suma nieskończonego szeregu geometrycznego zbudowanego z~ciągu arytmetycznego \(\sequence{a_n}\) o~pierwszym wyrazie \(a_1 = 1 \neq 0\) i~ilorazie \(q = x\). Skoro jest to ciąg zbieżny, to \(\abs{q} < 1\), czyli dziedziną funkcji \(f\) jest zbiór \(D_f = \open{-1}{1}\). Skorzystajmy ze wzoru na sumę nieskończonego szeregu geometrycznego:
+\begin{equation*}
+    f\pars{x} = 1 + x + x^2 + x^3 + \ldots = \frac{a_1}{1 - q} = \frac{1}{1 - x}
+\end{equation*}
+Widzimy teraz, że
+\begin{gather*}
+    -1 < x < 1\\
+    0 < 1 - x < 2\\
+    f\pars{x} = \frac{1}{1 - x} > \frac{1}{2}
+\end{gather*}
+Pokażemy teraz, że dla każdego \(y > \frac{1}{2}\) istnieje rozwiązanie równania
+\begin{gather*}
+    f\pars{x} = y\\
+    \frac{1}{1 - x} = y\\
+    1 - x = \frac{1}{y}\\
+    x = 1 - \frac{1}{y}
+\end{gather*}
+Ponieważ \(y \neq 0\), to zawsze możemy znaleźć odpowiednie \(x\) takie, że \(f\pars{x} = y \in \open{\frac{1}{2}}{+\infty}\).
+\qed
+\subsubsection*{Zadanie~3.}
+\begin{gather*}
+    a_n = 3^{2n + 1} - 9^{n - 1}
+        = 3^{2n + 1} - \pars{3^2}^{n - 1}
+        = 3^3 \cdot 3^{2n - 1} - 3^{2n - 2}
+        = 26 \cdot 3^{2n - 1}\\
+    \frac{a_{n + 1}}{a_n}
+        = \frac{26 \cdot 3^{2\pars{n + 1} - 1}}{26 \cdot 3^{2n - 1}}
+        = \frac{\cancel{26} \cdot 3^{2n + 1}}{\cancel{26} \cdot 3^{2n - 1}}
+        = 3^2
+        = 9
+\end{gather*}
+Ponieważ iloraz każdych dwóch kolejnych wyrazów jest stały równy \(9\), to ciąg jest geometryczny.
+\qed
+\subsubsection*{Zadanie~4.}
+\begin{gather*}
+    x_1 = \pars{a + b}^2\\
+    x_2 = a^2 - b^2\\
+    x_3 = \pars{a - b}^2\\
+    \abs{a} \neq \abs{b} \implies a \neq b \land a^2 \neq b^2\\
+    \frac{x_2}{x_1}
+        = \frac{\pars{a + b}^2}{\underbrace{a^2 - b^2}_{\neq 0}}
+        = \frac{\cancel{\pars{a + b}}\pars{a + b}}{\cancel{\pars{a + b}}\pars{a - b}}
+        = \frac{a + b}{a - b}\\
+    \frac{x_3}{x_2}
+        = \frac{a^2 - b^2}{\underbrace{\pars{a - b}^2}_{\neq 0}}
+        = \frac{\pars{a + b}\cancel{\pars{a - b}}}{\pars{a - b}\cancel{\pars{a - b}}}
+        = \frac{a + b}{a - b} = \frac{x_3}{x_2}
+\end{gather*}
+Ilorazy par kolejnych wyrazów są równe, stałe, więc ciąg jest geometryczny.
+\qed
+\subsubsection*{Zadanie~5.}
+Skoro ciąg \(\sequence{a, b, c}\) jest arytmetyczny, to
+\begin{equation*}
+    2b = a + c \implies 4b^2 = \pars{a + c}^2
+\end{equation*}
+Chcemy pokazać, że ciąg \(\sequence{a^2 + ab + b^2,\ a^2 + ac + c^2,\ b^2 + bc + c^2}\) jest artymetyczny. Jest to równoważne następującej równości:
+\begin{gather*}
+    2a^2 + 2ac + 2c^2 = a^2 + ab + b^2 + b^2 + bc + c^2\\
+    a^2 + 2ac + c^2 = ab + 2b^2 + bc\\
+    \pars{a + c}^2 = 2b^2 + b\pars{a + c}\\
+    \pars{a + c}^2 = 2b^2 + b \cdot 2b\\
+    4b^2 = \pars{a + c}^2
+\end{gather*}
+co jednak pokazaliśmy na samym początku. Zatem ostatnia równość jest prawdziwa, a~wszystkie przejścia były równoważne, czyli teza także jest prawdziwa. Ciąg
+\begin{equation*}
+    \sequence{a^2 + ab + b^2,\ a^2 + ac + c^2,\ b^2 + bc + c^2}
+\end{equation*}
+jest arytmetyczny.
+\qed
+\subsubsection*{Zadanie~6.}
+\begin{gather*}
+    1 + \sin x + \sin^2 x + \ldots = \frac{2}{3}\\
+    x \in \closed{0}{2\pi}
+\end{gather*}
+Jest to nieskończony ciąg geometryczny \(\sequence{a_n}\) o~pierwszym wyrazie \(a_1 = 1\) i~ilorazie \(q = \sin x\). Ponieważ ciąg jest zbieżny, to \(\abs{q} < 1\). Dla funkcji \(\sin\) zawsze jest spełniona słaba nierówność
+\begin{equation*}
+    -1 \leq \sin x \leq 1
+\end{equation*}
+Natomiast w~interesującym nas przedziale \(\sin x = 1\) dla \(x = \frac{\pi}{2}\), a~\(\sin x = -1\) dla \(x = \frac{3\pi}{2}\). Zatem przedział, w~którym będziemy szukać rozwiązań, zawężamy do
+\begin{equation*}
+    x \in \closed{0}{2\pi} \setminus \set{\frac{\pi}{2}, \frac{3\pi}{2}}
+\end{equation*}
+Możemy teraz wykorzystać wzór na sumę szeregu geometrycznego:
+\begin{gather*}
+    1 + \sin x + \sin^2 x + \ldots = \frac{1}{1 - \sin x}\\
+    \frac{1}{1 - \sin x} = \frac{2}{3}\\
+    1 = \frac{2}{3} - \frac{2}{3}\sin x\\
+    -\frac{2}{3}\sin x = \frac{1}{3}\\
+    \sin x = -\frac{1}{2}\\
+    x = 2k\pi + \frac{7\pi}{6} \wlor x = 2k\pi + \frac{11\pi}{6} \text{, gdzie } k \in \integer
+\end{gather*}
+Zatem po uwzględnieniu rozważanego przedziału
+\begin{equation*}
+    x = \frac{7\pi}{6} \wlor x = \frac{11\pi}{6}
+\end{equation*}
+\subsubsection*{Zadanie~7.}
+Znamy wzór na sumę \(n\) początkowych wyrazów ciągu arytmetycznego \(a_n\):
+\begin{equation*}
+    S_n = \frac{a_1 + a_n}{2} \cdot n
+\end{equation*}
+Oznaczmy przez \(r\) różnicę tego ciągu arytmetycznego. Dane z~zadania możemy zapisać jako układ równań:
+\begin{gather*}
+    \begin{cases}
+        S_7 = \frac{a_1 + a_7}{2} \cdot 7 = \frac{a_1 + a_1 + 6r}{2} \cdot 7 = 7a_1 + 21r = 42\\
+        S_15 = \frac{a_1 + a_{15}}{2} \cdot 15 = \frac{a_1 + a_1 + 14r}{2} \cdot 15 = 15a_1 + 105r = 390
+    \end{cases}\\
+    \begin{cases}
+        7a_1 + 21r = 42\\
+        15a_1 + 105r = 390
+    \end{cases}
+\end{gather*}
+Możemy pomnożyć pierwsze równanie stronami przez \(5\) i~odjąć pierwsze równanie od drugiego stronami:
+\begin{gather*}
+    \begin{cases}
+        35a_1 + 105r = 210\\
+        15a_1 + 105r = 390\\
+    \end{cases}
+    15a_1 + 105r - 35a_1 - 105r = 390 - 210\\
+    -20a_1 = 180\\
+    a_1 = -9\\
+    r = \frac{42 - 7a_1}{21}
+        = \frac{42 + 63}{21}
+        = \frac{105}{21}
+        = 5
+\end{gather*}
+Ciąg \(\sequence{a_n}\) jest zatem zdefiniowany następująco:
+\begin{equation*}
+    \begin{cases}
+        a_1 = -9\\
+        r = 5
+    \end{cases}
+\end{equation*}
+Wzór ogólny ciągu arytmetycznego ma postać
+\begin{equation*}
+    a_n = a_1 + r\pars{n - 1}
+\end{equation*}
+Zatem wzór ogólny ciągu \(\sequence{a_n}\) jest następujący:
+\begin{gather*}
+    a_n = -9 + 5\pars{n - 1} = -9 + 5n - 5\\
+    a_n = 5n - 14
+\end{gather*}
+\subsubsection*{Zadanie~9.}
+Skoro ciąg
+\begin{equation*}
+    \sequence{2^{x + 1},\ 4^5,\ 8^{2x - 1}}
+\end{equation*}
+jest geometryczny, to
+\begin{gather*}
+    \pars{4^5}^2 = 2^{x + 1} \cdot 8^{2x - 1}\\
+    \pars{\pars{2^2}^5}^2 = 2^{x + 1} \cdot \pars{2^3}^{2x - 1}\\
+    2^{20} = 2^{x + 1} \cdot 2^{3 \cdot \pars{2x - 1}}\\
+    2^{x + 1 + 6x - 3} = 2^{20}\\
+    2^{7x - 2} = 2^{20}\\
+    7x - 2 = 20\\
+    7x = 22\\
+    x = \frac{22}{7} \approx \pi
+\end{gather*}
+\subsubsection*{Zadanie~11.}
+\begin{equation*}
+    x^4 - 10x^2 + m = 0
+\end{equation*}
+Dokonajmy podstawienia \(t \coloneqq x^2\):
+\begin{equation*}
+    t^2 - 10t + m = 0
+\end{equation*}
+Ponieważ chcemy, aby pierwsze równanie miało cztery różne pierwiastki, to równanie po podstawieniu musi mieć dwa różne pierwiastki, zatem
+\begin{gather*}
+    \Delta > 0\\
+    \Delta = \pars{-10}^2 - 4 \cdot 1 \cdot m\\
+    \Delta = 100 - 4m > 0\\
+    m < 25
+\end{gather*}
+Wtedy mamy następujące rozwiązania:
+\begin{gather*}
+    t_1 = \frac{10 - \sqrt{\Delta}}{2} = \frac{10 - \sqrt{100 - 4m}}{2} = 5 - \sqrt{25 - m}\\
+    t_2 = \frac{10 + \sqrt{\Delta}}{2} = \frac{10 + \sqrt{100 - 4m}}{2} = 5 + \sqrt{25 - m}\\
+    t_1 < t_2
+\end{gather*}
+Chcemy, aby obydwa pierwiastki były dodatnie, ponieważ są to tak naprawdę \(x^2\), więc
+\begin{gather*}
+    t_1 > 0\\
+    5 - \sqrt{25 - m} > 0\\
+    \sqrt{25 - m} < 5\\
+    25 - m < 25\\
+    m > 0
+\end{gather*}
+Czyli na pewno \(m \in \open{0}{25}\). Wyznaczmy teraz pierwiastki właściwego równania:
+\begin{gather*}
+    x^2 = t_1\\
+    x_2 = -\sqrt{t_1}\\
+    x_3 = \sqrt{t_1}\\
+    x^2 = t_2\\
+    x_1 = -\sqrt{t_2}\\
+    x_4 = \sqrt{t_2}\\
+    x_1 < x_2 < x_3 < x_4
+\end{gather*}
+Jeśli ciąg \(\sequence{x_1, x_2, x_3, x_4}\) (równoważnie \(\sequence{x_4, x_3, x_2, x_1}\)) ma być arytmetyczny, to muszą zachodzić warunki
+\begin{gather*}
+    2x_2 = x_3 + x_1\\
+    2x_3 = x_2 + x_4
+\end{gather*}
+Najpierw skupmy się na pierwszym z~warunków:
+\begin{gather*}
+    -2\sqrt{t_1} = \sqrt{t_1} - \sqrt{t_2}\\
+    -3\sqrt{t_1} = -\sqrt{t_2}\\
+    9t_1 = t_2\\
+    9\pars{5 - \sqrt{25 - m}} = 5 + \sqrt{25 - m}\\
+    45 - 9\sqrt{25 - m} = 5 + \sqrt{25 - m}\\
+    10\sqrt{25 - m} = 40\\
+    \sqrt{25 - m} = 4\\
+    25 - m = 16\\
+    m = 9 \in \open{0}{25}
+\end{gather*}
+Teraz rozważmy drugi warunek:
+\begin{gather*}
+    2\sqrt{t_1} = -\sqrt{t_1} + \sqrt{t_2}\\
+    3\sqrt{t_1} = \sqrt{t_2}
+\end{gather*}
+Jest to ta sama sytuacja, co poprzednio, czyli \(m = 9 \in \open{0}{25}\). Zatem jedynym rozwiązaniem jest
+\begin{equation*}
+    m = 9
+\end{equation*}
+\subsubsection*{Zadanie~11.}
+Oznaczmy ten ciąg przez \(\sequence{x_n}\), a~jego iloraz przez \(q\). Skoro \(a_2 = a_1q = 4\), to \(q \neq 0\) i~\(x_1 = \frac{4}{q} \neq 0\). Ponieważ szereg zbudowany z~tego ciągu jest zbieżny, to \(\abs{q} < 1\). Ciąg kwadratów wyrazów ciągu geometrycznego również jest ciągiem geometrycznym \(\sequence{p_n}\) o~pierwszym wyrazie \(p_1 = x_1^2 = \frac{16}{q^2}\) i~ilorazie \(\hat{q} = q^2\). Skorzystajmy teraz ze wzoru na sumę szeregu geometrycznego:
+\begin{gather*}
+    \series x_n = \frac{x_1}{1 - q} = \frac{\frac{4}{q}}{1 - q}\\
+    \series p_n = \frac{p_1}{1 - \hat{q}} = \frac{\frac{16}{q^2}}{1 - q^2}
+\end{gather*}
+Z~treści zadania wiemy, że
+\begin{gather*}
+    \frac{\series p_n}{\series x_n} = \frac{16}{3}\\
+    \frac{\frac{\frac{16}{q^2}}{1 - q^2}}{\frac{\frac{4}{q}}{1 - q}} = \frac{16}{3}\\
+    \frac{\frac{4}{q}}{1 + q} = \frac{16}{3}\\
+    \frac{1}{q^2 + q} = \frac{4}{3}\\
+    4q^2 + 4q - 3 = 0\\
+    \Delta = 4^2 - 4 \cdot 4 \cdot \pars{-3} = 16 + 48 = 64\\
+    \sqrt{\Delta} = \sqrt{64} = 8\\
+    q_1 = \frac{-4 + \sqrt{\Delta}}{2 \cdot 4} = \frac{-4 + 8}{8} = \frac{1}{2} \in \open{-1}{1}\\
+    q_2 = \frac{-4 - \sqrt{\Delta}}{2 \cdot 4} = \frac{-4 - 8}{8} = -\frac{3}{2} \not\in \open{-1}{1}
+\end{gather*}
+Zatem \(q = \frac{1}{2}\), więc \(x_1 = \frac{4}{q} = \frac{4}{\frac{1}{2}} = 8\). Zatem ciąg geometryczny jest zdefiniowany następująco:
+\begin{gather*}
+    \begin{cases}
+        x_1 = 8\\
+        q = \frac{1}{2}
+    \end{cases}\\
+    x_n = 8 \cdot \pars{\frac{1}{2}}^{n - 1} = 2^3 \cdot 2^{1 - n}\\
+    x_n = 2^{4 - n}
+\end{gather*}
+\subsubsection*{Zadanie~12.}
+Wiemy, że ciąg \(\sequence{a, b, c}\) jest geometryczny oraz jego suma wynosi \(39\). Ponadto wiemy, że ciąg \(\sequence{a - 1, b - 4, c - 19}\) jest arytmetyczny. Zapiszmy te fakty w~postaci układu równań:
+\begin{equation*}
+    \begin{cases}
+        b^2 = ac\\
+        a + b + c = 39\\
+        2b - 8 = a + c - 20 \implies a - 2b + c = 12
+    \end{cases}
+\end{equation*}
+Możemy odjąć stronami trzecie równanie od drugiego:
+\begin{gather*}
+    a + b + c - a + 2b - c = 39 - 12\\
+    3b = 27\\
+    b = 9
+\end{gather*}
+Po wstawieniu tego do drugiego równania mamy
+\begin{gather*}
+    a + 9 + c = 39\\
+    a + c = 30\\
+    c = 30 - a
+\end{gather*}
+To możemy podstawić do pierwszego równania:
+\begin{gather*}
+    9^2 = a\pars{30 - a}\\
+    81 = 30a - a^2\\
+    a^2 - 30a + 81 = 0\\
+    \Delta = \pars{-30}^2 - 4 \cdot 1 \cdot 81 = 900 - 324 = 576\\
+    \sqrt{\Delta} = \sqrt{576} = 24
+\end{gather*}
+Mamy zatem
+\begin{align*}
+    a = \frac{-\pars{-30} - \sqrt{\Delta}}{2 \cdot 1} = \frac{30 - 24}{2} = \frac{6}{2} = 3
+    &\wlor
+    a = \frac{-\pars{-30} + \sqrt{\Delta}}{2 \cdot 1} = \frac{30 + 24}{2} = 27\\
+    c = 30 - a = 30 - 3 = 27
+    &\wlor
+    c = 30 - a = 30 - 27 = 3
+\end{align*}

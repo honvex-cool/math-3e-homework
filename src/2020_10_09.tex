@@ -1,0 +1,216 @@
+\subsubsection*{Zadanie~2.16.}
+\begin{gather*}
+    f\pars{x} = \begin{cases}
+        \frac{x^2 - 4}{x - 2} & \iff x \neq 2\\
+        a \iff x = 2
+    \end{cases}\\
+    D_f = \real\\
+    x_0 = 2
+\end{gather*}
+Ponieważ funkcja jest określona na całym przedziale liczb rzeczywistych, to jest ona ciągła w~punkcie \(x_0\), gdy istnieje w~nim granica funkcji i~jest ona równa wartości funkcji w~tym punkcie. Sprawdźmy to zatem:
+\begin{equation*}
+    \limit[x \to 2^\pm] f\pars{x}
+        = \limit[x \to 2^\pm] \frac{x^2 - 4}{x - 2}
+        = \indeterminate{\frac{0}{0}}
+        = \limit[x \to 2^\pm] \frac{\cancel{\pars{x - 2}}\pars{x + 2}}{\cancel{x - 2}}
+        = \limit[x \to 2^\pm] \pars{x + 2}
+        = 4
+\end{equation*}
+Istnieją obustronne granice i~są one sobie równe, zatem granica w~punkcie \(x_0 = 2\) istnieje. Zatem wystarczy, aby \(f\pars{x_0} = f\pars{2} = a\) było równe \(\limit[x \to 2] f\pars{x}\). Zatem jedyną wartością parametru jest \(a = 4\).
+\subsubsection*{Zadanie~3.2.}
+\begin{equation*}
+    f\colon \real \mapsto \real \text{ jest ciągła}
+\end{equation*}
+Funkcja jest ograniczona, czyli istnieją takie \(v_\ell, v_h \in \real\), że
+\begin{equation*}
+    \forall x \in \real\colon v_\ell \leq f\pars{x} \leq v_h
+\end{equation*}
+Oznacza to, w~szczególności, że
+\begin{gather*}
+    \exists x_\ell \in \real\colon f\pars{x_\ell} > x_\ell\\
+    \wland\\
+    \exists x_h \in \real\colon f\pars{x_h} < x_h
+\end{gather*}
+Zdefiniujmy funkcję
+\begin{equation*}
+    g\pars{x} = x - f\pars{x}
+\end{equation*}
+Wiemy, że funkcja \(x\) jest ciągła oraz z~założenia mamy ciągłość funkcji \(f\pars{x}\). Zatem funkcja \(g\pars{x}\) jako różnica funkcji ciągłych sama jest ciągła. Zauważmy, że
+\begin{gather*}
+    g\pars{x_\ell} = x_\ell - f\pars{x_\ell} < 0\\
+    g\pars{x_h} = x_h - f\pars{x_h} > 0
+\end{gather*}
+Skoro funkcja ciągła \(h\pars{x} = x - f\pars{x}\) przyjmuje w~swojej dziedzinie wartości różnych znaków, to na mocy własności Darboux musi mieć miejsce zerowe.
+\qed
+\subsubsection*{Zadanie~3.3.}
+Dziedziną podanego w~zadaniu wyrażenia jest \(\real\).
+\begin{equation*}
+    f\pars{x} = x^3 + 3x - 2
+        = x^3 - 3x^2 + 3x - 1 - 1 + 3x^2
+        = \pars{x - 1}^3 - 1 + 3x^2
+\end{equation*}
+Wykres funkcji \(\pars{x - 1}^3 - 1\) jest translacją wykresu funkcji rosnącej \(x^3\) o~wektor \(\brackets{1; -1}\), co nie zmienia kształtu wykresu, czyli nadal jest on rosnący. Do funkcji tej dodajemy zawsze nieujemne wyrażenie \(3x^2\), więc nie zaburza ono rośnięcia funkcji. Zatem wyrażenie dane w~zadaniu jest funkcją rosnącą w~\(\real\). Jest również funkcją ciągłą, ponieważ jest sumą funkcji ciągłych \(x^3, 3x, -2\). Zauważmy, że
+\begin{gather*}
+    f\pars{0} = -2 < 0\\
+    f\pars{1} = 3 + 1 - 2 = 2 > 0
+\end{gather*}
+Skoro funkcja ciągła przyjmuje na końcach przedziału \(\closed{0}{1}\) wartości różnych znaków, to na mocy twierdzenia Darboux ma w~tym przedziale pierwiastek. Ponieważ jest rosnąca, to jest to jej jedyny pierwiastek.
+\qed
+\subsubsection*{Wyznaczenie pierwiastka równania z~zadania~3.3. z~dokładnością do \(\frac{1}{1000}\)}
+Pierwiastek będziemy oznaczać przez \(x_0\), a~jego aproksymację przez \(\xi\). Widzimy, że \(x_0 \neq 0 \land x_0 \neq 1\). Wyznaczymy \(\xi\) metodą bisekcji:
+\begin{proofcases}
+    \item pierwiastek jest w~przedziale \(\open{0}{1}\), więc \(\xi = 0\) z~dokładnością do \(1 > \abs{\xi - x_0}\)
+    \item dzielimy przedział na pół:
+        \begin{equation*}
+            f\pars{\frac{0 + 1}{2}}
+                = f\pars{\frac{1}{2}}
+                = \pars{\frac{1}{2}}^3 + 3 \cdot \frac{1}{2} - 2
+                = \frac{1}{8} + \frac{3}{2} - 2 = -\frac{3}{8}
+                < 0
+        \end{equation*}
+        \(\xi = \frac{1}{2}\) z~dokładnością do \(\frac{1}{2} > \abs{\xi - x_0}\)
+    \item dzielimy przedział na pół:
+        \begin{equation*}
+            f\pars{\frac{\frac{1}{2} + 1}{2}}
+                = f\pars{\frac{3}{4}}
+                = \pars{\frac{3}{4}}^3 + 3 \cdot \frac{3}{4} - 2
+                = \frac{27}{64} + \frac{144}{64} - 2
+                = \frac{43}{64}
+                > 0
+        \end{equation*}
+        \(\xi = \frac{3}{4}\) z~dokładnością do \(\frac{1}{4} > \abs{\xi - x_0}\)
+    \item dzielimy przedział na pół:
+        \begin{equation*}
+            f\pars{\frac{\frac{1}{2} + \frac{3}{4}}{2}}
+                = f\pars{\frac{5}{8}}
+                = \pars{\frac{5}{8}}^3 + 3 \cdot \frac{5}{8} - 2
+                = \frac{125}{512} + \frac{960}{512} - 2
+                = \frac{1085}{512} - 2
+                = \frac{61}{512}
+                > 0
+        \end{equation*}
+        \(\xi = \frac{5}{8}\) z~dokładnością do \(\frac{1}{8} > \abs{\xi - x_0}\)
+    \item dzielimy przedział na pół:
+        \begin{equation*}
+            f\pars{\frac{\frac{1}{2} + \frac{5}{8}}{2}}
+                = f\pars{\frac{9}{16}}
+                = \pars{\frac{9}{16}}^3 + 3 \cdot \frac{9}{16} - 2
+                = \frac{729}{4096} + \frac{6912}{4096} - 2
+                = \frac{7641}{4096} - 2
+                = -\frac{551}{4096}
+                < 0
+        \end{equation*}
+        \(\xi = \frac{9}{16}\) z~dokładnością do \(\frac{1}{16} > \abs{\xi - x_0}\)
+    \item dzielimy przedział na pół:
+        \begin{equation}
+            f\pars{\frac{\frac{9}{16} + \frac{5}{8}}{2}}
+                = f\pars{\frac{19}{32}}
+                = \pars{\frac{19}{32}}^3 + 3 \cdot \frac{19}{32} - 2
+                = \frac{6859}{32768} + \frac{58368}{32768} - 2
+                = \frac{65227}{32768} - 2
+                = -\frac{309}{32768}
+                < 0
+        \end{equation}
+        \(\xi = \frac{19}{32}\) z~dokładnością do \(\frac{1}{32} > \abs{\xi - x_0}\)
+    \item dzielimy przedział na pół:
+        \begin{equation*}
+            f\pars{\frac{\frac{19}{32} + \frac{5}{8}}{2}}
+                = f\pars{\frac{39}{64}}
+                = \pars{\frac{39}{64}}^3 + 3 \cdot \frac{39}{64} - 2
+                = \frac{59319}{262144} + \frac{479232}{262144} - 2
+                = \frac{538551}{262144} - 2
+                = \frac{14263}{262144}
+                > 0
+        \end{equation*}
+        \(\xi = \frac{39}{64}\) z~dokładnością do \(\frac{1}{64} > \abs{\xi - x_0}\)
+    \item dzielimy przedział na pół:
+        \begin{equation*}
+            f\pars{\frac{\frac{19}{32} + \frac{39}{64}}{2}}
+                = f\pars{\frac{77}{128}}
+                = \pars{\frac{77}{128}}^3 + 3 \cdot \frac{77}{128} - 2
+                = \frac{456533}{2097152} + \frac{3784704}{2097152} - 2
+                = \frac{4241237}{2097152} - 2
+                = \frac{46933}{2097152}
+                > 0
+        \end{equation*}
+        \(\xi = \frac{77}{128}\) z~dokładnością do \(\frac{1}{128} > \abs{\xi - x_0}\)
+    \item dzielimy przedział na pół:
+        \begin{equation*}
+            f\pars{\frac{\frac{19}{32} + \frac{77}{128}}{2}}
+                = f\pars{\frac{153}{256}}
+                = \pars{\frac{153}{256}}^3 + 3 \cdot \frac{153}{256} - 2
+                = \frac{3581577}{16777216} + \frac{30081024}{16777216} - 2
+                = \frac{33662601}{16777216} - 2
+                = \frac{108169}{16777216}
+                > 0
+        \end{equation*}
+        \(\xi = \frac{153}{256}\) z~dokładnością do \(\frac{1}{256} > \abs{\xi - x_0}\)
+    \item dzielimy przedział na pół:
+        \begin{equation*}
+            f\pars{\frac{\frac{19}{32} + \frac{153}{256}}{2}}
+                = f\pars{\frac{305}{512}}
+                = \pars{\frac{305}{512}}^3 + 3 \cdot \frac{305}{512} - 2
+                = \frac{28372625}{134217728} + \frac{239861760}{134217728} - 2
+                = \frac{268234385}{134217728} - 2
+                = -\frac{201071}{134217728}
+                < 0
+        \end{equation*}
+        \(\xi = \frac{305}{512}\) z~dokładnością do \(\frac{1}{512} > \abs{\xi - x_0}\)
+    \item dzielimy przedział na pół:
+        \begin{equation*}
+            \begin{split}
+                f\pars{\frac{\frac{305}{512} + \frac{153}{256}}{2}}
+                    &= f\pars{\frac{611}{1024}}
+                    = \pars{\frac{611}{1024}}^3 + 3 \cdot \frac{611}{1024} - 2
+                    = \frac{228099131}{1073741824} + \frac{1922039808}{1073741824} - 2\\
+                    &= \frac{2150138939}{1073741824} - 2
+                    = \frac{2655291}{1073741824}
+                    > 0
+            \end{split}
+        \end{equation*}
+        \(\xi = \frac{611}{1024}\) z~dokładnością do \(\frac{1}{1000} > \frac{1}{1024} > \abs{\xi - x_0}\)
+\end{proofcases}
+\subsubsection*{Zadanie~3.6.}
+\begin{gather*}
+    f\colon \real \mapsto \real \text{ jest ciągła}\\
+    g\colon \real \mapsto \real \text{ jest ciągła}\\
+    \tag{\(\ast\)} \forall x \in \real\colon f\pars{g\pars{x}} = g\pars{f\pars{x}} \label{2020_10_09:3_6:equality}\\
+    \tag{\(\star\)} \forall x \in \real\colon f\pars{x} \neq g\pars{x} \label{2020_10_09:3_6:inequality}
+\end{gather*}
+Chcemy pokazać, że z tych założeń wynika
+\begin{equation*}
+    \tag{T} \forall x \in \real\colon f\pars{f\pars{x}} \neq g\pars{g\pars{x}} \label{2020_10_09:3_6:theorem}
+\end{equation*}
+Przeprowadzimy dowód nie wprost. Załóżmy zatem, że
+\begin{equation*}
+    \tag{!} \exists x_0 \in \real\colon f\pars{f\pars{x_0}} = g\pars{g\pars{x_0}} \label{2020_10_09:3_6:assumption}
+\end{equation*}
+Dokonajmy podstawienia \(a = f\pars{x_0}\) i~\(b = g\pars{x_0}\). Na mocy (\ref{2020_10_09:3_6:equality}) mamy
+\begin{equation*}
+    f\pars{b} = g\pars{a}
+\end{equation*}
+Natomiast równość z~(\ref{2020_10_09:3_6:assumption}) zapisujemy inaczej jako
+\begin{equation*}
+    f\pars{a} = g\pars{b}
+\end{equation*}
+Jeśli \(a = b\), to natychmiast mamy sprzeczność z~(\ref{2020_10_09:3_6:inequality}), więc teza (\ref{2020_10_09:3_6:theorem}) musi być prawdziwa. Załóżmy że \(a < b\) (w~odwrotnej konfiguracji dowód przebiega analogicznie). Jeśli \(f\pars{a} = f\pars{b}\), to \(f\pars{a} = g\pars{a}\), bo wiemy że \(f\pars{b} = g\pars{a}\). Od razu dostajemy zatem sprzeczność z~(\ref{2020_10_09:3_6:inequality}), czyli teza (\ref{2020_10_09:3_6:theorem}) musi być prawdziwa. Przyjmijmy zatem bez straty ogólności, że \(f\pars{a} < f\pars{b}\), (w~odwrotnej konfiguracji dowód przebiega analogicznie). Mamy zatem
+\begin{equation*}
+    f\pars{a} = g\pars{b} < f\pars{b} = g\pars{a}
+\end{equation*}
+Rozważmy teraz funkcję
+\begin{equation*}
+    h\pars{x} = f\pars{x} - g\pars{x}
+\end{equation*}
+Jest ona różnicą funkcji z~założenia ciągłych w~\(\real\), więc sama jest ciągła w~\(\real\). Zbadajmy jej zachowanie w~przedziale \(\closed{a}{b}\).
+\begin{gather*}
+    h\pars{a} = f\pars{a} - g\pars{a} < 0\\
+    h\pars{b} = f\pars{b} - g\pars{b} > 0
+\end{gather*}
+Skoro ciągła funkcja \(h\pars{x}\) przyjmuje na końcach przedziału wartości wartości różnych znaków, to na mocy twierdzenia Darboux musi mieć w~tym przedziale miejsce zerowe. Oznacza to, że istnieje w~tym przedziale takie \(x_0\), że
+\begin{gather*}
+    h\pars{x_0} = 0\\
+    f\pars{x_0} - g\pars{x_0} = 0\\
+    f\pars{x_0} = g\pars{x_0}
+\end{gather*}
+Doszliśmy zatem do sprzeczności z~(\ref{2020_10_09:3_6:inequality}), więc ostatecznie teza (\ref{2020_10_09:3_6:theorem}) musi być prawdziwa.
+\qed

@@ -1,0 +1,136 @@
+\subsection*{Ciągłość funkcji}
+\subsubsection*{Zadanie~1.}
+\begin{gather*}
+    f\pars{x} = \begin{cases}
+        \frac{\sqrt{1 + x} - 1}{x} & \iff x \neq 0\\
+        a & \iff x = 0
+    \end{cases}\\
+    D_f = \real
+\end{gather*}
+Funkcja \(\frac{\sqrt{1 + x} - 1}{x}\) jest ciągła w~swojej dziedzinie \(\real \setminus \set{0}\), ponieważ jest ilorazem funkcji ciągłych. Jedyne problemy z~ciągłością funkcji \(f\) mogą się więc pojawić w~punkcie \(x_0 = 0\). Aby tam funkcja również była ciągła, musi istnieć granica w~tym punkcie (czyli muszą istnieć dwie równe granice jednostronne) i~być równa wartości funkcji \(f\) w~tym punkcie:
+\begin{gather*}
+    \limit[x \to 0^\pm] f\pars{x}
+        = \limit[x \to 0^\pm] \frac{\sqrt{1 + x} - 1}{x}
+        = \indeterminate{\frac{0}{0}}
+        = \limit[x \to 0^\pm] \frac{1 + x - 1}{x\pars{\sqrt{1 + x} + 1}}
+        = \limit[x \to 0^\pm] \frac{\cancel{x}}{\cancel{x}\pars{\sqrt{1 + x} + 1}}
+        = \frac{1}{\sqrt{1 + 0} + 1}
+        = \frac{1}{2}\\
+    \limit[x \to 0] f\pars{x}
+        = \frac{1}{2}
+\end{gather*}
+Granica istnieje. Skoro ma być równa wartości funkcji \(f\pars{0} = a\), to jedyną spełniającą warunki wartością parametru \(a\) jest \(a = \frac{1}{2}\).
+\subsubsection*{Zadanie~2.}
+\begin{gather*}
+    f\pars{x} = \begin{cases}
+        \frac{\sin ax}{x} & \iff x < 0\\
+        \frac{x^3 - 1}{x^2 + x - 2} = \frac{x^3 - 1}{\pars{x + 2}\pars{x - 1}} & \iff 0 \leq x < 1\\
+        c & \iff x = 1\\
+        \frac{x^2 + \pars{b - 1}x - b}{x - 1} & \iff x > 1
+    \end{cases}\\
+    D_f = \real
+\end{gather*}
+Funkcja \(\frac{\sin ax}{x}\) jest ciągła w~swojej dziedzinie \(\real \setminus \set{0}\), więc w~szczególności jest ciągła we wszystkich punktach \(x_0 < 0\). Podobnie funkcja \(\frac{x^3 - 1}{x^2 + x - 2}\) jest ciągła w~swojej dziedzinie \(\real \setminus \set{-2, 1}\), więc w~szczególności jest ciągła we wszystkich punktach \(x_0 \in \leftclosed{0}{1}\). Dalej funkcja \(\frac{x^2 + \pars{b - 1}x - b}{x - 1}\) jest ciągła w~swojej dziedzinie \(\real \setminus \set{1}\), więc w~szczególności jest ciągła we wszystkich punktach \(x_0 > 1\). Widzimy więc, że ewentualne braki ciągłości mogą występować w~punktach ,,sklejenia'' czterech funkcji składowych, czyli dla \(x_0 \in \set{0, 1}\). Rozważmy zatem ciągłość w~punkcie \(x_0 = 0\). Aby funkcja \(f\) była w~tym punkcie ciągła, muszą istnieć obydwie granice jednostronne i~być równe sobie oraz \(f\pars{0}\). Zbadajmy to zatem:
+\begin{gather*}
+    \limit[x \to 0^-] f\pars{x}
+        = \limit[x \to 0^-] \frac{\sin ax}{x}
+        = a\\
+    \limit[x \to 0^+] f\pars{x}
+        = \limit[x \to 0^+] \frac{x^3 - 1}{x^2 + x - 2}
+        = \frac{1}{2}\\
+    f\pars{0}
+        = \frac{0^3 - 1}{0^2 + x - 2}
+        = \frac{1}{2}
+\end{gather*}
+Zatem \(a = \frac{1}{2}\). Zbadajmy teraz ciągłość w~puncie \(x_0 = 1\). Aby funkcja \(f\) była w~tym punkcie ciągła, muszą istnieć obydwie granice jednostronne i~być równe sobie oraz \(f\pars{1}\). Zatem:
+\begin{gather*}
+    \limit[x \to 1^-] f\pars{x}
+        = \limit[x \to 1^-] \frac{x^3 - 1}{x^2 + x - 2}
+        = \indeterminate{\frac{0}{0}}
+        = \limit[x \to 1^-] \frac{\cancel{\pars{x - 1}}\pars{x^2 + x + 1}}{\pars{x + 2}\cancel{\pars{x - 1}}}
+        = \frac{1 + 1 + 1}{1 + 2}
+        = 1
+\end{gather*}
+Zatem granica prawostronna i~wartość \(f\pars{1}\) muszą być równe \(1\):
+\begin{gather*}
+    \limit[x \to 1^+] f\pars{x}
+        = \limit[x \to 1^+] \frac{x^2 + \pars{b - 1}x - b}{x - 1}
+        = \indeterminate{\frac{0}{0}}
+        = \limit[x \to 1^+] \frac{\cancel{\pars{x - 1}}\pars{x + b}}{\cancel{x - 1}}
+        = \limit[x \to 1^+] \pars{x + b}
+        = b + 1\\
+    f\pars{1} = c
+\end{gather*}
+Zatem \(b + 1 = c = 1\), czyli \(b = 0\) i~\(c = 1\).
+\begin{equation*}
+    \begin{cases}
+        a = \frac{1}{2}\\
+        b = 0\\
+        c = 1
+    \end{cases}
+\end{equation*}
+\subsubsection*{Zadanie~3.}
+\begin{gather*}
+    f\pars{x} = \limit \frac{n^x - n^{-x}}{n^x + n^{-x}}\\
+    D_f = \real
+\end{gather*}
+\begin{proofcases}
+    \item \(x < 0\)
+        \begin{equation*}
+            f\pars{x}
+                = \limit \frac{n^x - n^{-x}}{n^x + n^{-x}}
+                = \limit \frac{\cancel{n^{-x}}\pars{\converges{0}{n^{2x}} - 1}}{\cancel{n^{-x}}\pars{\converges*{0}{n^{2x}} + 1}}
+                = -1
+        \end{equation*}
+    \item \(x = 0\)
+        \begin{equation*}
+            f\pars{x}
+                = \limit \frac{n^x - n^{-x}}{n^x + n^{-x}}
+                = \limit \frac{n^0 - n^0}{n^0 + n^0}
+                = \frac{1 - 1}{1 + 1}
+                = 0
+        \end{equation*}
+    \item \(x > 0\)
+        \begin{equation*}
+            f\pars{x}
+                = \limit \frac{n^x - n^{-x}}{n^x + n^{-x}}
+                = \limit \frac{\cancel{n^x}\pars{1 - \converges{0}{\frac{1}{n^{2x}}}}}{\cancel{n^x}\pars{1 + \converges*{0}{\frac{1}{n^{2x}}}}}
+                = 1
+        \end{equation*}
+\end{proofcases}
+Dla \(x < 0\) i~\(x > 0\) funkcja jest funkcją stałą, więc jest ciągła. W~punkcie \(x_0 = 0\) nie jest ciągła, ponieważ
+\begin{equation*}
+    \limit[x \to 0^-] f\pars{x} = - 1 \neq f\pars{0} \neq 1 = \limit[x \to 0^+] f\pars{x}
+\end{equation*}
+\subsubsection*{Zadanie~4.}
+Załóżmy do dowodu nie wprost, że funkcja przyjmuje wartość \(v\) skończenie wiele razy. Niech \(x_0 \in \leftclosed{\alpha}{+\infty}\) będzie największym argumentem, dla którego funkcja \(f\) przyjmuje wartość \(v\). W~przedziale \(\closed{\alpha}{x_0}\) istnieją lokalne maksimum (będziemy je oznaczać \(\gamma\)) i~minimum (będziemy je oznaczać \(\mu\)), ponieważ jest on domknięty. Zatem dla argumentów większych od \(x_0\) funkcja musi przyjmować zarówno wartości większe od \(\gamma\) jak i~mniejsze od \(\mu\), gdyż inaczej byłaby ograniczona od góry przez \(\gamma\), a~od dołu przez \(\mu\).
+
+Jeśli \(\mu \leq v \leq \gamma\), to funkcja na pewno przyjmie wartość \(v\) jeszcze raz dla pewnego \(x_1 > x_0\), ponieważ jest ciągła i~na mocy własności Darboux od przyjęcia wartości mniejszej od \(\mu\) do przyjęcia wartości większej od \(\gamma\) (być może w~odwrotnej kolejności) musi przyjąć wszystie pośrednie, czyli w~szczególności \(v\). To prowadzi jednak do sprzeczności z~założeniem, że \(x_0\) jest największym argumentem, dla którego funkcja przyjmuje wartość \(v\). 
+
+Jeśli \(v < \mu \leq \gamma\), to funkcja, aby nie być ograniczoną od dołu przez \(v\), musi dla argumentów większych od \(x_0\) przyjąć wartości mniejsze od \(v\). Ale skoro musi też przyjąć wartości większe od \(\gamma\), to musi dla argumentów większych od \(x_0\) przyjąć argumenty większe od \(v\). Jednak ponownie otrzymujemy sprzeczność z~założeniem, że \(x_0\) jest największe, ponieważ na mocy własności Darboux ta funkcja ciągła musi pomiędzy przyjęciem wartości większych od \(v\) i~mniejszych od \(v\) przyjąć po raz kolejny wartość \(v\) dla pewnego \(x_2 > x_0\).
+
+Dowód w~przypadku \(\mu \leq \gamma < v\) przebiega dokładnie analogicznie (słowo honoru).
+\qed
+\subsubsection*{Zadanie~5.}
+Przykładem takiej funkcji jest
+\begin{gather*}
+    f\pars{x} = \begin{cases}
+        \sin\frac{1}{x} & \iff x < 0\\
+        0 & \iff x \geq 0
+    \end{cases}\\
+    D_f = \real
+\end{gather*}
+Jest ona nieciągła w~punkcie \(x_0 = 0\), ponieważ \(\limit[x \to 0^-] f\pars{x} = \limit[x \to 0^-] \sin\frac{1}{x}\) nie istnieje. Ma jednak własność Darboux. Natychmiast zauważamy, że istotnie jest tak w~przedziałach \(\open{-\infty}{0}\) i~\(\leftclosed{0}{+\infty}\), ponieważ w~tych przedziałach funkcja jest ciągła. Jedyna wątpliwość może dotyczyć przedziałów w~postaci \(\closed{a}{b}\), gdzie \(a < 0\) i~\(b \geq 0\). Aby funkcja posiadała własność Darboux, dla każdej wartości \(v\) pomiędzy \(0\) a~\(\sin\frac{1}{a}\) istnieje takie \(c\), że \(f\pars{c} = v\). Dzięki okresowości funkcji \(\sin\alpha\), możemy wybrać takie \(x\), że \(\alpha = \frac{1}{x}\) będzie na moduł mniejsze, a~\(\sin\alpha\) przyjmie taką wartość jak chcemy.
+\subsubsection*{Zadanie~7.}
+Przyjmijmy, że do tablicy podeszło \(s\) uczniów. Pisząc \(f_n\), będę miał na myśli postać wielomianu po podejściu do tablicy. postać wielomianu widoczną na tablicy \(n\) uczniów. Zdefiniujmy
+\begin{gather*}
+    v\pars{i} \coloneqq f_i\pars{-1}\\
+    v\pars{0} = \pars{-1}^2 + 3 \cdot \pars{-1} + 15 = 13\\
+    v\pars{s} = \pars{-1}^2 + 13 \cdot \pars{-1} + 5 = -7
+\end{gather*}
+Zauważmy, że gdy \(i\) zmienia się o~\(1\), wartość funkcji \(v\) także zmienia się o~\(1\):
+\begin{itemize}
+    \item uczeń zmienia o~\(1\) wyraz wolny, czyli po prostu dodaje lub odejmuje \(1\)
+    \item uczeń zmienia o~\(1\) współczynnik przy \(x\), czyli efektywnie dodaje lub odejmuje \(-1\)
+\end{itemize}
+Skoro tak, to funkcja ta posiada dyskretną własność Darboux, czyli jeśli osiąga wartość dodatnią \(f\pars{0}\) i~ujemną \(f\pars{s}\), dla pewnego całkowitego \(x\), \(0 < x < s\) zachodzi \(v\pars{x} = 0 = f_x\pars{-1}\), czyli \(-1 \in \integer\) jest pierwiastkiem tego wielomianu. Zatem drugim pierwiastkiem jest również liczba całkowita, bo wyraz wolny jest całkowity, a~współczynnik przy \(x^2\) jest równy \(1\). Oznacza to, że rzeczywście, w~pewnym momencie na tablicy był napisany trójmian o~pierwiastkach całkowitych.

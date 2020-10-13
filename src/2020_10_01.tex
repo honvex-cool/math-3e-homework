@@ -1,0 +1,59 @@
+\subsection*{Zestaw~IX (zadania otwarte)}
+\subsubsection*{Zadanie~1.}
+\begin{gather*}
+    f\pars{x} = \log_{\frac{1}{2}}\pars{x^3 + 3x}\\
+    x^3 + 3x > 0
+\end{gather*}
+Chcemy uzasadnić, że gdy \(0 < a < b\), to
+\begin{gather*}
+    f\pars{a} > f\pars{b}\\
+    f\pars{a} - f\pars{b} > 0\\
+    \log_{\frac{1}{2}}\pars{a^3 + 3a} - \log_{\frac{1}{2}}\pars{b^3 + 3b} > 0\\
+    \log_{\frac{1}{2}}\pars{\frac{a^3 + 3a}{b^3 + 3b}} > 0
+\end{gather*}
+Skoro \(0 < a < b\), to \(a^3 + 3a < b^3 + 3b\), więc \(\frac{a^3 + 3b}{b^3 + 3b} < 1\). Skoro podstawa logarytmu jest mniejsza od \(1\) oraz liczba logarytmowana jest mniejsza od \(1\), to wartość logarytmu jest dodatnia. Zatem ostatnia nierówność jest prawdziwa, a~wszystkie przejścia były równoważne, więc teza również jest prawdziwa.
+\qed
+\subsubsection*{Zadanie~2.}
+\begin{gather*}
+    f\pars{x} = \pars{\frac{1}{2}}^{\abs{x}} = \frac{1}{2^{\abs{x}}}\\
+    g\pars{x} = x^2 + 1
+\end{gather*}
+Chcemy pokazać, że dla każdego \(x \in \real\) zachodzi \(f\pars{x} \leq g\pars{x}\). Rozważmy dwa przypadki:
+\begin{proofcases}
+    \item \(x \in \rightclosed{-\infty}{-1} \cup \leftclosed{1}{+\infty}\). Wtedy \(\abs{x} \geq 1\), czyli \(2^{\abs{x}} \geq 2^1 = 2\). Zatem \(f\pars{x} = \frac{1}{2^{\abs{x}}} \leq \frac{1}{2} < 1\). Natomiast \(g\pars{x} = x^2 + 1\) jest na pewno większe lub równe \(1\), ponieważ kwadrat liczby rzeczywistej jest nieujemny. Zatem \(f\pars{x} \leq g\pars{x}\).
+    \item \(x \in \open{-1}{1}\). Wtedy \(0 < \abs{x} < 1\), zatem \(1 \leq 2^{\abs{x}} \leq 2\), czyli \(f\pars{x} = \frac{1}{2^{\abs{x}}} \leq \frac{1}{2^1} < 1\). Natomiast \(g\pars{x} = x^2 + 1\) jest na pewno większe lub równe \(1\), ponieważ kwadrat liczby rzeczywistej jest nieujemny. Zatem \(f\pars{x} \leq g\pars{x}\).
+\end{proofcases}
+Rozważenie tych dwóch przypadków pokrywa wszystkie liczby rzeczywiste, zatem kończy rozwiązanie zadania.
+\qed
+\subsubsection*{Zadanie~3.}
+\subsubsection*{Zadanie~1.10.5.}
+\begin{enumerate}[label={\alph*)}]
+    \item
+        \begin{gather*}
+            a = \limit[x \to \pm\infty] \frac{f\pars{x}}{x}
+                = \limit[x \to \pm\infty] \frac{\frac{x^2 - 2x + 3}{x - 2}}{x}
+                = \limit[x \to \pm\infty] \frac{x - 2 + \frac{3}{x}}{x - 2}
+                = \limit[x \to \pm\infty] \pars{1 + \converges{0}{\frac{3}{x^2 - 2}}}
+                = 1\\
+            b = \limit[x \to \pm\infty] \pars{f\pars{x} - ax}
+                = \limit[x \to \pm\infty] \pars{\frac{x^2 - 2x + 3}{x - 2} - x}
+                = \limit[x \to \pm\infty] \frac{x^2 - 2x + 3 - x^2 + 2x}{x - 2}
+                = \limit[x \to \pm\infty] \frac{3}{x - 2}
+                = 0
+        \end{gather*}
+        Zatem równanie asymptoty tej funkcji to
+        \begin{equation*}
+            y = x
+        \end{equation*}
+    \item
+        \begin{gather*}
+            a = \limit[x \to \pm\infty] \frac{f\pars{x}}{x}
+                = \limit[x \to \pm\infty] \frac{\frac{x^3 - 2x + 3}{\pars{2x - 4}^2}}{x}
+                = \limit[x \to \pm\infty] \frac{x^2 - 2 + \frac{3}{x}}{4x^2 - 16x + 16}
+                = \limit[x \to \pm\infty] \frac{\cancel{x^2}\pars{1 - \converges{0}{\frac{2}{x^2}} + \converges{0}{\frac{3}{x^3}}}}{\cancel{x^2}\pars{4 - \converges*{0}{\frac{16}{x}} + \converges*{0}{\frac{16}{x^2}}}}
+                = \frac{1}{4}\\
+            b = \limit[x \to \pm\infty] \pars{f\pars{x} - ax}
+                = \limit[x \to \pm\infty] \pars{\frac{x^3 - 2x + 3}{\pars{2x - 4}^2} - \frac{1}{4}x}
+                = \limit[x \to \pm\infty] \frac{x^3 - 2x + 3 - x\pars{2x - 4}^2}{\pars{2x - 4}^2}
+        \end{gather*}
+\end{enumerate}

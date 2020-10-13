@@ -1,0 +1,232 @@
+\subsection*{Zadania powtórzeniowe z~granic funkcji}
+\subsubsection*{Zadanie~24.}
+\begin{equation*}
+    \begin{split}
+        \limit[x \to +\infty] \sqrt{x + 3} \cdot \sin\pars{\sqrt{x + 2} - \sqrt{x + 1}}
+            &= \limit[x \to +\infty] \sqrt{x + 3} \cdot \sin\pars{\frac{x + 2 - x - 1}{\sqrt{x + 2} + \sqrt{x + 1}}}\\
+            &= \limit[x \to +\infty] \sqrt{x + 3} \cdot \sin\pars{\frac{1}{\sqrt{x + 2} + \sqrt{x + 1}}}\\
+            &= \limit[x \to +\infty] \frac{\sin\pars{\frac{1}{\sqrt{x + 2} + \sqrt{x + 1}}}}{\frac{1}{\sqrt{x + 3}}}\\
+            &= \limit[x \to +\infty] \frac{\sin\pars{\frac{1}{\sqrt{x + 2} + \sqrt{x + 1}}}}{\frac{1}{\sqrt{x + 2} + \sqrt{x + 1}} \cdot \frac{\sqrt{x + 2} + \sqrt{x + 1}}{\sqrt{x + 3}}}\\
+            &= \pars{\limit[x \to +\infty] \frac{\sin\pars{\frac{1}{\sqrt{x + 2} + \sqrt{x + 1}}}}{\frac{1}{\sqrt{x + 2} + \sqrt{x + 1}}}} \cdot \pars{\limit[x \to +\infty] \frac{1}{\frac{\sqrt{x + 2} + \sqrt{x + 1}}{\sqrt{x + 3}}}}\\
+            &= \pars{\limit[x \to +\infty] \frac{\sin\pars{\frac{1}{\sqrt{x + 2} + \sqrt{x + 1}}}}{\frac{1}{\sqrt{x + 2} + \sqrt{x + 1}}}} \cdot \pars{\limit[x \to +\infty] \frac{\sqrt{x + 2} + \sqrt{x + 1}}{\sqrt{x + 3}}}\\
+            &= \pars{\limit[x \to +\infty] \frac{\sin\pars{\frac{1}{\sqrt{x + 2} + \sqrt{x + 1}}}}{\frac{1}{\sqrt{x + 2} + \sqrt{x + 1}}}} \cdot \pars{\limit[x \to +\infty] \frac{\cancel{\sqrt{x}}\pars{\sqrt{1 + \converges{0}{\frac{2}{x}}} + \sqrt{1 + \converges{0}{\frac{1}{x}}}}}{\cancel{\sqrt{x}} \cdot \sqrt{1 + \converges*{0}{\frac{3}{x}}}}}\\
+            &= 1 \cdot \frac{1}{2}
+            = \frac{1}{2}
+    \end{split}
+\end{equation*}
+\subsubsection*{Zadanie~25.}
+\begin{equation*}
+    \begin{split}
+        \limit[x \to +\infty] \sin\pars{\sqrt{x + 2}} \cdot \sin\pars{\sqrt{x + 1} - \sqrt{x}}
+            &= \limit[x \to +\infty] \sin\pars{\sqrt{x + 2}} \cdot \sin\pars{\frac{x + 1 - x}{\sqrt{x + 1} + \sqrt{x}}}\\
+            &= \limit[x \to +\infty] \sin\pars{\sqrt{x + 2}} \cdot \sin\pars{\frac{1}{\sqrt{x + 1} + \sqrt{x}}}\\
+            &= \limit[x \to +\infty] \frac{\sin\pars{\frac{1}{\sqrt{x + 1} + \sqrt{x}}}}{\frac{1}{\sqrt{x + 1} + \sqrt{x}}} \cdot \frac{1}{\sqrt{x + 1} + \sqrt{x}} \cdot \sin\pars{\sqrt{x + 2}}\\
+            &= \pars{\limit[x \to +\infty] \frac{\sin\pars{\converges{0}{\frac{1}{\sqrt{x + 1} + \sqrt{x}}}}}{\converges*{0}{\frac{1}{\sqrt{x + 1} + \sqrt{x}}}}} \cdot \pars{\limit[x \to +\infty] \frac{\overbrace{\sin\pars{\sqrt{x + 2}}}^{\text{ograniczone}}}{\converges*{+\infty}{\sqrt{x + 1} + \sqrt{x}}}}\\
+            &= 1 \cdot 0
+            = 0
+    \end{split}
+\end{equation*}
+\subsubsection*{Zadanie~30.}
+\begin{equation*}
+    \begin{split}
+        \limit[x \to +\infty] \pars{\frac{2x + 3}{2x + 1}}^{x + 1}
+            &= \limit[x \to +\infty] \pars{1 + \frac{2}{2x + 1}}^{x + 1}
+            = \limit[x \to +\infty] \pars{1 + \frac{1}{x + \frac{1}{2}}}^{\pars{x + \frac{1}{2}} \cdot \frac{x + 1}{x + \frac{1}{2}}}\\
+            &= \limit[x \to +\infty] \pars{\pars{1 + \frac{1}{\converges*{+\infty}{x + \frac{1}{2}}}}^{\converges{+\infty}{x + \frac{1}{2}}}}^{\converges{1}{\frac{x + 1}{x + \frac{1}{2}}}} = e
+    \end{split}
+\end{equation*}
+\subsubsection*{Zadanie~14.}
+\begin{equation*}
+    \begin{split}
+        \limit[x \to +\infty] \frac{x\sqrt{x^2 + 1}}{\sqrt{x + 1}}\pars{\sqrt{x^3 + 1} - \sqrt{x^3 - 1}}
+            &= \limit[x \to +\infty] \frac{x\sqrt{x^2 + 1}\pars{x^3 + 1 - x^3 + 1}}{\sqrt{x + 1}\pars{\sqrt{x^3 + 1} + \sqrt{x^3 - 1}}}\\
+            &= \limit[x \to +\infty] \frac{2x\sqrt{x^2 + 1}}{\sqrt{x} \cdot \sqrt{1 + \frac{1}{x}} \cdot x\sqrt{x} \pars{\sqrt{1 + \frac{1}{x^3}} + \sqrt{1 - \frac{1}{x^3}}}}\\
+            &= \limit[x \to +\infty] \frac{2x \cdot x\sqrt{1 + \frac{1}{x^2}}}{x\sqrt{x} \cdot \sqrt{x} \cdot \sqrt{1 + \frac{1}{x}}\pars{\sqrt{1 + \frac{1}{x^3}} + \sqrt{1 - \frac{1}{x^3}}}}\\
+            &= \limit[x \to +\infty] \frac{2\cancel{x^2}\sqrt{1 + \frac{1}{x^2}}}{\cancel{x^2} \cdot \sqrt{1 + \frac{1}{x}}\pars{\sqrt{1 + \frac{1}{x^3}} + \sqrt{1 - \frac{1}{x^3}}}}\\
+            &= \limit[x \to +\infty] \frac{2\sqrt{1 + \converges{0}{\frac{1}{x^2}}}}{\sqrt{1 + \converges*{0}{\frac{1}{x}}}\pars{\sqrt{1 + \converges*{0}{\frac{1}{x^3}}} + \sqrt{1 + \converges*{0}{\frac{1}{x^3}}}}}
+            = \frac{2 \cdot 1}{1 \cdot \pars{1 + 1}}
+            = 1
+    \end{split}
+\end{equation*}
+\subsubsection*{Zadanie~42.}
+\begin{itemize}
+    \item[e)]
+        \begin{gather*}\\
+            f\pars{x} = x\sin\pars{\frac{1}{x}} - \cos\pars{\frac{1}{x}}\\
+            \limit[x \to 0^-] f\pars{x}
+                = \limit[x \to 0^-] \pars{\converges{0^-}{x}\overbrace{\sin\pars{\frac{1}{x}}}^{\text{ograniczone}} - \cos\pars{\converges{-\infty}{\frac{1}{x}}}}
+                = 0 - \limit[x \to 0^-] \cos\pars{\converges{-\infty}{\frac{1}{x}}} \text{ nie istnieje}\\
+            \limit[x \to 0^+] f\pars{x}
+                = \limit[x \to 0^+] \pars{\converges{0^+}{x}\overbrace{\sin\pars{\frac{1}{x}}}^{\text{ograniczone}} - \cos\pars{\converges{+\infty}{\frac{1}{x}}}}
+                = 0 - \limit[x \to 0^+] \cos\pars{\converges{+\infty}{\frac{1}{x}}} \text{ nie istnieje}\\
+        \end{gather*}
+        Nie istnieje żadna z~granic jednostronnych, więc \(\limit[x \to 0] \pars{x\sin\pars{\frac{1}{x}} - \cos\pars{\frac{1}{x}}}\) nie istnieje.
+    \item[f)]
+        \begin{gather*}
+            f\pars{x} = \frac{\cos^2 x - \sin^2 x}{\abs{x - \frac{\pi}{2}}}\\
+            \limit[x \to \frac{\pi}{2}^-] f\pars{x}
+                = \limit[x \to \frac{\pi}{2}^-] \frac{\cos^2 x - \sin^2 x}{\abs{x - \frac{\pi}{2}}}
+                = \limit[x \to \frac{\pi}{2}^-] \frac{\pars{0^+}^2 - 1^2}{\abs{0^-}}
+                = \frac{-1}{0^+}
+                = -\infty\\
+            \limit[x \to \frac{\pi}{2}^+] f\pars{x}
+                = \limit[x \to \frac{\pi}{2}^+] \frac{\cos^2 x - \sin^2 x}{\abs{x - \frac{\pi}{2}}}
+                = \limit[x \to \frac{\pi}{2}^+] \frac{\pars{0^-}^2 - 1^2}{\abs{0^+}}
+                = \frac{-1}{0^+}
+                = -\infty
+        \end{gather*}
+        Ponieważ granice jednostronne w~punkcie \(x_0 = \frac{\pi}{2}\) istnieją i~są równe, to
+        \begin{equation*}
+            \limit[x \to \frac{\pi}{2}] = -\infty
+        \end{equation*}
+\end{itemize}
+\subsubsection*{Zadanie~5.32.}
+\begin{equation*}
+    \begin{split}
+        \limit[x \to 0] \frac{\sqrt[3]{1 + mx} - 1}{x}
+            &= \indeterminate{\frac{0}{0}}
+            = \limit[x \to 0] \frac{1 + mx - 1}{x\pars{\sqrt[3]{\pars{1 + mx}^2} + \sqrt[3]{1 + mx} + 1}}
+            = \limit[x \to 0] \frac{m\cancel{x}}{\cancel{x}\pars{\sqrt[3]{\pars{1 + mx}^2} + \sqrt[3]{1 + mx} + 1}}\\
+            &= \frac{m}{\sqrt[3]{\pars{1 + m \cdot 0}^2} + \sqrt[3]{1 + m \cdot 0} + 1}
+            = \frac{m}{\sqrt[3]{1} + \sqrt[3]{1} + 1}
+            = \frac{m}{3}
+    \end{split}
+\end{equation*}
+\subsubsection*{Zadanie~5.33.}
+Zakładamy, że \(n \in \natural\).
+\begin{equation*}
+    \begin{split}
+        \limit[x \to 1] \frac{x^n - 1}{x - 1}
+            &= \indeterminate{\frac{0}{0}}
+            = \limit[x \to 1] \frac{\cancel{\pars{x - 1}}\pars{x^{n - 1} + x^{n - 2} + \ldots + x^2 + x + 1}}{\cancel{x - 1}}
+            = \limit[x \to 1] \pars{x^{n - 1} + x^{n - 2} + \ldots + x^2 + x + 1}\\
+            &= \underbrace{1 + 1 + \ldots + 1 + 1 + 1}_{n \text{ składników}}
+            = n
+    \end{split}
+\end{equation*}
+\subsubsection*{Zadanie~5.64.}
+\begin{equation*}
+    \limit[x \to 0] \frac{x}{a} \cdot \floor{\frac{b}{x}}
+\end{equation*}
+Dla każdego \(x \neq 0\) zachodzi
+\begin{equation*}
+    \frac{b}{x} - 1 \leq \floor{\frac{b}{x}} \leq \frac{b}{x} + 1
+\end{equation*}
+Jeśli \(\frac{x}{a}\) jest dodatnie, to
+\begin{equation*}
+    \frac{x}{a} \cdot \pars{\frac{b}{x} - 1} \leq \frac{x}{a} \cdot \floor{\frac{b}{x}} \leq \frac{x}{a} \cdot \pars{\frac{b}{x} + 1}
+\end{equation*}
+Natomiast jeśli \(\frac{x}{a}\) jest ujemne, to
+\begin{equation*}
+    \frac{x}{a} \cdot \pars{\frac{b}{x} - 1} \geq \frac{x}{a} \cdot \floor{\frac{b}{x}} \geq \frac{x}{a} \cdot \pars{\frac{b}{x} + 1}
+\end{equation*}
+W~każdym z~tych przypadków \(\frac{x}{a} \cdot \floor{\frac{b}{x}}\) jest ograniczone przez \(\frac{x}{a} \cdot \pars{\frac{b}{x} - 1}\) i~\(\frac{x}{a} \cdot \pars{\frac{b}{x} + 1}\). Zauważmy, że
+\begin{gather*}
+    \limit[x \to 0] \frac{x}{a} \cdot \pars{\frac{b}{x} - 1}
+        = \limit[x \to 0] \frac{\cancel{x}}{a} \cdot \frac{b - x}{\cancel{x}}
+        = \limit[x \to 0] \frac{b - x}{a}
+        = \frac{b}{a}\\
+    \limit[x \to 0] \frac{x}{a} \cdot \pars{\frac{b}{x} + 1}
+        = \limit[x \to 0] \frac{\cancel{x}}{a} \cdot \frac{b + x}{\cancel{x}}
+        = \limit[x \to 0] \frac{b + x}{a}
+        = \frac{b}{a}
+\end{gather*}
+Zatem na mocy twierdzenia o~trzech funkcjach
+\begin{equation*}
+    \limit[x \to 0] \frac{x}{a} \cdot \floor{\frac{b}{x}} = \frac{b}{a}
+\end{equation*}
+\subsubsection*{Zadanie~5.65.}
+\begin{gather*}
+    \frac{b}{x} \cdot \floor{\frac{x}{a}}\\
+    a \neq 0
+\end{gather*}
+\begin{proofcases}
+    \item \(b = 0\)
+        \begin{equation*}
+            \limit[x \to 0^\pm] \frac{b}{x} \cdot \floor{\frac{x}{a}} = 0
+        \end{equation*}
+    \item \(b \neq 0\)
+        \begin{proofcases}
+            \item \(b > 0\)
+                \begin{proofcases}
+                    \item \(a > 0\)
+                        \begin{gather*}
+                            \limit[x \to 0^-] \frac{b}{x} \cdot \floor{\frac{x}{a}}
+                                = \limit[x \to 0^-] \frac{b}{x} \cdot \floor{0^-}
+                                = \frac{b}{0^-} \cdot \pars{-1}
+                                = \frac{b}{0^+}
+                                = +\infty\\
+                            \limit[x \to 0^+] \frac{b}{x} \cdot \floor{\frac{x}{a}}
+                                = \limit[x \to 0^+] \frac{b}{x} \cdot \floor{0^+}
+                                = \limit[x \to 0^+] \frac{b}{x} \cdot 0
+                                = 0
+                        \end{gather*}
+                    \item \(a < 0\)
+                        \begin{gather*}
+                            \limit[x \to 0^-] \frac{b}{x} \cdot \floor{\frac{x}{a}}
+                                = \limit[x \to 0^-] \frac{b}{x} \cdot \floor{0^+}
+                                = \limit[x \to 0^-] \frac{b}{x} \cdot 0
+                                = 0\\
+                            \limit[x \to 0^+] \frac{b}{x} \cdot \floor{\frac{x}{a}}
+                                = \limit[x \to 0^+] \frac{b}{x} \cdot \floor{0^-}
+                                = \frac{b}{0^+} \cdot \pars{-1}
+                                = -\infty
+                        \end{gather*}
+                \end{proofcases}
+            \item \(b < 0\)
+                \begin{proofcases}
+                    \item \(a > 0\)
+                        \begin{gather*}
+                            \limit[x \to 0^-] \frac{b}{x} \cdot \floor{\frac{x}{a}}
+                                = \limit[x \to 0^-] \frac{b}{x} \cdot \floor{0^-}
+                                = \frac{b}{0^-} \cdot \pars{-1}
+                                = \frac{b}{0^+}
+                                = -\infty\\
+                            \limit[x \to 0^+] \frac{b}{x} \cdot \floor{\frac{x}{a}}
+                                = \limit[x \to 0^+] \frac{b}{x} \cdot \floor{0^+}
+                                = \limit[x \to 0^+] \frac{b}{x} \cdot 0
+                                = 0
+                        \end{gather*}
+                    \item \(a < 0\)
+                        \begin{gather*}
+                            \limit[x \to 0^-] \frac{b}{x} \cdot \floor{\frac{x}{a}}
+                                = \limit[x \to 0^-] \frac{b}{x} \cdot \floor{0^+}
+                                = \limit[x \to 0^-] \frac{b}{x} \cdot 0
+                                = 0\\
+                            \limit[x \to 0^+] \frac{b}{x} \cdot \floor{\frac{x}{a}}
+                                = \limit[x \to 0^+] \frac{b}{x} \cdot \floor{0^-}
+                                = \frac{b}{0^+} \cdot \pars{-1}
+                                = +\infty
+                        \end{gather*}
+                \end{proofcases}
+        \end{proofcases}
+\end{proofcases}
+\subsubsection*{Zadanie~5.66.}
+\begin{gather*}
+    \limit[x \to 0^-] \frac{e^{\frac{1}{x}} - 1}{e^{\frac{1}{x}} + 1}
+        = \limit[x \to 0^-] \parens{\frac{e^{\frac{1}{x}} + 1}{e^{\frac{1}{x}} + 1} - \frac{2}{e^{\frac{1}{x}} + 1}}
+        = 1 - \limit[x \to 0^-] \frac{2}{e^{\frac{1}{x}} + 1}
+        = \frac{2}{e^{-\infty} + 1}
+        = \frac{2}{0 + 1}
+        = 2\\
+    \limit[x \to 0^+] \frac{e^{\frac{1}{x}} - 1}{e^{\frac{1}{x}} + 1}
+        = \limit[x \to 0^+] \parens{\frac{e^{\frac{1}{x}} + 1}{e^{\frac{1}{x}} + 1} - \frac{2}{e^{\frac{1}{x}} + 1}}
+        = 1 - \limit[x \to 0^+] \frac{2}{e^{\frac{1}{x}} + 1}
+        = \frac{2}{e^{\infty} + 1}
+        = \frac{2}{+\infty + 1}
+        = \frac{2}{+\infty}
+        = 0
+\end{gather*}
+Granice jednostronne istnieją, ale są różne, więc \(\limit[x \to 0] \frac{e^{\frac{1}{x}} - 1}{e^{\frac{1}{x}} + 1}\) nie istnieje.
+\subsubsection*{Zadanie~5.67.}
+\begin{gather*}
+    \limit[x \to 1^-] e^{\frac{1}{1 - x^3}}
+        = e^{\frac{1}{0+}}
+        = e^{+\infty}
+        = +\infty \text{, bo } e > 1\\
+    \limit[x \to 1^+] e^{\frac{1}{1 - x^3}}
+        = e^{\frac{1}{0^-}}
+        = e^{-\infty}
+        = 0
+\end{gather*}
+Granice jednostronne w~punkcie \(x_0 = 1\) różnią się, więc \(\limit[x \to 1] e^{\frac{1}{1 - x^3}}\) nie istnieje.
