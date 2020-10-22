@@ -1,0 +1,142 @@
+\subsubsection*{Zestaw~XIII (trygonometria)}
+\subsubsection*{Zadanie~1.}
+\begin{gather*}
+    \begin{split}
+        \sin47\degree + \cos47\degree + \sin43\degree + \cos43\degree
+            &= \sin47\degree + \sin43\degree + \sin43\degree + \sin47\degree
+            = 2\pars{\sin47\degree + \sin43\degree}\\
+            &= 2\pars{2\sin\frac{47\degree + 43\degree}{2}\cos\frac{47\degree - 43\degree}{2}}
+            = 2 \cdot 2\sin\frac{90\degree}{2}\cos\frac{4\degree}{2}\\
+            &= 2 \cdot 2\sin45\degree\cos2\degree
+            = 2 \cdot 2 \cdot \frac{\sqrt{2}}{2} \cdot \cos2\degree
+            = 2\cos2\degree
+    \end{split}
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~2.}
+\begin{gather*}
+    \frac{\cos2\alpha}{1 + \sin2\alpha} = \frac{1 - \tan\alpha}{1 + \tan\alpha}\\
+    1 + \sin\alpha \neq 0 \implies \sin\alpha \neq -1 \implies \alpha \neq 2k\pi + \frac{3\pi}{2}, k \in \integer\\
+    1 + \tan\alpha \neq 0 \implies \tan\alpha \neq -1 \implies \alpha \neq k\pi + \frac{3\pi}{4}, k \in \integer\\
+    R
+        = \frac{1 - \tan\alpha}{1 + \tan\alpha} = \frac{1 - \frac{\sin\alpha}{\cos\alpha}}{1 + \frac{\sin\alpha}{\cos\alpha}}
+        = \frac{\frac{\cos\alpha - \sin\alpha}{\cancel{\cos x}}}{\frac{\cos\alpha + \sin\alpha}{\cancel{\cos\alpha}}}
+        = \frac{\cos\alpha - \sin\alpha}{\cos\alpha + \sin\alpha}\\
+    L
+        = \frac{\cos2\alpha}{1 + \sin2\alpha} = \frac{\cos^2\alpha - \sin^2\alpha}{\sin^2\alpha + \cos^2\alpha + 2\sin\alpha\cos\alpha}
+        = \frac{\cancel{\pars{\cos\alpha + \sin\alpha}}\pars{\cos\alpha - \sin\alpha}}{\pars{\cos\alpha + \sin\alpha}^{\cancel{2}}}
+        = \frac{\cos\alpha - \sin\alpha}{\cos\alpha + \sin\alpha}\\
+    L = R
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~3.}
+\begin{gather*}
+    x, y \in \open{0}{\frac{\pi}{2}}\\
+    \sin x + \sin y = \frac{4}{3} \wland \cos x + \cos y = \frac{2\sqrt{5}}{3}\\
+    2\sin\frac{x + y}{2}\cos\frac{x - y}{2} = \frac{4}{3} \wland -2\sin\frac{x + y}{2}\sin\frac{x - y}{2} = \frac{2\sqrt{5}}{3}\\
+    \sin\frac{x + y}{2}\cos\frac{x - y}{2} = \frac{2}{3} \wland \sin\frac{x + y}{2}\sin\frac{x - y}{2} = \frac{-\sqrt{5}}{3}\\
+    \frac{-\sqrt{5}}{2}\sin\frac{x + y}{2}\cos\frac{x - y}{2} = \sin\frac{x + y}{2}\sin\frac{x - y}{2}
+\end{gather*}
+Skoro \(x, y \in \open{0}{\frac{\pi}{2}}\), to również \(\frac{x + y}{2} \in \open{0}{\frac{\pi}{2}}\). W~tym przedziale funkcja \(\sin\alpha\) nie ma miejsc zerowych, więc \(\sin\frac{x + y}{2} \neq 0\). Zatem możemy podzielić obustronnie równanie przez \(\sin\frac{x + y}{2}\):
+\begin{gather*}
+    \frac{-\sqrt{5}}{2}\cos\frac{x - y}{2} = \sin\frac{x - y}{2}
+\end{gather*}
+\subsubsection*{Zadanie~4.}
+\begin{gather*}
+    \begin{split}
+        \frac{1}{\sin10\degree} - \frac{\sqrt{3}}{\cos10\degree}
+            &= \frac{\cos10\degree - \sqrt{3}\sin10\degree}{\sin10\degree\cos10\degree}
+            = \frac{2\pars{\frac{1}{2}\cos10\degree - \frac{\sqrt{3}}{2}\sin10\degree}}{\sin10\degree\cos10\degree}
+            = \frac{2\pars{\sin30\degree - \cos30\degree\sin10\degree}}{\sin10\degree\cos10\degree}\\
+            &= \frac{2\sin\pars{30\degree - 10\degree}}{\sin10\degree\cos10\degree}
+            = \frac{2\cancel{\sin20\degree}}{\frac{1}{2}\cancel{\sin20\degree}}
+            = \frac{2}{\frac{1}{2}}
+            = 4
+    \end{split}
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~5.}
+\begin{gather*}
+    \sin2x = 2\cos x\\
+    2\sin x\cos x = 2\cos x\\
+    2\sin x\\
+    \sin x\cos x = \cos x
+\end{gather*}
+Jeśli \(\cos x = 0\), to równanie jest spełnione i~mamy rozwiązania \(x = k\pi + \frac{\pi}{2}\), gdzie \(k \in \integer\). Jeśli \(\cos x \neq 0\), to dzielimy obustronnie przez \(\cos x\):
+\begin{gather*}
+    \sin x = 1\\
+    x = 2k\pi + \frac{\pi}{2} \qquad k \in \integer
+\end{gather*}
+Zatem po połączeniu wyników wnioskujemy, że \(x = k\pi + \frac{\pi}{2}\), gdzie \(k \in \integer\). Rozwiążmy teraz nierówność
+\begin{gather*}
+    x^2 - 4x - 32 < 0\\
+    \pars{x + 4}\pars{x - 8} < 0\\
+    \upparabola{-4}{8}\\
+    x \in \open{-4}{8}
+\end{gather*}
+Poszukajmy teraz rozwiązań równania \(\sin2x = 2\cos x\) zawierających się w~otrzymanym przedziale (będziemy używać szacowania \(3{,}14 < \pi < 3{,}15\)):
+\begin{gather*}
+    -2k\pi + \frac{\pi}{2} < -6{,}28 + 1{,}6 = -4{,}68 < -4 \text{ (za małe)}\\
+    -4 = -3{,}15 + 1{,15} < -\pi + \frac{\pi}{2} = -\frac{\pi}{2} < 0\\
+    -4 < 0 < \frac{\pi}{2} < 3 < 8\\
+    -4 < 0 < \frac{3\pi}{2} < 6 < 8\\
+    -4 < 0 < \frac{5\pi}{2} < 6{,}3 + 1{,}6 = 7{,}9 < 8\\
+    \frac{7\pi}{2} > 9 \text{ (za duże)}
+\end{gather*}
+Zatem rozwiązania znajdujące się w~rozważanym przedziale to \(x \in \set{-\frac{\pi}{2}, \frac{\pi}{2}, \frac{3\pi}{2}, \frac{5\pi}{2}}\).
+\subsubsection*{Zadanie~6.}
+\begin{equation*}
+    \cos\alpha = \frac{m^2 - 4m - 4}{m^2 + 1} \qquad \alpha \in \open{0}{\frac{\pi}{3}}
+\end{equation*}
+Funkcja \(\cos\alpha\) przyjmuje w~tym przedziale wszystkie wartości z~przedziału \(\open{\frac{1}{2}}{1}\) (bo \(\cos0 = 1\), \(\cos\frac{\pi}{3} = \frac{1}{2}\), funkcja jest w~tym przedziale malejąca i~jest ciągła). Zatem
+\begin{gather*}
+    \frac{1}{2} < \frac{m^2 - 4m - 4}{m^2 + 1} < 1\\
+    \frac{m^2 - 4m - 4}{m^2 + 1} > \frac{1}{2}
+\end{gather*}
+Liczby \(2\) i~\(m^2 + 1\) są dodatnie, więc możemy pomnożyć nierówność stronami przez mianowniki:
+\begin{gather*}
+    2m^2 - 8m - 8 > m^2 + 1\\
+    m^2 - 8m - 9 > 0\\
+    \pars{m + 1}\pars{m - 9} > 0\\
+    \upparabola{-1}{9}\\
+    x \in \open{-\infty}{-1} \cup \open{9}{+\infty}
+\end{gather*}
+Rozwiążmy drugą część nierówności:
+\begin{equation*}
+    \frac{m^2 - 4m - 4}{m^2 + 1} < 1
+\end{equation*}
+Możemy pomnożyć przez \(m^2 + 1\), ponieważ to wyrażenie jest zawsze dodatnie:
+\begin{gather*}
+    m^2 - 4m - 4 < m^2 + 1\\
+    -4m - 5 < 0\\
+    4m + 5 > 0\\
+    x \in \open{-\frac{5}{4}}{+\infty}
+\end{gather*}
+Po wyznaczeniu części wspólnej uzyskanych przedziałów otrzymujemy
+\begin{equation*}
+    x \in \open{-\frac{5}{4}}{-1} \cup \open{9}{+\infty}
+\end{equation*}
+\subsubsection*{Zadanie~7.}
+\begin{gather*}
+    f\pars{x} = 3\sin^2x - 6\sin x + 1 \qquad x \in \real\\
+    t \coloneqq \sin x \qquad t \in \closed{-1}{1}\\
+    3t^2 - 6t + 1
+\end{gather*}
+Jest to funkcja kwadratowa zmiennej \(t\). Ramiona paraboli są skierowane w~stronę rosnących współrzędnych \(y\), więc istnieje globalna wartość najmniejsza przyjmowana dla \(t = \frac{-b}{2a} = \frac{-\pars{-6}}{2 \cdot 3} = 1 \in \closed{-1}{1}\) i~wynosząca \(\frac{-\Delta}{4a} = \frac{-\pars{\pars{-6}^2 - 4 \cdot 3 \cdot 1}}{4 \cdot 3} = \frac{-\pars{36 - 12}}{12} = -2\). Globalna wartość największa nie istnieje, ale wartość na drugiej krawędzi przedziału domkniętego, czyli \(t = -1\), jest wartością największą w~tym przedziale:
+\begin{equation*}
+    3 \cdot \pars{-1}^2 - 6 \cdot \pars{-1} + 1 = 10
+\end{equation*}
+Zatem wartość najmniejsza funkcji \(f\) jest przyjmowana dla \(\sin x = t_\p{min} = 1\), czyli \(x = 2k\pi + \frac{\pi}{2}\), gdzie \(k \in \integer\), i~wynosi ona \(-2\). Natomiast wartość największa jest przyjmowana dla \(\sin x = t_\p{max} = -1\), czyli \(x = 2k\pi + \frac{3\pi}{2}\), gdzie \(k \in \integer\), i~wynosi ona \(10\).
+\subsubsection*{Zadanie~9.}
+\begin{gather*}
+    \cos\frac{\pi}{3} \cdot \sin4x - \sin\frac{\pi}{3} \cdot \cos4x = \frac{\sqrt{3}}{2} \qquad x \in \real\\
+    \sin\pars{4x - \frac{\pi}{3}} = \frac{\sqrt{3}}{2} = \sin\frac{\pi}{3}\\
+    4x - \frac{\pi}{3} = 2k\pi + \frac{\pi}{3} \wlor 4x - \frac{\pi}{3} = 2k\pi + \frac{2\pi}{3} \qquad k \in \integer\\
+    4x = 2k\pi + \frac{2\pi}{3} \wlor 4x = 3k\pi \qquad k \in \integer\\
+    x = \frac{k\pi}{2} + \frac{\pi}{6} \wlor x = \frac{3k\pi}{4} \qquad k \in \integer
+\end{gather*}
+Najmniejsze rozwiązanie dodatnie otrzymamy, podstawiając \(k = 0\) lub \(k = 1\) (ponieważ zauważamy, że dla \(k < 0\) rozwiązania są ujemne):
+\begin{gather*}
+    x = \frac{\pi}{6} \lor x = \frac{3\pi}{4}
+\end{gather*}
+Pierwsze z~tych rozwiązań jest mniejsze. Zatem najmniejsze rozwiązanie dodatnie to \(x = \frac{\pi}{6}\).

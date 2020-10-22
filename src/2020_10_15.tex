@@ -1,2 +1,291 @@
-\subsection*{Zestaw~XII (zadania otwarte) --- Trygonometria}
+\subsection*{Zestaw~XII (zadania otwarte) --- Trygonometria\qquad{}13~października~2020}
 \subsubsection*{Zadanie~1.}
+\begin{equation*}
+    \frac{8\sin5\degree \cos5\degree \cos10\degree}{\cos70\degree}
+        = \frac{4\sin10\degree \cos10\degree}{\cos70\degree}
+        = \frac{2\sin20\degree}{\cos70\degree}
+        = \frac{2\cos\pars{90\degree - 20\degree}}{\cos70\degree}
+        = \frac{2\cancel{\cos70\degree}}{\cancel{\cos70\degree}}
+        = 2 \in \integer
+\end{equation*}
+\qed
+\subsubsection*{Zadanie~2.}
+Skoro \(\alpha\) i~\(\beta\) są kątami ostrymi pewnego trójkąta prostokątnego, to
+\begin{gather*}
+    \alpha + \beta = 90\degree\\
+    2\alpha + 2\beta = 180\degree
+\end{gather*}
+Rozpiszmy strony równości:
+\begin{gather*}
+    L = \sin2\alpha + \sin2\beta = \sin2\alpha + \sin\pars{180\degree - 2\alpha} = \sin2\alpha + \sin2\alpha = 2\sin2\alpha\\
+    R = 4\sin\alpha\sin\beta = 4\sin\alpha\sin\pars{90\degree - \alpha} = 4\sin\alpha\cos\alpha = 2\sin2\alpha\\
+    L = R
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~3.}
+Tożsamość:
+\begin{gather*}
+    \sin^6\alpha + \cos^6\alpha + 3\sin^2\alpha\cos^2\alpha = 1\\
+    \alpha \in \real
+\end{gather*}
+Dowód
+\begin{equation*}
+    \begin{split}
+        L
+            &= \sin^6\alpha + \cos^6\alpha + 3\sin^2\alpha\cos^2\alpha
+            = \pars{\sin^2\alpha + \cos^2\alpha}\pars{\sin^4\alpha - \sin^2\alpha\cos^2\alpha + \cos^4\alpha} + 3\sin^2\alpha\cos^2\alpha\\
+            &= 1 \cdot \pars{\sin^4\alpha - \sin^2\alpha\cos^2\alpha + \cos^4\alpha} + 3\sin^2\alpha\cos^2\alpha
+            = \sin^4\alpha + 2\sin^2\alpha\cos^2\alpha + \cos^4\alpha\\
+            &= \pars{\sin^2\alpha + \cos^2\alpha}
+            = 1^2
+            = 1
+    \end{split}
+\end{equation*}
+\qed
+\subsubsection*{Zadanie~4.}
+\begin{gather*}
+    x \in \closed{6\pi}{9\pi}\\
+    2\cos^2x = 3\sin x\\
+    2\pars{1 - \sin^2x} = 3\sin x\\
+    2\sin^2x + 3\sin x - 2 = 0\\
+    t \coloneqq \sin x\\
+    2t^2 + 3t - 2 = 0\\
+    \Delta = 3^2 - 4 \cdot 2 \cdot \pars{-2} = 25\\
+    \sqrt{\Delta} = \sqrt{25} = 5\\
+    t_1 = \frac{-3 - \sqrt{\Delta}}{2 \cdot 2} = \frac{-3 - 5}{4} = -2\\
+    t_2 = \frac{-3 + \sqrt{\Delta}}{2 \cdot 2} = \frac{-3 + 5}{4} = \frac{1}{2}\\
+    \sin x = \frac{1}{2} \wlor \sin x = -2 \text{ (niemożliwe)}\\
+    \sin x = \frac{1}{2} = \sin\frac{\pi}{6}\\
+    x = 2k\pi + \frac{\pi}{6} \wlor x = 2k\pi + \frac{5\pi}{6} \text{,\qquad{} gdzie \(k \in \integer\)}
+\end{gather*}
+Zatem po uwzględnieniu dziedziny naszego równania mamy
+\begin{equation*}
+    x \in \set{\frac{37\pi}{6}, \frac{41\pi}{6}, \frac{49\pi}{6}, \frac{53\pi}{6}}
+\end{equation*}
+\subsubsection*{Zadanie~5.}
+\begin{equation*}
+    \frac{2\sin27\degree\cos27\degree}{\sin28\degree\sin64\degree + \cos28\degree\sin26\degree}
+        = \frac{\sin\pars{2 \cdot 27\degree}}{\sin28\degree\cos26\degree + \cos28\degree\sin26\degree}
+        = \frac{\sin57\degree}{\sin\pars{28\degree + 26\degree}}
+        = \frac{\sin57\degree}{\sin57\degree}
+        = 1
+\end{equation*}
+\subsubsection*{Zadanie~6.}
+\begin{gather*}
+    x \in \closed{0}{2\pi}\\
+    \sin x \cdot \abs{\cos x} = \frac{\sqrt{3}}{4}
+\end{gather*}
+\begin{mathfigure*}
+    \drawcoordsystem{0, -1.5}{7*pi/3, 1.5};
+    \draw[thick, samples=50, domain=0:7*pi/3, RoyalBlue] plot (\x, {cos(\x r)});
+    \draw[densely dotted] (pi, 0) node[above]{\(\pi\)} -- (pi, -1);
+    \drawvmark{pi, 0};
+    \draw[densely dotted] (2*pi, 0) node[below]{\(2\pi\)} -- (2*pi, 1);
+    \drawvmark{2*pi, 0};
+    \fillpoint*{pi/2, 0}[\(\frac{\pi}{2}\)][below];
+    \fillpoint*{3*pi/2, 0}[\(\frac{3\pi}{2}\)][below];
+\end{mathfigure*}
+Rozważmy dwa przypadki znaku wyrażenia \(\cos x\):
+\begin{proofcases}
+    \item \(\cos x \geq 0 \implies x \in \closed{0}{\frac{\pi}{2}} \cup \closed{\frac{3\pi}{2}}{2\pi}\)
+        \begin{gather*}
+            \sin x \cdot \cos x = \frac{\sqrt{3}}{4}\\
+            \frac{1}{2}\sin2x = \frac{\sqrt{3}}{4}\\
+            \sin2x = \frac{\sqrt{3}}{2}\\
+            t \coloneqq 2x, \qquad t \in \closed{0}{\pi} \cup \closed{3\pi}{4\pi}\\
+            \sin t = \sin\frac{\pi}{3}\\
+            t = \frac{\pi}{3} \wlor t = \frac{2\pi}{3}\\
+            x = \frac{\pi}{6} \wlor x = \frac{\pi}{3}
+        \end{gather*}
+    \item \(\cos x < 0 \implies x \in \open{\frac{\pi}{2}}{\frac{3\pi}{2}}\)
+        \begin{gather*}
+            \sin x \cdot \pars{-\cos x} = \frac{\sqrt{3}}{4}\\
+            -\frac{1}{2}\sin2x = \frac{\sqrt{3}}{4}\\
+            \sin2x = -\frac{\sqrt{3}}{2}\\
+            t \coloneqq 2x, \qquad t \in \open{\pi}{3\pi}\\
+            \sin t = \sin\frac{4\pi}{3}\\
+            t = \frac{4\pi}{3} \wlor t = \frac{5\pi}{3}\\
+            x = \frac{2\pi}{3} \wlor x = \frac{5\pi}{6}
+        \end{gather*}
+\end{proofcases}
+Zatem ostatecznie
+\begin{equation*}
+    x \in \set{\frac{\pi}{6}, \frac{\pi}{3}, \frac{2\pi}{3}, \frac{5\pi}{6}}
+\end{equation*}
+\subsubsection*{Zadanie~7.}
+\begin{gather*}
+    f\pars{x} = 4\sin x + \cos2x\\
+    D_f = \real\\
+    f\pars{x} = 4\sin x + 1 - 2\sin^2x
+\end{gather*}
+Możemy podstawić \(t \coloneqq \sin x\) i~otrzymujemy funkcję kwadratową
+\begin{equation*}
+    -2t^2 + 4t + 1
+\end{equation*}
+w~której \(t\) przebiega wszystkie liczby rzeczywiste w~przedziale \(\closed{-1}{1}\). Zbadajmy zatem zachowanie tej funkcji w~tym przedziale. Ramiona paraboli są skierowane w~stronę malejących współrzędnych \(y\), czyli funkcja posiada globalną wartość największą. Przyjmuje ją dla argumentu \(\frac{-b}{2a} = \frac{-4}{-4} = 1 \in \closed{-1}{1}\) i~jest ona równa \(\frac{-\Delta}{4a} = \frac{-b^2 + 4ac}{4a} = \frac{-16 - 8}{-8} = \frac{-24}{-8} = 3\). Wartość najmniejsza w~rozważanym przedziale musi więc być przyjmowana na jego krawędzi, czyli dla \(t = -1\). Wartość ta wynosi wtedy \(-2 - 4 + 1 = -5\). Ponieważ taka funkcja jest ciągła, to znaczy że
+\begin{equation*}
+    f\pars{x} \in \closed{-5}{3}
+\end{equation*}
+\subsubsection*{Zadanie~8.}
+\begin{gather*}
+    5\tan x + \cos^2x + \sin2x = 1\\
+    x \neq k\pi + \frac{\pi}{2} \text{, gdzie \(k \in \integer\)}\\
+    5\tan x + 1 - \sin^2x + \sin2x = 1\\
+    \frac{5\sin x}{\cos x} - \sin^2x + 2\sin x\cos x = 0\\
+    \sin x\pars{\frac{5}{\cos x} - \sin x + \cos x} = 0
+\end{gather*}
+Są teraz dwie możliwości:
+\begin{itemize}
+    \item \(\sin x = 0\)
+        \begin{equation*}
+            x = k\pi \text{, gdzie \(k \in \integer\)}
+        \end{equation*}
+    \item \(\frac{5}{\cos x} - \sin x + \cos x = 0\)
+        \begin{gather*}
+            \sin x = \frac{5}{\cos x} + \cos x\\
+            \sin x\cos x = \cos^2x + 5\\
+            \frac{\sin2x}{2} = \cos^2x + 5\\
+            \cos^2x + 5 > 5 \wland \frac{\sin2x}{2} \leq 1
+        \end{gather*}
+        Zatem to równanie nie ma rozwiązań.
+\end{itemize}
+Czyli jedynym rozwiązaniem jest \(x = k\pi\), gdzie \(k \in \integer\).
+\subsubsection*{Zadanie~10.}
+\begin{gather*}
+    x \in \closed{0}{\pi}\\
+    \sin\frac{\pi}{6} \cdot \sin3x < \frac{1}{4}\\
+    \frac{1}{2}\sin3x < \frac{1}{4}\\
+    \sin3x < \frac{1}{2}\\
+    t \coloneqq 3x,\qquad t \in \closed{0}{3\pi}\\
+    \sin t < \frac{1}{2}
+\end{gather*}
+Najpierw rozwiążmy w~interesującym nas przedziale równanie
+\begin{gather*}
+    \sin t = \frac{1}{2}\\
+    t = \frac{\pi}{6} \lor t = \frac{5\pi}{6} \lor t = \frac{13\pi}{6} \lor t = \frac{17\pi}{6}
+\end{gather*}
+Teraz nierówność możemy rozwiązać graficznie. Interesujący nas przedział na wykresie \(y = \sin t\) zaznaczyłem na zielono:
+\begin{mathfigure*}
+    \drawcoordsystem{-3*pi/2, -1.5}{10*pi/3, 1.5}[\(t\)];
+    \draw[ForestGreen, thick, domain=0:3*pi, samples=70] plot (\x, {sin(\x r)});
+    \draw[RoyalBlue, thick, domain=-3*pi/2:0] plot (\x, {sin(\x r)});
+    \draw[RoyalBlue, thick, domain=3*pi:10*pi/3] plot (\x, {sin(\x r)});
+    \draw (-3*pi/2, 0.5) -- node[near start, above]{\(y = \frac{1}{2}\)} (10*pi/3, 0.5);
+    \draw[densely dotted] (pi/6, 0) node[below]{\(\frac{\pi}{6}\)} -- (pi/6, 0.5);
+    \draw[densely dotted] (5*pi/6, 0) node[below]{\(\frac{5\pi}{6}\)} -- (5*pi/6, 0.5);
+    \draw[densely dotted] (13*pi/6, 0) node[below]{\(\frac{13\pi}{6}\)} -- (13*pi/6, 0.5);
+    \draw[densely dotted] (17*pi/6, 0) node[below]{\(\frac{17\pi}{6}\)} -- (17*pi/6, 0.5);
+    \drawvmark{pi/6, 0};
+    \drawvmark{5*pi/6, 0};
+    \drawvmark{13*pi/6, 0};
+    \drawvmark{17*pi/6, 0};
+    \fillpoint*{pi, 0}[\(\pi\)][below];
+    \fillpoint*{2*pi, 0}[\(2\pi\)][below];
+    \fillpoint*{3*pi, 0}[\(3\pi\)][below];
+    \drawpoint{pi/6, 0.5};
+    \drawpoint{5*pi/6, 0.5};
+    \drawpoint{13*pi/6, 0.5};
+    \drawpoint{17*pi/6, 0.5};
+\end{mathfigure*}
+Z~wykresu odczytujemy, że
+\begin{equation*}
+    t \in \leftclosed{0}{\frac{\pi}{6}} \cup \open{\frac{5\pi}{6}}{\frac{13\pi}{6}} \cup \rightclosed{\frac{17\pi}{6}}{3\pi}
+\end{equation*}
+Zatem
+\begin{equation*}
+    x \in \leftclosed{0}{\frac{\pi}{18}} \cup \open{\frac{5\pi}{18}}{\frac{13\pi}{18}} \cup \rightclosed{\frac{17\pi}{18}}{\pi}
+\end{equation*}
+\subsubsection*{Zadanie~11.}
+\begin{gather*}
+    \cos^2x - \cos x + m = 0\\
+    x \in \real
+\end{gather*}
+Jest to tak naprawdę równanie kwadratowe, gdzie \(t \coloneqq \cos x\).
+\begin{equation*}
+    t^2 - t + m = 0
+\end{equation*}
+Aby istniały rozwiązania, \(\Delta\) musi być nieujemna:
+\begin{gather*}
+    \Delta = \pars{-1}^2 - 4 \cdot 1 \cdot m = 1 - 4m\\
+    1 - 4m \geq 0\\
+    m \leq \frac{1}{4}
+\end{gather*}
+Ponadto, skoro \(-1 \leq \cos x \leq 1\), to przynajmniej jedna ze spełniających równanie liczb \(t\) musi być na moduł nie większa od \(1\), czyli
+\begin{gather*}
+    t_1 = \frac{1 - \sqrt{\Delta}}{2 \cdot 1} = \frac{1 - \sqrt{1 - 4m}}{2}\\
+    \frac{1 - \sqrt{1 - 4m}}{2} \leq 1\\
+    1 - \sqrt{1 - 4m} \leq 2\\
+    \sqrt{1 - 4m} \geq -1\\
+    m \leq \frac{1}{4}\\
+    \frac{1 - \sqrt{1 - 4m}}{2} \geq -1\\
+    1 - \sqrt{1 - 4m} \geq -2\\
+    \sqrt{1 - 4m} \leq 3\\
+    1 - 4m \leq 9\\
+    m \geq -2\\
+    m \in \closed{-2}{\frac{1}{4}}
+\end{gather*}
+lub
+\begin{gather*}
+    t_2 = \frac{1 + \sqrt{\Delta}}{2 \cdot 1} = \frac{1 + \sqrt{1 - 4m}}{2}\\
+    \frac{1 + \sqrt{1 - 4m}}{2} \leq 1\\
+    1 + \sqrt{1 - 4m} \leq 2\\
+    \sqrt{1 - 4m} \leq 1\\
+    0 \leq 1 - 4m \leq 1\\
+    0 \leq m \leq \frac{1}{4}\\
+    \frac{1 + \sqrt{1 - 4m}}{2} \geq -1\\
+    1 + \sqrt{1 - 4m} \geq -2\\
+    \sqrt{1 - 4m} \geq -3\\
+    m \leq \frac{1}{4}\\
+    m \in \closed{0}{\frac{1}{4}}
+\end{gather*}
+Zatem ostatecznie \(m \in \closed{-2}{\frac{1}{4}}\).
+\subsubsection*{Zadanie~12.}
+\begin{gather*}
+    x \in \closed{0}{50\pi}\\
+    4\sin^2x = 3\\
+    \sin^2x = \frac{3}{4}
+    \sin x = \frac{\sqrt{3}}{2} \wlor \sin x = -\frac{\sqrt{3}}{2}\\
+    \sin x = \sin\frac{\pi}{3} \wlor \sin x = \sin\frac{-\pi}{3}
+\end{gather*}
+Zatem
+\begin{gather*}
+    x_1 = 2k\pi + \frac{\pi}{3}\\
+    x_2 = 2k\pi + \frac{2\pi}{3}\\
+    x_3 = 2k\pi + \frac{4\pi}{3}\\
+    x_4 = 2k\pi + \frac{5\pi}{3}\\
+    \text{gdzie \(k \in \integer\)}
+\end{gather*}
+Ponieważ \(50\pi = 25 \cdot 2\pi\), to maksymalne \(k\) to \(24\). Natomiast najmniejsze możliwe \(k\) to \(0\). Zdefiniujmy ciąg \(\sequence{a_n}\), którego wyrazy będą równe wartościom typu \(x_1\) dla kolejnych \(k \in \set{0, 1, 2, \ldots, 24}\). Zauważmy, że jest to ciąg arytmetyczny o~pierwszym wyrazie \(a_1 = \frac{\pi}{3}\) i~różnicy \(r_a = 2\pi\). Zsumujmy wyrazy tego ciągu:
+\begin{equation*}
+    \summation[j = 1][25] a_j
+        = \frac{a_1 + a_{25}}{2} \cdot 25
+        = \frac{\frac{\pi}{3} + \frac{\pi}{3} + 24 \cdot 2\pi}{2} \cdot 25
+        = 608\pi + \frac{\pi}{3}
+\end{equation*}
+Podobnie stwórzmy ciąg \(\sequence{b_n}\), którego wyrazy będą równe wartościom typu \(x_2\) dla kolejnych \(k \in \set{0, 1, 2, \ldots, 24}\). Jest to ciąg arytmetyczny o~pierwszym wyrazie \(b_1 = \frac{2\pi}{3}\) i~różnicy \(r_b = 2\pi\). Zsumujmy wyrazy tego ciągu:
+\begin{equation*}
+    \summation[j = 1][25] b_j
+        = \frac{b_1 + b_{25}}{2} \cdot 25
+        = \frac{\frac{2\pi}{3} + \frac{2\pi}{3} + 24 \cdot 2\pi}{2} \cdot 25
+        = 616\pi + \frac{2\pi}{3}
+\end{equation*}
+Analogicznie zdefiniujmy ciąg \(\sequence{c_n}\), którego wyrazy będą równe wartościom typu \(x_3\) dla kolejnych \(k \in \set{0, 1, 2, \ldots, 24}\). Jest to ciąg arytmetyczny o~pierwszym wyrazie \(c_1 = \frac{2\pi}{3}\) i~różnicy \(r_c = 2\pi\). Zsumujmy wyrazy tego ciągu:
+\begin{equation*}
+    \summation[j = 1][25] c_j
+        = \frac{c_1 + c_{25}}{2} \cdot 25
+        = \frac{\frac{4\pi}{3} + \frac{4\pi}{3} + 24 \cdot 2\pi}{2} \cdot 25
+        = 633\pi + \frac{\pi}{3}
+\end{equation*}
+Na koniec tworzymy ciąg\(\sequence{d_n}\), którego wyrazy będą równe wartościom typu \(x_4\) dla kolejnych \(k \in \set{0, 1, 2, \ldots, 24}\). Jest to ciąg arytmetyczny o~pierwszym wyrazie \(d_1 = \frac{2\pi}{3}\) i~różnicy \(r_d = 2\pi\). Zsumujmy wyrazy tego ciągu:
+\begin{equation*}
+    \summation[j = 1][25] d_j
+        = \frac{d_1 + d_{25}}{2} \cdot 25
+        = \frac{\frac{5\pi}{3} + \frac{5\pi}{3} + 24 \cdot 2\pi}{2} \cdot 25
+        = 641\pi + \frac{\pi}{3}
+\end{equation*}
+Zatem suma wszystkich \(x\) spełniających to równanie wynosi
+\begin{equation*}
+    \pars{\summation[j = 1][25] a_j} + \pars{\summation[j = 1][25] b_j} + \pars{\summation[j = 1][25] c_j} + \pars{\summation[j = 1][25] d_j}
+        = 608\pi + \frac{\pi}{3} + 616\pi + \frac{2\pi}{3} + 633\pi + \frac{\pi}{3} + 641\pi + \frac{\pi}{3}
+        = 2500\pi
+\end{equation*}

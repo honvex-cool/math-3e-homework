@@ -1,0 +1,380 @@
+\subsubsection*{Prawa działań na pochodnych}
+Założenia:
+\begin{gather*}
+    f\colon \open{a}{b} \mapsto \real\\
+    g\colon \open{a}{b} \mapsto \real
+\end{gather*}
+Zakładamy też, że \(f\) i~\(g\) są różniczkowalne, czyli dla każdego \(x_0 \in \open{a}{b}\) istnieją granice:
+\begin{gather*}
+    \limit[x \to x_0] \frac{f\pars{x} - f\pars{x_0}}{x - x_0} = f'\pars{x_0}\\
+    \limit[x \to x_0] \frac{g\pars{x} - g\pars{x_0}}{x - x_0} = g'\pars{x_0}
+\end{gather*}
+\begin{itemize}
+    \item mnożenie przez stałą
+        \begin{equation*}
+            \pars{af}' = af'
+        \end{equation*}
+        Dowód (z~definicji pochodnej):
+        \begin{gather*}
+            h\pars{x} = af\pars{x}\\
+            h'\pars{x_0}
+                = \limit[x \to x_0] \frac{h\pars{x} - h\pars{x_0}}{x - x_0}
+                = \limit[x \to x_0] \frac{af\pars{x} - af\pars{x_0}}{x - x_0}
+                = a\limit[x \to x_0] \frac{f\pars{x} - f\pars{x_0}}{x - x_0}
+                = af'\pars{x_0}
+        \end{gather*}
+        \qed
+    \item sum rule
+        \begin{equation*}
+            \pars{f \pm g}' = f' \pm g'
+        \end{equation*}
+        Dowód (z~definicji pochodnej):
+        \begin{gather*}
+            h\pars{x} = f\pars{x} \pm g\pars{x}\\
+            \begin{split}
+                h'\pars{x_0}
+                    &= \limit[x \to x_0] \frac{h\pars{x} - h\pars{x_0}}{x - x_0}
+                    = \limit[x \to x_0] \frac{\pars{f\pars{x} \pm g\pars{x}} - \pars{f\pars{x_0} \pm g\pars{x_0}}}{x - x_0}
+                    = \limit[x \to x_0] \frac{f\pars{x} \pm g\pars{x} - f\pars{x_0} \mp g\pars{x_0}}{x - x_0}\\
+                    &= \limit[x \to x_0] \frac{\pars{f\pars{x} - f\pars{x_0}} \pm \pars{g\pars{x} - g\pars{x_0}}}{x - x_0}
+                    = \pars{\limit[x \to x_0] \frac{f\pars{x} - f\pars{x_0}}{x - x_0}} \pm \pars{\limit[x \to x_0] \frac{g\pars{x} - g\pars{x_0}}{x - x_0}}\\
+                    &= f'\pars{x_0} \pm g'\pars{x_0}
+            \end{split}
+        \end{gather*}
+        \qed
+    \item product rule
+        \begin{equation*}
+            \pars{f \cdot g}' = f'g + fg'
+        \end{equation*}
+        Dowód (z~definicji pochodnej):
+        \begin{gather*}
+            h\pars{x} = f\pars{x}g\pars{x}\\
+            \begin{split}
+                h'\pars{x_0}
+                    &= \limit[x \to x_0] \frac{h\pars{x} - h\pars{x_0}}{x - x_0}
+                    = \limit[x \to x_0] \frac{f\pars{x}g\pars{x} - f\pars{x_0}g\pars{x_0}}{x - x_0}\\
+                    &= \limit[x \to x_0] \frac{f\pars{x}g\pars{x} - f\pars{x_0}g\pars{x} - f\pars{x_0}g\pars{x_0} + f\pars{x_0}g\pars{x}}{x - x_0}\\
+                    &= \limit[x \to x_0] \frac{\pars{f\pars{x} - f\pars{x_0}}g\pars{x} + \pars{g\pars{x} - g\pars{x_0}}f\pars{x}}{x - x_0}\\
+                    &= \pars{\limit[x \to x_0] g\pars{x} \cdot \frac{f\pars{x} - f\pars{x_0}}{x - x_0}} + \pars{\limit[x \to x_0] f\pars{x} \cdot \frac{g\pars{x} - g\pars{x_0}}{x - x_0}}\\
+                    &= f'\pars{x_0}g\pars{x_0} + f\pars{x_0}g'\pars{x_0}
+            \end{split}
+        \end{gather*}
+    \item quotient rule
+        \begin{equation*}
+            \pars{\frac{f}{g}}' = \frac{f'g - fg'}{g^2}
+        \end{equation*}
+        Dowód (z~definicji pochodnej):
+        \begin{gather*}
+            h\pars{x} = \frac{f\pars{x}}{g\pars{x}}\\
+            \begin{split}
+                h'\pars{x_0}
+                    &= \limit[x \to x_0] \frac{h\pars{x} - h\pars{x_0}}{x - x_0}
+                    = \limit[x \to x_0] \frac{\frac{f\pars{x}}{g\pars{x}} - \frac{f\pars{x_0}}{g\pars{x_0}}}{x - x_0}
+                    = \limit[x \to x_0] \frac{\frac{f\pars{x}g\pars{x_0} - g\pars{x}f\pars{x_0}}{g\pars{x}g\pars{x_0}}}{x - x_0}\\
+                    &= \limit[x \to x_0] \frac{f\pars{x}g\pars{x_0} - f\pars{x_0}g\pars{x_0} - g\pars{x}f\pars{x_0} + f\pars{x_0}g\pars{x_0}}{g\pars{x}g\pars{x_0}\pars{x - x_0}}\\
+                    &= \limit[x \to x_0] \frac{\pars{f\pars{x} - f\pars{x_0}}g\pars{x_0} - \pars{g\pars{x} - g\pars{x_0}}f\pars{x}}{g\pars{x}g\pars{x_0}\pars{x - x_0}}\\
+                    &= \pars{\limit[x \to x_0] \frac{1}{g\pars{x}g\pars{x_0}}}\pars{\pars{\limit[x \to x_0] g\pars{x_0} \cdot \frac{f\pars{x} - f\pars{x_0}}{x - x_0}} - \pars{\limit[x \to x_0] f\pars{x_0} \cdot \frac{g\pars{x} - g\pars{x_0}}{x - x_0}}}\\
+                    &= \frac{1}{\pars{g\pars{x_0}}^2} \cdot \pars{f'\pars{x_0}g\pars{x_0} - f\pars{x_0}g'\pars{x_0}}\\
+                    &= \frac{f'\pars{x_0}g\pars{x_0} - f\pars{x_0}g'\pars{x_0}}{\pars{g\pars{x_0}}^2}
+            \end{split}
+        \end{gather*}
+        \qed
+    \item chain rule --- dodatkowe założenie: dla każdego \(x_0\) funkcja \(f\) jest określona i~różniczkowalna w~punkcie \(g\pars{x_0}\), czyli istnieje granica
+        \begin{equation*}
+            \tag{\(\ast\)} \limit[w \to g\pars{x_0}] \frac{f\pars{w} - f\pars{g\pars{x_0}}}{w - g\pars{x_0}} = f'\pars{g\pars{x_0}} \label{2020_10_19:chain_rule:assumption}
+        \end{equation*}
+        Wtedy zachodzi
+        \begin{equation*}
+            \pars{f \circ g}' = \pars{f' \circ g} \cdot g'
+        \end{equation*}
+        Dowód (z~definicji pochodnej):
+        \begin{gather*}
+            h\pars{x} = f\pars{g\pars{x}}\\
+            \begin{split}
+                h'\pars{x_0}
+                    &= \limit[x \to x_0] \frac{h\pars{x} - h\pars{x_0}}{x - x_0}
+                    = \limit[x \to x_0] \frac{f\pars{g\pars{x}} - f\pars{g\pars{x_0}}}{x - x_0}
+                    = \limit[x \to x_0] \frac{\pars{f\pars{g\pars{x}} - f\pars{g\pars{x_0}}}\pars{g\pars{x} - g\pars{x_0}}}{\pars{x - x_0}\pars{g\pars{x} - g\pars{x_0}}}\\
+                    &= \pars{\limit[x \to x_0] \frac{f\pars{g\pars{x}} - f\pars{g\pars{x_0}}}{g\pars{x} - g\pars{x_0}}} \cdot \pars{\limit[x \to x_0] \frac{g\pars{x} - g\pars{x_0}}{x - x_0}}
+            \end{split}
+        \end{gather*}
+        Ponieważ funkcja \(g\) jest z~założenia różniczkowalna, to jest ciągła. Zatem \(\limit[x \to x_0] g\pars{x} = g\pars{x_0}\). Możemy zatem wykorzystać założenie (\ref{2020_10_19:chain_rule:assumption}) do pierwszego czynnika iloczynu, aby otrzymać
+        \begin{equation*}
+            \limit[x \to x_0] \frac{f\pars{g\pars{x}} - f\pars{g\pars{x_0}}}{g\pars{x} - g\pars{x_0}}
+                = \limit[g\pars{x} \to g\pars{x_0}] \frac{f\pars{g\pars{x}} - f\pars{g\pars{x_0}}}{g\pars{x} - g\pars{x_0}} = f'\pars{g\pars{x_0}}
+        \end{equation*}
+        Zatem po podstawieniu do przekształconej definicji \(h'\pars{x_0}\) otrzymujemy
+        \begin{equation*}
+            h'\pars{x_0}
+                = \pars{\limit[x \to x_0] \frac{f\pars{g\pars{x}} - f\pars{g\pars{x_0}}}{g\pars{x} - g\pars{x_0}}} \cdot \pars{\limit[x \to x_0] \frac{g\pars{x} - g\pars{x_0}}{x - x_0}}
+                = f'\pars{g\pars{x_0}} \cdot g'\pars{x_0}
+        \end{equation*}
+        \qed
+\end{itemize}
+\subsubsection*{Pochodne typowych funkcji}
+\begin{gather*}
+    \pars{x^n}' = nx^{n - 1}\\
+    \pars{\sqrt[n]{x}}' = \frac{1}{n}x^{\frac{1}{n} - 1}\\
+    \pars{\sin x}' = \cos x\\
+    \pars{\cos x}' = -\sin x\\
+    \pars{\tan x}' = \frac{1}{\cos^2x}\\
+    \pars{\cot x}' = -\frac{1}{\sin^2x}\\
+    \pars{e^x}' = e^x\\
+    \pars{\ln x} = \frac{1}{x}\\
+    \pars{a}' = 0
+\end{gather*}
+Na mocy reguły dla ilorazu możemy obliczyć \(\pars{\frac{1}{x}}'\):
+\begin{equation*}
+    \pars{\frac{1}{x}}' = \frac{\pars{1}'x - 1\pars{x}'}{x^2} = -\frac{1}{x^2}
+\end{equation*}
+\subsection*{Pochodne~1.}
+\subsubsection*{Zadanie~6.2.}
+\begin{itemize}
+    \item[a)]
+        \begin{gather*}
+            f\pars{x} = x\pars{x - 1}\pars{x + 1} = x^3 - x \qquad x \in \real\\
+            f'\pars{x} = 3x^2 - 1
+        \end{gather*}
+    \item[g)]
+        \begin{gather*}
+            f\pars{x} = \pars{x - 2}\pars{x^2 + 2x + 4} = x^3 - 8 \qquad x \in \real\\
+            f'\pars{x} = 3x^2 - 0 = 3x^2
+        \end{gather*}
+\end{itemize}
+\subsubsection*{Zadanie~6.3.}
+\begin{itemize}
+    \item[d)]
+        \begin{gather*}
+            f\pars{x} = \frac{1}{\sqrt{x}} - \frac{1}{\sqrt[3]{x}} \qquad x \in \real \setminus \set{0}\\
+            f'\pars{x}
+                = \pars{\frac{1}{\sqrt{x}}}' - \pars{\frac{1}{\sqrt[3]{x}}}'
+                = \pars{x^{-\frac{1}{2}}}' - \pars{x^{-\frac{1}{3}}}'
+                = -\frac{1}{2}x^{-\frac{3}{2}} + \frac{1}{3}x^{-\frac{4}{3}}
+                = \frac{1}{3\sqrt[3]{x^4}} - \frac{1}{2\sqrt{x^3}}
+        \end{gather*}
+    \item[g)]
+        \begin{gather*}
+            f\pars{x} = \pars{\sqrt[3]{x} - 1}\pars{\sqrt[3]{x^2} + \sqrt[3]{x} + 1} = x - 1 \qquad x \in \real\\
+            f'\pars{x} = 1 + 0 = 1
+        \end{gather*}
+    \item[h)]
+        \begin{gather*}
+            f\pars{x} = \pars{\sqrt[3]{x} + 1}\pars{\sqrt[3]{x^2} - \sqrt[3]{x} + 1} = x + 1 \qquad x \in \real\\
+            f'\pars{x} = 1 + 0 = 1
+        \end{gather*}
+\end{itemize}
+\subsubsection*{Zadanie~6.8.}
+\begin{itemize}
+    \item[a)]
+        \begin{gather*}
+            f\pars{x} = \frac{\sin x}{1 - \cos x} \qquad x \in \real \setminus \set{2k\pi : k \in \integer}\\
+            \begin{split}    
+                f'\pars{x} 
+                    &= \frac{\pars{\sin x}'\pars{1 - \cos x} - \sin x\pars{1 - \cos x}'}{\pars{1 - \cos x}^2}
+                    = \frac{\cos x\pars{1 - \cos x} - \sin x\pars{0 - \pars{-\sin x}}}{\pars{1 - \cos x}^2}\\
+                    &= \frac{\cos x - \cos^2x - \sin^2x}{\pars{\cos x - 1}^2}
+                    = \frac{\cancel{\cos x - 1}}{\pars{\cos x - 1}^{\cancel{2}}}
+                    = \frac{1}{\cos x - 1}
+            \end{split}
+        \end{gather*}
+    \item[b)]
+        \begin{gather*}
+            f\pars{x} = \frac{\cos^2x}{1 - \sin x} = \frac{1 - \sin^2x}{1 - \sin x} = \frac{\cancel{\pars{1 - \sin x}}\pars{1 + \sin x}}{\cancel{1 - \sin x}} = \sin x + 1 \qquad x \in \real \setminus \set{2k\pi + \frac{\pi}{2} : k \in \integer}\\
+            f'\pars{x} = \cos x + 0 = \cos x
+        \end{gather*}
+    \item[g)]
+        \begin{equation*}
+            f\pars{x} = \frac{1 - \cos x + \sin x}{1 + \cos x + \sin x}
+        \end{equation*}
+        Zbadajmy najpierw dziedzinę tej funkcji. Będzie nią zbiór \(\real\) z~wyłączonymi wartościami \(x\), dla których mianownik \(1 + \cos x + \sin x = 0\). Rozwiążmy zatem to równanie:
+        \begin{gather*}
+            1 + \cos x + \sin x = 0\\
+            \cos x = -\sin x - 1
+        \end{gather*}
+        Wiemy, że
+        \begin{gather*}
+            \sin^2x + \cos^2x = 1\\
+            \sin^2x + \pars{-\sin x - 1}^2 = 1\\
+            \sin^2x + \sin^2x + 2\sin x + 1 = 1\\
+            2\sin^2x + 2\sin x = 0\\
+            \sin^2x + \sin x = 0\\
+            \sin x\pars{\sin x + 1} = 0\\
+            \sin x = -1 \wlor \sin x = 0\\
+            x = 2k\pi + \frac{3\pi}{2} \wlor x = k\pi \qquad \text{gdzie \(k \in \integer\)}
+        \end{gather*}
+        Zauważamy, że w~przypadku, gdy \(\sin x = -1\) jednocześnie \(\cos x = 0\), jednak gdy \(\sin x = 0\) funkcja \(\cos x\) może przyjmować zarówno \(1\) jak i~\(-1\), my natomiast szukamy wartości, dla których przyjmuje \(-1\), czyli nieparzystych wielokrotności \(\pi\). Zatem drugi możliwy wybór \(x\) zawężamy do \(x = 2k\pi + \pi\). Funkcja \(f\) jest więc określona następująco:
+        \begin{gather*}
+            f\pars{x} = \frac{1 - \cos x + \sin x}{1 + \cos x + \sin x} = 1 - \frac{2\cos x}{1 + \cos x + \sin x} \qquad x \in \real \setminus \parens{\set{2k\pi + \pi : k \in \integer} \cup \set{2k\pi + \frac{3\pi}{2} : k \in \integer}}\\
+            \begin{split}
+                f'\pars{x} &= \pars{1}' - \frac{\pars{2\cos x}'\pars{1 + \cos x + \sin x} - 2\cos x\pars{1 + \cos x + \sin x}'}{\pars{1 + \cos x + \sin x}^2}\\
+                    &= 0 - \frac{-2\sin x\pars{1 + \cos x + \sin x} - 2\cos x\pars{0 - \sin x + \cos x}}{\sin^2 x + \cos^2 x + 1 + 2\sin x + 2\cos x + 2\sin x\cos x}\\
+                    &= -\frac{-2\sin x - 2\sin x\cos x - 2\sin^2x + 2\sin x\cos x - 2\cos^2x}{\sin^2 x + \cos^2 x + 1 + 2\sin x + 2\cos x + 2\sin x\cos x}\\
+                    &= -\frac{-2\sin x - 2\sin^2x - 2\cos^2x}{2 + 2\sin x + 2\cos x + 2\sin x\cos x}\\
+                    &= \frac{\sin x + 1}{\sin x + \cos x + 2\sin x\cos x + 1}\\
+                    &= \frac{\cancel{\sin x + 1}}{\cancel{\pars{\sin x + 1}}\pars{\cos x + 1}}\\
+                    &= \frac{1}{\cos x + 1}
+            \end{split}
+        \end{gather*}
+\end{itemize}
+\subsubsection*{Zadanie~6.9.}
+\begin{itemize}
+    \item[h)]
+        \begin{gather*}
+            f\pars{x} = \frac{\sqrt{x} + 1}{\sqrt[3]{x} + 4} \qquad x \in \leftclosed{0}{+\infty}\\
+            \begin{split}
+                f'\pars{x}
+                    &= \frac{\pars{\sqrt{x} + 1}'\pars{\sqrt[3]{x} + 4} - \pars{\sqrt{x} + 1}\pars{\sqrt[3]{x} + 4}'}{\pars{\sqrt[3]{x} + 4}^2}
+                    = \frac{\frac{\sqrt[3]{x} + 4}{2\sqrt{x}} - \frac{\sqrt{x} + 1}{3\sqrt[3]{x^2}}}{\pars{\sqrt[3]{x} + 4}^2}
+                    = \frac{\frac{3\sqrt[3]{x^2}\pars{\sqrt[3]{x} + 4}}{6\sqrt{x} \cdot \sqrt[3]{x^2}} - \frac{2\sqrt{x}\pars{\sqrt{x} + 1}}{6\sqrt{x} \cdot \sqrt[3]{x^2}}}{\pars{\sqrt[3]{x} + 4}^2}\\
+                    &= \frac{\frac{3x + 12\sqrt[3]{x^2} - 2x - 2\sqrt{x}}{6\sqrt{x} \cdot \sqrt[3]{x^2}}}{\pars{\sqrt[3]{x} + 4}^2}
+                    = \frac{x - 2\sqrt{x} + 12\sqrt[3]{x^2}}{6\sqrt{x} \cdot \sqrt[3]{x^2}\pars{\sqrt[3]{x} + 4}^2}
+                    = \frac{\sqrt{x} - 2 + 12\sqrt[6]{x}}{6\sqrt[3]{x^2}\pars{\sqrt[3]{x} + 4}^2}
+            \end{split}
+        \end{gather*}
+    \item[i)]
+        \begin{gather*}
+            f\pars{x} = \frac{x^4 + x^2 + 1}{x^4 - x^2 + 1} \qquad x \in \real\\
+            \text{(\(x \in \real\) ponieważ \(\Delta\) mianownika po podstawieniu \(t \coloneqq x^2\) jest ujemna, czyli nigdy nie będzie on równy \(0\))}\\
+            \begin{split}
+                f'\pars{x}
+                    &= \frac{\pars{x^4 + x^2 + 1}'\pars{x^4 - x^2 + 1} - \pars{x^4 + x^2 + 1}\pars{x^4 - x^2 + 1}'}{\pars{x^4 - x^2 + 1}^2}\\
+                    &= \frac{\pars{4x^3 + 2x}\pars{x^4 - x^2 + 1} - \pars{x^4 + x^2 + 1}\pars{4x^3 - 2x}}{\pars{x^4 - x^2 + 1}^2}\\
+                    &= \frac{4x^7 - 4x^5 + 4x^3 + 2x^5 - 2x^3 + 2x - 4x^7 + 2x^5 - 4x^5 + 2x^3 - 4x^3 + 2x}{\pars{x^4 - x^2 + 1}^2}\\
+                    &= \frac{-4x^5 + 4x}{\pars{x^4 - x^2 + 1}^2}
+            \end{split}
+        \end{gather*}
+\end{itemize}
+\subsubsection*{Zadanie~6.10.}
+\begin{gather*}
+    f\pars{x} = \frac{x^3 + 1}{x} = x^2 + \frac{1}{x} \qquad x \in \real \setminus \set{0}\\
+    f'\pars{x} = 2x - \frac{1}{x^2}\\
+    g\pars{x} = 5x + \frac{1}{x} \qquad x \in \real \setminus \set{0}\\
+    g'\pars{x} = 5 - \frac{1}{x^2}\\
+    f'\pars{x} < g'\pars{x}\\
+    2x - \frac{1}{x^2} < 5 - \frac{1}{x^2}\\
+    2x < 5\\
+    x \in \open{-\infty}{\frac{5}{2}}
+\end{gather*}
+\subsubsection*{Zadanie~6.11.}
+\begin{gather*}
+    f\pars{x} = 2x^3 + 12x^2 \qquad x \in \real\\
+    f'\pars{x} = 6x^2 + 24x\\
+    g\pars{x} = 9x^2 + 72x \qquad x \in \real\\
+    g'\pars{x} = 18x + 72\\
+    f'\pars{x} + g'\pars{x} \leq 0\\
+    6x^2 + 24x + 18x + 72 \leq 0\\
+    6x^2 + 42x + 72 \leq 0\\
+    x^2 + 7x + 12 \leq 0\\
+    \pars{x + 4}\pars{x + 3} \leq 0\\
+    x \in \closed{-4}{-3}
+\end{gather*}
+\subsubsection*{Zadanie~6.12.}
+\begin{gather*}
+    f\pars{x} = \frac{1}{1 - x} \qquad x \in \real \setminus \set{1}\\
+    f'\pars{x} = -\frac{1}{\pars{1 - x}^2} \cdot \pars{-1}
+        = \frac{1}{\pars{1 - x}^2}\\
+    1 + 5f\pars{x} + 6f'\pars{x} = 0\\
+    6\frac{1}{\pars{1 - x}^2} + 5 \cdot \frac{1}{1 - x} + 1 = 0\\
+    6\pars{\frac{1}{1 - x}}^2 + 5 \cdot \frac{1}{1 - x} + 1 = 0\\
+    t \coloneqq \frac{1}{1 - x}\\
+    6t^2 + 5t + 1 = 0\\
+    \Delta = 5^2 - 4 \cdot 6 \cdot 1 = 25 - 24 = 1\\
+    \sqrt{\Delta} = \sqrt{1} = 1\\
+    t_1 = \frac{-5 - \sqrt{\Delta}}{2 \cdot 6} = \frac{-5 - 1}{2 \cdot 6} = -\frac{1}{2}\\
+    t_2 = \frac{-5 + \sqrt{\Delta}}{2 \cdot 6} = \frac{-5 + 1}{2 \cdot 6} = -\frac{1}{3}
+\end{gather*}
+Możemy teraz powrócić do \(x\):
+\begin{gather*}
+    \frac{1}{1 - x_1} = t_1 = -\frac{1}{2}\\
+    x_1 - 1 = 2\\
+    x_1 = 3\\
+    \frac{1}{1 - x_2} = t_2 = -\frac{1}{3}\\
+    x_2 - 1 = 3\\
+    x_2 = 4
+\end{gather*}
+Zatem naszym rozwiązaniem jest \(x \in \set{3, 4}\).
+\subsubsection*{Zadanie~6.15.}
+\begin{gather*}
+    n \in \natural_+\\
+    S_n\pars{x} = x + x^2 + x^3 + \ldots + x^n\\
+    T_n\pars{x} = 1 + 2x + 3x^2 + \ldots + nx^{n - 1}\\
+    P_n\pars{x} = 1^2 + 2^2x + 3^2x^2 + \ldots n^2x^{n - 1}\\
+    x \in \real
+\end{gather*}
+Rozważmy najpierw trywialny przypadek \(x = 1\). Wtedy \(S_n\pars{x}\) sprowadza się do sumy \(n\) jedynek, \(T_n\pars{x}\) sprowadza się do sumy \(n\) kolejnych liczb naturalnych, a~\(P_n\pars{x}\) sprowadza się do sumy kwadratów kolejnych \(n\) liczb naturalnych. Zatem dla \(x = 1\)
+\begin{gather*}
+    S_n\pars{x} = \underbrace{1 + 1 + 1 + \ldots + 1}_{n \text{ jedynek}} = n\\
+    T_n\pars{x} = 1 + 2 + 3 + \ldots + n = \frac{n\pars{n + 1}}{2}\\
+    P_n\pars{x} = 1^2 + 2^2 + 3^2 + \ldots + n^2 = \frac{n\pars{n + 1}\pars{2n + 1}}{6}
+\end{gather*}
+Dalej wszystkie rozważania będziemy prowadzić dla \(x \neq 1\). Zbadajmy najpierw funkcję \(S_n\):
+\begin{equation*}
+    S_n\pars{x} = x + x^2 + x^3 + \ldots + x^n
+\end{equation*}
+Jest to ciąg geometryczny o~pierwszym wyrazie równym \(x\) i~ilorazie równym \(x \neq 1\). Zatem jego suma wyraża się następująco:
+\begin{equation*}
+    S_n\pars{x} = \frac{1 - x^n}{1 - x} \cdot x
+\end{equation*}
+Teraz zauważamy, że \(T_n\pars{x}\) jest funkcją pochodną funkcji \(S_n\pars{x}\):
+\begin{equation*}
+    S_n'\pars{x}
+        = \pars{x + x^2 + x^3 + \ldots + x^n}'
+        = \pars{x}' + \pars{x^2}' + \pars{x^3}' + \ldots + \pars{x^n}'
+        = 1 + 2x + 3x^2 + \ldots + nx^{n - 1}
+        = T_n\pars{x}
+\end{equation*}
+Zatem wzór jawny na sumę z~funkcji \(T_n\pars{x}\) dla \(x \neq 1\) możemy zapisać jako pochodną wzoru jawnego na \(S_n\pars{x}\) dla \(x \neq 1\):
+\begin{equation*}
+    \begin{split}
+        T_n\pars{x}
+            &= S_n'\pars{x}
+            = \pars{\frac{1 - x^n}{1 - x} \cdot x}'
+            = \pars{\frac{x - x^{n + 1}}{1 - x}}'
+            = \frac{\pars{x - x^{n + 1}}'\pars{1 - x} - \pars{x - x^{n + 1}}\pars{1 - x}'}{\pars{1 - x}^2}\\
+            &= \frac{\pars{1 - \pars{n + 1}x^n}\pars{1 - x} - \pars{x - x^{n + 1}}\pars{-1}}{\pars{1 - x}^2}
+            = \frac{1 - x - \pars{n + 1}x^n + \pars{n + 1}x^{n + 1} + x - x^{n + 1}}{\pars{1 - x}^2}\\
+            &= \frac{nx^{n + 1} - \pars{n + 1}x^n + 1}{\pars{1 - x}^2}
+    \end{split}
+\end{equation*}
+Podobnie możemy zauważyć, że funkcja \(P_n\pars{x}\) jest funkcją pochodną funkcji \(xT_n\pars{x}\):
+\begin{equation*}
+    \begin{split}
+        \pars{xT_n\pars{x}}'
+            &= \pars{x\pars{1 + 2x + 3x^2 + \ldots + nx^{n - 1}}}'
+            = \pars{x + 2x^2 + 3x^3 + \ldots + nx^n}'\\
+            &= \pars{x}' + \pars{2x^2}' + \pars{3x^3}' + \ldots + \pars{nx^n}'
+            = 1^2 + 2^2x + 3^2x^2 + \ldots + n^2x^{n - 1}
+            = P_n\pars{x}
+    \end{split}
+\end{equation*}
+Zatem wzór jawny na sumę z~funkcji \(P_n\pars{x}\) dla \(x \neq 1\) możemy zapisać jako pochodną wzoru jawnego na \(T_n\pars{x}\) dla \(x \neq 1\):
+\begin{equation*}
+    \begin{split}
+        P_n\pars{x}
+            &= \pars{xT_n\pars{x}}'
+            = \pars{x \cdot \frac{nx^{n + 1} - \pars{n + 1}x^n + 1}{\pars{1 - x}^2}}'
+            = \pars{\frac{nx^{n + 2} - \pars{n + 1}x^{n + 1} + x}{\pars{1 - x}^2}}'\\
+            &= \frac{\pars{nx^{n + 2} - \pars{n + 1}x^{n + 1} + x}'\pars{1 - x}^2 - \pars{nx^{n + 2} - \pars{n + 1}x^{n + 1} + x}\pars{\pars{1 - x}^2}'}{\pars{1 - x}^4}\\
+            &= \frac{\pars{n\pars{n + 2}x^{n + 1} - \pars{n + 1}^2x^n + 1}\pars{1 - x}^{\cancel{2}} - \pars{nx^{n + 2} - \pars{n + 1}x^{n + 1} + x}\pars{-2\cancel{\pars{1 - x}}}}{\pars{1 - x}^{\cancelto{3}{4}}}\\
+            &= \frac{n\pars{n + 2}x^{n + 1} - \pars{n + 1}^2x^n + 1 - n\pars{n + 2}x^{n + 2} + \pars{n + 1}^2x^{n + 1} - x + 2nx^{n + 2} - 2\pars{n + 1}x^{n + 1} + 2x}{\pars{1 - x}^3}\\
+            &= \frac{x^{n + 2}\pars{-n\pars{n + 2} + 2n} + x^{n + 1}\pars{n\pars{n + 2} + \pars{n + 1}^2 - 2\pars{n + 1}} - \pars{n + 1}^2x^n + x + 1}{\pars{1 - x}^3}\\
+            &= \frac{x^{n + 2}\pars{-n^2 - 2n + 2n} + x^{n + 1}\pars{n^2 + 2n + n^2 + 2n + 1 - 2n - 2} - \pars{n + 1}^2x^n + x + 1}{\pars{1 - x}^3}\\
+            &= \frac{-n^2x^{n + 2} + \pars{2n^2 + 2n - 1}x^{n + 1} - \pars{n + 1}^2x^n + x + 1}{\pars{1 - x}^3}\\
+            &= \frac{n^2x^{n + 2} - \pars{2n^2 + 2n - 1}x^{n + 1} + \pars{n + 1}^2x^n - x - 1}{\pars{x - 1}^3}
+    \end{split}
+\end{equation*}
+Zatem ostatecznie mamy:
+\begin{gather*}
+    S_n\pars{x} = \begin{cases}
+        n &\iff x = 1\\
+        \frac{1 - x^n}{1 - x} \cdot x &\iff x \neq 1
+    \end{cases}\\
+    T_n\pars{x} = \begin{cases}
+        \frac{n\pars{n + 1}}{2} &\iff x = 1\\
+        \frac{nx^{n + 1} - \pars{n + 1}x^n + 1}{\pars{x - 1}^2} &\iff x \neq 1
+    \end{cases}\\
+    P_n\pars{x} = \begin{cases}
+        \frac{n\pars{n + 1}\pars{2n + 1}}{6} &\iff x = 1\\
+        \frac{n^2x^{n + 2} - \pars{2n^2 + 2n - 1}x^{n + 1} + \pars{n + 1}^2x^n - x - 1}{\pars{x - 1}^3} &\iff x \neq 1
+    \end{cases}
+\end{gather*}
