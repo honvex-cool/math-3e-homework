@@ -127,6 +127,28 @@ Jest to funkcja kwadratowa zmiennej \(t\). Ramiona paraboli są skierowane w~str
     3 \cdot \pars{-1}^2 - 6 \cdot \pars{-1} + 1 = 10
 \end{equation*}
 Zatem wartość najmniejsza funkcji \(f\) jest przyjmowana dla \(\sin x = t_\p{min} = 1\), czyli \(x = 2k\pi + \frac{\pi}{2}\), gdzie \(k \in \integer\), i~wynosi ona \(-2\). Natomiast wartość największa jest przyjmowana dla \(\sin x = t_\p{max} = -1\), czyli \(x = 2k\pi + \frac{3\pi}{2}\), gdzie \(k \in \integer\), i~wynosi ona \(10\).
+\subsubsection*{Zadanie~8.}
+\begin{gather*}
+    f\pars{x} = \cos^2x + \abs{\sin x} \cdot \sin x\\
+    x \in \closed{-\frac{5}{2}\pi}{\frac{5}{2}\pi}
+\end{gather*}
+Rozważmy dwa przypadki:
+\begin{proofcases}
+    \item \(\sin x \leq 0 \implies x \in \closed{-2\pi}{-\pi} \cup \closed{0}{\pi} \cup \closed{2\pi}{\frac{5}{2}\pi}\)
+        \begin{equation*}
+            f\pars{x} = \cos^2x + \sin^2x = 1
+        \end{equation*}
+        W~tych przedziałach jest to funkcja stała równa \(1\).
+    \item \(\sin x < 0 \implies x \in \leftclosed{-\frac{5}{2}\pi}{-2\pi} \cup \open{\pi}{2\pi}\)
+        \begin{equation*}
+            f\pars{x} = \cos^2x - \sin^2x = \cos2x
+        \end{equation*}
+\end{proofcases}
+Zatem wykres będzie wyglądał następująco:
+\begin{mathfigure*}
+    \drawcoordsystem{-5*pi/2, -2.5}{5*pi/2, 2.5};
+    \draw[thick, samples=400, domain=-5*pi/2:5*pi/2, smooth] plot (\x, {(cos(\x r))^2 + sin(\x r) * abs(sin(\x r))});
+\end{mathfigure*}
 \subsubsection*{Zadanie~9.}
 \begin{gather*}
     \cos\frac{\pi}{3} \cdot \sin4x - \sin\frac{\pi}{3} \cdot \cos4x = \frac{\sqrt{3}}{2} \qquad x \in \real\\
@@ -140,3 +162,24 @@ Najmniejsze rozwiązanie dodatnie otrzymamy, podstawiając \(k = 0\) lub \(k = 1
     x = \frac{\pi}{6} \lor x = \frac{3\pi}{4}
 \end{gather*}
 Pierwsze z~tych rozwiązań jest mniejsze. Zatem najmniejsze rozwiązanie dodatnie to \(x = \frac{\pi}{6}\).
+\subsubsection*{Zadanie~10.}
+\begin{gather*}
+    2\sin\pars{x - \frac{\pi}{2}} = 2\abs{k - \frac{1}{2}} - 5\\
+    x \in \real\\
+    -2 \leq 2\sin\pars{x - \frac{\pi}{2}} \leq 2
+\end{gather*}
+Równanie z~funkcją \(\sin\) na pewno będzie miało rozwiązanie, jeśli wartość po prawej stronie będzie znajdować się w~odpowiednim przedziale, ponieważ jest to funkcja siągła.
+\begin{gather*}
+    2\abs{k - \frac{1}{2}} - 5 \geq -2\\
+    2\abs{k - \frac{1}{2}} \geq 3\\
+    \abs{k - \frac{1}{2}} \geq \frac{3}{2}\\
+    k \in \closed{-\infty}{-1} \cup \closed{2}{+\infty}\\
+    2\abs{k - \frac{1}{2}} - 5 \leq 2\\
+    2\abs{k - \frac{1}{2}} \leq 7\\
+    \abs{k - \frac{1}{2}} \leq \frac{7}{2}\\
+    k \in \closed{-3}{4}
+\end{gather*}
+Rozwiązaniem jest część wspólna uzyskanych przedziałów:
+\begin{equation*}
+    k \in \closed{-3}{-1} \cup \closed{2}{4}
+\end{equation*}
