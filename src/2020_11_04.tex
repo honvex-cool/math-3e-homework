@@ -1,0 +1,377 @@
+\subsection*{Zestaw XV --- Planimetria (zadania otwarte)}
+\subsubsection*{Zadanie~1.}
+\begin{mathfigure*}
+    \coordinate (A) at (-3, -1);
+    \coordinate (B) at (2, -1);
+    \coordinate (C) at (1.5, 0.5);
+    \coordinate (D) at (-1, 0.5);
+    \coordinate (O) at (0, 0);
+    \coordinate (H) at (-1, -1);
+    \draw[dashed] (D) -- node[]{} (H);
+    \draw (A) -- (B) -- (C) -- (D)-- cycle;
+    \draw (A) -- (C);
+    \draw (B) -- (D);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{O}[\(O\)][below];
+\end{mathfigure*}
+Zauważmy, że
+\begin{gather*}
+    \area{AOD} = \area{ACD} - \area{COD} = \frac{CD \cdot h}{2} - \area{COD}\\
+    \area{BOC} = \area{BDC} - \area{COD} = \frac{CD \cdot h}{2} - \area{COD}\\
+    \area{AOD} = \area{BOC}
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~2.}
+\begin{mathfigure*}
+    \coordinate (A) at (-1, 0);
+    \coordinate (B) at (2, 0);
+    \coordinate (C) at (3, 1.5);
+    \coordinate (D) at (0, 1.5);
+    \draw (A) -- (C);
+    \draw (B) -- (D);
+    \drawangle*[ForestGreen]{C--B--A}[\(\alpha\)];
+    \draw (A) node[below left]{\(A\)}
+        -- (B) node[below right]{\(B\)}
+        -- (C) node[above right]{\(C\)}
+        -- (D) node[above left]{\(D\)}
+        -- cycle;
+\end{mathfigure*}
+Z~twierdzenia cosinusów mamy
+\begin{gather*}
+    AC^2 = AB^2 + BC^2 - 2 \cdot AB \cdot BC \cdot \cos\alpha\\
+    BD^2 = DA^2 + AB^2 - 2 \cdot DA \cdot AB \cdot \cos\pars{180\degree - \alpha} = CD^2 + DA^2 + 2 \cdot AB \cdot BC \cdot \cos\alpha
+\end{gather*}
+Po dodaniu stronami otrzymujemy tezę:
+\begin{equation*}
+    AC^2 + BD^2 = AB^2 + BC^2 + CD^2 + DA^2
+\end{equation*}
+\qed
+\subsubsection*{Zadanie~3.}
+\begin{mathfigure*}
+    \coordinate (A) at (-3, 0);
+    \coordinate (B) at (2, 0);
+    \coordinate (C) at (1, 4);
+    \coordinate (D) at (1.5, 2);
+    \coordinate (E) at (-1, 2);
+    \coordinate (F) at (-0.5, 0);
+    \draw (A) node[below left]{\(A\)}
+        -- (B) node[below right]{\(B\)}
+        -- (C) node[above]{\(C\)}
+        -- cycle;
+    \draw (A) -- (D);
+    \draw (B) -- (E);
+    \draw (C) -- (F);
+    \fillpoint*{D}[\(D\)][above right];
+    \fillpoint*{E}[\(E\)][above left];
+    \fillpoint*{F}[\(F\)][below];
+\end{mathfigure*}
+Ponieważ \(AD\), \(BE\) i~\(CF\) to środkowe, to
+\begin{gather*}
+    AF = BF = \frac{AB}{2}\\
+    BD = CD = \frac{BC}{2}\\
+    CE = AE = \frac{CA}{2}
+\end{gather*}
+Z~nierówności trójkąta w~\(\triangle{ABD}\) mamy
+\begin{gather*}
+    AB + BD > AD\\
+    AB + \frac{BC}{2} > AD
+\end{gather*}
+W~\(\triangle{BCE}\) mamy
+\begin{gather*}
+    BC + CE > BE\\
+    BC + \frac{CA}{2} > BE
+\end{gather*}
+W~\(\triangle{CAF}\) mamy natomiast:
+\begin{gather*}
+    CA + AF > CF\\
+    CA + \frac{AB}{2} > CF
+\end{gather*}
+Po dodaniu stronami otrzymujemy tezę:
+\begin{gather*}
+    AB + \frac{BC}{2} + BC + \frac{CA}{2} + CA + \frac{AB}{2} > AD + BE + CF\\
+    \frac{3}{2}\pars{AB + BC + CA} > AD + BE + CF
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~4.}
+\begin{mathfigure*}
+    \coordinate (O) at (0, 0);
+    \coordinate (A) at (-2, -1);
+    \coordinate (B) at (2, -1);
+    \coordinate (C) at (-1, 2);
+    \coordinate (H) at (-1, -1);
+    \drawangle[RoyalBlue, double, angle radius=0.7cm]{A--C--H};
+    \drawangle[RoyalBlue, double, angle radius=0.7cm]{O--C--B};
+    \drawangle[RoyalBlue, double, angle radius=0.7cm]{C--B--O};
+    \drawrightangle{B--H--C};
+    \draw (O) circle[radius=\fpeval{sqrt(5)}];
+    \draw (A) node[below left]{\(A\)}
+        -- (B) node[below right]{\(B\)}
+        -- (C) node[above]{\(C\)}
+        -- cycle;
+    \draw (C) -- (O);
+    \draw (B) -- (O);
+    \fillpoint*{O}[\(O\)][below];
+    \draw (C) -- (H) node[below]{\(H\)};
+\end{mathfigure*}
+Ponieważ \(OC\) i~\(OB\) to promienie, to \(\triangle{BOC}\) jest równoramienny, czyli \(\mangle{BCO} = \mangle{CBO}\). Z~sumy kątów w tym trójkącie mamy
+\begin{equation*}
+    \mangle{BOC} = 180\degree - 2 \cdot \mangle{BCO}
+\end{equation*}
+Zauważmy, że \(\angle{CAH}\) jest kątem wpisanym w~okrąg opartym na tym samym łuku co kąt środkowy \(\angle{BOC}\). Zachodzi zatem
+\begin{equation*}
+    \mangle{CAH} = \frac{\mangle{BOC}}{2} = 90\degree - \mangle{BCO}
+\end{equation*}
+Ponieważ \(CH\) jest wysokością, to \(\mangle{AHC} = 90\degree\), czyli
+\begin{equation*}
+    \mangle{ACH}
+        = 90\degree - \mangle{CAH}
+        = 90\degree - \mangle{90\degree - \mangle{BCO}}
+        = \mangle{BCO}
+\end{equation*}
+\qed
+\subsubsection*{Zadanie~5.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -1);
+    \coordinate (B) at (2, -1);
+    \coordinate (C) at (2, 1);
+    \coordinate (D) at (-2, 1);
+    \coordinate (E) at (0.4, 2.2);
+    \coordinate (F) at (-0.4, -2.2);
+    \draw (A) node[below left]{\(A\)}
+        -- node[below]{\(a\)} (B) node[below right]{\(B\)}
+        -- (C) node[above right]{\(C\)}
+        -- (D) node[above left]{\(D\)}
+        -- node[left]{\(b\)} cycle;
+    \draw[dashed] (A) -- (C);
+    \draw[ForestGreen] (B) -- (E) -- (D) -- (F) -- cycle;
+    \fillpoint*{E}[\(E\)][above];
+    \fillpoint*{F}[\(F\)][below];
+    \fillpoint{B};
+    \fillpoint{D};
+\end{mathfigure*}
+Ponieważ
+\subsubsection*{Zadanie~7.}
+Oznaczmy przez \(\alpha\) miarę kąta leżącego naprzeciwko boku \(a\). Zatem bok leżący naprzeciwko boku \(c\) ma miarę \(2\alpha\). Z~twierdzenia sinusów otrzymujemy:
+\begin{gather*}
+    \frac{a}{\sin\alpha} = \frac{c}{\sin2\alpha}\\
+    \frac{a}{\cancel{\sin\alpha}} = \frac{c}{2\cancel{\sin\alpha}\cos\alpha}\\
+    a = \frac{c}{2\cos\alpha}\\
+    \cos\alpha = \frac{c}{2a}
+\end{gather*}
+Możemy teraz podstawić do twierdzenia cosinusów:
+\begin{gather*}
+    a^2 = b^2 + c^2 - 2bc\cos\alpha\\
+    a^2 = b^2 + c^2 - 2bc \cdot \frac{c}{2a}\\
+    a^3 = ab^2 + c^2a - bc^2\\
+    a^3 - ab^2 = c^2a - bc^2\\
+    a\pars{a^2 - b^2} = c^2\pars{a - b}\\
+    a\pars{a - b}\pars{a + b} = c^2\pars{a - b}
+\end{gather*}
+Jeżeli \(a = b\), to jest to trójkąt równoramienny o~ramionach \(a, b\), czyli~\(2\alpha = 180\degree - 2\alpha\), więc \(\alpha = 45\degree\). Oznacza to, że kąt pomiędzy \(a\) i~\(b\) jest prosty, czyli \(c = a\sqrt{2} = \sqrt{a\pars{a + a}}\). Jeśli \(a \neq b\), to możemy podzielić obustronnie przez \(a - b\):
+\begin{gather*}
+    a\pars{a + b} = c^2\\
+    c = \sqrt{a\pars{a + b}}
+\end{gather*}
+Widzimy, że wzór wyliczony w~szczególnym przypadku \(a = b\) pasuje również tutaj. Zatem ostatecznie wzór na \(c\) ma postać
+\begin{equation*}
+    c = \sqrt{a\pars{a + b}}
+\end{equation*}
+\subsubsection*{Zadanie~8.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, 0);
+    \coordinate (B) at (2, 0);
+    \coordinate (C) at (0, 4);
+    \coordinate (D) at (-1, 0);
+    \coordinate (E) at (-1, 2);
+    \coordinate (F) at (1, 2);
+    \coordinate (G) at (1, 0);
+    \coordinate (T) at (0, 2);
+    \coordinate (S) at (0, 0);
+    \drawangle[RoyalBlue, angle radius=0.4cm]{C--B--A};
+    \drawangle[RoyalBlue, angle radius=0.4cm]{C--F--T};
+    \drawrightangle[angle radius=0.4cm]{B--S--C};
+    \drawrightangle[angle radius=0.4cm]{F--T--C};
+    \drawrightangle[angle radius=0.4cm]{B--G--F};
+    \draw (A) node[below left]{\(A\)}
+        -- (B) node[below right]{\(B\)}
+        -- (C) node[above]{\(C\)}
+        -- cycle;
+    \draw (D) node[below]{\(D\)}
+        -- (E) node[above left]{\(E\)}
+        -- (F) node[above right]{\(F\)}
+        -- node[right]{\(a\)} (G) node[below]{\(G\)};
+    \draw[dashed] (C) -- node[pos=0.6, right]{\(h\)} (S);
+    \fillpoint*{T}[\(T\)][below left];
+    \fillpoint*{S}[\(S\)][below];
+\end{mathfigure*}
+Niech \(AB = b\) Zauważmy, że \(\mangle{FGB} = \mangle{CSB} = 90\degree\) i~\(\mangle{CBG} = \mangle{CBS}\). Zatem \(\triangle{FGB} \sim \triangle{CSB}\), czyli
+\begin{equation*}
+    \frac{CS}{FG} = \frac{CB}{FB} = 2
+\end{equation*}
+ponieważ \(F\) jest środkiem boku \(BC\). Podstawiając wymiary trójkąta, otrzymujemy
+\begin{gather*}
+    \frac{h}{a} = 2\\
+    h = 2a
+\end{gather*}
+Podobnie mamy \(\mangle{CTF} = \mangle{CSB} = 90\degree\) i~\(\mangle{CFT} = \mangle{CBS}\). Zatem \(\triangle{CTF} \sim \triangle{CSB}\), czyli
+\begin{gather*}
+    \frac{SB}{GB} = \frac{CB}{CF} = 2\\
+    \frac{\frac{1}{2}b}{\frac{1}{2}a} = 2\\
+    b = 2a
+\end{gather*}
+Mamy zatem
+\begin{gather*}
+    \area{ABC} = \frac{b \cdot h}{2} = \frac{2a \cdot 2a}{2} = 2a^2\\
+    \area{DEFG} = a^2\\
+    \frac{\area{DEFG}}{\area{ABC}} = \frac{a^2}{2a^2} = \frac{1}{2}
+\end{gather*}
+Zatem pole kwadratu stanowi \(\frac{1}{2}\) pola trójkąta.
+\subsubsection*{Zadanie~10.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2.5, 0);
+    \coordinate (B) at (2.5, 0);
+    \coordinate (C) at (0, 6);
+    \coordinate (D) at (-1.25, 0);
+    \coordinate (E) at (-1.25, 3);
+    \coordinate (F) at (1.25, 3);
+    \coordinate (G) at (1.25, 0);
+    \coordinate (T) at (0, 3);
+    \coordinate (S) at (0, 0);
+    \drawangle[RoyalBlue, angle radius=0.4cm]{C--B--A};
+    \drawrightangle[angle radius=0.4cm]{B--S--C};
+    \drawrightangle[angle radius=0.4cm]{B--G--F};
+    \draw (A) node[below left]{\(A\)}
+        -- (B) node[below right]{\(B\)}
+        -- (C) node[above]{\(C\)}
+        -- cycle;
+    \draw (D)
+        -- (E)
+        -- (F)
+        -- node[right]{\(h\)} (G) node[below]{\(G\)};
+    \path (S) -- node[below]{\(x\)} (G);
+    \draw[dashed] (C) -- node[pos=0.6, right]{\(H\)} (S);
+    \fillpoint*{S}[\(D\)][below];
+    \fillpoint*{F}[\(F\)][above right];
+\end{mathfigure*}
+Zauważmy, że \(\mangle{FGB} = \mangle{CDB} = 90\degree\) i~\(\mangle{FBG} = \mangle{CBD}\). Zatem \(\triangle{FGB} \sim \triangle{CDB}\), czyli
+\begin{gather*}
+    \frac{FG}{GB} = \frac{CD}{DB}\\
+    \frac{h}{\frac{AB}{2} - x} = \frac{H}{\frac{AB}{2}}\\
+    \frac{h}{10 - x} = \frac{8}{10}\\
+    5h = 40 - 4x\\
+    h = \frac{40 - 4x}{5}
+\end{gather*}
+Zdefiniujmy funkcję pola prostokąta w~zależności od \(x\):
+\begin{equation*}
+    S\pars{x}
+        = 2x \cdot h
+        = 2x \cdot \frac{40 - 4x}{5}
+        = \frac{80x - 8x^2}{5}
+        = \frac{8}{5}\pars{10 x - x^2}
+        = \frac{8}{5}x\pars{10 - x} \qquad x \in \open{0}{10}
+\end{equation*}
+Wykres funkcji wygląda następująco:
+\begin{equation*}
+    \downparabola{0}{10}
+\end{equation*}
+Zauważmy, że skoro współczynnik kierujący tej funkcji kwadratowej jest ujemny, to ramiona paraboli są skierowane w~stronę malejących współrzędnych \(x\), czyli funkcja przyjmuje wartość największą w~wierzchołku paraboli. Jest to punkt będący średnią arytmetyczną miejsc zerowych:
+\begin{gather*}
+    x_\p{max} = \frac{0 + 10}{2} = 5 \in \open{0}{10}\\
+    S\pars{x_\p{max}} = S\pars{5} = \frac{8}{5} \cdot 5 \cdot \pars{10 - 5} = 8 \cdot 5 = 40
+\end{gather*}
+Największe pole takiego prostokąta wynosi \(40\) i~jest przyjmowane, gdy bok prostokąta leżący na podstawie trójkąta ma długość \(10\), a drugi bo ma długość \(4\).
+\subsubsection*{Zadanie~11.}
+\begin{mathfigure*}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (6, 0);
+    \coordinate (C) at (0, 2.5);
+    \coordinate (O) at (3, 1.25);
+    \coordinate (I) at (1, 1);
+    \coordinate (T) at (1, 0);
+    \drawangle*[angle radius=1.5cm]{C--B--A}[\(\alpha\)];
+    \draw (A) node[below left]{\(A\)}
+        -- node[below]{\(x\)} (B) node[below right]{\(B\)}
+        -- node[below left]{\(z\)} (C) node[above left]{\(C\)}
+        -- node[left]{\(y\)} cycle;
+    \draw[RoyalBlue] (O) circle[radius=3.25];
+    \draw[ForestGreen] (I) circle[radius=1];
+    \draw[ForestGreen] (I) -- node[left]{\(r\)} (T);
+    \fillpoint*{O}[\(O\)][above right];
+    \fillpoint*{I}[\(I\)][right];
+\end{mathfigure*}
+Wyraźmy pole \(\triangle{ABC}\) na dwa sposoby:
+\begin{gather*}
+    \frac{xy}{2} = \frac{r\pars{x + y + z}}{2}\\
+    r = \frac{xy}{x + y + z}\\
+\end{gather*}
+Wiemy z~treści zadania, że
+\begin{gather*}
+    \frac{5}{2} = \frac{R}{r} = \frac{\frac{z}{2}}{\frac{xy}{x + y + z}} = \frac{xz + yz + z^2}{2xy}\\
+    \frac{xz + yz + z^2}{xy} = 5\\
+    \frac{\frac{x}{z} + \frac{y}{z} + 1}{\frac{xy}{z^2}} = 5\\
+    \frac{\sin\alpha + \cos\alpha + 1}{\sin\alpha \cdot \cos\alpha} = 5\\
+    \sin\alpha + \cos\alpha + 1 = 5\sin\alpha\cos\alpha\\
+\end{gather*}
+\subsubsection*{Zadanie~12.}
+Przyjmijmy, że początkowy kwadrat ma bok długości \(x\).
+\begin{mathfigure*}
+    \def\rt{\fpeval{sqrt(2)}}
+    \coordinate (A) at (-1, -1);
+    \coordinate (B) at (1, -1);
+    \coordinate (C) at (1, 1);
+    \coordinate (D) at (-1, 1);
+    \coordinate (E) at (0, -\rt);
+    \coordinate (F) at (\rt, 0);
+    \coordinate (G) at (0, \rt);
+    \coordinate (H) at (-\rt, 0);
+    \coordinate (S) at (0, 0);
+    \coordinate (T) at (0, 1);
+    \draw (A) -- (B) -- (C) -- (D) -- cycle;
+    \draw[dashed] (E) -- (F) -- (G) -- (H) -- cycle;
+    \draw[dotted] (H) -- (F);
+    \draw[dotted] (S) -- (G);
+    \fillpoint*{S}[\(S\)][below];
+    \fillpoint*{H}[\(H\)][left];
+    \fillpoint*{F}[\(F\)][right];
+    \fillpoint*{G}[\(G\)][above];
+\end{mathfigure*}
+\noindent
+Zauważmy, że ostateczny obwód składa się z~\(8\) małych trójkącików równoramiennych wystających nad boki. Zatem suma długości ramion każdego takiego trójkącika wynosi \(\frac{a}{8}\), czyli długość jednego ramienia to \(\frac{a}{16}\). Mały trójkącik równoramienny o~wierzchołku \(G\) jest podobny do \(\triangle{FGH}\) w~skali \(\frac{\frac{x\sqrt{2}}{2} - \frac{x}{2}}{\frac{x\sqrt{2}}{2}} = 1 - \frac{\sqrt{2}}{2}\). Zatem
+\begin{gather*}
+    \frac{a}{16} = \pars{1 - \frac{\sqrt{2}}{2}} \cdot x\\
+    x = \frac{\frac{a}{16}}{1 - \frac{\sqrt{2}}{2}}
+        = \frac{a}{16 - 8\sqrt{2}}
+\end{gather*}
+Pole bazowego kwadratu wynosi zatem
+\begin{equation*}
+    x^2
+        = \pars{\frac{a}{16 - 8\sqrt{2}}}^2
+        = \frac{a^2}{256 - 256\sqrt{2} + 128}
+        = \frac{a^2}{384 - 256\sqrt{2}}
+\end{equation*}
+Aby otrzymać pole całej figury, należy do tego jeszcze dodać pola czterech trójkącików, z~których każdy jest podobny do połowy kwadratu wyznaczonej przekątną, czyli do trójkąta o~polu \(\frac{x^2}{2}\), w~skali \(1 - \frac{\sqrt{2}}{2}\). Pole każdego takiego trójkącika wynosi zatem
+\begin{equation*}
+    \frac{x^2}{2}\pars{1 - \frac{\sqrt{2}}{2}}^2
+        = \frac{x^2}{2}\pars{1 - \sqrt{2} + \frac{1}{2}}
+        = \frac{3x^2}{4} - \frac{x^2\sqrt{2}}{2}
+\end{equation*}
+Czyli pole dodane przez \(4\) trójkąty wynosi
+\begin{equation*}
+    4\pars{\frac{3x^2}{4} - \frac{x^2\sqrt{2}}{2}}
+        = 3x^2 - 2\sqrt{2}x^2
+\end{equation*}
+Ostatecznie zatem pole wynosi
+\begin{equation*}
+    \begin{split}
+        x^2 + 3x^2 - 2\sqrt{2}x^2
+            &= 4x^2 - 2\sqrt{2}x^2
+            = \pars{4 - 2\sqrt{2}} \cdot \frac{a^2}{384 - 256\sqrt{2}}
+            = \pars{4 - 2\sqrt{2}} \cdot \frac{a^2}{64\pars{6 - 4\sqrt{2}}}
+            = \frac{a^2}{64} \cdot \frac{2 - \sqrt{2}}{3 - 2\sqrt{2}}\\
+            &= \frac{a^2}{64} \cdot \frac{\pars{2 - \sqrt{2}}\pars{3 + 2\sqrt{2}}}{9 - 8}
+            = \frac{a^2}{64}\pars{2 - \sqrt{2}}
+    \end{split}
+\end{equation*}

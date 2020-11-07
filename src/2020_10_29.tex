@@ -1,0 +1,199 @@
+\subsection*{Zestaw~XIV (Trygonometria --- zadania otwarte)}
+\subsubsection*{Zadanie~1.}
+\begin{gather*}
+    \sin2\alpha\cos\alpha - \cos2\alpha\sin3\alpha = -\cos4\alpha\sin\alpha\\
+    \begin{split}
+        L
+            &= \sin2\alpha\cos\alpha - \cos2\alpha\sin3\alpha
+            = \frac{1}{2}\pars{\sin\pars{2\alpha + \alpha} + \sin\pars{2\alpha - \alpha}} - \frac{1}{2}\pars{\sin\pars{3\alpha + 2\alpha} + \sin\pars{3\alpha - 2\alpha}}\\
+            &= \frac{1}{2}\pars{\sin3\alpha + \sin\alpha - \sin5\alpha - \sin\alpha}
+            = \frac{1}{2}\pars{\sin3\alpha - \sin5\alpha}
+            = \frac{1}{2} \cdot 2\sin\frac{3\alpha - 5\alpha}{2}\cos\frac{3\alpha + 5\alpha}{2}\\
+            &= \sin\pars{-\alpha}\cos4\alpha
+            = -\cos4\alpha\sin\alpha = R
+    \end{split}
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~2.}
+\begin{equation*}
+        \frac{\cos2\degree\pars{1 + \tan^21\degree}}{1 - \tan^21\degree}
+            = \frac{\cos2\degree \cdot \pars{1 + \frac{\sin^21\degree}{\cos^21\degree}}}{1 - \frac{\sin^21\degree}{\cos^21\degree}}
+            = \frac{\cos2\degree \cdot \frac{\cos^21\degree + \sin^21\degree}{\cancel{\cos^21\degree}}}{\frac{\cos^21\degree - \sin^21\degree}{\cancel{\cos^21\degree}}}
+            = \frac{\cancel{\cos2\degree} \cdot 1}{\cancel{\cos2\degree}}
+            = 1
+\end{equation*}
+\qed
+\subsubsection*{Zadanie~3.}
+\begin{equation*}
+    \begin{split}
+        \sin^216\degree + \cos46\degree\cos14\degree
+            &= \sin^216\degree + \frac{1}{2}\pars{\cos\pars{46 - 14} + \cos\pars{46 + 14}}
+            = \sin^216\degree + \frac{1}{2}\pars{\cos32\degree + \cos60\degree}\\
+            &= \sin^216\degree + \frac{1}{2}\cos\pars{2 \cdot 16\degree} + \frac{1}{2} \cdot \frac{1}{2}
+            = \sin^216\degree + \frac{1}{2}\pars{1 - 2\sin^216\degree} + \frac{1}{4}\\
+            &= \sin^216\degree + \frac{1}{2} - \sin^216\degree + \frac{1}{4}
+            = \frac{3}{4} \in \rational
+    \end{split}
+\end{equation*}
+\qed
+\subsubsection*{Zadanie~4.}
+\begin{gather*}
+    m\sin x = 2m - \sin x \qquad x \in \real\\
+    \sin x\pars{m + 1} = 2m
+\end{gather*}
+Jeśli \(m = -1\), to otrzymujemy rówanie postaci \(\sin x \cdot 0 = 2 \cdot -1\), co jest oczywistą sprzecznością. Załóżmy zatem, że \(m \neq -1\) i~podzielmy obie strony równania przez \(m + 1\):
+\begin{equation*}
+    \frac{2m}{m + 1} = \sin x
+\end{equation*}
+Aby taka równość miała szansę zachodzić, musi zachodzić
+\begin{equation*}
+    \abs{\frac{2m}{m + 1}} \leq 1
+\end{equation*}
+ponieważ \(-1 \leq \sin x \leq 1\). Rozważmy przypadki:
+\begin{proofcases}
+    \item \(m \in \open{-\infty}{-1} \cup \leftclosed{0}{+\infty}\): wtedy \(2m\) i~\(m + 1\) są tego samego znaku, więc ich iloraz jest dodatni:
+        \begin{gather*}
+            \frac{2m}{m + 1} \leq 1\\
+            \frac{2m - m - 1}{m + 1} \leq 0\\
+            \frac{m - 1}{m + 1} \leq 0\\
+            m \in \closed{-1}{1}
+        \end{gather*}
+        Po uwzględnieniu rozważanego przedziału otrzymujemy
+        \begin{equation*}
+            m \in \closed{0}{1}
+        \end{equation*}
+    \item \(m \in \open{-1}{0}\): wtedy \(2m\) i~\(m + 1\) są różnych znaków, więc ich iloraz jest ujemny:
+        \begin{gather*}
+            \frac{-2m}{m + 1} \leq 1\\
+            \frac{-2m - m - 1}{m + 1} \leq 0\\
+            \frac{-3m - 1}{m + 1} \leq 0\\
+            \frac{3m + 1}{m + 1} \geq 0\\
+            m \in \open{-\infty}{-1} \cup \leftclosed{-\frac{1}{3}}{+\infty}
+        \end{gather*}
+        Po uwzględnieniu rozważanego przedziału mamy
+        \begin{equation*}
+            m \in \leftclosed{-\frac{1}{3}}{0}
+        \end{equation*}
+\end{proofcases}
+Ostatecznie mamy zatem
+\begin{equation*}
+    m \in \closed{-\frac{1}{3}}{1}
+\end{equation*}
+\subsubsection*{Zadanie~5.}
+\begin{gather*}
+    \sin\alpha\sin\beta = \frac{1}{2} \wland \alpha - \beta = \frac{\pi}{2}\\
+    \frac{1}{2} = \sin\alpha\sin\beta = \frac{1}{2}\pars{\cos\pars{\alpha - \beta} - \cos\pars{\alpha + \beta}}\\
+    \cos\pars{\alpha - \beta} - \cos\pars{\alpha + \beta} = 1\\
+    \cos\frac{\pi}{2} - \cos\pars{\alpha + \beta} = 1\\
+    0 - \cos\pars{\alpha + \beta} = 1\\
+    \cos\pars{\alpha + \beta} = -1
+\end{gather*}
+\subsubsection*{Zadanie~6.}
+\begin{gather*}
+    \sin\alpha + \cos\alpha = \frac{1}{\sqrt{2}}\\
+    \pars{\sin\alpha + \cos\alpha}^2 = \frac{1}{2}\\
+    \sin^2\alpha + \cos^2\alpha + 2\sin\alpha\cos\alpha = \frac{1}{2}\\
+    1 + 2\sin\alpha\cos\alpha = \frac{1}{2}\\
+    \sin\alpha\cos\alpha = -\frac{1}{4}\\
+    \sin^4\alpha + \cos^4\alpha = \pars{\sin^2\alpha + \cos^2\alpha}^2 - 2\sin^2\alpha\cos^2\alpha\\
+    \sin^4\alpha + \cos^4\alpha = 1 - 2\sin^2\alpha\cos^2\alpha\\
+    \sin^4\alpha + \cos^4\alpha = 1 - 2 \cdot \pars{-\frac{1}{4}}^2\\
+    \sin^4\alpha + \cos^4\alpha = 1 - \frac{2}{16} = 1 - \frac{1}{8}\\
+    \sin^4\alpha + \cos^4\alpha = \frac{7}{8}
+\end{gather*}
+\subsubsection*{Zadanie~7.}
+\begin{gather*}
+    \sin\alpha\cos\alpha = \frac{1}{3}\\
+    \begin{split}
+        x = \frac{\sin^2\alpha}{\cos\alpha} + \frac{\cos^2\alpha}{\sin\alpha}
+            &= \frac{\sin^3\alpha + \cos^3\alpha}{\sin\alpha\cos\alpha}
+            = \frac{\pars{\sin\alpha + \cos\alpha}\pars{\sin^2\alpha - \sin\alpha\cos\alpha + \cos^2\alpha}}{\sin\alpha\cos\alpha}
+            = \frac{\pars{\sin\alpha + \cos\alpha}\pars{1 - \frac{1}{3}}}{\frac{1}{3}}\\
+            &= \frac{\frac{2}{3}\pars{\sin\alpha + \cos\alpha}}{\frac{1}{3}}
+            = 2\pars{\sin\alpha + \cos\alpha}
+    \end{split}\\
+    x^2 = 4\pars{\sin^2\alpha + \cos^2\alpha + 2\sin\alpha\cos\alpha} = 4\pars{1 + 2 \cdot \frac{1}{3}} = \frac{20}{3}
+\end{gather*}
+Ponieważ wiemy, że \(\alpha \in \open{0}{\frac{\pi}{2}}\), to \(\sin\alpha, \cos\alpha > 0\), więc ich suma także jest dodatnia. Możemy zatem spierwiastkować stronami:
+\begin{equation*}
+    x = \sqrt{\frac{20}{3}}
+\end{equation*}
+\subsubsection*{Zadanie~8.}
+\begin{gather*}
+    \sin x + \sin5x = 2\cos2x \qquad x \in \real\\
+    2\sin\frac{x + 5x}{2}\cos\frac{x - 5x}{2} = 2\cos2x\\
+    2\sin3x\cos\pars{-2x} = 2\cos2x\\
+    2\sin3x\cos2x = 2\cos2x
+\end{gather*}
+Jeśli \(\cos2x = 0\), to mamy \(2x = k\pi + \frac{\pi}{2}\), czyli \(x = \frac{k\pi}{2} + \frac{\pi}{4}\), gdzie \(k \in \integer\). Jeśli \(\cos2x \neq 0\), to możemy obustronnie podzielić:
+\begin{gather*}
+    \sin3x = 1\\
+    3x = 2k\pi + \frac{\pi}{2} \qquad k \in \integer\\
+    x = \frac{2k\pi}{3} + \frac{\pi}{6} \qquad k \in \integer
+\end{gather*}
+Zatem ostatecznie mamy
+\begin{equation*}
+    x = \frac{k\pi}{2} + \frac{\pi}{4} \wlor x = \frac{2k\pi}{3} + \frac{\pi}{6} \qquad k \in \integer
+\end{equation*}
+\subsubsection*{Zadanie~9.}
+\begin{gather*}
+    \sin2x = \sin3x\\
+    3x = 2k\pi + 2x \wlor 3x = 2k\pi + \pi - 2x \qquad k \in \integer\\
+    x = 2k\pi \wlor x = \frac{2k\pi + \pi}{5} \qquad k \in \integer
+\end{gather*}
+Najmniejsze dodatnie rozwiązanie pierwszego typu jest przyjmowane dla \(k = 1\) i~wynosi \(2\pi\), natomiast najmniejsze dodatnie rozwiązanie drugiego typu jest przyjmowane dla \(k = 0\) i~wynosi \(\frac{\pi}{5}\). Zatem najmniejsze dodatnie rozwiązanie tego równania to \(x = \frac{\pi}{5}\).
+\subsubsection*{Zadanie~10.}
+\begin{gather*}
+    \sin4x = \cos^4x - \sin^4x \qquad x \in \real\\
+    \sin4x = \pars{\cos^2x - \sin^2x}\pars{\cos^2x + \sin^2x}\\
+    \sin4x = \cos^2x - \sin^2x\\
+    \sin4x = \cos2x\\
+    \sin4x = \sin\pars{\frac{\pi}{2} + 2x}\\
+    4x = \frac{\pi}{2} + 2x + 2k\pi \wlor 4x = \frac{\pi}{2} - 2x + 2k\pi \qquad k \in \integer\\
+    x = \frac{\pi}{4} + k\pi \wlor x = \frac{\pi}{12} + \frac{k\pi}{3}
+\end{gather*}
+\subsubsection*{Zadanie~11.}
+\begin{gather*}
+    2\cos^2x < 1 \qquad x \in \closed{0}{2\pi}\\
+    \cos^2x < \frac{1}{2}\\
+    -\frac{1}{\sqrt{2}} < \cos x < \frac{1}{\sqrt{2}}\\
+    -\frac{\sqrt{2}}{2} < \cos x < \frac{\sqrt{2}}{2}\\
+    \cos\frac{3\pi}{4} < \cos x < \cos\frac{\pi}{4}
+\end{gather*}
+\begin{mathfigure*}
+    \def\rt{\fpeval{sqrt(2)/2}}
+    \drawcoordsystem{0, -1.5}{3*pi, 1.5};
+    \draw[domain=0:3*pi, smooth, samples=30, thick, ForestGreen] plot (\x, {cos(\x r)});
+    \draw[dotted] (pi/4, \rt) -- (pi/4, 0) node[below]{\(\frac{\pi}{4}\)};
+    \drawpoint*{pi/4, \rt}[\(\frac{\sqrt{2}}{2}\)][above];
+    \draw[dotted] (3*pi/4, -\rt) -- (3*pi/4, 0) node[above]{\(\frac{3\pi}{4}\)};
+    \drawpoint*{3*pi/4, -\rt}[\(-\frac{\sqrt{2}}{2}\)][below];
+    \draw[dotted] (5*pi/4, -\rt) -- (5*pi/4, 0) node[above]{\(\frac{5\pi}{4}\)};
+    \drawpoint*{5*pi/4, -\rt}[\(-\frac{\sqrt{2}}{2}\)][below];
+    \draw[dotted] (7*pi/4, \rt) -- (7*pi/4, 0) node[below]{\(\frac{7\pi}{4}\)};
+    \drawpoint*{7*pi/4, \rt}[\(\frac{\sqrt{2}}{2}\)][above];
+    \draw[dotted] (2*pi, 1) -- (2*pi, 0) node[below]{\(2\pi\)};
+    \fillpoint*{2*pi, 1};
+    \fillpoint*{pi/2, 0}[\(\frac{\pi}{2}\)][below];
+    \fillpoint*{3*pi/2, 0}[\(\frac{3\pi}{2}\)][below];
+\end{mathfigure*}
+Z~wykresu odczytujemy, że
+\begin{equation*}
+    \forall x \in \open{\frac{\pi}{4}}{\frac{3\pi}{4}} \cup \open{\frac{5\pi}{4}}{\frac{7\pi}{4}}\colon 2\cos^2x < 1
+\end{equation*}
+\subsubsection*{Zadanie~12.}
+\begin{gather*}
+    f\pars{x} = 3\cos2x - 2\cos x \qquad x \in \real\\
+    f\pars{x} = 3\pars{2\cos^2x - 1} - 2\cos x = 6\cos^2x - 2\cos x - 3\\
+    t \coloneqq \cos x \qquad t \in \closed{-1}{1}\\
+    6t^2 - 2t - 3
+\end{gather*}
+Współczynnik przy \(t^2\) jest dodatni, więc ramiona paraboli są skierowane w~stronę rosnących współrzędnych \(y\). Oznacza to, że funkcja kwadratowa ma wartość najmniejszą przyjmowaną dla \(t = \frac{-\pars{-2}}{2 \cdot 6} = \frac{1}{6} \in \closed{-1}{1}\) równą \(\frac{-\Delta}{4 \cdot 6} = \frac{-76}{24} = -\frac{19}{6}\). Wartość największa jest przyjmowana na jednym z~końców przedziału:
+\begin{gather*}
+    t = 1 \implies 6t^2 - 2t - 3 = 1\\
+    t = -1 \implies 6t^2 - 2t - 3 = 5
+\end{gather*}
+Zatem wartość największa funkcji wynosi \(5\). Skoro funkcja jest ciągła, to zbiorem wartości funkcji \(f\) jest przedział
+\begin{equation*}
+    \closed{-\frac{19}{6}}{5}
+\end{equation*}

@@ -1,0 +1,398 @@
+\subsection*{Zestaw XXV --- Rachunek różniczkowy (zadania otwarte)}
+\subsubsection*{Zadanie~1.}
+\begin{gather*}
+    f\pars{x} = \frac{x^2}{2x - 2} \qquad x \in \real \setminus \set{1}\\
+    f'\pars{x}
+        = \frac{\pars{x^2}'\pars{2x - 2} - x^2\pars{2x - 2}'}{\pars{2x - 2}^2}
+        = \frac{2x\pars{2x - 2} - 2x^2}{\pars{2x - 2}^2}
+        = \frac{4x^2 - 4x - 2x^2}{\pars{2x - 2}^2}
+        = \frac{2x^2 - 4x}{\pars{2x - 2}^2}\\
+    f\pars{x} = f'\pars{x}\\
+    \frac{x^2}{2x - 2} = \frac{2x^2 - 4x}{\pars{2x - 2}^2}\\
+    x^2 = \frac{2x^2 - 4x}{2x - 2}\\
+    2x^3 - 2x^2 = 2x^2 - 4x\\
+    2x^3 - 4x^2 + 4x = 0\\
+    2x\overbrace{\pars{x^2 - 2x + 2}}^{\Delta = 4 - 4 \cdot 2 = -4 < 0} = 0
+\end{gather*}
+Zatem jedynym rozwiązaniem takiego równania jest \(x = 0\), ponieważ drugi czynnik nie ma pierwiastków.
+\qed
+\subsubsection*{Zadanie~2.}
+\begin{gather*}
+    m \geq \frac{4}{3}\\
+    f\pars{x} = -x^3 + 2x^2 - mx - 5 \qquad x \in \real
+\end{gather*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    f'\pars{x} = -3x^2 + 4x - m
+\end{equation*}
+Obliczmy \(\Delta\) takiej funkcji kwadratowej:
+\begin{equation*}
+    \Delta = 4^2 - 4 \cdot \pars{-3} \cdot \pars{-m}
+        = 16 - 12m
+\end{equation*}
+Skoro \(m \geq \frac{4}{3}\), to \(\Delta = 16 - 12m \leq 16 - 12 \cdot \frac{4}{3} = 0\). Zatem pochodna ma co najwyżej jeden pierwiastek. Współczynnik kierujący jest ujemny, więc ramiona paraboli są skierowane w~stronę malejących współrzędnych \(y\). Oznacza to, że pochodna jest zawsze niedodatnia. Z~tego wszystkiego wyniak, że funkcja \(f\) jest malejąca w~\(\real\) (w~jedynym miejscu zerowym pochodnej funkcja ma punkt przegięcia, co nie wpływa jednak na monotoniczność).
+\qed
+\subsubsection*{Zadanie~3.}
+\begin{equation*}
+    f\pars{x} = x^3 - 2x^2 + 8x - 15 \qquad x \in \real
+\end{equation*}
+Zauważmy, że ta funkcja jest ciągła jako suma funkcji ciągłych. Pokażmy najpierw, że ma miejsce zerowe:
+\begin{gather*}
+    f\pars{0} = -15 < 0\\
+    f\pars{2} = 8 - 8 + 16 - 15 = 1 > 0
+\end{gather*}
+Skoro funkcja przyjmuje zarówno wartości dodatnie i~ujemne oraz jest ciągła, to na mocy twierdzenia Darboux przyjmuje również wartość \(0\). Teraz obliczmy pochodną funkcji \(f\):
+\begin{equation*}
+    f'\pars{x} = 3x^2 - 4x + 8
+\end{equation*}
+Obliczmy \(\Delta\) tej funkcji kwadratowej:
+\begin{equation*}
+    \Delta = \pars{-4}^2 - 4 \cdot 3 \cdot 8 = 16 - 96 = -80 < 0
+\end{equation*}
+Zatem ta funkcja kwadratowa nie ma miejsc zerowych, a~współczynnik kierujący jest dodatni. Ramiona paraboli są więc skierowane w~stronę rosnących współrzędnych \(y\), czyli \(f'\) przyjmuje tylko wartości dodatnie. Oznacza to, że funkcja \(f\) jest rosnąca w~\(\real\). Zatem, ponieważ jest ciągła, to nie może przyjmować więcej niż jednego miejsca zerowego, czyli przyjmuje dokładnie jedno.
+\qed
+\subsubsection*{Zadanie~4.}
+\begin{equation*}
+    y\pars{x} = ax^2 \qquad x \in \real
+\end{equation*}
+Obliczmy pochodną tej funkcji, aby uzyskać współczynnik kierunkowy prostej stycznej do paraboli:
+\begin{equation*}
+    y'\pars{x} = 2ax
+\end{equation*}
+Zatem współczynnik kierunkowy prostej stycznej do paraboli w~punkcie \(\pars{x_0; y_0}\) wynosi
+\begin{equation*}
+    y'\pars{x_0} = 2ax_0
+\end{equation*}
+Prosta styczna do paraboli w~tym punkcie jest więc funkcją liniową o~równaniu
+\begin{equation*}
+    t\pars{x} = 2ax_0\pars{x - x_0} + y\pars{x_0}
+\end{equation*}
+Punkt przecięcia tej prostej z~osią \(Oy\) to \(0; t\pars{0}\):
+\begin{equation*}
+    t\pars{0}
+        = 2ax_0\pars{0 - x_0} + y\pars{x_0}
+        = -2ax_0^2 + y\pars{x_0}
+        = -2y\pars{x_0} + y\pars{x_0}
+        = -y\pars{x_0}
+        = y_0
+\end{equation*}
+Zatem punkt przecięcia tej prostej z~osią \(Oy\) to \(\pars{0; -y_0}\).
+\qed
+\subsubsection*{Zadanie~5.}
+\begin{equation*}
+    f\pars{x} = ax^3 + bx + 10 \qquad x \in \real
+\end{equation*}
+Wiemy, że
+\begin{gather*}
+    f\pars{1} = 8\\
+    a + b + 10 = 8\\
+    a + b = -2
+\end{gather*}
+Skoro funkcja \(f\) osiąga ekstremum dla \(x = 1\), to pochodna musi w~tym punkcie mieć miejsce zerowe, w~którym zmienia znak. Obliczmy zatem tę pochodną:
+\begin{equation*}
+    f'\pars{x}
+        = 3ax^2 + b
+\end{equation*}
+Podstawiając \(x = 1\), otrzymujemy
+\begin{equation*}
+    3a + b = 0
+\end{equation*}
+Odejmując stronami uzyskane równania łączące \(a\) i~\(b\), otrzymujemy
+\begin{gather*}
+    2a = 2\\
+    \begin{cases}
+        a = 1\\
+        b = -3
+    \end{cases}
+\end{gather*}
+Musimy jeszcze sprawdzić, czy to faktycznie jest rozwiązanie, czyli czy pochodna w~punkcie \(x = 1\) zmienia znak:
+\begin{gather*}
+    f'\pars{1} = 3x^2 - 3
+        = 3\pars{x + 1}\pars{x - 1}\\
+    \upparabola{-1}{1}
+\end{gather*}
+Rzeczywiście, pochodna jest ujemna w~przedziale \(\open{-1}{1}\) i~dodatnia w~przedziale \(\open{1}{+\infty}\), zatem faktycznie w~punkcie \(x = 1\), dla którego pochodna ma wartość \(0\), faktycznie jest ekstremum. Zatem para
+\begin{equation*}
+    \begin{cases}
+        a = 1\\
+        b = -1
+    \end{cases}
+\end{equation*}
+jest rozwiązaniem.
+\subsubsection*{Zadanie~6.}
+\begin{equation*}
+    f\pars{x} = \frac{2x}{x^2 + 1} + 2 \qquad x \in \real
+\end{equation*}
+Styczna do wykresu funkcji \(f\) jest równoległa do osi \(Ox\) wtedy, gdy współczynnik takiej prostej jest równy \(0\), czyli gdy pochodna przyjmuje wartość \(0\). Obliczmy więc tę pochodną:
+\begin{equation*}
+    f'\pars{x}
+        = \frac{\pars{2x}'\pars{x^2 + 1} - 2x\pars{x^2 + 1}'}{\pars{x^2 + 1}^2}
+        = \frac{2x^2 + 2 - 4x^2}{\pars{x^2 + 1}^2}
+        = \frac{2 - 2x^2}{\pars{x^2 + 1}^2}
+        = \frac{2\pars{1 - x}\pars{1 + x}}{\pars{x^2 + 1}^2}
+\end{equation*}
+Aby znaleźć współrzędne \(x\) takich punktów, rozwiązujemy równanie
+\begin{gather*}
+    f'\pars{x} = 0\\
+    \frac{2\pars{1 - x}\pars{1 + x}}{\pars{x^2 + 1}^2} = 0\\
+    \pars{1 - x}\pars{1 + x} = 0\\
+    x = 1 \wlor x = -1
+\end{gather*}
+Podstawiając do funkcji \(f\), otrzymujemy współrzędne \(y\) tych punktów:
+\begin{gather*}
+    f\pars{1} = \frac{2}{1 + 1} + 2
+        = \frac{2}{2} + 2
+        = 3\\
+    f\pars{1} = \frac{-2}{1 + 1} + 2
+        = \frac{-2}{2} + 2
+        = -1 + 2
+        = 1
+\end{gather*}
+Zatem punkty, w~których styczna do wykresu funkcji \(f\pars{x}\) jest równoległa do osi \(Ox\), to:
+\begin{gather*}
+    \pars{1; 3}\\
+    \pars{-1; 1}
+\end{gather*}
+\subsubsection*{Zadanie~7.}
+\begin{equation*}
+    f\pars{x} = \frac{x^3}{3} + \frac{ax^2}{2} \qquad x \in \real
+\end{equation*}
+Aby zbadać ekstrema, obliczmy pochodną tej funkcji:
+\begin{equation*}
+    f'\pars{x} = x^2 + ax = x\pars{x + a}
+\end{equation*}
+Gdy \(a = 0\), to pochodna ma postać \(x^2\), czyli jest zawsze nieujemna, a~zatem funkcja \(f\) nie ma ekstremów. Natomiast gdy \(a \neq 0\), to pochodna jest funkcją kwadratową o~dwóch miejscach zerowych, w~których zmienia znak:
+\begin{proofcases}
+    \item \(a < 0\)
+        \begin{equation*}
+            \upparabola{0}{-a}
+        \end{equation*}
+        Wtedy
+            \begin{itemize}
+                \item pochodna jest dodatnia w~przedziale \(\open{-\infty}{0}\), dla \(x = 0\) przyjmuje wartość \(0\), a~w~przedziale \(\open{0}{-a}\) jest ujemna, zatem funkcja \(f\) jest rosnąca w~przedziale \(\open{-\infty}{0}\) i~malejąca w~przedziale \(\open{0}{-a}\), czyli dla \(x = 0\) osiąga maksimum lokalne:
+                    \begin{equation*}
+                        f\pars{0} = 0
+                    \end{equation*}
+                \item pochodna jest ujemna w~przedziale \(\open{0}{-a}\), dla \(x = -a\) przyjmuje wartość \(0\), a~w~przedziale \(\open{-a}{+\infty}\) jest dodatnia, zatem funkcja \(f\) jest malejąca w~przedziale \(\open{0}{-a}\) i~rosnąca w~przedziale \(\open{-a}{+\infty}\), czyli dla \(x = -a\) osiąga minimum lokalne:
+                \begin{equation*}
+                    f\pars{-a} = \frac{-a^3}{3} + \frac{a^3}{2} = \frac{a^3}{6}
+                \end{equation*}
+            \end{itemize}
+    \item \(a > 0\)
+    \begin{equation*}
+        \upparabola{-a}{0}
+    \end{equation*}
+    Wtedy
+        \begin{itemize}
+            \item pochodna jest dodatnia w~przedziale \(\open{-\infty}{-a}\), dla \(x = -a\) przyjmuje wartość \(0\), a~w~przedziale \(\open{-a}{0}\) jest ujemna, zatem funkcja \(f\) jest rosnąca w~przedziale \(\open{-\infty}{-a}\) i~malejąca w~przedziale \(\open{-a}{0}\), czyli dla \(x = -a\) osiąga maksimum lokalne:
+                \begin{equation*}
+                    f\pars{-a} = \frac{-a^3}{3} + \frac{a^3}{2} = \frac{a^3}{6}
+                \end{equation*}
+            \item pochodna jest ujemna w~przedziale \(\open{-a}{0}\), dla \(x = 0\) przyjmuje wartość \(0\), a~w~przedziale \(\open{0}{+\infty}\) jest dodatnia, zatem funkcja \(f\) jest malejąca w~przedziale \(\open{-a}{0}\) i~rosnąca w~przedziale \(\open{0}{+\infty}\), czyli dla \(x = 0\) osiąga minimum lokalne:
+            \begin{equation*}
+                f\pars{0} = 0                
+            \end{equation*}
+        \end{itemize}
+\end{proofcases}
+\subsubsection*{Zadanie~8.}
+Aby zminimalizować odległość możemy równoważnie zminimalizować jej kwadrat. Zdefiniujmy funkcję kwadratu odległości punktu leżącego na paraboli od punktu \(\pars{3; 2}\) w~zależności od współrzędnej \(x\) tego punktu na paraboli:
+\begin{equation*}
+    \begin{split}
+        D\pars{x}
+            &= \pars{x - 3}^2 + \pars{3x^2 - 5x + 6 - 2}^2
+            = \pars{x - 3}^2 + \pars{3x^2 - 5x + 4}^2\\
+            &= x^2 - 6x + 9 + 9x^4 + 25x^2 + 16 + 24x^2 - 30x^3 - 40x
+            = 9x^4 - 30x^3 + 50x^2 - 46x + 25 \qquad x \in \real
+    \end{split}
+\end{equation*}
+Obliczmy pochodną tej funkcji, aby zbadać ekstrema:
+\begin{equation*}
+    D'\pars{x}
+        = 36x^3 - 90x^2 + 100x - 46
+        = \pars{x - 1}\pars{36x^2 - 54x + 46}
+\end{equation*}
+Zauważmy, że \(\Delta\) drugiego czynnika jest ujemna:
+\begin{equation*}
+    \Delta
+        = \pars{-54}^2 - 4 \cdot 36 \cdot 46
+        = 2916 - 6624 < 0
+\end{equation*}
+Zatem drugi czynnik nie ma pierwiastków, a~ponieważ współczynnik przy \(x^2\) jest dodatni, to cały czynnik \(36x^2 - 54x + 46\) jest zawsze dodatni. Wykres znaku pochodnej wygląda więc następująco:
+\begin{equation*}
+    \begin{tikzpicture}
+        \drawvec (-2, 0) -- (2, 0) node[below]{\(x\)};
+        \draw (-1.5, -1.5) -- (1.5, 1.5);
+        \fillpoint*{0, 0}[\(1\)][below right];
+    \end{tikzpicture}
+\end{equation*}
+W~przedziale \(\open{-\infty}{1}\) pochodna jest ujemna, dla \(x = 1\) przyjmuje wartość \(0\), a~w~przedziale \(\open{1}{+\infty}\) jest dodatnia. Oznacza to, że funkcja \(D\) jest malejąca w~przedziale \(\open{-\infty}{1}\) i~rosnąca w~przedziale \(\open{1}{+\infty}\), więc dla \(x = 1\) przyjmuje globalną wartość najmniejszą:
+\begin{equation*}
+    D_\p{min} = D\pars{1} = 9 - 30 + 50 - 46 + 25 = 8
+\end{equation*}
+Czyli najmniejszy kwadrat odległości punktu leżącego na paraboli od punktu \(\pars{3; 2}\) wynosi \(8\). Sama odległość wynosi więc \(2\sqrt{2}\). Pierwsza współrzędna punktu wynosi \(1\), a~drugą otrzymujemy przez podstawienie do równania paraboli:
+\begin{equation*}
+    y = 3x^2 - 5x + 6 = 3 - 5 + 6 = 4
+\end{equation*}
+Zatem najbliższy do punktu \(\pars{3; 1}\) punkt leżący na paraboli \(y = 3x^2 - 5x + 6\) ma współrzędne
+\begin{equation*}
+    \pars{1; 4}
+\end{equation*}
+\subsubsection*{Zadanie~9.}
+\begin{gather*}
+    m \in \real\\
+    f\pars{x} = \frac{4}{3}x^3 - 3\pars{m + 1}x^2 + m^2x - 3m + 1 \qquad x \in \real
+\end{gather*}
+Aby zbadać ekstrema tej funkcji, obliczmy jej pochodną:
+\begin{equation*}
+    f'\pars{x} = 4x^2 - 6\pars{m + 1}x + m^2
+\end{equation*}
+Pochodna jest funkcją kwadratową o~dodatnim współczynniku przy \(x^2\). Aby funkcja \(f\) nie posiadała maksimum, wykres pochodnej nie może wyglądać tak:
+\begin{equation*}
+    \upparabola{x_1}{x_2}
+\end{equation*}
+ponieważ wtedy w~przedziale \(\open{-\infty}{x_1}\) pochodna byłaby dodatnia, dla \(x = x_1\) przyjmowałaby wartość \(0\), a~w~przedziale \(\open{x_1}{x_2}\) byłaby ujemna, czyli funkcja \(f\) byłaby rosnąca w~przedziale \(\open{-\infty}{x_1}\) i~malejąca w~przedziale \(\open{x_1}{x_2}\), więc dla \(x = x_1\) przyjmowałaby maksimum lokalne. Zatem pochodna nie może mieć dwóch miejsc zerowych, czyli jej \(\Delta\) musi być niedodatnia:
+\begin{gather*}
+    \Delta \leq 0\\
+    \pars{-6\pars{m + 1}}^2 - 4 \cdot 4m^2 \leq 0\\
+    36m^2 + 72m + 36 - 16m^2 \leq 0\\
+    20m^2 + 72m + 36 \leq 0\\
+    5m^2 + 18m + 9 \leq 0\\
+    \Delta_m = 18^2 - 4 \cdot 5 \cdot 9
+        = 324 - 180
+        = 144\\
+    \sqrt{\Delta} = 12\\
+    m_1 = \frac{-18 - \sqrt{\Delta}}{2 \cdot 5}
+        = \frac{-18 - 12}{10}
+        = -3\\
+    m_2 = \frac{-18 + \sqrt{\Delta}}{2 \cdot 5}
+        = \frac{-18 + 12}{10}
+        = -\frac{3}{5}\\
+    \upparabola{-3}{-\frac{3}{5}}[\(m\)]
+\end{gather*}
+Zatem ostatecznie otrzymujemy
+\begin{equation*}
+    m \in \closed{-3}{-\frac{3}{5}}
+\end{equation*}
+\subsubsection*{Zadanie~10.}
+\begin{equation*}
+    4\liter = 4\dm^3
+\end{equation*}
+W~dalszej części rozwiązania tego zadania będę wszystkie wymiary podawał odpowiednio w~\(\dm\), \(\dm^2\) i~\(\dm^3\). Oznaczmy przez \(x\) długość krawędzi kwadratu znajdującego się w~podstawie prostopadłościanu, a~przez \(h\) wysokość tego prostopadłościanu. Objętość prostopadłościanu wyraża się następująco:
+\begin{gather*}
+    V = x^2h\\
+    4 = x^2h\\
+    h = \frac{4}{x^2}
+\end{gather*}
+Zdefiniujmy funkcję pola powierzchni tego pojemnika (bez pokrywki) w~zależności od \(x\):
+\begin{equation*}
+    S\pars{x}
+        = x^2 + 4hx = x^2 + 4x \cdot \frac{4}{x^2}
+        = x^2 + \frac{16}{x}
+        = \frac{x^3 + 16}{x} \qquad x \in \open{0}{+\infty}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    S'\pars{x}
+        = \frac{\pars{x^3 + 16}'x - \pars{x^3 + 16}\pars{x}'}{x^2}
+        = \frac{3x^3 - x^3 - 16}{x^2}
+        = \frac{2x^3 - 16}{x^2}
+        = \frac{2\pars{x^3 - 8}}{x^2}
+        = \frac{2\pars{x - 2}\overbrace{\pars{x^2 + 2x + 4}}^{\Delta = 2^2 - 4 \cdot 1 \cdot 4 = -12 < 0}}{x^2}
+\end{equation*}
+Widzimy, że wyrażenia \(x^2\) oraz \(x^2 + 2x + 4\) są zawsze dodatnie, zatem znak pochodnej zależy tylko od znaku wyrażenia \(x - 2\). Wykres znaku pochodnej wygląda więc tak:
+\begin{equation*}
+    \begin{tikzpicture}
+        \draw (-2, 0) -- (2, 0) node[below]{\(x\)};
+        \draw (-1.5, -1.5) -- (1.5, 1.5);
+        \fillpoint*{0, 0}[\(2\)][below right];
+    \end{tikzpicture}
+\end{equation*}
+Interesuje nas tylko przedział \(\open{0}{+\infty}\). Pochodna jest ujemna w~przedziale \(\open{0}{2}\), dla \(x = 2\) przyjmuje wartość \(0\), a~w~przedziale \(\open{2}{+\infty}\) jest dodatnia. Oznacza to, że funkcja \(S\) jest malejąca w~przedziale \(\open{0}{2}\) i~rosnąca w~przedziale \(\open{2}{+\infty}\), więc dla \(x = 2\) osiąga globalną wartość największą:
+\begin{equation*}
+    S_\p{max} = S\pars{2} = \frac{8 + 16}{4} = 6
+\end{equation*}
+Oznacza to, że wymiary pojemnika wynoszą
+\begin{equation*}
+    2\dm \times 2\dm \times 1\dm
+\end{equation*}
+\subsubsection*{Zadanie~11.}
+\begin{mathfigure*}
+    \coordinate (A) at (-1, 0);
+    \coordinate (B) at (0, 1);
+    \coordinate (C) at (4, 2);
+    \coordinate (D) at (2.5, 3.5);
+    \drawcoordsystem{-3, -3}{13, 7};
+    \drawrightangle[angle radius=0.4cm]{B--D--C};
+    \draw[domain=0:13, thick, ForestGreen, samples=200] plot (\x, {sqrt(\x)}) node[above left]{\(y = \sqrt{x}\)};
+    \draw[domain=-3:6, dashed] plot (\x, {\x + 1}) node[below right]{\(y = x + 1\)};
+    \draw[RoyalBlue, very thick] (A) -- (B) -- (C) -- cycle;
+    \draw[dotted] (C) -- (D);
+    \fillpoint*{A}[\(A\)][above left];
+    \fillpoint*{B}[\(B\)][above left];
+    \fillpoint*{C}[\(C\)][below];
+\end{mathfigure*}
+\begin{equation*}
+    C = \pars{x; \sqrt{x}}
+\end{equation*}
+Zauważmy, że prosta zawierająca bok \(AB\) ma równanie
+\begin{gather*}
+    y = x + 1\\
+    x - y + 1 = 0
+\end{gather*}
+Zatem aby obliczyć wysokość \(\triangle{ABC}\) opuszczoną z~wierzchołka \(C\), musimy wyznaczyć odległość punktu \(C\) od tej prostej, czyli
+\begin{equation*}
+    h
+        = \frac{\abs{x - \sqrt{x} + 1}}{\sqrt{1^2 + \pars{-1}^2}}
+        = \frac{\abs{x - \sqrt{x} + 1}}{\sqrt{2}}
+\end{equation*}
+Zauważmy, że
+\begin{equation*}
+    x - \sqrt{x} + 1
+        = x - 2\sqrt{x} + 1 + \sqrt{x}
+        = \overbrace{\pars{\sqrt{x} - 1}^2}^{\geq 0} + \overbrace{\sqrt{x}}^{\geq 0}
+        \geq 0
+\end{equation*}
+Zatem we wzorze na odległość punktu od prostej możemy opuścić moduł:
+\begin{equation*}
+    h = \frac{x - \sqrt{x} + 1}{\sqrt{2}}
+\end{equation*}
+Odcinek \(AB\) ma długość \(\sqrt{2}\). Zdefiniujmy zatem funkcję pola tego trójkąta w~zależności od \(x\):
+\begin{equation*}
+    S\pars{x}
+        = \frac{AB \cdot h}{2}
+        = \frac{\sqrt{2} \cdot \frac{x - \sqrt{x} + 1}{\sqrt{2}}}{2}
+        = \frac{1}{2}\pars{x - \sqrt{x} + 1} \qquad x \in \leftclosed{0}{+\infty}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    S'\pars{x}
+        = \frac{1}{2}\pars{1 - \frac{1}{2\sqrt{x}}}
+        = \frac{2\sqrt{x} - 1}{4\sqrt{x}} \qquad x \in \open{0}{+\infty}
+\end{equation*}
+Zauważmy, że skoro mianownik jest zawsze dodatni, to znak pochodnej zależy tylko od licznika, którego miejscem zerowym jest \(\sqrt{x} = \frac{1}{2}\), czyli \(x = \frac{1}{4}\). Dlatego wykres znaku pochodnej wygląda następująco:
+\begin{gather*}
+    \begin{tikzpicture}
+        \drawvec (-2, 0) -- (2, 0) node[below]{\(\sqrt{x}\)};
+        \draw[thick] (-1.5, -1.5) -- (1.5, 1.5);
+        \fillpoint*{0, 0}[\(\frac{1}{2}\)][below right];
+    \end{tikzpicture}\\
+    \begin{tikzpicture}
+        \drawvec (-2, 0) -- (2, 0) node[below]{\(x\)};
+        \draw[thick] (-1.5, -1.5) -- (1.5, 1.5);
+        \fillpoint*{0, 0}[\(\frac{1}{4}\)][below right];
+    \end{tikzpicture}
+\end{gather*}
+Interesuje nas tylko przedział \(\open{0}{+\infty}\). Pochodna jest ujemna w~przedziale \(\open{0}{\frac{1}{4}}\), dla \(x = \frac{1}{4}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{\frac{1}{4}}{+\infty}\) jest dodatnia. Oznacza to, że funkcja \(S\) jest malejąca w~przedziale \(\open{0}{\frac{1}{4}}\) i~rosnąca w~przedziale \(\open{\frac{1}{4}}{+\infty}\), więc dla \(x = \frac{1}{4}\) przyjmowane jest minimum lokalne, które dodatkowo okaże się globalną wartością największą, jeśli w~punkcie \(x = 0\), w~którym funkcja nie jest różniczkowalna, wartość nie okaże się mniejsza:
+\begin{gather*}
+    S\pars{\frac{1}{4}} = \frac{1}{2}\pars{\frac{1}{4} - \frac{1}{2} + 1} = \frac{1}{2} \cdot \frac{3}{4} = \frac{3}{8}\\
+    S\pars{0} = \frac{1}{2}\pars{1 - 1 + 1} = \frac{1}{2}\\
+    \frac{3}{8} < \frac{1}{2}
+\end{gather*}
+Zatem globalna wartość najmniejsza pola \(\triangle{ABC}\) to
+\begin{equation*}
+    S\pars{\frac{1}{4}} = \frac{3}{8}
+\end{equation*}
+Optymalny wybór punktu \(C\) to
+\begin{equation*}
+    C = \pars{\frac{1}{4}; \sqrt{\frac{1}{4}}} = \pars{\frac{1}{4}; \frac{1}{2}}
+\end{equation*}

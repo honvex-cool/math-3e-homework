@@ -1,0 +1,285 @@
+\subsection*{Zadania na ekstrema funkcji różniczkowalnych}
+\subsubsection*{Zadanie~9.20.}
+\begin{mathfigure*}
+    \coordinate (S) at (0, 0);
+    \coordinate (A) at (-1.5, -0.5);
+    \coordinate (B) at (0.5, -0.5);
+    \coordinate (C) at (1.5, 0.5);
+    \coordinate (D) at (-0.5, 0.5);
+    \coordinate (E) at (-1.5, 3.5);
+    \coordinate (F) at (0.5, 3.5);
+    \coordinate (G) at (1.5, 4.5);
+    \coordinate (H) at (-0.5, 4.5);
+    \coordinate (X) at (-3, -1);
+    \coordinate (Y) at (1, -1);
+    \coordinate (Z) at (3, 1);
+    \coordinate (W) at (-1, 1);
+    \coordinate (T) at (0, 8);
+    \draw (X) -- node[below]{\(x\)} (Y) -- (Z) -- (W) -- cycle;
+    \draw (T) -- node[right]{\(h\)} (S);
+    \draw (S) -- (X);
+    \drawrightangle[angle radius=0.4cm]{T--S--X};
+    \drawrightangle[angle radius=0.4cm]{E--A--X};
+    \fillpoint{S};
+    \draw[dashed, thick, ForestGreen] (A) -- node[below]{\(a\)} (B) -- (C) -- (D) -- cycle;
+    \draw[dashed, thick, ForestGreen] (E) -- (F) -- (G) -- (H) -- cycle;
+    \draw[dashed, thick, ForestGreen] (A) -- node[left]{\(f\)} (E);
+    \draw[dashed, thick, ForestGreen] (B) -- (F);
+    \draw[dashed, thick, ForestGreen] (C) -- (G);
+    \draw[dashed, thick, ForestGreen] (D) -- (H);
+    \draw (X) -- (T);
+    \draw (Y) -- (T);
+    \draw (Z) -- (T);
+    \draw (W) -- (T);
+    \fillpoint*[1][ForestGreen][ForestGreen]{A}[\(A\)][below];
+    \fillpoint*[1][ForestGreen][ForestGreen]{E}[\(E\)][left];
+    \fillpoint[1][ForestGreen][ForestGreen]{F};
+    \fillpoint[1][ForestGreen][ForestGreen]{G};
+    \fillpoint[1][ForestGreen][ForestGreen]{H};
+    \fillpoint*{S}[\(S\)][right];
+    \fillpoint*{X}[\(X\)][left];
+    \fillpoint*{T}[\(T\)][above];
+\end{mathfigure*}
+\noindent
+Zauważmy, że podstawą prostopadłościanu musi być kwadrat oraz środek tego kwadratu musi znajdować się na środku podstawy ostrosłupa. Boki tego kwadratu muszą zaś być równoległe do krawędzi podstawy ostrosłupa. Zauważmy, że ponieważ \(\mangle{TXS} = \mangle{EXA}\) i~\(\mangle{TSX} = \mangle{EAX} = 90\degree\), to \(\triangle{EAX} \sim \triangle{TSX}\). Zatem
+\begin{gather*}
+    \frac{EA}{AX} = \frac{TS}{SX}\\
+    \frac{f}{AX} = \frac{h}{SX}
+\end{gather*}
+Wiemy, że \(SX = x\sqrt{2}\) oraz \(SA = a\sqrt{2}\), zatem \(AX = SX - SA = x\sqrt{2} - a\sqrt{2}\):
+\begin{gather*}
+    \frac{f}{x\sqrt{2} - a\sqrt{2}} = \frac{h}{x\sqrt{2}}\\
+    \frac{f}{x - a} = \frac{h}{x}\\
+    f = \frac{h\pars{x - a}}{x}
+\end{gather*}
+Objętość prostopadłościanu wyraża się wzorem
+\begin{equation*}
+    V\pars{a} = P_p \cdot f = a^2 \cdot \frac{h\pars{x - a}}{x} = \frac{h}{x}\pars{xa^2 - a^3} \qquad a \in \open{0}{x}
+\end{equation*}
+gdzie \(P_p\) to pole podstawy. Obliczmy pochodną tej funkcji:
+\begin{gather*}
+    V'\pars{a} = \frac{h}{x}\pars{2xa - 3a^2} = \frac{h}{x} \cdot a\pars{2x - 3a}\\
+    \downparabola{0}{\frac{2x}{3}}[\(a\)]
+\end{gather*}
+Interesujący nas przedział to \(\open{0}{x}\). Skoro pochodna jest dodatnia w~przedziale \(\open{0}{\frac{2x}{3}}\), osiąga wartość \(0\) dla \(a = \frac{2x}{3}\) i~jest ujemna w~przedziale \(\open{\frac{2x}{3}}{+\infty}\), to funkcja \(V\) jest rosnąca w~przedziale \(\open{0}{\frac{2x}{3}}\) i~malejąca w~przedziale \(\open{\frac{2x}{3}}{+\infty}\), a~dla \(a = \frac{2x}{3}\) osiąga globalną wartość największą:
+\begin{equation*}
+    V\pars{\frac{2x}{3}} = \frac{h}{x}\pars{\frac{4x^3}{9} - \frac{8x^3}{27}} = \frac{4hx^2}{27}
+\end{equation*}
+Największa możliwa objętość tego prostopadłościanu wynosi \(\frac{4hx^2}{27}\) i~jest osiągana, gdy długość krawędzi podstawy prostopadłościanu jest równa \(\frac{2}{3}\) długości podstawy ostrosłupa.
+\subsubsection*{Zadanie~9.22.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, 0);
+    \coordinate (B) at (2, 0);
+    \coordinate (C) at (0, 4);
+    \coordinate (D) at (0, 0);
+    \draw[dashed] (A) -- node[below]{\(a\)} (B);
+    \draw (A) -- node[above left]{\(b\)} (C);
+    \draw (B) -- node[above right]{\(b\)} (C);
+    \draw[dashed] (C) -- node[right]{\(h\)} (D);
+    \draw (D) ellipse (2 and 0.5);
+    \drawrightangle[angle radius=0.25cm, densely dotted]{B--D--C};
+\end{mathfigure*}
+\noindent
+Wiemy, że \(2p = a + 2b\), zatem \(b = p - \frac{a}{2}\). Z~twierdzenia Pitagorasa wiemy, że
+\begin{gather*}
+    \pars{\frac{a}{2}}^2 + h^2 = b^2\\
+    \frac{a^2}{4} + h^2 = \pars{p - \frac{a}{2}}^2\\
+    \frac{a^2}{4} + h^2 = p^2 - pa + \frac{a^2}{4}\\
+    h^2 = p^2 - pa\\
+    h = \sqrt{p^2 - pa}
+\end{gather*}
+Objętość stożka wyraża się wzorem:
+\begin{equation*}
+    V = \frac{1}{3}S_ph
+\end{equation*}
+gdzie \(S_p\) to pole podstawy ostrosłupa.
+\begin{gather*}
+    V = \frac{1}{3}\pi r^2h\\
+    V = \frac{1}{3}\pi\frac{a^2}{4}h\\
+    V\pars{a} = \frac{\pi a^2\sqrt{p^2 - pa}}{12} = \frac{\pi}{12}\sqrt{p^2a^4 - pa^5} \qquad a \in \open{0}{p}
+\end{gather*}
+Pierwiastek zachowuje monotoniczność i~ekstrema funkcji podpierwiastkowej. Podobnie mnożenie przez stałą zachowuje monotoniczność i~ekstrema funkcji.
+\begin{equation*}
+    W\pars{a} = p^2a^4 - pa^5 \qquad a \in \open{0}{p}
+\end{equation*}
+i~obliczmy jej pochodną:
+\begin{equation*}
+    W'\pars{a} = 4p^2a^3 - 5pa^4 = a^3\pars{4p^2 - 5pa}
+\end{equation*}
+Zbadajmy miejsca zerowe tej pochodnej:
+\begin{gather*}
+    a^3\pars{4p^2 - 5pa} = 0\\
+    a = 0 \wlor a = \frac{4}{5}p\\
+    \downparabola{0}{\frac{4}{5}p}[\(a\)]
+\end{gather*}
+Ze~szkicu wykresu odczytujemy, że funkcja \(W\) przyjmuje wartość największą w~punkcie \(a = \frac{4}{5}p\). Zatem funkcja \(V\) również przyjmuje w~tym punkcie wartość największą:
+\begin{equation*}
+    V\pars{\frac{4}{5}p} = \frac{\pi}{12}\sqrt{\frac{256}{625}p^3 - \frac{1024}{3125}p^2}
+\end{equation*}
+Zatem
+\begin{gather*}
+    a = \frac{4}{5}p\\
+    b = \frac{3}{5}p
+\end{gather*}
+Aby objętość takiego stożka była największa, podstawa trójkąta równoramiennego powinna mieć długość \(\frac{4}{5}p\), a~każde z~ramion powinno mieć długość \(\frac{3}{5}p\). Wtedy objętość stożka wynosi \(\frac{\pi}{12}\sqrt{\frac{256}{625}p^3 - \frac{1024}{3125}p^2}\).
+\subsubsection*{Zadanie~9.24.}
+\begin{mathfigure*}
+    \coordinate (center) at (0, 0);
+    \coordinate (upcenter) at (0, 3);
+    \coordinate (downcenter) at (0, -3);
+    \coordinate (A) at (-3, -3);
+    \coordinate (B) at (3, -3);
+    \coordinate (C) at (3, 3);
+    \coordinate (D) at (-3, 3);
+    \coordinate (E) at (3, 0);
+    \draw[ForestGreen] (center) circle[radius=3];
+    \draw[ForestGreen, dashed] (center) ellipse (3 and 0.5);
+    \draw (upcenter) ellipse (3 and 0.5);
+    \draw (downcenter) ellipse (3 and 0.5);
+    \draw (D) -- node[left]{\(2R\)} (A);
+    \draw (B) -- (C);
+    \draw[dashed] (A) -- (B);
+    \draw[dashed] (C) -- (D);
+    \draw (center) -- node[above]{\(R\)} (E);
+    \fillpoint{center};
+\end{mathfigure*}
+\noindent
+Na danej kuli można opisać tylko jeden walec. Jego objętość wynosi \(V_w = P_p \cdot h = \pi R^2 \cdot 2R = 2\pi R^3\). Dlatego właściwie szukamy po prostu stożka o~możliwie najmniejszej objętości.
+\begin{mathfigure*}
+    \coordinate (baseCenter) at (0, 0);
+    \coordinate (A) at (-2.5, 0);
+    \coordinate (B) at (2.5, 0);
+    \coordinate (C) at (0, 6);
+    \coordinate (sphereCenter) at (0, 5/3);
+    \coordinate (tangentPoint) at (1.54, 2.31);
+    \draw (A) -- (C);
+    \draw (B) -- (C);
+    \draw[dashed] (A) -- (B);
+    \draw (baseCenter) ellipse (2.5 and 0.5);
+    \draw (C) -- node[right]{\(h\)} (sphereCenter);
+    \drawrightangle[angle radius=0.4cm]{B--baseCenter--C};
+    \drawangle[RoyalBlue, angle radius=0.4cm]{C--B--baseCenter};
+    \draw[ForestGreen] (sphereCenter) circle[radius=5/3];
+    \draw (sphereCenter) -- node[right]{\(R\)} (baseCenter);
+    \draw (sphereCenter) -- node[above, sloped]{\(R\)} (tangentPoint);
+    \drawrightangle[angle radius=0.4cm]{C--tangentPoint--sphereCenter};
+    \drawangle[RoyalBlue, angle radius=0.4cm]{tangentPoint--sphereCenter--C};
+    \draw[dashed, ForestGreen] (sphereCenter) ellipse (5/3 and 0.5);
+    \fillpoint*{sphereCenter}[\(S\)][left];
+    \fillpoint*{baseCenter}[\(D\)][below];
+    \fillpoint*{B}[\(B\)][right];
+    \fillpoint*{C}[\(T\)][above];
+    \fillpoint*{tangentPoint}[\(P\)][right];
+    \path (baseCenter) -- node[below]{\(r\)} (B);
+\end{mathfigure*}
+\noindent
+Wiemy z~twierdzenia Pitagorasa
+\begin{gather*}
+    \pars{h - R}^2 = TS^2 = PS^2 + PT^2\\
+    PT^2 = \pars{h - R}^2 - PS^2 = h^2 - 2hR + R^2 - R^2 = h^2 - 2hR\\
+    PT = \sqrt{h^2 - 2hR}
+\end{gather*}
+Widzimy, że \(\mangle{TPS} = \mangle{TDB} = 90\degree\) i~\(\mangle{TSP} = \mangle{TBD}\). Zatem \(\triangle{TPS} \sim \triangle{TDB}\), czyli
+\begin{gather*}
+    \frac{h}{r} = \frac{\sqrt{\pars{h - R}^2 - R^2}}{R}\\
+    \frac{h}{r} = \frac{\sqrt{h^2 - 2hR + R^2 - R^2}}{R}\\
+    \frac{h}{r} = \frac{\sqrt{h^2 - hR}}{R}\\
+    r = \frac{hR}{\sqrt{h^2 - 2hR}}
+\end{gather*}
+Zdefiniujmy funkcję
+\begin{equation*}
+    V\pars{h}
+        = \frac{1}{3}P_ph
+        = \frac{1}{3}\pi r^2h
+        = \frac{1}{3}\pi \cdot \frac{h^2R^2}{h^2 - 2hR} \cdot h
+        = \frac{1}{3}\pi \cdot \frac{h^2R^2}{h - 2R} \qquad h \in \open{2R}{+\infty}
+\end{equation*}
+gdzie \(P_p\) to pole podstawy stożka. Policzmy pochodną:
+\begin{equation*}
+    V'\pars{h} = \frac{1}{3}\pi \cdot \frac{2R^2h\pars{h - 2R} - h^2R^2}{\pars{h - 2R}^2} = \frac{1}{3}\pi \cdot \frac{2R^2h^2 - 4R^3h - R^2h^2}{\pars{h - 2R}^2}
+        = \frac{R^2h^2 - 4R^3h}{\pars{h - 2R}^2} = \frac{1}{3}\pi \cdot \frac{h\pars{R^2h - 4R^3}}{\pars{h - 2R}^2}
+\end{equation*}
+Mianownik jest zawsze dodatni, więc znak pochodnej zależy tylko od licznika ułamka:
+\begin{gather*}
+    h\pars{R^2h - 4R^3}\\
+    \upparabola{0}{4R}[\(h\)]
+\end{gather*}
+Interesuje nas przedział \(\open{2R}{+\infty}\). Skoro w~przedziale \(\open{2R}{4R}\) pochodna jest ujemna, dla \(h = 4R\) przyjmuje wartość \(0\) i~jest dodatnia w~przedziale \(\open{4R}{+\infty}\), to funkcja \(V\) w~przedziale \(\open{2R}{4R}\) jest malejąca, w~przedziale \(\open{4R}{+\infty}\) rosnąca, a~dla \(h = 4R\) osiąga globalną wartość najmniejszą.
+\begin{equation*}
+    V_\p{min} = V\pars{4R} = \frac{1}{3}\pi \cdot \frac{16R^4}{2R} = \frac{8R^3}{3}\pi
+\end{equation*}
+Zatem najmniejszy możliwy stosunek objętości stożka do objętości walca to
+\begin{equation*}
+    \frac{V_\p{min}}{V_w} = \frac{\frac{8\cancel{R^3}}{3}\cancel{\pi}}{2\cancel{\pi}\cancel{R^3}} = \frac{4}{3}
+\end{equation*}
+przyjmowany, gdy wysokość stożka wynosi \(4R\).
+\subsubsection*{Zadanie~9.26.}
+\begin{mathfigure*}
+    \coordinate (A) at (-3.6, 0);
+    \coordinate (B) at (3.6, 0);
+    \coordinate (C) at (0, 4.8);
+    \coordinate (baseCenter) at (0, 0);
+    \draw[dashed] (A) -- (B);
+    \draw (A) -- (C);
+    \draw (B) -- node[above right]{\(3\)} (C);
+    \draw (baseCenter) ellipse (3.6 and 0.5);
+    \path (baseCenter) -- node[below]{\(r\)} (B);
+    \draw (C) -- node[right]{\(h\)} (baseCenter);
+    \fillpoint{baseCenter};
+    \drawrightangle[angle radius=0.4cm]{B--baseCenter--C};
+\end{mathfigure*}
+\noindent
+Wiemy z~twierdzenia Pitagorasa, że \(h^2 + r^2 = 3^2\), zatem \(r = \sqrt{9 - h^2}\). Objętość stożka wyraża się wzorem
+\begin{equation*}
+    V = \frac{1}{3}P_ph = \frac{1}{3}\pi r^2h
+\end{equation*}
+gdzie \(P_p\) to pole podstawy stożka. Zdefiniujmy funkcję
+\begin{equation*}
+    V\pars{h}
+        = \frac{1}{3}\pi r^2h
+        = \frac{1}{3}\pi \pars{9 - h^2} \cdot h = \frac{9h - h^3}{3} \cdot \pi \qquad h \in \open{0}{3}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{gather*}
+    V'\pars{h}
+        = \frac{\pi}{3}\pars{9 - 3h^2} = \frac{\pi}{3}\pars{3 - h\sqrt{3}}\pars{3 + h\sqrt{3}}\\
+    \downparabola{-\sqrt{3}}{\sqrt{3}}[\(h\)]
+\end{gather*}
+Interesuje nas tylko przedział \(\open{0}{3}\). W~przedziale \(\open{0}{\sqrt{3}}\) pochodna jest dodatnia, dla \(h = \sqrt{3}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{\sqrt{3}}{3}\) jest ujemna. Oznacza to, że funkcja \(V\) jest rosnąca w~przedziale \(\open{0}{\sqrt{3}}\), malejąca w~przedziale \(\open{\sqrt{3}}{3}\), a~dla \(h = \sqrt{3}\) przyjmuje globalną wartość największą. Zatem aby stożek miał największą objętość, wysokość musi być równa \(\sqrt{3}\). Wtedy objętość wynosi
+\begin{equation*}
+    V_\p{max} = V\pars{\sqrt{3}} = 2\pi\sqrt{3}
+\end{equation*}
+\subsubsection*{Zadanie~9.27.}
+Dla uproszczenia zapisu pomijam tu jednostki, przyjmując, że wszędzie są to odpowiednio \(\dm\), \(\dm^2\) i~\(\dm^3\).
+\begin{mathfigure*}
+    \coordinate (upcenter) at (0, 1.5);
+    \coordinate (downcenter) at (0, -1.5);
+    \coordinate (A) at (-1.5, -1.5);
+    \coordinate (B) at (1.5, -1.5);
+    \coordinate (C) at (1.5, 1.5);
+    \coordinate (D) at (-1.5, 1.5);
+    \coordinate (E) at (1.5, 0);
+    \draw (upcenter) ellipse (1.5 and 0.25);
+    \draw (downcenter) ellipse (1.5 and 0.25);
+    \draw (D) -- node[left]{\(h\)} (A);
+    \draw (B) -- (C);
+    \draw[dashed] (C) -- (D);
+    \fillpoint{downcenter};
+    \draw (downcenter) -- node[below]{\(r\)} (B);
+\end{mathfigure*}
+\noindent
+Objętość walca wyraża się wzorem \(1 = V = P_ph = \pi r^2h\), gdzie \(P_p\) to pole podstawy. Zatem \(r = \sqrt{\frac{1}{h\pi}}\). Zdefiniujmy funkcję pola powierzchni całkowitej w~zależności od \(h\):
+\begin{equation*}
+    P\pars{h} = 2\pi r^2 + 2\pi rh = 2\pi\pars{r^2 + rh} = 2\pi\pars{\frac{1}{h\pi} + h\sqrt{\frac{1}{h\pi}}} = 2\pi\pars{\frac{1}{h\pi} + \sqrt{\frac{h}{\pi}}} \qquad \open{0}{+\infty}
+\end{equation*}
+Obliczmy jej pochodną:
+\begin{equation*}
+    P'\pars{h} = 2\pi\pars{-\frac{\pi}{h^2} + \frac{1}{2\pi\sqrt{h}}} = 2\pi\pars{\frac{-2\pi^2}{2\pi h^2} + \frac{h\sqrt{h}}{2\pi h^2}} = \frac{h\sqrt{h} - 2\pi^2}{h^2}
+\end{equation*}
+Wyznaczmy miejsce zerowe tej pochodnej:
+\begin{gather*}
+    h\sqrt{h} - 2\pi^2 = 0\\
+    \pars{\sqrt{h}}^3 = 2\pi^2\\
+    h = \sqrt[3]{4\pi^4}
+\end{gather*}
+Pochodna jest ujemna w~przedziale \(\open{0}{\sqrt[3]{4\pi^4}}\) i~dodatnia w~przedziale \(\open{\sqrt[3]{4\pi^4}}{+\infty}\), zatem dla \(\sqrt[3]{4\pi^4}\) ma globalną wartość najmniejszą. Zatem wtedy walec ma najmniejsze pole powierzchni całkowitej.

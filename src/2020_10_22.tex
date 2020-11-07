@@ -33,14 +33,28 @@
 \begin{gather*}
     x, y \in \open{0}{\frac{\pi}{2}}\\
     \sin x + \sin y = \frac{4}{3} \wland \cos x + \cos y = \frac{2\sqrt{5}}{3}\\
-    2\sin\frac{x + y}{2}\cos\frac{x - y}{2} = \frac{4}{3} \wland -2\sin\frac{x + y}{2}\sin\frac{x - y}{2} = \frac{2\sqrt{5}}{3}\\
-    \sin\frac{x + y}{2}\cos\frac{x - y}{2} = \frac{2}{3} \wland \sin\frac{x + y}{2}\sin\frac{x - y}{2} = \frac{-\sqrt{5}}{3}\\
-    \frac{-\sqrt{5}}{2}\sin\frac{x + y}{2}\cos\frac{x - y}{2} = \sin\frac{x + y}{2}\sin\frac{x - y}{2}
+    2\sin\frac{x + y}{2}\cos\frac{x - y}{2} = \frac{4}{3} \wland 2\cos\frac{x + y}{2}\cos\frac{x - y}{2} = \frac{2\sqrt{5}}{3}\\
+    \sin\frac{x + y}{2}\cos\frac{x - y}{2} = \frac{2}{3} \wland \cos\frac{x + y}{2}\cos\frac{x - y}{2} = \frac{\sqrt{5}}{3}\\
+    \frac{\sqrt{5}}{2}\sin\frac{x + y}{2}\cos\frac{x - y}{2} = \cos\frac{x + y}{2}\cos\frac{x - y}{2}
 \end{gather*}
 Skoro \(x, y \in \open{0}{\frac{\pi}{2}}\), to również \(\frac{x + y}{2} \in \open{0}{\frac{\pi}{2}}\). W~tym przedziale funkcja \(\sin\alpha\) nie ma miejsc zerowych, więc \(\sin\frac{x + y}{2} \neq 0\). Zatem możemy podzielić obustronnie równanie przez \(\sin\frac{x + y}{2}\):
 \begin{gather*}
-    \frac{-\sqrt{5}}{2}\cos\frac{x - y}{2} = \sin\frac{x - y}{2}
+    \frac{\sqrt{5}}{2}\sin\frac{x + y}{2} = \cos\frac{x + y}{2}\\
+    \frac{5}{4}\sin^2\pars{\frac{x + y}{2}} = \cos^2\pars{\frac{x + y}{2}}\\
+    \frac{5}{4}\sin^2\pars{\frac{x + y}{2}} = 1 - \sin^2\pars{\frac{x + y}{2}}\\
+    \frac{9}{4}\sin^2\pars{\frac{x + y}{2}} = 1\\
+    \sin^2\pars{\frac{x + y}{2}} = \frac{4}{9}\\
+    \sin\frac{x + y}{2} = \frac{2}{3}
 \end{gather*}
+Wiemy, że \(\sin\frac{x + y}{2}\cos\frac{x - y}{2} = \frac{2}{3}\). Podstawiając, mamy:
+\begin{gather*}
+    \frac{2}{3}\cos\frac{x - y}{2} = \frac{2}{3}\\
+    \cos\frac{x - y}{2} = 1\\
+    \frac{x - y}{2} = 2k\pi \qquad k \in \integer
+    x - y = 4k\pi
+\end{gather*}
+Skoro \(x, y \in \open{0}{\frac{\pi}{2}}\), to \(x - y = 0\), czyli \(x = y\).
+\qed
 \subsubsection*{Zadanie~4.}
 \begin{gather*}
     \begin{split}
@@ -139,15 +153,42 @@ Rozważmy dwa przypadki:
             f\pars{x} = \cos^2x + \sin^2x = 1
         \end{equation*}
         W~tych przedziałach jest to funkcja stała równa \(1\).
-    \item \(\sin x < 0 \implies x \in \leftclosed{-\frac{5}{2}\pi}{-2\pi} \cup \open{\pi}{2\pi}\)
+        \begin{mathfigure*}
+            \drawcoordsystem{-5*pi/2, -1.5}{5*pi/2, 1.5};
+            \draw[ForestGreen, thick, smooth, domain=-5*pi/2:5*pi/2] plot (\x, {1});
+        \end{mathfigure*}
+    \item \(\sin x < 0 \implies x \in \leftclosed{-\frac{5}{2}\pi}{-2\pi} \cup \open{-\pi}{0} \cup \open{\pi}{2\pi}\)
         \begin{equation*}
             f\pars{x} = \cos^2x - \sin^2x = \cos2x
         \end{equation*}
+        Jest to przekształcenie wykresu \(y = \cos x\) w~powinowactwie o~skali \(\frac{1}{2}\) względem osi \(Oy\):
+        \begin{mathfigure*}
+            \drawcoordsystem{-5*pi/2, -1.5}{5*pi/2, 1.5};
+            \draw[RoyalBlue, thick, smooth, domain=-5*pi/2:5*pi/2, samples=150] plot (\x, {cos(2*\x r)});
+        \end{mathfigure*}
 \end{proofcases}
-Zatem wykres będzie wyglądał następująco:
+Łączymy te wykresy ze sobą w~odpowiednich przedziałach i~uzyskujemy ostateczny wygląd wykresu:
 \begin{mathfigure*}
-    \drawcoordsystem{-5*pi/2, -2.5}{5*pi/2, 2.5};
-    \draw[thick, samples=400, domain=-5*pi/2:5*pi/2, smooth] plot (\x, {(cos(\x r))^2 + sin(\x r) * abs(sin(\x r))});
+    \drawcoordsystem{-5*pi/2, -1.5}{5*pi/2, 1.5};
+    \draw[RoyalBlue, thick, smooth, domain=-5*pi/2:-2*pi, samples=20] plot (\x, {cos(2*\x r)});
+    \draw[RoyalBlue, thick, smooth, domain=pi:2*pi, samples=20] plot (\x, {cos(2*\x r)});
+    \draw[RoyalBlue, thick, smooth, domain=-pi:0, samples=150] plot (\x, {cos(2*\x r)});
+    \draw[ForestGreen, thick, smooth, domain=-2*pi:-pi] plot (\x, {1});
+    \draw[ForestGreen, thick, smooth, domain=0:pi] plot (\x, {1});
+    \draw[ForestGreen, thick, smooth, domain=2*pi:5*pi/2] plot (\x, {1});
+    \fillpoint*{-pi/4, 0}[\(-\frac{\pi}{4}\)][below left];
+    \fillpoint*{-3*pi/4, 0}[\(-\frac{3\pi}{4}\)][below right];
+    \fillpoint*{-9*pi/4, 0}[\(-\frac{9\pi}{4}\)][above left];
+    \fillpoint*{5*pi/4, 0}[\(\frac{5\pi}{4}\)][below right];
+    \fillpoint*{7*pi/4, 0}[\(\frac{7\pi}{4}\)][below left];
+    \fillpoint*[1][ForestGreen][ForestGreen]{5*pi/2, 1}[\(\pars{\frac{5\pi}{2}; 1}\)];
+    \fillpoint*[1][RoyalBlue][RoyalBlue]{-5*pi/2, -1}[\(\pars{-\frac{5\pi}{2}; -1}\)][below];
+    \draw[densely dotted] (-pi/2, -1) -- (-pi/2, 0) node[above]{\(-\frac{\pi}{2}\)};
+    \draw[densely dotted] (-pi, 1) -- (-pi, 0) node[below]{\(-\pi\)};
+    \draw[densely dotted] (-2*pi, 1) -- (-2*pi, 0) node[below]{\(-2\pi\)};
+    \draw[densely dotted] (pi, 1) -- (pi, 0) node[below]{\(\pi\)};
+    \draw[densely dotted] (2*pi, 1) -- (2*pi, 0) node[below]{\(2\pi\)};
+    \draw[densely dotted] (3*pi/2, -1) -- (3*pi/2, 0) node[above]{\(\frac{3\pi}{2}\)};
 \end{mathfigure*}
 \subsubsection*{Zadanie~9.}
 \begin{gather*}
@@ -182,4 +223,102 @@ Równanie z~funkcją \(\sin\) na pewno będzie miało rozwiązanie, jeśli warto
 Rozwiązaniem jest część wspólna uzyskanych przedziałów:
 \begin{equation*}
     k \in \closed{-3}{-1} \cup \closed{2}{4}
+\end{equation*}
+\subsubsection*{Zadanie~11.}
+\begin{gather*}
+    \pars{2\sin\alpha - 1}x^2 - 2x + \sin\alpha = 0\\
+    \alpha \in \closed{-\frac{\pi}{2}}{\frac{\pi}{2}}
+\end{gather*}
+Aby to równanie miało dwa pierwiastki, musi być kwadratowe. Wyraz wolny nie może być zerem, ponieważ wtedy jednym z~pierwiastków byłoby \(0\), czyli nie miałoby odwrotności. Zatem \(2\sin\alpha - 1 \neq 0\), czyli \(\alpha \neq \frac{\pi}{6}\), i~\(\sin\alpha \neq 0\), czyli \(\alpha \neq 0\). Wyróżnik musi być nieujemny:
+\begin{gather*}
+    \Delta
+        = \pars{-2}^2 - 4\pars{2\sin\alpha - 1}\sin\alpha
+        =  4 - 8\sin^2\alpha + 4\sin\alpha\\
+    -8\sin^2\alpha + 4\sin\alpha + 4 \geq 0\\
+    -2\sin^2\alpha + \sin\alpha + 1 \geq 0\\
+    2\sin^2\alpha - \sin\alpha - 1 \leq 0\\
+    t \coloneqq \sin\alpha\\
+    2t^2 - t - 1 \leq 0\\
+    \pars{2t + 1}\pars{t - 1} \leq 0\\
+    \upparabola{-\frac{1}{2}}{1}\\
+    t \in \closed{-\frac{1}{2}}{1}\\
+    \sin\alpha \in \closed{-\frac{1}{2}}{1} \implies \alpha \in \closed{-\frac{\pi}{6}}{\frac{\pi}{2}}
+\end{gather*}
+Ostatecznie zatem \(\alpha \in \leftclosed{-\frac{\pi}{6}}{0} \cup \open{0}{\frac{\pi}{6}} \cup \rightclosed{\frac{\pi}{6}}{\frac{\pi}{2}}\). Teraz możemy zastosować wzory Viete'a:
+\begin{gather*}
+    \frac{1}{x_1} + \frac{1}{x_2} = \frac{x_1 + x_2}{x_1x_2} = \frac{\frac{-\pars{-2}}{2\sin\alpha - 1}}{\frac{\sin\alpha}{2\sin\alpha - 1}} = \frac{2}{\sin\alpha}\\
+    \frac{2}{\sin\alpha} = 4\cos\alpha\\
+    4\sin\alpha\cos\alpha = 2\\
+    2\sin2\alpha = 2\\
+    \sin2\alpha = 1\\
+    2\alpha = \frac{\pi}{2}\\
+    \alpha = \frac{\pi}{4} \in \leftclosed{-\frac{\pi}{6}}{0} \cup \open{0}{\frac{\pi}{6}} \cup \rightclosed{\frac{\pi}{6}}{\frac{\pi}{2}}
+\end{gather*}
+Zatem rozwiązaniem zadania jest \(\alpha = \frac{\pi}{4}\).
+\subsubsection*{Zadanie~12.}
+\begin{gather*}
+    \cos\alpha = \frac{9}{41}\\
+    \alpha \in \open{0}{\frac{\pi}{2}}
+\end{gather*}
+Z~użyciem jedynki trygonometrycznej możemy wyliczyć \(\sin\alpha\):
+\begin{gather*}
+    \sin^2\alpha + \cos^2\alpha = 1\\
+    \sin^2\alpha = 1 - \cos^2\alpha = 1 - \pars{\frac{9}{41}}^2 = 1 - \frac{81}{1681} = \frac{1600}{1681}
+\end{gather*}
+Ponieważ wiemy, że \(\alpha \in \open{0}{\frac{\pi}{2}}\), to mamy pewność, że \(\sin\alpha\) jest dodatni. Zatem możemy spierwiastkować obie strony równania:
+\begin{equation*}
+    \sin\alpha = \sqrt{\frac{1600}{1681}} = \frac{40}{41}
+\end{equation*}
+Wyrażenie \(\tan\pars{\alpha - \frac{\pi}{4}}\) możemy inaczej zapisać jako
+\begin{equation*}
+    \frac{\sin\pars{\alpha - \frac{\pi}{4}}}{\cos\pars{\alpha - \frac{\pi}{4}}}
+        = \frac{\sin\alpha\cos\frac{\pi}{4} - \sin\frac{\pi}{4}\cos\alpha}{\cos\alpha\cos\frac{\pi}{4} + \sin\alpha\sin\frac{\pi}{4}}
+        = \frac{\frac{40}{41} \cdot \frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} \cdot \frac{9}{41}}{\frac{9}{41} \cdot \frac{\sqrt{2}}{2} + \frac{40}{41} \cdot \frac{\sqrt{2}}{2}}
+        = \frac{\cancel{\frac{\sqrt{2}}{2}} \cdot \frac{31}{\cancel{41}}}{\cancel{\frac{\sqrt{2}}{2}} \cdot \frac{49}{\cancel{41}}}
+        = \frac{31}{49}
+\end{equation*}
+Zatem \(\tan\pars{\alpha - \frac{\pi}{4}} = \frac{31}{49}\).
+\subsubsection*{Zadanie~13.}
+\begin{gather*}
+    \sin x\pars{\cos x - \frac{1}{2}} < 0\\
+    x \in \closed{0}{2\pi}\\
+    \sin x\cos x - \frac{1}{2}\sin x < 0\\
+    \frac{1}{2}\sin2x < \frac{1}{2}\sin x\\
+    \sin2x < \sin x
+\end{gather*}
+Na początek rozwiążmy równość:
+\begin{gather*}
+    \sin2x = \sin x\\
+    2x = 2k\pi + x \wlor 2x = 2k\pi + \pi - x\\
+    x = 2k\pi \wlor 3x = 2k\pi + \pi\\
+    x = 2k\pi \wlor x = \frac{2k\pi}{3} + \frac{\pi}{3}\\
+    x \in \set{0, \frac{\pi}{3}, \pi, 2\pi}
+\end{gather*}
+Teraz możemy narysować wykres i~rozwiązać nierówność graficznie. Najpierw rysujemy wykres \(y = \sin x\):
+\begin{mathfigure*}
+    \drawcoordsystem{0, -1.5}{2*pi + 0.5, 1.5};
+    \draw[ForestGreen, thick, domain=0:2*pi, smooth] plot (\x, {sin(\x r)});
+    \fillpoint*{pi, 0}[\(\pi\)][below];
+    \fillpoint*{2*pi, 0}[\(2\pi\)][above];
+\end{mathfigure*}
+\noindent
+Następnie nakładamy na niego wykres \(y = \sin2x\), czyli wykres \(y = \sin x\) przekształcony w~powinowactwie o~skali \(\frac{1}{2}\) względem osi \(Oy\):
+\begin{mathfigure*}
+    \drawcoordsystem{0, -1.5}{2*pi + 0.5, 1.5};
+    \draw[ForestGreen, thick, domain=0:2*pi, smooth] plot (\x, {sin(\x r)});
+    \draw[RoyalBlue, thick, domain=0:2*pi, smooth] plot (\x, {sin(2*\x r)});
+    \fillpoint*{pi/2, 0}[\(\frac{\pi}{2}\)][below];
+    \fillpoint*{pi, 0}[\(\pi\)][below];
+    \fillpoint*{3*pi/2, 0}[\(\frac{3\pi}{2}\)][below];
+    \fillpoint*{2*pi, 0}[\(2\pi\)][above];
+    \fillpoint*{pi/3, \fpeval{sqrt(3)/2}}[\(\pars{\frac{\pi}{3}, \frac{\sqrt{3}}{2}}\)][above];
+    \fillpoint*{5*pi/3, -\fpeval{sqrt(3)/2}}[\(\pars{\frac{5\pi}{3}, \frac{-\sqrt{3}}{2}}\)][below];
+    \draw[densely dotted] (pi/4, 1) -- (pi/4, 0) node[below]{\(\frac{\pi}{4}\)};
+    \draw[densely dotted] (3*pi/4, -1) -- (3*pi/4, 0) node[above]{\(\frac{3\pi}{4}\)};
+    \draw[densely dotted] (5*pi/4, 1) -- (5*pi/4, 0) node[below]{\(\frac{5\pi}{4}\)};
+    \draw[densely dotted] (7*pi/4, -1) -- (7*pi/4, 0) node[above]{\(\frac{7\pi}{4}\)};
+\end{mathfigure*}
+Teraz możemy odczytać z~wykresu zbiór rozwiązań nierówności \(\sin2x < \sin x\):
+\begin{equation*}
+    x \in \open{\frac{\pi}{3}}{\pi} \cup \open{\frac{5\pi}{3}}{2\pi}
 \end{equation*}

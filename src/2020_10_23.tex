@@ -1,0 +1,123 @@
+\subsection*{Zadania na ekstrema funkcji różniczkowalnych}
+\subsubsection*{Zadanie~8.17.}
+\begin{equation*}
+    f\pars{x} = x^3 - 6x^2 + bx + c \qquad x \in \real
+\end{equation*}
+Skoro wykres tej funkcji przechodzi przez punkt \(P = \pars{2; -2}\), to znaczy, że
+\begin{gather*}
+    f\pars{2} = -2\\
+    2^3 - 6 \cdot 2^2 + 2b + c = -2\\
+    2b + c = 14
+\end{gather*}
+Natomiast fakt, że współczynnik kierunkowy stycznej do wykresu tej funkcji w~punkcie \(P\) wynosi \(-3\) oznacza, że pochodna funkcji \(f\) przyjmuje wartość \(-3\) dla argumentu \(2\):
+\begin{gather*}
+    f'\pars{x} = 3x^2 - 12x + b\\
+    3 \cdot 2^2 - 12 \cdot 2 + b = -3\\
+    b = 9
+\end{gather*}
+Zatem podstawiając do otrzymanego wcześniej równania otrzymujemy \(c = -4\).
+\begin{equation*}
+    f\pars{x} = x^3 - 6x^2 + 9x - 4
+\end{equation*}
+Aby wyznaczyć największą i~najmniejszą wartość funkcji w~przedziale \(\closed{-1}{3}\) skorzystamy z~pochodnej. Znajdziemy jej miejsca zerowe, aby zbadać ekstrema funkcji \(f\):
+\begin{gather*}
+    f'\pars{x} = 3x^2 - 12x + 9\\
+    3x^2 - 12x + 9 = 0\\
+    x^2 - 4x + 3 = 0\\
+    \pars{x - 1}\pars{x - 3} = 0\\
+    \upparabola{1}{3}\\
+    \tag{\(1\)} \forall x \in \leftclosed{-1}{1}\colon f'\pars{x} > 0 \label{2020_10_23:8_17:first_increase}\\
+    \tag{\(2\)} f'\pars{1} = 0 \label{2020_10_23:8_17:first_zero}\\
+    \tag{\(3\)} \forall x \in \open{1}{3}\colon f'\pars{x} < 0 \label{2020_10_23:8_17:decrease}\\
+    \tag{\(4\)} f'\pars{3} = 0 \label{2020_10_23:8_17:second_zero}\\
+    \tag{\(5\)} \forall x \in \open{3}{+\infty}\colon f'\pars{x} > 0 \label{2020_10_23:8_17:second_increase}
+\end{gather*}
+Zatem:
+\begin{description}
+    \item \(\mbox{(\ref{2020_10_23:8_17:first_increase})} \implies\) funkcja \(f\) jest rosnąca w~przedziale \(\open{-1}{1}\)
+    \item \(\mbox{(\ref{2020_10_23:8_17:first_increase})} \land \mbox{(\ref{2020_10_23:8_17:first_zero})} \land \mbox{(\ref{2020_10_23:8_17:decrease})} \implies\) funkcja \(f\) ma w~punkcie \(x = 1\) maksimum lokalne:
+        \begin{equation*}
+            f\pars{1} = 1 - 6 + 9 - 4 = 0
+        \end{equation*}
+    \item \(\mbox{(\ref{2020_10_23:8_17:decrease})} \implies\) funkcja \(f\) jest malejąca w~przedziale \(\open{1}{3}\)
+    \item \(\mbox{(\ref{2020_10_23:8_17:decrease})} \land \mbox{(\ref{2020_10_23:8_17:second_zero})} \land \mbox{(\ref{2020_10_23:8_17:second_increase})} \implies\) funkcja \(f\) ma w~punkcie \(x = 3\) minimum lokalne:
+        \begin{equation*}
+            f\pars{3} = 3^3 - 6 \cdot 3^2 + 9 \cdot 3 - 4
+                = 27 - 54 + 27 - 4
+                = -4
+        \end{equation*}
+    \item \(\mbox{(\ref{2020_10_23:8_17:second_increase})} \implies\) funkcja \(f\) jest rosnąca w~przedziale \(\open{3}{+\infty}\)
+\end{description}
+Skoro funkcja najpierw rośnie w~przedziale \(\open{-1}{1}\), dla \(x = 1\) osiąga maksimum lokalne, a~nastepnie maleje w~przedziale \(\open{1}{3}\), to na pewno wartością największą w~przedziale \(\closed{-1}{3}\) jest wartość maksimum:
+\begin{equation*}
+    f_\p{max} = f\pars{1} = 0
+\end{equation*}
+Natomiast kandydatami na argumenty, dla których funkcja przyjmuje wartość najmniejszą, są \(x = -1\) (które rozważane w~tym przedziale jest minimum lokalnym) i~\(x = 3\) (które jest minimum lokalnym). Wystarczy zatem porównać wartości funkcji dla tych dwóch argumentów:
+\begin{gather*}
+    f\pars{-1} = -1 - 6 - 9 - 4 = -20\\
+    f\pars{3} = -4
+\end{gather*}
+Zatem w~przedziale \(\closed{-1}{3}\)
+\begin{equation*}
+    f_\p{min} = f\pars{-1} = -20
+\end{equation*}
+\subsubsection*{Zadanie~8.19.}
+\begin{mathfigure*}
+    \def\rt{\fpeval{sqrt(3)}}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (2, 0);
+    \coordinate (C) at (0, 2*\rt/3);
+    \coordinate (D) at (0.5, \rt/2);
+    \draw (A) -- node[right]{\(1\)} (D);
+    \draw (A) node[below left]{\(A\)} -- (B) node[below right]{\(B\)} -- node[midway, above right]{\(x\)} (C) node[above]{\(C\)} -- cycle;
+    \fillpoint*{D}[\(D\)][above right];
+    \drawrightangle[angle radius=0.25cm]{A--D--B};
+    \drawangle[ForestGreen, angle radius=0.25cm]{A--C--D};
+    \drawangle[ForestGreen, angle radius=0.25cm]{B--A--D};
+\end{mathfigure*}
+Chcemy zapisać długość przeciwprostokątnej jako funkcję \(y\pars{x}\). Z~twierdzenia Pitagorasa wiemy, że \(AB = \sqrt{x^2 + 1}\). Zauważmy, że \(\mangle{BCA} = \mangle{DAB}\) i~\(\mangle{CAB} = \mangle{ADB} = 90\degree\). Zatem \(\triangle{DAB} \sim \triangle{ABC}\). To oznacza, że
+\begin{gather*}
+    \frac{BD}{AD} = \frac{AB}{AC}\\
+    \frac{x}{1} = \frac{\sqrt{x^2 + 1}}{AC}\\
+    AC = \frac{\sqrt{x^2 + 1}}{x}
+\end{gather*}
+Zatem, ponownie stosując twierdzenie Pitagorasa, mamy
+\begin{gather*}
+    x \in \open{0}{+\infty}\\
+    \begin{split}
+        y\pars{x} = \sqrt{AB^2 + AC^2}
+            &= \sqrt{\pars{\sqrt{x^2 + 1}}^2 + \pars{\frac{\sqrt{x^2 + 1}}{x}}^2}
+            = \sqrt{x^2 + 1 + \frac{x^2 + 1}{x^2}}
+            = \sqrt{\frac{x^4 + 2x^2 + 1}{x^2}}\\
+            &= \sqrt{\frac{\pars{x^2 + 1}^2}{x^2}}
+            = \frac{x^2 + 1}{x}
+            = x + \frac{1}{x}
+    \end{split}
+\end{gather*}
+Obliczmy pochodną tej funkcji:
+\begin{gather*}
+    y'\pars{x} = 1 - \frac{1}{x^2}\\
+    1 - \frac{1}{x^2} = 0\\
+    \frac{x^2 - 1}{x^2} = 0\\
+    x = 1 \wlor x = -1
+\end{gather*}
+Mianownik jest zawsze nieujemny, więc znak pochodnej zależy jedynie od licznika:
+\begin{equation*}
+    \upparabola{-1}{1}
+\end{equation*}
+Interesuje nas tylko przedział \(\open{0}{+\infty}\). Zbadajmy w~nim zachowanie pochodnej:
+\begin{gather*}
+    \tag{\(1\)} \forall x \in \open{0}{1}\colon y'\pars{x} < 0 \label{2020_10_23:8_19:decrease}\\
+    \tag{\(2\)} y'\pars{1} = 0 \label{2020_10_23:8_19:zero}\\
+    \tag{\(3\)} \forall x \in \open{1}{+\infty}\colon y'\pars{x} < 0 \label{2020_10_23:8_19:increase}
+\end{gather*}
+Co z~tego wynika:
+\begin{description}
+    \item \(\mbox{(\ref{2020_10_23:8_19:decrease})} \implies\) funkcja \(y\) jest malejąca w~przedziale \(\open{0}{1}\)
+    \item \(\mbox{(\ref{2020_10_23:8_19:increase})} \implies\) funkcja \(y\) jest rosnąca w~przedziale \(\open{1}{+\infty}\)
+    \item \(\mbox{(\ref{2020_10_23:8_19:decrease})} \land \mbox{(\ref{2020_10_23:8_19:zero})} \land \mbox{(\ref{2020_10_23:8_19:increase})} \implies\) funkcja \(y\) ma minimum (globalne!) w~punkcie \(x = 1\):
+        \begin{equation*}
+            y\pars{1} = 1 + \frac{1}{1} = 2
+        \end{equation*}
+\end{description}
+Zatem najmniejszą możliwą wartością funkcji \(y\pars{x}\) jest \(y\pars{1} = 2\)

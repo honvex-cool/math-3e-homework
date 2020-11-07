@@ -232,7 +232,7 @@ Skoro \(f''\) jest dodatnia w~przedziale \(\open{0}{\frac{\pi}{2}}\) oraz \(f'\)
                     \pars{1 + x}^p > px + 1
                 \end{gather*}
                 co kończy dowód dla tego przypadku.
-            \item \(x \in \open{-1}{0} \land p > 1\)
+            \item \(x \in \open{-1}{0} \land p > 1\)\\
                 Zdefniujmy funkcję
                 \begin{equation*}
                     f\pars{x} = \pars{1 + x}^p - px - 1
@@ -246,13 +246,13 @@ Skoro \(f''\) jest dodatnia w~przedziale \(\open{0}{\frac{\pi}{2}}\) oraz \(f'\)
                     f'\pars{x} = p\pars{1 + x}^p - p = \overbrace{p}^{> 0}\overbrace{\pars{\pars{1 + x}^{p - 1} - 1}}^{< 0 \text{ dla } x \in \open{-1}{0}}\\
                     \forall x \in \open{-1}{0}\colon f'\pars{x} < 0
                 \end{gather*}
-                Funkcja jest malejąca, a~w zerze przyjmuje wartość \(0\). Zatem musi być zawsze większa od zero dla \(x \in \open{-1}{0}\).
+                Funkcja jest malejąca i~ciągła, a~w zerze przyjmuje wartość \(0\). Zatem musi być zawsze większa dodatnia dla \(x \in \open{-1}{0}\).
                 \begin{gather*}
                     \pars{1 + x}^p - px - 1 > 0\\
                     \pars{1 + x}^p > px + 1
                 \end{gather*}
                 co kończy dowód dla tego przypadku.
-            \item \(x \in \open{-1}{0} \land p < 0\)
+            \item \(x \in \open{-1}{0} \land p < 0\)\\
                 Zdefniujmy funkcję
                 \begin{equation*}
                     f\pars{x} = \pars{1 + x}^p - px - 1
@@ -270,6 +270,45 @@ Skoro \(f''\) jest dodatnia w~przedziale \(\open{0}{\frac{\pi}{2}}\) oraz \(f'\)
                 \begin{gather*}
                     \pars{1 + x}^p - px - 1 > 0\\
                     \pars{1 + x}^p > px + 1
+                \end{gather*}
+                co kończy dowód dla tego przypadku.
+        \end{proofcases}
+        \qed
+    \item
+        \begin{description}
+            \item[Założenia:] \(x > -1 \land x \neq 0 \land 0 < p < 1\)
+            \item[Teza:] \(\pars{1 + x}^p < 1 + px\)
+        \end{description}
+        Zdefiniujmy funkcję:
+        \begin{equation*}
+            f\pars{x} = \pars{1 + x}^p - px - 1
+        \end{equation*}
+        Zauważmy, że jako różnica funkcji ciągłych jest ciągła oraz dla \(x = 0\) przyjmuje wartość \(0\). Policzmy jej pochodną:
+        \begin{equation*}
+            f'\pars{x} = p\pars{1 + x}^{p - 1} - p = p\pars{\pars{1 + x}^{p - 1} - 1}
+        \end{equation*}
+        Rozważmy przypadki:
+        \begin{proofcases}
+            \item \(x > 0\)\\
+                Wtedy \(1 + x > 1\), a~skoro \(0 < p < 1\), to \(p - 1 < 0\). Zatem \(\pars{1 + x}^{p - 1} - 1 < 0\). Mamy
+                \begin{equation*}
+                    f'\pars{x} = \overbrace{p}^{> 0}\overbrace{\pars{\pars{1 + x}^{p - 1} - 1}}^{< 0} < 0
+                \end{equation*}
+                Skoro pochodna jest zawsze ujemna, to funkcja \(f\) jest malejąca. Dla argumentu \(0\) przyjmuje wartość \(0\), więc dla \(x > 0\) przyjmuje wartości ujemne. Zatem
+                \begin{gather*}
+                    \pars{1 + x}^p - px - 1 < 0\\
+                    \pars{1 + x}^p < px + 1
+                \end{gather*}
+                co kończy dowód dla tego przypadku.
+            \item \(-1 < x < 0\)\\
+                Wtedy \(0 < 1 + x < 1\), a~skoro \(0 < p < 1\), to \(p - 1 < 0\). Zatem \(\pars{1 + x}^{p - 1} - 1 > 0\). Mamy
+                \begin{equation*}
+                    f'\pars{x} = \overbrace{p}^{> 0}\overbrace{\pars{\pars{1 + x}^{p - 1} - 1}}^{> 0} > 0
+                \end{equation*}
+                Dla argumentu \(-1\) funkcja \(f\) przyjmuje wartość \(0^p + p - 1 < 0\). Skoro pochodna jest zawsze dodatnia, to funkcja jest rosnąca. Jeśli przyjmuje wartość ujemną dla \(x = -1\), i~wartość \(0\) dla \(x = 0\) oraz jest ciągła i~rosnąca w~przedziale \(\open{-1}{0}\), to jest w~tym przedziale zawsze ujemna. Zatem
+                \begin{gather*}
+                    \pars{1 + x}^p - px - 1 < 0\\
+                    \pars{1 + x}^p < px + 1
                 \end{gather*}
                 co kończy dowód dla tego przypadku.
         \end{proofcases}
@@ -329,5 +368,8 @@ Skoro \(f''\) jest dodatnia w~przedziale \(\open{0}{\frac{\pi}{2}}\) oraz \(f'\)
         \begin{equation*}
             f\pars{-1} = \frac{1}{-1 - 6 - 9 + 20} = \frac{1}{4}
         \end{equation*}
-        Podobnie, skoro funkcja jest malejąca w~przedziale
+        Podobnie, dla \(x = 1\) mamy minimum lokalne:
+        \begin{equation*}
+            f\pars{1} = \frac{1}{1 - 6 + 9 + 20} = \frac{1}{24}
+        \end{equation*}
 \end{itemize}

@@ -1,0 +1,178 @@
+\subsection*{Zadania na ekstrema funkcji różniczkowalnych}
+\subsubsection*{Zadanie~9.44.}
+Graniastosłup prawidłowy czworkątny ma \(2 \cdot 4\) krawędzi długości \(a\) w~podstawach i~\(4\) krawędzie boczne długości \(h\).
+\begin{gather*}
+    8a + 4h = 16\\
+    a = 2 - \frac{h}{2}
+\end{gather*}
+Zdefiniujmy funkcję objętości tego graniastosłupa w~zależności od jego wysokości \(h\):
+\begin{equation*}
+    V\pars{h}
+        = a^2h
+        = \pars{2 - \frac{h}{2}}^2h
+        = 4h - 2h^2 + \frac{h^3}{4} \qquad h \in \open{0}{4}
+\end{equation*}
+Obliczmy jej pochodną:
+\begin{gather*}
+    V'\pars{h}
+        = 4 - 4h + \frac{3h^2}{4}
+        = \frac{1}{4}\pars{16 - 16h + 3h^2}\\
+    3h^2 - 16h + 16 = 0\\
+    \Delta
+        = \pars{-16}^2 - 4 \cdot 3 \cdot 16
+        = 4 \cdot 64 - 3 \cdot 64
+        = 64\\
+    \sqrt{\Delta} = 8\\
+    h_1 = \frac{-\pars{-16} - \sqrt{\Delta}}{2 \cdot 3}
+        = \frac{16 - 8}{6}
+        = \frac{8}{6}
+        = \frac{4}{3}\\
+    h_2 = \frac{-\pars{-16} + \sqrt{\Delta}}{2 \cdot 3}
+        = \frac{16 + 8}{6}
+        = \frac{24}{6}
+        = 4\\
+    \upparabola{\frac{4}{3}}{4}[\(h\)]\\
+\end{gather*}
+Interesuje nas tylko przedział \(\open{0}{4}\). W~przedziale \(\open{0}{\frac{4}{3}}\) pochodna jest dodatnia, dla \(h = \frac{4}{3}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{\frac{4}{3}}{h}\) jest ujemna. Oznacza to, że funkcja \(V\) jest rosnąca w~przedziale \(\open{0}{\frac{4}{3}}\) i~malejąca w~przedziale \(\open{\frac{4}{3}}{4}\), więc~dla \(h = \frac{4}{3}\) przyjmuje globalną wartość największą:
+\begin{equation*}
+    V\pars{\frac{4}{3}}
+        = \frac{16}{3} - 2 \cdot \frac{16}{9} + \frac{\frac{64}{27}}{4}
+        = \frac{144}{27} - 2 \cdot \frac{48}{27} + \frac{16}{27}
+        = \frac{64}{27}
+\end{equation*}
+Największa możliwa objętość tego graniastosłupa wynosi \(\frac{64}{27}\) i~jest osiągana dla \(h = \frac{4}{3}\).
+\subsubsection*{Zadanie~9.45.}
+Zauważmy, że jeżeli warunek jest spełniony dla każdego wierzchołka graniastosłupa, to w~podstawie musi być równoległobok. Natomiast wśród równoległoboków o~zadanych bokach największe pole ma prostokąt (ponieważ równoległobok jest ,,przechylony'', czyli ma mniejszą wysokość, a~podstawa jest taka sama, zatem pole jest mniejsze).  Zatem szukany graniastosłup jest prostopadłościanem. Oznaczmy przez \(a\) długość krótszej ze wspomnianych krawędzi. Druga krawędź ma zatem długość \(2a\), a~trzecia \(6 - a - 2a = 6 - 3a\). Objętość graniastosłupa prostego to iloczyn długości trzech krawędzi wychodzących z~jednego wierzchołka. Zatem
+\begin{equation*}
+    V\pars{a}
+        = a \cdot 2a \cdot \pars{6 - 3a}
+        = 12a^2 - 6a^3
+        = 6\pars{2a^2 - a^3} \qquad a \in \open{0}{2}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{gather*}
+    V'\pars{a}
+        = 6\pars{4a - 3a^2}
+        = 6a\pars{4 - 3a}\\
+    \downparabola{0}{\frac{4}{3}}[\(a\)]
+\end{gather*}
+Interesuje nas tylko przedział \(\open{0}{\frac{4}{3}}\). Pochodna jest dodatnia w~przedziale \(\open{0}{\frac{4}{3}}\), dla \(a = \frac{4}{3}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{\frac{4}{3}}{2}\) jest ujemna. Oznacza to, że funkcja \(V\) jest rosnąca w~przedziale \(\open{0}{\frac{4}{3}}\) i~malejąca w~przedziale \(\open{\frac{4}{3}}{2}\), więc dla \(a = \frac{4}{3}\) osiąga globalną wartość największą:
+\begin{equation*}
+    V\pars{\frac{4}{3}}
+        = 6\pars{\frac{32}{9} - \frac{64}{27}}
+        = 6\pars{\frac{96}{27} - \frac{64}{27}}
+        = 6 \cdot \frac{32}{27}
+        = \frac{64}{9}
+\end{equation*}
+Największa możliwa objętość tego prostopadłościanu wynosi \(\frac{64}{9}\) i~jest osiągana dla \(a = \frac{4}{3}\). Zatem długości krawędzi tego prostopadłościanu to \(\frac{4}{3}\), \(\frac{8}{3}\) i~\(2\).
+\subsubsection*{Zadanie~9.49.}
+\begin{mathfigure*}
+    \coordinate (S) at (0, 0);
+    \coordinate (A) at (-1.5, -2);
+    \coordinate (B) at (1.5, -2);
+    \coordinate (C) at (1.5, 2);
+    \coordinate (D) at (-1.5, 2);
+    \coordinate (E) at (0, -2);
+    \coordinate (F) at (0, 2);
+    \draw (S) circle[radius=2.5];
+    \draw[ForestGreen] (E) ellipse (1.5 and 0.12);
+    \draw[ForestGreen] (F) ellipse (1.5 and 0.12);
+    \draw (S) -- node[left]{\(\frac{h}{2}\)} (E);
+    \draw (S) -- node[above, sloped]{\(r\)} (B);
+    \draw[dashed] (S) ellipse (2.5 and 0.5);
+    \draw[ForestGreen] (A) -- (D);
+    \draw[ForestGreen] (B) -- (C);
+    \draw[ForestGreen, dashed] (A) -- (B);
+    \draw[ForestGreen, dashed] (C) -- (D);
+    \path (E) -- node[above]{\(R\)} (B);
+    \drawrightangle[angle radius=0.3cm]{B--E--S};
+    \fillpoint*{S}[\(S\)][above];
+    \fillpoint*{E}[\(E\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+\end{mathfigure*}
+Z~twierdzenia Pitagorasa wiemy, że
+\begin{gather*}
+    \frac{h^2}{4} + R^2 = r^2\\
+    h = 2\sqrt{r^2 - R^2}
+\end{gather*}
+Zdefiniujmy funkcję objętości tego walca w~zależności od promienia jego podstawy \(R\):
+\begin{equation*}
+    V\pars{R}
+        = P_p \cdot h
+        = \pi R^2 \cdot 2\sqrt{r^2 - R^2}
+        = 2\pi\sqrt{r^2R^4 - R^6} \qquad r \in \open{0}{R}
+\end{equation*}
+Zauważmy, że funkcja pierwiastek nie zmienia monotoniczności ani ekstremów funkcji podpierwiastkowej. Podobnie mnożenie przez stałą \(2\pi\) nie wpływa na monotoniczność ani ekstrema funkcji. Możemy zatem zdefiniować jeszcze jedną funkcję:
+\begin{equation*}
+    W\pars{R}
+        = r^2R^4 - R^6 \qquad r \in \open{0}{R}
+\end{equation*}
+i~obliczyć jej pochodną:
+\begin{gather*}
+    W'\pars{R}
+        = 4r^2R^3 - 6R^5
+        = 2R^3\pars{2r^2 - 3R^2}
+        = 2R^3\pars{r\sqrt{2} - R\sqrt{3}}\pars{r\sqrt{2} + R\sqrt{3}}\\
+    \downparabola{-\frac{r\sqrt{2}}{\sqrt{3}}}{\frac{r\sqrt{2}}{\sqrt{3}}}[\(R\)]
+\end{gather*}
+Interesuje nas tylko przedział \(\open{0}{R}\). Pochodna jest dodatnia w~przedziale \(\open{0}{\frac{r\sqrt{2}}{\sqrt{3}}}\), dla \(R = \frac{r\sqrt{2}}{\sqrt{3}}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{\frac{r\sqrt{2}}{\sqrt{3}}}{+\infty}\) jest ujemna. Oznacza to, że funkcja \(W\), a~zatem również funkcja \(V\) jest rosnąca w~przedziale \(\open{0}{\frac{r\sqrt{2}}{\sqrt{3}}}\) i~malejąca w~przedziale \(\open{\frac{r\sqrt{2}}{\sqrt{3}}}{+\infty}\), więc dla \(R = \frac{r\sqrt{2}}{\sqrt{3}}\) osiąga globalną wartość największą:
+\begin{equation*}
+    V\pars{\frac{r\sqrt{2}}{\sqrt{3}}}
+        = 2\pi\sqrt{r^2 \cdot r^4 \cdot \frac{4}{9} - r^6 \cdot \frac{8}{27}}
+        = 2\pi\sqrt{\frac{12r^6}{27} - \frac{8r^6}{27}}
+        = 2\pi\sqrt{\frac{4r^6}{27}}
+        = \frac{4\pi r^3}{3\sqrt{3}}
+\end{equation*}
+Objętość kuli wynosi \(\frac{4\pi r^3}{3}\). Zatem przy optymalnym walcu o~promieniu podstawy równym \(\frac{r\sqrt{2}}{\sqrt{3}}\) stosunek objętości walca do objętości kuli wynosi
+\begin{equation*}
+    \frac{\cancel{\frac{4\pi r^3}{3}} \cdot \frac{1}{\sqrt{3}}}{\cancel{\frac{4\pi r^3}{3}}}
+        = \frac{1}{\sqrt{3}}
+\end{equation*}
+\subsubsection*{Zadanie~9.59.}
+Ponieważ prostopadłościan ma wszędzie taką samą wysokość, to aby jego wierzchołki należały do powierzchni bocznej stożka, środek podstawy prostopadłościanu (przecięcie przekątnych) musi znajdować się na spodku wysokości stożka, czyli na środku podstawy. Oznaczmy krótszy bok podstawy przez \(x\). W~tej sytuacji drugi bok ma długość \(2x\), więc długość przekątnej podstawy na mocy twierdzenia Pitagorasa wynosi \(\sqrt{x^2 + \pars{2x}^2} = \sqrt{x^2 + 4x^2} = x\sqrt{5}\). Rozważmy przekrój stożka płaszczyzną zawierającą przekątną podstawy prostopadłościanu i~przechodzącą przez wierzchołek stożka:
+\begin{mathfigure*}
+    \coordinate (A) at (-2.5, 0);
+    \coordinate (B) at (2.5, 0);
+    \coordinate (C) at (0, 6);
+    \coordinate (D) at (0, 0);
+    \coordinate (E) at (-1.25, 0);
+    \coordinate (F) at (-1.25, 3);
+    \coordinate (G) at (1.25, 3);
+    \coordinate (H) at (1.25, 0);
+    \coordinate (J) at (0, 3);
+    \draw (E) -- (F) -- (G) -- (H);
+    \draw (A) -- node[below]{\(x\sqrt{5}\)} (B) -- (C) -- cycle;
+    \draw[dashed] (C) -- node[right, near start]{\(h\)} node[right, near end]{\(y\)} (D);
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{B}[\(B\)][right];
+    \fillpoint*{G}[\(G\)][above right];
+    \fillpoint*{J}[\(J\)][above left];
+    \fillpoint*{C}[\(C\)][above];
+    \drawrightangle[angle radius=0.4cm]{B--D--C};
+    \drawrightangle[angle radius=0.4cm]{G--J--C};
+    \drawangle[angle radius=0.4cm, RoyalBlue]{C--B--D};
+    \drawangle[angle radius=0.4cm, RoyalBlue]{C--G--J};
+\end{mathfigure*}
+Zauważamy, że \(\mangle{CJG} = \mangle{CDB} = 90\degree\) i~\(\mangle{CGJ} = \mangle{CBD}\). Zatem \(\triangle{CGJ} \sim \triangle{CBD}\), czyli
+\begin{gather*}
+    \frac{CJ}{JG} = \frac{CD}{DB}\\
+    \frac{h - y}{\frac{x\sqrt{5}}{2}} = \frac{h}{R}\\
+    x= \frac{2R\pars{h - y}}{h\sqrt{5}}
+\end{gather*}
+Zdefiniujmy funkcję objętości prostopadłościanu w~zależności od jego wysokości \(y\):
+\begin{equation*}
+    V\pars{y}
+        = x \cdot 2x \cdot y
+        = 2y \cdot \pars{\frac{2R\pars{h - y}}{h\sqrt{5}}}^2
+        = 2y \cdot \frac{4R^2\pars{h - y}^2}{5h^2}
+        = \frac{8R^2}{5h^2} \cdot y\pars{h - y}^2
+        = \frac{8R^2}{5h^2}\pars{h^2y - 2hy^2 + y^3} \qquad y \in \open{0}{h}
+\end{equation*}
+Obliczmy jej pochodną:
+\begin{gather*}
+    V'\pars{y}
+        = \frac{8R^2}{5h^2}\pars{h^2 - 4h + 3y^2}
+        = \frac{8R^2}{5h^2}\pars{y - h}\pars{3y - h}\\
+    \upparabola{\frac{h}{3}}{h}[\(y\)]
+\end{gather*}
+Interesuje nas tylko przedział \(\open{0}{h}\). Pochodna jest dodatnia w~przedziale \(\open{0}{\frac{h}{3}}\), dla \(y = \frac{h}{3}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{\frac{h}{3}}{h}\) jest ujemna. Oznacza to, że funkcja \(V\) jest rosnąca w~przedziale \(\open{0}{\frac{h}{3}}\) i~malejąca w~przedziale \(\open{\frac{h}{3}}{h}\), więc dla \(y = \frac{h}{3}\) przyjmuje globalną wartość największą.
