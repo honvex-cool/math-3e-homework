@@ -1,0 +1,277 @@
+\subsubsection*{Planimetria --- zestaw zadań}
+\subsubsection*{Zadanie~1.}
+Wszystkie wymiary będziemy podawać odpowiednio w~\(\cm\) i~\(\cm^2\).
+\begin{mathfigure*}
+    \coordinate (A) at (-3, 0);
+    \coordinate (B) at (3, 0);
+    \coordinate (C) at (0, 4);
+    \coordinate (D) at (0, 0);
+    \drawrightangle{B--D--C};
+    \draw (A)
+        -- node[below]{\(x = 30\)} (B)
+        -- node[above right]{\(\ell\)} (C)
+        -- node[above left]{\(\ell\)} cycle;
+    \draw (C) -- node[right]{\(h = 20\)} (D);
+    \path (D) -- node[above]{\(15\)} (B);
+\end{mathfigure*}
+Z~twierdzenia Pitagorasa mamy
+\begin{gather*}
+    \pars{\frac{x}{2}}^2 + h^2 = \ell^2\\
+    15^2 + 20^2 = \ell^2\\
+    \ell^2 = 625\\
+    \ell = 25
+\end{gather*}
+Pole trójkąta możemy wyrazić na dwa sposoby:
+\begin{equation*}
+    \area{\triangle}
+        = \frac{1}{2}hx
+        = \frac{1}{2}h_\ell\ell
+\end{equation*}
+Po przekształceniu otrzymujemy
+\begin{equation*}
+    h_\ell
+        = \frac{hx}{\ell}
+        = \frac{20 \cdot 30}{25}
+        = 24
+\end{equation*}
+Zatem wysokość opuszczona na ramię trójkąta ma długość równą \(24\cm\).
+\subsubsection*{Zadanie~2.}
+\begin{mathfigure*}
+    \coordinate (A) at (-3, 0);
+    \coordinate (B) at (3, 0);
+    \coordinate (C) at (-0.5, 1.2);
+    \coordinate (M) at (0, 0);
+    \coordinate (H) at (-0.5, 0);
+    \drawrightangle[angle radius=0.2cm]{C--H--A};
+    \draw (A) -- (B) -- node[above right]{\(b\)} (C) -- node[above left]{\(c\)} cycle;
+    \draw (C) -- node[right]{\(13\)} (M);
+    \draw (C) -- node[left]{\(12\)} (H);
+    \path (H) -- node[above]{\(x\)} (M);
+\end{mathfigure*}
+Z~twierdzenia Pitagorasa mamy
+\begin{gather*}
+    x^2 + 12^2 = 13^2\\
+    x^2 = 169 - 144 = 25\\
+    x = 5
+\end{gather*}
+Ponieważ odcinek długości \(13\) zaznaczony na rysunku jest środkową, to
+\begin{gather*}
+    c^2
+        = 12^2 + \pars{\frac{60}{2} - x}^2
+        = 144 + 25^2
+        = 769\\
+    c = \sqrt{769}
+\end{gather*}
+Podobnie
+\begin{gather*}
+    b^2
+        = 12^2 + \pars{\frac{60}{2} + x}^2
+        = 144 + 35^2
+        = 16369\\
+    b = \sqrt{1369} = 37
+\end{gather*}
+Zatem długości boków tego trójkąta to \(60, \sqrt{769}, 37\).
+\subsubsection*{Zadanie~3.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -2);
+    \coordinate (B) at (2, -2);
+    \coordinate (C) at (2, 2);
+    \coordinate (D) at (-2, 2);
+    \coordinate (E) at (-1, -2);
+    \coordinate (F) at (2, -1);
+    \coordinate (G) at (1, 2);
+    \coordinate (H) at (-2, 1);
+    \drawangle[Orange, angle radius=0.7cm]{B--E--F};
+    \drawangle[Orange, angle radius=0.7cm]{C--F--G};
+    \drawangle[Orange, angle radius=0.7cm]{D--G--H};
+    \drawangle[Orange, angle radius=0.7cm]{A--H--E};
+    \drawangle[ForestGreen, angle radius=0.45cm]{E--F--B};
+    \drawangle[ForestGreen, angle radius=0.45cm]{F--G--C};
+    \drawangle[ForestGreen, angle radius=0.45cm]{G--H--D};
+    \drawangle[ForestGreen, angle radius=0.45cm]{H--E--A};
+    \drawrightangle{G--F--E};
+    \drawrightangle{H--G--F};
+    \drawrightangle{E--H--G};
+    \drawrightangle{F--E--H};
+    \drawrightangle[angle radius=0.3cm]{C--B--A};
+    \drawrightangle[angle radius=0.3cm]{D--C--B};
+    \drawrightangle[angle radius=0.3cm]{A--D--C};
+    \drawrightangle[angle radius=0.3cm]{B--A--D};
+    \draw (A) -- node[below]{\(a\)} (B) -- (C) -- (D) -- cycle;
+    \draw (E) -- node[above, sloped]{\(x\)} (F) -- (G) -- (H) -- cycle;
+    \path (B)
+        -- node[right]{\(\frac{ma}{m + n}\)} (F)
+        -- node[right]{\(\frac{na}{m + n}\)} (C);
+\end{mathfigure*}
+Z~twierdzenia Pitagorasa:
+\begin{equation*}
+    \area{\square}
+        = x^2
+        = \frac{m^2a^2}{\pars{m + n}^2} + \frac{n^2a^2}{\pars{m + n}^2}
+        = \frac{a^2\pars{m^2 + n^2}}{\pars{m + n}^2}\\
+\end{equation*}
+\subsubsection*{Zadanie~5.}
+\begin{mathfigure*}
+    \def\rt{\fpeval{sqrt(12)}}
+    \coordinate (A) at (-3, 0);
+    \coordinate (B) at (3, 0);
+    \coordinate (C) at (0, \rt/2);
+    \coordinate (H) at (0, 0);
+    \coordinate (M) at (1.5, \rt/4);
+    \draw (A) node[below left]{\(A\)}
+        -- node[below]{\(12\)} (B) node[below right]{\(B\)}
+        -- node[above right]{\(\ell\)} (C) node[above]{\(C\)}
+        -- node[above left]{\(\ell\)} cycle;
+    \draw[ForestGreen] (C) -- node[right]{\(h\)}(H) -- (M);
+    \fillpoint*{M}[\(M\)][below];
+    \fillpoint*{H}[\(H\)][above left];
+\end{mathfigure*}
+Oznaczmy wysokość tego trójkąta przez \(h\). Ramię ma wtedy długość
+\begin{equation*}
+    \ell
+        = \sqrt{h^2 + \pars{\frac{12}{2}}^2}
+        = \sqrt{h^2 + 36}
+\end{equation*}
+Z~równości~pól otrzymujemy, że w~\(\triangle{HBC}\)wysokość opuszczona na odcinek \(BC\) wynosi
+\begin{equation*}
+    h_1 = \frac{6h}{\sqrt{h^2 + 36}}
+\end{equation*}
+Z~twierdzenia Pitagorasa w~trójkącie równoramiennnym \(\triangle{HMC}\) mamy
+\begin{gather*}
+    \pars{\frac{\sqrt{h^2 + 36}}{4}}^2 + h_1^2
+        = h^2\\
+    \frac{h^2 + 36}{16} + \frac{36h^2}{h^2 + 36} = h^2\\
+    \frac{\pars{h^2 + 36}^2 + 576h^2}{16\pars{h^2 + 36}} = h^2\\
+    \frac{h^4 + 72h^2 + 1296 + 576^2 - 16h^4 - 576h^2}{16\pars{h^2 + 36}} = 0\\
+    -15h^4 + 72h^2 + 1296 = 0\\
+    t \coloneqq h^2\\
+    -15t^2 + 72t + 1296 = 0\\
+    \Delta
+        = 72^2 + 4 \cdot 15 \cdot 1296
+        = 82944\\
+    t_1
+        = \frac{-72 + \sqrt{82944}}{-30}
+        = \frac{-72 + 288}{-30} < 0\\
+    h^2 = t_2
+        = \frac{-72 - \sqrt{82944}}{-30}
+        = \frac{-72 - 288}{-30}
+        = \frac{-360}{30}
+        = 12\\
+    h = \sqrt{12}\\
+    \area{ABC}
+        = \frac{12h}{2}
+        = 6\sqrt{12}
+\end{gather*}
+\subsubsection*{Zadanie~6.}
+\begin{mathfigure*}
+    \coordinate (A) at (-3, 0);
+    \coordinate (B) at (0, -2);
+    \coordinate (C) at (3, 0);
+    \coordinate (D) at (0, 2);
+    \coordinate (E) at (0, 0);
+    \drawrightangle{B--E--C};
+    \draw (A) -- (B) -- node[below, sloped]{\(\frac{p}{2}\)} (C) -- (D) -- cycle;
+    \draw (A) -- node[near end, above]{\(\frac{d}{2}\)} (C);
+    \draw (B) -- node[near start, left]{\(\frac{m - d}{2}\)} (D);
+\end{mathfigure*}
+Oznaczmy długość dłuższej przekątnej przez \(d\). Długość drugiej wynosi wtedy \(m - d\). Z~twierdzenia Pitagorasa:
+\begin{gather*}
+    \pars{\frac{d}{2}}^2 + \pars{\frac{m - d}{2}}^2 = \pars{\frac{p}{2}}^2\\
+    \frac{d^2 + m^2 - 2md + d^2}{4} = \frac{p^2}{4}\\
+    2d^2 - 2md + m^2 - p^2 = 0\\
+    \Delta
+        = \pars{-2m}^2 - 4 \cdot 2 \cdot \pars{m^2 - p^2}
+        = 4m^2 - 8m^2 + 8p^2
+        = 4\pars{2p^2 - m^2}\\
+    d_1 = \frac{m - \sqrt{2p^2 - m^2}}{2}\\
+    d_2 = \frac{m + \sqrt{2p^2 - m^2}}{2}
+\end{gather*}
+Pole rombu wyraża się wzorem
+\begin{equation*}
+    \area{\diamond}
+        = \frac{d_1d_2}{2}
+        = \frac{1}{2} \cdot \frac{m^2 - 2p^2 + m^2}{4}
+        = \frac{m^2 - p^2}{4}
+\end{equation*}
+\subsubsection*{Zadanie~7.}
+Jeżeli odetniemy od tego trapezu \(T\) trójkąty \(30\degree\) \(60\degree\) \(90\degree\), to zostaniemy z~prostokątem \(b \times h\).
+\begin{gather*}
+    b + h + h\sqrt{3} = a\\
+    h\pars{1 + \sqrt{3}} = a - b\\
+    h = \frac{a - b}{1 + \sqrt{3}}\\
+    \area{T}
+        = \frac{\pars{a + b}h}{2}
+        = \frac{\pars{a + b} \cdot \frac{a - b}{1 + \sqrt{3}}}{2}
+        = \frac{a^2 - b^2}{2 + 2\sqrt{3}}
+\end{gather*}
+\subsubsection*{Zadanie~8.}
+\begin{mathfigure*}
+    \coordinate (A) at (-4, 0);
+    \coordinate (B) at (2, 0);
+    \coordinate (C) at (1, 3);
+    \coordinate (D) at (-2, 3);
+    \coordinate (H1) at (-2, 0);
+    \coordinate (H2) at (1, 0);
+    \drawrightangle{C--H2--H1};
+    \drawrightangle{H2--H1--D};
+    \draw (A) node[below left]{\(A\)}
+        -- node[below]{\(44\)} (B)  node[below right]{\(B\)}
+        -- node[above right]{\(17\)} (C) node[above right]{\(C\)}
+        -- node[above]{\(16\)} (D) node[above left]{\(D\)}
+        -- node[above left]{\(25\)} cycle;
+    \draw (D) -- node[right]{\(h\)} (H1);
+    \draw (C) -- node[right]{\(h\)} (H2);
+    \path (A) -- node[above]{\(28 - x\)} (H1);
+    \path (B) -- node[above]{\(x\)} (H2);
+    \path (H1) -- node[above]{\(16\)} (H2);
+\end{mathfigure*}
+Z~twierdzenia Pitagorasa:
+\begin{gather*}
+    x^2 + h^2 = 17^2\\
+    \pars{28 - x}^2 + h^2 = 25^2 \iff x^2 - 56x + 28^2 + h^2 = 25^2
+\end{gather*}
+Odejmujemy te równania stronami:
+\begin{gather*}
+    56x - 28^2 = 17^2 - 25^2\\
+    56x - 784 = 289 - 625\\
+    56x = 448\\
+    x = 8\\
+    h
+        = \sqrt{17^2 - x^2}
+        = \sqrt{289 - 64}
+        = \sqrt{225}
+        = 15\\
+    \area{ABCD}
+        = \frac{\pars{16 + 44}h}{2}
+        = 30h
+        = 450
+\end{gather*}
+Pole trapezu wynosi \(450\).
+\subsubsection*{Zadanie~9.}
+\begin{mathfigure*}
+    \coordinate (A) at (-1, 0);
+    \coordinate (B) at (8, 0);
+    \coordinate (C) at (0, 4);
+    \coordinate (H) at (0, 0);
+    \coordinate (E) at (2, 0);
+    \coordinate (F) at (2, 3);
+    \draw (A) node[below left]{\(A\)}
+        -- (B) node[below right]{\(B\)}
+        -- (C) node[above]{\(C\)}
+        -- cycle;
+    \draw (C) -- node[right]{\(4\)} (H) node[below]{\(H\)};
+    \draw (F) node[above right]{\(F\)} -- node[right]{\(h\)} (E) node[below]{\(E\)};
+    \path (A) -- node[above]{\(x\)} (H) -- node[below]{\(8x\)} (B);
+    \path (E) -- node[above]{\(p\)} (B);
+\end{mathfigure*}
+\begin{gather*}
+    \frac{4}{8x} = \frac{h}{p}\\
+    p = 2hx\\
+    \area{ABC} = \frac{4 \cdot 9x}{2} = 18x\\
+    \area{EBF} = \frac{1}{2}\area{ABC} = 9x\\
+    \frac{hp}{2} = 9x\\
+    h^2x = 9x\\
+    h = 3\\
+    p = 6x
+\end{gather*}
+Taki odcinek ma długość \(3\).

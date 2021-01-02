@@ -1,0 +1,120 @@
+\subsubsection*{Zadanie~10.14.}
+Prawdopodobieństwo wypadnięcia w~pojedynczym rzucie sumy oczek nie mniejszej niż \(4\) wynosi \(\frac{1}{2}\). Prawdopodobieństwo sukcesu w~przynajmniej trzech rzutach jest dopełnieniem prawdopodobieństwa porażki w~co najwyżej dwóch rzutach:
+\begin{equation*}
+    P\pars{S \geq 3}
+        = 1 - P\pars{P \leq 2}
+        = 1 - \binom{7}{2} \cdot \pars{\frac{1}{2}}^5 \cdot \pars{\frac{1}{2}}^2 - \binom{7}{1} \cdot \pars{\frac{1}{2}}^6 \cdot \pars{\frac{1}{2}}^1 + \pars{\frac{1}{2}}^7
+        = 1 - \frac{21}{128} - \frac{7}{128} - \frac{1}{28}
+        = \frac{99}{128}
+\end{equation*}
+\subsubsection*{Zadanie~10.15.}
+\begin{enumerate}[label={\alph*)}]
+    \item sumy oczek większe od \(9\) w~pojedynczym rzucie dwoma kostkami to:
+        \begin{equation*}
+            A = \set{\seq{5, 5}, \seq{4, 6}, \seq{6, 4}, \seq{5, 6}, \seq{6, 5}, \seq{6, 6}}
+        \end{equation*}
+        Zatem prawdopodobieństwo sukcesu w~pojedynczym rzucie wynosi \(\frac{6}{36} = \frac{1}{6}\). Prawdopodobieństwo sukcesu w~co najmniej dwóch rzutach wynosi:
+        \begin{equation*}
+            P\pars{S \geq 2}
+                = \binom{3}{2} \cdot \pars{\frac{1}{6}}^2 \cdot \pars{\frac{5}{6}}^1 + \binom{3}{3} \cdot \pars{\frac{1}{6}}^3
+                = 3 \cdot \frac{5}{216}  + \frac{1}{216}
+                = \frac{16}{216}
+                = \frac{2}{27}
+        \end{equation*}
+    \item iloczyny oczek mniejsze od \(5\) w~pojedynczym rzucie dwoma kostkami to:
+        \begin{equation*}
+            B = \set{\seq{1, 1}, \seq{1, 2}, \seq{2, 1}, \seq{3, 1}, \seq{1, 3}, \seq{2, 2}, \seq{4, 1}, \seq{1, 4}}
+        \end{equation*}
+        Zatem prawdopodobieństwo sukcesu w~pojedynczym rzucie wynosi \(\frac{8}{36} = \frac{2}{9}\). Prawdopodobieństwo sukcesu w~co najwyżej jednym rzucie
+        \begin{equation*}
+            P\pars{S \leq 2} = \binom{3}{0} \cdot \pars{\frac{2}{9}}^0 \cdot \pars{\frac{7}{9}}^3 + \binom{3}{1} \cdot \pars{\frac{2}{9}}^1 \cdot \pars{\frac{7}{9}}^2 = 1 \cdot \frac{343}{729} + 3 \cdot \frac{98}{729} = \frac{343}{729} + \frac{294}{729} = \frac{637}{729}
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~10.16.}
+Prawdopodobieństwo wypadnięcia dwóch liczb nieparzystych w~jednym rzucie dwoma kostkami wynosi \(\frac{1}{4}\). Zatem prawdopodobieństwo takiego wyniku przynajmniej trzech rzutów wynosi
+\begin{equation*}
+    P\pars{S \geq 3}
+        = \binom{5}{3} \cdot \pars{\frac{1}{4}}^3 \cdot \pars{\frac{3}{4}}^2 + \binom{5}{4} \cdot \pars{\frac{1}{4}}^4 \cdot \pars{\frac{3}{4}}^1 + \binom{5}{5} \cdot \pars{\frac{1}{4}}^5
+        = 10 \cdot \frac{9}{1024} + 5 \cdot \frac{3}{1024} +  \frac{1}{1024}
+        = \frac{106}{1024}
+        = \frac{53}{512}
+\end{equation*}
+\subsubsection*{Zadanie~10.17.}
+Prawdopodobieństwo wyrzucenia na obu kostkach parzystej liczby oczek w~pojedynczym rzucie wynosi \(\frac{1}{4}\), czyli prawdopodobieństwo, że tak się nie stanie, wynosi \(\frac{3}{4}\). Obliczmy prawdopodobieństwo zdarzenia przeciwnego do szukanego, czyli prawdopodobieństwo, że ani razu nie wypadną dwie liczby parzyste. Wynosi ono \(\pars{\frac{3}{4}}^n\). Chcemy zatem rozwiązać nierówność
+\begin{gather*}
+    1 - \pars{\frac{3}{4}}^n \geq 0{,}76\\
+    \pars{\frac{3}{4}}^n \leq 0{,}24\\
+    n \geq \log_{\frac{3}{4}}0{,}24 \approx 4{,}96\\
+    n \geq 5
+\end{gather*}
+\subsubsection*{Zadanie~10.18.}
+Prawdopodobieństwo uzyskania orła w~pojedynczym rzucie monetą wynosi \(\frac{1}{2}\). Zatem prawdopodobieństwo uzyskania przynajmniej dziewięciu orłów wynosi
+\begin{equation*}
+    P\pars{\text{orzeł} \geq 9}
+        = \binom{10}{9} \cdot \pars{\frac{1}{2}}^9 \cdot \pars{\frac{1}{2}}^1 + \binom{10}{10} \cdot \pars{\frac{1}{2}}^{10}
+        = 10 \cdot \frac{1}{1024} + 1 \cdot \frac{1}{1024}
+        = \frac{11}{1024}
+\end{equation*}
+Trzy rzuty kostką do gry można wykonać na \(6^3 = 216\) sposobów, a~suma wynosi \(17\) tylko w~trzech przypadkach:
+\begin{equation*}
+    S_{17} = \set{\seq{5, 6, 6}, \seq{6, 5, 6}, \seq{6, 6, 5}}
+\end{equation*}
+Zatem prawdopodobieństwo wynosi \(\frac{3}{216} = \frac{1}{72} = \frac{11}{792} > \frac{11}{1024}\). Czyli bardziej prawdopodobne jest wyrzucenie sumy oczek równej \(17\) w~trzech rzutach kostką.
+\subsubsection*{Zadanie~10.35.}
+W~pojedynczym pytaniu prawdopodobieństwo udzielenia takich samych odpowiedzi wynosi \(\frac{1}{2}\), ponieważ możliwe układy odpowiedzi to \(TT\), \(TN\), \(NT\) i~\(NN\). Zatem prawdopodobieństwo takiej samej odpowiedzi na przynajmniej \(10\) pytań wynosi
+\begin{equation*}
+    P\pars{S \geq 10}
+        = \binom{12}{10} \cdot \pars{\frac{1}{2}}^{10} \cdot \pars{\frac{1}{2}}^2 + \binom{12}{11} \cdot \pars{\frac{1}{2}}^{11} \cdot \pars{\frac{1}{2}}^1 + \binom{12}{12} \cdot \pars{\frac{1}{2}}^{12}
+        = \frac{66}{4096} + \frac{12}{4096} + \frac{1}{4096}
+        = \frac{79}{4096}
+\end{equation*}
+\subsubsection*{Zadanie~10.36.}
+\begin{enumerate}[label={\alph*)}]
+    \item Prawdopodobieństwo, że strzelec trafi co najmniej raz, jest dopełnieniem prawdopodobieństwa, że strzelec nie trafi ani razu, które wynosi \(0{,}4^{10}\). Zatem prawdopodobieństwo, że strzelec trafi przynajmniej raz, wynosi \(1 - 0{,}4^{10} = 0{,}9998951424\).
+    \item Prawdopodobieństwo, że strzelec trafi dokładnie osiem razy wynosi
+        \begin{equation*}
+            P\pars{S = 8}
+                = \binom{10}{8} \cdot 0{,}6^8 \cdot 0{,}4^2
+                \approx 0{,}120932352
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~10.37.}
+\begin{enumerate}[label={\alph*)}]
+    \item prawdopodobieństwo, że nie zawiedzie żaden telewizor:
+        \begin{equation*}
+            P\pars{S = 100} = 0{,}99^{100} \approx 0{,}36603
+        \end{equation*}
+    \item prawdopodobieństwo, że zawiedzie dokładnie jeden telewizor:
+        \begin{equation*}
+            P\pars{S = 99} = \binom{100}{99} \cdot 0{,}99^{99} \cdot 0{,}01^1 \approx 0{,}36973
+        \end{equation*}
+    \item prawdopodobieństwo, że zawiodą dokładnie dwa telewizory:
+        \begin{equation*}
+            P\pars{S = 98} = \binom{100}{98} \cdot 0{,}99^{98} \cdot 0{,}01^2 \approx 0{,}18486
+        \end{equation*}
+    \item prawdopodobieństwo że zawiodą dokładnie trzy telewizory:
+        \begin{equation*}
+            P\pars{S = 97} = \binom{100}{97} \cdot 0{,}99^{97} \cdot 0{,}01^3 \approx 0{,}061
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~10.38.}
+\begin{enumerate}[label={\alph*)}]
+    \item prawdopodobieństwo, że wśród dziesięciu nakrętek nie ma ani jednej wadliwej:
+        \begin{equation*}
+            P\pars{S = 10} = 0{,}9^{10} \approx 0{,}34868
+        \end{equation*}
+    \item prawdopodobieństwo, że są mniej niż trzy wadliwe zakrętki:
+        \begin{equation*}
+            P\pars{P < 3} = \binom{10}{2} \cdot 0{,}1^2 \cdot 0{,}9^8 + \binom{10}{1} \cdot 0{,}1^1 \cdot 0{,}9^9 + 0{,}9^{10} \approx 0{,}92981
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~10.39.}
+Prawdopodobieństwo uzyskania przynajmniej jednego sukcesu jest dopełnieniem prawdopodobieństwa uzyskania samych porażek, które wynosi \(0{,}99^n\). Zatem chcemy rozwiązać nierówność
+\begin{gather*}
+    1 - 0{,}99^n \geq 0{,}5\\
+    0{,}99^n \leq 0{,}5\\
+    n \geq \log_{0{,}99}0{,}5 \approx 68{,}97\\
+    n \geq 69
+\end{gather*}
+\subsubsection*{Zadanie~10.40.}
+Skoro prawdopodobieństwo uzyskania przynajmniej jednego sukcesu wynosi \(0{,}5\), to prawdopodobieństwo uzyskania samych porażek wynosi \(1 - 0{,}5 = 0{,}5\). Jeśli \(p\) będzie prawdopodobieństwem porażki, to \(p^4 = 0{,}5\). Zatem \(p = \sqrt[4]{\frac{1}{2}}\), czyli \(s = 1 - \sqrt[4]{\frac{1}{2}}\).

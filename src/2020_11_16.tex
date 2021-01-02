@@ -1,0 +1,353 @@
+\subsection*{Funkcja wykładnicza}
+\subsubsection*{Zadanie~5.6.}
+\begin{itemize}
+    \item[g)]
+        \begin{gather*}
+            3^{2x + 2} + 3^{2x} = 30\\
+            3^2 \cdot 3^{2x} + 3^{2x} = 30\\
+            9 \cdot 3^{2x} + 3^{2x} = 30\\
+            10 \cdot 3^{2x} = 30\\
+            3^{2x} = 3
+        \end{gather*}
+        Ponieważ funkcja wykładnicza jest injekcją, to powyższa równość jest równoważna równości wykładników. Zatem:
+        \begin{gather*}
+            2x = 1\\
+            x = \frac{1}{2}
+        \end{gather*}
+\end{itemize}
+\subsubsection*{Zadanie~5.8.}
+\begin{itemize}
+    \item[g)]
+        \begin{equation*}
+            2 \cdot 4^{2x} - 17 \cdot 4^x + 8 = 0
+        \end{equation*}
+        Możemy podstawić \(t \coloneqq 4^x\) i~rozwiązać równanie kwadratowe:
+        \begin{gather*}
+            2t^2 - 17t + 8 = 0\\
+            \Delta
+                = \pars{-17}^2 - 4 \cdot 2 \cdot 8
+                = 289 - 64
+                = 225\\
+            \sqrt{\Delta} = \sqrt{225} = 15\\
+            t_1
+                = \frac{-\pars{-17} - \sqrt{\Delta}}{2 \cdot 2}
+                = \frac{17 - 15}{4}
+                = \frac{1}{2}\\
+            t_2
+                = \frac{-\pars{-17} + \sqrt{\Delta}}{2 \cdot 2}
+                = \frac{17 + 15}{4}
+                = 8
+        \end{gather*}
+        Mamy zatem
+        \begin{gather*}
+            4^x = \frac{1}{2} \wlor 4^x = 8\\
+            x = -\frac{1}{2} \wlor x = \frac{3}{2}
+        \end{gather*}
+\end{itemize}
+\subsubsection*{Zadanie~5.11.}
+\begin{itemize}
+    \item[d)]
+        \begin{gather*}
+            2^{3x} \cdot 7^{x - 2} = 4^{x + 1}\\
+            2^{3x} \cdot 7^{x - 2} = 2^{2x + 2}
+        \end{gather*}
+        Możemy podzielić stronami przez \(2^{2x + 2}\), ponieważ to wyrażenie jest różne od \(0\):
+        \begin{gather*}
+            2^{x - 2} \cdot 7^{x - 2} = 1\\
+            14^{x - 2} = 1\\
+            x - 2 = 0\\
+            x = 2
+        \end{gather*}
+    \item[g)]
+        \begin{gather*}
+            6^x + 3^x = 3 \cdot 6^x\\
+            3^x = 3 \cdot 6^x - 6^x\\
+            3^x = 2 \cdot 6^x\\
+            3^x = 2 \cdot 2^x \cdot 3^x\\
+        \end{gather*}
+        Możemy podzielić to równanie stronami przez \(3^x\)
+        \begin{gather*}
+            2 \cdot 2^x = 1\\
+            2^x = \frac{1}{2}\\
+            x = -1
+        \end{gather*}
+\end{itemize}
+\subsubsection*{Zadanie~5.13.}
+\begin{itemize}
+    \item[h)]
+        \begin{gather*}
+            \pars{\sqrt{2 - \sqrt{3}}}^x + \pars{\sqrt{2 + \sqrt{3}}}^x = 4\\
+            \sqrt{\pars{2 - \sqrt{3}}^x} + \sqrt{\pars{2 + \sqrt{3}}^x} = 4
+        \end{gather*}
+        Podnieśmy to równanie stronami do kwadratu:
+        \begin{gather*}
+            \pars{2 - \sqrt{3}}^x + 2\sqrt{\pars{2 - \sqrt{3}}^x} \cdot \sqrt{\pars{2 + \sqrt{3}}^x} + \pars{2 + \sqrt{3}}^x = 16\\
+            \pars{2 - \sqrt{3}}^x + \pars{2 + \sqrt{3}}^x + 2\sqrt{\pars{\pars{2 - \sqrt{3}}\pars{2 + \sqrt{3}}}^x} = 16\\
+            \pars{2 - \sqrt{3}}^x + \pars{2 + \sqrt{3}}^x + 2\sqrt{\pars{4 - 3}^x} = 16\\
+            \pars{2 - \sqrt{3}}^x + \pars{2 + \sqrt{3}}^x + 2 = 16\\
+            \pars{2 -\sqrt{3}}^x + \pars{2 + \sqrt{3}}^x = 14
+        \end{gather*}
+        Zauważmy, że
+        \begin{equation*}
+            2 + \sqrt{3}
+                = \frac{2 + \sqrt{3}\pars{2 - \sqrt{3}}}{2 - \sqrt{3}}
+                = \frac{4 - 3}{2 - \sqrt{3}}
+                = \frac{1}{2 - \sqrt{3}}
+        \end{equation*}
+        Możemy zatem podstawić \(a \coloneqq \pars{2 - \sqrt{3}}^x\) i~zastąpić odpowiednie wyrażenia w~równaniu:
+        \begin{gather*}
+            a + \frac{1}{a} = 14\\
+            a^2 - 14a + 1 = 0\\
+            \Delta
+                = \pars{-14}^2 - 4 \cdot 1 \cdot 1
+                = 196 - 4
+                = 192\\
+            \sqrt{\Delta}
+                = \sqrt{3 \cdot 64}
+                = 8\sqrt{3}\\
+            a_1
+                = \frac{-\pars{-14} - \sqrt{\Delta}}{2 \cdot 1}
+                = \frac{14 - 8\sqrt{3}}{2}
+                = 7 - 4\sqrt{3}\\
+            a_2
+                = \frac{-\pars{-14} + \sqrt{\Delta}}{2 \cdot 1}
+                = \frac{14 + 8\sqrt{3}}{2}
+                = 7 + 4\sqrt{3}\\
+            \pars{2 - \sqrt{3}}^x = 7 - 4\sqrt{3} \wlor \pars{2 - \sqrt{3}}^x = 7 + 4\sqrt{3}\\
+            \pars{2 - \sqrt{3}}^x = \pars{2 - \sqrt{3}}^2 \wlor \pars{2 - \sqrt{3}}^x = \pars{\frac{1}{2 - \sqrt{3}}}^2\\
+            x = 2 \wlor x = -2
+        \end{gather*}
+    \item[i)]
+        \begin{gather*}
+            \pars{\sqrt{5 + 2\sqrt{6}}}^x + \pars{\sqrt{5 - 2\sqrt{6}}}^x = 10\\
+            \sqrt{\pars{5 + 2\sqrt{6}}^x} + \sqrt{\pars{5 - 2\sqrt{6}}^x} = 10\\
+        \end{gather*}
+        Podnieśmy to równanie stronami do kwadratu:
+        \begin{gather*}
+            \pars{5 + 2\sqrt{6}}^x + 2\sqrt{\pars{5 + 2\sqrt{6}}^x} \cdot \sqrt{\pars{5 - 2\sqrt{6}}^x} + \pars{5 - 2\sqrt{6}}^x = 100\\
+            \pars{5 + 2\sqrt{6}}^x + \pars{5 - 2\sqrt{6}}^x + 2\sqrt{\pars{\pars{5 + 2\sqrt{6}}\pars{5 - 2\sqrt{6}}}^x} = 100\\
+            \pars{5 + 2\sqrt{6}}^x + \pars{5 - 2\sqrt{6}}^x + 2\sqrt{\pars{25 - 24}^x} = 100\\
+            \pars{5 + 2\sqrt{6}}^x + \pars{5 - 2\sqrt{6}}^x + 2 = 100\\
+            \pars{5 + 2\sqrt{6}}^x + \pars{5 - 2\sqrt{6}}^x = 98
+        \end{gather*}
+        Zauważmy, że
+        \begin{equation*}
+            5 + 2\sqrt{6}
+                = \frac{\pars{5 + 2\sqrt{6}}\pars{5 - 2\sqrt{6}}}{5 - 2\sqrt{6}}
+                = \frac{25 - 24}{5 - 2\sqrt{6}}
+                = \frac{1}{5 - 2\sqrt{6}}
+        \end{equation*}
+        Możemy podstawić \(a \coloneqq \pars{5 - 2\sqrt{6}}^x\) i~zastąpić odpowiednie wyrażenia w~równaniu:
+        \begin{gather*}
+            \frac{1}{a} + a = 98\\
+            a - 98 + \frac{1}{a} = 0\\
+            a^2 - 98 + 1 = 0\\
+            \Delta
+                = \pars{-98}^2 - 4 \cdot 1 \cdot 1
+                = 9604 - 4
+                = 9600\\
+            \sqrt{\Delta}
+                = \sqrt{9600}
+                = \sqrt{1600 \cdot 6}
+                = 40\sqrt{6}\\
+            a_1
+                = \frac{-\pars{-98} - \sqrt{\Delta}}{2 \cdot 1}
+                = \frac{98 - 40\sqrt{6}}{2}
+                = 49 - 20\sqrt{6}\\
+            a_2
+                = \frac{-\pars{-98} + \sqrt{\Delta}}{2 \cdot 1}
+                = \frac{98 + 40\sqrt{6}}{2}
+                = 49 + 20\sqrt{6}\\
+            \pars{5 - 2\sqrt{6}}^x = 49 - 20\sqrt{6} \wlor \pars{5 - 2\sqrt{6}}^x = 49 + 20\sqrt{6}\\
+            \pars{5 - 2\sqrt{6}}^x = \pars{5 - 2\sqrt{6}}^2 \wlor \pars{5 - 2\sqrt{6}}^x = \pars{\frac{1}{5 - 2\sqrt{6}}}^2\\
+            x = 2 \wlor x = -2
+        \end{gather*}
+\end{itemize}
+\subsubsection*{Zadanie~5.15.}
+\begin{itemize}
+    \item[d)]
+        \begin{gather*}
+            3 \cdot 4^x + 4 \cdot 6^x - 4 \cdot 9^x = 0\\
+            3 \cdot 2^{2x} + 4 \cdot 2^x \cdot 3^x - 4 \cdot 3^{2x} = 0\\
+            3 \cdot 2^x + 4 \cdot 3^x - 4 \cdot \frac{3^{2x}}{2^x} = 0\\
+            3 \cdot \frac{2^x}{3^x} + 4 - 4 \cdot \frac{3^x}{2^x} = 0
+        \end{gather*}
+        Możemy podstawić \(a \coloneqq \frac{2^x}{3^x} = \pars{\frac{2}{3}}^x\) i~zastąpić pewne wyrażenia w~równaniu:
+        \begin{gather*}
+            3a + 4 - \frac{4}{a} = 0\\
+            3a^2 + 4a - 4 = 0\\
+            \Delta
+                = 4^2 - 4 \cdot 3 \cdot \pars{-4}
+                = 16 + 48
+                = 64\\
+            \sqrt{\Delta}
+                = \sqrt{64}
+                = 8\\
+            a_1
+                = \frac{-4 - \sqrt{\Delta}}{2 \cdot 3}
+                = \frac{-4 - 8}{6}
+                = -2\\
+            a_2
+                = \frac{-4 + \sqrt{\Delta}}{2 \cdot 3}
+                = \frac{-4 + 8}{6}
+                = \frac{2}{3}\\
+            \pars{\frac{2}{3}}^x = -2 \text{ (sprzeczność)} \qquad \pars{\frac{2}{3}}^x = \frac{2}{3}\\
+            x = 1
+        \end{gather*}
+\end{itemize}
+\subsubsection*{Zadanie~5.26.}
+\begin{itemize}
+    \item[c)]
+        \begin{equation*}
+            \pars{\sqrt{4 + \sqrt{15}}}^x + \pars{\sqrt{4 - \sqrt{15}}}^x = \pars{2\sqrt{2}}^x
+        \end{equation*}
+        Zauważmy, że \(x = 2\) jest rozwiązaniem tego równania:
+        \begin{equation*}
+            \pars{\sqrt{4 + \sqrt{15}}}^2 + \pars{\sqrt{4 - \sqrt{15}}}^2
+                = 4 + \sqrt{15} + 4 - \sqrt{15}
+                = 8
+                = \pars{2\sqrt{2}}^2
+        \end{equation*}
+        Podzielmy to równanie stronami przez \(\pars{2\sqrt{2}}^x\):
+        \begin{gather*}
+            \pars{\frac{\sqrt{4 + \sqrt{15}}}{2\sqrt{2}}}^x + \pars{\frac{\sqrt{4 - \sqrt{15}}}{2\sqrt{2}}}^x = 1\\
+            \pars{\sqrt{\frac{4 + \sqrt{15}}{8}}}^x + \pars{\sqrt{\frac{4 - \sqrt{15}}{8}}}^x = 1
+        \end{gather*}
+        Zauważmy, że
+        \begin{gather*}
+            4 + \sqrt{15} < 4 + 4 = 8\\
+            \frac{4 + \sqrt{15}}{8} < 1\\
+            \sqrt{\frac{4 + \sqrt{15}}{8}} < 1
+        \end{gather*}
+        oraz
+        \begin{gather*}
+            0 < 4 - \sqrt{15} < 1\\
+            0 < \frac{4 - \sqrt{15}}{8} < 1\\
+            0 < \sqrt{\frac{4 - \sqrt{15}}{8}} < 1
+        \end{gather*}
+        Skoro podstawy potęg są dodatnie i~mniejsze od \(1\), to funkcje wykładnicze \(\pars{\sqrt{\frac{4 + \sqrt{15}}{8}}}^x\) i~\(\pars{\sqrt{\frac{4 - \sqrt{15}}{8}}}^x\) są malejące, więc ich suma też jest malejąca. Funkcja malejąca może każdą wartość przyjmować co najwyżej raz. Zatem znalezione przez nas rozwiązanie \(x = 2\) jest jedynym pierwiastkiem wyjściowego równania.
+\end{itemize}
+\subsubsection*{Zadanie~5.27.}
+\begin{itemize}
+    \item[d)]
+        \begin{equation*}
+            2^x\pars{4 - x} = 2x + 4 \qquad x \in \integer
+        \end{equation*}
+        Zauważmy, że gdy \(x \leq -2\), to \(4 - x > 0\), a~zawsze zachodzi \(2^x > 0\), zatem ich iloczyn jest dodatni. Natomiast \(2x + 4\) jest niedodatnie, więc na pewno nie ma rozwiązań \(x \leq -2\). Podobnie, gdy \(x \geq 4\), to \(4 - x \leq 0\), więc \(2^x\pars{4 - x} \leq 0\), a~\(2x + 4\) jest dodatnie. Oznacza to, że jeśli to równanie ma rozwiązania w~zbiorze liczb całkowitych, to znajdują się one w~zbiorze \(\set{-1, 0, 1, 2, 3}\). Wystarczy zatem sprawdzić te potencjalne rozwiązania:
+            \begin{description}
+                \item[\(x = -1\)]
+                    \begin{gather*}
+                        2^{-1}\pars{4 + 1} = -2 + 4\\
+                        \frac{5}{2} = 2 \contradiction
+                    \end{gather*}
+                \item[\(x = 0\)]
+                    \begin{gather*}
+                        2^0\pars{4 - 0} = 0 + 4\\
+                        4 = 4 \ok
+                    \end{gather*}
+                \item[\(x = 1\)]
+                    \begin{gather*}
+                        2^1\pars{4 - 1} = 2 + 4\\
+                        2 \cdot 3 = 6 \ok
+                    \end{gather*}
+                \item[\(x = 2\)]
+                    \begin{gather*}
+                        2^2\pars{4 - 2} = 4 + 4\\
+                        4 \cdot 2 = 8 \ok
+                    \end{gather*}
+                \item[\(x = 3\)]
+                    \begin{gather*}
+                        2^3\pars{4 - 3} = 6 + 4\\
+                        8 \cdot 1 = 10 \contradiction
+                    \end{gather*}
+            \end{description}
+\end{itemize}
+Zatem
+\begin{equation*}
+    x \in \set{0, 1, 2}
+\end{equation*}
+\subsubsection*{Wykres funkcji}
+\begin{equation*}
+    f\pars{x}
+        = \abs{2^{\abs{3x - 1} - 1} - 2}
+\end{equation*}
+Rozważymy tę funkcję w~dwóch przedziałach:
+\begin{gather*}
+    \forall x \in \open{-\infty}{\frac{1}{3}}\colon f\pars{x} = \abs{2^{1 - 3x - 1} - 2} = \abs{2^{-3x} - 2}\\
+    \forall x \in \leftclosed{\frac{1}{3}}{+\infty}\colon f\pars{x} = \abs{2^{3x - 1 - 1} - 2} = \abs{2^{3x - 2} - 2}
+\end{gather*}
+Najpierw narysujmy wykres, którego część będzie wykresem funkcji \(f\) w~przedziale \(\open{-\infty}{\frac{1}{3}}\). Wychodzimy od podstawowej funkcji
+\begin{equation*}
+    y = 2^x
+\end{equation*}
+\begin{mathfigure*}
+    \drawcoordsystem{-6, -1}{6, 8};
+    \draw[ForestGreen, thick, smooth, domain=-6:3] plot (\x, {pow(2, \x)}) node[above]{\(y = 2^x\)};
+    \fillpoint{0, 1};
+\end{mathfigure*}
+\begin{equation*}
+    y = 2^x \overset{S_{Oy}}{\longrightarrow} y = {2^{-x}}
+\end{equation*}
+Rysujemy symetrię względem osi \(Oy\), czyli odbijamy wykres poziomo:
+\begin{mathfigure*}
+    \drawcoordsystem{-6, -1}{6, 8};
+    \draw[ForestGreen, thick, smooth, domain=-3:6] plot (\x, {pow(2, -\x)}) node[above]{\(y = 2^{-x}\)};
+    \fillpoint{0, 1};
+\end{mathfigure*}
+\begin{equation*}
+    y = 2^{-x} \overset{P_{Oy}^{\frac{1}{3}}}{\longrightarrow} y = {2^{-3x}}
+\end{equation*}
+Rysujemy powinowactwo o~skali \(\frac{1}{3}\) względem osi \(Oy\), czyli trzykrotne ,,ściśnięcie'' wykresu w~poziomie:
+\begin{mathfigure*}
+    \drawcoordsystem{-6, -1}{6, 8};
+    \draw[ForestGreen, thick, smooth, domain=-1:6] plot (\x, {pow(2, -3*\x)}) node[above]{\(y = 2^{-3x}\)};
+    \fillpoint{0, 1};
+\end{mathfigure*}
+\begin{equation*}
+    y = 2^{-3x} \overset{T\brackets{0; -2}}{\longrightarrow} y = 2^{-3x} - 2
+\end{equation*}
+Dokonujemy translacji o~wektor \(\brackets{0; -2}\), czyli obniżenia wykresu o~\(2\):
+\begin{mathfigure*}
+    \drawcoordsystem{-6, -3}{6, 8};
+    \draw[ForestGreen, thick, smooth, domain=-1.1065:6] plot (\x, {pow(2, -3*\x) - 2}) node[above]{\(y = 2^{-3x} - 2\)};
+    \fillpoint*{-1/3, 0}[\(\pars{-\frac{1}{3}; 0}\)][above left];
+\end{mathfigure*}
+\begin{equation*}
+    y = 2^{-3x} - 2 \overset{S_{\p{cz.} Ox}}{\longrightarrow} y = \abs{2^{-3x} - 2}
+\end{equation*}
+Na koniec wykonujemy symetrię częściową względem osi \(Oy\), czyli odbicie części wykresu znajdującej się poniżej tej osi:
+\begin{mathfigure*}
+    \drawcoordsystem{-6, -3}{6, 8};
+    \draw[ForestGreen, thick, samples=200, smooth, domain=-1.1065:6] plot (\x, {abs(pow(2, -3*\x) - 2)}) node[above]{\(y = \abs{2^{-3x} - 2}\)};
+    \fillpoint{0, 1};
+    \fillpoint*{-1/3, 0}[\(\pars{-\frac{1}{3}; 0}\)][above left];
+\end{mathfigure*}
+Teraz narysujemy drugą część wykresu --- w~przedziale \(\leftclosed{\frac{1}{3}}{+\infty}\). Wychodzimy od podstawowej funkcji
+\begin{equation*}
+    y = 2^x
+\end{equation*}
+\begin{mathfigure*}
+    \drawcoordsystem{-6, -1}{6, 8};
+    \draw[red, thick, smooth, domain=-6:3] plot (\x, {pow(2, \x)}) node[above]{\(y = 2^x\)};
+    \fillpoint{0, 1};
+\end{mathfigure*}
+Rysujemy powinowactwo o~skali \(\frac{1}{3}\) względem osi \(Oy\), czyli trzykrotne ,,ściśnięcie'' wykresu w~poziomie:
+\begin{equation*}
+    y = 2^{x} \overset{P_{Oy}^{\frac{1}{3}}}{\longrightarrow} y = {2^{3x}}
+\end{equation*}
+Rysujemy powinowactwo o~skali \(\frac{1}{3}\) względem osi \(Oy\), czyli trzykrotne ,,ściśnięcie'' wykresu w~poziomie:
+\begin{mathfigure*}
+    \drawcoordsystem{-6, -1}{6, 8};
+    \draw[red, thick, smooth, domain=-6:1] plot (\x, {pow(2, 3*\x)}) node[above]{\(y = 2^{3x}\)};
+    \fillpoint{0, 1};
+\end{mathfigure*}
+\begin{equation*}
+    y = 2^{3x} \overset{T\brackets{2; -2}}{\longrightarrow} y = 2^{3x - 2} - 2
+\end{equation*}
+Dokonujemy translacji o~wektor \(\brackets{0; -2}\), czyli obniżenia wykresu o~\(2\):
+\begin{mathfigure*}
+    \drawcoordsystem{-6, -3}{6, 8};
+    \draw[red, thick, smooth, domain=-6:1.775] plot (\x, {pow(2, 3*\x - 2) - 2}) node[above]{\(y = 2^{3x - 2} - 2\)};
+    \fillpoint{0, 1};
+    \fillpoint*{-1/3, 0}[\(\pars{-\frac{1}{3}; 0}\)][above left];
+\end{mathfigure*}

@@ -1,0 +1,177 @@
+\subsubsection*{Zdarzenia niezależne --- definicja}
+\begin{equation*}
+    P\pars{A} \cdot P\pars{B} = P\pars{A \cap B}
+\end{equation*}
+\subsubsection*{Zadanie~9.8.}
+\begin{description}
+    \item[doświadczenie losowe:] rzut dwoma sześciennymi kośćmi
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\seq{x, y} : x, y \in \set{1, 2, \ldots, 6}}\\
+            \card\Omega = 6^2 = 36
+        \end{gather*}
+    \item[zdarzenia:]
+        \begin{gather*}
+            A = \set{\seq{x, y} \in \Omega : x \geq 4}\\
+            \card A = 3 \cdot 6 = 18\\
+            \begin{split}
+                B &= \set{\seq{x, y} \in \Omega : x + y > 7}\\
+                    &= \set{\seq{2, 6}, \seq{6, 2} \seq{3, 5}, \seq{5, 3}, \seq{3, 6}, \seq{6, 3}, \seq{4, 4}, \seq{4, 5}, \seq{5, 4}, \seq{4, 6}, \seq{6, 4}, \seq{5, 6}, \seq{6, 5}, \seq{5, 5}, \seq{6, 6}}
+            \end{split}\\
+            \card B = 15\\
+            A \cap B = B \setminus \set{\seq{2, 6}, \seq{3, 5}, \seq{3, 5}}\\
+            \card\pars{A \cap B} = 12
+        \end{gather*}
+    \item[prawdopodobieństwa:]
+        \begin{gather*}
+            P\pars{A} = \frac{\card A}{\card\Omega}
+                = \frac{18}{36}
+                = \frac{1}{2}\\
+            P\pars{B} = \frac{\card B}{\card\Omega}
+                = \frac{15}{36}
+                = \frac{5}{12}\\
+            P\pars{A \cap B}
+                = \frac{\card\pars{A \cap B}}{\card\Omega}
+                = \frac{12}{36}
+                = \frac{1}{3}
+        \end{gather*}
+    \item[czy są niezależne?]
+        \begin{equation*}
+            P\pars{A} \cdot P\pars{B} = \frac{1}{2} \cdot \frac{5}{12}
+                = \frac{5}{24}
+                \neq \frac{1}{3}
+                = P\pars{A \cap B}
+        \end{equation*}
+\end{description}
+Te zdarzenia nie są niezależne.
+\subsubsection*{Zadanie~9.11.}
+\begin{description}
+    \item[doświadczenie losowe:] rzut dwoma sześciennymi kośćmi
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\seq{x, y} : x, y \in \set{1, 2, \ldots, 6}}\\
+            \card\Omega = 6^2 = 36
+        \end{gather*}
+    \item[zdarzenia:]
+        \begin{gather*}
+            A = \set{\seq{x, y} \in \Omega : x + y \geq 11}
+                = \set{\seq{5, 6}, \seq{6, 5}, \seq{6, 6}}\\
+            \card A = 3\\
+            B = \set{\seq{x, y} \in \Omega : 2 \vert x}\\
+            \card B = 3 \cdot 6 = 18\\
+            A \cap B = \set{\seq{6, 5}, \seq{6, 6}}\\
+            \card\pars{A \cap B} = 2
+        \end{gather*}
+    \item[prawdopodobieństwa:]
+        \begin{gather*}
+            P\pars{A} = \frac{\card A}{\card\Omega}
+                = \frac{3}{36}
+                = \frac{1}{12}\\
+            P\pars{B} = \frac{\card B}{\card\Omega}
+                = \frac{18}{36}
+                = \frac{1}{2}\\
+            P\pars{A \cap B}
+                = \frac{\card\pars{A \cap B}}{\card\Omega}
+                = \frac{2}{36}
+                = \frac{1}{18}
+        \end{gather*}
+    \item[czy są niezależne?]
+        \begin{equation*}
+            P\pars{A} \cdot P\pars{B} = \frac{1}{12} \cdot \frac{1}{2}
+                = \frac{1}{24}
+                \neq \frac{1}{18}
+                = P\pars{A \cap B}
+        \end{equation*}
+\end{description}
+Te zdarzenia nie są niezależne.
+\subsubsection*{Zadanie~9.14.}
+\begin{equation*}
+    P\pars{A} = P\pars{B} = P\pars{C} = p
+\end{equation*}
+Ponieważ zdarzenia \(A\), \(B\) i~\(C\) są niezależne, to
+\begin{gather*}
+    P\pars{A \cap B} = P\pars{A} \cdot P\pars{B} = p \cdot p = p^2\\
+    P\pars{B \cap C} = P\pars{B} \cdot P\pars{C} = p \cdot p = p^2\\
+    P\pars{C \cap A} = P\pars{C} \cdot P\pars{A} = p \cdot p = p^2\\
+    P\pars{A \cap B \cap C} = P\pars{A} \cdot P\pars{B} \cdot P\pars{C} = p \cdot p \cdot p = p^3
+\end{gather*}
+Możemy teraz wyliczyć wielkości z~zadania:
+\begin{gather*}
+    P\pars{A \cap C} = P\pars{C \cap A} = p^2\\
+    P\pars{A \cup B} = P\pars{A} + P\pars{B} - P\pars{A \cap B}
+        = p + p - p^2
+        = 2p - p^2\\
+    \begin{split}
+        P\pars{A \cup B \cup C} &= P\pars{A} + P\pars{B} + P\pars{C} - P\pars{A \cap B} - P\pars{B \cap C} - P\pars{C \cap B} + P\pars{A \cap B \cap C}\\
+            &= p + p + p - p^2 - p^2 - p^2 + p^3
+            = 3p - 3p^2 + p^3
+    \end{split}
+\end{gather*}
+\subsubsection*{Zadanie~9.21.}
+\begin{gather*}
+    A \cup B \cup C = \Omega\\
+    P\pars{A} = P\pars{B} = P\pars{C} = p
+\end{gather*}
+Skoro zdarzenia \(A\), \(B\) i~\(C\) są niezależne, to
+\begin{gather*}
+    P\pars{A \cap B} = P\pars{A} \cdot P\pars{B}
+        = p \cdot p
+        = p^2\\
+    P\pars{B \cap C} = P\pars{B} \cdot P\pars{C}
+        = p \cdot p
+        = p^2\\
+    P\pars{C \cap A} = P\pars{C} \cdot P\pars{A}
+        = p \cdot p
+        = p^2
+\end{gather*}
+\subsubsection*{Zadanie~9.25.}
+\begin{gather*}
+    j \in \set{1, 2, \ldots, 5}\\
+    S_j \coloneqq \text{zdarzenie polegające na tym, że \(j\)-ty strzelec trafi}\\
+    \forall j \in \set{1, 2, \ldots, 5}\colon P\pars{S_j} = \frac{1}{2}\\
+    S_j' \coloneqq \text{zdarzenie polegające na tym, że \(j\)-ty strzelec chybi}\\
+    \forall j \in \set{1, 2, \ldots, 5}\colon P\pars{S_j'} = 1 - P\pars{S_j} = 1 - \frac{1}{2} = \frac{1}{2}
+\end{gather*}
+Zdarzenia \(S_1, S_2, \ldots, S_5\) są niezależne, ponieważ każdy ze strzelców oddaje niezależny strzał, więc również zdarzenia \(S_1', S_2', \ldots, S_5'\) są niezależne. Oznacza to, że zdarzenie polegające na tym, że wszyscy strzelcy chybią, wynosi:
+\begin{equation*}
+    P\pars{\bigcap_{i = 1}^{5} S_i'}
+        = \prod_{i = 1}^{5} P\pars{S_i'}
+        = \pars{\frac{1}{2}}^5
+        = \frac{1}{32}
+\end{equation*}
+Zdarzenie polegające na trafieniu przez któregokolwiek ze strzelców jest zdarzeniem przeciwnym do zdarzenia polegającego na tym, że wszyscy strzelcy chybią. Zatem
+\begin{equation*}
+    P\pars{\bigcup_{i = 1}^{5} S_i} = P\pars{\pars{\bigcap_{i = 1}^{5} S_i'}'} = 1 - P\pars{\bigcap_{i = 1}^{5} S_i'} = 1 - \frac{1}{32} = \frac{31}{32}
+\end{equation*}
+Prawdopodobieństwo, że tarcza zostanie trafiona, wynosi \(\frac{31}{32}\).
+\subsubsection*{Zadanie~9.26.}
+Zdarzenia:
+\begin{gather*}
+    M \coloneqq \text{Maciek trafi}\\
+    P\pars{M} = 0{,}6\\
+    M' \coloneqq \text{Maciek chybi}\\
+    P\pars{M'} = 1 - P\pars{M} = 1 - 0{,}6 = 0{,}4\\
+    B \coloneqq \text{Bartek trafi}\\
+    P\pars{B} = 0{,}8\\
+    B' \coloneqq \text{Bartek chybi}\\
+    P\pars{B'} = 1 - P\pars{B} = 1 - 0{,}8 = 0{,}2\\
+    T \coloneqq \text{Tomek trafi}\\
+    P\pars{T} = 0{,}9\\
+    T' \coloneqq \text{Tomek chybi}\\
+    P\pars{T'} = 1 - P\pars{T} = 1 - 0{,}9 = 0{,}1
+\end{gather*}
+Zdarzenia \(M\), \(B\) i~\(T\) są niezależne, bo strzelcy strzelają zupełnie niezależnie od siebie, więc zdarzenia \(M'\), \(B'\) i~\(T'\) również są niezależne. Zatem prawdopodobieństwo, że wszyscy strzelcy chybią, wynosi
+\begin{equation*}
+    P\pars{M' \cap B' \cap T'}
+        = P\pars{M'} \cdot P\pars{B'} \cdot P\pars{T'}
+        = 0{,}4 \cdot 0{,}2 \cdot 0{,}1
+        = 0{,}008
+\end{equation*}
+Zatem prawdopodobieństwo, że tarcza zostanie trafiona przez któregoś ze strzelców, wynosi
+\begin{equation*}
+    P\pars{M \cup B \cup T}
+        = P\pars{\pars{M' \cap B' \cap T'}'}
+        = 1 - P\pars{M' \cap B' \cap T'}
+        = 1 - 0{,}008
+        = 0{,}992
+\end{equation*}

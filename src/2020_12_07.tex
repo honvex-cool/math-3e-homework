@@ -1,0 +1,404 @@
+\subsubsection*{Zadanie~6.20.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór \(3\) osób spośród \(10\) kobiet i~\(5\) mężczyzn
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\set{o_1, o_2, o_3} : o_1, o_2, o_3 \in \set{k_1, k_2, \ldots, k_{10}, m_1, m_2, \ldots, m_5}}\\
+            \card\Omega = \binom{15}{3}
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \text{delegacje, w~których skład wchodzą mężczyźni i~kobiety}\\
+            A' = \text{delegacje, w~ktorych skład wchodzą sami mężczyźni lub same kobiety}
+        \end{gather*}
+        Do \(A'\) możemy wybrać \(3\) spośród \(10\) kobiet lub \(3\) spośród \(5\) mężczyzn:
+        \begin{gather*}
+            \card A' = \binom{10}{3} + \binom{5}{3}\\
+            \card A = \card\Omega - \card A' = \binom{15}{3} - \binom{10}{3} - \binom{5}{3}\\
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{equation*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{\binom{15}{3} - \binom{10}{3} - \binom{5}{3}}{\binom{15}{3}}
+                = 1 - \frac{\binom{10}{3} + \binom{5}{3}}{\binom{15}{3}}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~6.21.}
+\begin{description}
+    \item[doświadczenie losowe:] pięć rzutów sześcienną kością
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\seq{r_1, r_2, \ldots, r_5} : r_1, r_2, \ldots, r_5 \in \set{1, 2, \ldots 6}}\\
+            \card\Omega = 6^5
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \text{wariacje \(5\)-elementowe bez powtórzeń zbioru \(\set{1, 2, \ldots, 6}\)}\\
+            \card A = \frac{6!}{\pars{6 - 5}!} = 6!
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{equation*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{6!}{6^5}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~6.22.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór \(2\) kul z~\(3\) białych i~\(4\) czarnych
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\set{k_1, k_2, k_3} : k_1, k_2, k_3 \in \set{c_1, c_2, c_3, b_1, b_2, b_3, b_4}}\\
+            \card\Omega = \binom{7}{2}
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{equation*}
+            A = \text{zbioru składające się z~pary różnokolorowych kul}
+        \end{equation*}
+        Na \(3\) sposoby wybieramy kulę białą i~na \(4\) sposoby wybieramy kulę czarną:
+        \begin{equation*}
+            \card A = 3 \cdot 4 = 12
+        \end{equation*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{equation*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{12}{\binom{7}{2}}
+                = \frac{12}{21}
+                = \frac{4}{7}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~6.23.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór \(3\) długopisów spośród \(7\) czarnych i~\(12\) zielonych
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\set{d_1, d_2, d_3} : d_1, d_2, d_3 \in \set{c_1, c_2, \ldots, c_7, z_1, z_2, \ldots, z_{12}}}\\
+            \card\Omega = \binom{19}{3}
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \set{D \in \Omega : D \subset \set{c_1, c_2, \ldots, c_7} \nlxor D \subset \set{z_1, z_2, \ldots, z_{12}}}\\
+            \card A = \binom{7}{3} + \binom{12}{3}
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{equation*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{\binom{7}{3} + \binom{12}{3}}{\binom{19}{3}}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~6.24.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór \(2\) kul z~\(m\) czerwonych i~\(6\) białych
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\set{k_1, k_2} : k_1, k_2 \in \set{c_1, c_2, \ldots, c_m, b_1, b_2, \ldots, b_6 }}\\
+            \card\Omega = \binom{m + 6}{2}
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \set{K \in \Omega : K \subseteq \set{c_1, c_2, \ldots, c_m}}\\
+            \card A = \binom{m}{2}
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{gather*}
+            \frac{1}{2}
+                = P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{\binom{m}{2}}{\binom{m + 6}{2}}
+                = \frac{\pars{m - 1}m}{\pars{m + 5}\pars{m + 6}}\\
+            \frac{1}{2} = \frac{\pars{m - 1}{m}}{\pars{m + 5}\pars{m + 6}}\\
+            m^2 + 11m + 30 = 2m^2 - 2m\\
+            m^2 - 13m - 30 = 0\\
+            \Delta
+                = \pars{-13}^2 - 4 \cdot 1 \cdot \pars{-30}
+                = 169 + 120
+                = 289\\
+            \sqrt{\Delta} = 17\\
+            m_1
+                = \frac{-\pars{-13} - \sqrt{\Delta}}{2 \cdot 1}
+                = \frac{-4}{2}
+                = -2 \text{ (sprzeczność)}\\
+            m_2
+                = \frac{-\pars{-13} + \sqrt{\Delta}}{2 \cdot 1}
+                = \frac{30}{2}
+                = 15\\
+            \card\set{c_1, c_2, \ldots, c_m, b_1, b_2, \ldots, b_6} = m + 6 = 21
+        \end{gather*}
+\end{description}
+W~tej urnie jest \(21\) kul.
+\subsubsection{Zadanie~6.25.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór \(n\) kul spośród \(20\) białych i~\(2\) czarnych
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\set{k_1, k_2, \ldots, k_n} : k_1, k_2, \ldots, k_n \in \set{b_1, b_2, \ldots, b_{20}, c_1, c_2}}\\
+            \card\Omega = \binom{22}{n}
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \text{wybory, w~których przynajmniej jedna kula jest czarna}\\
+            A' = \text{wybory, w~których wszystkie kule są białe}\\
+            \card A' = \binom{20}{n} \qquad 0 \leq n \leq 20\\
+            \card A
+                = \card\Omega - \card A'
+                = \binom{22}{n} - \binom{20}{n}
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{gather*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{\binom{22}{n} - \binom{20}{n}}{\binom{22}{n}}
+                = 1 - \frac{\binom{20}{n}}{\binom{22}{n}}
+                = 1 - \frac{\frac{20!}{n! \cdot \pars{20 - n}!}}{\frac{22!}{n! \cdot \pars{22 - n}!}}
+                = 1 - \frac{\pars{21 - n}\pars{22 - n}}{21 \cdot 22}\\
+            1 - \frac{\pars{21 - n}\pars{22 - n}}{21 \cdot 22} > \frac{1}{2}\\
+            \frac{\pars{21 - n}\pars{22 - n}}{21 \cdot 22} < \frac{1}{2}\\
+            n \geq 7
+        \end{gather*}
+\end{description}
+\subsubsection*{Zadanie~6.31.}
+\begin{description}
+    \item[doświadczenie losowe:] \(9\) niezależnych wyborów wagonu spośród \(3\) wagonów
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\seq{w_1, w_2, \ldots, w_9} : w_1, w_2, \ldots, w_9 \in \set{1, 2, 3}}\\
+            \card\Omega = 3^9
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{equation*}
+            A = \text{sytuacje, w~których w~każdym wagonie będzie po \(3\) pasażerów}
+        \end{equation*}
+        Najpierw na \(9!\) sposobów układamy pasażerów, a~następnie pierwszych \(3\) wsiada do pierwszego wagonu, kolejnych \(3\) do drugiego, a~pozostali do trzeciego. Nie interesuje nas kolejność w~obrębie jednego wagonu.
+        \begin{equation*}
+            \card A = \frac{9!}{\pars{3!}^3}
+        \end{equation*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{equation*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{9!}{3^9 \cdot \pars{3!}^3}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~6.32.}
+\begin{description}
+    \item[doświadczenie losowe:] \(8\) niezależnych wyborów przystanku spośród \(10\) przystanków
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\seq{s_1, s_2, \ldots, s_8} : s_1, s_2, \ldots, s_8 \in \set{1, 2, \ldots, 10}}\\
+            \card\Omega = 10^8
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \text{sytuacje, w~których każdy pasażer wybrał inny przystanek}\\
+            \card A = \frac{10!}{2!} = \frac{10!}{2}
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{equation*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{\frac{10!}{2}}{10^8}
+                = \frac{10!}{2 \cdot 10^8}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~6.33.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór \(3\) losów spośród \(1\) wygrywającego całą stawkę (\(f\)), \(4\) losów wygrywających \(\frac{1}{3}\) stawki (\(p\)) i~\(10\) pustych (\(e\))
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\set{c_1, c_2, c_3} : c_1, c_2, c_3 \in \set{f_1, p_1, p_2, p_3, e_1, e_2, \ldots, e_{10}}}\\
+            \card\Omega = \binom{15}{3}
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \text{sytuacje, w~których wygrywamy przynajmniej całą stawkę}\\
+            \card A = \binom{1}{1}\binom{14}{2} + \binom{4}{3}
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{equation*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{\binom{14}{2} + \binom{4}{3}}{\binom{15}{3}}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~6.34.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór dwóch liczb kolejno bez zwracania ze zbioru \(\set{1, 2, \ldots, 10}\)
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\seq{a_1, a_2} : a_1, a_2 \in \set{1, 2, \ldots, 10} \nland a_1 \neq a_2}\\
+            \card\Omega = 10 \cdot 9 = 90
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \set{\seq{4, 1}, \seq{5, 1}, \seq{5, 2}, \seq{6, 1}, \seq{6, 2}, \seq{6, 3}, \ldots}\\
+            \card A = \frac{7\pars{7 + 1}}{2} = 28
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{equation*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{28}{90}
+                = \frac{7}{45}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~6.35.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór \(2\) kul bez zwracania spośród \(5\) czarnych i~\(n - 5\) innych
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\set{k_1, k_2} : k_1, k_2 \in \set{c_1, c_2, \ldots, c_5, b_1, b_2, \ldots, b_{n - 5}}}\\
+            \card\Omega = \binom{n}{2} = \frac{\pars{n - 1}n}{2}
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \set{\set{k_1, k_2} \in \Omega : k_1, k_2 \in \set{c_1, c_2, \ldots, c_5}}\\
+            \card A = \binom{5}{2} = 10
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{gather*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{10}{\frac{\pars{n - 1}n}{2}}
+                = \frac{20}{\pars{n - 1}n}\\
+            \frac{20}{\pars{n - 1}n} > \frac{1}{3}\\
+            n^2 - n < 60\\
+            n^2 - n - 60 < 0\\
+            \Delta = 241\\
+            n_1
+                = \frac{1 - \sqrt{241}}{2} < -7\\
+            n_2
+                = \frac{1 + \sqrt{241}}{2} > 8\\
+            n \leq 8
+        \end{gather*}
+\end{description}
+\subsubsection*{Zadanie~6.36.}
+\begin{description}
+    \item[doświadczenie losowe:] \(5\) niezależnych wyborów wagonu spośród \(2\) wagonów
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\seq{w_1, w_2, \ldots, w_5} : w_1, w_2, \ldots, w_5 \in \set{1, 2}}\\
+            \card\Omega = 2^5
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \text{sytuacje, w~których w~pierwszym wagonie jest dokładnie \(3\) pasażerów}\\
+            \card A = \binom{5}{3}
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{equation*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{\binom{5}{3}}{2^5}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~6.38.}
+\begin{description}
+    \item[doświadczenie losowe:] rozmieszczenie \(7\) kul w~\(2\) szufladach
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\seq{s_1, s_2} : s_1, s_2 \in \natural \nland s_1 + s_2 = 7}\\
+            \card\Omega = 8
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \text{sytuacje, w~których w~każdej szufladzie jest przynajmniej jedna kula}\\
+            A' = \text{sytuacje, w~których jedna szuflada jest pusta}\\
+            \card A' = 2\\
+            \card A = 8 - 2 = 6\\
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{equation*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{6}{8}
+                = \frac{3}{4}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~6.39.}
+\begin{description}
+    \item[doświadczenie losowe:] rozmieszczenie \(3\) rozróżnialnych kul w~\(3\) szufladach
+    \item[zbiór zdarzeń elementarnych:] każda kula na~\(3\) sposoby wybiera sobie szufladę
+        \begin{gather*}
+            \Omega = \set{\seq{k_1, k_2, k_3} : k_1, k_2, k_3 \in \set{1, 2, 3}}\\
+            \card\Omega = 3^3 = 27
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \text{w~każdej szufladzie jest dokładnie jedna kula}\\
+            \card A = 3! = 6
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{equation*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{6}{27}
+                = \frac{2}{9}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~6.41.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór \(3\) prętów spośród prętów o~długościach \(1\), \(3\), \(4\), \(5\), \(6\)
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\set{p_1, p_2, p_3} : p_1, p_2, p_3 \in \set{1, 3, 4, 5, 6}}\\
+            \card\Omega = \binom{5}{3} = 10
+        \end{gather*}
+\end{description}
+\begin{enumerate}[label={\alph*)}]
+    \item dowolny trójkąt
+        \begin{description}
+            \item[zdarzenie:]
+                \begin{gather*}
+                    A = \set{\set{3, 4, 5}, \set{3, 4, 6}, \set{4, 5, 6}, \set{3, 5, 6}}\\
+                    \card A = 4
+                \end{gather*}
+            \item[prawdopodobieństwo zdarzenia:]
+                \begin{equation*}
+                    P\pars{A}
+                        = \frac{\card A}{\card\Omega}
+                        = \frac{4}{10}
+                        = \frac{2}{5}
+                \end{equation*}
+        \end{description}
+    \item trójkąt prostokątny
+        \begin{description}
+            \item[zdarzenie:]
+                \begin{gather*}
+                    A = \set{\set{3, 4, 5}}\\
+                    \card A = 1
+                \end{gather*}
+            \item[prawdopodobieństwo zdarzenia:]
+                \begin{equation*}
+                    P\pars{A}
+                        = \frac{\card A}{\card\Omega}
+                        = \frac{1}{10}
+                \end{equation*}
+        \end{description}
+\end{enumerate}
+\subsubsection*{Zadanie~6.42.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór \(3\) żetonów ze zbioru \(\set{110, 101, 211, 222}\) ze zwracaniem
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\seq{z_1, z_2, z_3} : z_1, z_2, z_3 \in \set{110, 101, 211, 222}}\\
+            \card\Omega = 4^3 = 64
+        \end{gather*}
+    \item[zdarzenie:]
+        \begin{gather*}
+            A = \text{sytuacje, w~których wylosowaliśmy przynajmniej raz żeton \(110\) lub \(211\)}\\
+            A' = \text{sytuacje, w~których ani razu nie wylosowaliśmy żetonów \(110\) lub \(211\)}\\
+            \card A' = 2^3 = 8\\
+            \card A = \card\Omega - \card A' = 64 - 8 = 56
+        \end{gather*}
+    \item[prawdopodobieństwo zdarzenia:]
+        \begin{gather*}
+            P\pars{A}
+                = \frac{\card A}{\card\Omega}
+                = \frac{56}{64}
+                = \frac{7}{8}
+        \end{gather*}
+\end{description}
+\subsubsection*{Zadanie~}

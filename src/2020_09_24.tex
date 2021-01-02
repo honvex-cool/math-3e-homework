@@ -1,199 +1,199 @@
-\subsection*{Zestaw~IV (zadania otwarte)}
-\subsubsection*{Zadanie~1.}
-\begin{equation*}
-    \begin{split}
-        \parens{\frac{8a}{a^2 - 4} + \frac{2a}{6 - 3a} + \frac{2a}{a + 2}} &: \frac{4a}{3a - 6}
-            = \parens{\frac{8a(6 - 3a)}{\parens{a^2 - 4}(6 - 3a)} + \frac{2a\parens{a^2 - 4}}{\parens{a^2 - 4}(6 - 3a)} + \frac{2a(a - 2)(6 - 3a)}{\parens{a^2 - 4}(6 - 3a)}} : \frac{4a}{3a - 6}\\
-            &= -\frac{8a(6 - 3a) + 2a\parens{a^2 - 4} + 2a(a - 2)(6 - 3a)}{\parens{a^2 - 4}\cancel{(3a - 6)}} \cdot \frac{\cancel{3a - 6}}{4a}\\
-            &= -\frac{2(6 - 3a) + \frac{1}{2}\parens{a^2 - 4} + \frac{1}{2}(a - 2)(6 - 3a)}{a^2 - 4}\\
-            &= -\frac{12 - 6a + \frac{1}{2}a^2 - 2 + 3a - \frac{3}{2}a^2 - 6 + 3a}{a^2 - 4}\\
-            &= -\frac{-a^2 + 4}{a^2 - 4}
-            = \frac{a^2 - 4}{a^2 - 4}
-            = 1
-    \end{split}
-\end{equation*}
-Wartość wyrażenia jest stała równa \(1\) niezależnie od wartości \(a\).
-\qed
-\subsubsection*{Zadanie~2.}
-\begin{equation*}
-    \begin{split}
-        \parens{m - \frac{6m - 25}{m - 4}} : \parens{3m - \frac{3m}{m - 4}}
-            &= \parens{\frac{m^2 - 4m - 6m + 25}{m - 4}} : \parens{\frac{3m^2 - 12m - 3m}{m - 4}}\\
-            &= \frac{m^2 - 10m + 25}{\cancel{m - 4}} \cdot \frac{\cancel{m - 4}}{3m^2 - 15m}\\
-            &= \frac{(m - 5)^{\cancel{2}}}{3m\cancel{(m - 5)}} = \frac{m - 5}{3}
-    \end{split}
-\end{equation*}
-\qed
-\subsubsection*{Zadanie~3.}
-\begin{gather*}
-    \frac{1 + m}{1 + n}, \qquad \frac{m + n}{2n}, \qquad \frac{m + n^2}{n + n^2}\\
-    a_1 \coloneqq \frac{1 + m}{1 + n} = \frac{2n(1 + m)}{2n(1 + n)} = \frac{2n + 2nm}{2n + 2n^2}\\
-    \begin{split}
-        a_2 \coloneqq \frac{m + n}{2n}
-            &= \frac{(1 + n)(m + n)}{2n(1 + n)}
-            = \frac{n + nm + n^2 + m}{2n + 2n^2}
-            = \frac{2n + 2nm}{2n + 2n^2} + \frac{-n - nm + n^2 + m}{2n + 2n^2}\\
-            &= a_1 + \frac{-n - nm + n^2 + m}{2n + 2n^2}
-    \end{split}\\
-    \begin{split}
-        a_3 \coloneqq \frac{m + n^2}{n + n^2}
-            &= \frac{2m + 2n^2}{2n + 2n^2}
-            = \frac{n + nm + n^2 + m}{2n + 2n^2} + \frac{-n - nm + n^2 + m}{2n + 2n^2}
-            = \frac{2n + 2nm}{2n + 2n^2} + 2 \cdot \frac{-n - nm + n^2 + m}{2n + 2n^2}\\
-            &= a_2 + \frac{-n - nm + n^2 + m}{2n + 2n^2}
-            = a_2 + 2 \cdot \frac{-n - nm + n^2 + m}{2n + 2n^2}
-    \end{split}
-\end{gather*}
-Kolejne wyrazy różnią się od siebie o~\(r = \frac{-n - nm + n^2 + m}{2n + 2n^2}\), więc tworzą w~tej kolejności ciąg arytmetyczny o~różnicy \(r\).
-\qed
-\subsubsection*{Zadanie~4.}
-\begin{gather*}
-    x + y = A\\
-    x^2 + y^2 = B\\
-    \begin{split}
-        \frac{1}{2}A\parens{3B - A^2}
-            &= \frac{1}{2} \cdot (x + y) \parens{3x^2 + 3y^2 - x^2 - 2xy - y^2}
-            = \frac{1}{\cancel{2}} \cdot (x + y) \cdot \cancel{2}\parens{x^2 - xy + y^2}\\
-            &= (x + y)\parens{x^2 - xy + y^2}
-            = x^3 + y^3
-    \end{split}
-\end{gather*}
-\qed
-\subsubsection*{Zadanie~5.}
-\begin{equation*}
-    1 < \frac{x + 1}{x} = \parens{1 + \frac{1}{x}} \in \natural
-\end{equation*}
-Z~założenia wynika, że skoro \(\frac{x + 1}{x} = 1 + \frac{1}{x}\) jest liczbą naturalną większą od \(1\), to \(\frac{1}{x}\) jest liczbą naturalną. Możemy teraz rozpisać \(\frac{x^3 + 1}{x^3}\):
-\begin{equation*}
-    \frac{x^3 + 1}{x^3} = 1 + \frac{1}{x^3} = 1 + \parens{\frac{1}{x}}^3 \in \natural
-\end{equation*}
-Skoro \(\frac{1}{x} \in \natural\), to również \(\parens{\frac{1}{x}}^3 \in \natural\), zatem \(\frac{x^3 + 1}{x^3}\) jest liczbą naturalną.
-\qed
-\subsubsection*{Zadanie~6.}
-\begin{equation*}
-    \frac{2015^{10} + 1}{2015^{11} + 1} > \frac{2015^{12} + 1}{2015^{13} + 1}
-\end{equation*}
-Ponieważ wszystkie liczby są dodatnie, wolno nam przemnożyć obie strony przez \(\parens{2015^{11} + 1}\parens{2015^{13} + 1}\):
-\begin{gather*}
-    \parens{2015^{10} + 1}\parens{2015^{13} + 1} > \parens{2015^{12} + 1}\parens{2015^{11} + 1}\\
-    2015^{23} + 2015^{10} + 2015^{13} + 1 > 2015^{23} + 2015^{12} + 2015^{11} + 1\\
-    2015^{10} + 2015^{13} > 2015^{12} + 2015^{11}\\
-    2015^{10} + 2015^{13} = 2015^{10} + 2015 \cdot 2015^{12} = 2015^{10} + 2014 \cdot 2015^{12} + 2015 \cdot 2015^{11} > 2015^{12} + 2015^{11}
-\end{gather*}
-Ostatnia nierówność jest prawdziwa, a~wszystkie przejścia były równowazne, zatem również teza jest prawdziwa.
-\qed
-\subsubsection*{Zadanie~7.}
-\begin{equation*}
-    f(x) = \frac{x}{(m - 1)x^2 - (m - 1)x + m}
-\end{equation*}
-Chcemy, aby \(D = \real\). Aby tak było, dla każdego \(x\) wartość wielomianu \((m - 1)x^2 - (m - 1)x + m\) musi być różna od \(0\). Rozważmy dwa przypadki:
-\begin{proofcases}
-    \item \(m - 1 = 0 \implies m = 1\): wtedy wyrażenie w~mianowniku jest stałe i~równe \(m = 1 \neq 0\), zatem warunek jest spełniony
-    \item \(m - 1 \neq 0 \implies m \neq 1\): wtedy wyrażenie w~mianowniku jest wielomianem stopnia drugiego. Nie może on mieć pierwiastków, zatem \(\Delta\) musi być ujemna:
-        \begin{gather*}
-            \begin{split}
-                \Delta
-                    &= \parens{-(m - 1)}^2 - 4(m - 1)m
-                    = m^2 - 2m + 1 - 4m^2 + 4m
-                    = -3m^2 + 2m + 1
-                    = -\parens{3m^2 - 2m - 1}\\
-                    &= -(3m + 1)(m - 1)
-            \end{split}\\
-            -(3m + 1)(m - 1) < 0\\
-            (3m + 1)(m - 1) > 0\\
-            m \in \open{-\infty}{-\frac{1}{3}} \cup \open{1}{+\infty}
-        \end{gather*}
-\end{proofcases}
-Po połączeniu wyników z~przypadków otrzymujemy
-\begin{equation*}
-    m \in \open{-\infty}{-\frac{1}{3}} \cup \leftclosed{1}{+\infty}
-\end{equation*}
-\subsubsection*{Zadanie~8.}
-Dane potrzebne do narysowania wykresu:
-\begin{description}
-    \item[wartość \(x\), dla której zeruje się mianownik --- asymptota pionowa:] \(x = -1\)
-    \item[granica funkcji przy \(x\) dążącym do \(\pm \infty\) --- asymptota pozioma:] \(y = 2\)
-    \item[miejsce zerowe --- miejsce przecięcia z~osią poziomą:] \(\abs{\frac{2x - 3}{x + 1}} \implies 2x - 3 = 0 \implies x = \frac{3}{2}\)
-    \item[wartość funkcji dla argumentu zero --- miejsce przecięcia z~osią pionową]: \(\abs{\frac{2 \cdot 0 - 3}{0 + 1}} = \abs{-3} = 3\)
-\end{description}
-\begin{mathfigure*}
-    \drawcoordsystem{-8, -4}{8, 8};
-    \draw[red] (-8, 5) node[below right]{\(m > 3\)} -- (8, 5) node[below left]{\(2\) rozw. jednego znaku};
-    \draw[red] (-8, 1) node[below right]{\(0 < m < 2\)} -- (8, 1) node[below left]{\(2\) rozw. jednego znaku};
-    \draw[red] (-8, -2) node[below right]{\(m < 0\)} -- (8, -2) node[below left]{\(0\) rozw.};
-    \node[red] at (-8, 0) [below right]{\(m = 0\)};
-    \node[red] at (8, 0) [below left]{\(1\) rozwiązanie};
-    \draw[ultra thick, ForestGreen, domain=-8:-1.83, samples=50, smooth] plot (\x, {abs((2*\x - 3)/(\x + 1))});
-    \draw[ultra thick, ForestGreen, domain=-0.5:8, samples=100, smooth] plot (\x, {abs((2*\x - 3)/(\x + 1))});
-    \draw[thick, dotted, domain=-0.157:1.5, samples=50, smooth] plot (\x, {(2*\x - 3)/(\x + 1)});
-    \draw[thick, dashed] (-1, 8) -- (-1, -4) node[above left]{\(x = -1\)};
-    \draw[thick, dashed] (-8, 2) node[below right]{\textcolor{red}{\(m = 2\)}} -- (8, 2) node[above left]{\textcolor{red}{\(0\) rozwiązań}};
-    \draw[thick, RoyalBlue] (-8, 2.8) node[above right]{\(2 < m < 3\)} -- (8, 2.8) node[above left]{\(2\) rozw. różnych znaków};
-    \fillpoint*{1.5, 0}[\(\parens{\frac{3}{2}; 0}\)][below right];
-    \fillpoint*{0, 3}[\(\parens{0; 3}\)][right];
-    \fillpoint*{0, -3}[\(\parens{0; -3}\)][right];
-\end{mathfigure*}
-Zatem \(m \in \open{2}{3}\).
-\subsubsection*{Zadanie~9.}
-Zaczynamy od wydzielenia licznika przez mianownik i~wyłączenia części całkowitej:
-\begin{equation*}
-    \frac{n^3 + 3n^2 - n + 21}{n + 3}
-        = n^2 + \frac{-n + 21}{n + 3}
-        = n^2 - \frac{n + 3 - 24}{n + 3}
-        = n^2 - 1 + \frac{24}{n+3}
-\end{equation*}
-Zatem aby wyrażenie w~ogóle było całkowite, \(24\) musi być podzielna przez \(n + 3\). Zatem
-\begin{equation*}
-    (n + 3) \in \set{-24, -12, -8, -6, -4, -3, -2, -1, 1, 2, 3, 4, 6, 8, 12, 24}
-\end{equation*}
-Jednak wiemy, że \(n\) jest liczbą naturalną, zatem właściwie
-\begin{equation*}
-    n \in \set{3, 2}
-\end{equation*}
-\subsubsection*{Zadanie~10.}
-Wiemy, że liczby \(x + y, x - y, xy, \frac{x}{y}\) w~podanej kolejności tworzą ciąg arytmetyczny. Zauważmy od razu, że \(y \neq 0\). Na podstawie informacji, że liczby te tworzą ciąg arytmetyczny, możemy ułożyć układ równań. Oznaczmy różnicę ciągu przez \(r\). Wtedy:
-\begin{equation*}
-    \begin{cases}
-        x - y = x + y + r\\
-        xy = x - y + r\\
-        \frac{x}{y} = xy + r
-    \end{cases}
-\end{equation*}
-Możemy dokonać redukcji i~przekształceń:
-\begin{equation*}
-    \begin{cases}
-        -y = y + r \implies r = -2y\\
-        xy = x - y + r = x - y - 2y = x - 3y\\
-        \frac{x}{y} = xy + r = x - 3y - 2y = x - 5y
-    \end{cases}
-\end{equation*}
-Sprowadzamy układ trzech równań do układu dwóch równań:
-\begin{gather*}
-    \begin{cases}
-        xy = x - 3y \implies x - xy = 3y \implies x \cdot {}\overbrace{(1 - y)}^{\text{skoro po prawej \(y \neq 0\), to również \(1 - y \neq 0\), czyli \(y \neq 1\)}} = 3y \implies x = \frac{3y}{1 - y}\\
-        \frac{x}{y} = x - 5y
-    \end{cases}\\
-    \frac{\frac{3y}{1 - y}}{y} = \frac{3y}{1 - y} - 5y\\
-    \frac{3}{1 - y} =  \frac{3y}{1 - y} - 5y\\
-    3 = 3y - 5y + 5y^2\\
-    5y^2 - 2y - 3 = 0\\
-    (y - 1)(5y + 3) = 0\\
-    y = 1 \text{ (ale to niemożliwe, bo już ustaliliśmy, że \(y \neq 1\))} \lor y = -\frac{3}{5}
-\end{gather*}
-Zatem \(y = -\frac{3}{5}\).
-\begin{gather*}
-    x = \frac{3y}{1 -  y} = \frac{-\frac{9}{5}}{\frac{8}{5}} = \frac{-9}{8}\\
-    a_1 = x + y = -\frac{9}{8} - \frac{3}{5} = -\frac{45}{40} - \frac{24}{40} = \frac{-69}{40}\\
-    a_5 = a_1 + 4 \cdot r = a_1 - 4 \cdot 2y = \frac{-69}{40} + 8 \cdot {3}{5} = \frac{-69}{40} + \frac{192}{40} = \frac{123}{40}
-\end{gather*}
-Piąty wyraz tego ciągu wynosi \(\frac{123}{40}\).
-\subsubsection*{Zadanie~11.}
-\begin{gather*}
-    x^2 = x + 1\\
-    x^4 = cx + d\\
-    x^4 = \parens{x^2}^2 = (x + 1)^2 = x^2 + 2x + 1 = x + 1 + 2x + 1 = 3x + 2\\
-    c = 3 \land d = 2
-\end{gather*}
+% \subsection*{Zestaw~IV (zadania otwarte)}
+% \subsubsection*{Zadanie~1.}
+% \begin{equation*}
+%     \begin{split}
+%         \parens{\frac{8a}{a^2 - 4} + \frac{2a}{6 - 3a} + \frac{2a}{a + 2}} &: \frac{4a}{3a - 6}
+%             = \parens{\frac{8a(6 - 3a)}{\parens{a^2 - 4}(6 - 3a)} + \frac{2a\parens{a^2 - 4}}{\parens{a^2 - 4}(6 - 3a)} + \frac{2a(a - 2)(6 - 3a)}{\parens{a^2 - 4}(6 - 3a)}} : \frac{4a}{3a - 6}\\
+%             &= -\frac{8a(6 - 3a) + 2a\parens{a^2 - 4} + 2a(a - 2)(6 - 3a)}{\parens{a^2 - 4}\cancel{(3a - 6)}} \cdot \frac{\cancel{3a - 6}}{4a}\\
+%             &= -\frac{2(6 - 3a) + \frac{1}{2}\parens{a^2 - 4} + \frac{1}{2}(a - 2)(6 - 3a)}{a^2 - 4}\\
+%             &= -\frac{12 - 6a + \frac{1}{2}a^2 - 2 + 3a - \frac{3}{2}a^2 - 6 + 3a}{a^2 - 4}\\
+%             &= -\frac{-a^2 + 4}{a^2 - 4}
+%             = \frac{a^2 - 4}{a^2 - 4}
+%             = 1
+%     \end{split}
+% \end{equation*}
+% Wartość wyrażenia jest stała równa \(1\) niezależnie od wartości \(a\).
+% \qed
+% \subsubsection*{Zadanie~2.}
+% \begin{equation*}
+%     \begin{split}
+%         \parens{m - \frac{6m - 25}{m - 4}} : \parens{3m - \frac{3m}{m - 4}}
+%             &= \parens{\frac{m^2 - 4m - 6m + 25}{m - 4}} : \parens{\frac{3m^2 - 12m - 3m}{m - 4}}\\
+%             &= \frac{m^2 - 10m + 25}{\cancel{m - 4}} \cdot \frac{\cancel{m - 4}}{3m^2 - 15m}\\
+%             &= \frac{(m - 5)^{\cancel{2}}}{3m\cancel{(m - 5)}} = \frac{m - 5}{3}
+%     \end{split}
+% \end{equation*}
+% \qed
+% \subsubsection*{Zadanie~3.}
+% \begin{gather*}
+%     \frac{1 + m}{1 + n}, \qquad \frac{m + n}{2n}, \qquad \frac{m + n^2}{n + n^2}\\
+%     a_1 \coloneqq \frac{1 + m}{1 + n} = \frac{2n(1 + m)}{2n(1 + n)} = \frac{2n + 2nm}{2n + 2n^2}\\
+%     \begin{split}
+%         a_2 \coloneqq \frac{m + n}{2n}
+%             &= \frac{(1 + n)(m + n)}{2n(1 + n)}
+%             = \frac{n + nm + n^2 + m}{2n + 2n^2}
+%             = \frac{2n + 2nm}{2n + 2n^2} + \frac{-n - nm + n^2 + m}{2n + 2n^2}\\
+%             &= a_1 + \frac{-n - nm + n^2 + m}{2n + 2n^2}
+%     \end{split}\\
+%     \begin{split}
+%         a_3 \coloneqq \frac{m + n^2}{n + n^2}
+%             &= \frac{2m + 2n^2}{2n + 2n^2}
+%             = \frac{n + nm + n^2 + m}{2n + 2n^2} + \frac{-n - nm + n^2 + m}{2n + 2n^2}
+%             = \frac{2n + 2nm}{2n + 2n^2} + 2 \cdot \frac{-n - nm + n^2 + m}{2n + 2n^2}\\
+%             &= a_2 + \frac{-n - nm + n^2 + m}{2n + 2n^2}
+%             = a_2 + 2 \cdot \frac{-n - nm + n^2 + m}{2n + 2n^2}
+%     \end{split}
+% \end{gather*}
+% Kolejne wyrazy różnią się od siebie o~\(r = \frac{-n - nm + n^2 + m}{2n + 2n^2}\), więc tworzą w~tej kolejności ciąg arytmetyczny o~różnicy \(r\).
+% \qed
+% \subsubsection*{Zadanie~4.}
+% \begin{gather*}
+%     x + y = A\\
+%     x^2 + y^2 = B\\
+%     \begin{split}
+%         \frac{1}{2}A\parens{3B - A^2}
+%             &= \frac{1}{2} \cdot (x + y) \parens{3x^2 + 3y^2 - x^2 - 2xy - y^2}
+%             = \frac{1}{\cancel{2}} \cdot (x + y) \cdot \cancel{2}\parens{x^2 - xy + y^2}\\
+%             &= (x + y)\parens{x^2 - xy + y^2}
+%             = x^3 + y^3
+%     \end{split}
+% \end{gather*}
+% \qed
+% \subsubsection*{Zadanie~5.}
+% \begin{equation*}
+%     1 < \frac{x + 1}{x} = \parens{1 + \frac{1}{x}} \in \natural
+% \end{equation*}
+% Z~założenia wynika, że skoro \(\frac{x + 1}{x} = 1 + \frac{1}{x}\) jest liczbą naturalną większą od \(1\), to \(\frac{1}{x}\) jest liczbą naturalną. Możemy teraz rozpisać \(\frac{x^3 + 1}{x^3}\):
+% \begin{equation*}
+%     \frac{x^3 + 1}{x^3} = 1 + \frac{1}{x^3} = 1 + \parens{\frac{1}{x}}^3 \in \natural
+% \end{equation*}
+% Skoro \(\frac{1}{x} \in \natural\), to również \(\parens{\frac{1}{x}}^3 \in \natural\), zatem \(\frac{x^3 + 1}{x^3}\) jest liczbą naturalną.
+% \qed
+% \subsubsection*{Zadanie~6.}
+% \begin{equation*}
+%     \frac{2015^{10} + 1}{2015^{11} + 1} > \frac{2015^{12} + 1}{2015^{13} + 1}
+% \end{equation*}
+% Ponieważ wszystkie liczby są dodatnie, wolno nam przemnożyć obie strony przez \(\parens{2015^{11} + 1}\parens{2015^{13} + 1}\):
+% \begin{gather*}
+%     \parens{2015^{10} + 1}\parens{2015^{13} + 1} > \parens{2015^{12} + 1}\parens{2015^{11} + 1}\\
+%     2015^{23} + 2015^{10} + 2015^{13} + 1 > 2015^{23} + 2015^{12} + 2015^{11} + 1\\
+%     2015^{10} + 2015^{13} > 2015^{12} + 2015^{11}\\
+%     2015^{10} + 2015^{13} = 2015^{10} + 2015 \cdot 2015^{12} = 2015^{10} + 2014 \cdot 2015^{12} + 2015 \cdot 2015^{11} > 2015^{12} + 2015^{11}
+% \end{gather*}
+% Ostatnia nierówność jest prawdziwa, a~wszystkie przejścia były równowazne, zatem również teza jest prawdziwa.
+% \qed
+% \subsubsection*{Zadanie~7.}
+% \begin{equation*}
+%     f(x) = \frac{x}{(m - 1)x^2 - (m - 1)x + m}
+% \end{equation*}
+% Chcemy, aby \(D = \real\). Aby tak było, dla każdego \(x\) wartość wielomianu \((m - 1)x^2 - (m - 1)x + m\) musi być różna od \(0\). Rozważmy dwa przypadki:
+% \begin{proofcases}
+%     \item \(m - 1 = 0 \implies m = 1\): wtedy wyrażenie w~mianowniku jest stałe i~równe \(m = 1 \neq 0\), zatem warunek jest spełniony
+%     \item \(m - 1 \neq 0 \implies m \neq 1\): wtedy wyrażenie w~mianowniku jest wielomianem stopnia drugiego. Nie może on mieć pierwiastków, zatem \(\Delta\) musi być ujemna:
+%         \begin{gather*}
+%             \begin{split}
+%                 \Delta
+%                     &= \parens{-(m - 1)}^2 - 4(m - 1)m
+%                     = m^2 - 2m + 1 - 4m^2 + 4m
+%                     = -3m^2 + 2m + 1
+%                     = -\parens{3m^2 - 2m - 1}\\
+%                     &= -(3m + 1)(m - 1)
+%             \end{split}\\
+%             -(3m + 1)(m - 1) < 0\\
+%             (3m + 1)(m - 1) > 0\\
+%             m \in \open{-\infty}{-\frac{1}{3}} \cup \open{1}{+\infty}
+%         \end{gather*}
+% \end{proofcases}
+% Po połączeniu wyników z~przypadków otrzymujemy
+% \begin{equation*}
+%     m \in \open{-\infty}{-\frac{1}{3}} \cup \leftclosed{1}{+\infty}
+% \end{equation*}
+% \subsubsection*{Zadanie~8.}
+% Dane potrzebne do narysowania wykresu:
+% \begin{description}
+%     \item[wartość \(x\), dla której zeruje się mianownik --- asymptota pionowa:] \(x = -1\)
+%     \item[granica funkcji przy \(x\) dążącym do \(\pm \infty\) --- asymptota pozioma:] \(y = 2\)
+%     \item[miejsce zerowe --- miejsce przecięcia z~osią poziomą:] \(\abs{\frac{2x - 3}{x + 1}} \implies 2x - 3 = 0 \implies x = \frac{3}{2}\)
+%     \item[wartość funkcji dla argumentu zero --- miejsce przecięcia z~osią pionową]: \(\abs{\frac{2 \cdot 0 - 3}{0 + 1}} = \abs{-3} = 3\)
+% \end{description}
+% \begin{mathfigure*}
+%     \drawcoordsystem{-8, -4}{8, 8};
+%     \draw[red] (-8, 5) node[below right]{\(m > 3\)} -- (8, 5) node[below left]{\(2\) rozw. jednego znaku};
+%     \draw[red] (-8, 1) node[below right]{\(0 < m < 2\)} -- (8, 1) node[below left]{\(2\) rozw. jednego znaku};
+%     \draw[red] (-8, -2) node[below right]{\(m < 0\)} -- (8, -2) node[below left]{\(0\) rozw.};
+%     \node[red] at (-8, 0) [below right]{\(m = 0\)};
+%     \node[red] at (8, 0) [below left]{\(1\) rozwiązanie};
+%     \draw[ultra thick, ForestGreen, domain=-8:-1.83, samples=50, smooth] plot (\x, {abs((2*\x - 3)/(\x + 1))});
+%     \draw[ultra thick, ForestGreen, domain=-0.5:8, samples=100, smooth] plot (\x, {abs((2*\x - 3)/(\x + 1))});
+%     \draw[thick, dotted, domain=-0.157:1.5, samples=50, smooth] plot (\x, {(2*\x - 3)/(\x + 1)});
+%     \draw[thick, dashed] (-1, 8) -- (-1, -4) node[above left]{\(x = -1\)};
+%     \draw[thick, dashed] (-8, 2) node[below right]{\textcolor{red}{\(m = 2\)}} -- (8, 2) node[above left]{\textcolor{red}{\(0\) rozwiązań}};
+%     \draw[thick, RoyalBlue] (-8, 2.8) node[above right]{\(2 < m < 3\)} -- (8, 2.8) node[above left]{\(2\) rozw. różnych znaków};
+%     \fillpoint*{1.5, 0}[\(\parens{\frac{3}{2}; 0}\)][below right];
+%     \fillpoint*{0, 3}[\(\parens{0; 3}\)][right];
+%     \fillpoint*{0, -3}[\(\parens{0; -3}\)][right];
+% \end{mathfigure*}
+% Zatem \(m \in \open{2}{3}\).
+% \subsubsection*{Zadanie~9.}
+% Zaczynamy od wydzielenia licznika przez mianownik i~wyłączenia części całkowitej:
+% \begin{equation*}
+%     \frac{n^3 + 3n^2 - n + 21}{n + 3}
+%         = n^2 + \frac{-n + 21}{n + 3}
+%         = n^2 - \frac{n + 3 - 24}{n + 3}
+%         = n^2 - 1 + \frac{24}{n+3}
+% \end{equation*}
+% Zatem aby wyrażenie w~ogóle było całkowite, \(24\) musi być podzielna przez \(n + 3\). Zatem
+% \begin{equation*}
+%     (n + 3) \in \set{-24, -12, -8, -6, -4, -3, -2, -1, 1, 2, 3, 4, 6, 8, 12, 24}
+% \end{equation*}
+% Jednak wiemy, że \(n\) jest liczbą naturalną, zatem właściwie
+% \begin{equation*}
+%     n \in \set{3, 2}
+% \end{equation*}
+% \subsubsection*{Zadanie~10.}
+% Wiemy, że liczby \(x + y, x - y, xy, \frac{x}{y}\) w~podanej kolejności tworzą ciąg arytmetyczny. Zauważmy od razu, że \(y \neq 0\). Na podstawie informacji, że liczby te tworzą ciąg arytmetyczny, możemy ułożyć układ równań. Oznaczmy różnicę ciągu przez \(r\). Wtedy:
+% \begin{equation*}
+%     \begin{cases}
+%         x - y = x + y + r\\
+%         xy = x - y + r\\
+%         \frac{x}{y} = xy + r
+%     \end{cases}
+% \end{equation*}
+% Możemy dokonać redukcji i~przekształceń:
+% \begin{equation*}
+%     \begin{cases}
+%         -y = y + r \implies r = -2y\\
+%         xy = x - y + r = x - y - 2y = x - 3y\\
+%         \frac{x}{y} = xy + r = x - 3y - 2y = x - 5y
+%     \end{cases}
+% \end{equation*}
+% Sprowadzamy układ trzech równań do układu dwóch równań:
+% \begin{gather*}
+%     \begin{cases}
+%         xy = x - 3y \implies x - xy = 3y \implies x \cdot {}\overbrace{(1 - y)}^{\text{skoro po prawej \(y \neq 0\), to również \(1 - y \neq 0\), czyli \(y \neq 1\)}} = 3y \implies x = \frac{3y}{1 - y}\\
+%         \frac{x}{y} = x - 5y
+%     \end{cases}\\
+%     \frac{\frac{3y}{1 - y}}{y} = \frac{3y}{1 - y} - 5y\\
+%     \frac{3}{1 - y} =  \frac{3y}{1 - y} - 5y\\
+%     3 = 3y - 5y + 5y^2\\
+%     5y^2 - 2y - 3 = 0\\
+%     (y - 1)(5y + 3) = 0\\
+%     y = 1 \text{ (ale to niemożliwe, bo już ustaliliśmy, że \(y \neq 1\))} \lor y = -\frac{3}{5}
+% \end{gather*}
+% Zatem \(y = -\frac{3}{5}\).
+% \begin{gather*}
+%     x = \frac{3y}{1 -  y} = \frac{-\frac{9}{5}}{\frac{8}{5}} = \frac{-9}{8}\\
+%     a_1 = x + y = -\frac{9}{8} - \frac{3}{5} = -\frac{45}{40} - \frac{24}{40} = \frac{-69}{40}\\
+%     a_5 = a_1 + 4 \cdot r = a_1 - 4 \cdot 2y = \frac{-69}{40} + 8 \cdot {3}{5} = \frac{-69}{40} + \frac{192}{40} = \frac{123}{40}
+% \end{gather*}
+% Piąty wyraz tego ciągu wynosi \(\frac{123}{40}\).
+% \subsubsection*{Zadanie~11.}
+% \begin{gather*}
+%     x^2 = x + 1\\
+%     x^4 = cx + d\\
+%     x^4 = \parens{x^2}^2 = (x + 1)^2 = x^2 + 2x + 1 = x + 1 + 2x + 1 = 3x + 2\\
+%     c = 3 \land d = 2
+% \end{gather*}
 \subsubsection*{Zadanie~1.12.}
 \begin{enumerate}[label={\alph*)}]
     \item

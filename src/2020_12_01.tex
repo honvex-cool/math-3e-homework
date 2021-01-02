@@ -1,0 +1,73 @@
+\subsection*{Kombinatoryka --- zadania}
+\subsubsection*{Zadanie~4.33.}
+Aby pion biały mógł zbić czarnego, musi dać radę go przeskoczyć po skosie, czyli czarny nie może znajdować się przy krawędzi szachownicy. Oznacza to, że czarny pion musi się znajdować w~środkowym wycinku szachownicy o~wymiarach \(6 \times 6\) pól. W~warcabach piony można stawiać tylko na czarnych polach, które stanowią połowę wszystkich. Zatem czarny pion może być ustawiony na \(\frac{6 \cdot 6}{2} = 18\) polach. Każdy taki czarny pion może być zbity na \(4\) sposoby (po \(2\) dla każdej diagonali na której leży). Zatem wszystkich możliwych ustawień jest \(4 \cdot 18 = 72\).
+\subsubsection*{Zadanie~4.35.}
+Ustalmy pewną sumę \(k \in \natural\) i~zbadajmy, na ile sposobów da się ją uzyskać. Na początek rozważmy \(k \leq 9\). Na przykładzie liczby \(k = 5\) zauważmy, że przedstawienie sumy cyfr z~miejsc nieparzystych jest możliwe na \(k + 1\) sposobów:
+\begin{equation*}
+    k = 0 + 5 = 1 + 4 = 2 + 3 = 3 + 2 = 4 + 1 = 5 + 0
+\end{equation*}
+Natomiast przedstawienie sumy z~miejsc parzystych jest możliwe tylko na \(k\) sposobów, ponieważ nie może być wiodącej cyfry \(0\). Oznacza to, że dla danego \(k\) możemy na \(k + 1\) sposobów wybrać parę cyfr na miejscach nieparzystych i~na \(k\) sposobów wybrać parę cyfr na miejscach parzystych. Zatem liczba możliwości wyboru całej liczby dla \(k \leq 9\) wynosi
+\begin{equation*}
+    \summation[k = 1][9] \pars{k + 1}k
+        = \summation[k = 1][9] \pars{k^2 + k}
+        = 1^2 + 2^2 + \ldots + 9^2 + 1 + 2 + \ldots + 9
+        = \frac{9\pars{9 + 1}\pars{2 \cdot 9 + 1}}{6} + \frac{9\pars{9 + 1}}{2}
+        = 330
+\end{equation*}
+Rozważmy teraz \(k \leq 10\). Zauważmy, że \(k = 10\) możemy przedstawić na \(9\) sposobów:
+\begin{equation*}
+    k = 1 + 9 = 2 + 8 = 3 + 7 = 4 + 6 = 5 + 5 = 6 + 4 = 7 + 3 = 8 + 2 = 9 + 1
+\end{equation*}
+Zatem \(10 + s\), gdzie \(s \in \set{0, 1, 2, \ldots, 8}\), możemy przedstawić na \(9 - s\) sposobów, ponieważ wielkość cyfr jest ograniczona i~im większa liczba, tym mniej jest możliwości zapisania jej jako sumy cyfr (liczba możliwości maleje o~\(1\) przy wzroście \(s\) o~\(1\)). Nie ma tu problemu wiodących cyfr \(0\), więc każdą liczbę z~ustaloną sumą \(k \in \set{10, 11, \ldots, 18}\) możemy wybrać na \(\pars{19 - k}^2\) sposobów, bo parę cyfr na miejscach parzystych wybieramy na \(19 - k\) sposobów i~tak samo parę cyfr na miejscach nieparzystych. Wszystkich sposobów dla \(k \geq 10\) jest więc
+\begin{equation*}
+    \summation[k = 10][18] \pars{19 - k}^2
+        = \summation[j = 1][9] j^2
+        = \frac{9\pars{9 + 1}\pars{2 \cdot 9 + 1}}{6}
+        = 285
+\end{equation*}
+Sumaryczna liczba czterocyfrowych liczb szczęśliwych wynosi więc
+\begin{equation*}
+    330 + 285
+        = 615
+\end{equation*}
+\subsubsection*{Zadanie~4.36.}
+Na początek rozważmy tylko układy, w~których żadna figura się nie powtarza, tzn. jest po \(1\) asie, królu, damie i~walecie. Każdą z~tych \(4\) kart możemy wybrać na \(4\) sposoby (kier, karo, trefl, pik) oraz na \(52 - 4 \cdot 4 = 36\) sposobów dobrać piątą kartę. Do tego musimy doliczyć układy, w~których są dokładnie \(2\) asy, potem układy, w~których są dokładnie \(2\) króle itd. Rozważmy ten problem dla asów, później wystarczy pomnożyć wynik przez \(4\). Najpierw na \(\ibinom{4}{2}\) sposobów wybieramy z~\(4\) możliwych asów te \(2\), które trafią do układu, a~następnie na \(4^3\) sposobów wybieramy króla, damę i~waleta --- każde na \(4\) sposoby. Ostatecznie zatem mamy
+\begin{equation*}
+    4^4 \cdot 36 + 4 \cdot \binom{4}{2} \cdot 4^3
+        = 4^4 \cdot \pars{36 + \binom{4}{2}}
+\end{equation*}
+sposobów.
+\subsubsection*{Zadanie~4.40.}
+Tasujemy karty na~\(52!\) sposobów, a~następnie po kolei graczom przydzielamy po \(13\) kart. Ponieważ kolejność kart na ręce gracza nie ma znaczenia, ,,cofamy'' ich permutacje, dzieląc przez \(13!\). Zatem liczba sposobów to
+\begin{equation*}
+    \frac{52!}{13!}
+\end{equation*}
+\subsubsection*{Zadanie~4.41.}
+Rozważmy trzy przypadki w~zależności od liczby kobiet w~grupie:
+\begin{proofcases}
+    \item \(2\) kobiety
+        \begin{description}
+            \item[liczba sposobów wyboru kobiet:] \(\binom{4}{2}\)
+            \item[liczba sposobów wyboru mężczyzn:] \(\binom{7}{4}\)
+        \end{description}
+    \item \(3\) kobiety
+        \begin{description}
+            \item[liczba sposobów wyboru kobiet:] \(\binom{4}{3}\)
+            \item[liczba sposobów wyboru mężczyzn:] \(\binom{7}{3}\)
+        \end{description}
+    \item \(3\) kobiety
+        \begin{description}
+            \item[liczba sposobów wyboru kobiet:] \(1\)
+            \item[liczba sposobów wyboru mężczyzn:] \(\binom{7}{2}\)
+        \end{description}
+\end{proofcases}
+Sumaryczna liczba sposobów wynosi więc
+\begin{equation*}
+    \binom{4}{2}\binom{7}{4} + \binom{4}{3}\binom{7}{3} + \binom{7}{2}
+\end{equation*}
+\subsubsection*{Zadanie~4.42.}
+Liczba czterocyfrowa jest podzielna przez \(4\) wtedy i~tylko wtedy, gdy jej reszta \(\bmod\ 100\) jest podzielna przez \(4\). Z~podanych cyfr \(\set{1, 2, 3, 4, 5}\) można ułożyć \(5\) takich podzielnych przez \(4\) końcówek:
+\begin{equation*}
+    \set{12, 24, 32, 44, 52}
+\end{equation*}
+Pozostałe dwie cyfry mogą być dowolnie wybrane, każda na \(5\) sposobów. Zatem wszystkich takich liczb czterocyfrowych jest \(5^3 = 125\).

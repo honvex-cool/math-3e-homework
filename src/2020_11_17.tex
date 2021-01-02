@@ -1,0 +1,631 @@
+\subsubsection*{Zadanie~2.}
+\begin{equation*}
+    f\pars{x}
+        -\frac{2}{3}x^3 - 3x^2 + \pars{2m + 1}x - 6 \qquad x \in \real
+\end{equation*}
+Aby funkcja \(f\) nie miała ekstremum lokalnego, jego pochodna nie może zmieniać znaku. Obliczmy zatem pochodną:
+\begin{equation*}
+    f'\pars{x} =
+        -2x^2 - 6x + \pars{2m + 1}
+\end{equation*}
+Pochodna jest funkcją kwadratową. Funkcja kwadratowa przyjmuje wartości różnych znaków wtedy i~tylko wtedy, gdy ma dwa miejsca zerowe, czyli \(\Delta > 0\). Zadanie sprowadza się zatem do sprawdzenia, dla jakich wartości \(m\) zachodzi \(\Delta \leq 0\):
+\begin{gather*}
+    \Delta
+        = \pars{-6}^2 - 4 \cdot \pars{-2} \cdot \pars{2m + 1}
+        = 36 + 16m + 8
+        = 44 + 16m\\
+    44 + 16m \leq 0\\
+    16m \leq -44\\
+    m \leq -\frac{11}{4}
+\end{gather*}
+Zatem funkcja \(f\) nie ma ekstremum lokalnego, wtedy i~tylko wtedy, gdy \(m \leq -\frac{11}{4}\).
+\subsubsection*{Zadanie~3.}
+\begin{enumerate}[label={\alph*)}]
+    \item Funkcja \(f\) jest malejąca w~przedziałach \(\rightclosed{-\infty}{-4}\) i~\(\closed{0}{4}\), ponieważ w~tych przedziałach pochodna jest niedodatnia (a~wartość \(0\) przyjmuje tylko na krawędziach tych przedziałów, więc nie następuje ,,wypłaszczenie'' funkcji \(f\)).
+    \item Funkcja \(f\) osiąga maksimum lokalne dla \(x = 0\), ponieważ:
+        \begin{itemize}
+            \item pochodna jest dodatnia w~przedziale \(\open{-4}{0}\), więc funkcja \(f\) jest rosnąca w~przedziale \(\open{-4}{0}\)
+            \item pochodna osiąga wartość \(0\) dla \(x = 0\)
+            \item pochodna jest ujemna w~przedziale \(\open{0}{4}\), więc funkcja \(f\) jest malejąca w~przedziale \(\open{0}{4}\)
+        \end{itemize}
+    \item Skoro \(A = \pars{1; 2}\) należy do wykresu funkcji \(f\), to
+        \begin{equation*}
+            f\pars{1} = 2
+        \end{equation*}
+        Równanie prostej stycznej do krzywej \(f\) w~punkcie \(A\) ma następującą postać:
+        \begin{gather*}
+            y = f'\pars{x_A}\pars{x - x_A} + f\pars{x_A}\\
+            y = f'\pars{1}\pars{x - 1} + 2
+        \end{gather*}
+        Po podstawieniu odczytanej z~wykresu wartości pochodnej dla \(x = 1\) otrzymujemy:
+        \begin{gather*}
+            y = -2\pars{x - 1} + 2\\
+            y = -2x + 4
+        \end{gather*}
+\end{enumerate}
+\subsubsection{Zadanie~4.}
+\begin{equation*}
+    f\pars{x}
+        = 2x^3 - 8x \qquad x \in \closed{-4}{2}
+\end{equation*}
+Obliczmy pochodną tej funkcji, aby zbadać monotoniczność i~ekstrema:
+\begin{equation*}
+    f'\pars{x}
+        = 6x^2 - 8
+        = 6\pars{x^2 - \frac{4}{3}}
+        = 6\pars{x + \frac{2\sqrt{3}}{3}}\pars{x - \frac{2\sqrt{3}}{3}}
+\end{equation*}
+Wykres pochodnej wygląda następująco:
+\begin{gather*}
+    \upparabola{-\frac{2\sqrt{3}}{3}}{\frac{2\sqrt{3}}{3}}\\
+    \tag{\(1\)} \forall x \in \open{-4}{-\frac{2\sqrt{3}}{3}}\colon f'\pars{x} > 0 \label{2020_11_17:4:first_increase}\\
+    \tag{\(2\)} f'\pars{-\frac{2\sqrt{3}}{3}} = 0 \label{2020_11_17:4:first_zero}\\
+    \tag{\(3\)} \forall x \in \open{-\frac{2\sqrt{3}}{3}}{\frac{2\sqrt{3}}{3}}\colon f'\pars{x} < 0 \label{2020_11_17:4:decrease}\\
+    \tag{\(4\)} f'\pars{\frac{2\sqrt{3}}{3}} = 0 \label{2020_11_17:4:second_zero}\\
+    \tag{\(5\)} \forall x \in \open{\frac{2\sqrt{3}}{3}}{2}\colon f'\pars{x} > 0 \label{2020_11_17:4:second_increase}
+\end{gather*}
+Oznacza to, że:
+\begin{description}
+    \item \(\mbox{(\ref{2020_11_17:4:first_increase})} \implies\) funkcja \(f\) jest rosnąca w~przedziale \(\open{-4}{-\frac{2\sqrt{3}}{3}}\)
+    \item \(\mbox{(\ref{2020_11_17:4:first_increase})} \land \mbox{(\ref{2020_11_17:4:first_zero})} \land \mbox{(\ref{2020_11_17:4:decrease})} \implies\) funkcja \(f\) przyjmuje maksimum lokalne dla \(x = -\frac{2\sqrt{3}}{3}\):
+        \begin{equation*}
+            f\pars{-\frac{2\sqrt{3}}{3}}
+                = 2 \cdot \pars{-\frac{2\sqrt{3}}{3}}^3 + 8 \cdot \frac{2\sqrt{3}}{3}
+                = -\frac{16\sqrt{3}}{9} + \frac{16\sqrt{3}}{3}
+                = -\frac{16\sqrt{3}}{9} + \frac{48\sqrt{3}}{9}
+                = \frac{32\sqrt{3}}{9}
+        \end{equation*}
+    \item \(\mbox{(\ref{2020_11_17:4:decrease})} \implies\) funkcja \(f\) jest malejąca w~przedziale \(\open{-\frac{2\sqrt{3}}{3}}{\frac{2\sqrt{3}}{3}}\)
+    \item \(\mbox{(\ref{2020_11_17:4:decrease})} \land \mbox{(\ref{2020_11_17:4:second_zero})} \land \mbox{(\ref{2020_11_17:4:second_increase})} \implies\) funkcja \(f\) przyjmuje minimum lokalne dla \(x = \frac{2\sqrt{3}}{3}\):
+        \begin{equation*}
+            f\pars{\frac{2\sqrt{3}}{3}}
+                = 2 \cdot \pars{\frac{2\sqrt{3}}{3}}^3 - 8 \cdot \frac{2\sqrt{3}}{3}
+                = \frac{16\sqrt{3}}{9} - \frac{16\sqrt{3}}{3}
+                = \frac{16\sqrt{3}}{9} - \frac{48\sqrt{3}}{9}
+                = -\frac{32\sqrt{3}}{9}
+        \end{equation*}
+    \item \(\mbox{(\ref{2020_11_17:4:second_increase})} \implies\) funkcja jest rosnąca w~przedziale \(\open{\frac{2\sqrt{3}}{3}}{2}\)
+\end{description}
+Obliczone powyżej maksimum i~minimum lokalne są kandydatami na wartości największą i~najmniejszą funkcji w~tym przedziale, ale, ponieważ rozważany przedział jest domknięty, trzeba rozważyć jeszcze jego końce:
+\begin{gather*}
+    f\pars{-4}
+        = -128 + 32
+        = -96 < -\frac{32\sqrt{3}}{9}\\
+    f\pars{2}
+        = 16 - 16
+        = 0 < \frac{32\sqrt{3}}{9}
+\end{gather*}
+Zatem wartość najmniejsza jest przyjmowana dla \(x = -4\) i~wynosi \(f\pars{-4} = -96\), a~wartość największa jest przyjmowana dla \(x = \frac{2\sqrt{3}}{3}\) i~wynosi \(\frac{32\sqrt{3}}{9}\). Funkcja \(f\) jest ciągła jako suma funkcji ciągłych, więc posiada własność Darboux. Przyjmuje zatem wszystkie wartości pomiędzy wartościami najmniejszą i~największą. Oznacza to, że
+\begin{equation*}
+    \set{f\pars{x} : x \in \real} = \closed{-96}{\frac{32\sqrt{3}}{3}}
+\end{equation*}
+\subsubsection*{Zadanie~16. (stożek)}
+Rozważmy przekrój osiowy takiego stożka:
+\begin{mathfigure*}
+    \coordinate (A) at (-2, 0);
+    \coordinate (B) at (2, 0);
+    \coordinate (C) at (0, 4);
+    \coordinate (S) at (0, 0);
+    \drawrightangle{B--S--C};
+    \draw (A) node[below left]{\(A\)}
+        -- (B) node[below right]{\(B\)}
+        -- node[above right]{\(\ell\)} (C) node[above]{\(C\)}
+        -- cycle;
+    \draw (S) -- node[below]{\(r\)} (B);
+    \draw[dashed] (C) -- node[right]{\(h\)} (S);
+    \fillpoint*{S}[\(S\)][below];
+\end{mathfigure*}
+Wiemy, że \(r + \ell = 2\), czyli \(\ell = 2 - r\) Z~twierdzenia Pitagorasa mamy:
+\begin{gather*}
+    h^2 + r^2 = \ell^2\\
+    h^2 + r^2 = \pars{2 - r}^2\\
+    h^2 + r^2 = 4 - 4r + r^2\\
+    h^2 = 4 - 4r\\
+    r = \frac{4 - h^2}{4}
+\end{gather*}
+Zdefiniujmy funkcję objętości stożka w~zależności od \(h\):
+\begin{equation*}
+    V\pars{h}
+        = \frac{1}{3}\pi r^2h
+        = \frac{1}{3}\pi \cdot \frac{h^4 - 8h^2 + 16}{16} \cdot h
+        = \frac{\pi}{48}\pars{h^5 - 8h^3 + 16h} \qquad h \in \open{0}{2}
+\end{equation*}
+Obliczmy jej pochodną:
+\begin{equation*}
+    V'\pars{h}
+        = \frac{\pi}{48}\pars{5h^4 - 24h^2 + 16}
+\end{equation*}
+\subsubsection*{Zadanie~17. (walec)}
+Na pole powierzchni całkowitej walca składa się dwukrotność pola podstawy i~pole powierzchni bocznej. Jeśli oznaczymy promień podstawy walca przez \(r\), a~jego wysokość przez \(h\), to mamy:
+\begin{gather*}
+    S = 2 \cdot S_P + S_B\\
+    2\pi = 2\pi r^2 + 2\pi r h\\
+    r^2 + rh = 1\\
+    h = \frac{1 - r^2}{r}
+\end{gather*}
+Zdefiniujmy funkcję objętości walca w~zależności od \(r\):
+\begin{equation*}
+    V\pars{r}
+        = \pi r^2 \cdot h
+        = \pi r^2 \cdot \frac{1 - r^2}{r}
+        = \pi\pars{r - r^3} \qquad D = \open{0}{1}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    V'\pars{r}
+        = \pi\pars{1 - 3r^2}
+        = 3\pi\pars{\frac{1}{3} - r^2}
+        = 3\pi\pars{\frac{\sqrt{3}}{3} + r}\pars{\frac{\sqrt{3}}{3} - r}
+\end{equation*}
+Wykres pochodnej wygląda następująco:
+\begin{equation*}
+    \downparabola{-\frac{\sqrt{3}}{3}}{\frac{\sqrt{3}}{3}}
+\end{equation*}
+Interesuje nas tylko przedział \(\open{0}{1}\). Pochodna jest dodatnia w~przedziale \(\open{0}{\frac{\sqrt{3}}{3}}\), dla \(r = \frac{\sqrt{3}}{3}\) przyjmuje wartość \(0\), a~w przedziale \(\open{\frac{\sqrt{3}}{3}}{1}\) jest ujemna. Oznacza to, że funkcja \(V\) jest rosnąca w~przedziale \(\open{0}{\frac{\sqrt{3}}{3}}\) i~malejąca w~przedziale \(\open{\frac{\sqrt{3}}{3}}{1}\), więc dla \(r = \frac{\sqrt{3}}{3} \in D\) przyjmuje globalną wartość największą:
+\begin{equation*}
+    V_\p{max}
+        = V\pars{\frac{\sqrt{3}}{3}}
+        = \pi\pars{\frac{\sqrt{3}}{3} - \pars{\frac{\sqrt{3}}{3}}^3}
+        = \pi\pars{\frac{\sqrt{3}}{3} - \frac{3\sqrt{3}}{27}}
+        = \pi\pars{\frac{9\sqrt{3}}{27} - \frac{3\sqrt{3}}{27}}
+        = \frac{6\pi\sqrt{3}}{27}
+        = \frac{2\pi\sqrt{3}}{9}
+\end{equation*}
+Największa możliwa objętość takiego walca wynosi \(\frac{2\pi\sqrt{3}}{9}\) i~jest przyjmowana, gdy promień podstawy ma długość \(r = \frac{\sqrt{3}}{3}\).
+\subsubsection*{Zadanie~16. (stożek o~danym obwodzie przekroju osiowego)}
+Narysujmy przekrój osiowy takiego stożka:
+\begin{mathfigure*}
+    \coordinate (A) at (-2, 0);
+    \coordinate (B) at (2, 0);
+    \coordinate (C) at (0, 4);
+    \coordinate (S) at (0, 0);
+    \drawrightangle{B--S--C};
+    \draw (A) node[below left]{\(A\)}
+        -- (B) node[below right]{\(B\)}
+        -- node[above right]{\(\ell\)} (C) node[above]{\(C\)}
+        -- node[above left]{\(\ell\)} cycle;
+    \draw[dashed] (C) -- node[right]{\(h\)} (S);
+    \draw (S) -- node[below]{\(r\)} (B);
+    \fillpoint*{S}[\(S\)][below];
+\end{mathfigure*}
+Warunek z~zadania zapisujemy jako
+\begin{gather*}
+    2r + 2\ell = 20\\
+    \ell = 10 - r
+\end{gather*}
+Z~twierdzenia Pitagorasa mamy:
+\begin{gather*}
+    h^2 + r^2 = \ell^2\\
+    h^2 + r^2 = \pars{10 - r}^2\\
+    h^2 + r^2 = 100 - 20r + r^2\\
+    r = \frac{100 - h^2}{20}
+\end{gather*}
+Zdefiniujmy funkcję objętości tego stożka w~zależności od \(h\):
+\begin{equation*}
+    \begin{split}
+        V\pars{h}
+            &= \frac{1}{3}\pi r^2h
+            = \frac{1}{3}\pi\pars{\frac{100 - h^2}{20}}^2h
+            = \frac{1}{3}\pi\pars{\frac{10000 - 200h^2 + h^4}{400}}h
+            = \frac{1}{3}\pi \cdot \frac{h^5 - 200h^3 + 10000h}{400}\\
+            &= \frac{\pi}{1200} \pars{h^5 - 200h^2 + 10000h} \qquad D = \open{0}{10}
+    \end{split}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    V'\pars{h}
+        = \frac{\pi}{1200}\pars{5h^4 - 400h^2 + 10000}
+        = \frac{\pi}{240}\pars{h^4 - 80h^2 + 2000}
+\end{equation*}
+Zbadajmy miejsca zerowe pochodnej:
+\begin{gather*}
+    h^4 - 80h^2 + 2000 = 0\\
+    \Delta
+        = \pars{-80}^2 - 4 \cdot 1\cdot 2000
+        = 6400 - 
+\end{gather*}
+\subsubsection*{Zadanie~15.}
+Na pole powierzchni całkowitej walca składa się dwukrotność pola podstawy i~pole powierzchni bocznej. Jeśli oznaczymy promień podstawy walca przez \(r\), a~jego wysokość przez \(h\), to mamy:
+\begin{gather*}
+    S = 2 \cdot S_P + S_B\\
+    P = 2\pi r^2 + 2\pi r h\\
+    r^2 + rh = \frac{P}{2\pi}\\
+    h = \frac{\frac{P}{2\pi} - r^2}{r}
+\end{gather*}
+Zdefiniujmy funkcję objętości walca w~zależności od \(r\):
+\begin{equation*}
+    V\pars{r}
+        = \pi r^2 \cdot h
+        = \pi r^2 \cdot \frac{\frac{P}{2\pi} - r^2}{r}
+        = \pi\pars{\frac{P}{2\pi}r - r^3} \qquad D = \open{0}{\sqrt{\frac{P}{2\pi}}}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    V'\pars{r}
+        = \pi\pars{\frac{P}{2\pi} - 3r^2}
+        = 3\pi\pars{\frac{P}{6\pi} - r^2}
+        = 3\pi\pars{\sqrt{\frac{P}{6\pi}} + r}\pars{\sqrt{\frac{P}{6\pi}} - r}
+\end{equation*}
+Wykres pochodnej wygląda następująco:
+\begin{equation*}
+    \downparabola{-\sqrt{\frac{P}{6\pi}}}{\sqrt{\frac{P}{6\pi}}}
+\end{equation*}
+Interesuje nas tylko przedział \(\open{0}{\sqrt{\frac{P}{2\pi}}}\). Pochodna jest dodatnia w~przedziale \(\open{0}{\sqrt{\frac{P}{6\pi}}}\), dla \(r = \sqrt{\frac{P}{6\pi}}\) przyjmuje wartość \(0\), a~w przedziale \(\open{\sqrt{\frac{P}{6\pi}}}{\sqrt{\frac{P}{2\pi}}}\) jest ujemna. Oznacza to, że funkcja \(V\) jest rosnąca w~przedziale \(\open{0}{\sqrt{\frac{P}{6\pi}}}\) i~malejąca w~przedziale \(\open{\sqrt{\frac{P}{6\pi}}}{\sqrt{\frac{P}{2\pi}}}\), więc dla \(r = \sqrt{\frac{P}{6\pi}} \in D\) przyjmuje globalną wartość największą:
+\begin{equation*}
+    V_\p{max}
+        = V\pars{\sqrt{\frac{P}{6\pi}}}
+        = \pi\pars{\frac{P}{2\pi}\sqrt{\frac{P}{6\pi}} - \pars{\sqrt{\frac{P}{6\pi}}}^3}
+        = \pi\pars{\frac{3P}{6\pi}\sqrt{\frac{P}{6\pi}} - \frac{P}{6\pi}\sqrt{\frac{P}{6\pi}}}
+        = \frac{P}{3}\sqrt{\frac{P}{6\pi}}
+\end{equation*}
+Największa możliwa objętość takiego walca wynosi \(\frac{2\pi\sqrt{3}}{9}\) i~jest przyjmowana, gdy promień podstawy ma długość \(r = \frac{\sqrt{3}}{3}\).
+\subsubsection*{Zadanie~18.}
+Wszystkie wymiary w~tym zadaniu będziemy podawać odpowiednio w~\(\cm\), \(\cm^2\) i~\(\cm^3\). Oznaczmy długość boku kwadratowego naroża przez \(x\). Zauważmy, że dokładnie tyle będzie wynosiła wysokość pudełka. Podstawa będzie natomiast prostokątem o~wymiarach
+\begin{equation*}
+    \pars{80 - 2x} \times \pars{50 - 2x}
+\end{equation*}
+Zdefiniujmy funkcję objętości pudełka w~zależności od \(x\):
+\begin{equation*}
+    V\pars{x}
+        = \pars{80 - 2x}\pars{50 - 2x}x
+        = 4000x - 260x^2 + 4x^3
+        = 4\pars{x^3 - 65x^2 + 1000x} \qquad x \in \open{0}{25}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    V'\pars{x}
+        = 4\pars{3x^2 - 130x + 1000}
+        = 4\pars{x - 10}\pars{3x - 100}
+\end{equation*}
+Wykres pochodnej wygląda następująco:
+\begin{equation*}
+    \upparabola{10}{\frac{100}{3}}
+\end{equation*}
+Interesuje nas tylko przedział \(\open{0}{25}\). Pochodna jest dodatnia w~przedziale \(\open{0}{10}\), dla \(x = 10\) przyjmuje wartość \(0\), a~w~przedziale \(\open{10}{25}\) jest ujemna. Oznacza to, że funkcja \(V\) jest rosnąca w~przedziale \(\open{0}{10}\) i~malejąca w~przedziale \(\open{10}{25}\), więc dla \(x = 10\) przyjmuje globalną wartość największą:
+\begin{equation*}
+    V\pars{10}
+        = 10\pars{80 - 20}\pars{50 - 20}
+        = 18000
+\end{equation*}
+Największa możliwa objętość wynosi \(18000\cm^3\) i~jest przyjmowana, gdy długość boku każdego z~wyciętych kwadratowych naroży wynosi \(10\).
+\subsubsection*{Zadanie~19.}
+\begin{equation*}
+    x^2 + \pars{m - 5}x + m^2 + m + \frac{1}{4} = 0
+\end{equation*}
+Najpierw sprawdźmy, dla jakich \(m\) to równanie ma dwa pierwiastki rzeczywiste (być może jako jeden wielokrotny). W~tym celu zbadajmy, kiedy \(\Delta \geq 0\):
+\begin{gather*}
+    \Delta
+        = \pars{m - 5}^2 - 4 \cdot 1 \cdot \pars{m^2 + m + \frac{1}{4}}
+        = m^2 - 10m + 25 - 4m^2 - 4m - 1
+        = -3m^2 - 14m + 24\\
+    -3m^2 - 14m + 24 \geq 0\\
+    \pars{m + 6}\pars{4 - 3m} \geq 0\\
+    \downparabola{-6}{\frac{4}{3}}[\(m\)]\\
+    m \in \closed{-6}{\frac{4}{3}}
+\end{gather*}
+Możemy zastosować wzory Viete'a, aby skonstruować funkcję stosunku sumy pierwiastków do ich iloczynu w~zależności od \(m\):
+\begin{equation*}
+    f\pars{m}
+        = \frac{x_1 + x_2}{x_1x_2}
+        = \frac{\frac{-\pars{m - 5}}{1}}{\frac{m^2 + m + \frac{1}{4}}{1}}
+        = \frac{5 - m}{m^2 + m + \frac{1}{4}}
+        = \frac{5 - m}{\pars{m + \frac{1}{2}}^2} \qquad D = \closed{-6}{\frac{4}{3}} \setminus \set{-\frac{1}{2}}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    \begin{split}
+        f'\pars{m}
+            &= \frac{\pars{5 - m}'\pars{m^2 + m + \frac{1}{4}} - \pars{5 - m}\pars{m^2 + m + \frac{1}{4}}'}{\pars{m^2 + m + \frac{1}{4}}^2}
+            = \frac{-m^2 - m - \frac{1}{4} + \pars{m - 5}\pars{2m + 1}}{\pars{m^2 + m + \frac{1}{4}}^2}\\
+            &= \frac{-m^2 - m - \frac{1}{4} + 2m^2 + m - 10m - 5}{\pars{m^2 + m + \frac{1}{4}}^2}
+            = \frac{m^2 - 10m - \frac{21}{4}}{\pars{m^2 + m + \frac{1}{4}}^2}
+    \end{split}
+\end{equation*}
+Mianownik jest zawsze dodatni, więc znak pochodnej zależy tylko od licznika:
+\begin{gather*}
+    m^2 - 10m - \frac{21}{4} = 0\\
+    \Delta
+        = \pars{-10}^2 - 4 \cdot 1 \cdot \pars{-\frac{21}{4}}
+        = 100 + 21
+        = 121\\
+    \sqrt{\Delta} = \sqrt{121} = 11\\
+    m_1
+        = \frac{-\pars{-10} - \sqrt{\Delta}}{2 \cdot 1}
+        = \frac{10 - 11}{2}
+        = -\frac{1}{2}
+    m_2
+        = \frac{-\pars{-10} + \sqrt{\Delta}}{2 \cdot 1}
+        = \frac{10 + 11}{2}
+        = \frac{21}{2}\\
+    \upparabola{-\frac{1}{2}}{\frac{21}{2}}[\(m\)]
+\end{gather*}
+Ponieważ żadne miejsce zerowania się pochodnej nie należy do dziedziny, to funkcja \(f\) nie przyjmuje ekstremów w~punktach wewnętrznych dziedziny. Zatem wartość najmniejsza funkcji jest przyjmowana na którymś z~końców przedziału:
+\begin{gather*}
+    f\pars{-6}
+        = \frac{5 - \pars{-6}}{\pars{-6 + \frac{1}{2}}^2}
+        = \frac{11}{\pars{-\frac{11}{2}}^2}
+        = \frac{44}{121}
+        = \frac{4}{11}\\
+    f\pars{\frac{4}{3}}
+        = \frac{5 - \frac{4}{3}}{\pars{\frac{4}{3} + \frac{1}{2}}^2}
+        = \frac{\frac{11}{3}}{\pars{\frac{11}{6}}^2}
+        = \frac{36 \cdot 11}{3 \cdot 11^2}
+        = \frac{12}{11}
+\end{gather*}
+Zatem najmniejsza wartość tego stosunku wynosi \(\frac{4}{11}\) i~jest osiągane, gdy \(m = -6\).
+\subsubsection*{Zadanie~20.}
+\begin{equation*}
+    a_{51} = 1
+\end{equation*}
+Oznaczmy różnicę tego ciągu arytmetycznego przez \(r\). Wtedy
+\begin{gather*}
+    a_1
+        = a_{51} - 50r
+        = 1 - 50r\\
+    a_{49}
+        = a_{51} - 2r
+        = 1 - 2r\\
+    a_{50}
+        = 1 - r
+\end{gather*}
+Zdefiniujmy zatem funkcję wyrażenia z~zadania w~zależności od \(r\):
+\begin{equation*}
+    f\pars{r}
+        = \frac{a_1 \cdot a_{49}}{a_{50}}
+        = \frac{\pars{1 - 50r}\pars{1 - 2r}}{1 - r}
+        = \frac{1 - 52r + 100r^2}{1 - r} \qquad D = \open{-\infty}{-1}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    \begin{split}
+        f'\pars{r}
+            &= \frac{\pars{100r^2 - 52r + 1}'\pars{1 - r} - \pars{100r^2 - 52r + 1}\pars{1 - r}'}{\pars{1 - r}^2}
+            = \frac{\pars{200r - 52}\pars{1 - r} + 100r^2 - 52r + 1}{\pars{1 - r}^2}\\
+            &= \frac{200r - 200r^2 - 52 + 52r + 100r^2 - 52r + 1}{\pars{1 - r}^2}
+            = \frac{-100r^2 + 200r - 51}{\pars{1 - r}^2}
+    \end{split}
+\end{equation*}
+Mianownik jest zawsze dodatni, więc znak pochodnej zależy tylko od licznika:
+\begin{gather*}
+    -100r^2 + 200r - 51 = 0\\
+    \Delta
+        = 200^2 - 4 \cdot \pars{-100} \cdot \pars{-51}
+        = 19600\\
+    \sqrt{\Delta} = \sqrt{19600} = 140\\
+    r_1
+        = \frac{-200 + \sqrt{\Delta}}{2 \cdot \pars{-100}}
+        = \frac{-200 + 140}{-200}
+        = \frac{-60}{-200}
+        = \frac{3}{10}\\
+    r_1
+        = \frac{-200 - \sqrt{\Delta}}{2 \cdot \pars{-100}}
+        = \frac{-200 - 140}{-200}
+        = \frac{-340}{-200}
+        = \frac{17}{10}\\
+    \downparabola{\frac{3}{10}}{\frac{17}{10}}
+\end{gather*}
+Interesuje nas tylko przedział \(\open{-\infty}{1}\). Pochodna jest ujemna w~przedziale \(\open{-\infty}{\frac{3}{10}}\), dla \(r = \frac{3}{10}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{\frac{3}{10}}{1}\) jest dodatnia. Oznacza to, że funkcja \(f\) jest malejąca w~przedziale \(\open{-\infty}{\frac{3}{10}}\) i~rosnąca w~przedziale \(\open{\frac{3}{10}}{1}\), więc dla \(r = \frac{3}{10}\) przyjmuje wartość globalną wartość najmniejszą:
+\begin{equation*}
+    f\pars{\frac{3}{10}}
+        = \frac{1 - \frac{78}{5} + 9}{\frac{7}{10}}
+        = \frac{\frac{-28}{5}}{\frac{7}{10}}
+        = -8
+\end{equation*}
+Najmniejsza możliwa wartość wyrażenia \(\frac{a_1 \cdot a_{49}}{a_{50}}\) wynosi \(-8\) i~jest przyjmowana, gdy różnica ciągu arytmetycznego wynosi \(r = \frac{3}{10}\).
+\subsubsection*{Zadanie~7.}
+\begin{equation*}
+    \begin{cases}
+        mx - y = 2\\
+        x + my = m
+    \end{cases}
+\end{equation*}
+Rozwiążemy ten układ równań metodą wyznacznikową:
+\begin{equation*}
+    W = \begin{vmatrix}
+            m & -1\\
+            1 & m
+        \end{vmatrix} = m^2 + 1
+\end{equation*}
+Zauważmy, że wyznacznik główny jest zawsze dodatni, więc układ równań jest zawsze oznaczony.
+\begin{gather*}
+    W_x = \begin{vmatrix}
+            2 & -1\\
+            m & m
+        \end{vmatrix} = 2m + m = 3m\\
+    W_y = \begin{vmatrix}
+            m & 2\\
+            1 & m
+        \end{vmatrix} = m^2 - 2\\
+    \begin{cases}
+        x = \frac{W_x}{W} = \frac{3m}{m^2 + 1}\\
+        y = \frac{W_y}{W} = \frac{m^2 - 2}{m^2 + 1}
+    \end{cases}
+\end{gather*}
+Zdefiniujmy funkcję sumy \(x + y\) w~zależności od \(m\):
+\begin{equation*}
+    f\pars{m}
+        = \frac{m^2 + 3m - 2}{m^2 + 1} \qquad m \in \closed{2}{4}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    \begin{split}
+        f'\pars{m}
+            &= \frac{\pars{m^2 + 3m - 2}'\pars{m^2 + 1} - \pars{m^2 + 3m - 2}\pars{m^2 + 1}'}{\pars{m^2 + 1}^2}
+            = \frac{\pars{2m + 3}\pars{m^2 + 1} - \pars{m^2 + 3m - 2}2m}{\pars{m^2 + 1}^2}\\
+            &= \frac{2m^3 + 3m^2 + 2m + 3 - 2m^3 - 6m^2 + 4m}{\pars{m^2 + 1}^2}
+            = \frac{-3m^2 + 6m + 3}{\pars{m^2 + 1}^2}
+            = \frac{-3\pars{m^2 - 2m - 1}}{\pars{m^2 + 1}^2}
+    \end{split}
+\end{equation*}
+Mianownik jest zawsze dodatni, więc znak pochodnej zależy tylko od licznika:
+\begin{gather*}
+    -3\pars{m^2 - 2m - 1} = 0\\
+    m^2 - 2m - 1 = 0\\
+    \Delta
+        = \pars{-2}^2 - 4 \cdot 1 \cdot \pars{-1}
+        = 8\\
+    \sqrt{\Delta} = \sqrt{8} = 2\sqrt{2}\\
+    m_1
+        = \frac{-\pars{-2} - \sqrt{\Delta}}{2 \cdot 1}
+        = \frac{2 - 2\sqrt{2}}{2}
+        = 1 - \sqrt{2}\\
+    m_2
+        = \frac{-\pars{-2} + \sqrt{\Delta}}{2 \cdot 1}
+        = \frac{2 + 2\sqrt{2}}{2}
+        = 1 + \sqrt{2}\\
+    \downparabola{1 - \sqrt{2}}{1 + \sqrt{2}}[\(m\)]
+\end{gather*}
+Rozważmy na początek przedział \(\open{2}{4}\). Pochodna jest rosnąca w~przedziale \(\open{2}{1 + \sqrt{2}}\), dla \(m = 1 + \sqrt{2}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{1 + \sqrt{2}}{4}\) jest malejąca. Zatem wewnątrz przedziału \(\closed{2}{4}\) nie znajduje się minimum lokalne, więc nie znajduje się w~nim też wartość najmniejsza. Wartość najmniejsza jest więc przyjmowana na jednym z~konców przedziału:
+\begin{gather*}
+    f\pars{2}
+        = \frac{4 + 6 - 2}{4 + 1}
+        = \frac{8}{5}\\
+    f\pars{4}
+        = \frac{16 + 12 - 2}{16 + 1}
+        = \frac{26}{17}\\
+    \frac{26}{17} < \frac{8}{5}
+\end{gather*}
+Zatem najmniejsza możliwa wartość sumy \(x + y\) wynosi \(\frac{26}{17}\) i~jest przyjmowana dla \(m = 4\).
+\subsubsection*{Zadanie~17. (odcinki)}
+\begin{gather*}
+    f\pars{x} = \frac{-2}{x} \qquad x \in \open{-\infty}{0}\\
+    g\pars{x} = -\pars{x - 2}^2 \qquad x \in \real
+\end{gather*}
+Odcinki będziemy rozważać dla \(x\) należącego do części wspólnej dziedzin tych funkcji, czyli \(x \in \open{-\infty}{0}\). Zauważmy, że gdy \(x\) jest ujemne, to \(\frac{-2}{x} > 0\), a~\(-\pars{x - 2}^2 \leq 0\). Długość odcinka otrzymamy zatem przez odjęcie wartości funkcji \(g\) dla pewnego argumentu od wartości funkcji \(f\) dla tego samego argumentu. Zdefiniujmy funkcję długości odcinka w~zależności od jego współrzędnej \(x\):
+\begin{equation*}
+    \ell\pars{x}
+        = f\pars{x} - g\pars{x}
+        = -\frac{2}{x} - \pars{-\pars{x - 2}^2}
+        = \pars{x - 2}^2 - \frac{2}{x}
+        = x^2 - 4x + 4 - \frac{2}{x} \qquad x \in \open{-\infty}{0}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    \ell'\pars{x}
+        = 2x - 4 + \frac{2}{x^2}
+        = \frac{2x^3 - 4x^2 + 2}{x^2}
+        = \frac{2\pars{x^3 - 2x^2 + 1}}{x^2}
+        = \frac{2\pars{x - 1}\pars{x^2 - x - 1}}{x^2}
+        = \frac{2\pars{x - 1}\pars{x - \frac{1 - \sqrt{5}}{2}}\pars{x + \frac{1 + \sqrt{5}}{2}}}{x^2}
+\end{equation*}
+Mianownik jest zawsze dodatni, więc znak pochodnej zależy tylko od licznika. Wykres znaku pochodnej w~interesującym nas przedziale \(\open{-\infty}{0}\) wygląda następująco:
+\begin{equation*}
+    \begin{tikzpicture}
+        \drawvec (-2, 0) -- (2, 0) node[below]{\(x\)};
+        \draw[thick] (-1.5, -1.5) -- (1.5, 1.5);
+        \fillpoint*{0, 0}[\(\frac{1 - \sqrt{5}}{2}\)][below right];
+    \end{tikzpicture}
+\end{equation*}
+Pochodna jest ujemna w~przedziale \(\open{-\infty}{\frac{1 - \sqrt{5}}{2}}\), dla \(x = \frac{1 - \sqrt{5}}{2}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{\frac{1 - \sqrt{5}}{2}}{0}\) jest dodatnia. Oznacza to, że funkcja \(\ell\) jest malejąca w~przedziale \(\open{-\infty}{\frac{1 - \sqrt{5}}{2}}\) i~rosnąca w~przedziale \(\open{\frac{1 - \sqrt{5}}{2}}{0}\), więc dla \(x = \frac{1 - \sqrt{5}}{2} \in \open{-\infty}{0}\) przyjmuje globalną wartość najmniejszą:
+\begin{equation*}
+    \ell\pars{\frac{1 - \sqrt{5}}{2}}
+        = \frac{6 - 2\sqrt{5}}{4} - 2 + 2\sqrt{5} + 4 - \frac{4}{1 - \sqrt{5}}
+        = \frac{6 - 2\sqrt{5} - 8 + 8\sqrt{5} + 16 + 4 + 4\sqrt{5}}{4}
+        = \frac{18 + 10\sqrt{5}}{4}
+        = \frac{9 + 5\sqrt{5}}{2}
+\end{equation*}
+Najkrótszy taki odcinek ma długość \(\frac{9 + \sqrt{5}}{2}\).
+\subsubsection*{Zadanie~3. (kwadrat)}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -2);
+    \coordinate (B) at (2, -2);
+    \coordinate (C) at (2, 2);
+    \coordinate (D) at (-2, 2);
+    \coordinate (F) at (-1, 2);
+    \coordinate (E) at (2, 0);
+    \path (D) -- node[above]{\(x\)} (F);
+    \path (C) -- node[right]{\(2x\)} (E);
+    \draw[ForestGreen] (A) -- (E) -- (F) -- cycle;
+    \draw (A) node[below left]{\(A\)}
+        -- node[below]{\(1\)} (B) node[below right]{\(B\)}
+        -- (C) node[above right]{\(C\)}
+        -- (D) node[above left]{\(D\)}
+        -- node[left]{\(1\)} cycle;
+    \fillpoint*{F}[\(F\)][above];
+    \fillpoint*{E}[\(E\)][right];
+    \fillpoint*{A};
+\end{mathfigure*}
+Zauważmy, że
+\begin{gather*}
+    \area{AEF}
+        = \area{ABCD} - \area{ABE} - \area{CEF} - \area{DAF}\\
+    \area{ABCD} = 1^2 = 1\\
+    \area{DAF} = \frac{x \cdot 1}{2} = \frac{x}{2}\\
+    \area{CEF} = \frac{\pars{1 - x}\pars{2x}}{2}
+        = x - x^2\\
+    \area{ABE} = \frac{\pars{1 - 2x} \cdot 1}{2}
+        = \frac{1 - 2x}{2}
+\end{gather*}
+Zdefiniujmy zatem funkcję pola powierzchni \(\triangle{AEF}\) w~zależności od \(x\):
+\begin{equation*}
+    S\pars{x}
+        = 1 - \frac{x}{2} - \pars{x - x^2} - \frac{1 - 2x}{2}
+        = 1 - \frac{x}{2} - x + x^2 - \frac{1}{2} + x
+        = x^2 - \frac{x}{2} + \frac{1}{2} \qquad x \in \closed{0}{\frac{1}{2}}
+\end{equation*}
+Jest to funkcja kwadratowa o~dodatnim współczynniku przy \(x^2\), więc ramiona paraboli są skierowane w~stronę rosnących współrzędnych \(y\) i~funkcja przyjmuje wartość najmniejszą dla
+\begin{equation*}
+    x_0 = \frac{-\pars{-\frac{1}{2}}}{2 \cdot 1}
+        = \frac{1}{4} \in \closed{0}{\frac{1}{2}}
+\end{equation*}
+Wartość ta wynosi
+\begin{equation*}
+    S\pars{\frac{1}{4}}
+        = \frac{1}{16} - \frac{1}{8} + \frac{1}{2}
+        = \frac{1}{16} - \frac{2}{16} + \frac{8}{16}
+        = \frac{7}{16}
+\end{equation*}
+Zatem \(\triangle{AEF}\) ma~najmniejsze pole powierzchni równe \(\frac{7}{16}\), gdy \(x = \frac{1}{4}\).
+\subsubsection{Zadanie}
+\begin{mathfigure*}
+    \def\rt{\fpeval{sqrt(5)}}
+    \coordinate (S) at (0, 0);
+    \coordinate (A) at (-\rt, 0);
+    \coordinate (B) at (\rt, 0);
+    \coordinate (C) at (1, 2);
+    \coordinate (D) at (-1, 2);
+    \coordinate (H) at (-1, 0);
+    \coordinate (J) at (1, 0);
+    \drawrightangle[angle radius=0.3cm]{S--H--D};
+    \draw (S) circle[radius=\rt];
+    \draw (A) node[below left]{\(A\)}
+        -- (B) node[below right]{\(B\)}
+        -- (C) node[above right]{\(C\)}
+        -- (D) node[above left]{\(D\)}
+        -- cycle;
+    \fillpoint*{S}[\(S\)][below];
+    \draw[dashed] (D) -- node[left]{\(h\)} (H);
+    \draw[dashed] (C) -- (J);
+    \path (S) -- node[below]{\(r = 12\)} (B);
+    \path (S) -- node[below]{\(x\)} (H);
+    \draw[dashed] (D) -- node[above, sloped]{\(12\)} (S);
+\end{mathfigure*}
+Wiemy z~twierdzenia Pitagorasa, że
+\begin{equation*}
+    h = \sqrt{144 - x^2}
+\end{equation*}
+Zdefiniujmy funkcję pola powierzchni trapezu w~zależności od \(x\):
+\begin{equation*}
+    \begin{split}
+        f\pars{x}
+            &= \frac{\pars{AB + CD}h}{2}
+            = \frac{\pars{24 + 2x}\sqrt{144 - x^2}}{2}
+            = \pars{x + 12}\sqrt{36 - \frac{x^2}{4}}
+            = \sqrt{\pars{x + 12}^2\pars{36 - \frac{x^2}{4}}}\\
+            &= \sqrt{\pars{x^2 + 24x + 144}\pars{36 - \frac{x^2}{4}}}
+            = \sqrt{36x^2 - \frac{x^4}{4} + 864x - 6x^3 + 5184 - 36x^2}\\
+            &= \sqrt{-\frac{x^4}{4} - 6x^3 + 864x + 5184} \qquad x \in \open{0}{12}
+    \end{split}
+\end{equation*}
+Pierwiastek nie wpływa na monotoniczność ani ekstrema funkcji podpierwiastkowej, więc możemy zdefiniować pomocniczą funkcję
+\begin{equation*}
+    g\pars{x}
+        = -\frac{x^4}{4} - 6x^3 + 864x + 5184
+\end{equation*}
+i~obliczyć jej pochodną:
+\begin{equation*}
+    g'\pars{x}
+        = -x^3 - 18x^2 + 864
+        = \pars{x + 12}^2\pars{6 - x}
+\end{equation*}
+Pochodna zmienia znak tylko dla \(x = 6\), więc w~tym punkcie znajduje się globalna wartość największa.

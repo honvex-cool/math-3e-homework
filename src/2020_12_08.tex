@@ -1,0 +1,167 @@
+\subsubsection*{Twierdzenie}
+\begin{gather*}
+    A, B \in \Omega\\
+    P\pars{A \setminus B} = P\pars{A} - P\pars{A \cap B}
+\end{gather*}
+Dowód:
+\begin{gather*}
+    \begin{split}
+        P\pars{A}
+            &= P\pars{\pars{A \cap B} \cup \pars{A \setminus B}}
+            = P\pars{A \cap B} + P\pars{A \setminus B} - P\pars{\pars{A \cap B} \cap \pars{A \setminus B}}\\
+            &= P\pars{A \cap B} + P\pars{A \setminus B} - P\pars{\emptyset}
+            = P\pars{A \cap B} + P\pars{A \setminus B}
+    \end{split}\\
+    P\pars{A \setminus B} = P\pars{A} - P\pars{A \cap B}
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~5.3.}
+Nie, ponieważ jeśli zdarzenia \(A\) i~\(B\) się wyłączają, to
+\begin{equation*}
+    P\pars{A \cap B}
+        = P\pars{\emptyset}
+        = 0
+\end{equation*}
+Wtedy
+\begin{equation*}
+    P\pars{A \cup B}
+        = P\pars{A} + P\pars{B} - P\pars{A \cap B}
+        = 0{,}52 + 0{,}49 - 0
+        = 1{,}01 > 1
+\end{equation*}
+co jest niemożliwe.
+\subsubsection*{Zadanie~5.4.}
+Nie, ponieważ wtedy
+\begin{equation*}
+    P\pars{A \cup B}
+        = P\pars{A} + P\pars{B} - P\pars{A \cap B}
+        = 0{,}8 + 0{,}7 - 0{,}4
+        = 1{,}5 - 0{,}4
+        = 1{,}1
+\end{equation*}
+co jest niemożliwe.
+\subsubsection*{Zadanie~5.5.}
+\begin{gather*}
+    A, B \subset \Omega\\
+    P\pars{A \cup B} = \frac{1}{2}\\
+    P\pars{A'} = \frac{1}{3} \implies P\pars{A}
+        = 1 - P\pars{A'}
+        = \frac{2}{3}\\
+    P\pars{B} = \frac{3}{4} \implies P\pars{B'} = 1 - P\pars{B}
+        = \frac{1}{4}\\
+    \frac{1}{2}
+        = P\pars{A \cup B} = P\pars{A} + P\pars{B} - P\pars{A \cap B} \implies P\pars{A \cap B} = P\pars{A} + P\pars{B} - P\pars{A \cup B} = \frac{2}{3} + \frac{3}{4} - \frac{1}{2} = \frac{11}{12}\\
+    P\pars{A' \cap B'} = P\pars{\pars{A \cup B}'}
+        = 1 - P\pars{A \cup B}
+        = 1 - \frac{1}{2}
+        = \frac{1}{2}\\
+    P\pars{A' \cup B'}
+        = P\pars{A'} + P\pars{B'} - P\pars{A' \cap B'}
+        = \frac{1}{3} + \frac{1}{4} - \frac{1}{2}
+        = \frac{1}{12}
+\end{gather*}
+\subsubsection*{Zadanie~5.6.}
+\begin{gather*}
+    P\pars{D} = x\\
+    P\pars{A} = 5P\pars{D} = 5x\\
+    P\pars{B} = \frac{P\pars{A}}{3} = \frac{5}{3}x\\
+    P\pars{C} = \frac{3P\pars{B}}{4} = \frac{5}{4}x\\
+    1
+        = P\pars{A} + P\pars{B} + P\pars{C} + P\pars{D}
+        = x + 5x + \frac{5}{3}x + \frac{5}{4}x
+        = 6x + \frac{20}{12}x + \frac{15}{12}x
+        = \frac{107}{12}x\\
+    P\pars{D} = x = \frac{12}{107}\\
+    P\pars{A} = \frac{60}{107}\\
+    P\pars{B} = \frac{20}{107}\\
+    P\pars{C} = \frac{15}{107}
+\end{gather*}
+\subsubsection*{Zadanie~5.7.}
+\begin{gather*}
+    A \cap B = \emptyset \qquad B \cap C = \emptyset \qquad C \cap A = \emptyset\\
+    P\pars{A} = 0{,}3\\
+    P\pars{B'} = 0{,}6 \implies P\pars{B} = 0{,}4\\
+    0 \leq P\pars{C} \leq 0{,}3\\
+    0{,}7 \leq P\pars{C} \leq 1
+\end{gather*}
+\subsubsection*{Zadanie~5.8.}
+\begin{gather*}
+    B \subseteq A \implies A \cap B = B\\
+    P\pars{A \setminus B}
+        = P\pars{A \setminus B}
+        = P\pars{A} - P\pars{A \cap B}
+        = P\pars{A} - P\pars{B}
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~5.9.}
+\begin{gather*}
+    A, B \subseteq \Omega\\
+    \begin{split}
+        P\pars{A \cup B \cup C}
+            &= P\pars{A \cup \pars{B \cup C}}
+            = P\pars{A} + P\pars{B \cup C} - P\pars{A \cap \pars{B \cup C}}\\
+            &= P\pars{A} + P\pars{B} + P\pars{C} - P\pars{B \cap C} - P\pars{\pars{A \cap B} \cup \pars{C \cap A}}\\
+            &= P\pars{A} + P\pars{B} + P\pars{C} - P\pars{B \cap C} - \pars{P\pars{A \cap B} + P\pars{C \cap A} - P\pars{\pars{A \cap B} \cap \pars{C \cap A}}}\\
+            &= P\pars{A} + P\pars{B} + P\pars{C} - P\pars{A \cap B} - P\pars{B \cap C} - P\pars{C \cap A} + P\pars{A \cap B \cap C}
+    \end{split}
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~5.10.}
+\begin{equation*}
+    A, B \subseteq \Omega
+\end{equation*}
+\begin{enumerate}[label={\alph*)}]
+    \item
+        \begin{gather*}
+            P\pars{A \cup B} \leq P\pars{A} + P\pars{B}\\
+            P\pars{A} + P\pars{B} - P\pars{A \cap B} \leq P\pars{A} + P\pars{B}\\
+            -P\pars{A \cap B} \leq 0\\
+            P\pars{A \cap B} \geq 0
+        \end{gather*}
+        Prawdopodobieństwo jest zawsze nieujemne, a~wszystkie przejścia były równoważne, więc teza jest prawdziwa.
+        \qed
+    \item
+        \begin{gather*}
+            P\pars{A \setminus B} \geq P\pars{A} - P\pars{B}\\
+            P\pars{A} - P\pars{A \cap B} \geq P\pars{A} - P\pars{B}\\
+            -P\pars{A \cap B} \geq -P\pars{B}\\
+            P\pars{B} \geq P\pars{A \cap B}
+        \end{gather*}
+        Prawdopodobieństwo zdarzenia \(B\) jest zawsze większe lub równe prawdopodobieństwu zdarzenia \(A \cap B\), ponieważ \(\card B \geq \card\pars{A \cap B}\). Zatem ostatnia nierówność jest prawdziwa, a~wszystkie przejścia były równoważne, więc teza jest prawdziwa.
+        \qed
+\end{enumerate}
+\subsubsection*{Zaddanie~5.11.}
+\begin{gather*}
+    A, B \subseteq \Omega\\
+    \begin{split}
+        P\pars{\pars{A \cap B'} \cup \pars{A' \cap B}}
+            &= P\pars{\pars{A \setminus B} \cup \pars{B \setminus A}}
+            = P\pars{A \setminus B} + \pars{B \setminus A} - P\pars{\pars{A \setminus B} \cap \pars{B \setminus A}}\\
+            &= P\pars{A} - P\pars{A \cap B} + P\pars{B} - P\pars{B \cap A} - P\pars{\emptyset}\\
+            &= P\pars{A} - P\pars{A \cap B} - P\pars{B} - P\pars{B \cap A} - 0
+            = P\pars{A} - 2\pars{A \cap B} - P\pars{B}
+    \end{split}
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~5.12.}
+\begin{gather*}
+    A, B \subseteq \Omega\\
+    P\pars{A} + P\pars{B} > 1\\
+    P\pars{A} + P\pars{B} - P\pars{A \cap B} + P\pars{A \cap B} > 1\\
+    P\pars{A \cup B} + P\pars{A \cap B} > 1
+\end{gather*}
+Skoro \(P\pars{A \cup B}\) wynosi co najwyżej \(1\), to musi zachodzić \(P\pars{A \cap B} > 0\).
+\qed
+\subsubsection*{Zadanie~5.13.}
+\begin{gather*}
+    A, B \subseteq \Omega\\
+    L = P\pars{A} + P\pars{A' \cap B}
+        = P\pars{A} + P\pars{B \setminus A}
+        = P\pars{A} + P\pars{B} - P\pars{A \cap B}
+        = P\pars{A \cup B}\\
+    R = P\pars{B} + P\pars{A \cap B'}
+        = P\pars{B} + P\pars{A} - P\pars{A \cap B}
+        = P\pars{B \cup A}
+        = P\pars{A \cup B} = L
+\end{gather*}
+\qed

@@ -1,158 +1,158 @@
-\subsection*{Zestaw~III (zadania otwarte)}
-\subsubsection*{Zadanie~1.}
-\begin{equation*}
-    \frac{a^2}{b} + \frac{b^2}{a} > a + b
-\end{equation*}
-Skoro liczby \(a\) i~\(b\) są dodatnie, to możemy pomnożyć nierówność stronami przez \(ab\):
-\begin{gather*}
-    a^3 + b^3 > a^2b + ab^2\\
-    a^3 - a^2b + b^3 - ab^2\\
-    a^2(a - b) + b^2(b - a) > 0\\
-    a^2(a - b) - b^2(a - b) > 0\\
-    \parens{a^2 - b^2}(a - b) > 0\\
-    (a + b)(a - b)(a - b) > 0\\
-    (a + b)(a - b)^2 > 0
-\end{gather*}
-Skoro \(a \neq b\), to \(a - b \neq 0\), zatem \((a - b)^2 > 0\). Ponadto, suma liczb dodatnich \(a + b\) jest większa od \(0\). Mamy zatem iloczyn dwóch liczb dodatnich, więc jest on większy od \(0\). Wszystkie przejścia były równoważne, zatem teza jest prawdziwa.
-\qed
-\subsubsection*{Zadanie~2.}
-\begin{gather*}
-    a^2 + b^2 + 16 \geq ab + 4a + 4b\\
-    2a^2 + 2b^2 + 32 \geq 2ab + 8a + 8b\\
-    a^2 - 2ab + b^2 + a^2 - 8a + 16 + b^2 - 8b + 16 \geq 0\\
-    \parens{a^2 - 2ab + b^2} + \parens{a^2 - 8a + 4^2} + \parens{b^2 - 8b + 4^6} \geq 0\\
-    (a - b)^2 + (a - 4)^2 + (b - 4)^2 \geq 0
-\end{gather*}
-Suma kwadratów jest zawsze nieujemna, więc ostatnia nierówność jest prawdziwa. Wszystkie przejścia były równoważne, więc teza jest prawdziwa.
-\qed
-\subsubsection*{Zadanie~3.}
-\begin{equation*}
-    \frac{n^2 + 2}{3} = \frac{n^2 - 1 + 3}{3} = \frac{(n + 1)(n - 1) + 3}{3} = \frac{(n + 1)(n - 1)}{3} + 1
-\end{equation*}
-Skoro liczba \(n\) nie jest podzielna przez \(3\), to daje przy dzieleniu przez \(3\) resztę \(1\) lub \(2\). Zatem któraś z~liczb \(n + 1, n - 1\) jest podzielna przez \(3\), w~związku z~czym cały ułamek \(\frac{(n + 1)(n - 1)}{3}\) jest liczbą naturalną. Wynika z~tego, że całe wyrażenie jest liczbą naturalną.
-\qed
-\subsubsection*{Zadanie~4.}
-\begin{gather*}
-    9x^4 + y^4 + 6 \geq 12xy\\
-    9x^4 + y^4 - 12xy + 6 \geq 0\\
-    9x^4 - 6x^2y^2 + y^4 + 6x^2y^2 - 12xy + 6 \geq 0\\
-    \parens{\parens{3x^2}^2 - 2 \cdot 3 \cdot x^2y^2 + \parens{y^2}^2} + 6\parens{x^2y^2 - 2xy + 1} \geq 0\\
-    \parens{9x^2 - y^2}^2 + 6(xy - 1)^2 \geq 0
-\end{gather*}
-Suma dodatnich wielokrotności kwadratów jest zawsze liczbą nieujemną, więc ostatnia nierówność jest prawdziwa. Wszystkie przejścia były równoważne, więc teza również jest prawdziwa.
-\qed
-\subsubsection*{Zadanie~5.}
-\begin{equation*}
-    (n - 1)n(n + 1)(n + 2) + 1 = (n^2 - 1)n(n + 2) + 1 = (n^2 - 1)(n^2 + 2n) + 1 = n^4 + 2n^3 - n^2 - 2n + 1
-\end{equation*}
-\subsubsection*{Zadanie~6.}
-\begin{equation*}
-    n^4 + n^2 + 1 = n^4 + 2n^2 + 1 - n^2 = \parens{n^2 + 1}^2 - n^2 = \parens{n^2 + 1 + n} \parens{n^2 + 1 - n}
-\end{equation*}
-Zauważmy, że gdy \(n > 2\), obydwa powyższe czynniki, na które rozłożyliśmy liczbę \(n^4 + n^2 + 1\), są większe od \(1\). Zatem liczba \(n^4 + n^2 + 1\) jest złożona.
-\qed
-\subsubsection*{Zadanie~7.}
-\begin{gather*}
-    abc = 1\\
-    \begin{split}
-        \frac{1}{1 + a^2b} + \frac{1}{1 + bc^2}
-            &= \frac{1 + a^2b}{\parens{1 + a^2b} \parens{1 + ab^2}} + \frac{1 + ab^2}{\parens{1 + a^2b} \parens{1 + ab^2}}
-            = \frac{2 + a^2b + ab^2}{1 + a^2b^2c^2 + a^2b + ab^2}\\
-            &= \frac{2 + a^2b + ab^2}{1 + (abc)^2 + a^2b + ab^2}
-            = \frac{2 + a^2b + ab^2}{1 + 1^2 + a^2b + ab^2}
-            = \frac{2 + a^2b + ab^2}{2 + a^2b + ab^2}
-            = 1
-    \end{split}
-\end{gather*}
-\qed
-\subsubsection*{Zadanie~8.}
-\begin{equation*}
-    \frac{n^3 + 2n^2 - 3n - 6}{n^2 + 3n + 2}
-        = \frac{\cancel{(n + 2)}(n^2 - 3)}{(n + 1)\cancel{(n + 2)}}
-        = \frac{n^2 - 1 - 2}{n + 1}
-        = \frac{\cancel{(n + 1)}(n - 1)}{\cancel{n + 1}} - \frac{2}{n + 1}
-        = \underbrace{n - 1}_{\text{całkowite}} - \frac{2}{n + 1}
-\end{equation*}
-W~tej postaci wyrażenia widać, że \(n + 1\) musi dzielić liczbę \(2\). Istnieją cztery potencjalne możliwości:
-\begin{itemize}
-    \item \(n + 1 = -1 \implies n = -2\)
-    \item \(n + 1 = -2 \implies n = -3\)
-    \item \(n + 1 = 1 \implies n = 0\)
-    \item \(n + 1 = 2 \implies n = 1\)
-\end{itemize}
-Jednak \(n \neq -2\), ponieważ inaczej zerowałby się mianownik. Zatem ostatecznie \(n \in \set{-3, 0, 1}\).
-\subsubsection*{Zadanie~9.}
-Oznaczenia:
-\begin{gather*}
-    v = \text{ prędkość w \(\frac{\km}{\h}\)} \neq 0\\
-    t = \text{ czas przejazdu trasy w \(\h\)}\\
-    s = \text{ długość przebytej trasy } = 300\km\\
-    15\text{ minut} = \frac{1}{4}\text{ godziny}
-\end{gather*}
-Przy stałej prędkości drogę, prędkość i~czas łączy zależność:
-\begin{equation*}
-    v = \frac{s}{t} \implies s = v \cdot t
-\end{equation*}
-Na podstawie danych z~zadania możemy zapisać układ równań:
-\begin{gather*}
-    \begin{cases}
-        s = v \cdot t \implies t = \frac{s}{v}\\
-        v \cdot t = (v + 5) \cdot (t - \frac{1}{4})
-    \end{cases}
-\end{gather*}
-Przekształcamy drugie równanie:
-\begin{gather*}
-    v \cdot t = v \cdot t - \frac{1}{4}v + 5t - \frac{5}{4}\\
-    \frac{1}{4}v - 5t + \frac{5}{4} = 0
-\end{gather*}
-Teraz za \(t\) możemy podstawić \(\frac{s}{v}\):
-\begin{gather*}
-    \frac{1}{4}v - 5\frac{s}{v} + \frac{5}{4} = 0\\
-    \frac{1}{4}v^2 + \frac{5}{4}v - 5s = 0\\
-    \Delta = \frac{25}{16} + 5s = 1500 + \frac{25}{16}\\
-    \sqrt{\Delta} = 38 + \frac{3}{4}\\
-    v = \frac{-\frac{5}{4} + 38 + \frac{3}{4}}{2 \cdot \frac{1}{4}} = 75 \lor v = \frac{-\frac{5}{4} - 38 - \frac{3}{4}}{2 \cdot \frac{1}{4}} < 0 \text{ (niemożliwe)}\\
-    v = 75\frac{\km}{\h}
-\end{gather*}
-Kierowca jechał z~prędkością \(75\frac{\km}{\h}\).
-\subsubsection*{Zadanie~10.}
-\begin{gather*}
-    \frac{a^2 - 6b^2}{ab} = -1
-\end{gather*}
-\subsubsection*{Zadanie~11.}
-Skoro \(a \neq 0\) i~\(b \neq 0\), to \(ab \neq 0\). Warunek dany w~zadaniu możemy przekształcić:
-\begin{gather*}
-    \frac{a}{b} + a = \frac{b}{a} + b\\
-    b - a = \frac{a}{b} - \frac{b}{a}
-\end{gather*}
-Ułamki po prawej stronie możemy sprowadzić do wspólnego mianownika i~odjąć:
-\begin{gather*}
-    b - a = \frac{a^2}{ab} - \frac{b^2}{ab}\\
-    b - a = \frac{a^2 - b^2}{ab}\\
-    -(a - b) = \frac{(a + b)(a - b)}{ab}
-\end{gather*}
-Ponieważ \(a \neq b\), to \(a - b \neq 0\). Zatem obie strony równania wolno nam podzielić przez \((a - b)\).
-\begin{gather*}
-    -\cancel{(a - b)} = \frac{(a + b)\cancel{(a - b)}}{ab}\\
-    \frac{a + b}{ab} = -1
-\end{gather*}
-W~zadaniu mamy wyznaczyć \(\frac{1}{a} + \frac{1}{b}\). Teraz możemy to zrobić łatwo:
-\begin{equation*}
-    \frac{1}{a} + \frac{1}{b} = \frac{a}{ab} + \frac{b}{ab} = \frac{a + b}{ab} = -1
-\end{equation*}
-Zatem \(\frac{1}{a} + \frac{1}{b}\) wynosi \(-1\).
-\subsubsection*{Zadanie~12.}
-\begin{equation*}
-    \begin{split}
-        \frac{a}{(a - b)(a - c)} &+ \frac{b}{(b - c)(b - a)} + \frac{c}{(c - a)(c - b)}
-            = -\frac{a}{(a - b)(c - a)} - \frac{b}{(a - b)(b - c)} - \frac{c}{(b - c)(c - a)}\\
-            &= -\frac{a(b - c)}{(a - b)(b - c)(c - a)} - \frac{b(c - a)}{(a - b)(b - c)(c - a)} - \frac{c(a - b)}{(a - b)(b - c)(c - a)}\\
-            &= -\frac{a(b - c) + b(c - a) + c(a - b)}{(a - b)(b - c)(c - a)}
-            = -\frac{ab - ca + bc - ab + ca - bc}{(a - b)(b - c)(c - a)}\\
-            &= -\frac{0}{(a - b)(b - c)(c - a)}
-            = 0
-    \end{split}
-\end{equation*}
+% \subsection*{Zestaw~III (zadania otwarte)}
+% \subsubsection*{Zadanie~1.}
+% \begin{equation*}
+%     \frac{a^2}{b} + \frac{b^2}{a} > a + b
+% \end{equation*}
+% Skoro liczby \(a\) i~\(b\) są dodatnie, to możemy pomnożyć nierówność stronami przez \(ab\):
+% \begin{gather*}
+%     a^3 + b^3 > a^2b + ab^2\\
+%     a^3 - a^2b + b^3 - ab^2\\
+%     a^2(a - b) + b^2(b - a) > 0\\
+%     a^2(a - b) - b^2(a - b) > 0\\
+%     \parens{a^2 - b^2}(a - b) > 0\\
+%     (a + b)(a - b)(a - b) > 0\\
+%     (a + b)(a - b)^2 > 0
+% \end{gather*}
+% Skoro \(a \neq b\), to \(a - b \neq 0\), zatem \((a - b)^2 > 0\). Ponadto, suma liczb dodatnich \(a + b\) jest większa od \(0\). Mamy zatem iloczyn dwóch liczb dodatnich, więc jest on większy od \(0\). Wszystkie przejścia były równoważne, zatem teza jest prawdziwa.
+% \qed
+% \subsubsection*{Zadanie~2.}
+% \begin{gather*}
+%     a^2 + b^2 + 16 \geq ab + 4a + 4b\\
+%     2a^2 + 2b^2 + 32 \geq 2ab + 8a + 8b\\
+%     a^2 - 2ab + b^2 + a^2 - 8a + 16 + b^2 - 8b + 16 \geq 0\\
+%     \parens{a^2 - 2ab + b^2} + \parens{a^2 - 8a + 4^2} + \parens{b^2 - 8b + 4^6} \geq 0\\
+%     (a - b)^2 + (a - 4)^2 + (b - 4)^2 \geq 0
+% \end{gather*}
+% Suma kwadratów jest zawsze nieujemna, więc ostatnia nierówność jest prawdziwa. Wszystkie przejścia były równoważne, więc teza jest prawdziwa.
+% \qed
+% \subsubsection*{Zadanie~3.}
+% \begin{equation*}
+%     \frac{n^2 + 2}{3} = \frac{n^2 - 1 + 3}{3} = \frac{(n + 1)(n - 1) + 3}{3} = \frac{(n + 1)(n - 1)}{3} + 1
+% \end{equation*}
+% Skoro liczba \(n\) nie jest podzielna przez \(3\), to daje przy dzieleniu przez \(3\) resztę \(1\) lub \(2\). Zatem któraś z~liczb \(n + 1, n - 1\) jest podzielna przez \(3\), w~związku z~czym cały ułamek \(\frac{(n + 1)(n - 1)}{3}\) jest liczbą naturalną. Wynika z~tego, że całe wyrażenie jest liczbą naturalną.
+% \qed
+% \subsubsection*{Zadanie~4.}
+% \begin{gather*}
+%     9x^4 + y^4 + 6 \geq 12xy\\
+%     9x^4 + y^4 - 12xy + 6 \geq 0\\
+%     9x^4 - 6x^2y^2 + y^4 + 6x^2y^2 - 12xy + 6 \geq 0\\
+%     \parens{\parens{3x^2}^2 - 2 \cdot 3 \cdot x^2y^2 + \parens{y^2}^2} + 6\parens{x^2y^2 - 2xy + 1} \geq 0\\
+%     \parens{9x^2 - y^2}^2 + 6(xy - 1)^2 \geq 0
+% \end{gather*}
+% Suma dodatnich wielokrotności kwadratów jest zawsze liczbą nieujemną, więc ostatnia nierówność jest prawdziwa. Wszystkie przejścia były równoważne, więc teza również jest prawdziwa.
+% \qed
+% \subsubsection*{Zadanie~5.}
+% \begin{equation*}
+%     (n - 1)n(n + 1)(n + 2) + 1 = (n^2 - 1)n(n + 2) + 1 = (n^2 - 1)(n^2 + 2n) + 1 = n^4 + 2n^3 - n^2 - 2n + 1
+% \end{equation*}
+% \subsubsection*{Zadanie~6.}
+% \begin{equation*}
+%     n^4 + n^2 + 1 = n^4 + 2n^2 + 1 - n^2 = \parens{n^2 + 1}^2 - n^2 = \parens{n^2 + 1 + n} \parens{n^2 + 1 - n}
+% \end{equation*}
+% Zauważmy, że gdy \(n > 2\), obydwa powyższe czynniki, na które rozłożyliśmy liczbę \(n^4 + n^2 + 1\), są większe od \(1\). Zatem liczba \(n^4 + n^2 + 1\) jest złożona.
+% \qed
+% \subsubsection*{Zadanie~7.}
+% \begin{gather*}
+%     abc = 1\\
+%     \begin{split}
+%         \frac{1}{1 + a^2b} + \frac{1}{1 + bc^2}
+%             &= \frac{1 + a^2b}{\parens{1 + a^2b} \parens{1 + ab^2}} + \frac{1 + ab^2}{\parens{1 + a^2b} \parens{1 + ab^2}}
+%             = \frac{2 + a^2b + ab^2}{1 + a^2b^2c^2 + a^2b + ab^2}\\
+%             &= \frac{2 + a^2b + ab^2}{1 + (abc)^2 + a^2b + ab^2}
+%             = \frac{2 + a^2b + ab^2}{1 + 1^2 + a^2b + ab^2}
+%             = \frac{2 + a^2b + ab^2}{2 + a^2b + ab^2}
+%             = 1
+%     \end{split}
+% \end{gather*}
+% \qed
+% \subsubsection*{Zadanie~8.}
+% \begin{equation*}
+%     \frac{n^3 + 2n^2 - 3n - 6}{n^2 + 3n + 2}
+%         = \frac{\cancel{(n + 2)}(n^2 - 3)}{(n + 1)\cancel{(n + 2)}}
+%         = \frac{n^2 - 1 - 2}{n + 1}
+%         = \frac{\cancel{(n + 1)}(n - 1)}{\cancel{n + 1}} - \frac{2}{n + 1}
+%         = \underbrace{n - 1}_{\text{całkowite}} - \frac{2}{n + 1}
+% \end{equation*}
+% W~tej postaci wyrażenia widać, że \(n + 1\) musi dzielić liczbę \(2\). Istnieją cztery potencjalne możliwości:
+% \begin{itemize}
+%     \item \(n + 1 = -1 \implies n = -2\)
+%     \item \(n + 1 = -2 \implies n = -3\)
+%     \item \(n + 1 = 1 \implies n = 0\)
+%     \item \(n + 1 = 2 \implies n = 1\)
+% \end{itemize}
+% Jednak \(n \neq -2\), ponieważ inaczej zerowałby się mianownik. Zatem ostatecznie \(n \in \set{-3, 0, 1}\).
+% \subsubsection*{Zadanie~9.}
+% Oznaczenia:
+% \begin{gather*}
+%     v = \text{ prędkość w \(\frac{\km}{\h}\)} \neq 0\\
+%     t = \text{ czas przejazdu trasy w \(\h\)}\\
+%     s = \text{ długość przebytej trasy } = 300\km\\
+%     15\text{ minut} = \frac{1}{4}\text{ godziny}
+% \end{gather*}
+% Przy stałej prędkości drogę, prędkość i~czas łączy zależność:
+% \begin{equation*}
+%     v = \frac{s}{t} \implies s = v \cdot t
+% \end{equation*}
+% Na podstawie danych z~zadania możemy zapisać układ równań:
+% \begin{gather*}
+%     \begin{cases}
+%         s = v \cdot t \implies t = \frac{s}{v}\\
+%         v \cdot t = (v + 5) \cdot (t - \frac{1}{4})
+%     \end{cases}
+% \end{gather*}
+% Przekształcamy drugie równanie:
+% \begin{gather*}
+%     v \cdot t = v \cdot t - \frac{1}{4}v + 5t - \frac{5}{4}\\
+%     \frac{1}{4}v - 5t + \frac{5}{4} = 0
+% \end{gather*}
+% Teraz za \(t\) możemy podstawić \(\frac{s}{v}\):
+% \begin{gather*}
+%     \frac{1}{4}v - 5\frac{s}{v} + \frac{5}{4} = 0\\
+%     \frac{1}{4}v^2 + \frac{5}{4}v - 5s = 0\\
+%     \Delta = \frac{25}{16} + 5s = 1500 + \frac{25}{16}\\
+%     \sqrt{\Delta} = 38 + \frac{3}{4}\\
+%     v = \frac{-\frac{5}{4} + 38 + \frac{3}{4}}{2 \cdot \frac{1}{4}} = 75 \lor v = \frac{-\frac{5}{4} - 38 - \frac{3}{4}}{2 \cdot \frac{1}{4}} < 0 \text{ (niemożliwe)}\\
+%     v = 75\frac{\km}{\h}
+% \end{gather*}
+% Kierowca jechał z~prędkością \(75\frac{\km}{\h}\).
+% \subsubsection*{Zadanie~10.}
+% \begin{gather*}
+%     \frac{a^2 - 6b^2}{ab} = -1
+% \end{gather*}
+% \subsubsection*{Zadanie~11.}
+% Skoro \(a \neq 0\) i~\(b \neq 0\), to \(ab \neq 0\). Warunek dany w~zadaniu możemy przekształcić:
+% \begin{gather*}
+%     \frac{a}{b} + a = \frac{b}{a} + b\\
+%     b - a = \frac{a}{b} - \frac{b}{a}
+% \end{gather*}
+% Ułamki po prawej stronie możemy sprowadzić do wspólnego mianownika i~odjąć:
+% \begin{gather*}
+%     b - a = \frac{a^2}{ab} - \frac{b^2}{ab}\\
+%     b - a = \frac{a^2 - b^2}{ab}\\
+%     -(a - b) = \frac{(a + b)(a - b)}{ab}
+% \end{gather*}
+% Ponieważ \(a \neq b\), to \(a - b \neq 0\). Zatem obie strony równania wolno nam podzielić przez \((a - b)\).
+% \begin{gather*}
+%     -\cancel{(a - b)} = \frac{(a + b)\cancel{(a - b)}}{ab}\\
+%     \frac{a + b}{ab} = -1
+% \end{gather*}
+% W~zadaniu mamy wyznaczyć \(\frac{1}{a} + \frac{1}{b}\). Teraz możemy to zrobić łatwo:
+% \begin{equation*}
+%     \frac{1}{a} + \frac{1}{b} = \frac{a}{ab} + \frac{b}{ab} = \frac{a + b}{ab} = -1
+% \end{equation*}
+% Zatem \(\frac{1}{a} + \frac{1}{b}\) wynosi \(-1\).
+% \subsubsection*{Zadanie~12.}
+% \begin{equation*}
+%     \begin{split}
+%         \frac{a}{(a - b)(a - c)} &+ \frac{b}{(b - c)(b - a)} + \frac{c}{(c - a)(c - b)}
+%             = -\frac{a}{(a - b)(c - a)} - \frac{b}{(a - b)(b - c)} - \frac{c}{(b - c)(c - a)}\\
+%             &= -\frac{a(b - c)}{(a - b)(b - c)(c - a)} - \frac{b(c - a)}{(a - b)(b - c)(c - a)} - \frac{c(a - b)}{(a - b)(b - c)(c - a)}\\
+%             &= -\frac{a(b - c) + b(c - a) + c(a - b)}{(a - b)(b - c)(c - a)}
+%             = -\frac{ab - ca + bc - ab + ca - bc}{(a - b)(b - c)(c - a)}\\
+%             &= -\frac{0}{(a - b)(b - c)(c - a)}
+%             = 0
+%     \end{split}
+% \end{equation*}
 \subsubsection*{Zadanie~1.10.}
 \begin{enumerate}[label={\alph*)}]
     \item

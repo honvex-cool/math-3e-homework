@@ -1,0 +1,123 @@
+\subsection*{Kombinatoryka --- zadania}
+\subsubsection*{Zadanie~4.43.}
+\begin{gather}
+    \tag{\(1\)} DDmmmmm\\
+    \tag{\(2\)} mDDmmmm\\
+    \tag{\(3\)} mmDDmmm\\
+    \tag{\(4\)} DmDmmmm\\
+    \tag{\(5\)} mDmDmmm\\
+    \tag{\(6\)} mmDmDmm\\
+    \tag{\(7\)} DmmDmmm\\
+    \tag{\(8\)} mDmmDmm\\
+    \tag{\(9\)} DmmmDmm\\
+    \tag{\(10\)} mDmmmDm\\
+    \tag{\(11\)} DmmmmDm\\
+    \tag{\(12\)} DmmmmmD
+\end{gather}
+Istnieje \(12\) możliwych naszyjników. Można to rozwiązać również inaczej: zauważamy, że miejsca, w~których umieścimy dwa nierozróżnialne duże paciorki możemy wybrać na \(\ibinom{7}{2} = 21\) sposobów. Pozostałe miejsca wypełniamy małymi paciorkami. Wśród tak skonstruowanych naszyjników podwójnie liczymy odbicia lustrzane, z~wyjątkiem naszyjników symetrycznych, które są \(3\): \(DmmmmmD\), \(mmDmDmm\), \(mDmmmDm\). Zatem musimy dodać jeszcze te \(3\) jako odbicia lustrzane, a~następnie cały wynik dzielimy przez \(2\), usuwając osobne rozpatrywanie odbić lustrzanych. Ostatecznie mamy zatem \(\frac{21 + 3}{2} = 12\) możliwych naszyjników.
+\subsubsection*{Zadanie~4.44.}
+Liczbę róż możemy wybrać na \(3\) sposoby (od \(1\) do \(3\)), liczbę goździków na \(4\) sposoby (od \(1\) do \(4\)), a~liczbę goździków na \(7\) sposobów (od \(1\) do \(7\)). Zatem wszystkich możliwych bukietów jest \(3 \cdot 4 \cdot 7 = 84\).
+\subsubsection*{Zadanie~4.45.}
+\begin{enumerate}[label={\alph*)}]
+    \item
+        \begin{gather*}
+            7007
+                = 7 \cdot 1001
+                = 7 \cdot 7 \cdot 11 \cdot 13
+                = 7^2 \cdot 11^1 \cdot 13^1\\
+            \tau\pars{7007}
+                = \tau\pars{7^2 \cdot 11^1 \cdot 13^1}
+                = \pars{2 + 1}\pars{1 + 1}\pars{1 + 1}
+                = 12
+        \end{gather*}
+    \item
+        \begin{gather*}
+            \begin{split}
+                12!
+                    &= 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdot 6 \cdot 7 \cdot 8 \cdot 9 \cdot 10 \cdot 11 \cdot 12
+                    = 1 \cdot 2 \cdot 3 \cdot 2^2 \cdot 5 \cdot 2 \cdot 3 \cdot 7 \cdot 2^3 \cdot 3^2 \cdot 2 \cdot 5 \cdot 11 \cdot 2^2 \cdot 3\\
+                    &= 2^{10} \cdot 3^5 \cdot 5^2 \cdot 7^1 \cdot 11^1
+            \end{split}\\
+            \tau\pars{12!}
+                = \tau\pars{2^{10} \cdot 3^5 \cdot 5^2 \cdot 7^1 \cdot 11^1}
+                = \pars{10 + 1}\pars{5 + 1}\pars{2 + 1}\pars{1 + 1}\pars{1 + 1}
+                = 792
+        \end{gather*}
+\end{enumerate}
+\subsubsection*{Zadanie~4.46.}
+Pytamy o~liczbę różnych rozwiązań równania
+\begin{equation*}
+    s_1 + s_2 + s_3 + s_4 + s_5 + s_6 = 30
+\end{equation*}
+Jest ich
+\begin{equation*}
+    \binom{30 + 6 - 1}{6 - 1}
+        = \binom{35}{5}
+\end{equation*}
+\subsubsection*{Zadanie~4.47.}
+Istnieją trzy takie sytuacje: \(9 = 1 + 2 + 6 = 1 + 3 + 5 = 2 + 3 + 4\).
+\subsubsection*{Zadanie~4.48.}
+Wszystkich permutacji jest \(4!\). Co \(4\) cyfra jedności jest równa \(1\), co \(4\) jest równa \(2\) itd. Podobnie co \(4\) cyfra dziesiątek jest równa \(1\), co \(4\) jest równa \(2\) itd. itd. Zatem suma wszystkich takich liczb wynosi
+\begin{equation*}
+    S
+        = \summation[k = 1][4] 4! \cdot \frac{1}{4} \cdot \pars{1 + 2 + 3 + 4} \cdot 10^{k - 1}
+        = 4! \cdot \frac{1}{4} \cdot 10 \summation[k = 1][4] 10^{n}
+        = 3! \cdot 10 \cdot \pars{1 + 10 + 100 + 1000}
+        = 60 \cdot 1111
+        = 66660
+\end{equation*}
+\subsubsection*{Zadanie~4.49.}
+Wszystkich permutacji jest \(4!\), jednak trzeba tę liczbę podzielić przez \(2!\), ponieważ trójki są nierozróżnialne i~ich permutacje chcemy uwzględnić tylko raz. Co \(2\) cyfra jedności jest równa \(3\), co \(4\) jest równa \(1\) itd. Podobnie co \(2\) cyfra dziesiątek jest równa \(3\), co \(4\) jest równa \(1\) itd. itd. Zatem suma wszystkich takich liczb wynosi
+\begin{equation*}
+    S
+        = \summation[k = 1][4] 12 \cdot \frac{1}{4} \cdot \pars{1 + 2 + 3 + 3} \cdot 10^{k - 1}
+        = 12 \cdot \frac{1}{4} \cdot 9 \summation[k = 1][4] 10^{n}
+        = 3 \cdot 9 \cdot \pars{1 + 10 + 100 + 1000}
+        = 27 \cdot 1111
+        = 29997
+\end{equation*}
+\subsubsection*{Zadanie~4.50.}
+Wszystkich tych liczb jest \(\frac{9!}{\pars{9 - 5}!} = \frac{9!}{4!}\), ponieważ każdą z~\(5\) cyfr możemy wybrać na \(9\) sposobów ze zbioru \(\set{1, 2, \ldots, 9}\). Co \(9\) cyfra jedności jest równa \(1\), co \(9\) jest równa \(2\) itd. Podobnie co \(9\) cyfra dziesiątek jest równa \(1\), co \(9\) jest równa \(2\) itd. itd. Zatem suma wszystkich takich liczb wynosi
+\begin{equation*}
+    \begin{split}
+        S
+            &= \summation[k = 1][5] \frac{9!}{4!} \cdot \frac{1}{9} \cdot \pars{1 + 2 + \ldots + 9} \cdot 10^{k - 1}
+            = \frac{9!}{4!} \cdot \frac{1}{9} \cdot \frac{9 \cdot \pars{9 + 1}}{2} \cdot \summation[k = 1][5] 10^{k - 1}\\
+            &= \frac{9!}{4!} \cdot 5 \cdot \pars{1 + 10 + 100 + 1000 + 10000}
+            = \frac{9!}{4!} \cdot 55555
+            = 839991600
+    \end{split}
+\end{equation*}
+\subsubsection*{Zadanie~4.51.}
+Liczbę \(3\) możemy przedstawić jako sumę niezerowych liczb naturalnych na \(3\) sposoby: \(3 = 1 + 1 + 1 = 1 + 2 = 2 + 1\). Liczba dwunastocyfrowa nie może zaczynać się od \(0\). Jeśli zaczyna się cyfrą \(2\), to na \(11\) sposobów wybieramy miejsce dla cyfry \(1\), a~pozostałe miejsca uzupełniamy zerami. Jeśli zaczyna się cyfrą \(1\), to na \(11\) sposobów wybieramy miejsce dla cyfry \(2\), a~pozostałe miejsca uzupełniamy zerami, lub na \(\ibinom{11}{2}\) sposobów wybieramy miejsca dla dwóch cyfr \(1\), a~pozostałe miejsca uzupełniamy zerami. Wszystkich możliwości jest więc \(2 \cdot 11 + \ibinom{11}{2} = 22 + \ibinom{11}{2}\).
+\subsubsection*{Zadanie~4.52.}
+Wybieramy na \(2\) liczby parzyste na \(\ibinom{10}{2}\) sposobów lub \(2\) liczby nieparzyste na \(\ibinom{10}{2}\) sposobów. Wszystkich możliwych wyborów jest więc \(2 \cdot \ibinom{10}{2}\).
+\subsubsection*{Zadanie~4.53.}
+Szachownica składa się z~\(4\) ćwiartek po \(16\) pól. Ustawienie pionka w~jednej z~ćwiartek szachownicy wymusza ustawienie trzech kolejnych w~pozostałych ćwiartkach. Zatem na \(\ibinom{16}{5}\) wybieramy miejsca, na których ustawimy piony w~jednej z~ćwiartek, a~to automatycznie generuje ustawienie pozostałych \(15\) pionów, po \(5\) w~każdej z~\(3\) pozostałych ćwiartek.
+\subsubsection*{Zadanie~4.54.}
+Rozważamy połówki szachownicy, czyli prostokąty \(4 \times 8\) pól. Ustawienie piona w~takiej połówce wymusza ustawienie piona w~drugiej połówce. Zatem na \(\ibinom{32}{12}\) sposobów wybieramy miejsca, na~której w~jednej z~połówek ustawimy \(12\) pionów, a~to wymusza ustawienie pozostałych \(12\) pionów na drugiej połówce.
+\subsubsection*{Zadanie~4.55.}
+Rozważamy połówki szachownicy, czyli prostokąty \(4 \times 8\) pól. Ustawienie piona w~takiej połówce wymusza ustawienie piona w~drugiej połówce. Zatem na \(\ibinom{32}{12}\) sposobów wybieramy miejsca, na~której w~jednej z~połówek ustawimy \(12\) białych pionów, a~to wymusza ustawienie pozostałych \(12\) białych pionów na drugiej połówce. Następnie w~analogiczny sposób na pierwszej połówce na \(\ibinom{32 - 12}{12} = \ibinom{20}{12}\) sposobów wybieramy pola, na których ustawimy czarne piony. Wszystkich możliwości jest więc \(\ibinom{32}{12}\ibinom{20}{12}\).
+\subsubsection*{Zadanie~4.56.}
+Pokażemy indukcyjnie, że liczba podzbiorów o~parzystej mocy \(n\)-elementowego zbioru \(A\), gdzie \(n \geq 1\), jest równa liczbie podzbiorów nieparzystej mocy i~wynosi \(2^{n - 1}\). Skorzystamy przy tym ze znanego faktu, że \(\cardinality{\powerset\pars{A}} = 2^n\). Przez \(\powerset_0\) będziemy oznaczać zbiór podzbiorów o~parzystej mocy, a~przez \(\powerset_1\) zbiór podzbiorów o~nieparzystej mocy.
+\begin{induction}
+    \item \(n = 1\)
+        \begin{gather*}
+            \powerset\pars{\set{a_1}} = \set{\emptyset, \set{a_1}}\\
+            \powerset_0\pars{\set{a_1}} = \set{\emptyset}\\
+            \powerset_1\pars{\set{a_1}} = \set{\set{a_1}}\\
+            \cardinality{\powerset_0\pars{\set{a_1}}} = \cardinality{\powerset_1\pars{\set{a_1}}} = 1 = 2^0 = 2^{n - 1}
+        \end{gather*}
+    \item Chcemy pokazać, że
+        \begin{equation*}
+            \begin{split}
+                &\forall k \in \natural\colon\\
+                &\cardinality{\powerset_0\pars{\set{a_1, a_2, \ldots, a_k}}} = \cardinality{\powerset_1\pars{\set{a_1, a_2, \ldots, a_k}}} = 2^{k - 1}\\ &\implies \cardinality{\powerset_0\pars{\set{a_1, a_2, \ldots, a_k, a_{k + 1}}}} = \cardinality{\powerset_1\pars{\set{a_1, a_2, \ldots, a_k, a_{k + 1}}}} = 2^k
+            \end{split}
+        \end{equation*}
+        Wiemy, że zbiór \(k\)-elementowy ma \(2^k\) podzbiorów. Aby utworzyć wszystkie podzbiory \(\pars{k + 1}\)-elementowego, każdy z~podzbiorów zbioru \(k\)-elementowego bierzemy w~dwóch postaciach: jednej bez zmian, a~drugiej z~dodanym \(\pars{k + 1}\)-szym elementem. W~ten sposób elementy zbioru \(\powerset_0\pars{\set{a_1, a_2, \ldots, a_k}}\) wzięte bez zmian oraz elementy zbioru \(\powerset_1\pars{\set{a_1, a_2, \ldots, a_k}}\) z~dołożonym \(\pars{k + 1}\)-szym elementem są parzystej mocy i~jest ich \(2^{k - 1} + 2^{k - 1} = 2 \cdot 2^{k - 1} = 2^k\). Ponieważ wszystkich podzbiorów zbioru \(\pars{k + 1}\)-elementowego jest \(2^{k + 1}\), to pozostałe \(2^k\) podzbiorów musi być nieparzystej mocy. To kończy dowód dla \(k + 1\).
+\end{induction}
+Zatem na mocy zasady indukcji matematycznej teza jest prawdziwa.
+\qed
+\subsubsection*{Zadanie~4.57.}
+Mamy do wyboru \(10\) długości ze zbioru \(\set{1, 2, \ldots, 10}\). Na początek rozważmy prostopadłościany o~wszystkich \(3\) wymiarach różnych. Możemy takie stworzyć na \(\ibinom{10}{3}\) sposbów: wybieramy \(3\) różne długości bez względu na kolejność. Teraz rozważmy prostopadłościany o~\(2\) wymiarach równych i~\(1\) innym. Możemy takie wybrać na \(10 \cdot 9\) sposobów: najpierw na \(10\) sposobów wybieramy długość wspólną dla dwóch wymiarów, a~potem z~pozostałych długości na \(9\) sposobów wybieramy ostatnią długość. Ostatni typ prostopadłościanów to sześciany i~jest ich po prostu \(10\), bo na tyle sposobów możemy wybrać długość boku. Zatem liczba prostopadłościanów spełniających warunki zadania wynosi \(\ibinom{10}{3} + 10 \cdot 9 + 10 = \ibinom{10}{3} + 100\).

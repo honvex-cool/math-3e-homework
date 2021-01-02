@@ -1,174 +1,174 @@
-\subsection*{Zestaw~II (zadania otwarte)}
-\subsubsection*{Zadanie~1.}
-Najpierw udowodnijmy, że dla każdej liczby \(n \in \natural\) liczba \(n^3 + 5n\) jest podzielna przez \(2\):
-\begin{gather*}
-    n \equiv 0 \pmod{2} \implies n^3 + 5n \equiv 0^3 + 5 \cdot 0 \equiv 0 \pmod{2}\\
-    n \equiv 1 \pmod{2} \implies n^3 + 5n \equiv 1^3 + 5 \cdot 1 \equiv 6 \equiv 0 \pmod{2}
-\end{gather*}
-Udowodnimy też, że dla każdej liczby \(n \in \natural\) liczba \(n^3 + 5n\) jest podzielna przez \(3\):
-\begin{gather*}
-    n \equiv 0 \pmod{3} \implies n^3 + 5n \equiv 0^3 + 5 \cdot 0 \equiv 0 \pmod{3}\\
-    n \equiv 1 \pmod{3} \implies n^3 + 5n \equiv 1^3 + 5 \cdot 1 \equiv 6 \equiv 0 \pmod{3}\\
-    n \equiv 2 \pmod{3} \implies n^3 + 5n \equiv 2^3 + 5 \cdot 2 \equiv 18 \equiv 0 \pmod{3}
-\end{gather*}
-Skoro dla każdego \(n \in \natural\) liczba \(n^3 + 5n\) jest podzielna przez liczby pierwsze \(3\) i~\(2\), to jest też podzielna przez \(3 \cdot 2 = 6\).
-\qed
-\subsubsection*{Zadanie~2.}
-\begin{equation*}
-    \begin{split}
-        M &= \frac{1}{\sqrt{1} + \sqrt{4}} + \frac{1}{\sqrt{4} + \sqrt{7}} + \ldots + \frac{1}{\sqrt{97} + \sqrt{100}}\\
-            &= \frac{\sqrt{1} - \sqrt{4}}{\parens{\sqrt{1} + \sqrt{4}} \parens{\sqrt{1} - \sqrt{4}}} + \frac{\sqrt{4} - \sqrt{7}}{\parens{\sqrt{4} + \sqrt{7}} \parens{\sqrt{4} - \sqrt{7}}} + \ldots + \frac{\sqrt{97} - \sqrt{100}}{\parens{\sqrt{97} + \sqrt{100}} \parens{\sqrt{97} - \sqrt{100}}}\\
-            &= \frac{\sqrt{1} - \sqrt{4}}{1 - 4} + \frac{\sqrt{4} - \sqrt{7}}{4 - 7} + \ldots + \frac{\sqrt{97} - \sqrt{100}}{97 - 100}\\
-            &= \frac{\sqrt{1} - \sqrt{4} + \sqrt{4} - \sqrt{7} + \sqrt{7} - \ldots - \sqrt{97} + \sqrt{97} - \sqrt{100}}{-3}\\
-            &= \frac{\sqrt{1} - \sqrt{100}}{-3}
-            = \frac{1 - 10}{-3}
-            = \frac{-9}{-3}
-            = 3 \in \integer
-    \end{split}
-\end{equation*}
-\qed
-\subsubsection*{Zadanie~3.}
-Chcemy pokazać, że
-\begin{equation*}
-    \sqrt{\parens{x^2 + 1}^{10} - 1} + \sqrt{\parens{x^2 + 1}^{10} + 1} \leq 2\parens{x^2 + 1}^5
-\end{equation*}
-Z~nierówności między średnią arytmetyczną a~średnią kwadratową mamy:
-\begin{gather*}
-    \begin{split}
-        \frac{\sqrt{\parens{x^2 + 1}^{10} - 1} + \sqrt{\parens{x^2 + 1}^{10} + 1}}{2} &\leq \sqrt{\frac{\parens{\sqrt{\parens{x^2 + 1}^{10} - 1}}^2 + \parens{\sqrt{\parens{x^2 + 1}^{10} + 1}}^2}{2}}\\
-            &= \sqrt{\frac{\parens{x^2 + 1}^{10} - 1 + \parens{x^2 + 1}^{10} + 1}{2}}\\
-            &= \sqrt{\frac{\cancel{2}\parens{x^2 + 1}^{10}}{\cancel{2}}}\\
-            &= \parens{x^2 + 1}^5
-    \end{split}\\
-    \frac{\sqrt{\parens{x^2 + 1}^{10} - 1} + \sqrt{\parens{x^2 + 1}^{10} + 1}}{2} \leq \parens{x^2 + 1}^5\\
-    \sqrt{\parens{x^2 + 1}^{10} - 1} + \sqrt{\parens{x^2 + 1}^{10} + 1} \leq 2\parens{x^2 + 1}^5
-\end{gather*}
-\qed
-\subsubsection*{Zadanie~4.}
-\begin{gather*}
-    A = \sqrt[3]{2 + \sqrt{5}} + \sqrt[3]{2 - \sqrt{5}}\\
-    \begin{split}
-        A^3 &= \parens{\sqrt[3]{2 + \sqrt{5}} + \sqrt[3]{2 - \sqrt{5}}}^3\\
-            &= \parens{\sqrt[3]{2 + \sqrt{5}}}^3 + 3 \cdot \parens{\sqrt[3]{2 + \sqrt{5}}}^2 \cdot \parens{\sqrt[3]{2 - \sqrt{5}}} + 3 \cdot \parens{\sqrt[3]{2 + \sqrt{5}}} \cdot \parens{\sqrt[3]{2 - \sqrt{5}}}^2 + \parens{\sqrt[3]{2 - \sqrt{5}}}^3\\
-            &= 2 + \sqrt{5} + 3\sqrt[3]{9 + 4\sqrt{5}} \cdot \sqrt[3]{2 - \sqrt{5}} + 3\sqrt[3]{9 - 4\sqrt{5}} \cdot \sqrt[3]{2 + \sqrt{5}} + 2 - \sqrt{5}\\
-            &= 2 + \sqrt{5} + 2 - \sqrt{5} + 3\sqrt[3]{\parens{9 + 4\sqrt{5}} \parens{2 - \sqrt{5}}} + 3\sqrt[3]{\parens{9 - 4\sqrt{5}} \parens{2 + \sqrt{5}}}\\
-            &= 4 + 3\sqrt[3]{18 + 8\sqrt{5} - 9\sqrt{5} - 20} + 3\sqrt[3]{18 - 8\sqrt{5} + 9\sqrt{5} - 20}\\
-            &= 4 + 3\sqrt[3]{-2 - \sqrt{5}} + 3\sqrt[3]{-2 + \sqrt{5}}\\
-            &= 4 - 3\sqrt[3]{2 + \sqrt{5}} - 3\sqrt[3]{2 - \sqrt{5}}\\
-            &= 4 - 3 \cdot \parens{\sqrt[3]{2 + \sqrt{5}} + \sqrt[3]{2 - \sqrt{5}}}
-            = 4 - 3A
-    \end{split}\\
-    A^3 = 4 - 3A\\
-    A^3 + 3A - 4 = 0\\
-    (A - 1)\underbrace{\overset{\Delta = 1^2 - 4 \cdot 4 \cdot 1 < 0}{(A^2 + A + 4)}}_{\text{brak pierwiastków}} = 0 \implies A = 1 \in \integer
-\end{gather*}
-Liczba \(A\) jest równa \(1\), czyli jest całkowita.
-\subsubsection*{Zadanie~5.}
-\begin{gather*}
-    \log_{3}{2} = a\\
-    \log_{3}{11} = b\\
-    \log_{33}{12}
-        = \frac{\log_{3}{12}}{\log_{3}{33}}
-        = \frac{\log_{3}{\parens{2 \cdot 2 \cdot 3}}}{\log_{3}{\parens{11 \cdot 3}}}
-        = \frac{\log_{3}{2} + \log_{3}{2} + \log_{3}{3}}{\log_{3}{11} + \log_{3}{3}}
-        = \frac{a + a + 1}{b + 1}
-        = \frac{2a + 1}{b +1}\\
-    \log_{33}{12} = \frac{2a + 1}{b + 1}
-\end{gather*}
-\subsubsection*{Zadanie~6.}
-\begin{gather*}
-    a \equiv 3 \pmod{7}\\
-    a^3 \equiv 3^3 \equiv 27 \equiv 21 + 6 \equiv 7 \cdot 3 + 6 \pmod{7}
-\end{gather*}
-Reszta z~dzielenia sześcianu liczby \(a\) przez \(7\) wynosi \(6\).
-\subsubsection*{Zadanie~7.}
-\begin{gather*}
-    a, b, c \in \real \setminus \set{0}\\
-    a + b + c = 0
-\end{gather*}
-Wprowadźmy oznaczenia na wyrażenia pewnych typów:
-\begin{gather*}
-    S_n = a^n + b^n + c^n\\
-    \text{w~szczególności } S_0 = a^0 + b^0 + c^0 = 1 + 1 + 1 = 3\\
-    \sigma_1 = S_1 = a + b + c = 0\\
-    \sigma_2 = ab + bc + ca\\
-    \sigma_3 = abc
-\end{gather*}
-Wykorzystamy następujący wzór (wzór Girarda-Newtona):
-\begin{gather*}
-    S_{n+3} = S_{n+2}\sigma_1 - S_{n+1}\sigma_2 + S_{n}\sigma_3\\
-    S_3 = S_2\sigma_1 - S_1\sigma_2 + S_0\sigma_3 = S_2 \cdot 0 + 0 \cdot \sigma_2 + 3\sigma_3\\
-    S_3 = 3\sigma_3\\
-    a^3 + b^3 + c^3 = 3abc
-\end{gather*}
-Ponieważ żadna z~liczb \(a, b, c\) nie jest równa \(0\), to \(abc \neq 0\). Możemy teraz przekształcić wyrażenie podane w~zadaniu i~podstawić wyliczoną wartość:
-\begin{gather*}
-    \frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab}
-        = \frac{a^3}{abc} + \frac{b^2}{abc} + \frac{c^2}{abc}
-        = \frac{a^3 + b^3 + c^3}{abc}
-        = \frac{3\cancel{abc}}{\cancel{abc}}
-        = 3
-\end{gather*}
-Wartość tej sumy wynosi \(3\).
-\subsubsection*{Zadanie~8.}
-Aby logarytm z~liczby był zdefiniowany, nie może ona być równa \(0\). Zatem \(a \neq 0 \land b \neq 0\).
-\begin{gather*}
-    \begin{cases}
-        \log_{4}{ab} = 3 \implies \log_{2}{ab} = \frac{\log_{4}{ab}}{\log_{4}{2}} = \frac{3}{\frac{1}{2}} = 6\\
-        \log_{2}{a} - \log_{2}{b} = -2 = \log_{2}{\frac{a}{b}}
-    \end{cases}\\
-    \begin{cases}
-        \log_{2}{ab} = 6\\
-        \log_{2}{\frac{a}{b}} = -2
-    \end{cases}\\
-    \begin{cases}
-        ab = 2^6\\
-        \frac{a}{b} = 2^{-2}
-    \end{cases}
-\end{gather*}
-Ponieważ żadna z~liczb \(a, b\) nie jest równa \(0\), to możemy bezpiecznie przemnożyć równania stronami:
-\begin{gather*}
-    ab \cdot \frac{a}{b} = 2^6 \cdot 2^{-2}\\
-    a^2 = 2^4 = 16\\
-    \begin{cases}
-        a = 4\\
-        b = \frac{64}{a} = 16
-    \end{cases}
-    \lor
-    \begin{cases}
-        a = -4\\
-        b = \frac{64}{a} = -16
-    \end{cases}
-\end{gather*}
-Zatem \((a, b) \in \set{(4, 16), (-4, -16)}\).
-\subsubsection*{Zadanie~9.}
-\begin{gather*}
-    a + b = 100 \qquad 0 \leq a, b \leq 100\\
-    F(a, b) = a^2 + b^2\\
-    b = 100 - a\\
-    f(a) = a^2 + (100 - a)^2 \qquad D = \closed{0}{100}\\
-    f(a) = a^2 + 10000 - 200a + a^2 = 2a^2 - 200a + 10000
-\end{gather*}
-\begin{enumerate}[label={\alph*)}]
-    \item suma kwadratów najmniejsza z~możliwych: współczynnik przy \(a^2\) jest dodatni, więc ramiona paraboli są skierowane w~górę. Oznacza to, że najmniejszą wartość funkcja funkcja \(f\) osiąga dla argumentu \(p = \frac{-b}{2a} = \frac{200}{4} = 50 \in D\) i~wynosi ona \(q = \frac{-\Delta}{4a} = \frac{-(40000 - 80000)}{8} = 5000\), a~\(b = 100 - a\) wynosi wtedy \(50\). Zatem zapis liczby \(100\), o~którym mowa w~treści zadania, to \(100 = 50 + 50\). Suma kwadratów użytych liczb jest minimalna i~wynosi \(5000\).
-    \item suma kwadratów największa z~możliwych: współczynnik przy \(a^2\) jest dodatni, więc ramiona paraboli są skierowane w~górę. Oznacza to, że taka funkcja kwadratowa globalnie nie ma wartości największej, ale może istnieć wartość największa w~dziedzinie \(D\). Dziedzina \(D\) jest dwustronnie domknięta, więc istnieją takie wartości na końcach rozważanego przedziału \(\closed{1}{100}\):
-        \begin{gather*}
-            a = 0 \qquad b = 100 \longrightarrow 100 = 0 + 100 \text{, suma kwadratów użytych liczb wynosi } 10000\\
-            a = 100 \qquad b = 0 \longrightarrow 100 = 100 + 0 \text{, suma kwadratów użytych liczb wynosi } 10000
-        \end{gather*}
-\end{enumerate}
-\subsubsection*{Zadanie~10.}
-Cyfra jedności liczby jest resztą, do której przystaje ta liczba \({} \bmod 10\). Rozważmy reszty \({} \bmod 10\) kolejnych potęg liczby \(2012\):
-\begin{align*}
-    2012 &\equiv 2 \pmod{10}\\
-    2012^2 &\equiv 4 \pmod{10}\\
-    2012^3 &\equiv 8 \pmod{10}\\
-    2012^4 &\equiv 16 \equiv 6 \pmod{10}\\
-    2012^5 &\equiv 12 \equiv 2 \pmod{10}\\
-    2012^6 &\equiv 4 \pmod{10}\\
-    &\vdots
-\end{align*}
-Dalej wszystkie reszty powtarzają się co \(4\) potęgi liczby \(2012\). Jeśli wykładnik jest podzielny przez \(4\), to resztą \({} \bmod 10\), a~zatem ostatnią cyfrą liczby, jest \(6\). Ponieważ \(4 \vert 2012\), to ostatnią cyfrą liczby \(2012^{2012}\) jest \(6\).
+% \subsection*{Zestaw~II (zadania otwarte)}
+% \subsubsection*{Zadanie~1.}
+% Najpierw udowodnijmy, że dla każdej liczby \(n \in \natural\) liczba \(n^3 + 5n\) jest podzielna przez \(2\):
+% \begin{gather*}
+%     n \equiv 0 \pmod{2} \implies n^3 + 5n \equiv 0^3 + 5 \cdot 0 \equiv 0 \pmod{2}\\
+%     n \equiv 1 \pmod{2} \implies n^3 + 5n \equiv 1^3 + 5 \cdot 1 \equiv 6 \equiv 0 \pmod{2}
+% \end{gather*}
+% Udowodnimy też, że dla każdej liczby \(n \in \natural\) liczba \(n^3 + 5n\) jest podzielna przez \(3\):
+% \begin{gather*}
+%     n \equiv 0 \pmod{3} \implies n^3 + 5n \equiv 0^3 + 5 \cdot 0 \equiv 0 \pmod{3}\\
+%     n \equiv 1 \pmod{3} \implies n^3 + 5n \equiv 1^3 + 5 \cdot 1 \equiv 6 \equiv 0 \pmod{3}\\
+%     n \equiv 2 \pmod{3} \implies n^3 + 5n \equiv 2^3 + 5 \cdot 2 \equiv 18 \equiv 0 \pmod{3}
+% \end{gather*}
+% Skoro dla każdego \(n \in \natural\) liczba \(n^3 + 5n\) jest podzielna przez liczby pierwsze \(3\) i~\(2\), to jest też podzielna przez \(3 \cdot 2 = 6\).
+% \qed
+% \subsubsection*{Zadanie~2.}
+% \begin{equation*}
+%     \begin{split}
+%         M &= \frac{1}{\sqrt{1} + \sqrt{4}} + \frac{1}{\sqrt{4} + \sqrt{7}} + \ldots + \frac{1}{\sqrt{97} + \sqrt{100}}\\
+%             &= \frac{\sqrt{1} - \sqrt{4}}{\parens{\sqrt{1} + \sqrt{4}} \parens{\sqrt{1} - \sqrt{4}}} + \frac{\sqrt{4} - \sqrt{7}}{\parens{\sqrt{4} + \sqrt{7}} \parens{\sqrt{4} - \sqrt{7}}} + \ldots + \frac{\sqrt{97} - \sqrt{100}}{\parens{\sqrt{97} + \sqrt{100}} \parens{\sqrt{97} - \sqrt{100}}}\\
+%             &= \frac{\sqrt{1} - \sqrt{4}}{1 - 4} + \frac{\sqrt{4} - \sqrt{7}}{4 - 7} + \ldots + \frac{\sqrt{97} - \sqrt{100}}{97 - 100}\\
+%             &= \frac{\sqrt{1} - \sqrt{4} + \sqrt{4} - \sqrt{7} + \sqrt{7} - \ldots - \sqrt{97} + \sqrt{97} - \sqrt{100}}{-3}\\
+%             &= \frac{\sqrt{1} - \sqrt{100}}{-3}
+%             = \frac{1 - 10}{-3}
+%             = \frac{-9}{-3}
+%             = 3 \in \integer
+%     \end{split}
+% \end{equation*}
+% \qed
+% \subsubsection*{Zadanie~3.}
+% Chcemy pokazać, że
+% \begin{equation*}
+%     \sqrt{\parens{x^2 + 1}^{10} - 1} + \sqrt{\parens{x^2 + 1}^{10} + 1} \leq 2\parens{x^2 + 1}^5
+% \end{equation*}
+% Z~nierówności między średnią arytmetyczną a~średnią kwadratową mamy:
+% \begin{gather*}
+%     \begin{split}
+%         \frac{\sqrt{\parens{x^2 + 1}^{10} - 1} + \sqrt{\parens{x^2 + 1}^{10} + 1}}{2} &\leq \sqrt{\frac{\parens{\sqrt{\parens{x^2 + 1}^{10} - 1}}^2 + \parens{\sqrt{\parens{x^2 + 1}^{10} + 1}}^2}{2}}\\
+%             &= \sqrt{\frac{\parens{x^2 + 1}^{10} - 1 + \parens{x^2 + 1}^{10} + 1}{2}}\\
+%             &= \sqrt{\frac{\cancel{2}\parens{x^2 + 1}^{10}}{\cancel{2}}}\\
+%             &= \parens{x^2 + 1}^5
+%     \end{split}\\
+%     \frac{\sqrt{\parens{x^2 + 1}^{10} - 1} + \sqrt{\parens{x^2 + 1}^{10} + 1}}{2} \leq \parens{x^2 + 1}^5\\
+%     \sqrt{\parens{x^2 + 1}^{10} - 1} + \sqrt{\parens{x^2 + 1}^{10} + 1} \leq 2\parens{x^2 + 1}^5
+% \end{gather*}
+% \qed
+% \subsubsection*{Zadanie~4.}
+% \begin{gather*}
+%     A = \sqrt[3]{2 + \sqrt{5}} + \sqrt[3]{2 - \sqrt{5}}\\
+%     \begin{split}
+%         A^3 &= \parens{\sqrt[3]{2 + \sqrt{5}} + \sqrt[3]{2 - \sqrt{5}}}^3\\
+%             &= \parens{\sqrt[3]{2 + \sqrt{5}}}^3 + 3 \cdot \parens{\sqrt[3]{2 + \sqrt{5}}}^2 \cdot \parens{\sqrt[3]{2 - \sqrt{5}}} + 3 \cdot \parens{\sqrt[3]{2 + \sqrt{5}}} \cdot \parens{\sqrt[3]{2 - \sqrt{5}}}^2 + \parens{\sqrt[3]{2 - \sqrt{5}}}^3\\
+%             &= 2 + \sqrt{5} + 3\sqrt[3]{9 + 4\sqrt{5}} \cdot \sqrt[3]{2 - \sqrt{5}} + 3\sqrt[3]{9 - 4\sqrt{5}} \cdot \sqrt[3]{2 + \sqrt{5}} + 2 - \sqrt{5}\\
+%             &= 2 + \sqrt{5} + 2 - \sqrt{5} + 3\sqrt[3]{\parens{9 + 4\sqrt{5}} \parens{2 - \sqrt{5}}} + 3\sqrt[3]{\parens{9 - 4\sqrt{5}} \parens{2 + \sqrt{5}}}\\
+%             &= 4 + 3\sqrt[3]{18 + 8\sqrt{5} - 9\sqrt{5} - 20} + 3\sqrt[3]{18 - 8\sqrt{5} + 9\sqrt{5} - 20}\\
+%             &= 4 + 3\sqrt[3]{-2 - \sqrt{5}} + 3\sqrt[3]{-2 + \sqrt{5}}\\
+%             &= 4 - 3\sqrt[3]{2 + \sqrt{5}} - 3\sqrt[3]{2 - \sqrt{5}}\\
+%             &= 4 - 3 \cdot \parens{\sqrt[3]{2 + \sqrt{5}} + \sqrt[3]{2 - \sqrt{5}}}
+%             = 4 - 3A
+%     \end{split}\\
+%     A^3 = 4 - 3A\\
+%     A^3 + 3A - 4 = 0\\
+%     (A - 1)\underbrace{\overset{\Delta = 1^2 - 4 \cdot 4 \cdot 1 < 0}{(A^2 + A + 4)}}_{\text{brak pierwiastków}} = 0 \implies A = 1 \in \integer
+% \end{gather*}
+% Liczba \(A\) jest równa \(1\), czyli jest całkowita.
+% \subsubsection*{Zadanie~5.}
+% \begin{gather*}
+%     \log_{3}{2} = a\\
+%     \log_{3}{11} = b\\
+%     \log_{33}{12}
+%         = \frac{\log_{3}{12}}{\log_{3}{33}}
+%         = \frac{\log_{3}{\parens{2 \cdot 2 \cdot 3}}}{\log_{3}{\parens{11 \cdot 3}}}
+%         = \frac{\log_{3}{2} + \log_{3}{2} + \log_{3}{3}}{\log_{3}{11} + \log_{3}{3}}
+%         = \frac{a + a + 1}{b + 1}
+%         = \frac{2a + 1}{b +1}\\
+%     \log_{33}{12} = \frac{2a + 1}{b + 1}
+% \end{gather*}
+% \subsubsection*{Zadanie~6.}
+% \begin{gather*}
+%     a \equiv 3 \pmod{7}\\
+%     a^3 \equiv 3^3 \equiv 27 \equiv 21 + 6 \equiv 7 \cdot 3 + 6 \pmod{7}
+% \end{gather*}
+% Reszta z~dzielenia sześcianu liczby \(a\) przez \(7\) wynosi \(6\).
+% \subsubsection*{Zadanie~7.}
+% \begin{gather*}
+%     a, b, c \in \real \setminus \set{0}\\
+%     a + b + c = 0
+% \end{gather*}
+% Wprowadźmy oznaczenia na wyrażenia pewnych typów:
+% \begin{gather*}
+%     S_n = a^n + b^n + c^n\\
+%     \text{w~szczególności } S_0 = a^0 + b^0 + c^0 = 1 + 1 + 1 = 3\\
+%     \sigma_1 = S_1 = a + b + c = 0\\
+%     \sigma_2 = ab + bc + ca\\
+%     \sigma_3 = abc
+% \end{gather*}
+% Wykorzystamy następujący wzór (wzór Girarda-Newtona):
+% \begin{gather*}
+%     S_{n+3} = S_{n+2}\sigma_1 - S_{n+1}\sigma_2 + S_{n}\sigma_3\\
+%     S_3 = S_2\sigma_1 - S_1\sigma_2 + S_0\sigma_3 = S_2 \cdot 0 + 0 \cdot \sigma_2 + 3\sigma_3\\
+%     S_3 = 3\sigma_3\\
+%     a^3 + b^3 + c^3 = 3abc
+% \end{gather*}
+% Ponieważ żadna z~liczb \(a, b, c\) nie jest równa \(0\), to \(abc \neq 0\). Możemy teraz przekształcić wyrażenie podane w~zadaniu i~podstawić wyliczoną wartość:
+% \begin{gather*}
+%     \frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab}
+%         = \frac{a^3}{abc} + \frac{b^2}{abc} + \frac{c^2}{abc}
+%         = \frac{a^3 + b^3 + c^3}{abc}
+%         = \frac{3\cancel{abc}}{\cancel{abc}}
+%         = 3
+% \end{gather*}
+% Wartość tej sumy wynosi \(3\).
+% \subsubsection*{Zadanie~8.}
+% Aby logarytm z~liczby był zdefiniowany, nie może ona być równa \(0\). Zatem \(a \neq 0 \land b \neq 0\).
+% \begin{gather*}
+%     \begin{cases}
+%         \log_{4}{ab} = 3 \implies \log_{2}{ab} = \frac{\log_{4}{ab}}{\log_{4}{2}} = \frac{3}{\frac{1}{2}} = 6\\
+%         \log_{2}{a} - \log_{2}{b} = -2 = \log_{2}{\frac{a}{b}}
+%     \end{cases}\\
+%     \begin{cases}
+%         \log_{2}{ab} = 6\\
+%         \log_{2}{\frac{a}{b}} = -2
+%     \end{cases}\\
+%     \begin{cases}
+%         ab = 2^6\\
+%         \frac{a}{b} = 2^{-2}
+%     \end{cases}
+% \end{gather*}
+% Ponieważ żadna z~liczb \(a, b\) nie jest równa \(0\), to możemy bezpiecznie przemnożyć równania stronami:
+% \begin{gather*}
+%     ab \cdot \frac{a}{b} = 2^6 \cdot 2^{-2}\\
+%     a^2 = 2^4 = 16\\
+%     \begin{cases}
+%         a = 4\\
+%         b = \frac{64}{a} = 16
+%     \end{cases}
+%     \lor
+%     \begin{cases}
+%         a = -4\\
+%         b = \frac{64}{a} = -16
+%     \end{cases}
+% \end{gather*}
+% Zatem \((a, b) \in \set{(4, 16), (-4, -16)}\).
+% \subsubsection*{Zadanie~9.}
+% \begin{gather*}
+%     a + b = 100 \qquad 0 \leq a, b \leq 100\\
+%     F(a, b) = a^2 + b^2\\
+%     b = 100 - a\\
+%     f(a) = a^2 + (100 - a)^2 \qquad D = \closed{0}{100}\\
+%     f(a) = a^2 + 10000 - 200a + a^2 = 2a^2 - 200a + 10000
+% \end{gather*}
+% \begin{enumerate}[label={\alph*)}]
+%     \item suma kwadratów najmniejsza z~możliwych: współczynnik przy \(a^2\) jest dodatni, więc ramiona paraboli są skierowane w~górę. Oznacza to, że najmniejszą wartość funkcja funkcja \(f\) osiąga dla argumentu \(p = \frac{-b}{2a} = \frac{200}{4} = 50 \in D\) i~wynosi ona \(q = \frac{-\Delta}{4a} = \frac{-(40000 - 80000)}{8} = 5000\), a~\(b = 100 - a\) wynosi wtedy \(50\). Zatem zapis liczby \(100\), o~którym mowa w~treści zadania, to \(100 = 50 + 50\). Suma kwadratów użytych liczb jest minimalna i~wynosi \(5000\).
+%     \item suma kwadratów największa z~możliwych: współczynnik przy \(a^2\) jest dodatni, więc ramiona paraboli są skierowane w~górę. Oznacza to, że taka funkcja kwadratowa globalnie nie ma wartości największej, ale może istnieć wartość największa w~dziedzinie \(D\). Dziedzina \(D\) jest dwustronnie domknięta, więc istnieją takie wartości na końcach rozważanego przedziału \(\closed{1}{100}\):
+%         \begin{gather*}
+%             a = 0 \qquad b = 100 \longrightarrow 100 = 0 + 100 \text{, suma kwadratów użytych liczb wynosi } 10000\\
+%             a = 100 \qquad b = 0 \longrightarrow 100 = 100 + 0 \text{, suma kwadratów użytych liczb wynosi } 10000
+%         \end{gather*}
+% \end{enumerate}
+% \subsubsection*{Zadanie~10.}
+% Cyfra jedności liczby jest resztą, do której przystaje ta liczba \({} \bmod 10\). Rozważmy reszty \({} \bmod 10\) kolejnych potęg liczby \(2012\):
+% \begin{align*}
+%     2012 &\equiv 2 \pmod{10}\\
+%     2012^2 &\equiv 4 \pmod{10}\\
+%     2012^3 &\equiv 8 \pmod{10}\\
+%     2012^4 &\equiv 16 \equiv 6 \pmod{10}\\
+%     2012^5 &\equiv 12 \equiv 2 \pmod{10}\\
+%     2012^6 &\equiv 4 \pmod{10}\\
+%     &\vdots
+% \end{align*}
+% Dalej wszystkie reszty powtarzają się co \(4\) potęgi liczby \(2012\). Jeśli wykładnik jest podzielny przez \(4\), to resztą \({} \bmod 10\), a~zatem ostatnią cyfrą liczby, jest \(6\). Ponieważ \(4 \vert 2012\), to ostatnią cyfrą liczby \(2012^{2012}\) jest \(6\).
 \subsubsection*{Zadanie~1.7.}
 \begin{itemize}
     \item[f)]

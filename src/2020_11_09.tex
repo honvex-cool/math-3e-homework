@@ -1,0 +1,497 @@
+\subsection*{Zestaw XXVIII --- Rachunek różniczkowy (zadania otwarte)}
+\subsubsection*{Zadanie~1.}
+\begin{proofcases}
+    \item \(a\) jest pierwiastkiem wielokrotnym wielomianu \(P\) \(\implies\) \(a\) jest miejscem zerowym pochodnej wielomianu \(P\)\\
+        Zauważmy, że w~tej sytuacji wielomian \(P\) ma postać
+        \begin{equation*}
+            P\pars{x} = \pars{x - a}^kQ\pars{x}
+        \end{equation*}
+        gdzie \(k \in \natural \cup \set{0}\) i~\(k \geq 2\), a~\(Q\) jest pewnym wielomianem niepodzielnym przez dwumian \(\pars{x - a}\). Obliczmy pochodną wielomianu \(P\):
+        \begin{equation*}
+            \begin{split}
+                P'\pars{x}
+                    &= \pars{\pars{x - a}^k}'Q\pars{x} + \pars{x - a}^kQ'\pars{x}
+                    = k\pars{x - a}^{k - 1}Q\pars{x} + \pars{x - a}^kQ'\pars{x}\\
+                    &= \pars{x - a}\underbrace{\pars{k\pars{x - a}^{k - 2}Q\pars{x} + \pars{x - a}^{k - 1}Q'\pars{x}}}_{\text{pewien wielomian}}
+            \end{split}
+        \end{equation*}
+        Skoro \(k \geq 2\), to \(k - 2 \geq 0\) i~\(k - 1 \geq 0\), więc wyrażenie w~drugim nawiasie jest na pewno wielomianem. Widzimy więc, że \(a\) jest miejscem zerowym pochodnej wielomianu \(P\).
+    \item \(a\) jest wspólnym miejscem zerowym wielomianu \(P\) i~pochodnej wielomianu \(P\) \(\implies\) \(a\) jest pierwiastkiem wielokrotnym wielomianu \(P\)\\
+        Skoro \(a\) jest pierwiastkiem wielomianu \(P\), to ma on postać
+        \begin{equation*}
+            P\pars{x} = \pars{x - a}Q\pars{x}
+        \end{equation*}
+        gdzie \(Q\) jest pewnym wielomianem. Obliczmy pochodną wielomianu \(P\):
+        \begin{equation*}
+            P'\pars{x}
+                = \pars{x - a}'Q\pars{x} + \pars{x - a}Q'\pars{x}
+                = Q\pars{x} + \pars{x - a}Q'\pars{x}
+        \end{equation*}
+        Jeśli taki wielomian ma być podzielny przez dwumian \(\pars{x - a}\), to \(Q\) musi być podzielne przez \(\pars{x - a}\) na mocy twierdzenia Bézoute'a. Zatem
+        \begin{equation*}
+            Q\pars{x} = \pars{x - a}R\pars{x}
+        \end{equation*}
+        gdzie \(R\) jest pewnym wielomianem. Oznacza to, że
+        \begin{equation*}
+            P\pars{x}
+                = \pars{x - a}Q\pars{x}
+                = \pars{x - a}\pars{x - a}R\pars{x}
+                = \pars{x - a}^2R\pars{x}
+        \end{equation*}
+        Zatem \(a\) jest pierwiastkiem wielokrotnym wielomianu \(P\).
+\end{proofcases}
+\qed
+\subsubsection*{Zadanie~2.}
+\begin{equation*}
+    \limit[x \to -4] \frac{\abs{x + 4}}{x^2 - 16}
+\end{equation*}
+Obliczmy granice jednostronne:
+\begin{gather*}
+    \limit[x \to -4^-] \frac{\abs{x + 4}}{x^2 - 16}
+        = \indeterminate{\frac{0}{0}}
+        = \limit[x \to -4^-] \frac{-\cancel{\pars{x + 4}}}{\pars{x - 4}\cancel{\pars{x + 4}}}
+        = \limit[x \to -4^-] \frac{-1}{x - 4}
+        = \frac{-1}{-8}
+        = \frac{1}{8}\\
+    \limit[x \to -4^+] \frac{\abs{x + 4}}{x^2 - 16}
+        = \indeterminate{\frac{0}{0}}
+        = \limit[x \to -4^+] \frac{\cancel{\pars{x + 4}}}{\pars{x - 4}\cancel{\pars{x + 4}}}
+        = \limit[x \to -4^+] \frac{1}{x - 4}
+        = \frac{1}{-8}
+        = -\frac{1}{8}
+\end{gather*}
+Granice jednostronne istnieją, ale są różne, więc nie istnieje granica tego wyrażenia w~punkcie \(x_0 = -4\).
+\qed
+\subsubsection*{Zadanie~3.}
+\begin{equation*}
+    f\pars{x}
+        = -\frac{2}{3}x^3 + \frac{1}{2}x^2 - 3x \qquad x \in \real
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    f'\pars{x}
+        = -2x^2 + x - 3
+\end{equation*}
+Zauważmy, że
+\begin{equation*}
+    \Delta = 1^2 - 4 \cdot \pars{-2} \cdot \pars{-3}
+        = 1 - 24
+        = -23
+        < 0
+\end{equation*}
+więc pochodna nie ma miejsc zerowych. Współczynnik przy \(x^2\) w~pochodnej jest ujemny, więc ramiona paraboli są skierowane w~stronę malejących współrzędnych \(y\). Zatem pochodna jest zawsze ujemna, co oznacza, że funkcja \(f\) jest malejąca w~\(\real\).
+\qed
+\subsubsection*{Zadanie~4.}
+\begin{equation*}
+    \limit[x \to 2] \frac{x^3 - 8}{x - 2}
+        = \indeterminate{\frac{0}{0}}
+        = \limit[x \to 2] \frac{\cancel{\pars{x - 2}}\pars{x^2 + 2x + 4}}{\cancel{x - 2}}
+        = \limit[x \to 2] \pars{x^2 + 2x + 4}
+        = 2^2 + 2 \cdot 2 + 4
+        = 4 + 4 + 4
+        = 12
+\end{equation*}
+\qed
+\subsubsection*{Zadanie~5.}
+\begin{equation*}
+    a_n = \frac{kn^2 + 1}{\pars{k - 1}n + 2}
+\end{equation*}
+Stopień licznika jest większy od stopnia mianownika, więc ciąg jest rozbieżny do \(+\infty\) albo do \(-\infty\). Aby był rozbieżny do \(-\infty\), licznik i~mianownik muszą osiągać przeciwne znaki przy \(n\) dążącym do \(+\infty\). Ponieważ \(n\) i~\(n^2\) mogą być dowolnie duże dodatnie, to powyższy warunek sprowadza się do tego, że współczynniki przy \(n^2\) w~liczniku i~przy \(n\) w~mianowniku będą przeciwnych znaków:
+\begin{proofcases}
+    \item \(k < 0 \land k - 1 > 0\): niemożliwe
+    \item \(k > 0 \land k - 1 < 0 \implies 0 < k < 1\)
+\end{proofcases}
+Zatem, aby ciąg \(a_n\) był rozbieżny do \(-\infty\), musi zachodzić
+\begin{equation*}
+    k \in \open{0}{1}
+\end{equation*}
+\subsubsection*{Zadanie~6.}
+Oznaczmy pierwszy ze składników przez \(a\). Wtedy drugi składnik jest równy \(10 - a\). Zdefiniujmy funkcję sumy sześcianów tych składników:
+\begin{equation*}
+    s\pars{a}
+        = a^3 + \pars{10 - a}^3
+        = a^3 + 1000 - 300a + 30a^2 - a^3
+        = 30a^2 - 300a + 1000 \qquad a \in \real
+\end{equation*}
+Współczynnik przy \(a^2\) jest dodatni, więc ramiona paraboli tej funkcji kwadratowej są skierowane w~stronę rosnących współrzędnych \(y\). Zatem funkcja przyjmuje wartość najmniejszą dla argumentu
+\begin{equation*}
+    \frac{-\pars{-300}}{2 \cdot 30}
+        = \frac{300}{60}
+        = 5
+\end{equation*}
+i~wynosi ona
+\begin{equation*}
+    \frac{-\Delta}{4 \cdot 30}
+        = \frac{-\pars{\pars{-300}^2 - 4 \cdot 30 \cdot 1000}}{120}
+        = \frac{-\pars{90000 - 120000}}{120}
+        = \frac{30000}{120}
+        = 250
+\end{equation*}
+Zatem optymalne \(a\) to \(5\), więc poszukiwane składniki to \(5\) i~\(10 - 5 = 5\). Suma ich sześcianów wynosi \(250\).
+\begin{equation*}
+    10 = 5 + 5
+\end{equation*}
+\subsubsection*{Zadanie~7.}
+\begin{equation*}
+    f\pars{x}
+        = ax^3 + x^2 + x + b \qquad x \in \real
+\end{equation*}
+Obliczmy pochodną tej funkcji, aby zbadać jej monotoniczność i~ekstrema:
+\begin{equation*}
+    f'\pars{x}
+        = 3ax^2 + 2x + 1
+\end{equation*}
+Rozważmy dwa przypadki:
+\begin{proofcases}
+    \item \(a = 0\)\\
+        Wtedy pochodna jest funkcją liniową \(f'\pars{x} = 2x + 1\). Przyjmuje ona wartość \(0\) dla \(x = -\frac{1}{2}\). Wykres pochodnej wygląda następująco:
+        \begin{equation*}
+            \begin{tikzpicture}
+                \drawvec (-2, 0) -- (2, 0) node[below]{\(x\)};
+                \draw[thick] (-1.5, -1.5) -- (1.5, 1.5);
+                \fillpoint*{0, 0}[\(-\frac{1}{2}\)][below right];
+            \end{tikzpicture}
+        \end{equation*}
+        Pochodna jest ujemna w~przedziale \(\open{-\infty}{-\frac{1}{2}}\), dla \(x = -\frac{1}{2}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{-\frac{1}{2}}{+\infty}\) jest dodatnia. Oznacza to, że funkcja \(f\) jest malejąca w~przedziale \(\open{-\infty}{-\frac{1}{2}}\) i~rosnąca w~przedziale \(\open{-\frac{1}{2}}{+\infty}\), więc dla \(x = -\frac{1}{2}\) przyjmuje minimum lokalne, które jest zarazem wartością najmniejszą:
+            \begin{equation*}
+                f\pars{-\frac{1}{2}}
+                    = \frac{1}{4} - \frac{1}{2} + b
+                    = b - \frac{1}{4}
+            \end{equation*}
+    \item \(a \neq 0\)\\
+        Wtedy pochodna jest funkcją kwadratową \(f\pars{x} = 3ax^2 + 2x + 1\). Aby pochodna zmieniała znak, czyli istniało ekstremum funkcji, muszą istnieć dwa pierwiastki paraboli. Zatem \(\Delta\) musi być dodatnia:
+        \begin{gather*}
+            \Delta
+                = 2^2 - 4 \cdot 3a \cdot 1
+                = 4 - 12a\\
+            4 - 12a > 0\\
+            a < \frac{1}{3}
+        \end{gather*}
+        Gdy ten warunek jest spełniony, czyli gdy \(a \in \open{-\infty}{0} \cup \open{0}{\frac{1}{3}}\) istnieją dwa ekstrema. Jeśli natomiast \(a \in \leftclosed{\frac{1}{3}}{+\infty}\), to funkcja nie ma ekstremów.
+\end{proofcases}
+Ostatecznie mamy zatem
+\begin{description}
+    \item[\(0\) ekstremów] \(\iff a \in \leftclosed{\frac{1}{3}}{+\infty}\)
+    \item[\(1\) ekstremum] \(\iff a = 0\)
+    \item[\(2\) ekstrema] \(\iff a \in \open{-\infty}{0} \cup \open{0}{\frac{1}{3}}\)
+\end{description}
+Liczba ekstremów nie zależy od \(b\).
+\subsubsection*{Zadanie~8.}
+\begin{equation*}
+    f\pars{x}
+        = \frac{x^2 + 1}{\underbrace{x^2 + x + 1}_{\Delta = 1 - 4 = -3 < 0 \implies \text{brak pierwiastków}}} \qquad x \in \real
+\end{equation*}
+Zauważmy, że
+\begin{equation*}
+    \limit[x \to \pm\infty] f\pars{x}
+        = \limit[x \to \pm\infty] \frac{x^2 + 1}{x^2 + x + 1}
+        = 1
+\end{equation*}
+Obliczmy pochodną, aby zbadać monotniczność i~ekstrema funkcji:
+\begin{equation*}
+    \begin{split}
+        f'\pars{x}
+            &= \frac{\pars{x^2 + 1}'\pars{x^2 + x + 1} - \pars{x^2 + 1}\pars{x^2 + x + 1}'}{\pars{x^2 + x + 1}^2}
+            = \frac{2x\pars{x^2 + x + 1} - \pars{x^2 + 1}\pars{2x + 1}}{\pars{x^2 + x + 1}^2}\\
+            &= \frac{2x^3 + 2x^2 + 2x - 2x^3 - x^2 - 2x - 1}{\pars{x^2 + x + 1}^2}
+            = \frac{x^2 - 1}{\pars{x^2 + x + 1}^2}
+            = \frac{\pars{x + 1}\pars{x - 1}}{\pars{x^2 + x + 1}^2}
+    \end{split}
+\end{equation*}
+Mianownik jest zawsze dodatni, więc znak pochodnej zależy tylko od licznika. Zatem wykres znaku pochodnej wygląda następująco:
+\begin{gather*}
+    \upparabola{-1}{1}\\
+    \tag{\(1\)} \forall x \in \open{-\infty}{-1}\colon f'\pars{x} > 0 \label{2020_11_09:8:first_increase}\\
+    \tag{\(2\)} f'\pars{-1} = 0 \label{2020_11_09:8:first_zero}\\
+    \tag{\(3\)} \forall x \in \open{-1}{1}\colon f'\pars{x} < 0 \label{2020_11_09:8:decrease}\\
+    \tag{\(4\)} f'\pars{1} = 0 \label{2020_11_09:8:second_zero}\\
+    \tag{\(5\)} \forall x \in \open{1}{+\infty}\colon f'\pars{x} > 0 \label{2020_11_09:8:second_increase}
+\end{gather*}
+Oznacza to, że
+\begin{description}
+    \item \(\mbox{(\ref{2020_11_09:8:first_increase})} \implies\) funkcja \(f\) jest rosnąca w~przedziale \(\open{-\infty}{-1}\)
+    \item \(\mbox{(\ref{2020_11_09:8:first_increase})} \land \mbox{(\ref{2020_11_09:8:first_zero})} \land \mbox{(\ref{2020_11_09:8:decrease})} \implies\) funkcja \(f\) przyjmuje maksimum lokalne dla \(x = -1\)
+        \begin{equation*}
+            f\pars{1} = 2
+        \end{equation*}
+    \item \(\mbox{(\ref{2020_11_09:8:decrease})} \implies\) funkcja \(f\) jest malejąca w~przedziale \(\open{-1}{1}\)
+    \item \(\mbox{(\ref{2020_11_09:8:decrease})} \land \mbox{(\ref{2020_11_09:8:second_zero})} \land \mbox{(\ref{2020_11_09:8:second_increase})} \implies\) funkcja \(f\) przyjmuje maksimum lokalne dla \(x = 1\)
+        \begin{equation*}
+            f\pars{1} = \frac{2}{3}
+        \end{equation*}
+    \item \(\mbox{(\ref{2020_11_09:8:second_increase})} \implies\) funkcja \(f\) jest rosnąca w~przedziale \(\open{1}{+\infty}\)
+\end{description}
+Zatem wykres funkcji wygląda następująco:
+\begin{mathfigure*}
+    \drawcoordsystem{-8, -1}{8, 3};
+    \draw[domain=-8:8, smooth, samples=90, ForestGreen, thick] plot (\x, {(\x*\x + 1)/(\x*\x + \x + 1)});
+    \fillpoint*{-1, 2}[\(\pars{-1; 2}\)][above];
+    \fillpoint*{1, 2/3}[\(\pars{1; \frac{2}{3}}\)][above];
+\end{mathfigure*}
+Zatem zbiór wartości funkcji \(f\) jest następujący:
+\begin{equation*}
+    \set{f\pars{x} : x \in \real} = \closed{\frac{2}{3}}{2}
+\end{equation*}
+\subsubsection*{Zadanie~9.}
+\begin{gather*}
+    a_n = \frac{\pars{n + 1}! - n!}{\pars{n + 1}! + n!}\\
+    \limit a_n
+        = \limit \frac{\pars{n + 1}! - n!}{\pars{n + 1}! + n!}
+        = \limit \frac{n! \cdot \pars{n + 1} - n!}{n! \cdot \pars{n + 1} + n!}
+        = \limit \frac{\cancel{n!}\pars{n + 1 - 1}}{\cancel{n!}\pars{n + 1 + 1}}
+        = \limit \frac{n}{n + 2}
+        = 1
+\end{gather*}
+\subsubsection*{Zadanie~10.}
+\begin{gather*}
+    f\pars{x} = \begin{cases}
+        x^2 - 3 &\iff x \leq 2\\
+        \frac{1}{2}x &\iff x > 2
+    \end{cases}\\
+    x \in \real\\
+    x_0 = 2
+\end{gather*}
+Zacznijmy od zbadania ciągłości. Aby funkcja była ciągła w~punkcie \(x_0 = 2\), muszą istnieć obydwie granice jednostronne w~tym punkcie i~muszą być równe wartości funkcji w~tym punkcie. Sprawdźmy to zatem:
+\begin{gather*}
+    \limit[x \to 2^-] f\pars{x}
+        = \limit[x \to 2^-] \pars{x^2 - 3}
+        = 2^2 - 3
+        = 4 - 3
+        = 1\\
+    \limit[x \to 2^+] f\pars{x}
+        = \limit[x \to 2^+] \frac{1}{2}x
+        = \frac{1}{2} \cdot 2
+        = 1\\
+    f\pars{2}
+        = 2^2 - 3
+        = 4 - 3
+        = 1\\
+    \limit[x \to 2^-] f\pars{x} = f\pars{2} = \limit[x \to 2^+] f\pars{2}
+\end{gather*}
+Zatem funkcja \(f\) jest ciągła w~punkcie \(x_0 = 2\). Teraz za pomocą definicji pochodnej zbadajmy, czy jest w~tym punkcie różniczkowalna. W~tym celu sprawdzimy, czy istnieją obydwie granice jednostronne ilorazów różnicowych funkcji w~tym punkcie i~czy są one sobie równe:
+\begin{gather*}
+    \limit[x \to 2^-] \frac{f\pars{x} - f\pars{2}}{x - 2}
+        = \limit[x \to 2^-] \frac{x^2 - 3 - 1}{x - 2}
+        = \limit[x \to 2^-] \frac{x^2 - 4}{x - 2}
+        = \indeterminate{\frac{0}{0}}
+        = \limit[x \to 2^-] \frac{\cancel{\pars{x - 2}}\pars{x + 2}}{\cancel{x - 2}}
+        = \limit[x \to 2^-] \pars{x + 2}
+        = 4\\
+    \limit[x \to 2^+] \frac{f\pars{x} - f\pars{2}}{x - 2}
+        = \limit[x \to 2^+] \frac{\frac{1}{2}x - 1}{x - 2}
+        = \indeterminate{\frac{0}{0}}
+        = \limit[x \to 2^+] \frac{\frac{1}{2}\cancel{\pars{x - 2}}}{\cancel{x - 2}}
+        = \frac{1}{2} \neq 4
+\end{gather*}
+Pochodne lewostronna i~prawostronna są różne, więc funkcja \(f\) nie posiada pochodnej w~punkcie \(x_0 = 2\).
+\subsubsection*{Zadanie~11.}
+\begin{equation*}
+    f\pars{x}
+        = \frac{\pars{x + 1}^2}{x - 1} + 1 \qquad x \in \real \setminus \set{1}
+\end{equation*}
+Aby zbadać monotoniczność i~ekstrema, obliczmy pochodną tej funkcji:
+\begin{equation*}
+    \begin{split}
+        f'\pars{x}
+            &= \frac{\pars{\pars{x + 1}^2}'\pars{x - 1} - \pars{x + 1}^2\pars{x - 1}'}{\pars{x - 1}^2}
+            = \frac{2\pars{x + 1}\pars{x - 1} - x^2 - 2x - 1}{\pars{x - 1}^2}
+            = \frac{2x^2 - 2 - x^2 - 2x - 1}{\pars{x - 1}^2}\\
+            &= \frac{x^2 - 2x - 3}{\pars{x - 1}^2}
+            = \frac{\pars{x + 1}\pars{x - 3}}{\pars{x - 1}^2}
+    \end{split}
+\end{equation*}
+Mianownik jest zawsze dodatni, więc znak pochodnej zależy tylko od licznika. Zatem wykres znaku pochodnej wygląda następująco:
+\begin{gather*}
+    \begin{tikzpicture}
+        \drawupparabola{-1}{3};
+        \drawpoint*{0, -1}[\(x = 1\) poza dziedziną][below];
+    \end{tikzpicture}\\
+    \tag{\(1\)} \forall x \in \open{-\infty}{-1}\colon f'\pars{x} > 0 \label{2020_11_09:11:first_increase}\\
+    \tag{\(2\)} f'\pars{-1} = 0 \label{2020_11_09:11:first_zero}\\
+    \tag{\(3\)} \forall x \in \open{-1}{1} \cup \open{1}{3}\colon f'\pars{x} < 0 \label{2020_11_09:11:decrease}\\
+    \tag{\(4\)} f'\pars{3} = 0 \label{2020_11_09:11:second_zero}\\
+    \tag{\(5\)} \forall x \in \open{3}{+\infty}\colon f'\pars{x} > 0 \label{2020_11_09:11:second_increase}
+\end{gather*}
+Oznacza to, że:
+\begin{description}
+    \item \(\mbox{(\ref{2020_11_09:11:first_increase})} \implies\) funkcja \(f\) jest rosnąca w~przedziale \(\open{-\infty}{-1}\)
+    \item \(\mbox{(\ref{2020_11_09:11:first_increase})} \land \mbox{(\ref{2020_11_09:11:first_zero})} \land \mbox{(\ref{2020_11_09:11:decrease})} \implies\) funkcja \(f\) osiąga dla \(x = -1\) maksimum lokalne:
+        \begin{equation*}
+            f\pars{-1}
+                = \frac{\pars{-1 + 1}^2}{-1 - 1} + 1
+                = 0 + 1
+                = 1
+        \end{equation*}
+    \item \(\mbox{(\ref{2020_11_09:11:decrease})} \implies\) funkcja \(f\) jest malejąca w~przedziałach \(\open{-1}{1}\) i~\(\open{1}{3}\)
+    \item \(\mbox{(\ref{2020_11_09:11:decrease})} \land \mbox{(\ref{2020_11_09:11:second_zero})} \land \mbox{(\ref{2020_11_09:11:second_increase})} \implies\) funkcja \(f\) osiąga dla \(x = 3\) minimum lokalne:
+        \begin{equation*}
+            f\pars{3}
+                = \frac{\pars{3 + 1}^2}{3 - 1} + 1
+                = \frac{16}{2} + 1
+                = 9
+        \end{equation*}
+    \item \(\mbox{(\ref{2020_11_09:11:second_increase})} \implies\) funkcja \(f\) jest rosnąca w~przedziale \(\open{3}{+\infty}\)
+\end{description}
+\subsubsection*{Zadanie~12.}
+W~rozwiązaniu tego zadania wszystkie wymiary będziemy podawać odpowiednio w~\(\m\) i~\(\m^2\). Oznaczmy przez \(a\) i~\(b\) przyprostokątne takiego trójkąta prostokątnego, a~przez \(c\) jego przyprostokątną. Wiemy, że
+\begin{gather*}
+    a + b + c = 1\\
+    c = 1 - a - b
+\end{gather*}
+Z~twierdzenia Pitagorasa mamy:
+\begin{gather*}
+    a^2 + b^2 = c^2\\
+    a^2 + b^2 = \pars{1 - a - b}^2\\
+    a^2 + b^2 = 1 + a^2 + b^2 - 2a - 2b + 2ab\\
+    1 + 2ab - 2a - 2b = 0\\
+    2a - 2ab = 1 - 2b\\
+    2a\pars{1 - b} = 1 - 2b\\
+    a = \frac{1 - 2b}{2\pars{1 - b}} = \frac{1 - 2b}{2 - 2b}
+\end{gather*}
+Zdefiniujmy funkcję pola powierzchni takiego trójkąta w~zależności od \(b\):
+\begin{equation*}
+    S\pars{b}
+        = \frac{1}{2}ab
+        = \frac{1}{2} \cdot \frac{1 - 2b}{2 - 2b} \cdot b
+        = \frac{1}{2} \cdot \frac{b - 2b^2}{2 - 2b} \qquad b \in \open{0}{\frac{1}{2}}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    \begin{split}
+        S'\pars{b}
+            &= \frac{1}{2} \cdot \frac{\pars{b - 2b^2}'\pars{2 - 2b} - \pars{b - 2b^2}\pars{2 - 2b}'}{\pars{2 - 2b}^2}
+            = \frac{1}{2} \cdot \frac{\pars{1 - 4b}\pars{2 - 2b} + 2b - 4b^2}{\pars{2 - 2b}^2}
+            = \frac{1}{2} \cdot \frac{2 - 10b + 8b^2 + 2b - 4b^2}{\pars{2 - 2b}^2}\\
+            &= \frac{1}{2} \cdot \frac{4b^2 - 8b + 2}{\pars{2 - 2b}^2}
+            = \frac{2b^2 - 4b + 1}{\pars{2 - 2b}^2}
+    \end{split}
+\end{equation*}
+Mianownik jest zawsze dodatni, więc znak pochodnej zależy tylko od licznika. Zbadajmy jego pierwiastki:
+\begin{gather*}
+    2b^2 - 4b + 1 = 0\\
+    \Delta
+        = \pars{-4}^2 - 4 \cdot 2 \cdot 1
+        = 16 - 8
+        = 8\\
+    \sqrt{\Delta}
+        = 2\sqrt{2}\\
+    b_1
+        = \frac{-\pars{-4} - \sqrt{\Delta}}{2 \cdot 2}
+        = \frac{4 - 2\sqrt{2}}{4}
+        = \frac{2 - \sqrt{2}}{2} \in \open{0}{\frac{1}{2}}\\
+    b_2
+        = \frac{-\pars{-4} + \sqrt{\Delta}}{2 \cdot 2}
+        = \frac{4 + 2\sqrt{2}}{4}
+        = \frac{2 + \sqrt{2}}{2} > \frac{1}{2}\\
+    \upparabola{\frac{2 - \sqrt{2}}{2}}{\frac{2 + \sqrt{2}}{2}}
+\end{gather*}
+Interesuje nas tylko przedział \(\open{0}{\frac{1}{2}}\). W~przedziale \(\open{0}{\frac{2 - \sqrt{2}}{2}}\) pochodna jest dodatnia, dla \(b = \frac{2 - \sqrt{2}}{2}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{\frac{2 - \sqrt{2}}{2}}{\frac{1}{2}}\) jest ujemna. Oznacza to, że funkcja \(S\) jest rosnąca w~przedziale \(\open{0}{\frac{2 - \sqrt{2}}{2}}\) i~malejąca w~przedziale \(\open{\frac{2 - \sqrt{2}}{2}}{\frac{1}{2}}\), więc dla \(b = \frac{2 - \sqrt{2}}{2}\) przyjmuje globalną wartość najmniejszą:
+\begin{equation*}
+    S\pars{\frac{2 - \sqrt{2}}{2}}
+        = \frac{1}{2} \cdot \frac{\frac{2 - \sqrt{2}}{2} - 2\pars{\frac{2 - \sqrt{2}}{2}}^2}{2 - 2 \cdot \frac{2 - \sqrt{2}}{2}}
+        = \frac{1}{2} \cdot \frac{\frac{2 - \sqrt{2}}{2} - 2 \cdot \frac{6 - 4\sqrt{2}}{4}}{2 - \pars{2 - \sqrt{2}}}
+        = \frac{1}{2} \cdot \frac{\frac{2 - \sqrt{2} - 6 + 4\sqrt{2}}{2}}{\sqrt{2}}
+        = \frac{3\sqrt{2} - 4}{4\sqrt{2}}
+        = \frac{6 - 4\sqrt{2}}{8}
+        = \frac{3 - 2\sqrt{2}}{4}
+\end{equation*}
+Wtedy
+\begin{gather*}
+    b = \frac{2 - \sqrt{2}}{2}\\
+    a
+        = \frac{1 - 2b}{2 - 2b}
+        = \frac{1 - 2 + \sqrt{2}}{2 - 2 + \sqrt{2}}
+        = \frac{\sqrt{2} - 1}{\sqrt{2}}
+        = \frac{2 - \sqrt{2}}{2}\\
+    c
+        = 1 - a - b
+        = 1 - 2 \cdot \frac{2 - \sqrt{2}}{2}
+        = 1 - 2 + \sqrt{2}
+        = \sqrt{2} - 1
+\end{gather*}
+Długości boków optymalnego trójkąta to \(\frac{2 - \sqrt{2}}{2}\m\), \(\frac{2 - \sqrt{2}}{2}\m\) i~\(\pars{\sqrt{2} - 1}\m\). Jego pole wynosi \(\frac{3 - 2\sqrt{2}}{4}\m^2\).
+\subsubsection*{Zadanie~13.}
+\begin{gather*}
+    y\pars{x} = \frac{1}{2}x^2 \qquad x \in \real\\
+    P = \pars{4; 1}
+\end{gather*}
+Odległości zawsze są dodatnie, więc, aby zminimalizować odległość, możemy równoważnie minimalizować kwadrat odległości. Jeśli punkt \(M\) leży na danej paraboli, to ma współrzędne \(\pars{x; \frac{1}{2}x^2}\). W~kartezjańskim układzie współrzędnych możemy wyznaczyć kwadrat odległości za pomocą twierdzenia Pitagorasa. Zdefiniujmy więc funkcję kwadratu odległości punktu \(M\) od punktu \(P\) w~zależności od \(x\):
+\begin{equation*}
+    D\pars{x}
+        = \pars{x - 4}^2 + \pars{\frac{1}{2}x^2 - 1}^2
+        = x^2 - 8x + 16 + \frac{1}{4}x^4 - x^2 + 1
+        = \frac{1}{4}x^4 - 8x + 17 \qquad x \in \real
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    D'\pars{x}
+        = x^3 - 8
+        = \pars{x - 2}\overbrace{\pars{x^2 + 2x + 2}}^{\Delta < 0 \implies \text{brak pierwiastków}}
+\end{equation*}
+Wykres znaku pochodnej wygląda następująco:
+\begin{equation*}
+    \begin{tikzpicture}
+        \drawvec (-2, 0) -- (2, 0) node[below]{\(x\)};
+        \draw[thick] (-1.5, -1.5) -- (1.5, 1.5);
+        \fillpoint*{0, 0}[\(2\)][below right];
+    \end{tikzpicture}
+\end{equation*}
+Pochodna jest ujemna w~przedziale \(\open{-\infty}{2}\), dla \(x = 2\) przyjmuje wartość \(0\), a~w~przedziale \(\open{2}{+\infty}\) jest dodatnia. Oznacza to, że funkcja \(D\) jest malejąca w~przedziale \(\open{-\infty}{2}\) i~rosnąca w~przedziale \(\open{2}{+\infty}\), więc dla \(x = 2\) osiąga globalną wartość najmniejszą:
+\begin{equation*}
+    D_\p{min}
+        = D\pars{2}
+        = \frac{1}{4} \cdot 2^4 - 8 \cdot 2 + 17
+        = 4 - 16 + 17
+        = 5
+\end{equation*}
+Aby obliczyć drugą współrzędną punktu, podstawiamy \(x\) do równania paraboli:
+\begin{equation*}
+    y\pars{2}
+        = \frac{1}{2} \cdot 2^2
+        = 2
+\end{equation*}
+Zatem punkt leżący na paraboli o~równaniu \(y = \frac{1}{2}x^2\) najmniej oddalony od punktu \(P = \pars{4; 1}\) to
+\begin{equation*}
+    M = \pars{2; 2}
+\end{equation*}
+Jego odległość od \(P\) wynosi \(\sqrt{5}\).
+\subsubsection*{Zadanie~14.}
+W~rozwiązaniu tego zadania wszystkie wymiary będziemy podawać w~odpowiednio \(\m\), \(\m^2\) i~\(\m^3\). Oznaczmy przez \(r\) promień podstawy walca. Pole powierzchni całkowitej walca wyraża się wzorem
+\begin{gather*}
+    S = 2\pi r^2 + 2\pi rh = 2\pi r\pars{r + h}\\
+    120\pi = 2\pi r\pars{r + h}\\
+    h = \frac{60}{r} - r
+\end{gather*}
+gdzie \(h\) to wysokość walca. Zdefiniujmy funkcję objętości takiego walca w~zależności od \(r\):
+\begin{equation*}
+    V\pars{r}
+        = \pi r^2h
+        = \pi r^2\pars{\frac{60}{r} - r}
+        = \pi\pars{60r - r^3} \qquad r \in \open{0}{2\sqrt{15}}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    V'\pars{r}
+        = \pi\pars{60 - 3r^2}
+        = 3\pi\pars{20 - r^2}
+        = 3\pi\pars{2\sqrt{5} + r}\pars{2\sqrt{5} - r}
+\end{equation*}
+Szkic wykresu pochodnej wygląda następująco:
+\begin{equation*}
+    \downparabola{-2\sqrt{5}}{2\sqrt{5}}[\(r\)]
+\end{equation*}
+Interesuje nas tylko przedział \(\open{0}{2\sqrt{15}}\). Pochodna jest dodatnia w~przedziale \(\open{0}{2\sqrt{5}}\), dla \(r = 2\sqrt{5}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{2\sqrt{5}}{2\sqrt{15}}\) jest ujemna. Oznacza to, że funkcja \(V\) jest rosnąca w~przedziale \(\open{0}{2\sqrt{5}}\) i~malejąca w~przedziale \(\open{2\sqrt{5}}{2\sqrt{15}}\), więc dla \(r = 2\sqrt{5}\) osiąga globalną wartość największą:
+\begin{equation*}
+    V\pars{2\sqrt{5}}
+        = \pi\pars{60 \cdot 2\sqrt{5} - \pars{2\sqrt{5}}^3}
+        = \pi\pars{120\sqrt{5} - 40\sqrt{5}}
+        = 80\pi\sqrt{5}
+\end{equation*}
+Wtedy
+\begin{equation*}
+    h
+        = \frac{60}{2\sqrt{5}} - 2\sqrt{5}
+        = 6\sqrt{5} - 2\sqrt{5}
+        = 4\sqrt{5}
+\end{equation*}
+Zatem optymalna pod względem objętości puszka osiągająca objętość \(80\pi\sqrt{5}\cm^3\) ma promień podstawy równy \(r = 2\sqrt{5}\cm\) i~wysokość równą \(h = 4\sqrt{5}\cm\).

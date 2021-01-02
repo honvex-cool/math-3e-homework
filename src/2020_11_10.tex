@@ -1,0 +1,428 @@
+\subsection*{Pochodne --- powtórzenie}
+\subsubsection*{Zadanie~1.}
+Styczne są równoległe wtedy i~tylko wtedy, gdy ich współczynniki kierunkowe są równe. Szukamy więc wartości \(x\), dla których pochodne funkcji
+\begin{gather*}
+    f\pars{x} = x^2 \qquad x \in \real\\
+    g\pars{x} = x^3 \qquad x \in \real
+\end{gather*}
+są równe.
+\begin{gather*}
+    f'\pars{x} = 2x\\
+    g'\pars{x} = 3x^2\\
+    2x = 3x^2\\
+    3x^2 - 2x = 0\\
+    x\pars{3x - 2} = 0\\
+    x = 0 \wlor x = \frac{2}{3}
+\end{gather*}
+Styczne do wykresów tych funkcji są równoległe dla
+\begin{equation*}
+    x \in \set{0, \frac{2}{3}}
+\end{equation*}
+\subsubsection*{Zadanie~2.}
+\begin{equation*}
+    f\pars{x} = \frac{1}{x^2} \qquad x \in \real \setminus \set{0}
+\end{equation*}
+Szukamy takiego \(x_0\), że styczna do wykresu w~punkcie \(\pars{x_0; f\pars{x_0}}\) razem z~osiami układu współrzędnych wyznaczy trójkąt o~polu \(\frac{9}{8}\). Funkcja jest parzysta, więc jeśli znajdziemy rozwiązanie \(x_0 > 0\), to \(-x_0\) również będzie rozwiązaniem. Opisany w~zadaniu trójkąt będzie na pewno prostokątny, ponieważ osie układu współrzędnych są do siebie prostopadłe. Interesuje nas zatem miejsce zerowe funkcji liniowej reprezentującej styczną (aby wyznaczyć punkt \(A\)) oraz wartość tej funkcji dla argumentu \(0\) (aby wyznaczyć punkt \(B\)):
+\begin{mathfigure*}
+    \drawcoordsystem{-8, -1}{8, 7};
+    \draw[domain=-8:-0.378, smooth, samples=50, thick, ForestGreen] plot (\x, {1/(\x*\x)});
+    \draw[domain=0.378:8, smooth, samples=50, thick, ForestGreen] plot (\x, {1/(\x*\x)}) node[above left]{\(y = \frac{1}{x^2}\)};
+    \draw[domain=-2:2, smooth, red, thick] plot (\x, {-2*\x +3});
+    \fillpoint*{1.5, 0}[\(A\)][below];
+    \fillpoint{1, 1};
+    \fillpoint*{0, 3}[\(B\)][below left];
+\end{mathfigure*}
+\noindent
+Prosta styczna do wykresu funkcji \(f\pars{x}\) w~punkcie \(T = \pars{x_0, f\pars{x_0}}\) ma wzór
+\begin{equation*}
+    t\pars{x}
+        = f'\pars{x_0}\pars{x - x_0} + f\pars{x_0}
+        = f'\pars{x_0}x + f\pars{x_0} - x_0f'\pars{x_0}
+\end{equation*}
+gdzie \(f'\) jest pochodną funkcji \(f\):
+\begin{equation*}
+    f'\pars{x}
+        = \frac{-2}{x^3}
+\end{equation*}
+Miejscem zerowym funkcji \(t\) jest \(\frac{x_0f'\pars{x_0} - f\pars{x_0}}{f'\pars{x_0}}\), ponieważ pochodna nigdy się nie zeruje. Natomiast \(t\pars{0} = f\pars{x_0} - x_0f'\pars{x_0}\). Pole trójkąta wynosi zatem
+\begin{gather*}
+    S
+        = \frac{1}{2} \cdot \frac{x_0f'\pars{x_0} - f\pars{x_0}}{f'\pars{x_0}} \cdot \pars{f\pars{x_0} - x_0f'\pars{x_0}}
+        = \frac{1}{2} \cdot \frac{x_0 \cdot \frac{-2}{x_0^3} - \frac{1}{x_0^2}}{\frac{-2}{x_0^3}} \cdot \pars{\frac{1}{x_0^2} - x_0 \cdot \frac{-2}{x_0^3}}
+        = \frac{1}{2} \cdot \frac{-\frac{3}{x_0^2}}{\frac{-2}{x_0^3}} \cdot \frac{3}{x_0^2}
+        = \frac{9}{4x_0}\\
+    \frac{9}{8} = \frac{9}{4x_0}\\
+    \frac{1}{8} = \frac{1}{4x_0}\\
+    x_0 = 2
+\end{gather*}
+Zatem styczną można poprowadzić przez punkty:
+\begin{gather*}
+    T_1 = \pars{2, \frac{1}{4}}\\
+    T_2 = \pars{-2, \frac{1}{4}}
+\end{gather*}
+\subsubsection*{Zadanie~3.}
+\begin{gather*}
+    m \in \real\\
+    \frac{4x^2 - 3x - 1}{4x^2 + 1} = m \qquad x \in \real\\
+    4x^2 - 3x - 1 = 4mx^2 + m\\
+    4\pars{1 - m}x^2 - 3x - \pars{1 + m} = 0\\
+\end{gather*}
+Jeśli \(m = 1\), to jest to równanie liniowe o~niezerowym współczynniku przy \(x\), zatem ma dokładnie jedno rozwiązanie. Jeśli \(m \neq 0\), to jest to równanie kwadratowe.
+\begin{gather*}
+    \Delta
+        = \pars{-3}^2 - 4 \cdot 4\pars{1 - m} \cdot \pars{-\pars{1 + m}}
+        = 9 + 16\pars{1 - m^2}
+        = 25 - 16m^2
+\end{gather*}
+Przyrównujemy \(\Delta\) do \(0\):
+\begin{gather*}
+    25 - 16m^2 = 0\\
+    16 m^2 = 25\\
+    m = \pm\frac{5}{4}\\
+    \downparabola{-\frac{5}{4}}{\frac{5}{4}}
+\end{gather*}
+Gdy \(\Delta > 0\) równanie kwadratowe ma dwa rozwiązania, gdy \(\Delta = 0\) ma jeden pierwiastek, a~gdy \(\Delta < 0\) nie posiada rozwiązań. Mamy zatem trzy przypadki:
+\begin{description}
+    \item \(m \in \open{-\frac{5}{4}}{1} \cup \open{1}{\frac{5}{4}} \iff\) dwa rozwiązania
+    \item \(m \in \set{-\frac{5}{4}, \frac{5}{4}, 1} \iff\) jedno rozwiązanie
+    \item \(m \in \open{-\infty}{-\frac{5}{4}} \cup \open{\frac{5}{4}}{+\infty} \iff\) zero rozwiązań
+\end{description}
+\subsubsection*{Zadanie~4.}
+W~rozwiązaniu tego zadania wszystkie wymiary będziemy podawać odpowiednio w~\(\cm\) i~\(\cm^2\). Oznaczmy przez \(w\) szerokość tekstu na stronie. W tej sytuacjy wysokość tekstu na stronie będzie równa \(h = \frac{200}{w}\). Po dodaniu marginesów wymiary kartki będą następujące:
+\begin{gather*}
+    \pars{w + 2 \cdot 1} \times \pars{h + 2 \cdot 2}\\
+    \pars{w + 2} \times \pars{\frac{200}{w} + 4}
+\end{gather*}
+Zdefiniujmy funkcję pola powierzchni kartki w~zależności od \(w\):
+\begin{equation*}
+    S\pars{w}
+        = \pars{w + 2}\pars{\frac{200}{w} + 4}
+        = 200 + 4w + \frac{400}{w} + 8
+        = 4w + \frac{400}{w} + 208 \qquad w \in \open{0}{+\infty}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    S'\pars{x}
+        = 4 - \frac{400}{w^2}
+        = \frac{4w^2 - 400}{w^2}
+        = \frac{4\pars{w^2 - 100}}{w^2}
+        = \frac{4\pars{w + 10}\pars{w - 10}}{w^2}
+\end{equation*}
+Mianownik jest zawsze dodatni, więc znak pochodnej zależy tylko od licznika. Wykres znaku pochodnej wygląda więc następująco:
+\begin{equation*}
+    \upparabola{-10}{10}[\(w\)]
+\end{equation*}
+Interesuje nas tylko przedział \(\open{0}{+\infty}\). Pochodna jest ujemna w~przedziale \(\open{0}{10}\), dla \(w = 10\) przyjmuje wartość \(0\), a~w~przedziale \(\open{10}{+\infty}\) jest dodatnia. Oznacza to, że funkcja \(S\) jest malejąca w~przedziale \(\open{0}{10}\) i~rosnąca w~przedziale \(\open{10}{+\infty}\), więc dla \(w = 10\) przyjmuje globalną wartość najmniejszą:
+\begin{equation*}
+    S_\p{min}
+        = S\pars{10}
+        = 12 \pars{\frac{200}{10} + 4}
+        = 288
+\end{equation*}
+Kartka o~optymalnym polu powierzchni równym \(288\cm^2\) ma wymiary \(12\cm \times 24\cm\).
+\subsubsection*{Zadanie~5.}
+Przyjmijmy, że kierowca ma do przejechania dystans \(s\) z~szybkością \(v\) stałą na całej trasie. Wynagrodzenie kierowcy za godzinę pracy wynosi \(\ell\). Skoro w~ciągu godziny koszt paliwa wynosi \(kv^2\), to w~ciągu \(t\) godzin wyniesie on \(tkv^2\). Wiemy, że
+\begin{gather*}
+    v = \frac{s}{t}\\
+    t = \frac{s}{v}
+\end{gather*}
+Zapiszmy zatem funkcję kosztu w~zależności od \(v\):
+\begin{equation*}
+    c\pars{v}
+        = tkv^2 + t\ell
+        = \frac{skv^2}{v} + \frac{s\ell}{v}
+        = skv + \frac{s\ell}{v}
+        = s\pars{kv + \frac{\ell}{v}} \qquad v \in \open{0}{v_\p{II}}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    c'\pars{v}
+        = s\pars{k - \frac{\ell}{v^2}}
+        = s \cdot \frac{v^2k - \ell}{v^2}
+\end{equation*}
+Mianownik i~stała \(s\) są zawsze dodatnie, więc znak pochodnej zależy tylko od licznika:
+\begin{equation*}
+    v^2k - \ell = \pars{v + \sqrt{\frac{\ell}{k}}}\pars{v - \sqrt{\frac{\ell}{k}}}
+\end{equation*}
+Zatem wykres znaku pochodnej wygląda następująco:
+\begin{equation*}
+    \upparabola{-\sqrt{\frac{\ell}{k}}}{\sqrt{\frac{\ell}{k}}}[\(v\)]
+\end{equation*}
+Interesuje nas tylko przedział \(\open{0}{v_\p{II}}\). Pochodna jest ujemna w~przedziale \(\open{0}{\sqrt{\frac{\ell}{k}}}\), dla \(v = \sqrt{\frac{\ell}{k}}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{\sqrt{\frac{\ell}{k}}}{v_\p{II}}\) jest dodatnia. Oznacza to, że funkcja \(c\) jest malejąca w~przedziale \(\open{0}{\sqrt{\frac{\ell}{k}}}\) i~rosnąca w~przedziale \(\open{\sqrt{\frac{\ell}{k}}}{v_\p{II}}\), więc dla \(v = \sqrt{\frac{\ell}{k}}\) przyjmuje globalną wartość najmniejszą:
+\begin{equation*}
+    c_\p{min}
+        = c\pars{\sqrt{\frac{\ell}{k}}}
+        = s\pars{\sqrt{k\ell} + \sqrt{k\ell}}
+        = 2s\sqrt{k\ell}
+\end{equation*}
+\subsubsection*{Zadanie~6.}
+\begin{mathfigure*}
+    \coordinate (A) at (-3, 0);
+    \coordinate (B) at (3, 0);
+    \coordinate (X) at (-1, 0);
+    \draw (A) -- node[below]{\(6\m\)} (B);
+    \fillpoint*{A}[\(A\)][left];
+    \fillpoint*{B}[\(B\)][right];
+    \fillpoint*{X}[\(X\)][above];
+    \path (A) -- node[above]{\(x\)} (X);
+    \path (B) -- node[above]{\(6 - x\)} (X);
+\end{mathfigure*}
+Natężenie światła w~punkcie \(A\) jest \(8\) razy większe od natężenia światła w~punkcie \(B\). Natężenie maleje wraz z~kwadratem odległości, a~natężenie w~danym punkcie jest sumą natężęń składowych w~tym punkcie. Zdefiniujmy zatem funkcję natężenia światła w~punkcie \(X\) w~zależności od \(x\):
+\begin{equation*}
+    I\pars{x}
+        = \frac{8}{x^2} + \frac{1}{\pars{6 - x}^2}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{equation*}
+    I'\pars{x}
+        = -\frac{16}{x^3} + \frac{2}{\pars{6 - x}^3} \qquad x \in \open{0}{6}
+\end{equation*}
+Obliczmy miejsce zerowe tej pochodnej:
+\begin{gather*}
+    -\frac{16}{x^3} + \frac{2}{\pars{6 - x}^3} = 0\\
+    \frac{2}{\pars{6 - x}^3} = \frac{16}{x^3}\\
+    x^3 = 8\pars{6 - x}^3\\
+    x = 2\pars{6 - x}
+    x = 12 - 2x\\
+    x = 4
+\end{gather*}
+Wykres znaku pochodnej wygląda następująco:
+\begin{equation*}
+    \begin{tikzpicture}
+        \drawvec (-2, 0) -- (2, 0) node[below]{\(x\)};
+        \draw[thick] (-1.5, -1.5) -- (1.5, 1.5);
+        \fillpoint*{0, 0}[\(4\)][below right];
+    \end{tikzpicture}
+\end{equation*}
+Interesuje nas tylko przedział \(\open{0}{6}\). Pochodna jest ujemna w~przedziale \(\open{0}{4}\), dla \(x = 4\) przyjmuje wartość \(0\), a~w~przedziale \(\open{4}{6}\) jest dodatnia. Oznacza to, że funkcja \(I\) jest malejąca w~przedziale \(\open{0}{4}\) i~rosnąca w~przedziale \(\open{4}{6}\), więc dla \(x = 4\) przyjmuje globalną wartość najmniejszą:
+\begin{equation*}
+    I_\p{min}
+        = I\pars{4}
+        = \frac{8}{4^2} + \frac{1}{2^2}
+        = \frac{1}{2} + \frac{1}{4}
+        = \frac{3}{4}
+\end{equation*}
+Najsłabiej oświetlony jest punkt znajdujący się w~odległości \(4\m\) od punktu \(A\).
+\subsubsection*{Zadanie~7.}
+\begin{equation*}
+    f\pars{x} = \frac{2x^4}{x^2 + 1} \qquad x \in \real
+\end{equation*}
+Rzędna punktów styczności jest równa \(1\), czyli innymi słowy:
+\begin{gather*}
+    f\pars{x} = 1\\
+    \frac{2x^4}{x^2 + 1} = 1\\
+    2x^4 = x^2 + 1\\
+    2x^4 - x^2 - 1 = 0\\
+    \pars{x^2 - 1}\pars{2x^2 + 1} = 0\\
+    \pars{2x^2 + 1}\pars{x + 1}\pars{x - 1} = 0
+\end{gather*}
+Zatem poprowadzono styczne przez punkty \(A = \pars{1; 1}\) i~\(B = \pars{-1; 1}\). Szukamy punktu przecięcia tych stycznych. W~tym celu wyznaczmy ich równania. Do uzyskania współczynników kierunkowych będziemy potrzebować pochodnej funkcji \(f\):
+\begin{equation*}
+    f'\pars{x}
+        = \frac{8x^3\pars{x^2 + 1} - 2x^4 \cdot 2x}{\pars{x^2 + 1}^2}
+        = \frac{8x^5 + 8x^3 - 4x^5}{\pars{x^2 + 1}^2}
+        = \frac{4x^5 + 8x^3}{\pars{x^2 + 1}^2}
+\end{equation*}
+Wyznaczmy najpierw wzór funkcji liniowej reprezentującej styczną w~punkcie \(A\):
+\begin{equation*}
+    t_A\pars{x}
+        = f'\pars{1}\pars{x - 1} + f\pars{1}
+        = \frac{4 \cdot 1^5 + 8 \cdot 1^3}{\pars{1^2 + 1}^2}\pars{x - 1} + 1
+        = \frac{12}{4}\pars{x - 1} + 1
+        = 3x - 2
+\end{equation*}
+A~teraz w~punkcie \(B\):
+\begin{equation*}
+    t_B\pars{x}
+        = f'\pars{-1}\pars{x + 1} + f\pars{-1}
+        = \frac{4 \cdot \pars{-1}^5 + 8 \cdot \pars{-1}^3}{\pars{\pars{-1}^2 + 1}^2}\pars{x + 1} + 1
+        = \frac{-12}{4}\pars{x + 1} + 1
+        = -3x - 2
+\end{equation*}
+Możemy teraz wyznaczyć punkt wspólny stycznych:
+\begin{gather*}
+    t_A\pars{x_0} = t_B\pars{x_0}\\
+    3x_0 - 2 = -3x_0 - 2\\
+    6x_0 = 0\\
+    x_0 = 0
+\end{gather*}
+Wyliczmy jego drugą współrzędną przez podstawienie do równania którejkolwiek ze stycznych:
+\begin{equation*}
+    t_A\pars{0} = -2
+\end{equation*}
+Mamy zatem trójkąt:
+\begin{gather*}
+    A = \pars{1; 1}\\
+    B = \pars{-1; 1}\\
+    C = \pars{0; -2}\\
+    AB = 2\\
+    BC = \sqrt{10}\\
+    AC = \sqrt{10}
+\end{gather*}
+Zatem obwód trójkąta wynosi \(2 + 2\sqrt{10}\).
+\subsubsection*{Zadanie~8.}
+\begin{equation*}
+    f\pars{x} = 4 - x + \frac{4 - x}{x - 5} + \frac{4 - x}{\pars{x - 5}^2} + \ldots
+\end{equation*}
+Jest to suma nieskończonego szeregu geometrycznego o~pierwszym wyrazie równym \(a_1 = 4 - x\) i~ilorazie równym \(q = \frac{1}{x - 5}\). Aby wyznaczyć dziedzinę funkcji, musimy zbadać, kiedy zachodzi warunek konieczny i~wystarczający na zbieżność sumy szeregu geometrycznego:
+\begin{gather*}
+    \abs{q} < 1\\
+    \abs{\frac{1}{x - 5}} < 1\\
+    \frac{1}{\abs{x - 5}} < 1\\
+    \abs{x - 5} > 1\\
+    x \in \open{-\infty}{4} \cup \open{6}{+\infty}
+\end{gather*}
+Teraz możemy zastosować wzór na sumę nieskończonego szeregu geometrycznego zbieżnego:
+\begin{equation*}
+    f\pars{x}
+        = \frac{4 - x}{1 - \frac{1}{x - 5}}
+        = \frac{4 - x}{\frac{x - 6}{x - 5}}
+        = \frac{\pars{4 - x}\pars{x - 5}}{x - 6}
+        = \frac{-x^2 + 9x - 20}{x - 6} \qquad x \in \open{-\infty}{4} \cup \open{6}{+\infty}
+\end{equation*}
+Aby zbadać monotoniczność i~ekstrema, obliczamy pochodną:
+\begin{equation*}
+    \begin{split}
+        f'\pars{x}
+            &= \frac{\pars{-x^2 + 9x - 20}'\pars{x - 6} - \pars{-x^2 + 9x - 20}\pars{x - 6}'}{\pars{x - 6}^2}
+            = \frac{\pars{-2x + 9}\pars{x - 6} - \pars{-x^2 + 9x - 20}}{\pars{x - 6}^2}\\
+            &= \frac{-2x^2 + 12x + 9x - 54 + x^2 - 9x + 20}{\pars{x - 6}^2}
+            = \frac{-x^2 + 12x - 34}{\pars{x - 6}^2}
+    \end{split}
+\end{equation*}
+Mianownik jest zawsze dodatni, więc znak pochodnej zależy jedynie od licznika. Zbadajmy zatem jego pierwiastki, przyrównując go do \(0\):
+\begin{gather*}
+    -x^2 + 12x - 34 = 0\\
+    x^2 - 12 + 34 = 0\\
+    \Delta
+        = \pars{-12}^2 - 4 \cdot 1 \cdot 34
+        = 144 - 136
+        = 8\\
+    \sqrt{\Delta} = \sqrt{8} = 2\sqrt{2}\\
+    x_1
+        = \frac{-\pars{-12} - \sqrt{\Delta}}{2 \cdot 1}
+        = \frac{12 - 2\sqrt{2}}{2}
+        = 6 - \sqrt{2}\\
+    x_2
+        = \frac{-\pars{-12} + \sqrt{\Delta}}{2 \cdot 1}
+        = \frac{12 + 2\sqrt{2}}{2}
+        = 6 + \sqrt{2}\\
+    \downparabola{6 - \sqrt{2}}{6 + \sqrt{2}}
+\end{gather*}
+Interesuje nas tylko dziedzina funkcji, czyli zbiór \(\open{-\infty}{4} \cup \open{6}{+\infty}\)
+\begin{gather*}
+    \tag{\(1\)} \forall x \in \open{-\infty}{4}\colon f'\pars{x} < 0 \label{2020_11_10:8:first_decrease}\\
+    \tag{\(2\)} \forall x \in \open{6}{6 + \sqrt{2}}\colon f'\pars{x} > 0 \label{2020_11_10:8:increase}\\
+    \tag{\(3\)} f'\pars{6 + \sqrt{2}} = 0 \label{2020_11_10:8:zero}\\
+    \tag{\(4\)} \forall x \in \open{6 + \sqrt{2}}{+\infty}\colon f'\pars{x} < 0 \label{2020_11_10:8:second_decrease}
+\end{gather*}
+Oznacza to, że
+\begin{description}
+    \item \(\mbox{(\ref{2020_11_10:8:first_decrease})} \implies\) funkcja \(f\) jest malejąca w~przedziale \(\open{-\infty}{4}\)
+    \item \(\mbox{(\ref{2020_11_10:8:increase})} \implies\) funkcja \(f\) jest rosnąca w~przedziale \(\open{6}{6 + \sqrt{2}}\)
+    \item \(\mbox{(\ref{2020_11_10:8:increase})} \land \mbox{(\ref{2020_11_10:8:zero})} \land \mbox{(\ref{2020_11_10:8:second_decrease})} \implies\) funkcja \(f\) osiąga maksimum lokalne dla \(x = 6 + \sqrt{2}\)
+    \item \(\mbox{(\ref{2020_11_10:8:second_decrease})} \implies\) funkcja \(f\) jest malejąca w~przedziale \(\open{6 + \sqrt{2}}{+\infty}\)
+\end{description}
+\subsubsection*{Zadanie~9.}
+Najpierw zbadajmy, w~jakim punkcie przecinają się te krzywe:
+\begin{gather*}
+    f\pars{x} = 2x^2 - 4 \qquad x \in \real \qquad f'\pars{x} = 4x\\
+    g\pars{x} = x^2 + x - 2 \qquad x \in \real \qquad g'\pars{x} = 2x + 1\\
+    f\pars{x} = g\pars{x}\\
+    2x^2 - 4 = x^2 + x - 2\\
+    x^2 - x - 2 = 0\\
+    \pars{x + 1}\pars{x - 2} = 0
+\end{gather*}
+Mamy zatem współrzędne \(x\) punktów przecięcia. Aby wyznaczyć współrzędne \(y\), podstawiamy do którejkolwiek funkcji:
+\begin{gather*}
+    f\pars{2} = 2 \cdot 2^2 - 4 = 8 - 4 = 4\\
+    f\pars{-1} = 2 - 4 = -2
+\end{gather*}
+Zatem chcemy wyznaczyć kąty przecięcia stycznych w~punktach \(\pars{-1; -2}\) i~\(\pars{2; 4}\). Znamy wzór, wedle którego
+\begin{equation*}
+    \tan\alpha = \abs{\frac{f'\pars{x_0} - g'\pars{x_0}}{1 + f'\pars{x_0}g'\pars{x_0}}}
+\end{equation*}
+gdzie \(\alpha\) jest kątem przecięcia stycznych do krzywych w~punkcie \(\pars{x_0; f\pars{x_0}}\). Podstawiając \(x_0 = -1\) otrzymujemy
+\begin{equation*}
+    \tan\alpha_1
+        = \abs{\frac{4x_0 - 2x_0 - 1}{1 + 4x_0\pars{2x_0 + 1}}}
+        = \abs{\frac{-2 - 1}{1 - 4\pars{-1}}}
+        = \abs{\frac{-3}{5}}
+        = \frac{3}{5}
+\end{equation*}
+Podstawiając natomiast \(x_0 = 4\), otrzymujemy:
+\begin{equation*}
+    \tan\alpha_2
+        = \abs{\frac{2x_0 - 1}{1 + 8x_0^2 + 4x_0}}
+        = \abs{\frac{4 - 1}{1 + 32 + 8}}
+        = \frac{3}{41}
+\end{equation*}
+Zatem
+\begin{gather*}
+    \alpha_1 = \arctan\frac{3}{5} \approx 30{,}96\degree\\
+    \alpha_2 = \arctan\frac{3}{41} \approx 4{,}18\degree
+\end{gather*}
+\subsubsection*{Zadanie~10.}
+\begin{equation*}
+    y\pars{x} = \frac{x^2}{8} \qquad x \in \real
+\end{equation*}
+\begin{mathfigure*}
+    \coordinate (A) at (-4, 2);
+    \coordinate (B) at (4, 2);
+    \coordinate (C) at (-2, 2);
+    \coordinate (D) at (2, 2);
+    \coordinate (E) at (-2, 0.5);
+    \coordinate (F) at (2, 0.5);
+    \drawcoordsystem{-8, -1}{8, 8};
+    \draw[ForestGreen, domain=-8:8, smooth, thick] plot (\x, {0.125*\x*\x});
+    \draw[thick, RoyalBlue] (A) -- (B);
+    \filldraw[pattern=north east lines, very thick] (E) rectangle (D);
+    \path (0, 2) -- node[above]{\(x\)} (D);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above];
+    \fillpoint*{D}[\(D\)][above];
+    \fillpoint*{E}[\(E\)][below];
+    \fillpoint*{F}[\(F\)][below];
+\end{mathfigure*}
+\noindent
+Oznaczmy przez \(x\) połowę szerokości prostokąta. Wtedy wysokość prostokąta jest równa
+\begin{equation*}
+    h
+        = 2 - y\pars{x}
+        = 2 - \frac{x^2}{8}
+\end{equation*}
+Zdefiniujmy funkcję pola prostokąta w~zależności od \(x\):
+\begin{equation*}
+    S\pars{x}
+        = 2x\pars{2 - \frac{x^2}{8}}
+        = 4x - \frac{x^3}{4} \qquad x \in \open{0}{4}
+\end{equation*}
+Obliczmy pochodną tej funkcji:
+\begin{gather*}
+    S'\pars{x}
+        = 4 - \frac{3x^2}{4}
+        = \frac{3}{4}\pars{\frac{16}{3} - x^2}
+        = \frac{3}{4}\pars{\frac{4}{\sqrt{3}} + x}\pars{\frac{4}{\sqrt{3}} - x}\\
+    \downparabola{-\frac{4}{\sqrt{3}}}{\frac{4}{\sqrt{3}}}
+\end{gather*}
+Interesuje nas tylko przedział \(\open{0}{4}\). Pochodna jest dodatnia w~przedziale \(\open{0}{\frac{4}{\sqrt{3}}}\), dla \(x = \frac{4}{\sqrt{3}}\) przyjmuje wartość \(0\), a~w~przedziale \(\open{\frac{4}{\sqrt{3}}}{4}\) jest rosnąca. Zatem funkcja \(S\) jest rosnąca w~przedziale \(\open{0}{\frac{4}{\sqrt{3}}}\) i~malejąca w~przedziale \(\open{\frac{4}{\sqrt{3}}}{4}\), więc dla \(x = \frac{4}{\sqrt{3}}\) przyjmuje globalną wartość największą:
+\begin{equation*}
+    S\pars{x}
+        = 4 \cdot \frac{4}{\sqrt{3}} - \frac{\frac{64}{27}}{4}
+        = \frac{16}{\sqrt{3}} - \frac{16}{3\sqrt{3}}
+        = \frac{48}{3\sqrt{3}} - \frac{16}{3\sqrt{3}}
+        = \frac{32}{3\sqrt{3}}
+        = \frac{32\sqrt{3}}{9}
+\end{equation*}
+Wtedy
+\begin{equation*}
+    h
+        = 2 - \frac{\frac{16}{3}}{8}
+        = 2 - \frac{2}{3}
+        = \frac{4}{3}
+\end{equation*}
+Zatem optymalny prostokąt o~polu powierzchni równym \(\frac{32\sqrt{3}}{9}\) ma wymiary
+\begin{equation*}
+    \frac{8}{\sqrt{3}} \times \frac{4}{3}
+\end{equation*}

@@ -1,0 +1,188 @@
+\subsection*{Kombinatoryka --- podrozdział~3.}
+\subsubsection*{Zadanie~3.1.}
+\begin{enumerate}[label={\alph*)}]
+    \item na każdy z~\(3\) wyrazów mamy \(1\) możliwy wybór:
+        \begin{equation*}
+            1^3 = 1
+        \end{equation*}
+    \item na każdy z~\(3\) wyrazów mamy \(3\) możliwe wybory:
+        \begin{equation*}
+            3^3 = 27
+        \end{equation*}
+    \item na każdy z~\(3\) wyrazów mamy \(n\) możliwych wyborów:
+        \begin{equation*}
+            n^3
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~3.2.}
+\begin{enumerate}[label={\alph*)}]
+    \item każda z~\(3\) monet może wypaść na \(2\) sposoby:
+        \begin{equation*}
+            2^3 = 8
+        \end{equation*}
+    \item każda z~\(5\) kostek może wypaść na \(6\) sposobów:
+        \begin{equation*}
+            6^5
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~3.3.}
+\begin{enumerate}[label={\alph*)}]
+    \item każda z~\(5\) cyfr może zostać wybrana na \(4\) sposoby:
+        \begin{equation*}
+            4^5 = 1024
+        \end{equation*}
+    \item ostatnia cyfra może zostać wybrana na \(3\) sposoby ze zbioru \(\set{2, 4, 6}\), a~każda z~\(2\) pozostałych na \(6\) sposobów:
+        \begin{equation*}
+            3 \cdot 6^2 = 108
+        \end{equation*}
+    \item ostatnia cyfra może zostać wybrana na \(4\) sposoby ze zbioru \(\set{1, 3, 5, 7}\), a~każda z~\(3\) pozostałych na \(7\) sposobów:
+        \begin{equation*}
+            4 \cdot 7^3
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~3.4.}
+Mamy zbiór \(10\) cyfr: \(\set{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}\). Na \(10\) sposobów możemy więc wybrać cyfrę, która będzie jednocześnie cyfrą jedności i~dziesiątek. Pierwszą cyfrę (dziesiątek tysięcy) możemy wybrać na \(9\) sposobów, gdyż nie może ona być równa \(0\). Każdą z~pozostałych dwóch cyfr (setek i~tysięcy) możemy wybrać na \(10\) sposobów. Zatem ostatecznie można utworzyć \(10 \cdot 9 \cdot 10^2 = 9000\) liczb spełniających warunki zadania.
+\subsubsection*{Zadanie~3.5.}
+Na każdej z~\(n\) latarni sygnałowych możemy na \(3\) sposoby wybrać, które światło zapalamy. Wszystkich możliwych sygnałów jest więc \(3^n\).
+\subsubsection*{Zadanie~3.6.}
+Aby rozmieścić \(10\) kul (przyjmuję, że nierozróżnialnych) w~\(4\) szufladach (przyjmuję, że rozróżnialnych), możemy równoważnie przygotować w~rzędzie \(13\) kul, a~następnie na \(\ibinom{13}{3}\) sposobów wybrać \(3\) z~nich, które rozbijemy. Rozbite kule będą wyznaczały granice podziału na szuflady, to znaczy kule poprzedzające w~rzędzie pierwszą rozbitą kulę trafią do pierwszej szuflady, kule znajdujące się pomiędzy pierwszą a~drugą rozbitą kulą trafią do drugiej szuflady itd. Zatem ostatecznie możemy rozmieścić kule na \(\ibinom{13}{3}\).
+\subsubsection*{Zadanie~3.7.}
+Każdy znak o~\(m\) miejscach może na każdym z~tych miejsc mieć kropkę lub kreskę. Zatem możliwych znaków jest
+\begin{equation*}
+    2^3 + 2^4 + 2^5 + 2^6
+        = 8 + 16 + 32 + 64
+        = 120
+\end{equation*}
+\subsubsection*{Zadanie~3.8.}
+Pierwszy i~drugi wybór możemy wykonać na \(52\) sposoby, więc wszystkich możliwych wyników jest \(52^2\).
+\subsubsection*{Zadanie~3.9.}
+Jeśli wylosujemy kulę z~numerem \(10\) jeden lub więcej razy, to uzyskana liczba nie będzie pięciocyfrowa. Zatem tak naprawdę każdą z~\(5\) cyfr liczby możemy wybrać na \(9\) sposobów ze zbioru \(\set{1, 2, \ldots, 9}\). Wszystkich liczb spełniających warunek jest więc \(9^5\).
+\subsubsection*{Zadanie~3.10.}
+Przyjmuję, że skrzynki są rozróżnialne, a~listy nierozróżnialne.
+\begin{enumerate}[label={\alph*)}]
+    \item układamy w~rzędzie \(9\) listów, a~następnie na \(\ibinom{9}{6}\) sposobów wybieramy \(6\), które potargamy. Potargane listy wyznaczają granice podziału na skrzynki
+    \item na \(\ibinom{7}{3}\) sposobów wybieramy, do których skrzynek wrzucimy listy
+\end{enumerate}
+\subsubsection*{Zadanie~3.14.}
+\begin{enumerate}[label={\alph*)}]
+    \item wybieramy \(4\) sprinterów z~ustaloną kolejnością:
+        \begin{equation*}
+            \frac{7!}{\pars{7 - 4}!} = \frac{7!}{3!}
+        \end{equation*}
+    \item wybieramy \(4\) sprinterów:
+        \begin{equation*}
+            \binom{7}{4}
+        \end{equation*}
+    \item kolejność pierwszych dwóch sprinterów ma znaczenie, więc pierwszego wybieramy na \(7\) sposobów, drugiego na \(6\) sposobów, a~pozostałych dwóch wybieramy na \(\ibinom{7 - 2}{2}\) sposobów, ponieważ ich kolejność nie ma znaczenia. Można zatem dokonać wyboru na
+        \begin{equation*}
+            7 \cdot 6 \cdot \binom{5}{2}
+        \end{equation*}
+        sposobów.
+\end{enumerate}
+\subsubsection*{Zadanie~3.15.}
+\begin{enumerate}[label={\alph*)}]
+    \item jest to wariacja \(7\)-wyrazowa zbioru \(10\)-elementowego, czyli jest \(\frac{10!}{\pars{10 - 7}!} = \frac{10!}{3!}\) numerów
+    \item każdą z~\(7\) cyfr możemy wybrać ze zbioru \(\set{0, 2, 4, 6, 8}\), czyli na \(5\) sposobów, więc jest \(5^7\) numerów
+    \item każdą z~\(7\) cyfr możemy wybrać ze zbioru \(\set{1, 3, 5, 7, 9}\), czyli na \(5\) sposobów, więc jest \(5^7\) numerów
+\end{enumerate}
+\subsubsection*{Zadanie~3.16.}
+Głębokość każdego z~\(6\) rowków można wybrać na \(11\) sposobów ze zbioru \(\set{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0}\). Zatem wszystkich możliwych kluczy jest \(11^6\).
+\subsubsection*{Zadanie~3.17.}
+Używając zapisu dokładnie \(d\)-cyfrowego, możemy zakodować \(2^d\) znaków, ponieważ każdą z~\(d\) pozycji możemy ustawić na \(2\) sposoby. Wszystkich możliwych znaków jest więc
+\begin{equation*}
+    2^1 + 2^2 + 2^3 + 2^4 + 2^5 + 2^6 + 2^7 + 2^8
+        = 2^9 - 1 - 1
+        = 512 - 2
+        = 510
+\end{equation*}
+\subsubsection{Zadanie~3.18.}
+\begin{enumerate}[label={\alph*)}]
+    \item
+        \begin{equation*}
+            \tau\pars{2^5 \cdot 3^1 \cdot 5^4 \cdot 7^1 \cdot 13^1}
+                = \pars{5 + 1}\pars{1 + 1}\pars{4 + 1}\pars{1 + 1}\pars{1 + 1}
+                = 240
+        \end{equation*}
+    \item
+        \begin{equation*}
+            \tau\pars{2^3 \cdot 5^2 \cdot 7^1 \cdot 11^1 \cdot 13^1}
+                = \pars{3 + 1}\pars{2 + 1}\pars{1 + 1}\pars{1 + 1}\pars{1 + 1}
+                = 96
+        \end{equation*}
+    \item
+        \begin{equation*}
+            \tau\pars{2^4 \cdot 3^5 \cdot 5^2 \cdot 7^1 \cdot 11^1 \cdot 13^1}
+                = \pars{4 + 1}\pars{5 + 1}\pars{2 + 1}\pars{1 + 1}\pars{1 + 1}\pars{1 + 1}
+                = 720
+        \end{equation*}
+    \item
+        \begin{gather*}
+            2310 = 10 \cdot 231 = 2 \cdot 5 \cdot 7 \cdot 3 \cdot 11 = 2^1 \cdot 3^1 \cdot 5^1 \cdot 7^1 \cdot 11^1\\
+            \tau\pars{2310}
+                = \tau\pars{2^1 \cdot 3^1 \cdot 5^1 \cdot 7^1 \cdot 11^1}
+                = \pars{1 + 1}\pars{1 + 1}\pars{1 + 1}\pars{1 + 1}\pars{1 + 1}
+                = 32
+        \end{gather*}
+\end{enumerate}
+\subsubsection*{Zadanie~3.19.}
+\begin{equation*}
+    f\colon \set{1, 2, 3, \ldots, 25} \mapsto \set{1, 2, 3, \ldots, 31}
+\end{equation*}
+\begin{enumerate}[label={\alph*)}]
+    \item Jeśli funkcja jest rosnąca, to musi być różnowartościowa. Ustawiamy więc rosnący ciąg \(\sequence{1, 2, 3, \ldots, 31}\) i~wyrzucamy z~niego pewne elementy tak, aby powstał ciąg rosnący \(25\)-elementowy. Musimy ich wyrzucić \(6\), czyli wybieramy je na \(\ibinom{31}{6}\) sposobów.
+    \item Każdemu z \(25\) elementów dziedziny możemy przyporządkować element przeciwdziedziny na \(10\) sposobów, ponieważ musi on należeć do zbioru \(\set{1, 2, 3, \ldots, 10}\). Zatem liczba takich funkcji to
+        \begin{equation*}
+            10^{25}
+        \end{equation*}
+    \item Najpierw na \(\ibinom{31}{2}\) sposobów wybieramy z~przeciwdziedziny \(2\) elementy, które będą tworzyły zbiór wartości. Każdemu z~\(25\) elementów dziedziny możemy przyporządkować element zbioru wartości na \(2\) sposoby, ale musimy wykluczyć dwie sytuacje: gdy wszystkim elementom dziedziny przyporządkowano pierwszy element zbioru wartości i~gdy wszystkim drugi. Zatem liczba takich funkcji to
+        \begin{equation*}
+            \binom{31}{2}\pars{2^{25} - 2}
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~3.20.}
+W~słowie długości \(j\) każdą literę możemy wybrać na \(n\) sposobów, więc zachodzi
+\begin{equation*}
+    \forall j \in \set{1, 2, \ldots, m}\colon a_j \leq n^j
+\end{equation*}
+Po przekształceniu otrzymujemy
+\begin{equation*}
+    \forall j \in \set{1, 2, \ldots, m}\colon \frac{a_j}{n^j} \leq 1
+\end{equation*}
+Mamy zatem \(m\) nierówności:
+\begin{gather*}
+    \frac{a_1}{n^1} \leq 1\\
+    \frac{a_2}{n^2} \leq 1\\
+    \frac{a_3}{n^3} \leq 1\\
+    \cdots\\
+    \frac{a_m}{n^m} \leq 1\\
+\end{gather*}
+Po dodatniu tych nierówności stronami otrzymujemy tezę:
+\begin{equation*}
+    \frac{a_1}{n^1} + \frac{a_2}{n^2} + \frac{a_3}{n^3} + \ldots + \frac{a_m}{n^m} \leq \underbrace{1 + 1 + \ldots + 1}_{m \text{ jedynek}} = m
+\end{equation*}
+\qed
+\subsubsection*{Zadanie~3.21.}
+\begin{enumerate}[label={\alph*)}]
+    \item Na dolnej i~bocznej krawędzi wybieramy spójny podciąg pól, w~każdym z~tych miejsc na \(\frac{n\pars{n - 1}}{2} + n\) sposobów. Na przecięciu wyznaczonych w~ten sposób pasków pionowego i~poziomego otrzymujemy prostokąt. Zatem wszystkich prostokątów jest
+        \begin{equation*}
+            \pars{\frac{n^2 + n}{2}}^2
+                = \frac{\pars{n^2 + n}^2}{4}
+        \end{equation*}
+    \item Rozważmy kwadraty o~boku \(k\) pól, \(1 \leq k \leq n\). Kwadrat taki możemy umiejscowić zarówno pionowo jak i~poziomo na \(n - k + 1\) sposobów, czyli na \(\pars{n - k + 1}^2\) sposobów. Wszystkich możliwych umiejscowień jest więc
+        \begin{equation*}
+            \summation[k = 1][n] \pars{n - k + 1}^2
+                = n^2 + \pars{n - 1}^2 + \ldots + 2^2 + 1^2
+                = \frac{n\pars{n + 1}\pars{2n + 1}}{6}
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~3.22.}
+Wszystkich możliwych liczb jest \(9^n\), ponieważ każdą z~\(n\) cyfr możemy wybrać na \(9\) sposobów. Aby iloczyn cyfr był podzielny przez \(10\), musi się wśród nich znajdować cyfra \(5\) i~przynajmniej jedna cyfra parzysta. Od wszystkich \(9^n\) liczb musimy więc odjąć liczby, które nie zawierają cyfry \(5\). Jest ich \(8^n\), bo każdą z~\(n\) cyfr możemy wybrać na \(8\) sposobów. Musimy też odjąć wszystkie liczby, które nie zawierają żadnej cyfry parzystej. Jest ich \(5^n\), ponieważ każdą z~\(n\) cyfr możemy wybrać na \(5\) sposobów ze zbioru \(\set{1, 3, 5, 7, 9}\). Odjęliśmy jednak dwa razy liczby, które nie zawierają cyfry \(5\) i~nie zawierają żadnej cyfry parzystej, więc musimy je dodać. Jest ich \(4^n\), ponieważ każdą z~\(n\) cyfr możemy wybrać na \(4\) sposoby ze zbioru \(\set{1, 3, 7, 9}\). Ostatecznie szukanych liczb jest więc \(9^n - 8^n - 5^n + 4^n\).
+\subsubsection*{Zadanie~3.24.}
+\begin{enumerate}[label={\alph*)}]
+    \item
+    \item
+    \item Pierwszą wieżę możemy ustawić na \(n^2\) sposobów. Atakuje ona wszystkie pola w~kolumnie i~w~wierszu, na przecięciu których się znajduje. Ponieważ jedno pole w~wierszu i~kolumnie zajmuje sama wieża, to atakowanych przez nią pól jest \(2 \cdot \pars{n - 1}\). Na każdym z~tych pól można umieścić drugą wieżę, jednak należy podzielić wynik przez \(2\), ponieważ wieże są nierozróżnialne, czyl kolejność ich ustawiania nie ma znaczenia. Ostatecznie liczba ustawień wynosi
+        \begin{equation*}
+            \frac{n^2 \cdot \cancel{2}\pars{n - 1}}{\cancel{2}} = n^2\pars{n - 1}
+        \end{equation*}
+\end{enumerate}

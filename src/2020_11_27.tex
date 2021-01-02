@@ -1,0 +1,269 @@
+\subsection*{Kombinatoryka --- wprowadzenie}
+\subsubsection*{Silnia}
+\begin{enumerate}[label={\Roman*}]
+    \item
+        \begin{gather*}
+            n! = 1 \cdot 2 \cdot \ldots \cdot n\\
+            0! = 1
+        \end{gather*}
+    \item
+        \begin{gather*}
+            0! = 1\\
+            n! = \pars{n - 1}! \cdot n \iff n \geq 1
+        \end{gather*}
+\end{enumerate}
+\subsubsection*{Symbol Newtona}
+\begin{equation*}
+    \binom{n}{k} = \frac{n!}{k!\pars{n - k}!} \qquad n, k \in \natural \qquad k \leq n
+\end{equation*}
+Własności:
+\begin{gather*}
+    \binom{n}{k} = \binom{n}{n - k}\\
+    \binom{n}{k} + \binom{n}{k + 1} = \binom{n + 1}{k + 1}\\
+    \binom{n}{0} = \binom{n}{n} = 1\\
+    \binom{n}{1} = \binom{n}{n - 1} = n
+\end{gather*}
+Dwumian Newtona:
+\begin{gather*}
+    \pars{a + b}^n
+        = \summation[k = 0][n] \binom{n}{k}a^kb^{n - k}\\
+    \binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \binom{n}{3} + \ldots + \pars{-1}^n\binom{n}{n}
+        = \pars{1 - 1}^n
+        = 0^n
+        = 0\\
+    \binom{n}{0} + \binom{n}{1} + \ldots + \binom{n}{n}
+        = \pars{1 + 1}^n
+        = 2^n
+\end{gather*}
+\subsubsection*{Zadanie~1.6.}
+\begin{enumerate}[label={\alph*)}]
+    \item
+        \begin{equation*}
+            \begin{split}
+                1 \cdot 1! + 2 \cdot 2! + 3 \cdot 3! + \ldots + n \cdot n!
+                    &= \pars{2 - 1} \cdot 1! + \pars{3 - 1} \cdot 2! + \pars{4 - 1} \cdot 3! + \ldots + \pars{\pars{n + 1} - 1} \cdot n!\\
+                    &= \cancel{2!} - 1! + \cancel{3!} - \cancel{2!} + \cancel{4!} - \cancel{3!} + \cancel{\ldots} + \pars{n + 1}! - \cancel{n!}
+                    = \pars{n + 1}! - 1
+            \end{split}
+        \end{equation*}
+    \item
+        \begin{equation*}
+            \begin{split}
+                \frac{1}{2!} + \frac{2}{3!} + \frac{3}{4!} + \ldots + \frac{n - 1}{n!}
+                    &= \frac{2 - 1}{2!} + \frac{3 - 1}{3!} + \frac{4 - 1}{4!} + \ldots + \frac{n - 1}{n!}\\
+                    &= \frac{2}{2!} - \cancel{\frac{1}{2!}} + \cancel{\frac{1}{2!}} - \cancel{\frac{1}{3!}} + \cancel{\frac{1}{3!}} - \cancel{\frac{1}{4!}} + \cancel{\ldots} + \cancel{\frac{1}{\pars{n - 1}!}} - \frac{1}{n!}
+                    = 1 - \frac{1}{n!}
+            \end{split}
+        \end{equation*}
+    \item
+        \begin{equation*}
+            \begin{split}
+                \pars{1^1 \cdot 1!} \cdot \pars{2^2 \cdot 2!} \cdot \pars{3^3 \cdot 3!} \cdot \ldots \cdot \pars{n^n \cdot n!}
+                    &= 1^1 \cdot 2^2 \cdot 3^3 \cdot \ldots \cdot n^n \cdot 1! \cdot 2! \cdot 3! \cdot \ldots \cdot n!\\
+                    &= 1^1 \cdot 2^2 \cdot 3^3 \cdot \ldots \cdot n^n \cdot 2^{n - 1} \cdot 1! \cdot \frac{2! \cdot 3! \cdot \ldots \cdot n!}{2^{n - 1}}\\
+                    &= 1^1 \cdot 2^{n + 1} \cdot 3^3 \cdot \ldots \cdot n^n \cdot 3^{n - 2} \cdot  1 \cdot \frac{2!}{2} \cdot \frac{3! \cdot 4! \cdot \ldots \cdot n!}{2^{n - 2} \cdot 3^{n - 2}}\\
+                    &= 1^1 \cdot 2^{n + 1} \cdot 3^{n + 1} \cdot \ldots \cdot n^n \cdot 4^{n - 3} \cdot  1 \cdot 1 \cdot \frac{3!}{2 \cdot 3} \cdot \frac{4! \cdot 5! \cdot \ldots \cdot n!}{2^{n - 3} \cdot 3^{n - 3} \cdot 4^{n - 3}}\\
+                    &= \ldots
+                    = 1^1 \cdot 2^{n + 1} \cdot 3^{n + 1} \cdot \ldots \cdot n^{n + 1} \cdot 1^{n - 1} \cdot \frac{1}{2^{n - n} \cdot 3^{n - n} \cdot \ldots \cdot n^{n - n}}\\
+                    &= 1^{n + 1} \cdot 2^{n + 1} \cdot 3^{n + 1} \cdot \ldots \cdot n^{n + 1}
+                    = \pars{1 \cdot 2 \cdot 3 \cdot \ldots \cdot n}^{n + 1}
+                    = \pars{n!}^{n + 1}
+            \end{split}
+        \end{equation*}
+    \item
+        \begin{equation*}
+            \begin{split}
+                1! \cdot 3 - 2! \cdot 4 &+ 3! \cdot 5 - 4! \cdot 6 + \ldots - 2002! \cdot 2004 + 2005!\\
+                    &= 1! \cdot \pars{2 + 1} - 2! \cdot \pars{3 + 1} + 3! \cdot \pars{4 + 1} - 4! \cdot \pars{5 + 1} + \ldots - 2002! \cdot \pars{2003 + 1} + 2005!\\
+                    &= \cancel{2!} + 1! - \cancel{3!} - \cancel{2!} + \cancel{4!} + \cancel{3!} - \cancel{5!} - \cancel{4!} + \cancel{\ldots} - 2003! - \cancel{2002!} + 2005!
+                    = 1 - 2003! + 2005!
+            \end{split}
+        \end{equation*}
+    \item
+        \begin{equation*}
+            \begin{split}
+                \frac{1 \cdot 2!}{2} + \frac{2 \cdot 3!}{2^2} + \ldots + \frac{n\pars{n + 1}!}{2^n}
+                    &= \frac{3 \cdot 2! - 2 \cdot 2!}{2} + \frac{4 \cdot 3! - 2 \cdot 3!}{2^2} + \ldots + \frac{\pars{n + 2}\pars{n + 1}! - 2\pars{n + 1}!}{2^n}\\
+                    &= \cancel{\frac{3!}{2}} - \frac{2!}{1} + \cancel{\frac{4!}{2^2}} - \cancel{\frac{3!}{2}} + \cancel{\ldots} + \frac{\pars{n + 2}!}{2^n} - \cancel{\frac{\pars{n + 1}!}{2^{n - 1}}}
+                    = \frac{\pars{n + 2}!}{2^n} - 2
+            \end{split}
+        \end{equation*}
+    \item
+        \begin{equation*}
+            \begin{split}
+                \frac{1 \cdot 3!}{3} + \frac{2 \cdot 4!}{3^2} + \ldots + \frac{n\pars{n + 2}}{3^n}
+                    &= \frac{4 \cdot 3! - 3 \cdot 3!}{3} + \frac{5 \cdot 4! - 3 \cdot 4!}{3^2} + \ldots + \frac{\pars{n + 3}\pars{n + 2}! - 3\pars{n + 2}!}{3^n}\\
+                    &= \cancel{\frac{4!}{3}} - \frac{3!}{1} + \cancel{\frac{5!}{3^2}} - \cancel{\frac{4!}{3}} + \cancel{\ldots} + \frac{\pars{n + 3}!}{3^n} - \cancel{\frac{\pars{n + 2}!}{3^{n - 1}}}
+                    = \frac{\pars{n + 3}!}{3^n} - 6
+            \end{split}
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~9.}
+\begin{equation*}
+    1! + 2! + 3! + \ldots + 2004! + 2005!
+\end{equation*}
+Zauważmy, że od wyrazu \(5!\) włącznie wszystkie wyrazy są podzielne przez \(10\), ponieważ mają w~sobie czynniki \(2\) i~\(5\). Zatem na ostatnią cyfrę sumy wpływają tylko wyrazy:
+\begin{equation*}
+    1! + 2! + 3! + 4!
+        = 1 + 2 + 6 + 24
+        = 33
+\end{equation*}
+Oznacza to, że ostatnią cyfrą jest \(3\) i~mamy \(3\) ,,dalej''. Teraz zauważmy, że wszystkie wyrazy od \(10!\) włącznie są podzielne przez \(100!\), bo mają czynniki \(2\), \(5\) i~\(10\). Zatem na drugą od końca cyfrę sumy wpływają tylko wartość \(3\) ,,dalej'' i~wyrazy (rozważane \(\bmod\ 100\))
+\begin{equation*}
+    5! + 6! + 7! + 8! + 9!
+        \equiv 20 + 20 + 40 + 20 + 80
+        \equiv 80 \pmod{100}
+\end{equation*}
+Zatem przedostatnią cyfrą jest \(8 + 3 \equiv 1 \pmod{10}\) i~mamy \(1\) ,,dalej''. Na koniec zauważamy, że od wyrazu \(15!\) włącznie wszystkie wyrazy są podzielne przez \(1000\), ponieważ mają w~sobie czynniki \(2\), \(5\), \(10\), \(12\) i~\(15\). Na trzecię od końca cyfrę sumy wpływają zatem wartość \(1\) ,,dalej'' i~wyrazy (rozważane \(\bmod\ 1000\))
+\begin{equation*}
+    10! + 11! + 12! + 13! + 14!
+        \equiv 800 + 800 + 600 + 800 + 200
+        \equiv 200 \pmod{1000}
+\end{equation*}
+Zatem trzecią od końca cyfrą jest \(2 + 1 \equiv 3 \pmod{10}\). Ostatnie trzy cyfry zadanej sumy to więc:
+\begin{equation*}
+    313
+\end{equation*}
+\subsubsection*{Zadanie~10.}
+\begin{enumerate}[label={\alph*)}]
+    \item Zauważmy, że
+        \begin{gather*}
+            1! = 1 = 1^2 \ok\\
+            1! + 2! = 1 + 2 = 3 \wrong\\
+            1! + 2! + 3! = 1 + 2 + 6 = 9 = 3^2 \ok\\
+            1! + 2! + 3! + 4! = 1 + 2 + 6 + 24 = 33 \wrong
+        \end{gather*}
+        Zatem na pewno mamy rozwiązania \(n = 1\) lub \(n = 3\). Rozważmy teraz, jakie reszty z~dzielenia przez \(5\) może dawać kwadrat liczby naturalnej \(k\):
+        \begin{gather*}
+            k \equiv 0 \pmod{5} \implies k^2 \equiv 0^2 \equiv 0 \pmod{5}\\
+            k \equiv 1 \pmod{5} \implies k^2 \equiv 1^2 \equiv 1 \pmod{5}\\
+            k \equiv 2 \pmod{5} \implies k^2 \equiv 2^2 \equiv 4 \pmod{5}\\
+            k \equiv 3 \pmod{5} \implies k^2 \equiv 3^2 \equiv 9 \equiv 4 \pmod{5}\\
+            k \equiv 4 \pmod{5} \implies k^2 \equiv 4^2 \equiv 16 \equiv 1 \pmod{5}
+        \end{gather*}
+        Zauważamy, że możliwe reszty z~dzielenia kwadratu liczby naturalnej przez \(5\) należą do zbioru \(\set{0, 1, 4}\). Zbadajmy dla \(n \geq 5\) zadaną sumę \(\bmod\ 5\):
+        \begin{equation*}
+            1! + 2! + 3! + 4! + \overbrace{5! + \ldots + n!}^{\text{podzielne przez } 5} \equiv 1! + 2! + 3! + 4! \equiv 33 \equiv 3 \pmod{5}
+        \end{equation*}
+        Dla \(n \geq 5\) suma przyjmuje taką resztę z~dzielenia przez \(5\), jakiej nie może przyjąć kwadrat liczby naturalnej, więc nie ma rozwiązań dla \(n \geq 5\). Oznacza to, że jedyne rozwiązania to
+        \begin{equation*}
+            n = 1 \wlor n = 3
+        \end{equation*}
+    \item Zauważmy, że
+        \begin{gather*}
+            1! = 1 = 1^3 \ok\\
+            1! + 2! = 1 + 2 = 3 \wrong\\
+            1! + 2! + 3! = 1 + 2 + 6 = 9 \wrong\\
+            1! + 2! + 3! + 4! = 1 + 2 + 6 + 24 = 33 \wrong\\
+            1! + 2! + 3! + 4! + 5! = 1 + 2 + 6 + 24 + 120 = 153 \wrong\\
+            1! + 2! + 3! + 4! + 5! + 6! = 1 + 2 + 6 + 24 + 120 + 720 = 873 \wrong
+        \end{gather*}
+        Zatem na pewno mamy rozwiązanie \(n = 1\). Rozważmy teraz, jakie reszty z~dzielenia przez \(5\) może dawać sześcian liczby naturalnej \(k\):
+        \begin{gather*}
+            k \equiv 0 \pmod{7} \implies k^3 \equiv 0^2 \equiv 0 \pmod{7}\\
+            k \equiv 1 \pmod{7} \implies k^3 \equiv 1^2 \equiv 1 \pmod{7}\\
+            k \equiv 2 \pmod{7} \implies k^3 \equiv 2^3 \equiv 8 \equiv 1 \pmod{7}\\
+            k \equiv 3 \pmod{7} \implies k^3 \equiv 3^3 \equiv 27 \equiv 6 \pmod{7}\\
+            k \equiv 4 \pmod{7} \implies k^3 \equiv 4^3 \equiv 64 \equiv 1 \pmod{7}\\
+            k \equiv 5 \pmod{7} \implies k^3 \equiv 5^3 \equiv 125 \equiv 6 \pmod{7}\\
+            k \equiv 6 \pmod{7} \implies k^3 \equiv 6^3 \equiv 216 \equiv 6 \pmod{7}
+        \end{gather*}
+        Zauważamy, że możliwe reszty z~dzielenia sześcianu liczby naturalnej przez \(7\) należą do zbioru \(\set{0, 1, 6}\). Zbadajmy dla \(n \geq 7\) zadaną sumę \(\bmod\ 7\):
+        \begin{equation*}
+            1! + 2! + 3! + 4! + 5! + 6! + \overbrace{7! + \ldots + n!}^{\text{podzielne przez } 7} \equiv 1! + 2! + 3! + 4! + 5! + 6! \equiv 873 \equiv 5 \pmod{7}
+        \end{equation*}
+        Dla \(n \geq 7\) suma przyjmuje taką resztę z~dzielenia przez \(7\), jakiej nie może przyjąć sześcian liczby naturalnej, więc nie ma rozwiązań dla \(n \geq 7\). Oznacza to, że jedyne rozwiązanie to
+        \begin{equation*}
+            n = 1
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~1.11.}
+\begin{gather*}
+    a_k
+        = \pars{-1}^k \cdot \frac{k^2 + k + 1}{k!}
+        = \pars{-1}^k \cdot \pars{\frac{k \cdot \cancel{k}}{\pars{k - 1}! \cdot \cancel{k}} + \frac{k + 1}{k!}}
+        = \pars{-1}^k \cdot \pars{\frac{k}{\pars{k - 1}!} + \frac{k + 1}{k!}}\\
+    \begin{split}
+        a_1 &+ a_2 + a_3 + \ldots + a_n\\
+            &= \pars{-1}^1 \cdot \pars{\frac{1}{\pars{1 - 1}!} + \frac{1 + 1}{1!}} + \pars{-1}^2 \cdot \pars{\frac{2}{\pars{2 - 1}!} + \frac{2 + 1}{2!}} + \pars{-1}^3 \cdot \pars{\frac{3}{\pars{3 - 1}!} + \frac{3 + 1}{3!}}\\
+            &+ \ldots + \pars{-1}^n \cdot \pars{\frac{n}{\pars{n - 1}!} + \frac{n + 1}{n!}}\\
+            &= -\frac{1}{0!} - \cancel{\frac{2}{1!}} + \cancel{\frac{2}{1!}} + \cancel{\frac{3}{2!}} - \cancel{\frac{3}{2!}} - \cancel{\frac{4}{3!}} + \cancel{\ldots} + \pars{-1}^n \cdot \pars{\cancel{\frac{n}{n - 1}!} + \frac{n + 1}{n!}}
+            = \pars{-1}^n \cdot \pars{\frac{n + 1}{n!}} - 1
+    \end{split}
+\end{gather*}
+\subsubsection*{Zadanie~1.15.}
+\begin{itemize}
+    \item[g)]
+        \begin{equation*}
+            \frac{\binom{5}{0} - \binom{5}{1} + \binom{5}{2} - \binom{5}{3} + \binom{5}{4} - \binom{5}{5}}{\binom{7}{0} + \binom{7}{2} + \binom{7}{4} + \binom{7}{6}}
+                = \frac{0}{\binom{7}{0} + \binom{7}{2} + \binom{7}{4} + \binom{7}{6}}
+                = 0
+        \end{equation*}
+\end{itemize}
+\subsubsection*{Zadanie~1.16.}
+\begin{enumerate}[label={\alph**)}]
+    \setcounter{enumi}{5}
+    \item
+        Zaobserwujmy najpierw, że dla \(n \geq 1\) zachodzi
+        \begin{equation*}
+            \binom{2n}{n}
+                = \binom{2n - 1}{n - 1} + \binom{2n - 1}{n}
+                = \binom{2n - 1}{2n - 1 - n} + \binom{2n - 1}{n}
+                = \binom{2n - 1}{n} + \binom{2n - 1}{n}
+                = 2 \cdot \binom{2n - 1}{n}
+        \end{equation*}
+        Mamy zatem
+        \begin{equation*}
+            \begin{split}
+                \frac{\binom{2}{1} + \binom{4}{2} + \binom{6}{3} + \ldots + \binom{2n}{n}}{\binom{1}{1} + \binom{3}{2} + \binom{5}{3} + \ldots + \binom{2n - 1}{n}}
+                    = \frac{2 \cdot \binom{1}{1} + 2 \cdot \binom{3}{2} + 2 \cdot \binom{5}{3} + \ldots + 2 \cdot \binom{2n - 1}{n}}{\binom{1}{1} + \binom{3}{2} + \binom{5}{3} + \ldots + \binom{2n - 1}{n}}
+                    = 2
+            \end{split}
+        \end{equation*}
+    \item
+        Korzystając z~faktu z~poprzedniego podpunktu, otrzymujemy
+        \begin{equation*}
+            \frac{\binom{2}{1} \cdot \binom{4}{2} \cdot \binom{6}{3} \cdot \ldots \cdot \binom{2n}{n}}{\binom{1}{1} \cdot \binom{3}{2} \cdot \binom{5}{3} \cdot \ldots \cdot \binom{2n - 1}{n}}
+                = \frac{2 \cdot \cancel{\binom{1}{1}} \cdot 2 \cdot \cancel{\binom{3}{2}} \cdot 2 \cdot \cancel{\binom{5}{3}} \cdot \ldots \cdot 2 \cdot \cancel{\binom{2n - 1}{n}}}{\cancel{\binom{1}{1}} \cdot \cancel{\binom{3}{2}} \cdot \cancel{\binom{5}{3}} \cdot \ldots \cdot \cancel{\binom{2n - 1}{n}}}
+                = 2^n
+        \end{equation*}
+    \item
+        Zaobserwujmy najpierw, że dla \(n \geq 2\) zachodzi
+        \begin{equation*}
+            \binom{n}{2}
+                = \frac{n!}{2!\pars{n - 2}!}
+                = \frac{\cancel{\pars{n - 2}!}\pars{n - 1}n}{2 \cdot \cancel{\pars{n - 2}!}}
+                = \frac{n^2 - n}{2}
+        \end{equation*}
+        Korzystając z~tego faktu, możemy wyznaczyć prostszą postać licznika:
+        \begin{equation*}
+            \begin{split}
+                \binom{2}{2} + \binom{3}{2} + \binom{4}{2} + \ldots + \binom{n}{2}
+                    &= \frac{2^2 - 2}{2} + \frac{3^2 - 3}{2} + \frac{4^2 - 4}{2} + \ldots + \frac{n^2 - n}{2}\\
+                    &= \frac{1^2 + 2^2 + 3^2 + 4^2 + \ldots n^2 - \pars{1 + 2 + 3 + 4 + \ldots + n}}{2}\\
+                    &= \frac{\frac{n\pars{n + 1}{2n + 1}}{6} - \frac{n\pars{n + 1}}{2}}{2}
+                    = \frac{\frac{n\pars{n + 1}\pars{2n + 1} - 3n\pars{n + 1}}{6}}{2}\\
+                    &= \frac{\pars{2n - 2}n\pars{n + 1}}{12}
+                    = \frac{\pars{n - 1}n\pars{n + 1}}{6}
+            \end{split}
+        \end{equation*}
+        Mianownik możemy natomiast zapisać jako
+        \begin{equation*}
+            \binom{n + 1}{n - 2}
+                = \frac{\pars{n + 1}!}{\pars{n - 2}! \cdot 3!}
+                = \frac{\cancel{\pars{n - 2}!}\pars{n - 1}n\pars{n + 1}}{\cancel{\pars{n - 2}!} \cdot 6}
+                = \frac{\pars{n - 1}n\pars{n + 1}}{6}
+        \end{equation*}
+        Mamy więc
+        \begin{equation*}
+            \frac{\binom{2}{2} + \binom{3}{2} + \binom{4}{2} + \ldots + \binom{n}{2}}{\binom{n + 1}{n - 2}}
+                = \frac{\frac{\pars{n - 1}n\pars{n + 1}}{6}}{\frac{\pars{n - 1}n\pars{n + 1}}{6}}
+                = 1
+        \end{equation*}
+    \item
+        \begin{equation*}
+            \frac{\binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \ldots + \binom{n}{n - 1} + \binom{n}{n}}{\binom{n - 1}{0} + \binom{n - 1}{1} + \binom{n - 1}{2} + \ldots + \binom{n - 1}{n - 2} + \binom{n - 1}{n - 1}}
+                = \frac{2^n}{2^{n - 1}}
+                = 2
+        \end{equation*}
+\end{enumerate}

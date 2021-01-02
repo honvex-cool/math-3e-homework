@@ -1,560 +1,560 @@
-\subsection*{Zestaw~VI (zadania otwarte)}
-\subsubsection*{Zadanie~1.}
-\begin{gather*}
-    x^2 - 2x + 2y^2 + 8y + 9 \geq 0\\
-    x^2 - 2x + 1 + 2\parens{y^2 + 4y + 4} \geq 0\\
-    (x - 1)^2 + 2(y + 2)^2 \geq 0
-\end{gather*}
-Ostatnia nierówność jest prawdziwa, ponieważ suma kwadratów liczb rzeczywistych jest zawsze nieujemna. Wszystkie przejścia były równoważne, więc teza również jest prawdziwa.
-\qed
-\subsubsection*{Zadanie~2.}
-\begin{gather*}
-    W(x) = x^3 - (p + 1)x^2 + (p - 3)x + 3
-\end{gather*}
-Zauważmy, że współczynniki sumują się do \(0\):
-\begin{equation*}
-    W(1) = 1 - (p + 1) + (p - 3) + 3 = 1 - p - 1 + p - 3 + 3 = 0
-\end{equation*}
-Zatem jednym z~pierwiastków jest \(x = 1 \in \integer\), niezależnie od \(p\). Możemy dokończyć rozkład wielomianu na postać iloczynową za pomocą schematu Hornera (Tablica~\ref{2020_09_28:2:table:horner})
-\begin{table}[H]
-    \centering
-    \begin{tabular}{c|c|c|c|c}
-        \(c\) & \(x^3\) & \(-(p + 1)x^2\) & \((p - 3)x\) & \(3\)\\
-        \hline
-        & \(1\) & \(-p - 1\) & \(p - 3\) & \(3\)\\
-        \hline
-        \(1\) & \(1\) & \(-p - 1 + 1 \cdot 1 = -p\) & \(p - 3 + 1 \cdot (-p) = p - 3 - p = -3\) & \(3 + 1 \cdot (-3) = 3 - 3 = 0\)\\
-        \hline
-        & \(1\) & \(-p\) & \(-3\) & \(0\)
-    \end{tabular}
-    \caption{Rozkład wielomianu z~zadania~2. za pomocą schematu Hornera}
-    \label{2020_09_28:2:table:horner}
-\end{table}
-\begin{equation*}
-    W(x) = (x - 1)\parens{x^2 - px - 3}
-\end{equation*}
-Zauważmy, że wielomian \(x^2 - px - 3\) ma zawsze dwa różne pierwiastki, ponieważ \(\Delta > 0\):
-\begin{gather*}
-    \Delta = (-p)^2 - 4 \cdot 1 \cdot (-3) = p^2 + 12\\
-    p^2 + 12 > 0 \text{ dla każdej liczby rzeczywistej \(p\)}
-\end{gather*}
-Przyjmijmy zatem, że te pierwiastki to \(x_1\) i~\(x_2\):
-\begin{gather*}
-    x_1 = \frac{-(-p) - \sqrt{\Delta}}{2 \cdot 1} = \frac{p - \sqrt{p^2 + 12}}{2} < \frac{p - \sqrt{p^2}}{2} = \frac{p - p}{2} = 0\\
-    x_2 = \frac{-(-p) + \sqrt{\Delta}}{2 \cdot 1} = \frac{p + \sqrt{p^2 + 12}}{2}
-\end{gather*}
-Ponieważ z~wzorów Viete'a mamy \(x_1 \cdot x_2 = \frac{-3}{1} = -3\) i~\(x_1 < 0\), to musi zachodzić \(x_2 > 0\). Rozważmy teraz trzy sposoby, na jakie pierwiastki wielomianu \(W(x)\) mogą utworzyć ciąg arytmetyczny:
-\begin{enumerate}
-    \item ciąg \((x_1, 1, x_2)\) lub ciąg \((x_2, 1, x_1)\). Z~warunku, aby trzy liczby tworzyły ciąg arytmetyczny, mamy:
-        \begin{gather*}
-            2 \cdot 1 = x_1 + x_2\\
-            x_1 + x_2 = 2
-        \end{gather*}
-        Z~wzorów Viete'a mamy zależność \(x_1 + x_2 = \frac{-(-p)}{1} = p\). Zatem \(p = x_1 + x_2 = 2\), czyli dla \(p = 2\) pierwiastki tego wielomianu tworzą ciąg arytmetyczny.
-    \item ciąg \((x_1, x_2, 1)\) lub ciąg \((1, x_2, x_1)\). Z~warunku, aby trzy liczby tworzyły ciąg arytmetyczny, mamy:
-        \begin{gather*}
-            2x_2 = x_1 + 1\\
-            2 \cdot \frac{p + \sqrt{p^2 + 12}}{2} = \frac{p - \sqrt{p^2 + 12}}{2} + 1\\
-            2p + 2\sqrt{p^2 + 12} = p - \sqrt{p^2 + 12} + 2\\
-            2 - p = 3\sqrt{p^2 + 12}\\
-            4 - 4p + p^2 = 9p^2 + 108\\
-            8p^2 + 4p + 104 = 0\\
-            \Delta = 4^2 - 4 \cdot 8 \cdot 104 < 0
-        \end{gather*}
-        Zatem wśród liczb rzeczywistych nie ma takich \(p\), dla których pierwiastki tworzą ciąg arytmetyczny w~ten sposób.
-    \item ciąg \((x_2, x_1, 1)\) lub ciąg \((1, x_1, x_2)\). Z~warunku, aby trzy liczby tworzyły ciąg arytmetyczny, mamy:
-        \begin{equation*}
-            2x_1 = x_2 + 1
-        \end{equation*}
-        Jednak to nie jest możliwe, ponieważ \(x_1 < 0\), więc lewa strona jest ujemna, a~\(x_2 > 0\), więc prawa strona jest dodatnia. Okazuje się więc, że w~tym przypadku nie ma rozwiązań.
-\end{enumerate}
-Zatem jedyną wartością \(p\), dla której pierwiastki wielomianu \(W(x)\) tworzą ciąg arytmetyczny, jest \(p = 2\).
-\qed
-\subsubsection*{Zadanie~3.}
-\begin{gather*}
-    x^3 - x^2 - 4 = 0
-\end{gather*}
-Widać, że dla \(x = 2\) równanie jest prawdziwe. Teraz na pomocą schematu Hornera (Tablica~\ref{2020_09_28:3:table:horner}) możemy rozłożyć wielomian na postać iloczynową:
-\begin{table}[H]
-    \centering
-    \begin{tabular}{c|c|c|c|c}
-        \(c\) & \(x^3\) & \(-x^2\) & \(0x\) & \(-4\)\\
-        \hline
-        & \(1\) & \(-1\) & \(0\) & \(-4\)\\
-        \hline
-        \(2\) & \(1\) & \(-1 + 2 \cdot 0 = 1\) & \(0 + 2 \cdot 1 = 2\) & \(-4 + 2 \cdot 2 = 0\)\\
-        \hline
-        & \(1\) & \(2\) & \(2\) & \(0\)
-    \end{tabular}
-    \caption{Rozkład wielomianu z~zadania~3. za pomocą schematu Hornera}
-    \label{2020_09_28:3:table:horner}
-\end{table}
-\begin{equation*}
-    (x - 2) \cdot \underbrace{\parens{x^2 + 2x + 2}}_{\Delta = 2^2 - 4 \cdot 1 \cdot 2 = 4 - 8 = -4 < 0}
-\end{equation*}
-Jest to jedyny możliwy rozkład wielomianu na postać iloczynową. Zatem jedynym pierwiastkiem jest \(x = 2\).
-\qed
-\subsubsection*{Zadanie~4.}
-\begin{gather*}
-    x^3 + y^3 \geq x^2y + xy^2\\
-    (x + y)\parens{x^2 - xy + y^2} \geq x^2y + xy^2\\
-    (x + y)\parens{x^2 - xy + y^2} - x^2y + xy^2 \geq 0\\
-    (x + y)\parens{x^2 - xy + y^2} - xy(x + y) \geq 0\\
-    (x + y)\parens{x^2 - xy + y^2 - xy} \geq 0\\
-    (x + y)\parens{x^2 - 2xy + y^2} \geq 0\\
-    (x + y)(x - y)^2 \geq 0
-\end{gather*}
-Skoro \(x \geq 0\) i~\(y \geq 0\), to \(x + y \geq 0\). Mamy zatem iloczyn liczby nieujemnej i~kwadratu liczby rzeczywistej, więc jest on na pewno nieujemny.
-\qed
-\subsubsection*{Zadanie~5.}
-\begin{equation*}
-    \frac{mx}{m - 2} + \frac{m + 2}{x} = x + 2\sqrt{2}
-\end{equation*}
-Od razu zauważmy, że \(x \neq 0\) i~\(m - 2 \neq 0 \implies m \neq 2\), ponieważ mianowniki nie mogą się zerować.
-\begin{gather*}
-    \frac{mx \cdot x}{x(m - 2)} + \frac{(m + 2)(m - 2)}{x(m - 2)} = \frac{\parens{x + 2\sqrt{2}}x(m - 2)}{x(m - 2)}\\
-    \frac{mx^2 + (m + 2)(m - 2) - \parens{x + 2\sqrt{2}}x(m - 2)}{x(m - 2)} = 0\\
-    \frac{mx^2 + m^2 - 4 - mx^2 + 2x^2 - 2\sqrt{2}mx + 4\sqrt{2}x}{x(m - 2)} = 0\\
-    mx^2 + m^2 - 4 - mx^2 + 2x^2 - 2\sqrt{2}mx + 4\sqrt{2}x = 0\\
-    2x^2 + \parens{4\sqrt{2} - 2\sqrt{2}m}x + \parens{m^2 - 4} = 0
-\end{gather*}
-Sprawdźmy na początek, kiedy to równanie ma dwa pierwiastki (być może jeden wielokrotny). Aby tak było, musi zachodzić warunek:
-\begin{gather*}
-    \Delta \geq 0\\
-    \Delta
-        = \parens{4\sqrt{2} - 2\sqrt{2}m}^2 - 4 \cdot 2 \cdot \parens{m^2 - 4}
-        = 32 - 32m + 8m^2 - 8m^2 + 32
-        = 32m + 64\\
-    -32m + 64 \geq 0\\
-    -32m \geq -64\\
-    32m \leq 64\\
-    m \leq 2\\
-    m \in \rightclosed{-\infty}{2}
-\end{gather*}
-Kiedy równanie kwadratowe ma dwa pierwiastki \(x_1, x_2\), możemy skorzystać z~wzorów Viete'a:
-\begin{gather*}
-    x_1 + x_2 = \frac{-\parens{4\sqrt{2} - 2\sqrt{2}m}}{2} = \sqrt{2}m - 2\sqrt{2}\\
-    x_1x_2 = \frac{m^2 - 4}{2}
-\end{gather*}
-Sumę odwrotności pierwiastków możemy zapisać następująco:
-\begin{equation*}
-    \frac{1}{x_1} + \frac{1}{x_2}
-        = \frac{x_1 + x_2}{x_1x_2}
-        = \frac{\sqrt{2}m - 2\sqrt{2}}{\frac{m^2 - 4}{2}}
-        = \frac{2\sqrt{2}m - 4\sqrt{2}}{m^2 - 4}
-        = \frac{2\sqrt{2}\cancel{(m - 2)}}{\cancel{(m - 2)}(m + 2)}
-        = \frac{2\sqrt{2}}{m + 2}
-\end{equation*}
-Chcemy, aby zachodziła nierówność
-\begin{gather*}
-    \frac{1}{x_1} + \frac{1}{x_2} < \frac{\sqrt{2}}{m - 1}\\
-    \frac{2\cancel{\sqrt{2}}}{m + 2} < \frac{\cancel{\sqrt{2}}}{m - 1}\\
-    \frac{2}{m + 2} < \frac{1}{m - 1}\\
-    \frac{1}{m - 1} - \frac{2}{m + 2} > 0\\
-    \frac{m + 2}{(m - 1)(m + 2)} - \frac{2m - 2}{(m - 1)(m + 2)} > 0\\
-    \frac{4 - m}{(m - 1)(m + 2)} > 0\\
-    -(m - 4)(m - 1)(m + 2) > 0
-\end{gather*}
-Pierwiastkami tego wielomianu są \(0\), \(1\) i~\(2\), a~współczynnik przy najwyższej potędze jest ujemny. Możemy naszkicować wykres tego wielomianu:
-\begin{mathfigure*}
-    \drawvec[scale=2] (-1, 0) -- (3, 0);
-    \draw[scale=2] (-0.25, 0.5)
-        -- (0, 0)
-        .. controls (0.37, -0.7) .. (1, 0)
-        .. controls (1.6, 0.7) .. (2, 0)
-        -- (2.25, -0.5);
-    \fillpoint*[2]{0, 0}[\(-2\)][below left];
-    \fillpoint*[2]{1, 0}[\(1\)][below right];
-    \fillpoint*[2]{2, 0}[\(4\)][below left];
-    \node[ForestGreen, scale=2] at (-1, 0.5) {\(+\)};
-    \node[ForestGreen, scale=2] at (3.08, 0.5) {\(+\)};
-    \node[red, scale=2] at (0.9, -0.5) {\(-\)};
-    \node[red, scale=2] at (5, -0.5) {\(-\)};
-\end{mathfigure*}
-Odczytujemy z~niego, że \(m \in \open{-\infty}{2} \cup \open{1}{2}\).
-\subsubsection*{Zadanie~6.}
-\begin{gather*}
-    \cos 2x + \sin x = 1\\
-    1 - 2\sin^2x + \sin x = 1\\
-    -2\sin^2x + \sin x = 0\\
-    2\sin^2x - \sin x = 0\\
-    \sin x(2\sin x - 1) = 0\\
-    \sin x = 0 \lor \sin x = \frac{1}{2}\\
-    x = k\pi,\quad k \in \integer \lor x = 2\ell\pi + \frac{\pi}{6},\quad \ell \in \integer \lor x = (2m + 1)\pi - \frac{\pi}{6},\quad m \in \integer
-\end{gather*}
-Wyznaczmy teraz rozwiązania nierówności
-\begin{gather*}
-    \log_x (x + 2) < 2
-\end{gather*}
-Aby logarytm po lewej stronie istniał, muszą zachodzić warunki:
-\begin{itemize}
-    \item \(x > 0\)
-    \item \(x \neq 1\)
-    \item \(x + 2 > 0\)
-\end{itemize}
-Zatem \(x \in \real_{> 0} \setminus \set{1}\).
-\begin{gather*}
-    x^{\log_x (x + 2)} < x^2\\
-    x + 2 < x^2\\
-    x^2 - x - 2 > 0\\
-    (x + 1)(x - 2) > 0\\
-    x \in \open{-\infty}{-1} \cup \open{2}{+\infty}
-\end{gather*}
-Po połączeniu wyniku z~dziedziną:
-\begin{equation*}
-    x \in \open{2}{+\infty}
-\end{equation*}
-Po połączeniu tej informacji z~rozwiązaniami równania otrzymujemy:
-\begin{equation*}
-    x = k\pi,\quad k \in \integer_{> 0} \lor x = 2\ell\pi + \frac{\pi}{6},\quad \ell \in \integer_{> 0} \lor x = (2m + 1)\pi - \frac{\pi}{6},\quad m \in \integer_{\geq 0}
-\end{equation*}
-\subsubsection*{Zadanie~7.}
-\begin{equation*}
-    \begin{cases}
-        3\abs{x} + 2y = 1\\
-        2x - \abs{y} = 4
-    \end{cases}
-\end{equation*}
-Dokonamy analizy przypadków:
-\begin{proofcases}
-    \item \(x \geq 0 \land y \geq 0\):
-        \begin{equation*}
-            \begin{cases}
-                3x + 2y = 1\\
-                2x - y = 4
-            \end{cases}
-        \end{equation*}
-        Możemy pomnożyć drugie równanie stronami przez \(2\) i~dodać stronami równania:
-        \begin{gather*}
-            \begin{cases}
-                3x + 2y = 1\\
-                4x - 2y = 8
-            \end{cases}\\
-            3x + 2y + 4x - 2y = 9\\
-            7x = 9\\
-            x = \frac{9}{7} \geq 0
-        \end{gather*}
-        Z drugiego równania mamy
-        \begin{gather*}
-            2 \cdot \frac{9}{7} - y = 4\\
-            y = \frac{18}{7} - 4 = \frac{18}{7} - \frac{28}{7} = -\frac{10}{7} < 0
-        \end{gather*}
-        Otrzymaliśmy wynik, który nie należy do rozważanego przedziału dla \(y\), więc nie jest to rozwiązanie.
-    \item \(x \geq 0 \land y < 0\):
-        \begin{equation*}
-            \begin{cases}
-                3x + 2y = 1\\
-                2x + y = 4
-            \end{cases}
-        \end{equation*}
-        Możemy pomnożyć drugie równanie stronami przez \(-2\) i~dodać stronami równania:
-        \begin{gather*}
-            \begin{cases}
-                3x + 2y = 1\\
-                -4x - 2y = -8
-            \end{cases}\\
-            3x + 2y - 4x - 2y = -7\\
-            -x = -7\\
-            x = 7
-        \end{gather*}
-        Z~drugiego równania mamy
-        \begin{gather*}
-            2 \cdot 7 + y = 4\\
-            14 + y = 4\\
-            y = -10 < 0
-        \end{gather*}
-        Otrzymane wyniki należą do rozważanych przedziałów dla odpowiednio \(x\) i~\(y\), więc jest to rozwiązanie:
-        \begin{equation*}
-            \begin{cases}
-                x = 7\\
-                y = -10
-            \end{cases}
-        \end{equation*}
-    \item \(x < 0 \land y \geq 0\):
-        \begin{equation*}
-            \begin{cases}
-                -3x + 2y = 1\\
-                2x - y = 4
-            \end{cases}
-        \end{equation*}
-        Możemy pomnożyć drugie równanie stronami przez \(2\) i~dodać równania stronami:
-        \begin{gather*}
-            \begin{cases}
-                -3x + 2y = 1\\
-                4x - 2y = 8
-            \end{cases}\\
-            -3x + 2y + 4x - 2y = 9\\
-            x = 9 \geq 0
-        \end{gather*}
-        Otrzymaliśmy wynik, który nie należy do rozważanego przedziału dla \(x\), więc na pewno nie będzie to rozwiązanie. Nie ma zatem sensu kontynuować wyznaczanie \(y\).
-    \item \(x < 0 \land y < 0\):
-        \begin{equation*}
-            \begin{cases}
-                -3x + 2y = 1\\
-                2x + y = 4
-            \end{cases}
-        \end{equation*}
-        Możemy pomnożyć drugie równanie stronami przez \(-2\) i~dodać równania stronami:
-        \begin{gather*}
-            \begin{cases}
-                -3x + 2y = 1\\
-                -2x - 2y = -8
-            \end{cases}\\
-            -3x + 2y - 2x - 2y = -7\\
-            -5x = -7\\
-            x = \frac{7}{5} \geq 0
-        \end{gather*}
-        Orzymaliśmy wynik, który nie należy do rozważanego przedziału dla \(x\), więc na pewno nie będzie to rozwiązanie. Nie ma zatem sensu kontynuować wyznaczanie \(y\).
-\end{proofcases}
-Ostatecznie po rozważeniu wszystkich możliwych przypadków otrzymujemy jedno rozwiązanie:
-\begin{equation*}
-    \begin{cases}
-        x = 7\\
-        y = -10
-    \end{cases}
-\end{equation*}
-Możemy również przekształcić początkowe równania i~narysować krzywe, które one opisują, aby rozwiązać układ równań graficznie:
-\begin{equation*}
-    \begin{cases}
-        y = \frac{1 - 3\abs{x}}{2}\\
-        x = \frac{4 + \abs{y}}{2}
-    \end{cases}
-\end{equation*}
-\begin{mathfigure*}
-    \drawcoordsystem[0.5]{-4, -12}{10, 3};
-    \draw[scale=0.5, thick, ForestGreen, domain=-4:8, samples=100] plot (\x, {(1 - 3 * abs(\x)) / 2});
-    \draw[scale=0.5, thick, red, domain=-12:3, variable=\x, samples=100] plot ({(4 + abs(\x)) / 2}, \x);
-    \fillpoint*[0.5]{7, -10}[\((7; -10)\)][right];
-\end{mathfigure*}
-Tak jak w~poprzedniej metodzie, otrzymujemy jedno rozwiązanie:
-\begin{equation*}
-    \begin{cases}
-        x = 7\\
-        y = -10
-    \end{cases}
-\end{equation*}
-\subsubsection*{Zadanie~8.}
-\begin{equation*}
-    \frac{1}{1 - x} + \frac{1}{(1 - x)^2} + \frac{1}{(1 - x)^3} + \ldots = 1 - 2x
-\end{equation*}
-Na pewno \(x \neq 1\), ponieważ mianowniki muszą być niezerowe. Jest to szereg geometryczny o~pierwszym wyrazie równym \(a_1 = \frac{1}{1 - x}\) i~ilorazie równym \(q = \frac{1}{1 - x}\). Szereg jest zbieżny, co daje nam warunek
-\begin{gather*}
-    \tag{\(\ast\)} \abs{q} < 1 \label{2020_09_28:8:quotient}\\
-    \abs{\frac{1}{1 - x}} < 1
-\end{gather*}
-Przy takim założeniu możemy skorzystać ze wzoru na sumę szeregu geometrycznego:
-\begin{equation*}
-    \frac{1}{1 - x} + \frac{1}{(1 - x)^2} + \frac{1}{(1 - x)^3} + \ldots
-        = \frac{a_1}{1 - q}
-        = \frac{\frac{1}{1 - x}}{1 - \frac{1}{1 - x}}
-\end{equation*}
-Widzimy tu, że \(x \neq 0\), ponieważ inaczej mianownik wynosiłby \(1 - \frac{1}{1 - 0} = 1 - 1 = 0\), co jest niemożliwe.
-\begin{gather*}
-    \frac{\frac{1}{1 - x}}{1 - \frac{1}{1 - x}}
-        = \frac{\frac{1}{1 - x}}{\frac{1 - x - 1}{1 - x}}
-        = \frac{\frac{1}{\cancel{1 - x}}}{\frac{-x}{\cancel{1 - x}}}
-        = \frac{1}{-x}
-        = -\frac{1}{x}\\
-    -\frac{1}{x} = 1 - 2x
-\end{gather*}
-Możemy pomnożyć obie strony równania przez \(x\), ponieważ \(x \neq 0\).
-\begin{gather*}
-    -1 = x - 2x^2\\
-    2x^2 - x - 1 = 0\\
-    (x - 1)(2x + 1) = 0\\
-    x = 1 \lor x = -\frac{1}{2}
-\end{gather*}
-Na samym początku rozwiązania wykluczyliśmy \(x = 1\), więc jedynym potencjalnym rozwiązaniem jest \(x = -\frac{1}{2}\). Musimy jednak jeszcze sprawdzić, czy spełniony jest przy nim warunek \refer{2020_09_28:8:quotient}:
-\begin{gather*}
-    \abs{q} < 1\\
-    \abs{\frac{1}{1 - x}} < 1\\
-    \abs{\frac{1}{1 - \parens{-\frac{1}{2}}}} = \abs{\frac{1}{\frac{3}{2}}} = \abs{\frac{2}{3}} = \frac{2}{3} < 1
-\end{gather*}
-Warunek jest spełniony, zatem rozwiązaniem jest \(x = -\frac{1}{2}\).
-\subsubsection*{Zadanie~9.}
-Oznaczmy przez \(u \in \natural\) cyfrę jedności szukanej liczby, a~przez \(d \in \natural\) cyfrę dziesiątek szukanej liczby. Cyfra dziesiątek nie może być równa \(0\), ponieważ szukana liczba jest dwucyfrowa. Obowiązują zatem warunki:
-\begin{gather*}
-    \tag{\(\star\)} 1 \leq d \leq 9 \label{2020_09_28:9:decimal}\\
-    \tag{\(\ast\)} 0 \leq u \leq 9 \label{2020_09_28:9:unit}\\
-\end{gather*}
-Zapiszmy warunki, które ma spełniać szukana liczba:
-\begin{gather*}
-    \begin{cases}
-        u + d = 12\\
-        u^2 + d^2 = 80
-    \end{cases}\\
-    u^2 + d^2 = (u + d)^2 - 2ud\\
-    80 = 12^2 - 2ud\\
-    80 = 144 - 2ud\\
-    2ud = 64\\
-    ud = 32
-\end{gather*}
-Wypiszmy wszystkie możliwe iloczyny dwóch liczb naturalnych (z~uwzględnieniem kolejności), które w~wyniku dają \(32\):
-\begin{equation*}
-    \begin{split}
-        32 &= u \cdot d\\
-        &= 1 \cdot 32\\
-        &= 2 \cdot 16\\
-        &= 4 \cdot 8\\
-        &= 8 \cdot 4\\
-        &= 16 \cdot 2\\
-        &= 32 \cdot 1
-    \end{split}
-\end{equation*}
-Jedynymi parami liczb \((u, d)\), które spełniają warunki \refer{2020_09_28:9:decimal} i~\refer{2020_09_28:9:unit} przedstawione na samym początku rozwiązania są
-\begin{gather*}
-    (u, d) = (4, 8)\\
-    (u, d) = (8, 4)
-\end{gather*}
-Zatem liczby spełniające warunki zadania to \(48\) i~\(84\).
-\subsubsection*{Zadanie~10.}
-Trzy kolejne liczby nieparzyste możemy zapisać od najmniejszej do największej jako \(2n - 1, 2n + 1, 2n + 3\), gdzie \(n \in \integer\). Zapiszmy dane z~zadania:
-\begin{gather*}
-    (2n - 1)(2n + 1)(2n + 3) = (2n + 3)^2 - (2n - 1)^2 + 65\\
-    \parens{4n^2 - 1}(2n + 3) = 4n^2 + 12n + 9 - 4n^2 + 4n - 1 + 65\\
-    8n^3 + 12n^2 - 2n - 3 = 16n + 73\\
-    8n^3 + 12n^2 - 18n - 76 = 0\\
-    4n^3 + 6n^2 - 9n - 38 = 0
-\end{gather*}
-Widzimy, że jednym z~pierwiastków jest \(n = 2\). Możemy teraz z~użyciem schematu Hornera rozłożyć wielomian na postać iloczynową:
-\begin{gather*}
-    (n - 2)\parens{4n^2 + 14n + 19}
-\end{gather*}
-Drugi z~czynników jest wielomianem stopnia \(2\), w~którym
-\begin{equation*}
-    \Delta = 14^2 - 4 \cdot 4 \cdot 19 = 196 - 304 = -108 < 0
-\end{equation*}
-Zatem drugi czynnik nie może być już rozłożony na postać iloczynową, bo skoro \(\Delta < 0\), to nie ma pierwiastków. Zatem jedynym rozwiązaniem równania jest \(n = 2\). W~takim razie, liczby spełniające warunki zadania to:
-\begin{gather*}
-    2n - 1 = 3\\
-    2n + 1 = 5\\
-    2n + 3 = 7
-\end{gather*}
-Rzeczywiście, ich iloczyn wynosi \(105\) i~jest o~\(65\) większy od różnicy kwadratów lizczb największej i~najmniejszej: \(105 = 40 + 65 = 49 - 9 + 65 = 7^2 - 3^2 + 65\). Zatem rozwiązaniem zadania są liczby \(3, 5, 7\).
-\subsubsection*{Zadanie~11.}
-\begin{equation*}
-    \frac{6x}{x - 2} - \sqrt{\frac{12x}{x - 2}} - 2\sqrt[4]{\frac{12x}{x - 2}}
-\end{equation*}
-Natychmiast zauważamy, że mianowniki nie mogą być równe \(0\), więc \(x \neq 2\). Dokonajmy podstawienia \(t = \sqrt[4]{\frac{12x}{x - 2}}\):
-\begin{gather*}
-    \frac{t^4}{2} - t^2 - 2t > 0\\
-    t^4 - 2t^2 - 4t > 0
-\end{gather*}
-Zauważamy, że \(0\) i~\(2\) są pierwiastkami wielomianu po lewej stronie. Zatem możemy z~pomocą schematu Hornera rozłożyć wielomian na postać iloczynową:
-\begin{equation*}
-    t(t - 2)(t^2 + 2t + 2) > 0
-\end{equation*}
-Ostatni z~czynników nie ma pierwiastków, ponieważ jest to wielomian stopnia \(2\), w~którym
-\begin{equation*}
-    \Delta = 2^2 - 4 \cdot 1 \cdot 2 = 4 - 8 = -4 < 0
-\end{equation*}
-Zatem jedynymi pierwiastkami tego wielomianu są \(0\) i~\(2\). Współczynnik przy najwyższej potędze jest dodatni, więc nierówność jest spełniona, gdy
-\begin{gather*}
-    t \in \open{-\infty}{0} \cup \open{2}{+\infty}\\
-    t < 0 \lor t > 2\\
-    \sqrt[4]{\frac{12x}{x - 2}} < 0 \text{ (niemożliwe)} \lor \sqrt{4}{\frac{12x}{x - 2}} > 2
-\end{gather*}
-Pierwsza nierówność nie ma rozwiązań, ponieważ pierwiastek parzystego stopnia jest zawsze nieujemny. Skupmy się zatem na drugiej nierówności. Ponieważ obie strony są nieujemne, możemy podnieść je do czwartej potęgi:
-\begin{gather*}
-    \sqrt[4]{\frac{12x}{x - 2}} > 2\\
-    \frac{12x}{x - 2} > 16\\
-    \frac{12x - 16x + 32}{x - 2} > 0\\
-    \frac{-4x + 32}{x - 2} > 0\\
-    \frac{x - 8}{x - 2} < 0\\
-    (x - 2)(x - 8) < 0\\
-    x \in \open{2}{8}
-\end{gather*}
-Zatem rozwiązaniem nierówności jest \(x \in \open{2}{8}\).
-\subsubsection*{Zadanie~12.}
-\begin{equation*}
-    \abs{\frac{3x - 2}{x + 1}} \geq 3\\
-\end{equation*}
-Zauważamy, że \(x \neq -1\), ponieważ mianownik musi być różny od \(0\).
-\begin{gather*}
-    \abs{\frac{3(x + 1) - 5}{x + 1}} \geq 3\\
-    \abs{3 - \frac{5}{x + 1}} \geq 3\\
-    \abs{\frac{5}{x + 1} - 3} \geq 3
-\end{gather*}
-Możemy rozważyć dwa przypadki:
-\begin{proofcases}
-    \item
-        \begin{gather*}
-            \frac{3x - 2}{x + 1} \geq 0\\
-            (x + 1)(3x - 2) \geq 0\\
-            x \in \open{-\infty}{-1} \cup \leftclosed{\frac{2}{3}}{+\infty}
-        \end{gather*}
-        W~tym przypadku mamy:
-        \begin{gather*}
-            \frac{3x - 2}{x + 1} \geq 3\\
-            \frac{3x - 2}{x + 1} - \frac{3x + 3}{x + 1} \geq 0\\
-            \frac{-5}{x + 1} \geq 0\\
-            x + 1 < 0\\
-            x \in \rightclosed{-\infty}{-1}
-        \end{gather*}
-        Po uwzględnieniu faktu, że \(x \neq -1\), otrzymujemy przedział \(\open{-\infty}{-1}\), który zawiera się w~rozważanym przedziale, więc jest rozwiązaniem.
-    \item
-        \begin{gather*}
-            \frac{3x - 2}{x + 1} < 0\\
-            (x + 1)(3x - 2) < 0\\
-            x \in \open{-1}{\frac{2}{3}}
-        \end{gather*}
-        W~tym przypadku mamy:
-        \begin{gather*}
-            \frac{2 - 3x}{x + 1} \geq 3\\
-            \frac{2 - 3x}{x + 1} - \frac{3x + 3}{x + 1} \geq 0\\
-            \frac{-6x - 1}{x + 1} \geq 0\\
-            \frac{6x + 1}{x + 1} \leq 0\\
-            (x + 1)(6x + 1) \leq 0\\
-            x \in \closed{-1}{-\frac{1}{6}}
-        \end{gather*}
-        Po uwzględnieniu faktu, że \(x \neq -1\), otrzymujemy przedział \(\rightclosed{-1}{-\frac{1}{6}}\), który zawiera się w~rozważanym przedziale, więc jest rozwiązaniem.
-\end{proofcases}
-Ostatecznie otrzymujemy przedział rozwiązań będący sumą przedziałów otrzymanych w~rozważanych przypadkach:
-\begin{equation*}
-    x \in \open{-\infty}{-1} \cup \rightclosed{-1}{-\frac{1}{6}}
-\end{equation*}
-Zatem największą liczbą spełniającą nierówność \(\abs{\frac{3x - 2}{x + 1}} \geq 3\) jest liczba \(-\frac{1}{6}\).
+% \subsection*{Zestaw~VI (zadania otwarte)}
+% \subsubsection*{Zadanie~1.}
+% \begin{gather*}
+%     x^2 - 2x + 2y^2 + 8y + 9 \geq 0\\
+%     x^2 - 2x + 1 + 2\parens{y^2 + 4y + 4} \geq 0\\
+%     (x - 1)^2 + 2(y + 2)^2 \geq 0
+% \end{gather*}
+% Ostatnia nierówność jest prawdziwa, ponieważ suma kwadratów liczb rzeczywistych jest zawsze nieujemna. Wszystkie przejścia były równoważne, więc teza również jest prawdziwa.
+% \qed
+% \subsubsection*{Zadanie~2.}
+% \begin{gather*}
+%     W(x) = x^3 - (p + 1)x^2 + (p - 3)x + 3
+% \end{gather*}
+% Zauważmy, że współczynniki sumują się do \(0\):
+% \begin{equation*}
+%     W(1) = 1 - (p + 1) + (p - 3) + 3 = 1 - p - 1 + p - 3 + 3 = 0
+% \end{equation*}
+% Zatem jednym z~pierwiastków jest \(x = 1 \in \integer\), niezależnie od \(p\). Możemy dokończyć rozkład wielomianu na postać iloczynową za pomocą schematu Hornera (Tablica~\ref{2020_09_28:2:table:horner})
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{c|c|c|c|c}
+%         \(c\) & \(x^3\) & \(-(p + 1)x^2\) & \((p - 3)x\) & \(3\)\\
+%         \hline
+%         & \(1\) & \(-p - 1\) & \(p - 3\) & \(3\)\\
+%         \hline
+%         \(1\) & \(1\) & \(-p - 1 + 1 \cdot 1 = -p\) & \(p - 3 + 1 \cdot (-p) = p - 3 - p = -3\) & \(3 + 1 \cdot (-3) = 3 - 3 = 0\)\\
+%         \hline
+%         & \(1\) & \(-p\) & \(-3\) & \(0\)
+%     \end{tabular}
+%     \caption{Rozkład wielomianu z~zadania~2. za pomocą schematu Hornera}
+%     \label{2020_09_28:2:table:horner}
+% \end{table}
+% \begin{equation*}
+%     W(x) = (x - 1)\parens{x^2 - px - 3}
+% \end{equation*}
+% Zauważmy, że wielomian \(x^2 - px - 3\) ma zawsze dwa różne pierwiastki, ponieważ \(\Delta > 0\):
+% \begin{gather*}
+%     \Delta = (-p)^2 - 4 \cdot 1 \cdot (-3) = p^2 + 12\\
+%     p^2 + 12 > 0 \text{ dla każdej liczby rzeczywistej \(p\)}
+% \end{gather*}
+% Przyjmijmy zatem, że te pierwiastki to \(x_1\) i~\(x_2\):
+% \begin{gather*}
+%     x_1 = \frac{-(-p) - \sqrt{\Delta}}{2 \cdot 1} = \frac{p - \sqrt{p^2 + 12}}{2} < \frac{p - \sqrt{p^2}}{2} = \frac{p - p}{2} = 0\\
+%     x_2 = \frac{-(-p) + \sqrt{\Delta}}{2 \cdot 1} = \frac{p + \sqrt{p^2 + 12}}{2}
+% \end{gather*}
+% Ponieważ z~wzorów Viete'a mamy \(x_1 \cdot x_2 = \frac{-3}{1} = -3\) i~\(x_1 < 0\), to musi zachodzić \(x_2 > 0\). Rozważmy teraz trzy sposoby, na jakie pierwiastki wielomianu \(W(x)\) mogą utworzyć ciąg arytmetyczny:
+% \begin{enumerate}
+%     \item ciąg \((x_1, 1, x_2)\) lub ciąg \((x_2, 1, x_1)\). Z~warunku, aby trzy liczby tworzyły ciąg arytmetyczny, mamy:
+%         \begin{gather*}
+%             2 \cdot 1 = x_1 + x_2\\
+%             x_1 + x_2 = 2
+%         \end{gather*}
+%         Z~wzorów Viete'a mamy zależność \(x_1 + x_2 = \frac{-(-p)}{1} = p\). Zatem \(p = x_1 + x_2 = 2\), czyli dla \(p = 2\) pierwiastki tego wielomianu tworzą ciąg arytmetyczny.
+%     \item ciąg \((x_1, x_2, 1)\) lub ciąg \((1, x_2, x_1)\). Z~warunku, aby trzy liczby tworzyły ciąg arytmetyczny, mamy:
+%         \begin{gather*}
+%             2x_2 = x_1 + 1\\
+%             2 \cdot \frac{p + \sqrt{p^2 + 12}}{2} = \frac{p - \sqrt{p^2 + 12}}{2} + 1\\
+%             2p + 2\sqrt{p^2 + 12} = p - \sqrt{p^2 + 12} + 2\\
+%             2 - p = 3\sqrt{p^2 + 12}\\
+%             4 - 4p + p^2 = 9p^2 + 108\\
+%             8p^2 + 4p + 104 = 0\\
+%             \Delta = 4^2 - 4 \cdot 8 \cdot 104 < 0
+%         \end{gather*}
+%         Zatem wśród liczb rzeczywistych nie ma takich \(p\), dla których pierwiastki tworzą ciąg arytmetyczny w~ten sposób.
+%     \item ciąg \((x_2, x_1, 1)\) lub ciąg \((1, x_1, x_2)\). Z~warunku, aby trzy liczby tworzyły ciąg arytmetyczny, mamy:
+%         \begin{equation*}
+%             2x_1 = x_2 + 1
+%         \end{equation*}
+%         Jednak to nie jest możliwe, ponieważ \(x_1 < 0\), więc lewa strona jest ujemna, a~\(x_2 > 0\), więc prawa strona jest dodatnia. Okazuje się więc, że w~tym przypadku nie ma rozwiązań.
+% \end{enumerate}
+% Zatem jedyną wartością \(p\), dla której pierwiastki wielomianu \(W(x)\) tworzą ciąg arytmetyczny, jest \(p = 2\).
+% \qed
+% \subsubsection*{Zadanie~3.}
+% \begin{gather*}
+%     x^3 - x^2 - 4 = 0
+% \end{gather*}
+% Widać, że dla \(x = 2\) równanie jest prawdziwe. Teraz na pomocą schematu Hornera (Tablica~\ref{2020_09_28:3:table:horner}) możemy rozłożyć wielomian na postać iloczynową:
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{c|c|c|c|c}
+%         \(c\) & \(x^3\) & \(-x^2\) & \(0x\) & \(-4\)\\
+%         \hline
+%         & \(1\) & \(-1\) & \(0\) & \(-4\)\\
+%         \hline
+%         \(2\) & \(1\) & \(-1 + 2 \cdot 0 = 1\) & \(0 + 2 \cdot 1 = 2\) & \(-4 + 2 \cdot 2 = 0\)\\
+%         \hline
+%         & \(1\) & \(2\) & \(2\) & \(0\)
+%     \end{tabular}
+%     \caption{Rozkład wielomianu z~zadania~3. za pomocą schematu Hornera}
+%     \label{2020_09_28:3:table:horner}
+% \end{table}
+% \begin{equation*}
+%     (x - 2) \cdot \underbrace{\parens{x^2 + 2x + 2}}_{\Delta = 2^2 - 4 \cdot 1 \cdot 2 = 4 - 8 = -4 < 0}
+% \end{equation*}
+% Jest to jedyny możliwy rozkład wielomianu na postać iloczynową. Zatem jedynym pierwiastkiem jest \(x = 2\).
+% \qed
+% \subsubsection*{Zadanie~4.}
+% \begin{gather*}
+%     x^3 + y^3 \geq x^2y + xy^2\\
+%     (x + y)\parens{x^2 - xy + y^2} \geq x^2y + xy^2\\
+%     (x + y)\parens{x^2 - xy + y^2} - x^2y + xy^2 \geq 0\\
+%     (x + y)\parens{x^2 - xy + y^2} - xy(x + y) \geq 0\\
+%     (x + y)\parens{x^2 - xy + y^2 - xy} \geq 0\\
+%     (x + y)\parens{x^2 - 2xy + y^2} \geq 0\\
+%     (x + y)(x - y)^2 \geq 0
+% \end{gather*}
+% Skoro \(x \geq 0\) i~\(y \geq 0\), to \(x + y \geq 0\). Mamy zatem iloczyn liczby nieujemnej i~kwadratu liczby rzeczywistej, więc jest on na pewno nieujemny.
+% \qed
+% \subsubsection*{Zadanie~5.}
+% \begin{equation*}
+%     \frac{mx}{m - 2} + \frac{m + 2}{x} = x + 2\sqrt{2}
+% \end{equation*}
+% Od razu zauważmy, że \(x \neq 0\) i~\(m - 2 \neq 0 \implies m \neq 2\), ponieważ mianowniki nie mogą się zerować.
+% \begin{gather*}
+%     \frac{mx \cdot x}{x(m - 2)} + \frac{(m + 2)(m - 2)}{x(m - 2)} = \frac{\parens{x + 2\sqrt{2}}x(m - 2)}{x(m - 2)}\\
+%     \frac{mx^2 + (m + 2)(m - 2) - \parens{x + 2\sqrt{2}}x(m - 2)}{x(m - 2)} = 0\\
+%     \frac{mx^2 + m^2 - 4 - mx^2 + 2x^2 - 2\sqrt{2}mx + 4\sqrt{2}x}{x(m - 2)} = 0\\
+%     mx^2 + m^2 - 4 - mx^2 + 2x^2 - 2\sqrt{2}mx + 4\sqrt{2}x = 0\\
+%     2x^2 + \parens{4\sqrt{2} - 2\sqrt{2}m}x + \parens{m^2 - 4} = 0
+% \end{gather*}
+% Sprawdźmy na początek, kiedy to równanie ma dwa pierwiastki (być może jeden wielokrotny). Aby tak było, musi zachodzić warunek:
+% \begin{gather*}
+%     \Delta \geq 0\\
+%     \Delta
+%         = \parens{4\sqrt{2} - 2\sqrt{2}m}^2 - 4 \cdot 2 \cdot \parens{m^2 - 4}
+%         = 32 - 32m + 8m^2 - 8m^2 + 32
+%         = 32m + 64\\
+%     -32m + 64 \geq 0\\
+%     -32m \geq -64\\
+%     32m \leq 64\\
+%     m \leq 2\\
+%     m \in \rightclosed{-\infty}{2}
+% \end{gather*}
+% Kiedy równanie kwadratowe ma dwa pierwiastki \(x_1, x_2\), możemy skorzystać z~wzorów Viete'a:
+% \begin{gather*}
+%     x_1 + x_2 = \frac{-\parens{4\sqrt{2} - 2\sqrt{2}m}}{2} = \sqrt{2}m - 2\sqrt{2}\\
+%     x_1x_2 = \frac{m^2 - 4}{2}
+% \end{gather*}
+% Sumę odwrotności pierwiastków możemy zapisać następująco:
+% \begin{equation*}
+%     \frac{1}{x_1} + \frac{1}{x_2}
+%         = \frac{x_1 + x_2}{x_1x_2}
+%         = \frac{\sqrt{2}m - 2\sqrt{2}}{\frac{m^2 - 4}{2}}
+%         = \frac{2\sqrt{2}m - 4\sqrt{2}}{m^2 - 4}
+%         = \frac{2\sqrt{2}\cancel{(m - 2)}}{\cancel{(m - 2)}(m + 2)}
+%         = \frac{2\sqrt{2}}{m + 2}
+% \end{equation*}
+% Chcemy, aby zachodziła nierówność
+% \begin{gather*}
+%     \frac{1}{x_1} + \frac{1}{x_2} < \frac{\sqrt{2}}{m - 1}\\
+%     \frac{2\cancel{\sqrt{2}}}{m + 2} < \frac{\cancel{\sqrt{2}}}{m - 1}\\
+%     \frac{2}{m + 2} < \frac{1}{m - 1}\\
+%     \frac{1}{m - 1} - \frac{2}{m + 2} > 0\\
+%     \frac{m + 2}{(m - 1)(m + 2)} - \frac{2m - 2}{(m - 1)(m + 2)} > 0\\
+%     \frac{4 - m}{(m - 1)(m + 2)} > 0\\
+%     -(m - 4)(m - 1)(m + 2) > 0
+% \end{gather*}
+% Pierwiastkami tego wielomianu są \(0\), \(1\) i~\(2\), a~współczynnik przy najwyższej potędze jest ujemny. Możemy naszkicować wykres tego wielomianu:
+% \begin{mathfigure*}
+%     \drawvec[scale=2] (-1, 0) -- (3, 0);
+%     \draw[scale=2] (-0.25, 0.5)
+%         -- (0, 0)
+%         .. controls (0.37, -0.7) .. (1, 0)
+%         .. controls (1.6, 0.7) .. (2, 0)
+%         -- (2.25, -0.5);
+%     \fillpoint*[2]{0, 0}[\(-2\)][below left];
+%     \fillpoint*[2]{1, 0}[\(1\)][below right];
+%     \fillpoint*[2]{2, 0}[\(4\)][below left];
+%     \node[ForestGreen, scale=2] at (-1, 0.5) {\(+\)};
+%     \node[ForestGreen, scale=2] at (3.08, 0.5) {\(+\)};
+%     \node[red, scale=2] at (0.9, -0.5) {\(-\)};
+%     \node[red, scale=2] at (5, -0.5) {\(-\)};
+% \end{mathfigure*}
+% Odczytujemy z~niego, że \(m \in \open{-\infty}{2} \cup \open{1}{2}\).
+% \subsubsection*{Zadanie~6.}
+% \begin{gather*}
+%     \cos 2x + \sin x = 1\\
+%     1 - 2\sin^2x + \sin x = 1\\
+%     -2\sin^2x + \sin x = 0\\
+%     2\sin^2x - \sin x = 0\\
+%     \sin x(2\sin x - 1) = 0\\
+%     \sin x = 0 \lor \sin x = \frac{1}{2}\\
+%     x = k\pi,\quad k \in \integer \lor x = 2\ell\pi + \frac{\pi}{6},\quad \ell \in \integer \lor x = (2m + 1)\pi - \frac{\pi}{6},\quad m \in \integer
+% \end{gather*}
+% Wyznaczmy teraz rozwiązania nierówności
+% \begin{gather*}
+%     \log_x (x + 2) < 2
+% \end{gather*}
+% Aby logarytm po lewej stronie istniał, muszą zachodzić warunki:
+% \begin{itemize}
+%     \item \(x > 0\)
+%     \item \(x \neq 1\)
+%     \item \(x + 2 > 0\)
+% \end{itemize}
+% Zatem \(x \in \real_{> 0} \setminus \set{1}\).
+% \begin{gather*}
+%     x^{\log_x (x + 2)} < x^2\\
+%     x + 2 < x^2\\
+%     x^2 - x - 2 > 0\\
+%     (x + 1)(x - 2) > 0\\
+%     x \in \open{-\infty}{-1} \cup \open{2}{+\infty}
+% \end{gather*}
+% Po połączeniu wyniku z~dziedziną:
+% \begin{equation*}
+%     x \in \open{2}{+\infty}
+% \end{equation*}
+% Po połączeniu tej informacji z~rozwiązaniami równania otrzymujemy:
+% \begin{equation*}
+%     x = k\pi,\quad k \in \integer_{> 0} \lor x = 2\ell\pi + \frac{\pi}{6},\quad \ell \in \integer_{> 0} \lor x = (2m + 1)\pi - \frac{\pi}{6},\quad m \in \integer_{\geq 0}
+% \end{equation*}
+% \subsubsection*{Zadanie~7.}
+% \begin{equation*}
+%     \begin{cases}
+%         3\abs{x} + 2y = 1\\
+%         2x - \abs{y} = 4
+%     \end{cases}
+% \end{equation*}
+% Dokonamy analizy przypadków:
+% \begin{proofcases}
+%     \item \(x \geq 0 \land y \geq 0\):
+%         \begin{equation*}
+%             \begin{cases}
+%                 3x + 2y = 1\\
+%                 2x - y = 4
+%             \end{cases}
+%         \end{equation*}
+%         Możemy pomnożyć drugie równanie stronami przez \(2\) i~dodać stronami równania:
+%         \begin{gather*}
+%             \begin{cases}
+%                 3x + 2y = 1\\
+%                 4x - 2y = 8
+%             \end{cases}\\
+%             3x + 2y + 4x - 2y = 9\\
+%             7x = 9\\
+%             x = \frac{9}{7} \geq 0
+%         \end{gather*}
+%         Z drugiego równania mamy
+%         \begin{gather*}
+%             2 \cdot \frac{9}{7} - y = 4\\
+%             y = \frac{18}{7} - 4 = \frac{18}{7} - \frac{28}{7} = -\frac{10}{7} < 0
+%         \end{gather*}
+%         Otrzymaliśmy wynik, który nie należy do rozważanego przedziału dla \(y\), więc nie jest to rozwiązanie.
+%     \item \(x \geq 0 \land y < 0\):
+%         \begin{equation*}
+%             \begin{cases}
+%                 3x + 2y = 1\\
+%                 2x + y = 4
+%             \end{cases}
+%         \end{equation*}
+%         Możemy pomnożyć drugie równanie stronami przez \(-2\) i~dodać stronami równania:
+%         \begin{gather*}
+%             \begin{cases}
+%                 3x + 2y = 1\\
+%                 -4x - 2y = -8
+%             \end{cases}\\
+%             3x + 2y - 4x - 2y = -7\\
+%             -x = -7\\
+%             x = 7
+%         \end{gather*}
+%         Z~drugiego równania mamy
+%         \begin{gather*}
+%             2 \cdot 7 + y = 4\\
+%             14 + y = 4\\
+%             y = -10 < 0
+%         \end{gather*}
+%         Otrzymane wyniki należą do rozważanych przedziałów dla odpowiednio \(x\) i~\(y\), więc jest to rozwiązanie:
+%         \begin{equation*}
+%             \begin{cases}
+%                 x = 7\\
+%                 y = -10
+%             \end{cases}
+%         \end{equation*}
+%     \item \(x < 0 \land y \geq 0\):
+%         \begin{equation*}
+%             \begin{cases}
+%                 -3x + 2y = 1\\
+%                 2x - y = 4
+%             \end{cases}
+%         \end{equation*}
+%         Możemy pomnożyć drugie równanie stronami przez \(2\) i~dodać równania stronami:
+%         \begin{gather*}
+%             \begin{cases}
+%                 -3x + 2y = 1\\
+%                 4x - 2y = 8
+%             \end{cases}\\
+%             -3x + 2y + 4x - 2y = 9\\
+%             x = 9 \geq 0
+%         \end{gather*}
+%         Otrzymaliśmy wynik, który nie należy do rozważanego przedziału dla \(x\), więc na pewno nie będzie to rozwiązanie. Nie ma zatem sensu kontynuować wyznaczanie \(y\).
+%     \item \(x < 0 \land y < 0\):
+%         \begin{equation*}
+%             \begin{cases}
+%                 -3x + 2y = 1\\
+%                 2x + y = 4
+%             \end{cases}
+%         \end{equation*}
+%         Możemy pomnożyć drugie równanie stronami przez \(-2\) i~dodać równania stronami:
+%         \begin{gather*}
+%             \begin{cases}
+%                 -3x + 2y = 1\\
+%                 -2x - 2y = -8
+%             \end{cases}\\
+%             -3x + 2y - 2x - 2y = -7\\
+%             -5x = -7\\
+%             x = \frac{7}{5} \geq 0
+%         \end{gather*}
+%         Orzymaliśmy wynik, który nie należy do rozważanego przedziału dla \(x\), więc na pewno nie będzie to rozwiązanie. Nie ma zatem sensu kontynuować wyznaczanie \(y\).
+% \end{proofcases}
+% Ostatecznie po rozważeniu wszystkich możliwych przypadków otrzymujemy jedno rozwiązanie:
+% \begin{equation*}
+%     \begin{cases}
+%         x = 7\\
+%         y = -10
+%     \end{cases}
+% \end{equation*}
+% Możemy również przekształcić początkowe równania i~narysować krzywe, które one opisują, aby rozwiązać układ równań graficznie:
+% \begin{equation*}
+%     \begin{cases}
+%         y = \frac{1 - 3\abs{x}}{2}\\
+%         x = \frac{4 + \abs{y}}{2}
+%     \end{cases}
+% \end{equation*}
+% \begin{mathfigure*}
+%     \drawcoordsystem[0.5]{-4, -12}{10, 3};
+%     \draw[scale=0.5, thick, ForestGreen, domain=-4:8, samples=100] plot (\x, {(1 - 3 * abs(\x)) / 2});
+%     \draw[scale=0.5, thick, red, domain=-12:3, variable=\x, samples=100] plot ({(4 + abs(\x)) / 2}, \x);
+%     \fillpoint*[0.5]{7, -10}[\((7; -10)\)][right];
+% \end{mathfigure*}
+% Tak jak w~poprzedniej metodzie, otrzymujemy jedno rozwiązanie:
+% \begin{equation*}
+%     \begin{cases}
+%         x = 7\\
+%         y = -10
+%     \end{cases}
+% \end{equation*}
+% \subsubsection*{Zadanie~8.}
+% \begin{equation*}
+%     \frac{1}{1 - x} + \frac{1}{(1 - x)^2} + \frac{1}{(1 - x)^3} + \ldots = 1 - 2x
+% \end{equation*}
+% Na pewno \(x \neq 1\), ponieważ mianowniki muszą być niezerowe. Jest to szereg geometryczny o~pierwszym wyrazie równym \(a_1 = \frac{1}{1 - x}\) i~ilorazie równym \(q = \frac{1}{1 - x}\). Szereg jest zbieżny, co daje nam warunek
+% \begin{gather*}
+%     \tag{\(\ast\)} \abs{q} < 1 \label{2020_09_28:8:quotient}\\
+%     \abs{\frac{1}{1 - x}} < 1
+% \end{gather*}
+% Przy takim założeniu możemy skorzystać ze wzoru na sumę szeregu geometrycznego:
+% \begin{equation*}
+%     \frac{1}{1 - x} + \frac{1}{(1 - x)^2} + \frac{1}{(1 - x)^3} + \ldots
+%         = \frac{a_1}{1 - q}
+%         = \frac{\frac{1}{1 - x}}{1 - \frac{1}{1 - x}}
+% \end{equation*}
+% Widzimy tu, że \(x \neq 0\), ponieważ inaczej mianownik wynosiłby \(1 - \frac{1}{1 - 0} = 1 - 1 = 0\), co jest niemożliwe.
+% \begin{gather*}
+%     \frac{\frac{1}{1 - x}}{1 - \frac{1}{1 - x}}
+%         = \frac{\frac{1}{1 - x}}{\frac{1 - x - 1}{1 - x}}
+%         = \frac{\frac{1}{\cancel{1 - x}}}{\frac{-x}{\cancel{1 - x}}}
+%         = \frac{1}{-x}
+%         = -\frac{1}{x}\\
+%     -\frac{1}{x} = 1 - 2x
+% \end{gather*}
+% Możemy pomnożyć obie strony równania przez \(x\), ponieważ \(x \neq 0\).
+% \begin{gather*}
+%     -1 = x - 2x^2\\
+%     2x^2 - x - 1 = 0\\
+%     (x - 1)(2x + 1) = 0\\
+%     x = 1 \lor x = -\frac{1}{2}
+% \end{gather*}
+% Na samym początku rozwiązania wykluczyliśmy \(x = 1\), więc jedynym potencjalnym rozwiązaniem jest \(x = -\frac{1}{2}\). Musimy jednak jeszcze sprawdzić, czy spełniony jest przy nim warunek \refer{2020_09_28:8:quotient}:
+% \begin{gather*}
+%     \abs{q} < 1\\
+%     \abs{\frac{1}{1 - x}} < 1\\
+%     \abs{\frac{1}{1 - \parens{-\frac{1}{2}}}} = \abs{\frac{1}{\frac{3}{2}}} = \abs{\frac{2}{3}} = \frac{2}{3} < 1
+% \end{gather*}
+% Warunek jest spełniony, zatem rozwiązaniem jest \(x = -\frac{1}{2}\).
+% \subsubsection*{Zadanie~9.}
+% Oznaczmy przez \(u \in \natural\) cyfrę jedności szukanej liczby, a~przez \(d \in \natural\) cyfrę dziesiątek szukanej liczby. Cyfra dziesiątek nie może być równa \(0\), ponieważ szukana liczba jest dwucyfrowa. Obowiązują zatem warunki:
+% \begin{gather*}
+%     \tag{\(\star\)} 1 \leq d \leq 9 \label{2020_09_28:9:decimal}\\
+%     \tag{\(\ast\)} 0 \leq u \leq 9 \label{2020_09_28:9:unit}\\
+% \end{gather*}
+% Zapiszmy warunki, które ma spełniać szukana liczba:
+% \begin{gather*}
+%     \begin{cases}
+%         u + d = 12\\
+%         u^2 + d^2 = 80
+%     \end{cases}\\
+%     u^2 + d^2 = (u + d)^2 - 2ud\\
+%     80 = 12^2 - 2ud\\
+%     80 = 144 - 2ud\\
+%     2ud = 64\\
+%     ud = 32
+% \end{gather*}
+% Wypiszmy wszystkie możliwe iloczyny dwóch liczb naturalnych (z~uwzględnieniem kolejności), które w~wyniku dają \(32\):
+% \begin{equation*}
+%     \begin{split}
+%         32 &= u \cdot d\\
+%         &= 1 \cdot 32\\
+%         &= 2 \cdot 16\\
+%         &= 4 \cdot 8\\
+%         &= 8 \cdot 4\\
+%         &= 16 \cdot 2\\
+%         &= 32 \cdot 1
+%     \end{split}
+% \end{equation*}
+% Jedynymi parami liczb \((u, d)\), które spełniają warunki \refer{2020_09_28:9:decimal} i~\refer{2020_09_28:9:unit} przedstawione na samym początku rozwiązania są
+% \begin{gather*}
+%     (u, d) = (4, 8)\\
+%     (u, d) = (8, 4)
+% \end{gather*}
+% Zatem liczby spełniające warunki zadania to \(48\) i~\(84\).
+% \subsubsection*{Zadanie~10.}
+% Trzy kolejne liczby nieparzyste możemy zapisać od najmniejszej do największej jako \(2n - 1, 2n + 1, 2n + 3\), gdzie \(n \in \integer\). Zapiszmy dane z~zadania:
+% \begin{gather*}
+%     (2n - 1)(2n + 1)(2n + 3) = (2n + 3)^2 - (2n - 1)^2 + 65\\
+%     \parens{4n^2 - 1}(2n + 3) = 4n^2 + 12n + 9 - 4n^2 + 4n - 1 + 65\\
+%     8n^3 + 12n^2 - 2n - 3 = 16n + 73\\
+%     8n^3 + 12n^2 - 18n - 76 = 0\\
+%     4n^3 + 6n^2 - 9n - 38 = 0
+% \end{gather*}
+% Widzimy, że jednym z~pierwiastków jest \(n = 2\). Możemy teraz z~użyciem schematu Hornera rozłożyć wielomian na postać iloczynową:
+% \begin{gather*}
+%     (n - 2)\parens{4n^2 + 14n + 19}
+% \end{gather*}
+% Drugi z~czynników jest wielomianem stopnia \(2\), w~którym
+% \begin{equation*}
+%     \Delta = 14^2 - 4 \cdot 4 \cdot 19 = 196 - 304 = -108 < 0
+% \end{equation*}
+% Zatem drugi czynnik nie może być już rozłożony na postać iloczynową, bo skoro \(\Delta < 0\), to nie ma pierwiastków. Zatem jedynym rozwiązaniem równania jest \(n = 2\). W~takim razie, liczby spełniające warunki zadania to:
+% \begin{gather*}
+%     2n - 1 = 3\\
+%     2n + 1 = 5\\
+%     2n + 3 = 7
+% \end{gather*}
+% Rzeczywiście, ich iloczyn wynosi \(105\) i~jest o~\(65\) większy od różnicy kwadratów lizczb największej i~najmniejszej: \(105 = 40 + 65 = 49 - 9 + 65 = 7^2 - 3^2 + 65\). Zatem rozwiązaniem zadania są liczby \(3, 5, 7\).
+% \subsubsection*{Zadanie~11.}
+% \begin{equation*}
+%     \frac{6x}{x - 2} - \sqrt{\frac{12x}{x - 2}} - 2\sqrt[4]{\frac{12x}{x - 2}}
+% \end{equation*}
+% Natychmiast zauważamy, że mianowniki nie mogą być równe \(0\), więc \(x \neq 2\). Dokonajmy podstawienia \(t = \sqrt[4]{\frac{12x}{x - 2}}\):
+% \begin{gather*}
+%     \frac{t^4}{2} - t^2 - 2t > 0\\
+%     t^4 - 2t^2 - 4t > 0
+% \end{gather*}
+% Zauważamy, że \(0\) i~\(2\) są pierwiastkami wielomianu po lewej stronie. Zatem możemy z~pomocą schematu Hornera rozłożyć wielomian na postać iloczynową:
+% \begin{equation*}
+%     t(t - 2)(t^2 + 2t + 2) > 0
+% \end{equation*}
+% Ostatni z~czynników nie ma pierwiastków, ponieważ jest to wielomian stopnia \(2\), w~którym
+% \begin{equation*}
+%     \Delta = 2^2 - 4 \cdot 1 \cdot 2 = 4 - 8 = -4 < 0
+% \end{equation*}
+% Zatem jedynymi pierwiastkami tego wielomianu są \(0\) i~\(2\). Współczynnik przy najwyższej potędze jest dodatni, więc nierówność jest spełniona, gdy
+% \begin{gather*}
+%     t \in \open{-\infty}{0} \cup \open{2}{+\infty}\\
+%     t < 0 \lor t > 2\\
+%     \sqrt[4]{\frac{12x}{x - 2}} < 0 \text{ (niemożliwe)} \lor \sqrt{4}{\frac{12x}{x - 2}} > 2
+% \end{gather*}
+% Pierwsza nierówność nie ma rozwiązań, ponieważ pierwiastek parzystego stopnia jest zawsze nieujemny. Skupmy się zatem na drugiej nierówności. Ponieważ obie strony są nieujemne, możemy podnieść je do czwartej potęgi:
+% \begin{gather*}
+%     \sqrt[4]{\frac{12x}{x - 2}} > 2\\
+%     \frac{12x}{x - 2} > 16\\
+%     \frac{12x - 16x + 32}{x - 2} > 0\\
+%     \frac{-4x + 32}{x - 2} > 0\\
+%     \frac{x - 8}{x - 2} < 0\\
+%     (x - 2)(x - 8) < 0\\
+%     x \in \open{2}{8}
+% \end{gather*}
+% Zatem rozwiązaniem nierówności jest \(x \in \open{2}{8}\).
+% \subsubsection*{Zadanie~12.}
+% \begin{equation*}
+%     \abs{\frac{3x - 2}{x + 1}} \geq 3\\
+% \end{equation*}
+% Zauważamy, że \(x \neq -1\), ponieważ mianownik musi być różny od \(0\).
+% \begin{gather*}
+%     \abs{\frac{3(x + 1) - 5}{x + 1}} \geq 3\\
+%     \abs{3 - \frac{5}{x + 1}} \geq 3\\
+%     \abs{\frac{5}{x + 1} - 3} \geq 3
+% \end{gather*}
+% Możemy rozważyć dwa przypadki:
+% \begin{proofcases}
+%     \item
+%         \begin{gather*}
+%             \frac{3x - 2}{x + 1} \geq 0\\
+%             (x + 1)(3x - 2) \geq 0\\
+%             x \in \open{-\infty}{-1} \cup \leftclosed{\frac{2}{3}}{+\infty}
+%         \end{gather*}
+%         W~tym przypadku mamy:
+%         \begin{gather*}
+%             \frac{3x - 2}{x + 1} \geq 3\\
+%             \frac{3x - 2}{x + 1} - \frac{3x + 3}{x + 1} \geq 0\\
+%             \frac{-5}{x + 1} \geq 0\\
+%             x + 1 < 0\\
+%             x \in \rightclosed{-\infty}{-1}
+%         \end{gather*}
+%         Po uwzględnieniu faktu, że \(x \neq -1\), otrzymujemy przedział \(\open{-\infty}{-1}\), który zawiera się w~rozważanym przedziale, więc jest rozwiązaniem.
+%     \item
+%         \begin{gather*}
+%             \frac{3x - 2}{x + 1} < 0\\
+%             (x + 1)(3x - 2) < 0\\
+%             x \in \open{-1}{\frac{2}{3}}
+%         \end{gather*}
+%         W~tym przypadku mamy:
+%         \begin{gather*}
+%             \frac{2 - 3x}{x + 1} \geq 3\\
+%             \frac{2 - 3x}{x + 1} - \frac{3x + 3}{x + 1} \geq 0\\
+%             \frac{-6x - 1}{x + 1} \geq 0\\
+%             \frac{6x + 1}{x + 1} \leq 0\\
+%             (x + 1)(6x + 1) \leq 0\\
+%             x \in \closed{-1}{-\frac{1}{6}}
+%         \end{gather*}
+%         Po uwzględnieniu faktu, że \(x \neq -1\), otrzymujemy przedział \(\rightclosed{-1}{-\frac{1}{6}}\), który zawiera się w~rozważanym przedziale, więc jest rozwiązaniem.
+% \end{proofcases}
+% Ostatecznie otrzymujemy przedział rozwiązań będący sumą przedziałów otrzymanych w~rozważanych przypadkach:
+% \begin{equation*}
+%     x \in \open{-\infty}{-1} \cup \rightclosed{-1}{-\frac{1}{6}}
+% \end{equation*}
+% Zatem największą liczbą spełniającą nierówność \(\abs{\frac{3x - 2}{x + 1}} \geq 3\) jest liczba \(-\frac{1}{6}\).
 
-Możemy również rozwiązać to zadanie graficznie. Najpierw szkicujemy wykres funkcji \(\frac{3x}{x + 1}\). W~tym celu wyznaczamy:
-\begin{itemize}
-    \item asymptotę pionową: ma ona równanie \(x = -1\), ponieważ \(-1\) nie należy do dziedziny, gdyż mianownik musi być różny od \(0\)
-    \item asymptotę poziomą: ma ona równanie \(y = 3\), ponieważ \(\limit[x \to +\infty] \frac{3x - 2}{x + 1} = 3\)
-    \item wartość funkcji dla \(x = 0\): \(\frac{3 \cdot 0 - 2}{0 + 1} = -2\). Zatem wykres funkcji przetnie oś \(Oy\) w~punkcie \((0; -2)\)
-    \item miejsca zerowe: \(\frac{3x - 2}{x + 1} = 0 \iff 3x - 2 = 0 \iff x = \frac{2}{3}\). Zatem wykres funkcji przetnie oś \(Ox\) w~punkcie \(\parens{\frac{2}{3}; 0}\)
-\end{itemize}
-\begin{mathfigure*}
-    \drawcoordsystem[0.25]{-15, -15}{15, 15};
-    \draw[scale=0.25, domain=-15:-1.415, very thick, ForestGreen, smooth, samples=50] plot (\x, {(3 * \x - 2) / (\x + 1)});
-    \draw[scale=0.25, domain=-0.723:15, very thick, ForestGreen, smooth, samples=50] plot (\x, {(3 * \x - 2) / (\x + 1)});
-    \draw[scale=0.25, dashed] (-1,15) -- (-1, -15);
-    \draw[scale=0.25, dashed] (-15, 3) -- (15, 3);
-    \fillpoint[0.25]{2 / 3, 0};
-    \fillpoint*[0.25]{0, -2}[\tiny\((0; -2)\)][left];
-    \draw[->, scale=0.25] (3, -1) node[right]{\tiny\(\parens{\frac{2}{3}; 0}\)} -- (0.77, -0.2);
-\end{mathfigure*}
-Następnie odbijamy symetrycznie fragment znajdujący się poniżej osi \(Ox\):
-\begin{mathfigure*}
-    \drawcoordsystem[0.25]{-15, -15}{15, 15};
-    \draw[scale=0.25, domain=-15:-1.415, very thick, ForestGreen, smooth, samples=50] plot (\x, {abs((3 * \x - 2) / (\x + 1))});
-    \draw[scale=0.25, domain=-0.723:15, very thick, ForestGreen, samples=70] plot (\x, {abs((3 * \x - 2) / (\x + 1))});
-    \draw[scale=0.25, domain=-0.723:(2/3), dotted, thick, smooth, samples=50] plot (\x, {(3 * \x - 2) / (\x + 1)});
-    \draw[scale=0.25, dashed] (-1,15) -- (-1, -15);
-    \draw[scale=0.25, RoyalBlue, thick] (-15, 3) -- (15, 3);
-    \fillpoint[0.25]{2 / 3, 0};
-    \fillpoint*[0.25]{0, -2}[\tiny\((0; -2)\)][left];
-    \fillpoint*[0.25]{0, 2}[\tiny\((0; 2)\)][right];
-    \fillpoint*[0.25]{-1/6, 3}[\tiny\(\parens{-\frac{1}{6}; 3}\)][above right];
-    \draw[->, scale=0.25] (3, -1) node[right]{\tiny\(\parens{\frac{2}{3}; 0}\)} -- (0.77, -0.2);
-\end{mathfigure*}
-Widzimy, że rozwiązania powinniśmy poszukwiać wartości \(x\), dla której zachodzi równość, w~przedziale \(\open{-1}{0}\). W~takim razie musimy wziąć liczbę przeciwną do liczby pod modułem:
-\begin{gather*}
-    \abs{\frac{3x - 2}{x + 1}} = 3\\
-    \frac{2 - 3x}{x + 1} = 3\\
-    2 - 3x = 3x + 3\\
-    6x = -1\\
-    x = -\frac{1}{6}
-\end{gather*}
-Otrzymaliśmy dokładnie taki sam wynik jak z~użyciem poprzedniej metody.
+% Możemy również rozwiązać to zadanie graficznie. Najpierw szkicujemy wykres funkcji \(\frac{3x}{x + 1}\). W~tym celu wyznaczamy:
+% \begin{itemize}
+%     \item asymptotę pionową: ma ona równanie \(x = -1\), ponieważ \(-1\) nie należy do dziedziny, gdyż mianownik musi być różny od \(0\)
+%     \item asymptotę poziomą: ma ona równanie \(y = 3\), ponieważ \(\limit[x \to +\infty] \frac{3x - 2}{x + 1} = 3\)
+%     \item wartość funkcji dla \(x = 0\): \(\frac{3 \cdot 0 - 2}{0 + 1} = -2\). Zatem wykres funkcji przetnie oś \(Oy\) w~punkcie \((0; -2)\)
+%     \item miejsca zerowe: \(\frac{3x - 2}{x + 1} = 0 \iff 3x - 2 = 0 \iff x = \frac{2}{3}\). Zatem wykres funkcji przetnie oś \(Ox\) w~punkcie \(\parens{\frac{2}{3}; 0}\)
+% \end{itemize}
+% \begin{mathfigure*}
+%     \drawcoordsystem[0.25]{-15, -15}{15, 15};
+%     \draw[scale=0.25, domain=-15:-1.415, very thick, ForestGreen, smooth, samples=50] plot (\x, {(3 * \x - 2) / (\x + 1)});
+%     \draw[scale=0.25, domain=-0.723:15, very thick, ForestGreen, smooth, samples=50] plot (\x, {(3 * \x - 2) / (\x + 1)});
+%     \draw[scale=0.25, dashed] (-1,15) -- (-1, -15);
+%     \draw[scale=0.25, dashed] (-15, 3) -- (15, 3);
+%     \fillpoint[0.25]{2 / 3, 0};
+%     \fillpoint*[0.25]{0, -2}[\tiny\((0; -2)\)][left];
+%     \draw[->, scale=0.25] (3, -1) node[right]{\tiny\(\parens{\frac{2}{3}; 0}\)} -- (0.77, -0.2);
+% \end{mathfigure*}
+% Następnie odbijamy symetrycznie fragment znajdujący się poniżej osi \(Ox\):
+% \begin{mathfigure*}
+%     \drawcoordsystem[0.25]{-15, -15}{15, 15};
+%     \draw[scale=0.25, domain=-15:-1.415, very thick, ForestGreen, smooth, samples=50] plot (\x, {abs((3 * \x - 2) / (\x + 1))});
+%     \draw[scale=0.25, domain=-0.723:15, very thick, ForestGreen, samples=70] plot (\x, {abs((3 * \x - 2) / (\x + 1))});
+%     \draw[scale=0.25, domain=-0.723:(2/3), dotted, thick, smooth, samples=50] plot (\x, {(3 * \x - 2) / (\x + 1)});
+%     \draw[scale=0.25, dashed] (-1,15) -- (-1, -15);
+%     \draw[scale=0.25, RoyalBlue, thick] (-15, 3) -- (15, 3);
+%     \fillpoint[0.25]{2 / 3, 0};
+%     \fillpoint*[0.25]{0, -2}[\tiny\((0; -2)\)][left];
+%     \fillpoint*[0.25]{0, 2}[\tiny\((0; 2)\)][right];
+%     \fillpoint*[0.25]{-1/6, 3}[\tiny\(\parens{-\frac{1}{6}; 3}\)][above right];
+%     \draw[->, scale=0.25] (3, -1) node[right]{\tiny\(\parens{\frac{2}{3}; 0}\)} -- (0.77, -0.2);
+% \end{mathfigure*}
+% Widzimy, że rozwiązania powinniśmy poszukwiać wartości \(x\), dla której zachodzi równość, w~przedziale \(\open{-1}{0}\). W~takim razie musimy wziąć liczbę przeciwną do liczby pod modułem:
+% \begin{gather*}
+%     \abs{\frac{3x - 2}{x + 1}} = 3\\
+%     \frac{2 - 3x}{x + 1} = 3\\
+%     2 - 3x = 3x + 3\\
+%     6x = -1\\
+%     x = -\frac{1}{6}
+% \end{gather*}
+% Otrzymaliśmy dokładnie taki sam wynik jak z~użyciem poprzedniej metody.
 \subsubsection*{Zadanie~1.16.}
 \begin{enumerate}[label={\alph*)}]
     \item

@@ -1,0 +1,304 @@
+\subsection*{Zestaw~XVII --- Planimetria (zadania otwarte)}
+\subsubsection*{Zadanie~2.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, 0);
+    \coordinate (B) at (2, 0);
+    \coordinate (C) at (0, 5);
+    \coordinate (X) at (-0.5, 0);
+    \coordinate (H) at (0, 0);
+    \draw[dashed] (C) -- node[right]{\(h\)} (H);
+    \draw (A) node[below left]{\(A\)}
+        -- node[below]{\(m\)} (B) node[below right]{\(B\)}
+        -- node[above right]{\(n\)} (C) node[above]{\(C\)}
+        -- node[above left]{\(n\)} cycle;
+    \path (A)
+        -- node[above]{\(x\)} (X)
+        -- node[above]{\(m - x\)} (B);
+    \draw (C) -- (X);
+    \fillpoint*{X}[\(X\)][below];
+\end{mathfigure*}
+\begin{gather*}
+    \frac{d\pars{X, AB} \cdot n}{2} = \area{XBC} = \frac{h\pars{m - x}}{2}\\
+    \frac{d\pars{X, AC} \cdot n}{2} = \area{XAC} = \frac{hx}{2}
+\end{gather*}
+Po pomnożeniu obustronnie przez \(2\) i~dodaniu stronami tych równań otrzymujemy
+\begin{gather*}
+    n\pars{d\pars{X, AB} + d\pars{X, AC}} = h\pars{m - x} + hx\\
+    n\pars{d\pars{X, AB} + d\pars{X, AC}} = hm - hx + hx\\
+    d\pars{X, AB} + d\pars{X, AC} = \frac{hm}{n}
+\end{gather*}
+Widzimy, że wartość tego wyrażenia nie zależy od \(x\).
+\qed
+\subsubsection*{Zadanie~5.}
+\begin{mathfigure*}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (5, 0);
+    \coordinate (C) at (0, 3);
+    \coordinate (L) at (2.5, 1.5);
+    \coordinate (K) at (2.5, 0);
+    \coordinate (M) at (0, 1.5);
+    \draw (A) node[below left]{\(A\)}
+        -- (B) node[below right]{\(B\)}
+        -- (C) node[above]{\(C\)}
+        -- cycle;
+    \draw (K) -- (L) -- (M);
+    \fillpoint*{M}[\(M\)][left];
+    \fillpoint*{K}[\(K\)][below];
+    \fillpoint*{L}[\(L\)][above right];
+\end{mathfigure*}
+\subsubsection*{Zadanie~6.}
+\begin{mathfigure*}
+    \coordinate (A) at (-1, 0);
+    \coordinate (B) at (0, -1);
+    \coordinate (S) at (1, 1);
+    \coordinate (T) at (-1, -1);
+    \coordinate (N) at (3, 2);
+    \coordinate (M) at (-1, -2);
+    \drawrightangle[angle radius=0.3cm, ForestGreen]{N--B--A};
+    \drawrightangle[angle radius=0.3cm, ForestGreen]{A--B--M};
+    \draw[dashed, ForestGreen] (A) -- (B) -- (M);
+    \draw[dashed, ForestGreen] (A) -- (B) -- (N);
+    \draw (S) circle[radius=\fpeval{sqrt(5)}];
+    \draw (T) circle[radius=1];
+    \draw (A) -- (M);
+    \draw (A) -- (N);
+    \fillpoint{S};
+    \fillpoint{T};
+    \fillpoint*{A}[\(A\)][above left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{N}[\(N\)][above right];
+    \fillpoint*{M}[\(M\)][below left];
+\end{mathfigure*}
+Rozważmy kąty \(\angle{MBA}\) i~\(\angle{NBA}\). Są one proste, ponieważ są wpisane w~odpowiednie okręgi i~oparte na ich średnicach. Zatem
+\begin{equation*}
+    \mangle{MBN}
+        = \mangle{MBA} + \mangle{NBA}
+        = 90\degree + 90\degree
+        = 180\degree
+\end{equation*}
+Kąt \(\angle{MBN}\) jest półpełny, więc punkty \(M\), \(B\), \(N\) są współliniowe.
+\qed
+\subsubsection*{Zadanie 7.}
+\begin{mathfigure*}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (3, 0);
+    \coordinate (C) at (2, 3);
+    \coordinate (D) at (-1, 2);
+    \draw (A) node[below left]{\(A\)}
+        -- (B) node[below right]{\(B\)}
+        -- (C) node[above right]{\(C\)}
+        -- (D) node[above left]{\(D\)}
+        -- cycle;
+    \drawangle*[ForestGreen, angle radius=0.5cm]{C--B--D}[\tiny\(58\degree\)];
+    \draw (B) -- (D);
+    \drawangle*[angle radius=0.5cm]{D--B--A}[\tiny\(44\degree\)];
+    \drawangle*[angle radius=0.5cm, Orange]{A--D--C}[\tiny\(78\degree\)];
+    \drawangle[angle radius=0.5cm, ForestGreen]{C--A--D};
+    \draw (C) -- (A);
+\end{mathfigure*}
+Zauważmy, że
+\begin{equation*}
+    \mangle{ABD} + \mangle{CBD} + \mangle{ADC}
+        = 44\degree + 58\degree + 78\degree
+        = 180\degree
+\end{equation*}
+Skoro suma przeciwległych kątów wynosi \(180\degree\), to czworokąt \(ABCD\) jest wpisany w~okrąg. W~tym okręgu kąt \(\angle{CBD}\) jest oparty na tym samym łuku \(\arc{CD}\) co kąt \(\angle{CAD}\). Mają zatem takie same miary:
+\begin{equation*}
+    \mangle{CAD} = \mangle{CBD} = 54\degree
+\end{equation*}
+\subsubsection*{Zadanie~8.}
+\begin{mathfigure*}
+    \def\rt{\fpeval{sqrt(3)}}
+    \coordinate (start) at (-6, 0);
+    \coordinate (end) at (4, 0);
+    \coordinate (S) at (0, 3);
+    \coordinate (T) at (-2*\rt, 1);
+    \coordinate (X) at (0, 0);
+    \coordinate (Y) at (-2*\rt, 0);
+    \coordinate (P) at (0, 1);
+    \drawrightangle[angle radius=0.25cm]{X--Y--T};
+    \drawrightangle[angle radius=0.25cm]{Y--T--P};
+    \drawrightangle[angle radius=0.25cm]{S--P--T};
+    \drawrightangle[angle radius=0.25cm]{P--X--Y};
+    \drawangle[angle radius=0.4cm, Orange]{Y--T--S};
+    \drawangle[angle radius=0.4cm, ForestGreen]{T--S--P};
+    \draw (start) -- (end);
+    \draw (S) circle[radius=3];
+    \draw (T) circle[radius=1];
+    \draw (X) -- (S) -- (T) -- (Y);
+    \draw[dashed] (T) -- (P);
+    \path (P) -- node[right]{\(2\)} (S);
+    \path (P) -- node[right]{\(1\)} (X);
+    \path (Y) -- node[left]{\(1\)} (T);
+    \fillpoint*{S}[\(S\)][above];
+    \fillpoint*{T}[\(T\)][above];
+    \fillpoint*{X}[\(X\)][below];
+    \fillpoint*{Y}[\(Y\)][below];
+    \fillpoint*{P}[\(P\)][right];
+\end{mathfigure*}
+Aby obliczyć pole obszaru między okręgami i~ich styczną, musimy od pola trapezu \(YXST\) odjąć pole wycięte z~dużego koła zielonym kątem oraz pole wycięte z~małego koła pomarańczowym kątem. Zauważmy, że \(ST = 1 + 3 = 4 = 2 \cdot 2 = 2 \cdot SP\), a~kąt \(\angle{TPS}\) jest prosty, więc \(\triangle{TSP}\) to trójkąt \(30\degree\ 60\degree\ 90\degree\). Zatem odcinek \(TP\) będący wysokością trapezu \(YXST\) ma długość \(2\sqrt{3}\). Pole trapezu wynosi więc
+\begin{equation*}
+    \area{YXST}
+        = \frac{\pars{YT + XP} \cdot TP}{2}
+        = \frac{\pars{1 + 3} \cdot 2\sqrt{3}}{2}
+        = 4\sqrt{3}
+\end{equation*}
+Skoro wiemy, że zielony kąt ma miarę \(60\degree\), to pole wycinka wyznaczonego nim w~dużym kole wynosi
+\begin{equation*}
+    \frac{60\degree}{360\degree} \cdot \pi \cdot 3^2
+        = \frac{1}{6} \cdot 9\pi
+        = \frac{3}{2}\pi
+\end{equation*}
+Wiemy też, że \(\mangle{STP} = 30\degree\) i~\(\mangle{PTY} = 90\degree\), więc pomarańczowy kąt ma miarę \(30\degree + 90\degree = 120\degree\). Wycinek małego koła ma więc pole równe
+\begin{equation*}
+    \frac{120\degree}{360\degree} \cdot \pi \cdot 1^2
+        = \frac{\pi}{3}
+\end{equation*}
+Ostatecznie zatem, poszukiwane pole obszaru wynosi
+\begin{equation*}
+    4\sqrt{3} - \frac{3}{2}\pi - \frac{\pi}{3}
+        = 4\sqrt{3} - \frac{11\pi}{6}
+\end{equation*}
+\subsubsection*{Zadanie~9.}
+Oznaczmy długość przyprostokątnej tego trójkąta prostokątnego równoramiennego przez \(a\).
+\begin{mathfigure*}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (4, 0);
+    \coordinate (C) at (0, 4);
+    \coordinate (D) at (0, 2);
+    \coordinate (E) at (2, 0);
+    \coordinate (X) at (4/3, 4/3);
+    \draw (B) -- (D);
+    \draw (C) -- (E);
+    \drawrightangle{B--A--C};
+    \drawangle*[Orange]{B--X--C}[\(\alpha\)];
+    \draw (A) node[below left]{\(A\)}
+        -- (B) node[below right]{\(B\)}
+        -- node[above right]{\(a\sqrt{2}\)} (C) node[above]{\(C\)}
+        -- cycle;
+    \path (A) -- node[below]{\(\frac{a}{2}\)} (E);
+    \fillpoint*{X}[\(X\)][below left];
+    \fillpoint*{D}[\(D\)][left];
+    \fillpoint*{E}[\(E\)][below];
+\end{mathfigure*}
+\noindent
+Możemy wyliczyć długość środkowej z~twierdzenia Pitagorasa:
+\begin{equation*}
+    BD = CE
+        = \sqrt{a^2 + \frac{a^2}{4}}
+        = \sqrt{\frac{5a^2}{4}}
+        = \frac{a\sqrt{5}}{2}
+\end{equation*}
+Środkowe przecinają się w~stosunku \(2 : 1\), więc
+\begin{equation*}
+    BX = CX
+        = \frac{2}{3} \cdot \frac{a\sqrt{5}}{2}
+        = \frac{a\sqrt{5}}{3}
+\end{equation*}
+Z~twierdzenia cosinusów w~\(\triangle{BXC}\) mamy
+\begin{gather*}
+    CB^2
+        = BX^2 + CX^2 - 2 \cdot BX \cdot CX \cdot \cos\alpha\\
+    2a^2 = 2 \cdot \frac{5a^2}{9} - 2 \cdot \frac{5a^2}{9} \cdot \cos\alpha\\
+    1 = \frac{5}{9}\pars{1 - \cos\alpha}\\
+    1 - \cos\alpha = \frac{9}{5}\\
+    \cos\alpha = -\frac{4}{5}
+\end{gather*}
+\subsubsection*{Zadanie~10.}
+\begin{mathfigure*}
+    \coordinate (S) at (0, 0);
+    \coordinate (P) at (1.75, 0);
+    \coordinate (A) at (-2.75, 0);
+    \coordinate (B) at (2.75, 0);
+    \coordinate (C) at (0, 2.75);
+    \coordinate (D) at (2.49, -1.16);
+    \draw (A) -- (B);
+    \draw (C) -- (D);
+    \draw (S) circle[radius=2.75];
+    \fillpoint*{A}[\(A\)][left];
+    \fillpoint*{B}[\(B\)][right];
+    \fillpoint*{C}[\(C\)][above];
+    \fillpoint*{D}[\(D\)][right];
+    \fillpoint*{P}[\(P\)][below left];
+    \fillpoint*{S}[\(S\)][above];
+\end{mathfigure*}
+Z~potęgi punktu mamy
+\begin{gather*}
+    CP \cdot PD
+        = AP \cdot PB
+        = \pars{AS + SP}\pars{BS - SP}
+        = \pars{11 + 7}\pars{11 - 7}
+        = 18 \cdot 4\\
+    CP \cdot PD = 72
+\end{gather*}
+Skoro cięciwa \(CD\) ma długość \(18\), to mamy układ równań:
+\begin{equation*}
+    \begin{cases}
+        CP + PD = 18\\
+        CP \cdot PD = 72
+    \end{cases}
+\end{equation*}
+Możemy wyliczyć \(CP\) z~drugiego równania i~podstawić do pierwszego:
+\begin{gather*}
+    CP = \frac{72}{PD}\\
+    \frac{72}{PD} + PD = 18\\
+    72 + PD^2 = 18 \cdot PD\\
+    PD^2 - 18 \cdot PD + 72 = 0\\
+    \pars{PD - 6}\pars{PD - 12} = 0
+\end{gather*}
+Zatem możliwe rozwiązania to:
+\begin{equation*}
+    \begin{cases}
+        PD = 6\\
+        CP = 12
+    \end{cases}
+    \lor
+    \begin{cases}
+        PD = 12\\
+        CP = 6
+    \end{cases}
+\end{equation*}
+W~obydwu przypadkach, stosunek w~którym \(P\) dzieli cięciwę wynosi
+\begin{equation*}
+    \frac{12}{6} = \frac{2}{1}
+\end{equation*}
+\subsubsection*{Zadanie~14.}
+\begin{mathfigure*}
+    \coordinate (A) at (-4, 0);
+    \coordinate (B) at (4, 0);
+    \coordinate (C) at (1, 4);
+    \coordinate (D) at (-1, 4);
+    \coordinate (H) at (-1, 0);
+    \coordinate (I) at (0, 2);
+    \draw[dashed] (D) -- node[right]{\(h\)} (H);
+    \draw[ForestGreen] (I) circle[radius=2];
+    \draw (A) node[below left]{\(A\)}
+        -- node[below]{\(16\)} (B) node[below right]{\(B\)}
+        -- node[above right]{\(\ell\)} (C) node[above right]{\(C\)}
+        -- node[above]{\(4\)} (D) node[above left]{\(D\)}
+        -- node[above left]{\(\ell\)} cycle;
+    \path (A) -- node[above]{\(6\)} (H);
+    \fillpoint*{H}[\(H\)][below];
+\end{mathfigure*}
+Skoro na trapezie można opisać okrąg, to jest on równoramienny.
+\begin{equation*}
+    AH
+        = \frac{AB - CD}{2}
+        = \frac{16 - 4}{2}
+        = 6
+\end{equation*}
+Jeśli natomiast można w~niego wpisać okrąg, to sumy par przeciwległych boków są sobie równe:
+\begin{gather*}
+    AB + CD = AD + BC\\
+    16 + 4 = 2\ell\\
+    \ell = 10
+\end{gather*}
+Z~twierdzenia Pitagorasa w~\(\triangle{AHD}\) mamy
+\begin{equation*}
+    h
+        = \sqrt{\ell^2 - 6^2}
+        = \sqrt{100 - 36}
+        = \sqrt{64}
+        = 8
+\end{equation*}
+Wiemy, że \(h = 2r\), więc \(r = 4\).

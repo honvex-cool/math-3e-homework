@@ -1,0 +1,196 @@
+\subsubsection*{Zadanie~7.1.}
+\begin{description}
+    \item[doświadczenie losowe:] rzut dwoma sześciennymi kośćmi
+    \item[zdarzenia:]
+        \begin{gather*}
+            A \coloneqq \text{suma oczek na dwóch kostkach wynosi \(3\)}\\
+            A = \set{\seq{1, 2}, \seq{2, 1}}\\
+            \card A = 2\\
+            B \coloneqq \text{na pierwszej kostce wypadła jedynka}\\
+            B = \set{\seq{1, 1}, \seq{1, 2}, \ldots, \seq{1, 6}}\\
+            \card B = 6\\
+            A \cap B = \set{\seq{1, 2}}\\
+            \card\pars{A \cap B} = 1
+        \end{gather*}
+    \item[prawdopodobieństwo warunkowe:]
+        \begin{equation*}
+            P\pars{A / B}
+                = \frac{P\pars{A \cap B}}{P\pars{B}}
+                = \frac{\frac{\card\pars{A \cap B}}{\cancel{\card\Omega}}}{\frac{\card B}{\cancel{\card\Omega}}}
+                = \frac{\card\pars{A \cap B}}{\card B}
+                = \frac{1}{6}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~7.2.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór jednej karty spośród \(52\)
+    \item[zdarzenia:]
+        \begin{gather*}
+            A \coloneqq \text{wylosowana karta jest asem}\\
+            A = \set{A\clubsuit, A\diamondsuit, A\heartsuit, A\spadesuit}\\
+            \card A = 4\\
+            B \coloneqq \text{wylosowana karta nie jest blotką}\\
+            B = \set{10\clubsuit, J\clubsuit, Q\clubsuit, K\clubsuit, A\clubsuit, 10\diamondsuit, J\diamondsuit, Q\diamondsuit, K\diamondsuit, A\diamondsuit, 10\heartsuit, J\heartsuit, Q\heartsuit, K\heartsuit, A\heartsuit, 10\spadesuit, J\spadesuit, Q\spadesuit, K\spadesuit, A\spadesuit}\\
+            \card B = 20\\
+            A \cap B = A\\
+            \card\pars{A \cap B} = 4
+        \end{gather*}
+    \item[prawdopodobieństwo warunkowe:]
+        \begin{equation*}
+            P\pars{A / B}
+                = \frac{P\pars{A \cap B}}{P\pars{B}}
+                = \frac{\frac{\card\pars{A \cap B}}{\cancel{\card\Omega}}}{\frac{\card B}{\cancel{\card\Omega}}}
+                = \frac{\card\pars{A \cap B}}{\card B}
+                = \frac{4}{20}
+                = \frac{1}{5}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~7.3.}
+\begin{description}
+    \item[doświadczenie losowe:]
+\end{description}
+\subsubsection*{Zadanie~7.4.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór dwóch kart kolejno bez zwracania spośród \(52\)
+    \item[zdarzenia:]
+        \begin{equation*}
+            A \coloneqq \text{za drugim razem wyciągnięto króla}
+        \end{equation*}
+        Możemy wybrać dwa króle na \(4 \cdot 3 = 12\) sposobów, lub najpierw na \(48\) sposbów wybrać nie-króla a~potem na \(4\) sposoby króla, co daje \(48 \cdot 4 + 12 = 204\) możliwości.
+        \begin{gather*}
+            \card A = 204\\
+            B \coloneqq \text{za pierwszym razem nie wyciągnięto króla}
+        \end{gather*}
+        Najpierw na \(48\) sposobów wybieramy nie-króla, a~potem na \(51\) sposobów dowolną kartę
+        \begin{gather*}
+            \card B = 48 \cdot 51\\
+            A \cap B \coloneqq \text{wybór nie-króla za pierwszym razem i~króla za drugim}\\
+            \card\pars{A \cap B} = 48 \cdot 4 = 192
+        \end{gather*}
+    \item[prawdopodobieństwo warunkowe:]
+        \begin{equation*}
+            P\pars{A / B}
+                = \frac{P\pars{A \cap B}}{P\pars{B}}
+                = \frac{\frac{\card\pars{A \cap B}}{\cancel{\card\Omega}}}{\frac{\card B}{\cancel{\card\Omega}}}
+                = \frac{\card\pars{A \cap B}}{\card B}
+                = \frac{\cancel{48} \cdot 4}{\cancel{48} \cdot 51}
+                = \frac{4}{51}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~7.5.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór \(2\) kul kolejno bez zwracania spośród \(3\) białych, \(3\) zielonych i~\(3\) czarnych
+    \item[zbiór zdarzeń elementarnych:]
+        \begin{gather*}
+            \Omega = \set{\seq{k_1, k_2} : k_1, k_2 \in \set{b_1, b_2, b_3, z_1, z_2, z_3, c_1, c_2, c_3}}\\
+            \card\Omega = 9 \cdot 8 = 72
+        \end{gather*}
+    \item[zdarzenia:]
+        \begin{equation*}
+            A \coloneqq \text{za drugim razem wyszła kula zielona}
+        \end{equation*}
+        Na \(3 \cdot 2\) sposoby wybieramy dwie kule zielone lub najpierw na \(6\) sposobów wybieramy kulę nie-zieloną, a~potem na \(3\) sposoby kulę zieloną.
+        \begin{gather*}
+            \card A = 6 + 6 \cdot 3 = 24\\
+            B \coloneqq \text{za pierwszym razem wyszła kula zielona}
+        \end{gather*}
+        Analogicznie jak wcześniej:
+        \begin{gather*}
+            \card B = 24\\
+            A \cap B = \set{\seq{z_1, z_2}, \seq{z_2, z_1}, \seq{z_2, z_3}, \seq{z_3, z_2}, \seq{z_3, z_1}, \seq{z_1, z_3}}\\
+            \card\pars{A \cap B} = 6
+        \end{gather*}
+    \item[prawdopodobieństwo warunkowe:]
+        \begin{equation*}
+            P\pars{A / B}
+                = \frac{P\pars{A \cap B}}{P\pars{B}}
+                = \frac{\frac{\card\pars{A \cap B}}{\cancel{\card\Omega}}}{\frac{\card B}{\cancel{\card\Omega}}}
+                = \frac{\card\pars{A \cap B}}{\card B}
+                = \frac{6}{24}
+                = \frac{1}{4}
+        \end{equation*}
+        Aby otrzymać prawdopodobieństwo wyciągnięcia dwóch zielonych kul, trzeba to pomnożyć przez prawdopodobieństwo wyciągnięcia \(1\) zielonej kuli spośród \(3\) zielonych i~\(6\) nie-zielonych, czyli \(\frac{1}{3}\):
+        \begin{equation*}
+            P\pars{\text{\(2\) zielone kule}}
+                = \frac{1}{3} \cdot P\pars{A / B}
+                = \frac{1}{3} \cdot \frac{1}{4}
+                = \frac{1}{12}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~7.6.}
+\begin{description}
+    \item[doświadczenie losowe:] wybór \(5\) kart spośród \(52\)
+    \item[zdarzenia:]
+        \begin{gather*}
+            A \coloneqq \text{wylosowano dwa kiery}\\
+            A = \set{\set{c_1, c_2, \ldots, c_5} : c_1, c_2 \in \set{27, 28, \ldots, 39} \nland c_3, c_4, c_5 \in \set{1, 2, \ldots, 26} \cup \set{40, 41, \ldots, 52}}\\
+            \card A = \binom{13}{2}\binom{39}{3}\\
+            B \coloneqq \text{nie wylosowano pików ani trefli}\\
+            B = \set{\set{c_1, c_2, \ldots, c_5} : c_1, c_2, \ldots, c_5 \in \set{14, 15, \ldots, 39}}\\
+            \card B = \binom{26}{5}\\
+            A \cap B = \set{\set{c_1, c_2, \ldots, c_5} : c_1, c_2 \in \set{27, 28, \ldots, 39} \nland c_3, c_4, c_5 \in \set{14, 15, \ldots, 26}}\\
+            \card\pars{A \cap B} = \binom{13}{2}\binom{13}{3}
+        \end{gather*}
+    \item[prawdopodobieństwo warunkowe:]
+        \begin{equation*}
+            P\pars{A / B}
+                = \frac{P\pars{A \cap B}}{P\pars{B}}
+                = \frac{\frac{\card\pars{A \cap B}}{\cancel{\card\Omega}}}{\frac{\card B}{\cancel{\card\Omega}}}
+                = \frac{\card\pars{A \cap B}}{\card B}
+                = \frac{\binom{13}{2}\binom{13}{3}}{\binom{26}{5}}
+        \end{equation*}
+\end{description}
+\subsubsection*{Zadanie~7.8.}
+\begin{gather*}
+    A, B \subset \Omega\\
+    P\pars{A \cap B} = \frac{1}{3}\\
+    P\pars{A \cup B} = \frac{5}{6}\\
+    P\pars{B'} = \frac{1}{2} \implies P\pars{B} = 1 - P\pars{B'} = 1 - \frac{1}{2} = \frac{1}{2}\\
+    P\pars{A \cup B} = P\pars{A} + P\pars{B} - P\pars{A \cap B}\\
+    \frac{5}{6} = P\pars{A} + \frac{1}{2} - \frac{1}{3}\\
+    P\pars{A} = \frac{2}{3}\\
+    P\pars{A / B} = \frac{P\pars{A \cap B}}{P\pars{B}} = \frac{\frac{1}{3}}{\frac{1}{2}}
+        = \frac{2}{3}
+\end{gather*}
+\subsubsection*{Zadanie~7.9.}
+\begin{gather*}
+    P\pars{A / B} = 0{,}6\\
+    P\pars{B / A} = 0{,}2\\
+    P\pars{B} = 0{,}1\\
+    P\pars{B / A} = \frac{P\pars{B \cap A}}{P\pars{A}}
+        = \frac{P\pars{A \cap B}}{P\pars{A}}\\
+    P\pars{A / B} = \frac{P\pars{A \cap B}}{P\pars{B}}
+        = \frac{\frac{P\pars{A \cap B}}{P\pars{A}} \cdot P\pars{A}}{P\pars{B}}
+        = \frac{P\pars{B / A}P\pars{A}}{P\pars{B}}\\
+    P\pars{A}
+        = \frac{P\pars{A / B}P\pars{B}}{P\pars{B / A}}
+        = \frac{0{,}6 \cdot 0{,}1}{0{,}2}
+        = 0{,}3
+\end{gather*}
+\subsubsection*{Zadanie~7.10.}
+\begin{gather*}
+    A. B, C \subset \Omega\\
+    P\pars{C} > 0\\
+    P\pars{A / C}
+        = \frac{P\pars{A \cap C}}{P\pars{C}}
+        = \frac{\frac{\card\pars{A \cap C}}{\cancel{\card\Omega}}}{\frac{\card C}{\cancel{\card\Omega}}}
+        = \frac{\card\pars{A \cap C}}{\card C}\\
+    P\pars{B / C}
+        = \frac{P\pars{B \cap C}}{P\pars{C}}
+        = \frac{\frac{\card\pars{B \cap C}}{\cancel{\card\Omega}}}{\frac{\card C}{\cancel{\card\Omega}}}
+        = \frac{\card\pars{B \cap C}}{\card C}\\
+    A \subset B \implies \pars{A \cap C} \subset \pars{B \cap C} \implies \card\pars{A \cap C} \leq \card\pars{B \cap C} \implies \frac{\card\pars{A \cap C}}{\card C} \leq \frac{\card\pars{B \cap C}}{\card C}\\
+    P\pars{A / C} \leq P\pars{B / C}
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~7.11.}
+\begin{gather*}
+    A, B \subset Q\\
+    P\pars{B} > 0\\
+    P\pars{A' / B}
+        = \frac{P\pars{A' \cap B}}{P\pars{B}}
+        = \frac{P\pars{B \setminus A}}{P\pars{B}}
+        = \frac{P\pars{B} - P\pars{B \cap A}}{P\pars{B}}
+        = 1 - \frac{P\pars{A \cap B}}{P\pars{B}}
+        = 1 - P\pars{A / B}
+\end{gather*}
