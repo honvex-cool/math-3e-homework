@@ -1,0 +1,99 @@
+\subsubsection*{Zadanie~2014/2015-III-6}
+Wszystkich możliwych ciągów jest \(\frac{n!}{\pars{n - k}!}\), ponieważ jest to liczba wariacji \(k\)-wyrazowych bez powtórzeń zbioru \(n\)-elementowego.
+\begin{enumerate}[label={\Alph*:}]
+    \item Dla każdego pozdbioru \(k\)-elementowego z~\(\ibinom{n}{k}\) możliwych jest dokładnie \(1\) element największy, więc ustalamy go jako \(a_k\), a~następnie pozostałe \(\pars{k - 1}\) permutujemy na \(\pars{k - 1}!\) sposobów. Zatem
+        \begin{equation*}
+            P\pars{A}
+            = \frac{\binom{n}{k} \cdot \pars{k - 1}!}{\frac{n!}{\pars{n - k}!}}
+            = \frac{\frac{n!}{k!\pars{n - k}!} \cdot \pars{k - 1}!}{\frac{n!}{\pars{n - k}!}}
+            = \frac{\pars{k - 1}!}{k!}
+            = \frac{1}{k}
+        \end{equation*}
+    \item Mamy do czynienia z~pełną symetrią, więc każda liczba jest ostatnią liczbą w~ciągu tyle samo razy w~przestrzeni zdarzeń elementarnych, więc tak naprawdę pytamy, jaki jest stosunek liczb podzielnych przez \(3\) znajdujących się w~zbiorze \(\set{1, \ldots, n}\) do \(n\). Oznacza to, że
+        \begin{equation*}
+            P\pars{B}
+            = \frac{\floor{\frac{n}{3}}}{n}
+        \end{equation*}
+    \item Obliczmy najpierw \(P\pars{C'}\), czyli prawdopodobieństwo, że
+        \begin{equation*}
+            a_1 + a_2 + \ldots + a_k \leq \frac{k\pars{k + 1}}{2} = 1 + 2 + \ldots + k
+        \end{equation*}
+        Widzimy, że jest tak tylko w~przypadku permutacji podzbioru \(\set{1, 2, \ldots, k}\), których jest \(k!\), ponieważ w~każdych innych przynajmniej jeden ze składników sumy jest większy niż w~sumie po prawej stronie. Zatem
+        \begin{gather*}
+            P\pars{C'}
+            = \frac{k!}{\frac{n!}{\pars{n - k}!}}
+            = \frac{k!\pars{n - k}!}{n!}
+            = \frac{1}{\binom{n}{k}}\\
+            P\pars{C}
+            = 1 - P\pars{C'}
+            = 1 - \frac{1}{\binom{n}{k}}
+        \end{gather*}
+\end{enumerate}
+\subsubsection*{Zadanie~2015/2016-I-2}
+Przypadek \(k = 2\) rozpatrujemy osobno, wynik to \(10 \cdot 4!\). Ponieważ miejsca przy stołach są numerowane, to fakt, że stoły są okrągłe, nie ma znaczenia. Mamy po prostu \(3k!\) rozróżnialnych miejsc i~zajmuje je \(3k\) rozróżnialnych osób, więc wszystkich możliwych ustawień jest \(\pars{3k}!\). Jeśli natomiast dwie ustalone osoby mają siedzieć obok siebie, to pierwsza z~nich wybiera miejsce na którym usiądzie na \(3k\) sposobów, druga z~nich wybiera na \(2\) sposoby miejsce obok niej (po prawej lub po lewej), a~następnie ustawienie pozostałych \(3k - 2\) osób permutujemy na \(\pars{3k - 2}!\) sposobów. Zatem wszystkich takich ustawień jest
+\begin{equation*}
+    3k \cdot 2 \cdot \pars{3k - 2}!
+\end{equation*}
+\subsubsection*{Zadanie~2015/2016-II-7}
+\begin{enumerate}[label={\Alph*:}]
+    \item Musimy zsumować prawdopodobieństwo, że będziemy rzucać \(1\) raz pomnożone przez prawdopodobieństwo, że wypadnie wtedy \(1\) szóstka z~prawdopodobieństwem, że będziemy rzucać \(2\) razy pomnożone przez prawdopodobieństwo, że wypadną wtedy \(2\) szóstki itd.
+        \begin{equation*}
+            \begin{split}
+                P\pars{A}
+                &= \frac{1}{4} \cdot \pars{\frac{1}{6}}^1 + \frac{1}{4} \cdot \pars{\frac{1}{6}}^2 + \frac{1}{4} \cdot \pars{\frac{1}{6}}^3 + \frac{1}{4} \cdot \pars{\frac{1}{6}}^4
+                = \frac{1}{4} \cdot \frac{1}{6} \cdot \pars{1 + \frac{1}{6} + \pars{\frac{1}{6}}^2 + \pars{\frac{1}{6}}^3}\\
+                &= \frac{1}{24} \cdot \frac{1 - \pars{\frac{1}{6}}^4}{1 - \frac{1}{6}}
+                = \frac{\frac{1295}{1296}}{20}
+                = \frac{259}{5184}
+            \end{split}
+        \end{equation*}
+    \item Obliczmy najpierw \(P\pars{B'}\), czyli prawdopodobieństwo, że iloczyn będzie nieparzysty. Sumujemy dla każdej liczby rzutów prawdopodobieństwo, że wszystkie wyrzucone liczby będą nieparzyste.
+        \begin{gather*}
+            \begin{split}
+                P\pars{B'}
+                &= \frac{1}{4} \cdot \pars{\frac{1}{2}}^1 + \frac{1}{4} \cdot \pars{\frac{1}{2}}^2 + \frac{1}{4} \cdot \pars{\frac{1}{2}}^3 + \frac{1}{4} \cdot \pars{\frac{1}{2}}^4
+                = \frac{1}{4} \cdot \frac{1}{2} \cdot \pars{1 + \frac{1}{2} + \pars{\frac{1}{2}}^2 + \pars{\frac{1}{2}}^3}\\
+                &= \frac{1}{8} \cdot \frac{1 - \pars{\frac{1}{2}}^4}{1 - \frac{1}{2}}
+                = \frac{\frac{15}{16}}{4}
+                = \frac{15}{64}
+            \end{split}\\
+            P\pars{B}
+            = 1 - P\pars{B}
+            = 1 - \frac{15}{64}
+            = \frac{49}{64}
+        \end{gather*}
+    \item Obliczmy najpierw \(P\pars{C'}\), czyli prawdopodobieństwo, że suma wyrzuconych oczek będzie większa lub równa \(22\). Zauważmy, że jest to możliwe tylko przy \(4\) rzutach, ponieważ w~pozostałych przypadkach maksymalna suma jest nie większa niż \(18\). Przy czterech rzutach może wystąpić suma \(22\) (gdy wyrzucimy \(2\) szóstki i~\(2\) piątki lub gdy wyrzucimy \(3\) szóstki i~\(1\) czwórkę), suma \(23\) (gdy wyrzucimy \(3\) szóstki i~\(1\) piątkę) i~suma \(24\) (gdy wyrzucimy \(4\) szóstki). Zatem
+        \begin{gather*}
+            \begin{split}
+                P\pars{C'}
+                &= \frac{1}{4} \cdot \pars{\binom{4}{2} \cdot \pars{\frac{1}{6}}^2 \cdot \pars{\frac{1}{6}}^2 + \binom{4}{1} \cdot \pars{\frac{1}{6}}^3 \cdot \pars{\frac{1}{6}}^1 + \binom{4}{1} \cdot \pars{\frac{1}{6}}^3 \cdot \pars{\frac{1}{6}}^1 + \pars{\frac{1}{6}}^4}\\
+                &= \frac{\binom{4}{2} + 2 \cdot \binom{4}{1} + 1}{4 \cdot 6^4}
+                = \frac{6 + 8 + 1}{5184}
+                = \frac{15}{5184}
+            \end{split}\\
+            P\pars{C}
+            = 1 - P\pars{C'}
+            = 1 - \frac{15}{5184}
+            = \frac{5169}{5184}
+        \end{gather*}
+\end{enumerate}
+\subsubsection*{Zadanie~2015/2016-III-2}
+Ponieważ zarówno miejsca, jak i~osoby są rozróżnialne, to nie ma znaczenia, że stół jest okrągły i~wszystkich możliwych sposobów na zajęcie miejsc jest \(10!\). Policzmy najpierw prawdopodobieństwo zdarzenia przeciwnego, czyli że żadna z~osób nie usiądzie obok osoby tej samej płci. W~tym celu osoby muszą siedzieć na zmianę. Rozważmy najpierw przypadek, gdy kobiety zajmują miejsca o~numerach nieparzystych. W~obrębie miejsc nieparzystych na \(5!\) sposobów permutujemy kolejność kobiet, a~w~obrębie miejsc parzystych na \(5!\) sposobów permutujemy kolejność mężczyzn. Wynik musimy pomnożyć przez \(2\), ponieważ trzeba uwzględnić sytuacje, gdy to mężczyźni zajmują miejsca nieparzyste, a~kobiety parzyste. Zatem
+\begin{gather*}
+    P\pars{A'}
+    = \frac{2 \cdot \pars{5!}^2}{10!}\\
+    P\pars{A}
+    = 1 - P\pars{A'}
+    = 1 - \frac{2 \cdot \pars{5!}^2}{10!}
+\end{gather*}
+\subsubsection*{Zadanie~2016/2017-II-3}
+Obliczmy najpierw, ile jest liczb o~podanej własności zaczynających się na cyfrę nieparzystą. Wyboru pierwszej cyfry możemy dokonać na \(5\) sposobów. Wśród kolejnych \(5\) cyfr na \(\ibinom{5}{2}\) sposobów ustalamy miejsca dla cyfr nieparzystych, a~na pozostałych ustawimy cyfry parzyste. Każdą z~cyfr wybieramy na \(5\) sposobów. Zatem wszystkich takich liczb zaczynających się na cyfrę nieparzystą jest
+\begin{equation*}
+    5 \cdot \binom{5}{2} \cdot 5^5
+\end{equation*}
+Teraz rozważmy liczby o~podanej własności zaczynające się na cyfrę parzystą. Sytuacja z~nimi jest prawie analogiczna, jednak pierwszą cyfrę możemy wybrać jedynie na \(4\) sposoby, gdyż nie może być nią \(0\). Zatem wszystkich liczb, w~których cyfr parzystych jest tyle samo co nieparzystych, jest
+\begin{equation*}
+    5 \cdot \binom{5}{2} \cdot 5^5 + 4 \cdot \binom{5}{2} \cdot 5^5
+    = 9 \cdot \binom{5}{2} \cdot 5^5
+\end{equation*}
+

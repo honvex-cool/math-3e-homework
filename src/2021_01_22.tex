@@ -1,0 +1,93 @@
+\subsubsection*{Zadanie~2016/2017-III-5}
+Wszystkich liczb siedmiocyfrowych jest \(9000000 = 9 \cdot 10^6\) (od \(1000000\) do \(10000000\)).
+\begin{enumerate}[label={\Alph*:}]
+    \item Obliczmy najpierw \(P\pars{A'}\), czyli że żadna z~cyfr \(0\), \(1\), \(2\) nie występuje w~zapisie liczby \(a\). Oznacza to, że każdą cyfrę możemy wybrać na \(10 - 3 = 7\) sposobów. Wszystkich takich liczb jest więc \(7^7\). Zatem
+        \begin{gather*}
+            P\pars{A'}
+            = \frac{7^7}{9 \cdot 10^6}\\
+            P\pars{A}
+            = 1 - \frac{7^7}{9 \cdot 10^6}
+        \end{gather*}
+    \item Różnica tego ciągu arytmetycznego musi być mniejsza od \(1\), ponieważ gdyby była większa lub równa \(2\), to ostatnia cyfra musiałaby różnić się od pierwszej o~\(6r \geq 12\), co jest niemożliwe, ponieważ wszystkie cyfry są mniejsze od \(10\). Rozważmy dwa przypadki:
+        \begin{proofcases}
+            \item \(r = 0\) --- wtedy jest to po prostu liczba składająca się z~powtórzonej \(7\) razy tej samej cyfry, czyli możemy tę cyfrę wybrać na \(9\) sposobów (bez \(0\))
+            \item \(r = 1\) --- wtedy jest to liczba składająca się z~\(7\) cyfr rosnących o~\(1\) lub malejących o~\(1\). Jeśli jest to ciąg malejący, to są \(4\) możliwości: \(6543210, 7654321, 8765432, 9876543\). Jeśli natomiast jest to ciąg rosnący, to są \(3\) możliwości: \(1234567, 2345678, 3456789\).
+        \end{proofcases}
+        Zatem wszystkich liczb spełniających warunek jest \(9 + 4 + 3 = 16\), czyli
+        \begin{equation*}
+            P\pars{B}
+            = \frac{16}{9 \cdot 10^6}
+        \end{equation*}
+    \item Ustawiamy ciąg \(\seq{9, 8, 7, 6, 5, 4, 3, 2, 1, 0}\) i~spośród \(10\) możliwych pozycji na \(\ibinom{10}{7}\) sposobów wybieramy \(7\) i~liczby na wybranych pozycjach ,,kleimy'' w~ciąg, nie zmieniając ich kolejności. Zatem wszystkich takich liczb jest
+        \begin{equation*}
+            \binom{10}{7} = 120
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~2017/2018-II-1}
+\begin{enumerate}[label={\alph*)}]
+    \item ile jest wszystkich? Ponieważ mamy \(6\) cyfr i~każda z~nich musi wystąpić, to na pewno nie mogą się one powtarzać. Od wszystkich permutacji \(6\) cyfr, których jest \(6!\), musimy odjąć te, w~których na pierwszym miejscu występuje \(0\), a~ich jest \(5!\), bo permutujemy tylko \(5\) końcowych niezerowych elementów. Wszystkich liczb o~oczekiwanej własności jest więc
+        \begin{equation*}
+            6! - 5!
+            = 6 \cdot 5! - 5!
+            = 5 \cdot 5!
+            = 5 \cdot 120
+            = 600
+        \end{equation*}
+    \item ile jest parzystych? Ostatnia cyfra musi być parzysta. Jeśli ostatnią cyfrą jest \(0\), to pozostałe permutujemy na \(5!\) sposobów. Jeśli ostatnia cyfra jest różna od \(0\), to wybieramy ją na \(2\) sposoby ze zbioru \(\set{2, 4}\), pierwszą wybieramy na \(4\) sposoby (bo bez \(0\) i bez cyfry wybranej na ostatnie miejsce), a~pozostałe (wewnętrzne) cyfry permutujemy na \(4!\) sposobów. Zatem wszystkich takich liczb parzystych jest
+        \begin{equation*}
+            5! + 2 \cdot 4 \cdot 4!
+            = 5 \cdot 4! + 8 \cdot 4!
+            = 13 \cdot 4!
+            = 13 \cdot 24
+            = 312
+        \end{equation*}
+    \item ile jest pierwszych? \(0\), ponieważ suma cyfr w~każdej z~takich liczb wynosi \(0 + 1 + 2 + 3 + 4 + 5 = 15\) i~jest podzielna przez \(3\), to każda z~liczb sama jest podzielna przez \(3\). Skoro jest sześciocyfrowa, to jest większa niż \(3\), więc nie może być pierwsza.
+\end{enumerate}
+\subsubsection*{Zadanie~2017/2018-III-2}
+Dla parzystego \(n\) jest to po prostu \(n!\) sposobów. Od wszystkich permutacji odejmujemy te, w~których każda liczba parzysta ma dwóch sąsiadów nieparzystych, a~ponieważ musi być to ciąg naprzemienny, to pierwsza lub ostatnia liczba w~nim w~ogóle nie będzie miała sąsiada. Zatem zdarzeń przeciwnych jest \(0\). Dla nieparzystego \(n\) jest to \(n! - \pars{\frac{n + 1}{2}}!\pars{\frac{n - 1}{2}}!\), ponieważ od~wszystkich ciągów odejmujemy ciągi naprzemienne zaczynają się i~kończą się liczbami nieparzystymi, w~których na \(\pars{\frac{n + 1}{2}}!\) permutujemy liczby nieparzyste i~na \(\pars{\frac{n - 1}{2}}!\) permutujemy parzyste.
+\subsubsection*{Zadanie~2017/2018-III-7}
+\begin{enumerate}[label={\Alph*:}]
+    \item Jest to prawdopodobieństwo, że pierwsze \(k - 1\) rzutów nie da szóstki, a~\(k\)-ty rzut da szóstkę. Zatem
+        \begin{equation*}
+            P\pars{A}
+            = \pars{\frac{5}{6}}^{k - 1} \cdot \frac{1}{6}
+        \end{equation*}
+    \item Jest to suma analogicznych prawdopodobieństw jak w~poprzednim przykładzie, tyle, że dla liczb rzutów od \(1\) do \(k - 1\). Zatem
+        \begin{equation*}
+            P\pars{B}
+            = \summation[j = 1][k - 1] \pars{\frac{5}{6}}^{j - 1} \cdot \frac{1}{6}
+            = \frac{1}{6} \cdot \pars{1 + \frac{5}{6} + \pars{\frac{5}{6}}^2 + \ldots + \pars{\frac{5}{6}}^{k - 2}}
+            = \frac{1}{6} \cdot \frac{1 - \pars{\frac{5}{6}}^{k - 1}}{1 - \frac{5}{6}}
+            = \cancel{\frac{1}{6}} \cdot \frac{1 - \pars{\frac{5}{6}}^k}{\cancel{\frac{1}{6}}}
+            = 1 - \pars{\frac{5}{6}}^{k - 1}
+        \end{equation*}
+    \item Jest to suma analogicznych prawdopodobieństw jak w~poprzednich przykładach, tyle, że dla parzystych liczb rzutów. Zatem
+        \begin{equation*}
+            P\pars{C}
+            = \pars{\frac{5}{6}}^1 \cdot \frac{1}{6} + \pars{\frac{5}{6}}^3 \cdot \frac{1}{6} + \pars{\frac{5}{6}}^5 \cdot \frac{1}{6} + \ldots
+            = \frac{1}{6} \cdot \frac{5}{6} \cdot \pars{1 + \pars{\frac{5}{6}}^2 + \pars{\frac{5}{6}}^4 + \ldots}
+        \end{equation*}
+        W~nawiasie jest suma nieskończonego szeregu geometrycznego o~ilorazie \(q = \pars{\frac{5}{6}}^2\), \(\abs{q} < 1\), zatem jest to szereg zbieżny.
+        \begin{equation*}
+            P\pars{C}
+            = \frac{1}{6} \cdot \frac{5}{6} \cdot \frac{1}{1 - \pars{\frac{5}{6}}^2}
+            = \frac{5}{36} \cdot \frac{1}{1 - \frac{25}{36}}
+            = \frac{5}{36} \cdot \frac{1}{\frac{11}{36}}
+            = \frac{5}{11}
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~2018/2019-II-3}
+Najpierw ustawiamy w~rządek \(k + 1\) białych kul, co zostawia \(k + 2\) miejsc na wstawienie czarnych kul (\(1\) przed każdą i~\(1\) po ostatniej). Wśród tych miejsc na \(\ibinom{k + 2}{k}\) wybieramy \(k\) miejsc i~w~każde z~nich wstawimy jedną czarną kulę. Zatem możliwych ustawień jest
+\begin{equation*}
+    \binom{k + 2}{k}
+    = \binom{k + 2}{2}
+    = \frac{\pars{k + 1}\pars{k + 2}}{2}
+\end{equation*}
+\newpage
+\subsubsection*{Zadanie o~rozbitku poszukiwanym przez helikoptery}
+Rozwiązałem je numerycznie za pomocą następującego programu w~Pythonie:
+\lstinputlisting[language=Python]{programs/2021_01_22/helicopters.py}
+Oto wynik programu:
+\begin{lstlisting}
+Optimal helicopter partition (15, 5) yields probability 0.26429773960448416
+\end{lstlisting}

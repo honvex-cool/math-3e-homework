@@ -1,0 +1,88 @@
+\subsubsection*{Zadanie~1.73.}
+\begin{mathfigure*}
+    \coordinate (A) at (-3, -0.4);
+    \coordinate (B) at (1, -0.4);
+    \coordinate (C) at (3, 0.4);
+    \coordinate (D) at (-1, 0.4);
+    \coordinate (Aprime) at (-3, 4.6);
+    \coordinate (Bprime) at (1, 4.6);
+    \coordinate (Cprime) at (3, 5.4);
+    \coordinate (Dprime) at (-1, 5.4);
+    \draw (A) -- node[below]{\(x\)} (B) -- node[below, sloped]{\(z\)} (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw[Orange, dashed] (A) -- node[above, sloped]{\(p\)} (C);
+    \draw[Orange, dashed] (Aprime) -- (Cprime);
+    \draw[Orange, dashed] (A) -- (Cprime);
+    \draw[RoyalBlue, dashed] (B) -- (D);
+    \draw[RoyalBlue, dashed] (Bprime) -- node[above, sloped]{\(q\)} (Dprime);
+    \draw[RoyalBlue, dashed] (B) -- (Dprime);
+    \draw[dashed] (D) -- (Dprime);
+    \draw (A) -- (Aprime);
+    \draw (B) -- (Bprime);
+    \draw (C) -- node[right]{\(y\)} (Cprime);
+    \draw (Aprime) -- (Bprime) -- (Cprime) -- (Dprime) -- cycle;
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{Aprime}[\(A'\)][above left];
+    \fillpoint*{Bprime}[\(B'\)][below right];
+    \fillpoint*{Cprime}[\(C'\)][above right];
+    \fillpoint*{Dprime}[\(D'\)][above];
+\end{mathfigure*}
+Jeden z~interesujących nas przekrojów jest zaznaczony na pomarańczowo, a~drugi na niebiesko. Przyjrzyjmy się podstawie \(ABCD\):
+\begin{mathfigure*}
+    \coordinate (A) at (-3, -1);
+    \coordinate (B) at (1, -1);
+    \coordinate (C) at (3, 1);
+    \coordinate (D) at (-1, 1);
+    \draw[Orange, dashed] (A) -- node[near end, above, sloped]{\(p\)} (C);
+    \draw[RoyalBlue, dashed] (B) -- node[near start, above, sloped]{\(q\)} (D);
+    \drawangle*[angle radius=0.9cm]{B--A--D}[\(\alpha\)];
+    \drawangle*[angle radius=0.9cm]{A--D--C}[\scriptsize\(180\degree - \alpha\)];
+    \draw (A)
+    -- node[below]{\(x\)} (B)
+    -- node[below, sloped]{\(z\)} (C)
+    -- node[above]{\(x\)} (D)
+    -- node[above, sloped]{\(z\)} cycle;
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{D}[\(D\)][above left];
+\end{mathfigure*}
+\noindent
+Z~twierdzenia cosinusów możemy zapisać dla \(\triangle{BAD}\):
+\begin{equation*}
+    q^2 = x^2 + z^2 - 2xz \cdot \cos\alpha
+\end{equation*}
+Natomiast~dla \(\triangle{ADC}\):
+\begin{equation*}
+    p^2 = x^2 + z^2 - 2xz \cdot \cos\pars{180\degree - \alpha}
+    = x^2 + z^2 + 2xz \cdot \cos\alpha
+\end{equation*}
+Po dodaniu tych równań stronami dowiadujemy się, że
+\begin{equation*}
+    2x^2 + 2z^2 = p^2 + q^2
+\end{equation*}
+Zapiszmy teraz sumę kwadratów pól ścian bocznych:
+\begin{equation*}
+    \pars{\area{ABB'A'}}^2 + \pars{\area{BCC'B'}}^2 + \pars{\area{CDD'C'}}^2 + \pars{\area{DAA'D'}}^2
+    = \pars{xy}^2 + \pars{zy}^2 + \pars{xy}^2 + \pars{zy}^2
+    = 2x^2y^2 + 2z^2y^2
+\end{equation*}
+Następnie zapiszmy sumę kwadratów pól przekrojów:
+\begin{equation*}
+    \pars{\area{ACC'A'}}^2 + \pars{\area{BDD'B'}}^2
+    = \pars{py}^2 + \pars{qy^2}
+    = p^2y^2 + q^2y^2
+\end{equation*}
+Zapiszmy równość, którą chcemy udowodnić:
+\begin{equation*}
+    2x^2y^2 + 2z^2y^2 = p^2y^2 + q^2y^2
+\end{equation*}
+Podzielmy teraz obie strony równości przez \(y^2\):
+\begin{equation*}
+    2x^2 + 2z^2 = p^2 + q^2
+\end{equation*}
+Otrzymaliśmy równość równoważną, o~której z~powyższego rozumowania już wiemy, że jest prawdziwa. Zatem wyjściowa nierówność także jest prawdziwa.
+\qed

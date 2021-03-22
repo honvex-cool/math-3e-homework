@@ -1,0 +1,269 @@
+\subsubsection*{Zadanie~2.46.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -0.4);
+    \coordinate (B) at (1, -0.4);
+    \coordinate (C) at (2, 0.4);
+    \coordinate (D) at (-1, 0.4);
+    \coordinate (S) at (0, 4);
+    \coordinate (H) at ($(A)!0.5!(C)$);
+    \coordinate (P) at ($(B)!0.5!(C)$);
+    \coordinate (Q) at ($(S)!0.5!(P)$);
+    \coordinate (T) at ($(S)!0.5!(H)$);
+    \coordinate (U) at ($(S)!0.5!(A)$);
+    \coordinate (V) at ($(Q)!0.15!(S)$);
+    \coordinate (W) at ($(U)!0.24!(S)$);
+    \drawrightangle[angle radius=0.3cm]{P--H--S};
+    \drawrightangle[angle radius=0.2cm]{Q--T--S};
+    \drawrightangle[angle radius=0.35cm]{S--H--A};
+    \drawrightangle[angle radius=0.25cm]{S--T--U};
+    \draw (A) -- node[below]{\(x\)} (B) -- (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw[dashed] (S) -- (D);
+    \draw[Orange] (S) -- node[pos=0.25, left]{\(\frac{h}{2}\)} (H);
+    \draw[dashed, RoyalBlue] (T) -- (Q) -- (S);
+    \draw[dashed, ForestGreen] (T) -- (U) -- (S);
+    \draw[dotted] (A) -- (H) -- (P) -- (Q);
+    \draw[red] (T) -- node[above, sloped]{\(b\)} (V);
+    \draw[Magenta] (T) -- node[above, sloped]{\(a\)} (W);
+    \draw (S) -- (A);
+    \draw (S) -- (B);
+    \draw (S) -- (C);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{S}[\(S\)][above];
+    \fillpoint*{H}[\(H\)][below left];
+    \fillpoint*{P}[\(P\)][below right];
+    \fillpoint*{Q}[\(Q\)][below right];
+    \fillpoint*{T}[\(T\)][below right];
+    \fillpoint*{U}[\(U\)][above left];
+    \fillpoint*{W}[\(W\)][above left];
+    \fillpoint*{V}[\(V\)][above right];
+\end{mathfigure*}
+Punkt \(P\) jest środkiem odcinka \(BC\), \(T\) jest środkiem wysokości, \(H\) jest środkiem podstawy i~spodkiem wysokości, natomiast \(TQ \parallel HP\) i~\(TU \parallel HA\).
+\begin{gather*}
+    PS = \sqrt{h^2 + \frac{x^2}{4}}\\
+    AS = \sqrt{h^2 + \frac{x^2}{2}}
+\end{gather*}
+Dostrzegamy następujące podobieństwa w~skali \(\frac{1}{2}\):
+\begin{gather*}
+    \triangle{TQS} \sim \triangle{HPS}\\
+    \triangle{TUS} \sim \triangle{HAS}
+\end{gather*}
+Zatem
+\begin{gather*}
+    TQ = \frac{1}{2} \cdot HP = \frac{1}{2} \cdot \frac{x}{2} = \frac{x}{4}\\
+    TU = \frac{1}{2} \cdot HA = \frac{1}{2} \cdot \frac{x\sqrt{2}}{2} = \frac{x\sqrt{2}}{4}
+\end{gather*}
+Z~pola \(\triangle{TQS}\):
+\begin{gather*}
+    TQ \cdot TS = TV \cdot QS\\
+    \frac{x}{4} \cdot \frac{h}{2} = b\frac{1}{2}\sqrt{h^2 + \frac{x^2}{4}}\\
+    \frac{hx}{4} = b\sqrt{h^2 + \frac{x^2}{4}}
+\end{gather*}
+Podobnie z~pola \(\triangle{TUS}\):
+\begin{gather*}
+    TU \cdot TS = TW \cdot US\\
+    \frac{x\sqrt{2}}{4} \cdot \frac{h}{2} = a \cdot \frac{1}{2}\sqrt{h^2 + \frac{x^2}{2}}\\
+    \frac{hx\sqrt{2}}{4} = a\sqrt{h^2 + \frac{x^2}{2}}
+\end{gather*}
+Mamy zatem układ dwóch równań, wystarczy go rozwiązać:
+\begin{equation*}
+    \begin{cases}
+        \frac{hx}{4} = b\sqrt{h^2 + \frac{x^2}{4}}\\
+        \frac{hx\sqrt{2}}{4} = a\sqrt{h^2 + \frac{x^2}{2}}
+    \end{cases}
+\end{equation*}
+Podzielmy drugie równanie stronami przez pierwsze:
+\begin{gather*}
+    \sqrt{2} = \frac{b\sqrt{h^2 + \frac{x^2}{4}}}{a\sqrt{h^2 + \frac{x^2}{2}}}\\
+    \frac{b\sqrt{2}}{a} = \frac{\sqrt{h^2 + \frac{x^2}{2}}}{\sqrt{h^2 + \frac{x^2}{4}}}\\
+    \frac{h^2 + \frac{x^2}{2}}{h^2 + \frac{x^2}{4}} = \frac{2b^2}{a^2}\\
+    t \coloneqq \frac{x^2}{4}\\
+    \frac{h^2 + 2t}{h^2 + t} = \frac{2b^2}{a^2}\\
+    a^2h^2 + 2a^2t = 2b^2h^2  + 2b^2t\\
+    t\pars{2a^2 - 2b^2} = h^2\pars{2b^2 - a^2}\\
+    t = \frac{h^2\pars{2b^2 - a^2}}{2a^2 - 2b^2}\\
+    \frac{x^2}{4} = \frac{h^2\pars{2b^2 - a^2}}{2a^2 - 2b^2}\\
+    x = h\sqrt{\frac{2\pars{2b^2 - a^2}}{a^2 - b^2}}
+\end{gather*}
+Możemy teraz wstawić \(x\) do pierwszego równania:
+\begin{gather*}
+    \frac{h^2\sqrt{\frac{2\pars{2b^2 - a^2}}{a^2 - b^2}}}{4} = b\sqrt{h^2 + \frac{h^2\pars{2b^2 - a^2}}{2a^2 - 2b^2}}\\
+    \frac{h\sqrt{\frac{2\pars{2b^2 - a^2}}{a^2 - b^2}}}{4} = b\sqrt{1 + \frac{2b^2 - a^2}{2a^2 - 2b^2}}\\
+    h = \frac{4b\sqrt{1 + \frac{2b^2 - a^2}{2a^2 - 2b^2}}}{\sqrt{\frac{2\pars{2b^2 - a^2}}{a^2 - b^2}}}
+\end{gather*}
+Możemy już policzyć objętość:
+\begin{equation*}
+    \begin{split}
+        V
+        &= \frac{1}{3} \cdot x^2 \cdot h
+        = \frac{1}{3} \cdot \frac{2h^2\pars{2b^2 - a^2}}{a^2 - b^2} \cdot h
+        = \frac{1}{3} \cdot 2h^3 \cdot \frac{2b^2 - a^2}{a^2 - b^2}
+        = \frac{1}{3} \cdot 128b^3 \cdot \pars{\sqrt{\frac{1 + \frac{2b^2 - a^2}{2a^2 - 2b^2}}{\frac{2\pars{2b^2 - a^2}}{a^2 - b^2}}}}^3 \cdot \frac{2b^2 - a^2}{a^2 - b^2}\\
+        &= \frac{128}{3} \cdot \pars{\sqrt{\frac{\frac{a^2}{2a^2 - 2b^2}}{\frac{2\pars{2b^2 - a^2}}{a^2 - b^2}}}}^3 \cdot \frac{2b^2 - a^2}{a^2 - b^2}
+        = \frac{128}{3}b^3\pars{\sqrt{\frac{a^2}{8b^2 - 4a^2}}}^3 \cdot \frac{2b^2 - a^2}{a^2 - b^2}
+        = \frac{16}{3}b^3\pars{\sqrt{\frac{a^2}{2b^2 - a^2}}}^3 \cdot \frac{2b^2 - a^2}{a^2 - b^2}\\
+        &= \frac{16}{3}b^3 \cdot \frac{a^2}{a^2 - b^2} \cdot \sqrt{\frac{a^2}{2b^2 - a^2}}
+    \end{split}
+\end{equation*}
+\subsubsection*{Zadanie~2.48.}
+\begin{mathfigure*}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (6, 0);
+    \coordinate (C) at (4, 1.5);
+    \coordinate (S) at (3, 6);
+    \coordinate (H) at (3, 0.75);
+    \drawrightangle[angle radius=0.3cm]{B--H--S};
+    \drawangle*[angle radius=1.2cm]{B--A--C}[\(\alpha\)];
+    \drawangle*[angle radius=0.5cm]{A--C--B}[\(\beta\)];
+    \drawangle*[angle radius=1cm, RoyalBlue]{S--B--H}[\(\gamma\)];
+    \draw (A) -- (B);
+    \draw[dashed] (B) -- (C) -- (A);
+    \draw[Orange] (S) -- node[left]{\(h\)} (H);
+    \draw[dashed] (H) -- node[above, sloped]{\(R\)} (B);
+    \draw[dashed] (S) -- (C);
+    \draw (S) -- node[above left]{\(d\)} (A);
+    \draw (S) -- node[above right]{\(d\)} (B);
+    \fillpoint{A};
+    \fillpoint{B};
+    \fillpoint{C};
+    \fillpoint{S};
+    \fillpoint{H};
+\end{mathfigure*}
+\begin{equation*}
+    h = d\sin\gamma
+\end{equation*}
+Ponieważ wszystkie krawędzie mają równe długości, to spodek wysokości jest środkiem okręgu opisanego na podstawie.
+\begin{equation*}
+    R = d\cos\gamma
+\end{equation*}
+Przyjrzyjmy się podstawie:
+\begin{mathfigure*}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (6, 0);
+    \coordinate (C) at (4, 3);
+    \draw (A) -- node[below]{\(b\)} (B) -- node[above, sloped]{\(a\)} (C) -- cycle;
+    \drawangle*[angle radius=1cm]{B--A--C}[\(\alpha\)];
+    \drawangle*[angle radius=0.5cm]{A--C--B}[\(\beta\)];
+    \drawangle*[angle radius=0.6cm]{C--B--A}[\(\delta\)];
+\end{mathfigure*}
+\noindent
+Z~twierdzenia sinusów:
+\begin{gather*}
+    \frac{a}{\sin\alpha} = 2R = 2d\cos\gamma \implies a = 2d\cos\gamma\sin\alpha\\
+    \frac{b}{\sin\beta} = 2R = 2d\cos\gamma \implies b = 2d\cos\gamma\sin\beta\\
+    P_\p{P} = \frac{1}{2}ab\sin\delta
+    = \frac{1}{2} \cdot 4d^2 \cos^2\gamma\sin\alpha\sin\beta\sin\pars{180\degree - \alpha - \beta}
+    = 2d^2\cos^2\gamma\sin\alpha\sin\beta\sin\pars{\alpha + \beta}
+\end{gather*}
+Możemy teraz obliczyć objętość:
+\begin{equation*}
+    V = \frac{1}{3} \cdot P_\p{P} \cdot h
+    = \frac{2}{3}d^3\sin\gamma\cos^2\gamma\sin\alpha\sin\beta\sin\pars{\alpha + \beta}
+\end{equation*}
+\subsubsection*{Zadanie~2.49.}
+\begin{mathfigure*}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (6, 0);
+    \coordinate (C) at (2.5, 1.5);
+    \coordinate (S) at (3, 6);
+    \coordinate (H) at (3, 0.5);
+    \drawrightangle[angle radius=0.3cm]{B--H--S};
+    \drawangle*[angle radius=0.5cm]{A--C--B}[\(2\alpha\)];
+    \drawangle*[angle radius=1cm, RoyalBlue]{S--B--H}[\(\beta\)];
+    \drawangle*[angle radius=1.7cm]{B--A--C}[\tiny\(90\degree - \alpha\)];
+    \draw (A) -- (B);
+    \draw[dashed] (B) -- node[above, sloped]{\(b\)} (C) -- node[above, sloped]{\(b\)} (A);
+    \draw[Orange] (S) -- node[right]{\(h\)} (H);
+    \draw[dashed] (H) -- node[above]{\(R\)} (B);
+    \draw[dashed] (S) -- (C);
+    \draw (S) -- node[above left]{\(d\)} (A);
+    \draw (S) -- node[above right]{\(d\)} (B);
+    \fillpoint{A};
+    \fillpoint{B};
+    \fillpoint{C};
+    \fillpoint{S};
+    \fillpoint{H};
+\end{mathfigure*}
+Jeśli wszystkie krawędzie boczne są nachylone do podstawy pod tym samym kątem \(\beta\), to wszystkie muszą mieć równe długości, ponieważ długość każdej z~nich wynosi
+\begin{equation*}
+    d = \frac{h}{\sin\beta}
+\end{equation*}
+Oznacza to, że spodek wysokości jest środkiem okręgu opisanego na podstawie. Z~twierdzenia sinusów zastosowanego dla podstawy mamy
+\begin{gather*}
+    2R = \frac{b}{\sin\pars{90\degree - \alpha}} = \frac{b}{\cos\alpha}\\
+    R = \frac{b}{2\cos\alpha}
+\end{gather*}
+Możemy teraz wyliczyć wysokość:
+\begin{equation*}
+    h = \tan\beta \cdot R = \frac{b\tan\beta}{2\cos\alpha}
+\end{equation*}
+A~następnie obliczamy objętość:
+\begin{equation*}
+    V = \frac{1}{3} \cdot P_\p{P} \cdot h
+    = \frac{1}{3} \cdot \frac{1}{2}b^2\sin\pars{2\alpha} \cdot \frac{b\tan\beta}{2\cos\alpha}
+    = \frac{1}{6}b^2 \cdot \cancel{2\cos\alpha}\sin\alpha \cdot \frac{b\tan\beta}{\cancel{2\cos\alpha}}
+    = \frac{1}{6}b^3\sin\alpha\tan\beta
+\end{equation*}
+\subsubsection*{Zadanie~2.57.}
+\begin{itemize}
+    \item[c)]
+        \begin{mathfigure*}
+            \coordinate (A) at (0, 0);
+            \coordinate (B) at (6, 0);
+            \coordinate (C) at (4, 1.5);
+            \coordinate (S) at (3, 6);
+            \coordinate (H) at (3, 0.75);
+            \coordinate (Aprime) at ($(A)!0.4!(S)$);
+            \coordinate (Bprime) at ($(B)!0.4!(S)$);
+            \coordinate (Cprime) at ($(C)!0.4!(S)$);
+            \coordinate (Hprime) at ($(H)!0.4!(S)$);
+            \draw (A) -- (B);
+            \draw[dashed] (B) -- (C) -- (A);
+            \draw[RoyalBlue] (Aprime) -- (Bprime);
+            \draw[dashed, RoyalBlue] (Bprime) -- (Cprime) -- (Aprime);
+            \draw[Orange] (S) -- (H);
+            \draw[dashed] (S) -- (C);
+            \draw (S) -- (A);
+            \draw (S) -- (B);
+            \fillpoint{A};
+            \fillpoint{B};
+            \fillpoint{C};
+            \fillpoint{S};
+            \fillpoint{H};
+            \fillpoint{Aprime};
+            \fillpoint{Bprime};
+            \fillpoint{Cprime};
+            \fillpoint{Hprime};
+        \end{mathfigure*}
+        Na górze powstanie ostrosłup podobny do całego ostrosłupa w~skali \(\frac{m}{m + n}\), ponieważ taki jest stosunek wysokości. Zatem jeśli oznaczymy przez \(V\) objętość całego ostrosłupa, to objętość małego ostrosłupa wynosi
+        \begin{equation*}
+            V \cdot \pars{\frac{m}{m + n}}^3
+        \end{equation*}
+        Objętość dolnej bryły wynosi
+        \begin{equation*}
+            V - V \cdot \pars{\frac{m}{m + n}}^3
+            = V \cdot \pars{1 - \pars{\frac{m}{m + n}}^3}
+        \end{equation*}
+        Zatem stosunek objętości tych brył to
+        \begin{equation*}
+            \frac{\cancel{V} \cdot \pars{\frac{m}{m + n}}^3}{\cancel{V} \cdot \pars{1 - \pars{\frac{m}{m + n}}^3}}
+            = \frac{\pars{\frac{m}{m + n}}^3}{1 - \pars{\frac{m}{m + n}}^3}
+            = \frac{\frac{m^3}{\cancel{\pars{m + n}^3}}}{\frac{\pars{m + n}^3 - m^3}{\cancel{\pars{m + n}^3}}}
+            = \frac{m^3}{\pars{m + n}^3 - m^3}
+        \end{equation*}
+    \item[a)] Podstawiamy do wzoru:
+        \begin{equation*}
+            \frac{1^3}{\pars{1 + 1}^3 - 1^3}
+            = \frac{1}{7}
+        \end{equation*}
+    \item[b)] Podstawiamy do wzoru:
+        \begin{equation*}
+            \frac{2^3}{\pars{2 + 3}^3 - 2^3}
+            = \frac{8}{125 - 8}
+            = \frac{8}{117}
+        \end{equation*}
+\end{itemize}
+

@@ -1,0 +1,82 @@
+\subsubsection*{Zadanie~3.116.}
+Ponieważ graniastosłup jest prosty, a~sfera styczna do ścian bocznych, to w~rzucie na płaszczyznę podstawy sfera stanowi okrąg wpisany w~trójkąt równoboczny. Zatem
+\begin{gather*}
+    r = \frac{a\sqrt{3}}{6}\\
+    a = 2\sqrt{3}r
+\end{gather*}
+Sfera jest również styczna do obydwu podstaw, więc
+\begin{equation*}
+    h = 2r
+\end{equation*}
+Możemy teraz obliczyć objętość:
+\begin{gather*}
+    V_\p{kuli}
+    = \frac{4}{3}\pi r^3\\
+    V_\p{graniastosłupa}
+    = \frac{a^2\sqrt{3}}{4} \cdot h
+    = \frac{12\sqrt{3}r^2}{4} \cdot 2r
+    = 3\sqrt{3}r^2 \cdot 2r
+    = 6\sqrt{3}r^3\\
+    \frac{V_\p{kuli}}{V_\p{graniastosłupa}}
+    = \frac{\frac{4}{3}\pi \cancel{r^3}}{6\sqrt{3}\cancel{r^3}}
+    = \frac{2\pi}{9\sqrt{3}}
+\end{gather*}
+Możemy też wyznaczyć pole powierzchni całkowitej:
+\begin{gather*}
+    S_\p{kuli}
+    = 4\pi r^2\\
+    S_\p{graniastosłupa}
+    = 2 \cdot \frac{a^2\sqrt{3}}{4} + 3ah
+    = \frac{12\sqrt{3}r^2}{2} + 12\sqrt{3}r^2
+    = 6\sqrt{3}r^2 + 12\sqrt{3}r^2
+    = 18\sqrt{3}r^2\\
+    \frac{S_\p{kuli}}{S_\p{graniastosłupa}}
+    = \frac{4\pi \cancel{r^2}}{18\sqrt{3} \cancel{r^2}}
+    = \frac{2\pi}{9\sqrt{3}}
+\end{gather*}
+\subsubsection*{Zadanie~3.117.}
+\begin{gather*}
+    3 = \frac{S_1}{S_2} = \frac{\cancel{\pi r} \ell_1}{\cancel{\pi r} \ell_2} = \frac{\ell_1}{\ell_2}\\
+    \ell_1 = 3\ell_2
+\end{gather*}
+Stosunek pól powierzchni bocznej jest równy stosunkowi długości tworzących. Rozważmy przekrój osiowy całej konfiguracji:
+\begin{mathfigure*}
+    \def\radius{\fpeval{2*sqrt(2)}}
+    \coordinate (S) at (0, 0);
+    \coordinate (P) at (-2, 2);
+    \coordinate (Q) at (2, 2);
+    \coordinate (X) at (0, \radius);
+    \coordinate (Y) at (0, -\radius);
+    \coordinate (Z) at ($(P)!0.5!(Q)$);
+    \drawrightangle[angle radius=0.7cm]{Y--P--X};
+    \drawrightangle{P--Z--Y};
+    \drawangle[Orange]{X--Y--P};
+    \drawangle[Orange]{Z--P--X};
+    \draw (S) circle[radius=\radius];
+    \draw (P) -- node[below left]{\(\ell_1 = 3\ell_2\)} (Y) -- (Q) -- node[above right]{\(\ell_2\)} (X) -- cycle;
+    \draw (P) -- node[pos=0.75, below]{\(r\)} (Q);
+    \draw[dashed] (X) -- (Y);
+    \path (Z) -- node[right]{\(h_1\)} (Y);
+    \fillpoint*{P}[\(P\)][above left];
+    \fillpoint*{Q}[\(Q\)][above right];
+    \fillpoint*{X}[\(X\)][above];
+    \fillpoint*{Y}[\(Y\)][below];
+    \fillpoint*{Z}[\(Z\)][below right];
+\end{mathfigure*}
+\noindent
+Odcinek \(XY\) jest średnicą sfery i~zawiera wysokości obydwu stożków.
+\begin{gather*}
+    \triangle{PZY} \sim \triangle{XPY}\\
+    \frac{XP}{PZ} = \frac{PY}{ZY}\\
+    \frac{\ell_2}{r} = \frac{\ell_1}{h_1}\\
+    \frac{h_1}{r} = \frac{\ell_1}{\ell_2} = 3\\
+    h_1 = 3r\\
+    \triangle{PZY} \sim \triangle{XZP}\\
+    \frac{XZ}{ZP} = \frac{PZ}{ZY}\\
+    \frac{h_2}{r} = \frac{r}{h_1}\\
+    h_1h_2 = r^2\\
+    3rh_2 = r^2\\
+    h_2 = \frac{r}{3}\\
+    \frac{h_1}{h_2} = \frac{3r}{\frac{r}{3}} = 9
+\end{gather*}
+

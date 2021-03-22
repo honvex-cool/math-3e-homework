@@ -1,0 +1,80 @@
+\subsubsection*{Zadanie~1.21.}
+\begin{gather*}
+    V \coloneqq \text{przegłosowano ustawę}\\
+    T \coloneqq \text{Tiger zabrał przynajmniej połowę otrzymanych kopert}
+\end{gather*}
+Uchwalenie ustawy mogło nastąpić na \(4\) sposoby. Rozważmy, ile możliwości jest w~każdym przypadku:
+\begin{itemize}
+    \item wszyscy \(3\) za:
+        \begin{description}
+            \item[możliwości w~\(V\):] \(2^3 = 8\)
+            \item[możliwości w~\(V \cap T\):] \(1\)
+        \end{description}
+    \item \(2\) za, \(1\) przeciw
+        \begin{description}
+            \item[możliwości w~\(V\):] \(3 \cdot 2^2 = 12\)
+            \item[możliwośći w~\(V \cap T\):] \(3\)
+        \end{description}
+    \item \(2\) za, \(1\) wstrzymuje się od głosu:
+        \begin{description}
+            \item[możliwości w~\(V\):] \(3 \cdot 2^2 = 12\)
+            \item[możliwości w~\(V \cap T\):] \(3 \cdot 3 = 9\)
+        \end{description}
+    \item \(1\) za, \(2\) wstrzymuje się od głosu:
+        \begin{description}
+            \item[możliwości w~\(V\):] \(3 \cdot 2 = 6\)
+            \item[możliwości w~\(V \cap T\):] \(3 \cdot 2 = 6\)
+        \end{description}
+\end{itemize}
+Możemy teraz obliczyć prawdopodobieństwo warunkowe:
+\begin{gather*}
+    \card V = 8 + 12 + 12 + 6 = 38\\
+    \card\pars{V \cap T} = 1 + 3 + 9 + 6 = 19\\
+    P\pars{T / V}
+    = \frac{P\pars{T \cap V}}{P\pars{V}}
+    = \frac{\frac{\card\pars{V \cap T}}{\cancel{\card\Omega}}}{\frac{\card V}{\cancel{\card\Omega}}}
+    = \frac{\card\pars{V \cap T}}{\card V}
+    = \frac{19}{38}
+    = \frac{1}{2}
+\end{gather*}
+Zatem Tiger zabrał przynajmniej połowę kopert dla siebie z~prawdopodobieństwem \(\frac{1}{2}\).
+\subsubsection*{Zadanie~1.22.}
+Wprowadźmy oznaczenia:
+\begin{gather*}
+    K \coloneqq \text{Książę wybrał staw z~księżniczkami}\\
+    F \coloneqq \text{wylosował zwykłą żabę}
+\end{gather*}
+Wiemy z~treści zadania, że
+\begin{gather*}
+    P\pars{F / K} = \frac{2}{3}\\
+    P\pars{K} = \frac{1}{4}
+\end{gather*}
+Korzystamy ze wzoru Bayesa:
+\begin{equation*}
+    P\pars{K / F}
+    = \frac{P\pars{F / K} \cdot P\pars{K}}{P\pars{F}}
+    = \frac{\frac{2}{3} \cdot \frac{1}{4}}{\frac{2}{3} \cdot \frac{1}{4} + \frac{3}{4}}
+    = \frac{\frac{2}{12}}{\frac{11}{12}}
+    = \frac{2}{11}
+\end{equation*}
+Aby otrzymać prawdopodobieństwo, że następna wylosowana żaba będzie księżniczką, mnożymy prawdopodobieństwo, że wybraliśmy dobry staw, przez prawdopodobieństwo, że w~dobrym stawie wylosujemy księżniczkę:
+\begin{equation*}
+    P\pars{\text{następna to księżniczka}}
+    = \frac{1}{3} \cdot \frac{2}{11}
+    = \frac{2}{33}
+\end{equation*}
+\subsubsection*{Zadanie~1.26.}
+Obliczamy sumaryczną skuteczność leku:
+\begin{gather*}
+    P\pars{\text{przeżył} / \text{był leczony}}
+    = \frac{95 + 1000}{95 + 5 + 1000 + 9000}
+    = \frac{1095}{10100}
+    = \frac{219}{2020}
+    \approx 0{,}108\\
+    P\pars{\text{przeżył} / \text{nie był leczony}}
+    = \frac{5000 + 50}{5000 + 5000 + 1000}
+    = \frac{5050}{10100}
+    \approx 0{,}459
+\end{gather*}
+Zatem w~ogólności lek nie jest zbyt skuteczny.
+

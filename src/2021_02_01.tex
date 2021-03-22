@@ -1,0 +1,109 @@
+\subsubsection*{Zadanie~2.10.}
+Jeżeli dwa czworościany wpisane w~ten sam równoległobok nakładają się na siebie, to w~oczywisty sposób są przystające. Jeżeli natomiast nie nakładają się na siebie, to dla każdej pary przeciwległych ścian równoległościanu, jedna z~przekątnych na pierwszej ze ścian należy do jednego czworościanu, a~na drugiej, przystającej do niej ścianie odpowiadająca przekątna należy do drugiego czworościanu. Skoro odcinki łączące punkty przecięcia przekątnych na przeciwległych ścianach przecinają się w~jednym punkcie, to ten punkt jest środkiem symetrii, która przekształca każdą krawędź jednego czworościanu na odpowiadającą krawędź drugiego czworościanu, zatem przekształca całe czworościany na siebie. Oznacza to, że muszą być one przystające.
+\qed
+\subsubsection*{Zadanie~2.11.}
+\begin{enumerate}[label={\alph*)}]
+    \item
+        \begin{itemize}
+            \item[\(\implies\)] Gdy mamy sześcian, to wpisany w~niego czworościan będzie miał krawędzie tam, gdzie sześcian miał przekątne ścian. Przekątne wszystkich ścian w~sześcianie są równe, więc wszystkie krawędzie czworościanu będą równe, więc będzie to czworościan foremny.
+            \item[\(\impliedby\)] Gdy czworościan jest foremny, to wszystkie krawędzie mają taką samą długość, a~przeciwległe krawędzie są do siebie prostopadłe. Krawędzie czworościanu to przekątne ścian równoległościanu opisanego na nim. Skoro na każdej ścianie przekątne mają równe długości i~są do siebie prostopadłe, to każda ściana musi być kwadratem, zatem równoległościan musi być sześcianem.
+        \end{itemize}
+        \qed
+    \item Jest to dokładnie ten sam argument, co w~poprzednim podpunkcie, przy czym prostopadłość przekątnych ścian nie jest wymagana.
+        \qed
+    \item
+        \begin{itemize}
+            \item[\(\implies\)] Skoro w~podstawie jest równoległobok, a~graniastosłup jest prosty, to ściany boczne są prostokątami. Zatem pary przekątnych na przeciwległych ścianach bocznych są równe.
+            \item[\(\impliedby\)] Skoro są dwie pary przeciwległych krawędzi równych, to w~równoległościanie opisanym na takim czworościanie muszą istnieć dwie pary ścian będących prostokątami, ponieważ prostokąty to jedyne równoległoboki, które mają równe przekątne. Skoro tak, to musi to być graniastosłup prosty, gdyż inaczej jedna para ścian musiałaby być ,,pochylona''. Ponieważ mamy do czynienia z~równoległościanem, to w~oczywisty sposób podstawą jest równoległobok.
+        \end{itemize}
+        \qed
+    \item
+        \begin{itemize}
+            \item[\(\implies\)] Jeśli mamy rombościan, to po wpisaniu w~niego czworościanu przeciwległe krawędzie będą dwoma przekątnymi przeciwległych ścian, czyli będą prostopadłe.
+            \item[\(\impliedby\)] Przeciwległe krawędzie czworościanu stanowią dwie przekątne przeciwległych ścian równoległościanu opisanego na nim. Krawędzie są prostopadłe, a~przeciwległe ściany przystające, więc w~obrębie jednej ściany przekątne też są prostopadłe. Skoro każda ściana jest równoległobokiem i~ma prostopadłe przekątne, to jest rombem, czyli rówlnoległościan jest rombościanem.
+        \end{itemize}
+        \qed
+\end{enumerate}
+\subsubsection*{Rysunek z~oznaczeniami używanymi w~kolejnych zadaniach}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -1);
+    \coordinate (B) at (2, 0);
+    \coordinate (Cprime) at (1, -1);
+    \coordinate (Dprime) at (-1, 0);
+    \coordinate (Aprime) at (-1.8, 3);
+    \coordinate (Bprime) at (2.2, 4);
+    \coordinate (C) at (1.2, 3);
+    \coordinate (D) at (-0.8, 4);
+    \coordinate (S) at (0, -0.5);
+    \coordinate (T) at (0.2, 3.5);
+    \draw (A) -- (Cprime) -- (B);
+    \draw[dashed] (B) -- (Dprime) -- (A);
+    \draw[dashed] (Dprime) -- (D);
+    \draw[dotted] (S) -- (T);
+    \draw[WildStrawberry, dashed] (B) -- (D);
+    \draw[WildStrawberry] (A) -- (B) -- (C) -- cycle;
+    \draw[WildStrawberry] (A) -- (D) -- (C);
+    \draw (Aprime) -- (C) -- (Bprime) -- (D) -- cycle;
+    \draw (A) -- (Aprime);
+    \draw (B) -- (Bprime);
+    \draw (C) -- (Cprime);
+    \drawpoint*{A}[\(A\)][below left];
+    \drawpoint*{B}[\(B\)][below right];
+    \drawpoint*{Cprime}[\(C'\)][below right];
+    \drawpoint*{Dprime}[\(D'\)][below];
+    \drawpoint*{Aprime}[\(A'\)][left];
+    \drawpoint*{Bprime}[\(B'\)][above right];
+    \drawpoint*{C}[\(C\)][right];
+    \drawpoint*{D}[\(D\)][above];
+    \fillpoint*{S}[\(S\)][below right];
+    \fillpoint*{T}[\(T\)][above right];
+\end{mathfigure*}
+\subsubsection*{Zadanie~2.8.}
+\begin{itemize}
+    \item[a)] Dowiedziemy tego dla odcinka \(TS\), dla pozostałych jest analogicznie. Zauważamy po prostu, że \(T\) jest środkiem odcinka \(A'B'\), a~\(S\) jest środkiem odcinka \(AB\). Zatem \(TS\) łączy środki przeciwległych bokow równoległoboku \(ABB'A'\), czyli jest równoległy do pozostałych dwóch boków, i~równej długości.
+        \qed
+    \item[d)] Przez \(V\) oznaczam objętość równoległościanu.
+        \begin{equation*}
+            V_{ABCD}
+            = V - V_{AC'BC} - V_{DB'CB} - V_{CA'DA} - V_{BD'AD}
+        \end{equation*}
+        Wybierzmy odcięty ostrosłup \(AC'BC\). Zauważamy, że:
+        \begin{gather*}
+            V = S_{AC'BD'} \cdot h\\
+            V_{AC'BC} = \frac{1}{3} \cdot S_{AC'B} \cdot h
+            = \frac{1}{3} \cdot \frac{1}{2} \cdot S_{AC'BD'} \cdot h
+            = \frac{1}{6} \cdot S_{AC'BD'} \cdot h
+            = \frac{1}{6}V
+        \end{gather*}
+        Zatem
+        \begin{equation*}
+            V_{ABCD} = V - 4 \cdot \frac{1}{6}V
+            = V - \frac{2}{3}V
+            = \frac{1}{3}V
+        \end{equation*}
+        \qed
+    \item[c)] Wynika wprost z~podpunktu b), ponieważ skoro środkowe zawierają się w~przekątnych i~się przecinają, to muszą przecinać się tam, gdzie przecinają się same przekątne. Natomiast punkt przecięcia środkowych to środek ciężkości.
+        \qed
+\end{itemize}
+\subsubsection*{Zadanie~2.9.}
+Wiemy z~zadania 2.8a), że odcinek łączący środki przeciwległych krawędzi czworościanu jest równy czterem krawędziom równoległościanu opisanego na tym czworościanie. Objętość równoległościanu jest nie większa od \(abc\), ponieważ pole podstawy jest nie większe od \(ab\), a~wysokość jest nie większa od \(c\). Z~zadania 2.8d) wiemy, że objętość czworościanu jest równa \(\frac{1}{3}\) objętości równoległościanu opisanego na nim, więc w~tym przypadku jest równa
+\begin{equation*}
+    \frac{1}{3}V \leq \frac{1}{3}abc
+\end{equation*}
+\qed
+\subsubsection*{Zadanie~2.12.}
+Skoro są dwie pary prostopadłych przeciwległych krawędzi czworościanu, czyli przekątnych przeciwległych ścian opisanego na nim równoległościanu, to w~równoległościanie opisanym są dwie pary przeciwległych ścian będących rombami. Skoro tak, to wszystkie krawędzie tego równoległościanu są równe, czyli ostatnia para przeciwległych ścian to też romby, czyli ich przekątne także są prostopadłe.
+\qed
+\subsubsection*{Zadanie~2.13.}
+Wiemy z~zadania 2.8a), że każdy odcinek łączący środki przeciwległych krawędzi czworościanu jest równy czterem krawędziom równoległościanu opisanego na tym czworościanie. Zatem jeśli wszystkie odcinki biśrodkowe są równe, to wszystkie krawędzie równoległościanu sa równe. Zatem wszystkie ściany równoległościanu są rombami, a~krawędzie czworościanu są ich przekątnymi. Przekątne rombu są prostopadłe, więc przeciwległe krawędzie czworościanu są prostopadłe.
+\qed
+\subsubsection*{Zadanie~2.14.}
+Wiemy z~zadania 2.8a), że każdy odcinek łączący środki przeciwległych krawędzi czworościanu jest równoległy do czterech krawędzi równoległościanu opisanego na tym czworościanie. Skoro więc wszystkie takie odcinki są parami prostopadłe, to krawędzie wychodzące z~jednego wierzchołka równoległościanu opisanego są także parami prostopadłe, czyli jest to prostopadłościan. Zatem wszystkie ściany są prostokątami i~mają równe przekątne, a~przeciwległe krawędzie czworościanu są właśnie przekątnymi przeciwległych ścian równoległościanu opisanego, czyli są równe.
+\qed
+\subsubsection*{Zadanie~2.15.}
+Skoro czworościan jest foremny, to równoległościan na nim opisany jest sześcianem, a~każda krawędź czworościanu jest przekątną jednej ze ścian tego sześcianu. Skoro przekątna ściany ma długość \(1\), to krawędź sześcianu ma długość \(\frac{1}{\sqrt{2}}\), czyli przeciwległe ściany są odległe od siebie o~\(\frac{1}{\sqrt{2}}\). Ponieważ krawędzie czworościanu zawierają się w~ścianach sześcianu, to suma odległości punktu \(P\) od dwóch przeciwległych krawędzi czworościanu jest przynajmniej taka jak suma jego odległości od dwóch przeciwległych ścian sześcianu, czyli przynajmniej równa \(\frac{1}{\sqrt{2}}\). Ponieważ w~sześcianie są \(3\) pary przeciwległych ścian, to suma odległości wynosi przynajmniej
+\begin{equation*}
+    3 \cdot \frac{1}{\sqrt{2}}
+    = \frac{3}{\sqrt{2}}
+\end{equation*}
+\qed

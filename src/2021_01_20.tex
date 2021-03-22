@@ -1,0 +1,115 @@
+\subsubsection*{Zadanie~2009/2010-III-6}
+Wszystkich podzbiorów zbioru \(n\)-elementowego jest \(2^n\). Wśród nich jest tylko \(1\) zbiór pusty.
+\begin{enumerate}[label={\Alph*:}]
+    \item Obliczymy najpierw prawdopodobieństwo zdarzenia \(A'\), czyli że żaden z~wylosowanych zbiorów nie jest pusty.
+        \begin{equation*}
+            P\pars{A'}
+            = \pars{\frac{2^n - 1}{2^n}}^2
+            = \frac{4^n - 2^{n + 1} + 1}{4^n}
+        \end{equation*}
+        Zatem
+        \begin{equation*}
+            P\pars{A}
+            = 1 - P\pars{A'}
+            = \frac{4^n}{4^n} - \frac{4^n - 2^{n + 1} + 1}{4^n}
+            = \frac{2^{n + 1} - 1}{4^n}
+        \end{equation*}
+    \item Podzbiorów dokładnie \(\pars{n - 1}\)-elementowych jest \(\ibinom{n}{n - 1} = n\). Zatem
+        \begin{equation*}
+            P\pars{B}
+            = \pars{\frac{n}{2^n}}^2
+            = \frac{n^2}{4^n}
+        \end{equation*}
+    \item Spójrzmy inaczej na losowanie zbioru. Każdemu elementowi losowo z~prawdopodobieństwem \(\frac{1}{2}\) przydzielamy liczbę \(0\) lub \(1\). Bierzemy go do pozdbioru wtedy i~tylko wtedy, gdy otrzymał \(1\). Aby wylosować dwa zbiory, powtarzamy tę procedurę dwukrotnie. Zbiory będą rozłączne, jeśli żaden z~\(n\) elementów nie otrzymał liczby \(1\) w~obydwu przejściach. Wybory \(00\), \(01\), \(10\) i~\(11\) są dla każdego elementu jednakowo prawdopodobne. Zatem prawdopodobieństwo, że jeden element nie znajdzie się w~obydwu zbiorach wynosi \(\frac{3}{4}\). Oznacza to, że
+        \begin{equation*}
+            P\pars{C}
+            = \pars{\frac{3}{4}}^n
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~2010/2011-II-5}
+Wszystkich ciągów jest \(n!\), ponieważ jest to liczba permutacji \(n\) elementów.
+\begin{enumerate}[label={\Alph*:}]
+    \item Rozważmy na początku tylko dwa skrajne wyrazy. Zastanówmy się, na ile sposobów możemy ustawić je tak, żeby pierwszy był większy od ostatniego. Dla \(a_1 = 1\) można dobrać \(a_n\) na \(0\) sposobów (\(\emptyset\)), dla \(a_1 = 2\) na \(1\) sposób (\(\set{1}\)), dla \(a_1 = 3\) na \(2\) sposoby (\(\set{1, 2}\)) itd. Zatem wszystkich sposobów takiego ustawienia jest
+        \begin{equation*}
+            \summation[k = 1][n] \pars{k - 1}
+            = \summation[k = 0][n - 1] k
+            = \frac{\pars{n - 1}n}{2}
+        \end{equation*}
+        W~każdym z~tych ustawień wewnętrzne \(n - 2\) elementów permutujemy na \(\pars{n - 2}!\) sposobów. Wszystkich ciągów o~żądanej własności jest więc
+        \begin{equation*}
+            \frac{\pars{n - 1}n}{2} \cdot \pars{n - 2}!
+            = \frac{n!}{2}
+        \end{equation*}
+        Oznacza to, że prawdopdobieństwo, że pierwszy wyraz będzie większy od ostatniego wynosi
+        \begin{equation*}
+            P\pars{A}
+            = \frac{\frac{\cancel{n!}}{2}}{\cancel{n!}}
+            = \frac{1}{2}
+        \end{equation*}
+    \item Obliczmy najpierw prawdopodobieństwo zdarzenia \(B'\), czyli że liczby \(1\) i~\(2\) będą obok siebie. Jeśli przyjmiemy, że mamy bloczek \(\fbox{12}\) i~permutujemy jego oraz \(n - 2\) pozostałych liczb, to mamy permutację \(n - 1\) obiektów. Ponieważ może też wystąpić bloczek \(\fbox{21}\), to liczba wszystkich permutacji, w~których \(1\) i~\(2\) są obok siebie, wynosi \(2 \cdot \pars{n - 1}!\). Zatem
+        \begin{gather*}
+            P\pars{B'}
+            = \frac{2 \cdot \pars{n - 1}!}{n!}
+            = \frac{2}{n}\\
+            P\pars{B}
+            = 1 - \frac{2}{n}
+            = \frac{n - 2}{n}
+        \end{gather*}
+    \item Permutujemy bloczek \(\fbox{123}\) i~\(n - 3\) pozostałych elementów, czyli razem \(n - 2\) elementów. Wszystkich takich permutacji jest \(\pars{n - 2}!\). Zatem
+        \begin{equation*}
+            P\pars{C}
+            = \frac{\pars{n - 2}!}{n!}
+            = \frac{1}{\pars{n - 1}n}
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~2010/2011-III-1}
+Wszystkich możliwych wyborów zbioru \(B\) jest \(\ibinom{n}{m}\). Zastanówmy się, w~ilu jest dokładnie \(1\) element wspólny z~\(S\). Najpierw na \(k\) sposobów wybieramy z~\(S\) element, który będzie wspólny, a~następnie z~\(n - k\) elementów nienależących do \(S\) wybieramy brakujące \(m - 1\) elementów do \(B\) na \(\ibinom{n - k}{m - 1}\). Założenie, że \(m + k \leq n + 1\), po przekształceniu gwarantuje nam, że
+\begin{equation*}
+    m - 1 \leq n - k
+\end{equation*}
+więc symbol dwumianowy \(\ibinom{n - k}{m - 1}\) jest na pewno dobrze zdefiniowany. Zatem
+\begin{equation*}
+    P\pars{\card\pars{B \cap S} = 1}
+    = \frac{k \cdot \binom{n - k}{m - 1}}{\binom{n}{m}}
+\end{equation*}
+\subsubsection*{Zadanie~2011/2012-II-5}
+Ponieważ dla każdego z~\(\ibinom{2012}{3}\) podzbiorów \(3\)-elementowych prawdopodobieństwo wylosowania każdej z~jego \(6\) permutacji jest takie samo i~daje w~efekcie ten sam ciąg, to możemy sprowadzić zadanie do losowania podzbiorów \(3\)-elementowych \(\set{a, b, c}\).
+\begin{enumerate}[label={\Alph*:}]
+    \item Obliczmy najpierw prawdopodobieństwo zdarzenia \(A'\), czyli że iloczyn \(abc\) jest nieparzysty. Aby tak było, każda z~liczb \(a\), \(b\), \(c\) musi być nieparzysta. W~zbiorze \(\set{1, \ldots, 2012}\) jest \(1006\) liczb nieparzystych. Zatem
+        \begin{gather*}
+            P\pars{A'}
+            = \frac{\binom{1006}{3}}{\binom{2012}{3}}\\
+            P\pars{A}
+            = 1 - P\pars{A'}
+            = 1 - \frac{\binom{1006}{3}}{\binom{2012}{3}}
+        \end{gather*}
+    \item Innymi słowy, pytamy, która liczba jest środkowym elementem najczęściej. Zastanówmy się, na ile sposobów możemy wybrać elementy skrajne dla danej liczby środkowej \(k\). Element mniejszy możemy wybrać na \(k - 1\) sposobów, a~element większy na \(2012 - k\) sposobów. Wszystkich sposobów jest zatem
+        \begin{equation*}
+            \pars{k - 1}\pars{2012 - k}
+            = -k^2 + 2013k - 2012
+        \end{equation*}
+        Jest to funkcja kwadratowa o~ujemnym współczynniku przy \(k^2\), więc ramiona paraboli są skierowane w~dół i~istnieje wartość największa przyjmowana dla
+        \begin{equation*}
+            k
+            = \frac{-2013}{2 \cdot \pars{-1}}
+            = 1006{,}5
+        \end{equation*}
+        Ponieważ interesują nas rozwiązania całkowite, to korzystamy z~symetrii tej paraboli względem prostej \(k = 1006{,}5\). Najbliżej wierzchołka w~odległości \(0{,}5\) (rozumianej w~sensie odległości liczb rzeczywistych od siebie) leżą dwie liczby całkowite:
+        \begin{equation*}
+            k = 1006 \wlor k = 1007
+        \end{equation*}
+        Zatem prawdopodobieństwo zdarzenia \(B_k\) jest największe dla \(k \in \set{1006, 1007}\).
+\end{enumerate}
+\subsubsection*{Zadanie~2011/2012-III-2}
+\begin{gather*}
+    4 \cdot 5 \cdot 6 \cdot 7 \cdot 8
+    = 2^2 \cdot 5 \cdot 2 \cdot 3 \cdot 7 \cdot 2^3
+    = 2^6 \cdot 3^1 \cdot 5^1 \cdot 7^1\\
+    \tau\pars{4 \cdot 5 \cdot 6 \cdot 7 \cdot 8}
+    = \tau\pars{2^6 \cdot 3^1 \cdot 5^1 \cdot 7^1}
+    = \pars{6 + 1}\pars{1 + 1}\pars{1 + 1}\pars{1 + 1}
+    = 7 \cdot 2 \cdot 2 \cdot 2
+    = 56
+\end{gather*}
+Liczba ta ma \(48\) dzielników w~\(\natural\).
+

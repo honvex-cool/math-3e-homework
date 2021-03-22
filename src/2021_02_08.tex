@@ -1,0 +1,121 @@
+\subsubsection*{Zadanie~6.10.}
+Skoro czworościan jest foremny, to każda ściana ma to samo pole \(S\). Oznaczmy odległości punktu \(P\) od poszczególnych ścian przez \(h_1, h_2, h_3, h_4\). Objętości czworościanów o~podstawach będących kolejnymi ścianami i~wierzchołku w~\(P\) sumują się do objętości \(V\) całego czworościanu:
+\begin{gather*}
+    V_1 + V_2 + V_3 + V_4 = V\\
+    \frac{1}{3} \cdot S \cdot h_1 + \frac{1}{3} \cdot S \cdot h_2 + \frac{1}{3} \cdot S \cdot h_3 + \frac{1}{3} \cdot S \cdot h_4 = V\\
+    \frac{1}{3} \cdot S \cdot \pars{h_1 + h_2 + h_3 + h_4} = V\\
+    h_1 + h_2 + h_3 + h_4 = \frac{3V}{S}
+\end{gather*}
+Widzimy zatem, że punkt niezależnie od wyboru punktu \(P\), suma jego odległości od ścian zależy wyłącznie od jego objętości i~pola jednej ściany, czyli, ponieważ czworościan jest foremny --- od długości krawędzi.
+\qed
+\subsubsection*{Zadanie~6.11.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, 0);
+    \coordinate (B) at (4, 0);
+    \coordinate (C) at (0, 1);
+    \coordinate (D) at (0.5, 5);
+    \coordinate (Aprime) at (-0.75, 2.5);
+    \coordinate (Bprime) at (2.25, 2.5);
+    \coordinate (Cprime) at (0.25, 3);
+    \draw (A) -- (B);
+    \draw[dashed] (B) -- (C) -- (A);
+    \draw (Aprime) -- (Bprime);
+    \draw[dashed] (Bprime) -- (Cprime) -- (Aprime);
+    \draw (D) -- (A);
+    \draw (D) -- (B);
+    \draw[dashed] (D) -- (C);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{D}[\(D\)][above];
+    \fillpoint*{Aprime}[\(A'\)][left];
+    \fillpoint*{Bprime}[\(B'\)][right];
+    \fillpoint*{Cprime}[\(C'\)][above right];
+\end{mathfigure*}
+Punkty \(A'\), \(B'\), \(C'\) są środkami odcinków odpowiednio \(AD\), \(BD\) i~\(CD\). Z~tego powodu
+\begin{gather*}
+    \triangle{A'B'C'} \sim \triangle{ABC}\\
+    \triangle{A'B'D} \sim \triangle{ABD}\\
+    \triangle{B'C'D} \sim \triangle{BCD}\\
+    \triangle{C'A'D} \sim \triangle{CAD}
+\end{gather*}
+Skala wszystkich tych podobieństw to \(\frac{1}{2}\). Zatem
+\begin{gather*}
+    \area{A'B'C'} = \frac{1}{4} \cdot \area{ABC}\\
+    \area{A'B'D'} = \frac{1}{4} \cdot \area{ABD}\\
+    \area{B'C'D} = \frac{1}{4} \cdot \area{BCD}\\
+    \area{C'A'D} = \frac{1}{4} \cdot \area{CAD}
+\end{gather*}
+Z~zadania 6.4.\ wiemy, że
+\begin{equation*}
+    V_{A'B'C'D} = V_{ABCD} \cdot \frac{1}{2} \cdot \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{8} \cdot V_{ABCD}
+\end{equation*}
+Jeśli \(r\) oznacza promień kuli wpisanej, to
+\begin{equation*}
+    V_{ABCD}
+    = \frac{1}{3}r \cdot \pars{\area{ABD} + \area{BCD} + \area{CAD} + \area{ABC}}
+\end{equation*}
+czyli
+\begin{equation*}
+    V_{A'B'C'D}
+    = \frac{1}{8} \cdot V_{ABCD}
+    = \frac{1}{8} \cdot \frac{1}{3}r \cdot \pars{\area{ABD} + \area{BCD} + \area{CAD} + \area{ABC}}
+\end{equation*}
+Ponieważ kula wpisana w~\(ABCD\) jest dopisana do \(A'B'C'D\), to możemy też obliczyć objętość \(A'B'C'D\) metodą z~zadania 6.2.:
+\begin{equation*}
+    \begin{split}
+        V_{A'B'C'D}
+        &= \frac{1}{3}r \cdot \pars{\area{A'B'D} + \area{B'C'D} + \area{C'A'D} - \area{A'B'C'}}\\
+        &= \frac{1}{4} \cdot \frac{1}{3}r \cdot \pars{\area{ABD} + \area{BCD} + \area{CAD} - \area{ABC}}
+    \end{split}
+\end{equation*}
+Mamy zatem następującą równość:
+\begin{gather*}
+    \frac{1}{8} \cdot \cancel{\frac{1}{3}r} \cdot \pars{\area{ABD} + \area{BCD} + \area{CAD} + \area{ABC}}
+    = \frac{1}{4} \cdot \cancel{\frac{1}{3}r} \cdot \pars{\area{ABD} + \area{BCD} + \area{CAD} - \area{ABC}}\\
+    \area{ABD} + \area{BCD} + \area{CAD} + \area{ABC}
+    = 2 \cdot \area{ABD} + 2 \cdot \area{BCD} + 2 \cdot \area{CAD} - 2 \cdot \area{ABC}\\
+    3 \cdot \area{ABC} = \area{ABD} + \area{BCD} + \area{CAD}
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~6.11.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, 0);
+    \coordinate (B) at (4, 0);
+    \coordinate (C) at (0, 1);
+    \coordinate (D) at (0.5, 5);
+    \coordinate (K) at ($(A)!.25!(D)$);
+    \coordinate (L) at ($(B)!.5!(D)$);
+    \coordinate (M) at ($(C)!.6!(D)$);
+    \coordinate (Cprime) at (0.25, 3);
+    \draw (A) -- (B);
+    \draw[dashed] (B) -- (C) -- (A);
+    \draw (K) -- (L);
+    \draw[dashed] (L) -- (M) -- (K);
+    \draw (D) -- (A);
+    \draw (D) -- (B);
+    \draw[dashed] (D) -- (C);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{D}[\(D\)][above];
+    \fillpoint*{K}[\(K\)][left];
+    \fillpoint*{L}[\(L\)][right];
+    \fillpoint*{M}[\(M\)][above right];
+\end{mathfigure*}
+\subsubsection*{Zadanie~6.13.}
+Oznaczmy środek ciężkości czworościanu przez \(G\). Z~zadania 6.3.\ wiemy, że
+\begin{equation*}
+    V_{ABDG} = V_{BCDG} = V_{CADG}
+\end{equation*}
+Środek sfery wpisanej oznaczmy przez \(I\). Punkt \(I\) leży wraz z~punktem \(G\) na środkowej czworościanu poprowadzonej z~punktu \(D\). Zrzutujmy obydwa te punkty na dowolną ścianę różną od podstawy \(ABC\). Odcinek \(II' = r\) jest promieniem sfery wpisanej, a~odcinek \(GG' = h\) jest wysokością czworościanu o~wierzchołku \(G\) zbudowanego na tej ścianie. Ponieważ są to odcinki równoległe, to z~twierdzenia Talesa mamy:
+\begin{gather*}
+    \frac{h}{r} = \frac{DG}{DI}\\
+    h = \frac{r \cdot DG}{DI}
+\end{gather*}
+Widzimy, zatem, że wysokość każdego z~mniejszych czworościanów nie zależy od ściany, na której został on zbudowany, jest wartością stałą zależną jedynie od położenia środka ciężkości i~środka sfery wpisanej. Skoro zatem trzy czworościany mają równe objętości i~równe wysokości, to muszą mieć też równe pola podstaw. Zatem
+\begin{equation*}
+    \area{ABD} = \area{BCD} = \area{CAD}
+\end{equation*}
+\qed
+

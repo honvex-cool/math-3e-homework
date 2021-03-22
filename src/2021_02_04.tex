@@ -1,0 +1,154 @@
+\subsubsection*{Zadanie~4.3.}
+Rozważmy następującą siatkę tego czworościanu foremnego:
+\begin{mathfigure*}
+    \def\rt{\fpeval{sqrt(3)}}
+    \coordinate (D) at (0, 0);
+    \coordinate (B) at (-1.5, -1.5*\rt);
+    \coordinate (C) at (1.5, -1.5*\rt);
+    \coordinate (A1) at (-3, 0);
+    \coordinate (A2) at (3, 0);
+    \coordinate (A3) at (0, -3*\rt);
+    \coordinate (P) at (-0.7, -0.7*\rt);
+    \coordinate (Q) at (0.4, -0.4*\rt);
+    \draw (D) -- (B) -- (C) -- (D) -- (A1) -- (B) -- (A3) -- (C) -- (A2) -- (D);
+    \draw[WildStrawberry] (A1) -- (P) -- (Q) -- (A2);
+    \fillpoint*{P}[\(P\)][below right];
+    \fillpoint*{Q}[\(Q\)][below];
+    \fillpoint*{D}[\(D\)][above];
+    \fillpoint*{B}[\(B\)][below left];
+    \fillpoint*{C}[\(C\)][below right];
+    \fillpoint*{A1}[\(A_1\)][above left];
+    \fillpoint*{A2}[\(A_2\)][above right];
+    \fillpoint*{A3}[\(A_3\)][below];
+\end{mathfigure*}
+\noindent
+Ponieważ punkt \(A\) ,,rozdzielił się'', to na siatce trójkątowi \(\triangle{APQ}\) odpowiada łamana \(A_1PQA_2\). Jego obwód zapisujemy więc jako
+\begin{equation*}
+    A_1P + PQ + QA_2
+\end{equation*}
+Skoro czworościan jest foremy, to wszystkie kąty płaskie na ścianach mają miarę \(60\degree\). Oznacza to, że przy jednym wierzchołku suma kątów płaskich wynosi \(3 \cdot 60\degree = 180\degree\), więc po rozłożeniu takich kątów powstaje kąt półpełny i~w~szczególności łamana \(A_1DA_2\) rozkłada się do odcinka \(A_1A_2\) o~środku \(D\). Wiemy, że \(AD = 1\), zatem \(A_1D = A_2D = 1\), czyli \(A_1A_2 = 2\). Ponieważ długość łamanej łączącej dwa punkty jest zawsze nie mniejsza od odcinka łączącego te dwa punkty, to możemy zapisać
+\begin{gather*}
+    A_1P + PQ + QA_2 \geq A_1A_2\\
+    \p{Obw.}_{\triangle{APQ}} \geq 2
+\end{gather*}
+Ponieważ jednak punkty \(P\) i~\(Q\) leżą poza odcinkiem \(A_1A_2\), to nierówność jest właściwie ostra:
+\begin{equation*}
+    \p{Obw.}_{\triangle{APQ}} > 2
+\end{equation*}
+\qed
+\subsubsection*{Zadanie~4.4.}
+Rozważmy następującą siatkę tego czworościanu:
+\begin{mathfigure*}
+    \coordinate (S) at (0, 0);
+    \coordinate (A2) at (-3, 1);
+    \coordinate (A3) at (3, 1);
+    \coordinate (B) at (-2, -2);
+    \coordinate (C) at (1, -1);
+    \coordinate (A1) at (0, -4);
+    \draw (S)
+    -- (B)
+    -- (C)
+    -- (S)
+    -- node[sloped]{\(|\)} (A2)
+    -- node[sloped]{\(||\)} (B)
+    -- node[sloped]{\(||\)} (A1)
+    -- node[sloped]{\(|||\)} (C)
+    -- node[sloped]{\(|||\)} (A3)
+    -- node[sloped]{\(|\)} (S);
+    \fillpoint*{S}[\(S\)][above];
+    \fillpoint*{A2}[\(A_2\)][above left];
+    \fillpoint*{A3}[\(A_3\)][above right];
+    \fillpoint*{B}[\(B\)][below left];
+    \fillpoint*{C}[\(C\)][below right];
+    \fillpoint*{A1}[\(A_1\)][below];
+\end{mathfigure*}
+\noindent
+Zauważmy, że trójkąt \(\triangle{A_2SA_3}\) jest zawarty w~czworokącie \(A_2BCA_3\), co oznacza, że ma mniejszy obwód (ponieważ możemy ,,skroić'' czworokąt do trójkąta). Mamy zatem
+\begin{gather*}
+    A_2S + A_3S + A_3A_2 \leq A_2B + BC + CA_3 + A_3A_2\\
+    A_2S + A_3S \leq A_2B + BC + CA_3\\
+    2 \cdot SA \leq AB + BC + CA\\
+    2 \cdot SA \leq \p{Obw.}_{\triangle{ABC}}\\
+    SA \leq \frac{\p{Obw.}_{\triangle{ABC}}}{2}
+\end{gather*}
+\qed
+\subsubsection*{Zadanie~4.5.}
+Rozważmy siatkę powierzchni bocznej tego ostrosłupa. Zauważmy, że skoro suma kątów płaskich przy wierzchołku \(S\) wynosi \(90\degree\), to jeżeli wszystkie krawędzie są równe \(1\), to siatkę tę da się wpisać w~ćwiartkę koła o~promieniu \(1\) tak, aby wierzchołek \(S\) stanowił środek tego koła:
+\begin{mathfigure*}
+    \coordinate (S) at (0, 0);
+    \coordinate (A1) at (0, -6);
+    \coordinate (B) at (2, -2*\fpeval{sqrt(8)});
+    \coordinate (C) at (4, -2*\fpeval{sqrt(5)});
+    \coordinate (D) at (2*\fpeval{sqrt(6)}, -2*\fpeval{sqrt(3)});
+    \coordinate (A2) at (6, 0);
+    \draw (S) -- node[left]{\(1\)} (A1) -- (B) -- (C) -- (D) -- (A2) -- node[above]{\(1\)} cycle;
+    \draw (S) -- node[left]{\(1\)} (B);
+    \draw (S) -- node[below left]{\(1\)} (C);
+    \draw (S) -- node[above right]{\(1\)} (D);
+    \drawrightangle[ForestGreen, ultra thick]{A1--S--A2};
+    \draw[Orange, ultra thick, dashed] (A1) -- (S) -- (A2);
+    \drawangle[Orange, ultra thick, angle radius=6cm]{A1--S--A2};
+    \fillpoint*{S}[\(S\)][above left];
+    \fillpoint*{A1}[\(A_1\)][below];
+    \fillpoint*{B}[\(B\)][below];
+    \fillpoint*{C}[\(C\)][below right];
+    \fillpoint*{D}[\(D\)][below right];
+    \fillpoint*{A2}[\(A_2\)][right];
+\end{mathfigure*}
+\noindent
+Widzimy, że pole powierzchni bocznej musi być nie większe od pola powierzchni tej ćwiartki koła, które wynosi \(\frac{1}{4}\pi \cdot 1^2 = \frac{1}{4}\pi\).
+\qed
+\subsubsection*{Zadanie~4.7.}
+Rozważmy następującą siatkę tego czworościanu:
+\begin{mathfigure*}
+    \coordinate (A) at (0, 0);
+    \coordinate (C2) at (-3, 0);
+    \coordinate (C3) at (3, 0);
+    \coordinate (D) at (-2, -3);
+    \coordinate (C1) at (1, -4);
+    \coordinate (B) at (2, -2);
+    \drawangle[ForestGreen]{C2--A--D};
+    \drawangle[RoyalBlue]{D--A--B};
+    \drawangle[Red]{B--A--C3};
+    \drawangle[Yellow]{C3--B--A};
+    \drawangle[WildStrawberry]{A--B--D};
+    \drawangle[Orange]{D--B--C1};
+    \draw (A)
+    -- (D)
+    -- (B)
+    -- (A)
+    -- node[sloped]{\(|\)} (C2)
+    -- node[sloped]{\(||\)} (D)
+    -- node[sloped]{\(||\)} (C1)
+    -- node[sloped]{\(|||\)} (B)
+    -- node[sloped]{\(|||\)} (C3)
+    -- node[sloped]{\(|\)} (A);
+    \draw[dashed] (C1) -- (C2);
+    \fillpoint*{A}[\(A\)][above];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C1}[\(C_1\)][below];
+    \fillpoint*{C2}[\(C_2\)][above left];
+    \fillpoint*{C3}[\(C_3\)][above right];
+    \fillpoint*{D}[\(D\)][below left];
+\end{mathfigure*}
+\noindent
+Ponieważ sumy kątów płaskich przy wierzchołkach \(A\) i~\(B\) wynoszą po \(180\degree\), to na płaszczyźnie tworzą się przy tych wierzchołkach siatki kąty półpełne więc~łamane \(C_2AC_3\) i~\(C_1BC_3\) stają się odpowiednio odcinkami \(C_2C_3\) i~\(C_1C_3\), a~ich środkami są odpowiednio punkty \(A\) i~\(B\). Zauważmy teraz, że
+\begin{equation*}
+    CD = C_1D = C_2D
+\end{equation*}
+więc
+\begin{equation*}
+    C_1D + C_2D = 2 \cdot CD
+\end{equation*}
+Ponieważ \(AB\) jest linią środkową w~trójkącie \(\triangle{C_1C_2C_3}\), to
+\begin{equation*}
+    C_1C_2 = 2 \cdot AB
+\end{equation*}
+Natomiast z~nierówności trójkąta dla punktów \(C_1\), \(C_2\), \(D\) mamy
+\begin{gather*}
+    C_1D + C_2D \geq C_1C_2\\
+    2 \cdot CD \geq 2 \cdot AB\\
+    CD \geq AB
+\end{gather*}
+\qed
+

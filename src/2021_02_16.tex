@@ -1,0 +1,156 @@
+\subsubsection*{Zadanie~1.46.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -0.4);
+    \coordinate (B) at (1, -0.4);
+    \coordinate (C) at (2, 0.4);
+    \coordinate (D) at (-1, 0.4);
+    \coordinate (E) at (-2, 3.6);
+    \coordinate (F) at (1, 3.6);
+    \coordinate (G) at (2, 4.4);
+    \coordinate (H) at (-1, 4.4);
+    \coordinate (P) at ($(B)!0.5!(D)$);
+    \draw[densely dotted] (G) -- (P);
+    \drawangle*[angle radius=1cm]{D--G--B}[\(\alpha\)];
+    \drawrightangle{B--A--D};
+    \drawrightangle[angle radius=0.2cm]{G--P--D};
+    \draw (A) -- node[below]{\(a\)} (B) -- node[below, sloped]{\(a\)} (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw[dashed] (D) -- (H);
+    \draw[Orange] (D) -- (G) -- node[above, sloped]{\(d\)} (B) -- cycle;
+    \draw (E) -- (F) -- (G) -- (H) -- cycle;
+    \draw (A) -- (E);
+    \draw (B) -- (F);
+    \draw (C) -- node[right]{\(h\)} (G);
+    \path (P) -- node[above, sloped]{\(p\)} (B);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{E}[\(E\)][above left];
+    \fillpoint*{F}[\(F\)][above left];
+    \fillpoint*{G}[\(G\)][above right];
+    \fillpoint*{H}[\(H\)][above left];
+    \fillpoint*{P}[\(P\)][below left];
+\end{mathfigure*}
+Niech punkt \(P\) będzie środkiem odcinka \(BD\), czyli przekątnej podstawy. Oznacza to, że \(p = \frac{a\sqrt{2}}{2}\). Odcinek \(GP\) jest dwusieczną kąta \(\alpha\) i~wysokością \(\triangle{BDG}\), ponieważ jest on równoramienny. Możemy więc zapisać:
+\begin{gather*}
+    \frac{p}{d} = \sin\frac{\alpha}{2}\\
+    \frac{a\sqrt{2}}{2d} = \sin\frac{\alpha}{2}\\
+    d = \frac{a\sqrt{2}}{2\sin\frac{\alpha}{2}}
+\end{gather*}
+Teraz z~twierdzenia Pitagorasa w~\(\triangle{BCG}\):
+\begin{equation*}
+    h = \sqrt{d^2 - a^2}
+    = \sqrt{\pars{\frac{a\sqrt{2}}{2\sin\frac{\alpha}{2}}}^2 - a^2}
+    = \sqrt{\frac{a^2}{2\sin^2\frac{\alpha}{2}} - a^2}
+    = a\sqrt{\frac{1}{2\sin^2\frac{\alpha}{2}} - 1}
+\end{equation*}
+To wystarczy, aby obliczyć objętość:
+\begin{equation*}
+    V = P_\p{P} \cdot h
+    = a^2 \cdot a\sqrt{\frac{1}{2\sin^2\frac{\alpha}{2}} - 1}
+    = a^3\sqrt{\frac{1}{2\sin^2\frac{\alpha}{2}} - 1}
+\end{equation*}
+\subsubsection*{Zadanie~1.47.}
+\begin{mathfigure*}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (1, 1);
+    \coordinate (C) at (-2, 1);
+    \coordinate (D) at (0, 4);
+    \coordinate (E) at (1, 5);
+    \coordinate (F) at (-2, 5);
+    \coordinate (P) at ($(F)!0.5!(D)$);
+    \drawrightangle[angle radius=0.2cm]{E--P--F};
+    \drawrightangle[angle radius=0.3cm]{A--P--E};
+    \drawangle*[ForestGreen, angle radius=0.9cm]{E--A--P}[\(\alpha\)];
+    \draw (C) -- node[below, sloped]{\(a\)} (A) -- node[below, sloped]{\(a\)} (B);
+    \draw[dashed] (B) -- (C);
+    \draw (D) -- (E) -- node[above]{\(a\)} (F) -- cycle;
+    \draw[dashed] (E) -- node[below, sloped]{\tiny\(\frac{a\sqrt{3}}{2}\)} (P);
+    \draw[Orange] (E) -- node[above, sloped]{\(d\)} (A);
+    \drawrightangle[angle radius=0.3cm]{E--B--A};
+    \draw[dashed] (P) -- (A);
+    \draw (A) -- (D);
+    \draw (B) -- node[right]{\(h\)} (E);
+    \draw (C) -- (F);
+    \fillpoint*{A}[\(A\)][below];
+    \fillpoint*{B}[\(B\)][right];
+    \fillpoint*{C}[\(C\)][left];
+    \fillpoint*{D}[\(D\)][below right];
+    \fillpoint*{E}[\(E\)][above right];
+    \fillpoint*{F}[\(F\)][above left];
+    \fillpoint*{P}[\(P\)][below left];
+\end{mathfigure*}
+Kąt między prostą a~płaszczyzną to kąt między tą prostą a~jej rzutem na tę płaszczyznę. Natomiast rzut prostej na płaszyznę to prosta przechodząca przez rzut dowolnego punktu wyjściowej prostej na płaszczyznę a~punktem przecięcia wyjściowej prostej z~płaszczyzną. Rzutem punktu \(E\) na~płaszczyznę \(ADFC\) jest punkt \(P\) będący środkiem odcinka \(DF\), ponieważ \(EP\) jest wysokością trójkąta równobocznego \(\triangle{DEF}\). Zatem rzutem prostej \(EA\) na płaszczyznę \(ADFC\) jest prosta \(PA\). W~związku z~tym
+\begin{equation*}
+    \alpha \coloneqq \mangle{EAP}
+\end{equation*}
+Wiemy, że \(EP = \frac{a\sqrt{3}}{2}\) ponieważ jest to wysokość trójkąta równobocznego o~boku \(a\). Możemy zapisać w~\(\triangle{EAP}\):
+\begin{gather*}
+    \frac{EP}{EA} = \sin\alpha\\
+    \frac{\frac{a\sqrt{3}}{2}}{d} = \sin\alpha\\
+    d = \frac{\frac{a\sqrt{3}}{2}}{\sin\alpha}\\
+    d = \frac{a\sqrt{3}}{2\sin\alpha}
+\end{gather*}
+Zatem z~twierdzenia Pitagorasa w~\(\triangle{ABE}\):
+\begin{equation*}
+    h = \sqrt{d^2 - a^2}
+    = \sqrt{\pars{\frac{a\sqrt{3}}{2}}^2 - a^2}
+    = \sqrt{\frac{3a^2}{4\sin^2\alpha} - a^2}
+    = a\sqrt{\frac{3}{4\sin^2\alpha} - 1}
+\end{equation*}
+Kiedy mamy już taki wzór, wystarczy zauważyć, że promień okręgu wpisanego w~podstawę stanowi \(\frac{1}{3}\) wysokości podstawy. Zatem
+\begin{gather*}
+    r = \frac{a\sqrt{3}}{6}\\
+    a = \frac{6r}{\sqrt{3}} = 2\sqrt{3}r
+\end{gather*}
+Wystarczy teraz podstawić tę wartość \(a\) do wzorów na objętość i~pole powierzchni całkowitej:
+\begin{gather*}
+    V
+    = P_\p{P} \cdot h
+    = \frac{a^2\sqrt{3}}{4} \cdot a\sqrt{\frac{3}{4\sin^2\alpha} - 1}
+    = \frac{12\sqrt{3}r^2}{4} \cdot 2\sqrt{3}r\sqrt{\frac{3}{4\sin^2\alpha} - 1}
+    = 18r^3\sqrt{\frac{3}{4\sin^2\alpha} - 1}\\
+    \begin{split}
+        P_\p{C}
+        &= 2 \cdot P_\p{P} + P_\p{B}
+        = 2 \cdot \frac{a^2\sqrt{3}}{4} \cdot 3 \cdot a \cdot h
+        = \frac{12\sqrt{3}r^2}{2} + 6\sqrt{3}r \cdot 2\sqrt{3}r\sqrt{\frac{3}{4\sin^2\alpha} - 1}\\
+        &= 6\sqrt{3}r^2 + 36r^2\sqrt{\frac{3}{4\sin^2\alpha} - 1}
+        = 6r^2\pars{\sqrt{3} + 6\sqrt{\frac{3}{4\sin^2\alpha} - 1}}
+    \end{split}
+\end{gather*}
+\subsubsection*{Zadanie~1.44.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -0.4);
+    \coordinate (B) at (1, -0.4);
+    \coordinate (C) at (2, 0.4);
+    \coordinate (D) at (-1, 0.4);
+    \coordinate (E) at (-5, 4.6);
+    \coordinate (F) at (-2, 4.6);
+    \coordinate (G) at (-1, 5.4);
+    \coordinate (H) at (-4, 5.4);
+    \coordinate (P) at ($(A)!0.65!(B)$);
+    \coordinate (Q) at ($(C)!0.65!(B)$);
+    \drawrightangle[angle radius=0.2cm]{F--P--A};
+    \drawrightangle[angle radius=0.2cm]{C--Q--F};
+    \draw (A) -- (B) -- (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw[dashed] (D) -- (H);
+    \draw (E) -- (F) -- node[below, sloped]{\(a\)} (G) -- node[above]{\(a\)} (H) -- cycle;
+    \draw (A) -- node[left]{\(b\)} (E);
+    \draw (B) -- (F);
+    \draw (C) -- node[right]{\(b\)} (G);
+    \draw[densely dotted] (F) -- (P);
+    \draw[densely dotted] (F) -- (Q);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{E}[\(E\)][above left];
+    \fillpoint*{F}[\(F\)][above left];
+    \fillpoint*{G}[\(G\)][above right];
+    \fillpoint*{H}[\(H\)][above left];
+    \fillpoint*{P}[\(P\)][below];
+    \fillpoint*{Q}[\(Q\)][right];
+\end{mathfigure*}

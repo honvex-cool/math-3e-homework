@@ -1,0 +1,208 @@
+\subsubsection*{Zadanie~1.12.}
+Rozważmy \(3\) przypadki:
+\begin{itemize}
+    \item w~pierwszej turze na studenta \(B\) zagłosowało dokładnie \(3\) członków Zarządu. Prawdopodobieństwo tego zdarzenia wynosi
+        \begin{equation*}
+            \binom{5}{3} \cdot \pars{\frac{1}{2}}^5
+        \end{equation*}
+        Oznacza to, że \(2\) członków zagłosowało na studenta \(A\). Zatem aby \(B\) w~drugiej rundzie wygrał, żaden z~jego początkowych wyborców nie może zmienić zdania. Zatem w~tym przypadku, prawdopodobieństwo, że student \(B\) wygra całe wybory, wynosi
+        \begin{equation*}
+            \pars{\frac{2}{3}}^3
+        \end{equation*}
+    \item w~pierwszej rundzie na studenta \(B\) zagłosowało dokładnie \(4\) członków Zarządu. Prawdopodobieństwo tego zdarzenia wynosi
+        \begin{equation*}
+            5 \cdot \pars{\frac{1}{2}}^5
+        \end{equation*}
+        Oznacza to, że \(1\) członek zagłosował na studenta \(A\). Zatem aby \(B\) w~drugiej rundzie wygrał, zdanie może zmienić co najwyżej \(1\) z~jego dotychczasowych wyborców. Zatem w~tym przypadku, prawdopodobieństwo, że student \(B\) wygra całe wybory, wynosi
+        \begin{equation*}
+            \overbrace{\pars{\frac{2}{3}}^4}^{\text{wszyscy głosują na \(B\)}} + \overbrace{4 \cdot \frac{1}{3} \cdot \pars{\frac{2}{3}}^3}^{\text{jeden zmienia zdanie i~głosuje na \(A\)}}
+        \end{equation*}
+    \item w~pierwszej rundzie na studenta \(B\) zagłosowało dokładnie \(5\) członków Zarządu. Prawdopodobieństwo tego zdarzenia wynosi
+        \begin{equation*}
+            \pars{\frac{1}{2}}^5
+        \end{equation*}
+        Zatem aby \(B\) w~drugiej rundzie wygrał, zdanie może zmienić co najwyżej \(2\) z~jego dotychczasowych wyborców. Zatem w~tym przypadku, prawdopodobieństwo, że student \(B\) wygra całe wybory, wynosi
+        \begin{equation*}
+            \overbrace{\pars{\frac{2}{3}}^5}^{\text{wszyscy głosują na \(B\)}} + \overbrace{5 \cdot \frac{1}{3} \cdot \pars{\frac{2}{3}}^4}^{\text{jeden zmienia zdanie i~głosuje na \(A\)}} + \overbrace{\binom{5}{2} \cdot \pars{\frac{1}{3}}^2 \cdot \pars{\frac{2}{3}}^3}^{\text{dwóch zmienia zdanie i~głosują na \(A\)}}
+        \end{equation*}
+\end{itemize}
+Zatem prawdopodobieństwo, że student \(B\) wygra całe wybory, wynosi
+\begin{equation*}
+    \begin{split}
+        \binom{5}{3} &\cdot \pars{\frac{1}{2}}^5 \cdot \pars{\frac{2}{3}}^3 + 5 \cdot \pars{\frac{1}{2}}^5 \cdot \pars{\pars{\frac{2}{3}}^4 + 4 \cdot \frac{1}{3} \cdot \pars{\frac{2}{3}}^3} + \pars{\frac{1}{2}}^5 \cdot \pars{\pars{\frac{2}{3}}^5 + 5 \cdot \frac{1}{3} \cdot \pars{\frac{2}{3}}^4 + \binom{5}{2} \cdot \pars{\frac{1}{3}}^2 \cdot \pars{\frac{2}{3}}^3}\\
+                     &= \frac{1}{32} \cdot \pars{\frac{80}{27} + \frac{80}{81} + \frac{160}{81} + \frac{32}{243} + \frac{80}{243} + \frac{80}{243}}
+                     = \frac{1}{32} \cdot \pars{\frac{720}{243} + \frac{240}{243} + \frac{480}{243} + \frac{192}{243}}
+                     = \frac{1}{32} \cdot \frac{1632}{243}
+                     = \frac{51}{243}
+                     = \frac{17}{81}
+    \end{split}
+\end{equation*}
+Wiemy, że wygrał pierwszą turę, więc aby uzyskać prawdopodobieństwo warunkowe, musimy podzielić całość przez prawdopodobieństwo tego zdarzenia:
+\begin{equation*}
+    P\pars{\text{zwycięstwo}}
+    = \frac{\frac{17}{81}}{\frac{1}{2}}
+    = \frac{34}{81}
+    < 1 - \frac{34}{81}
+\end{equation*}
+Zatem kandydat \(B\) ma mniejsze prawdopodobieństwo na zwycięstwo niż kandydat \(A\).
+\subsubsection*{Zadanie~1.13.}
+\begin{gather*}
+    \frac{\text{suma ocen}}{8} = 3{,}75\\
+    \text{suma ocen} = 30
+\end{gather*}
+Zauważmy, że zbiór zdarzeń elementarnych ma tutaj bardzo niewielką liczność. Oznaczmy liczby studentów, którzy uzyskali oceny \(5\), \(4\), \(3\), odpowiednio przez \(a\), \(b\), \(c\). Widzimy na pewno, że \(1 \leq a \leq 6\), bo inaczej suma ocen byłaby większa od \(30\). Możemy zatem rozważyć kilka przypadków:
+\begin{description}
+    \item[\(a = 1\):] Mamy wtedy \(7\) pozostałych studentów, a~ich oceny muszą się sumować do \(25\):
+        \begin{gather*}
+            0 \cdot 4 + 7 \cdot 3 = 21 \wrong\\
+            1 \cdot 4 + 6 \cdot 3 = 22 \wrong\\
+            2 \cdot 4 + 5 \cdot 3 = 23 \wrong\\
+            3 \cdot 4 + 4 \cdot 3 = 24 \wrong\\
+            4 \cdot 4 + 3 \cdot 3 = 25 \ok\\
+            5 \cdot 4 + 2 \cdot 3 = 26 \wrong\\
+            6 \cdot 4 + 1 \cdot 3 = 27 \wrong\\
+            7 \cdot 4 + 0 \cdot 3 = 28 \wrong
+        \end{gather*}
+    \item[\(a = 2\):] Mamy wtedy \(6\) pozostałych studentów, a~ich oceny muszą się sumować do \(20\):
+        \begin{gather*}
+            0 \cdot 4 + 6 \cdot 3 = 18 \wrong\\
+            1 \cdot 4 + 5 \cdot 3 = 19 \wrong\\
+            2 \cdot 4 + 4 \cdot 3 = 20 \ok\\
+            3 \cdot 4 + 3 \cdot 3 = 21 \wrong\\
+            4 \cdot 4 + 2 \cdot 3 = 22 \wrong\\
+            5 \cdot 4 + 1 \cdot 3 = 23 \wrong\\
+            6 \cdot 4 + 0 \cdot 3 = 24 \wrong
+        \end{gather*}
+    \item[\(a = 3\):] Mamy wtedy \(5\) pozostałych studentów, a~ich oceny muszą się sumować do \(15\):
+        \begin{gather*}
+            0 \cdot 4 + 5 \cdot 3 = 15 \ok\\
+            1 \cdot 4 + 4 \cdot 3 = 16 \wrong\\
+            2 \cdot 4 + 3 \cdot 3 = 17 \wrong\\
+            3 \cdot 4 + 2 \cdot 3 = 18 \wrong\\
+            4 \cdot 4 + 1 \cdot 3 = 19 \wrong\\
+            5 \cdot 4 + 0 \cdot 3 = 20 \wrong
+        \end{gather*}
+    \item[\(a = 4\):] Mamy wtedy \(4\) pozostałych studentów, a~ich oceny muszą się sumować do \(10\):
+        \begin{gather*}
+            0 \cdot 4 + 4 \cdot 3 = 12 \wrong\\
+            1 \cdot 4 + 3 \cdot 3 = 13 \wrong\\
+            2 \cdot 4 + 2 \cdot 3 = 14 \wrong\\
+            3 \cdot 4 + 1 \cdot 3 = 15 \wrong\\
+            4 \cdot 4 + 0 \cdot 3 = 16 \wrong
+        \end{gather*}
+    \item[\(a = 5\):] Mamy wtedy \(3\) pozostałych studentów, a~ich oceny muszą się sumować do \(5\):
+        \begin{gather*}
+            0 \cdot 4 + 3 \cdot 3 = 9 \wrong\\
+            1 \cdot 4 + 2 \cdot 3 = 10 \ok\\
+            2 \cdot 4 + 1 \cdot 3 = 11 \wrong\\
+            3 \cdot 4 + 0 \cdot 3 = 12 \wrong
+        \end{gather*}
+    \item[\(a = 6\):] Mamy wtedy \(2\) pozostałych studentów, a~ich oceny muszą się sumować do \(0\):
+        \begin{gather*}
+            0 \cdot 4 + 2 \cdot 3 = 6 \wrong\\
+            1 \cdot 4 + 1 \cdot 3 = 7 \wrong\\
+            2 \cdot 4 + 0 \cdot 3 = 8 \wrong
+        \end{gather*}
+\end{description}
+Mamy więc
+\begin{gather*}
+    \Omega
+    = \set{\seq{a, b, c} : a, b, c \in \natural \land 5a + 4b + 3c = 30 \land a > 0}
+    = \set{\seq{1, 4, 3}, \seq{2, 2, 4}, \seq{3, 0, 5}}\\
+    \card\Omega = 3
+\end{gather*}
+Widzimy też, że jest dokładnie \(1\) przypadek, w~którym dokładnie \(2\) studentów zdobyło ocenę bardzo dobrą. Zatem prawdopodobieństwo tego zdarzenia to \(\frac{1}{3}\).
+\subsubsection*{Zadanie~1.14.}
+\begin{gather*}
+    R \coloneqq \text{deszcz}\\
+    F \coloneqq \text{zapowiedziano deszcz}\\
+    U \coloneqq \text{wziął parasol}\\
+    P\pars{F / R} = \frac{2}{3} \qquad P\pars{F / R'} = \frac{1}{3}\\
+    P\pars{F' / R} = \frac{1}{3} \qquad P\pars{F' / R'} = \frac{2}{3}\\
+    P\pars{U / F} = 1 \qquad P\pars{U' / F} = 0\\
+    P\pars{U / F'} = \frac{1}{3} \qquad P\pars{U' / F'} = \frac{2}{3}\\
+\end{gather*}
+\begin{enumerate}[label={(\roman*)}]
+    \item
+        \begin{equation*}
+            \begin{split}
+                P\pars{U' / R}
+                &= \frac{P\pars{U' \cap R}}{P\pars{R}}
+                = \frac{P\pars{U' / F} \cdot P\pars{F / R} \cdot P\pars{R} + P\pars{U' / F'} \cdot P\pars{F' / R} \cdot P\pars{R}}{P\pars{R}}\\
+                &= \frac{\cancel{P\pars{R}}\pars{P\pars{U' / F} \cdot P\pars{F / R} + P\pars{U' / F'} \cdot P\pars{F' / R}}}{\cancel{P\pars{R}}}\\
+                &= P\pars{U' / F} \cdot P\pars{F / R} + P\pars{U' / F'} \cdot P\pars{F' / R}\\
+                &= 0 \cdot \frac{2}{3} + \frac{2}{3} \cdot \frac{1}{3} = \frac{2}{9}
+            \end{split}
+        \end{equation*}
+    \item
+        \begin{equation*}
+            \begin{split}
+                P\pars{U / R'}
+                &= \frac{P\pars{U \cap R'}}{P\pars{R'}}
+                = \frac{P\pars{U / F} \cdot P\pars{F / R'} \cdot P\pars{R'} + P\pars{U / F'} \cdot P\pars{F' / R'} \cdot P\pars{R'}}{P\pars{R'}}\\
+                &= \frac{\cancel{P\pars{R'}}\pars{P\pars{U / F} \cdot P\pars{F / R'} + P\pars{U / F'} \cdot P\pars{F' / R'}}}{\cancel{P\pars{R'}}}\\
+                &= P\pars{U / F} \cdot P\pars{F / R'} + P\pars{U / F'} \cdot P\pars{F' / R'}\\
+                &= 1 \cdot \frac{1}{3} + \frac{1}{3} \cdot \frac{2}{3}
+                = \frac{3}{9} + \frac{2}{9}
+                = \frac{5}{9}
+            \end{split}
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~1.17.}
+Wszystkich ciągów \(n\)-wyrazowych nad zbiorem \(N\)-elementowym jest \(N^n\). Chcemy poznać liczbę ciągów \(n\)-wyrazowych, w~których wartość największa to \(k\). W~tym celu odejmiemy od liczby wszystkich ciągów
+\begin{itemize}
+    \item liczbę ciągów, w~których występują tylko wyrazy mniejsze od \(k\). Jest ich \(\pars{k - 1}^n\), bo każdy element możemy wybrać na \(k - 1\) sposobów.
+    \item liczbę ciągów, w~których występują jakiekolwiek wyrazy większe od \(k\). Aby poznać ich ilość, od wszystkich wyrazów odejmiemy te, w~których występują tylko wyrazy większe lub równe \(k\). Zatem szukana liczba wyrazów to \(N^n - k^n\).
+\end{itemize}
+Zatem
+\begin{equation*}
+    P\pars{\text{wartość największa w~ciągu wynosi \(k\)}}
+    = \frac{N^n - \pars{k - 1}^n - \pars{N^n - k^n}}{N^n}
+    = \frac{k^n - \pars{k - 1}^n}{N^n}
+\end{equation*}
+\subsubsection*{Zadanie~1.20.}
+Wprowadźmy oznaczenia:
+\begin{gather*}
+    A \coloneqq \text{zwycięstwo Awsan}\\
+    D \coloneqq \text{zwycięstwo Drzewcia w~całych wyborach}\\
+    D_0 \coloneqq \text{zwycięstwo Drzewcia w~prawyborach}\\
+    G \coloneqq \text{zwycięstwo Gadźka w~całych wyborach}\\
+    G_0 \coloneqq \text{zwycięstwo Gadźka w~prawyborach}\\
+\end{gather*}
+Wiemy, że
+\begin{gather*}
+    P\pars{D / D_0} = \frac{1}{6}\\
+    P\pars{G / G_0} = \frac{1}{2}
+\end{gather*}
+oraz że
+\begin{gather*}
+    A \cap D = D\\
+    A \cap G = G
+\end{gather*}
+Rozważmy prawdopodobieństwo zwycięstwa Gadźka w~prawyborach. Aby zwyciężyć, należało uzyskać przynajmniej \(6\) głosów, zatem skoro posiadał na początku \(1\), to musiało na niego zagłosować dokładnie \(5\), dokładnie \(6\) lub dokładnie \(7\) głosujących losowo. Mamy więc
+\begin{gather*}
+    P\pars{G_0}
+    = \binom{7}{5} \cdot \pars{\frac{1}{2}}^7 + \binom{7}{6} \cdot \pars{\frac{1}{2}}^7 + \binom{7}{7} \cdot \pars{\frac{1}{2}}^7
+    = \pars{\frac{1}{2}}^7 \cdot \pars{21 + 7 + 1}
+    = \frac{29}{128}\\
+    P\pars{D_0}
+    = 1 - P\pars{G_0}
+    = 1 - \frac{29}{128}
+    = \frac{99}{128}
+\end{gather*}
+Możemy teraz już obliczyć prawdopodobieństwo warunkowe:
+\begin{gather*}
+    P\pars{D / A}
+    = \frac{P\pars{A \cap D}}{P\pars{A}}
+    = \frac{P\pars{D}}{P\pars{A}}
+    = \frac{P\pars{D / D_0} \cdot P\pars{D_0}}{P\pars{D / D_0} \cdot P\pars{D_0} + P\pars{G / G_0} \cdot P\pars{G_0}}
+    = \frac{\frac{1}{6} \cdot \frac{99}{128}}{\frac{1}{6} \cdot \frac{99}{128} + \frac{1}{2} \cdot \frac{29}{128}}
+    = \frac{\frac{33}{256}}{\frac{33}{256} + \frac{29}{256}}
+    = \frac{33}{62}\\
+    P\pars{G / A}
+    = 1 - P\pars{D / A}
+    = \frac{29}{62}\\
+    P\pars{D / A} > P\pars{G / A}
+\end{gather*}
+Zatem bardziej prawdopodobne jest zwycięstwo Drzewcia.
+

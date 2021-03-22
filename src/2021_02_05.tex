@@ -1,0 +1,134 @@
+\subsubsection*{Zadanie~5.4.}
+\begin{mathfigure*}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (1, 3);
+    \coordinate (C) at (-3, -2);
+    \coordinate (D) at (3.5, -2);
+    \coordinate (K) at (-1, -0.2);
+    \coordinate (L) at (1.57, -0.2);
+    \coordinate (P) at (-1.5, -1);
+    \coordinate (Q) at (1.75, -1);
+    \draw (C) -- (B) -- (D) -- cycle;
+    \drawangle[Orange, angle radius=0.9cm]{K--B--A};
+    \drawangle[Orange]{A--B--L};
+    \draw (L) -- (Q);
+    \draw (K) -- (P);
+    \draw[ForestGreen] (B) -- (K) -- (A) -- (B) -- (L) -- (A);
+    \drawangle[WildStrawberry, angle radius=0.4cm]{B--A--P};
+    \drawangle[WildStrawberry]{Q--A--B};
+    \path (C)
+    -- node[sloped]{\tiny\(|\)} (P)
+    -- node[sloped]{\tiny\(|\)} (A)
+    -- node[sloped]{\tiny\(|\)} (Q)
+    -- node[sloped]{\tiny\(|\)} (D);
+    \draw[dashed] (B) -- (A);
+    \draw[dashed] (C) -- (A);
+    \draw[dashed] (D) -- (A);
+    \fillpoint*{A}[\(A\)][below];
+    \fillpoint*{B}[\(B\)][above];
+    \fillpoint*{C}[\(C\)][below left];
+    \fillpoint*{D}[\(D\)][below right];
+    \fillpoint*{K}[\(K\)][above];
+    \fillpoint*{L}[\(L\)][above right];
+    \fillpoint*{P}[\(P\)][below];
+    \fillpoint*{Q}[\(Q\)][below];
+\end{mathfigure*}
+Ponieważ \(K\) i~\(L\) są punktami styczności z~kulą wpisaną w~ten czworościan, to z~twierdzenia o~odcinkach stycznych mamy
+\begin{gather*}
+    AK = AL\\
+    BK = BL
+\end{gather*}
+Odcinek \(AB\) jest wspólny dla obu zielonych trójkątów, więc zachodzi \(\triangle{ABK} \equiv \triangle{ABL}\) z~zasady bok-bok-bok. Zatem \(\mangle{ABK} = \mangle{ABL}\). Niech \(P\) będzie punktem przecięcia półprostej \(BK\) z~odcinkiem \(AC\), a~\(Q\) niech będzie punktem przecięcia półprostej \(BL\) z~odcinkiem \(AD\). Skoro \(K\) i~\(L\) są środkami ciężkości ścian, na~których leżą, to odcinki \(BP\) i~\(BQ\) są środkowymi. Zatem
+\begin{equation*}
+    BP = \frac{3}{2} \cdot BK = \frac{3}{2} \cdot BL = BQ
+\end{equation*}
+Ponadto
+\begin{equation*}
+    \mangle{ABP} = \mangle{ABK} = \mangle{ABL} = \mangle{ABQ}
+\end{equation*}
+Z~powyższych dwóch równości oraz wspólności odcinka \(AB\) wnioskujemy, że \(\triangle{ABP} \equiv \triangle{ABQ}\) na mocy zasady bok-kąt-bok. Zatem
+\begin{gather*}
+    AP = AQ\\
+    \mangle{BAP} = \mangle{BAQ}
+\end{gather*}
+Ponownie korzystamy z~faktu, że \(BP\) i~\(BQ\) to środkowe, i~zauważamy, że
+\begin{equation*}
+    AC = 2 \cdot AP = 2 \cdot AQ = AD
+\end{equation*}
+Ponadto
+\begin{equation*}
+    \mangle{BAC} = \mangle{BAP} = \mangle{BAQ} = \mangle{BAD}
+\end{equation*}
+Z~powyższych dwóch równości oraz wspólności odcinka ostatecznie wnioskujemy, że z~zasady bok-kąt-bok
+\begin{equation*}
+    \triangle{ABC} \equiv \triangle{ABD}
+\end{equation*}
+\subsubsection*{Zadanie~5.6.}
+Oznaczmy przez \(K\), \(L\), \(M\), \(N\) punkty styczności sfery ze ścianami odpowiednio \(ABS\), \(BCS\), \(CBS\), \(DAS\).
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -0.5);
+    \coordinate (B) at (1, -0.5);
+    \coordinate (C) at (2, 0.5);
+    \coordinate (D) at (-1, 0.5);
+    \coordinate (S) at (0, 4);
+    \coordinate (K) at (-0.2, 1);
+    \coordinate (L) at (1, 1.3);
+    \drawangle[Magenta, angle radius=0.7cm]{K--S--B};
+    \drawangle[Magenta, angle radius=1cm]{B--S--L};
+    \draw (A) -- (B) -- (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw (S) -- (A);
+    \draw (S) -- (B);
+    \draw (S) -- (C);
+    \draw[dashed] (S) -- (D);
+    \draw[Orange] (S) -- (K);
+    \draw[RoyalBlue] (K) -- (B);
+    \draw[Orange] (S) -- (L);
+    \draw[RoyalBlue] (L) -- (B);
+    \draw[ForestGreen, dashed] (S) -- (B);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][right];
+    \fillpoint*{D}[\(D\)][left];
+    \fillpoint*{S}[\(S\)][above];
+    \fillpoint*{K}[\(K\)][left];
+    \fillpoint*{L}[\(L\)][below right];
+\end{mathfigure*}
+\noindent
+Na mocy twierdzenia o~odcinkach stycznych mamy
+\begin{gather*}
+    KS = LS\\
+    KB = LB
+\end{gather*}
+Odcinek \(BS\) jest wspólny, więc na mocy zasady bok-bok-bok otrzymujemy, że
+\begin{equation*}
+    \triangle{BSK} \equiv \triangle{BSL}
+\end{equation*}
+Zatem
+\begin{equation*}
+    \mangle{BSK} = \mangle{BSL}
+\end{equation*}
+Analogicznie dowodzimy, że:
+\begin{gather*}
+    \mangle{CSL} = \mangle{CSM}\\
+    \mangle{DSM} = \mangle{DSN}\\
+    \mangle{ASN} = \mangle{ASK}
+\end{gather*}
+Oznacza to, że:
+\begin{gather*}
+    \mangle{ASB} = \mangle{ASK} + \mangle{BSK}\\
+    \mangle{BSC} = \mangle{BSL} + \mangle{CSL}\\
+    \mangle{CSD} = \mangle{CSM} + \mangle{DSM}\\
+    \mangle{DSA} = \mangle{DSN} + \mangle{ASN}
+\end{gather*}
+Zatem
+\begin{equation*}
+    \begin{split}
+        \mangle{ASB} + \mangle{CSD}
+        &= \mangle{ASK} + \mangle{BSK} + \mangle{CSM} + \mangle{DSM}\\
+        &= \mangle{ASN} + \mangle{BSL} + \mangle{CSL} + \mangle{DSN}\\
+        &= \mangle{BSC} + \mangle{DSA}
+    \end{split}
+\end{equation*}
+\qed
+

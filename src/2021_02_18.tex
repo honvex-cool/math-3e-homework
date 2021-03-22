@@ -1,0 +1,228 @@
+\subsubsection*{Zadanie~1.51.}
+\begin{mathfigure*}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (1, 1);
+    \coordinate (C) at (-2, 1);
+    \coordinate (D) at (-1.1, 3.5);
+    \coordinate (E) at (-0.1, 4.5);
+    \coordinate (F) at (-3.1, 4.5);
+    \coordinate (P) at ($(C)!0.5!(A)$);
+    \coordinate (Q) at ($(B)!0.5!(P)$);
+    \coordinate (X) at ($(A)!0.5!(B)$);
+    \coordinate (Y) at ($(A)!0.5!(C)$);
+    \coordinate (Z) at ($(D)!0.5!(F)$);
+    \draw (C) -- (A) -- (B);
+    \draw[dashed] (B) -- (C);
+    \draw (D) -- (E) -- node[above]{\(a\)} (F) -- cycle;
+    \draw (A) -- (D);
+    \draw (B) -- (E);
+    \draw (C) -- (F);
+    \drawrightangle[angle radius=0.2cm]{B--Q--E};
+    \drawangle*[angle radius=0.3cm]{E--B--Q}[\tiny\(\alpha\)];
+    \draw[Orange] (E) -- node[left]{\(h\)} (Q);
+    \drawrightangle[angle radius=0.3cm]{Z--Y--C};
+    \drawrightangle[angle radius=0.3cm]{A--Y--B};
+    \drawrightangle[angle radius=0.2cm]{E--Z--F};
+    \drawrightangle[angle radius=0.3cm]{Y--Z--D};
+    \draw[densely dotted, ForestGreen] (B) -- (Y) -- (Z) -- (E);
+    \draw[dashed, Orange] (Q) -- (B);
+    \drawrightangle[angle radius=0.2cm]{Q--X--A};
+    \drawrightangle[angle radius=0.2cm]{B--X--E};
+    \draw[dashed, RoyalBlue] (Q) -- (X);
+    \draw[RoyalBlue] (X) -- (E);
+    \fillpoint*{A}[\(A\)][below];
+    \fillpoint*{B}[\(B\)][right];
+    \fillpoint*{C}[\(C\)][left];
+    \fillpoint*{D}[\(D\)][below right];
+    \fillpoint*{E}[\(E\)][above right];
+    \fillpoint*{F}[\(F\)][above left];
+    \fillpoint*{Q}[\(Q\)][left];
+    \fillpoint*{X}[\(X\)][below right];
+    \fillpoint*{Y}[\(Y\)][below left];
+    \fillpoint*{Z}[\(Z\)][below left];
+\end{mathfigure*}
+Punkt \(Q\) jest rzutem punktu \(E\) na płaszczyznę dolnej podstawy i~jednocześnie środkiem trójkąta równobocznego \(\triangle{ABC}\). Oznacza to, że
+\begin{equation*}
+    BQ = \frac{a\sqrt{3}}{3}
+\end{equation*}
+Dla \(\triangle{EQB}\) możemy zapisać:
+\begin{gather*}
+    \frac{h}{BQ} = \tan\alpha\\
+    h = BQ \cdot \tan\alpha = \frac{a\sqrt{3}\tan\alpha}{3}
+\end{gather*}
+Niech \(X\) będzie środkiem krawędzi \(AB\). Ponownie, ponieważ \(\triangle{ABC}\) jest równoboczny, to
+\begin{equation*}
+    XQ = \frac{a\sqrt{3}}{6}
+\end{equation*}
+Odcinek \(EX\) jest wysokością ściany \(ABED\), ponieważ jest jego rzut \(XQ\) jest prostopadły do \(AB\), więc z~twierdzenia o~trzech prostych prostopadłych również sam \(EX\) jest prostopadły do \(AB\). Możemy teraz wyliczyć \(EX\) z~twierdzenia Pitagorasa dla \(\triangle{EQX}\):
+\begin{equation*}
+    EX = \sqrt{XQ^2 + h^2}
+    = \sqrt{\pars{\frac{a\sqrt{3}}{6}}^2 + \pars{\frac{a\sqrt{3}\tan\alpha}{3}}^2}
+    = \sqrt{\frac{a^2}{12} + \frac{a^2\tan^2\alpha}{3}}
+    = a\sqrt{\frac{4\tan^2\alpha + 1}{12}}
+    = \frac{a}{2}\sqrt{\frac{4\tan^2\alpha + 1}{3}}
+\end{equation*}
+Analogicznie możemy się przekonać, że taką samą wysokość ma ściana \(BCFE\). Musimy jeszcze poznać wysokość ściany \(ACFD\). Niech \(Y\) i~\(Z\) będą środkami odpowiednio krawędzi \(AC\) i~\(DF\). Zauważmy, że punkt \(E\) musiał być przesunięty od ,,pozycji'' w~graniastosłupie prawidłowym po płaszczyźnie zawierającej odcinek \(BY\) i~prostopadłej do dolnej płaszczyzny, zatem \(BYZE\) jest równoległobokiem i~\(YZ = BE\) jest wysokością ściany \(ACFD\). Możemy teraz obliczyć:
+\begin{gather*}
+    \frac{QB}{EB} = \cos\alpha\\
+    YZ = EB = \frac{QB}{\cos\alpha} = \frac{a\sqrt{3}}{3\cos\alpha}
+\end{gather*}
+Wystarczy teraz podstawić do wzoru na pole powierzchni bocznej
+\begin{equation*}
+    P_\p{B}
+    = a\pars{2 \cdot \frac{a}{2}\sqrt{\frac{4\tan^2\alpha + 1}{3}} + \frac{a\sqrt{3}}{3\cos\alpha}}
+    = a^2\pars{\sqrt{\frac{4\tan^2\alpha + 1}{3}} + \frac{\sqrt{3}}{3\cos\alpha}}
+\end{equation*}
+\subsubsection*{Zadanie~1.66.}
+\begin{mathfigure*}
+    \coordinate (S) at (0, 0);
+    \coordinate (A) at (-1.5, -1);
+    \coordinate (B) at (0.5, -1);
+    \coordinate (C) at (2.5, 0);
+    \coordinate (D) at (1.5, 1);
+    \coordinate (E) at (-0.5, 1);
+    \coordinate (F) at (-2.5, 0);
+    \coordinate (G) at (-1.5, 5);
+    \coordinate (H) at (0.5, 5);
+    \coordinate (I) at (2.5, 6);
+    \coordinate (J) at (1.5, 7);
+    \coordinate (K) at (-0.5, 7);
+    \coordinate (L) at (-2.5, 6);
+    \draw (F) -- (A) -- node[below]{\(a\)} (B) -- node[below, sloped]{\(a\)} (C);
+    \draw[dashed] (C) -- (D) -- (E) -- (F);
+    \drawangle*[ForestGreen]{G--D--A}[\(\alpha\)];
+    \draw[RoyalBlue, dashed] (D) -- node[pos=0.75, above, sloped]{\(a\)} node[pos=0.25, above, sloped]{\(a\)} (A);
+    \draw[RoyalBlue, dotted] (E) -- (B);
+    \draw[RoyalBlue, dotted] (F) -- (C);
+    \draw[Orange] (G) -- node[above, sloped]{\(d\)} (D);
+    \draw (A) -- node[left]{\(h\)} (G);
+    \draw (B) -- (H);
+    \draw (C) -- (I);
+    \draw (F) -- (L);
+    \draw[dashed] (E) -- (K);
+    \draw[dashed] (D) -- (J);
+    \draw (G) -- (H) -- (I) -- (J) -- (K) -- (L) -- cycle;
+    \fillpoint{S};
+\end{mathfigure*}
+Najdłuższa przekątna w~graniastosłupie prawidłowym sześciokątnym to ta, której rzutem na podstawę jest najdłuższa przekątna podstawy. W~sześciokącie foremnym najdłuższa przekątna podstawy ma długość \(2a\), ponieważ są to przyłożone do siebie dwa boki trójkątów równobocznych o~boku \(a\). Możemy zapisać:
+\begin{gather*}
+    \frac{h}{d} = \sin\alpha \implies h = d\sin\alpha\\
+    \frac{2a}{d} = \cos\alpha \implies a = \frac{d\cos\alpha}{2}\\
+    V = P_\p{P} \cdot h
+    = 6 \cdot \frac{a^2\sqrt{3}}{4} \cdot h
+    = \frac{3}{2} \cdot \frac{d^2\cos^2\alpha \cdot \sqrt{3}}{4} \cdot d\sin\alpha
+    = \frac{3\sqrt{3}}{8} \cdot d^3\sin\alpha\cos^2\alpha
+\end{gather*}
+\subsubsection*{Zadanie~1.67.}
+\begin{mathfigure*}
+    \coordinate (A) at (-3, -0.4);
+    \coordinate (B) at (2, -0.4);
+    \coordinate (C) at (3, 0.4);
+    \coordinate (D) at (-2, 0.4);
+    \coordinate (Aprime) at (-3, 4.6);
+    \coordinate (Bprime) at (2, 4.6);
+    \coordinate (Cprime) at (3, 5.4);
+    \coordinate (Dprime) at (-2, 5.4);
+    \draw (A) -- (B) -- node[below, sloped]{\(z\)} (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw[dashed] (D) -- node[left]{\(y\)} (Dprime);
+    \draw[dashed] (B) -- (Cprime);
+    \drawrightangle[angle radius=0.4cm]{B--D--Dprime};
+    \drawrightangle[angle radius=0.4cm]{Dprime--Cprime--B};
+    \drawangle*[ForestGreen, angle radius=0.6cm]{Dprime--B--D}[\(\alpha\)];
+    \drawangle*[RoyalBlue, angle radius=0.7cm]{Cprime--B--Dprime}[\(\beta\)];
+    \draw[dashed] (D) -- node[pos=0.4, below, sloped]{\(p\)} (B);
+    \draw[Orange] (Dprime) -- node[above, sloped]{\(d\)} (B);
+    \draw (A) -- (Aprime);
+    \draw (B) -- (Bprime);
+    \draw (C) -- (Cprime);
+    \draw (Aprime) -- (Bprime) -- (Cprime) -- node[above]{\(x\)} (Dprime) -- cycle;
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{Aprime}[\(A'\)][above left];
+    \fillpoint*{Bprime}[\(B'\)][below right];
+    \fillpoint*{Cprime}[\(C'\)][above right];
+    \fillpoint*{Dprime}[\(D'\)][above];
+\end{mathfigure*}
+\begin{gather*}
+    \frac{y}{d} = \sin\alpha \implies y = d\sin\alpha\\
+    \frac{x}{d} = \sin\beta \implies x = d\sin\beta
+    \frac{p}{d} = \cos\alpha \implies p = d\cos\alpha
+\end{gather*}
+Wiemy ponadto z~twierdzenia Pitagorasa, że
+\begin{equation*}
+    x^2 + z^2 = p^2
+\end{equation*}
+Zatem
+\begin{equation*}
+    z
+    = \sqrt{p^2 - x^2}
+    = \sqrt{d^2\cos^2\alpha - d^2\sin^2\beta}
+    = d\sqrt{\cos^2\alpha - \sin^2\beta}
+\end{equation*}
+Teraz już łatwo obliczymy objętość:
+\begin{equation*}
+    V
+    = xyz
+    = d\sin\beta \cdot d\sin\alpha \cdot d\sqrt{\cos^2\alpha - \sin^2\beta}
+    = d^3\sin\alpha\sin\beta\sqrt{\cos^2\alpha - \sin^2\beta}
+\end{equation*}
+\subsubsection*{Zadanie~1.78.}
+\begin{mathfigure*}
+    \coordinate (A) at (-3, -0.4);
+    \coordinate (B) at (2, -0.4);
+    \coordinate (C) at (3, 0.4);
+    \coordinate (D) at (-2, 0.4);
+    \coordinate (Aprime) at (-3, 4.6);
+    \coordinate (Bprime) at (2, 4.6);
+    \coordinate (Cprime) at (3, 5.4);
+    \coordinate (Dprime) at (-2, 5.4);
+    \draw (A) -- node[below]{\(x\)} (B) -- node[below, sloped]{\(z\)} (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw[dashed] (D) -- (Dprime);
+    \drawrightangle[angle radius=0.4cm]{Aprime--Cprime--C};
+    \drawrightangle[angle radius=0.4cm]{C--D--Aprime};
+    \drawrightangle[angle radius=0.4cm]{C--B--Aprime};
+    \draw[densely dotted] (Aprime) -- (B);
+    \draw[densely dotted] (Aprime) -- (D);
+    \draw[densely dotted] (Aprime) -- (Cprime);
+    \drawangle*[ForestGreen, angle radius=0.6cm]{Cprime--C--Aprime}[\(\alpha\)];
+    \drawangle*[RoyalBlue, angle radius=1.1cm]{Aprime--C--D}[\(\beta\)];
+    \drawangle*[Magenta, angle radius=0.5cm]{Aprime--C--B}[\(\gamma\)];
+    \draw[Orange] (Aprime) -- node[above, sloped]{\(d\)} (C);
+    \draw (A) -- (Aprime);
+    \draw (B) -- node[right]{\(y\)} (Bprime);
+    \draw (C) -- (Cprime);
+    \draw (Aprime) -- (Bprime) -- (Cprime) -- (Dprime) -- cycle;
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{Aprime}[\(A'\)][above left];
+    \fillpoint*{Bprime}[\(B'\)][below right];
+    \fillpoint*{Cprime}[\(C'\)][above right];
+    \fillpoint*{Dprime}[\(D'\)][above];
+\end{mathfigure*}
+\begin{gather*}
+    A'C' = \sqrt{y^2 + z^2}\\
+    A'D = \sqrt{z^2 + x^2}\\
+    A'B = \sqrt{x^2 + y^2}
+\end{gather*}
+Możemy zapisać:
+\begin{gather*}
+    \sin\alpha = \frac{A'C'}{d} = \frac{\sqrt{y^2 + z^2}}{d}\\
+    \sin\beta = \frac{A'D}{d} = \frac{\sqrt{z^2 + x^2}}{d}\\
+    \sin\gamma = \frac{A'B}{d} = \frac{\sqrt{x^2 + y^2}}{d}\\
+    \begin{split}
+        \sin^2\alpha + \sin^2\beta + \sin^2\gamma
+        &= \pars{\frac{\sqrt{y^2 + z^2}}{d}}^2 + \pars{\frac{\sqrt{z^2 + x^2}}{d}}^2 + \pars{\frac{\sqrt{x^2 + y^2}}{d}}^2\\
+        &= \frac{y^2 + z^2}{d^2} + \frac{z^2 + x^2}{d^2} + \frac{x^2 + y^2}{d^2}\\
+        &= \frac{2\pars{x^2 + y^2 + z^2}}{d^2}\\
+        &= \frac{2\pars{\sqrt{x^2 + y^2 + z^2}}^2}{d^2}\\
+        &= \frac{2\cancel{d^2}}{\cancel{d^2}}
+        = 2
+    \end{split}
+\end{gather*}
+

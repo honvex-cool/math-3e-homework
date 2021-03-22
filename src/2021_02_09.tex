@@ -1,0 +1,180 @@
+\subsubsection*{Zadanie~8.2.}
+Krawędzie czworościanu są przekątnymi ścian równoległościanu opisanego na nim. Ponieważ przeciwległe krawędzie mają równe długości, to opisany musi być prostopadłościan, ponieważ tylko w~ścianach będących prostokątami przekątne są równe.
+\begin{mathfigure*}
+    \coordinate (A) at (-4, -1);
+    \coordinate (Bprime) at (1, -1);
+    \coordinate (C) at (4, 1);
+    \coordinate (Dprime) at (-1, 1);
+    \coordinate (Aprime) at (-4, 3);
+    \coordinate (B) at (1, 3);
+    \coordinate (Cprime) at (4, 5);
+    \coordinate (D) at (-1, 5);
+    \coordinate (I) at ($(B)!0.5!(Dprime)$);
+    \draw[dashed] (D) -- (Dprime);
+    \draw (A) -- node[below]{\(x\)} (Bprime) -- node[below right]{\(z\)} (C);
+    \draw[dashed] (C) -- (Dprime) -- (A);
+    \draw[Magenta] (A) -- node[below, sloped]{\(c\)} (C) -- node[below, sloped]{\(b\)} (B);
+    \draw[Magenta, dashed] (C) -- (D) -- (A);
+    \draw[dotted] (B) -- (I);
+    \draw (Aprime) -- (B) -- (Cprime) -- (D) -- cycle;
+    \draw (A) -- (Aprime);
+    \draw (B) -- node[right, pos=0.55]{\(y\)} (Bprime);
+    \draw (C) -- (Cprime);
+    \draw[Magenta] (A) -- node[above, sloped]{\(a\)} (B) -- (D);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{Bprime}[\(B'\)][below right];
+    \fillpoint*{C}[\(C\)][right];
+    \fillpoint*{Dprime}[\(D'\)][below right];
+    \fillpoint*{Aprime}[\(A'\)][above left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{Cprime}[\(C'\)][above right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{I}[\(I\)][above left];
+\end{mathfigure*}
+Ponieważ wszystkie ściany są prostokątami, to możemy zapisać z~twierdzenia Pitagorasa:
+\begin{gather*}
+    x^2 + y^2 = a^2\\
+    y^2 + z^2 = b^2\\
+    z^2 + x^2 = c^2
+\end{gather*}
+Jeśli odejmiemy stronami drugie równanie od pierwszego, otrzymujemy
+\begin{gather*}
+    x^2 + y^2 - y^2 - z^2 = a^2 - b^2\\
+    x^2 - z^2 = a^2 - b^2
+\end{gather*}
+Jeśli następnie dodamy stronami do trzeciego równania, mamy
+\begin{gather*}
+    x^2 - z^2 + x^2 + z^2 = a^2 - b^2 + c^2\\
+    2x^2 = a^2 - b^2 + c^2\\
+    x = \sqrt{\frac{a^2 - b^2 + c^2}{2}}
+\end{gather*}
+Analogiczną metodą otrzymujemy długości wszystkich krawędzi prostopadłościanu:
+\begin{gather*}
+    x = \sqrt{\frac{a^2 - b^2 + c^2}{2}}\\
+    y = \sqrt{\frac{a^2 + b^2 - c^2}{2}}\\
+    z = \sqrt{\frac{-a^2 + b^2 + c^2}{2}}
+\end{gather*}
+\begin{enumerate}[label={\alph*)}]
+    \item Objętość całego prostopadłościanu wynosi
+        \begin{equation*}
+            V_{AB'CD'A'BC'D} = xyz
+        \end{equation*}
+        Objętość czworościanu \(ABCD\) otrzymamy, odejmując od objętości całego prostopadłościanu objętości czterech odciętych czworościanów \(AB'CB\), \(BC'DC\), \(AD'CD\), \(AA'BD\).
+        \begin{equation*}
+            V_{AB'CB}
+            = V_{BC'DC}
+            = V_{AD'CD}
+            = V_{AA'BD}
+            = \frac{1}{3} \cdot P_\p{P} \cdot h
+            = \frac{1}{3} \cdot \frac{1}{2} \cdot xz \cdot y
+            = \frac{1}{6} \cdot xyz
+            = \frac{1}{6} \cdot V_{AB'CD'A'BC'D}
+        \end{equation*}
+        \begin{equation*}
+        \end{equation*}
+        Mamy zatem
+        \begin{equation*}
+            \begin{split}
+                V_{ABCD}
+                &= V_{AB'CD'A'BC'D} - 4 \cdot \frac{1}{6} \cdot V_{AB'CD'A'BC'D}
+                = \frac{1}{3} \cdot V_{AB'CD'A'BC'D}
+                = \frac{1}{3} \cdot xyz\\
+                &= \sqrt{\frac{a^2 - b^2 + c^2}{2}} \cdot \sqrt{\frac{a^2 + b^2 - c^2}{2}} \cdot \sqrt{\frac{-a^2 + b^2 + c^2}{2}}\\
+                &= \sqrt{\frac{\pars{a^2 - b^2 + c^2}\pars{a^2 + b^2 - c^2}\pars{-a^2 + b^2 + c^2}}{2}}
+            \end{split}
+        \end{equation*}
+    \item Odległość między środkami przeciwległych krawędzi czworościanu to odległość między środkami przeciwległych ścian równoległościanu opisanego na nim, a~skoro jest to prostopadłościan, to odległość między środkami krawędzi \(AB\) i~\(CD\) wynosi po prostu
+        \begin{equation*}
+            z = \sqrt{\frac{-a^2 + b^2 + c^2}{2}}
+        \end{equation*}
+    \item Środek sfery opisanej na tym czworościanie pokrywa się ze środkiem prostopadłościanu opisanego na nim, więc promień ma długość równą połowie przekątnej prostopadłościanu:
+        \begin{equation*}
+            \begin{split}
+                R
+                &= \frac{1}{2} \cdot \sqrt{x^2 + y^2 + z^2}
+                = \frac{1}{2} \cdot \sqrt{\pars{\sqrt{\frac{a^2 - b^2 + c^2}{2}}}^2 + \pars{\sqrt{\frac{a^2 + b^2 - c^2}{2}}}^2 + \pars{\sqrt{\frac{-a^2 + b^2 + c^2}{2}}}^2}\\
+                &= \frac{1}{2} \cdot \sqrt{\frac{a^2 + b^2 - c^2}{2} + \frac{a^2 + b^2 - c^2}{2} + \frac{-a^2 + b^2 + c^2}{2}}
+                = \frac{1}{2} \cdot \sqrt{\frac{a^2 + b^2 + c^2}{2}}
+            \end{split}
+        \end{equation*}
+    \item Zauważmy, że w~czworościanie równościennym, z~jakim mamy tu do czynienia, środek prostopadłościanu (punkt oznaczony jako \(I\)) opisanego na nim jest środkiem sfery wpisanej w~czworościan, a~ten środek z~kolei pokrywa się ze środkiem ciężkości czworościanu, ponieważ po poprowadzeniu do niego odcinków \(AI\), \(BI\), \(CI\), \(DI\), czworościan \(ABCD\) rozpadnie się na \(4\) części o~równych objętościach (bo będą miały tę samą wysokość równą promieniowi sfery wpisanej i~równe pola podstaw, gdyż ściany czworościanu \(ABCD\) są przystające). Odcinek \(BI\) stanowi połowę przekątnej prostopadłościanu i~leży na środkowej czworościanu, bo wychodzi z~wierzchołka i~przechodzi przez środek ciężkości. Środek ciężkości leży w~\(\frac{3}{4}\) długości środkowej, więc aby uzyskać długość środkowej, musimy pomnożyć długość odcinka \(BI\), czyli połowę przekątnej, przez \(\frac{3}{4}\). Zatem
+        \begin{equation*}
+            m = \frac{4}{3} \cdot \frac{1}{2} \cdot \sqrt{\frac{a^2 + b^2 + c^2}{2}}
+        \end{equation*}
+        Wszystkie środkowe są tej właśnie długości.
+\end{enumerate}
+\subsubsection*{Zadanie~8.3.}
+\begin{mathfigure*}
+    \coordinate (A) at (-4, -1);
+    \coordinate (C) at (4, 1);
+    \coordinate (B) at (1, 3);
+    \coordinate (D) at (-1, 5);
+    \drawangle[ForestGreen]{B--A--D};
+    \drawangle[ForestGreen]{A--B--C};
+    \drawangle[RoyalBlue]{B--C--A};
+    \drawangle[RoyalBlue, angle radius=1cm]{C--A--D};
+    \drawangle[Magenta, angle radius=0.75cm]{C--A--B};
+    \draw (A) -- (C) -- (B);
+    \draw (C) -- (D) -- (A);
+    \draw (A) -- (B) -- (D);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{C}[\(C\)][right];
+    \fillpoint*{B}[\(B\)][below];
+    \fillpoint*{D}[\(D\)][above left];
+\end{mathfigure*}
+\begin{gather*}
+    AB = CD\\
+    BC = AD\\
+    AC = BD
+\end{gather*}
+Zatem z~zasady bok-bok-bok:
+\begin{gather*}
+    \triangle{ABC} \equiv \triangle{BAD} \equiv \triangle{CDA}
+\end{gather*}
+czyli kąty zaznaczone tym samym kolorem są równe. Zielony, niebieski i~żółty sumują się do \(180\degree\) w~\(\triangle{ABC}\), a~są to również kąty płaskie przy wierzchołku \(A\). Analogicznie pokazujemy dla pozostałych wierzchołków.
+\qed
+\subsubsection*{Zadanie~8.4.}
+\begin{mathfigure*}
+    \coordinate (A) at (-4, -1);
+    \coordinate (Bprime) at (1, -1);
+    \coordinate (C) at (4, 1);
+    \coordinate (Dprime) at (-1, 1);
+    \coordinate (Aprime) at (-2, 3);
+    \coordinate (B) at (3, 3);
+    \coordinate (Cprime) at (6, 5);
+    \coordinate (D) at (1, 5);
+    \coordinate (K) at ($(B)!0.5!(A)$);
+    \coordinate (L) at ($(B)!0.5!(D)$);
+    \coordinate (M) at ($(C)!0.5!(D)$);
+    \coordinate (N) at ($(C)!0.5!(A)$);
+    \coordinate (P) at ($(L)!0.5!(N)$);
+    \drawrightangle[angle radius=0.2cm]{Cprime--C--Bprime};
+    \drawrightangle[angle radius=0.2cm]{L--P--K};
+    \draw[dashed] (D) -- (Dprime);
+    \draw (A) -- (Bprime) -- (C);
+    \draw[dashed] (C) -- (Dprime) -- (A);
+    \draw[Magenta] (A) -- (C) -- (B);
+    \draw[Magenta, dashed] (C) -- (D) -- (A);
+    \draw[dashed, ForestGreen] (K) -- (M);
+    \draw[dashed, ForestGreen] (L) -- (N);
+    \draw (Aprime) -- (B) -- (Cprime) -- (D) -- cycle;
+    \draw (A) -- (Aprime);
+    \draw (B) -- (Bprime);
+    \draw (C) -- (Cprime);
+    \draw[Magenta] (A) -- (B) -- (D);
+    \fillpoint*{A}[\(C\)][below left];
+    \fillpoint*{Bprime}[\(B'\)][below right];
+    \fillpoint*{C}[\(A\)][right];
+    \fillpoint*{Dprime}[\(D'\)][above left];
+    \fillpoint*{Aprime}[\(C'\)][above left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{Cprime}[\(A'\)][above right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{K}[\(K\)][below];
+    \fillpoint*{L}[\(L\)][above right];
+    \fillpoint*{M}[\(M\)][above];
+    \fillpoint*{N}[\(N\)][below];
+\end{mathfigure*}
+Ponieważ \(AB = CD\), to ściany równoległościanu opisanego zawierające te krawędzie, czyli \(AA'BB'\) i~\(CC'DD'\), muszą być prostokątami, bo tylko w~prostokątach przekątne są równe. Odcinki \(KM\) i~\(LN\) są biśrodkowymi, a~wiemy, że biśrodkowe są równoległe do odpowiednich krawędzi równoległościanu opisanego. Zatem \(LN \parallel AA'\) i~\(KM \parallel AB'\). Skoro \(AA'BB'\) to prostokąt, to \(AA' \perp AB'\), czyli \(KM \perp LN\).
+\qed
+

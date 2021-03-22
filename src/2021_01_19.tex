@@ -1,0 +1,100 @@
+\subsubsection*{Zadanie~2007/2008-I-4}
+\begin{enumerate}[label={\alph*)}]
+    \item skoro pudełek jest tyle samo co kul i~żadne nie może być puste, to w~każdym musi znajdować się dokładnie jedna kula, więc możliwych rozmieszczeń jest tyle ile permutacji \(k\) obiektów, czyli \(k!\)
+    \item aby dokładnie jedno pudełko było puste, w~dokładnie jednym muszą znajdować się dwie kule, a~w~pozostałych dozwolonych musi znajdować się po jednej. Zatem najpierw na \(k\) sposobów wybieramy pudełko, które pozostawimy puste, następnie na \(k - 1\) sposobów wybieramy, w~którym pudełku umieścimy dwie kule, a~potem spośród \(k\) kul na \(\ibinom{k}{2}\) sposobów wybieramy kule do tego pudełka bez zwracania uwagi na ich kolejność. Pozostałe \(k - 2\) kul permutujemy na \(\pars{k - 2}!\) sposobów między dozwolonymi pudełkami. Zatem wszystkich możliwych rozmieszczeń jest
+        \begin{equation*}
+            k \cdot \pars{k - 1} \cdot \binom{k}{2} \cdot \pars{k - 2}!
+                = k! \cdot \binom{k}{2}
+        \end{equation*}
+    \item skoro \(k - 2\) pudełka mają być puste, to kule możemy rozmieszczać tylko w~\(2\). Dla każdej kuli na \(2\) sposoby wybieramy, do którego z~wybranych pudełek trafi. Możliwych konfiguracji wyborów jest więc \(2^k - 2\), ponieważ musimy wykluczyć sytuacje, gdy żadna kula nie trafi do pudełka pierwszego i~gdy żadna kula nie trafi do drugiego. Na koniec na \(k\) sposobów wybieramy pudełko pierwsze i~na \(k - 1\) sposobów wybieramy pudełko drugie. Aby uniezależnić konfiguracje od kolejności wyboru pudełek, dzielimy wynik przez \(2\). Zatem wszystkich możliwych rozmieszczeń jest
+        \begin{equation*}
+            \frac{1}{2} \cdot \pars{2^k - 2} \cdot k\pars{k - 1}
+                = \pars{2^{k - 1} - 1} \cdot k\pars{k - 1}
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~2007/2008-II-1}
+Wszystkich możliwych ciągów jest \(\card\Omega = \frac{n!}{(n - k)!} = \ibinom{n}{k} \cdot k!\), ponieważ jest to liczba wariacji \(k\)-wyrazowych bez powtórzeń zbioru \(n\)-elementowego. Natomiast dla każdego z~\(\card A = \ibinom{n}{k}\) podzbiorów permutowanych elementów jest dokładnie jedno ułożenie rosnące. Oznacza to, że prawdopodobieństwo otrzymania ciągu rosnącego wynosi
+\begin{equation*}
+    P\pars{A}
+        = \frac{\card A}{\card\Omega}
+        = \frac{\cancel{\binom{n}{k}}}{\cancel{\binom{n}{k}} \cdot k!}
+        = \frac{1}{k!}
+\end{equation*}
+i~nie zależy od \(n\). Zatem prawdopodobieństwo otrzymania ciągu niebędącego ciągiem rosnącym wynosi
+\begin{equation*}
+    1 - \frac{1}{k!}
+\end{equation*}
+\subsubsection{Zadanie~2007/2008-III-7}
+\begin{enumerate}[label={\alph*)}]
+    \item Najpierw obliczymy prawdopodobieństwo zdarzenia przeciwnego, czyli że iloczyn \(pqr\) nie jest podzielny przez \(3\). Następnie to prawdopodobieństwo odejmiemy od \(1\). Iloczyn trzech liczb nie jest podzielny przez \(3\), gdy żadna z~nich nie jest podzielna przez \(3\). Liczb podzielnych przez \(3\) w~zbiorze \(\set{1, \ldots, 1000}\) jest:
+        \begin{equation*}
+            \frac{\text{ostatnia podzielna} - \text{pierwsza podzielna}}{3} + 1
+                = \frac{999 - 3}{3} + 1
+                = \frac{996}{3} + 1
+                = 332 + 1
+                = 333
+        \end{equation*}
+        Liczb niepodzielnych przez \(3\) jest więc \(1000 - 333 = 667\). Oznacza to, że prawdopodobieństwo wyciągnięcia trzech liczb niepodzielnych przez \(3\) wynosi \(\frac{\ibinom{667}{3}}{\ibinom{1000}{3}}\), a~zatem prawdopodobieństwo wyciągnięcia liczb o~iloczynie podzielnym przez \(3\) wynosi
+        \begin{equation*}
+            1 - \frac{\binom{667}{3}}{\binom{1000}{3}}
+        \end{equation*}
+    \item Fakt, że wartość funkcji jest najbardziej prawdopodobna jest równoważna temu, że jest przyjmowana najczęściej. Zastanówmy się więc, na ile sposobów wartość \(x \in \set{2, \ldots, 999}\) może być ,,elementem pośrednim''. Na \(x - 1\) sposobów możemy wybrać wartość od niej mniejszą i~na \(1000 - x\) sposobów możemy wybrać wartość od niej większą. Zatem chcemy zmaksymalizować liczbę sposobów, która wynosi \(\pars{x - 1}\pars{1000 - x}\).
+        \begin{equation*}
+            \pars{x - 1}\pars{1000 - x} = -x^2 + 1001x - 1000
+        \end{equation*}
+        Współczynnik przy \(x^2\) jest ujemny, więc ramiona paraboli stanowiącej wykres tej funkcji kwadratowej są skierowane do dołu, a~wartość największa jest przyjmowana dla argumentu
+        \begin{equation*}
+            \frac{-1001}{2 \cdot \pars{-1}} = 500{,}5
+        \end{equation*}
+        Ponieważ szukamy największych wartości przyjmowanych dla argumentów całkowitych, to rozwiązaniami są \(x = 500\) i~\(x = 501\). Zatem funkcja \(\varphi\) ma dwie wartości które są najbardziej prawdopodobne ze wszystkich: \(\varphi\pars{T} = 500\) i~\(\varphi\pars{T} = 501\).
+\end{enumerate}
+\subsubsection*{Zadanie~2008/2009-II-6}
+\begin{enumerate}[label={\Alph*:}]
+    \item Na \(3\) sposoby wybieramy wagon do którego mają wsiąść wszyscy pasażerowie. Prawdopodobieństwo, że wszyscy wsiądą do niego, wynosi \(\pars{\frac{1}{3}}^k\). Zatem prawdopodobieństwo, że wszyscy pasażerowie wsiądą do jednego wagonu, wynosi
+        \begin{equation*}
+            P\pars{A} = 3 \cdot \pars{\frac{1}{3}}^k
+        \end{equation*}
+    \item Przyjmijmy, że wybraliśmy wagon, który ma być pusty. Prawdopodobieństwo, że wszyscy wybiorą inny wagon wynosi \(\pars{\frac{2}{3}}^k\). Musimy jednak odjąć sytuacje, w~których wszyscy wsiądą do jednego z~dwóch pozostałych wagonów. Takich sytuacji jest \(2 \cdot \pars{\frac{1}{3}}^k\). Są \(3\) możliwych wybory pustego wagonu. Zatem
+        \begin{equation*}
+            P\pars{B} = 3 \cdot \pars{\pars{\frac{2}{3}}^k - 2 \cdot \pars{\frac{1}{3}}^k}
+        \end{equation*}
+    \item Jest to zdarzenie przeciwne do pozostałych, więc
+        \begin{equation*}
+            P\pars{C}
+            = 1 - 3 \cdot \pars{\frac{2}{3}}^k - 3 \cdot \pars{\pars{\frac{2}{3}}^k - 2 \cdot \pars{\frac{1}{3}}^k}
+        \end{equation*}
+\end{enumerate}
+\subsubsection*{Zadanie~2008/2009-III-5}
+\begin{enumerate}[label={\Alph*:}]
+    \item Sytuacji, w~których obydwie liczby są takie same jest \(2n\), natomiast każdy z~dwóch wyborów może być wykonany na \(2n\) sposobów, czyli wszystkich sytuacji jest \(\pars{2n}^2\). Zatem
+        \begin{equation*}
+            P\pars{A} = \frac{\cancel{2n}}{\pars{2n}^{\cancel{2}}} = \frac{1}{2n}
+        \end{equation*}
+    \item Obliczmy najpierw prawdopodobieństwo zdarzenia \(B'\), czyli że iloczyn jest nieparzysty. Aby tak było, obydwie liczby muszą być nieparzyste. Liczb nieparzystych w~zbiorze \(\set{1, \ldots, 2n}\) jest \(n\), czyli każdego wyboru można dokonać na \(n\) sposobów. Zatem
+        \begin{gather*}
+            P\pars{B'}
+                = \frac{n^2}{\pars{2n}^2}
+                = \frac{\cancel{n^2}}{4\cancel{n^2}}
+                = \frac{1}{4}\\
+            P\pars{B}
+                = 1 - P\pars{B'}
+                = 1 - \frac{1}{4}
+                = \frac{3}{4}
+        \end{gather*}
+    \item Pytamy, na ile sposobów można dokonać takiego wyboru, że \(x < y\). Dla \(x = 1\) możemy zrobić to na \(2n - 1\) sposobów, dla \(x = 2\) na \(2n - 2\) sposobów itd. Sumarycznie zatem jest to możliwe na
+        \begin{equation*}
+            \summation[k = 1][2n] \pars{2n - k}
+                = \summation[k = 0][2n - 1] k
+                = \frac{\pars{2n - 1}2n}{2}
+                = n\pars{2n - 1}
+                = 2n^2 - n
+        \end{equation*}
+        sposobów. Zatem
+        \begin{equation*}
+            P\pars{C}
+                = \frac{2n^2 - n}{\pars{2n}^2}
+                = \frac{2n^2 - n}{4n^2}
+                = \frac{2n - 1}{4n}
+        \end{equation*}
+\end{enumerate}
+

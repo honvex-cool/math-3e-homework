@@ -1,0 +1,31 @@
+\subsubsection*{Zadanie~3.6.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -1);
+    \coordinate (B) at (3, -1);
+    \coordinate (C) at (-0.5, -0.5);
+    \coordinate (S) at (0, 3.5);
+    \coordinate (H) at (0, -0.75);
+    \coordinate (P) at (0.5, -1);
+    \coordinate (Q) at (-1.25, -0.75);
+    \draw[WildStrawberry] (S) -- (H);
+    \draw (A) -- (B);
+    \draw[dashed] (B) -- (C) -- (A);
+    \draw[dashed] (S) -- (C);
+    \draw (A) -- (S) -- (B);
+    \draw[dotted] (H) -- (P) -- (S);
+    \draw[dotted] (H) -- (Q) -- (S);
+    \drawangle[ForestGreen, angle radius=0.3cm]{S--P--H};
+    \drawangle[ForestGreen, angle radius=0.3cm]{H--Q--S};
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above left];
+    \fillpoint*{S}[\(S\)][above];
+    \fillpoint*{H}[\(H\)][left];
+    \fillpoint*{P}[\(P\)][below right];
+    \fillpoint*{Q}[\(Q\)][left];
+\end{mathfigure*}
+Niech punkt \(P\) będzie rzutem punktu \(H\) na odcinek \(AB\), a~punkt \(Q\) rzutem \(H\) na \(AC\). Wiemy, że \(\mangle{SHP} = \mangle{SHQ} = 90\degree\). Okazuje się, że \(\triangle{SHP} \equiv \triangle{SHQ}\) z~zasady kąt-bok-kąt, czyli \(HQ = HP\). Analogicznie pokazujemy równość odcinków \(HQ\) i~\(HP\) z~odcinkiem łączącym \(H\) z~jego rzutem na \(CB\). Oznacza to, że spodek wysokości jest jednakowo odległy od wszystkich krawędzi podstawy, czyli jest środkiem okręgu wpisanego w~podstawę.
+\qed
+\subsubsection*{Zadanie~3.9.}
+Z~twierdzenia o~apotemach wiemy, że jeśli spodek wysokości na ścianę jest środkiem okręgu wpisanego w~tę ścianę, to pozostałe ściany są nachylone do niej pod tym samym kątem. W~ten sposób, rozważając kolejne ściany, dowodzimy równości parami miar wszystkich kątów dwuściennych w~czworościanie, czyli dowodzimy jego foremności.
+\qed

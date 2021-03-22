@@ -1,0 +1,323 @@
+\subsubsection*{Zadanie~3.135.}
+Rozważmy przekrój osiowy tej konfiguracji:
+\begin{mathfigure*}
+    \coordinate (A) at (-3, 0);
+    \coordinate (B) at (3, 0);
+    \coordinate (C) at (0, 6);
+    \coordinate (I) at (0, 1.85);
+    \coordinate (E) at (1.66, 2.68);
+    \coordinate (D) at (0, 0);
+    \drawangle[Orange]{D--C--B};
+    \drawangle*[RoyalBlue]{E--I--C}[\(\alpha\)];
+    \drawangle*[RoyalBlue]{C--B--D}[\(\alpha\)];
+    \draw (I) circle[radius=1.85];
+    \draw (C) -- node[left]{\(h\)} (D);
+    \draw (I) -- node[above, sloped]{\(r\)} (E);
+    \path (I) -- node[left]{\(r\)} (D);
+    \draw (A) -- node[pos=0.75, below]{\(R\)} (B) -- (C) -- node[above left]{\(\ell\)} cycle;
+    \drawrightangle{B--D--C};
+    \drawrightangle{C--E--I};
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above];
+    \fillpoint*{I}[\(I\)][below left];
+    \fillpoint*{E}[\(E\)][above right];
+    \fillpoint*{D}[\(D\)][below];
+\end{mathfigure*}
+\noindent
+Widzimy, że
+\begin{equation*}
+    \triangle{DBC} \sim \triangle{EIC}
+\end{equation*}
+Wynika z~tego, że:
+\begin{gather*}
+    \frac{R}{\ell} = \frac{r}{h - r}\\
+    Rh - Rr = r\ell\\
+    r\ell + Rr = Rh\\
+    r\pars{\ell + R} = Rh\\
+    r = \frac{Rh}{\ell + R}
+\end{gather*}
+Zapiszmy zależność, o~której wiemy z~treści zadania:
+\begin{gather*}
+    S_\p{stożka} = 2 \cdot S_\p{kuli}\\
+    \cancel{\pi} R^2 + \pi R\ell = 2 \cdot 4\cancel{\pi} r^2\\
+    R\pars{\ell + R} = \frac{8R^2h^2}{\pars{\ell + R}^2}
+\end{gather*}
+Z~twierdzenia Pitagorasa możemy wyliczyć i~podstawić:
+\begin{gather*}
+    h^2 = \ell^2 - R^2 = \pars{\ell + R}\pars{\ell - R}\\
+    \cancel{R}\pars{\ell + R} = \frac{8R^{\cancel{2}}\cancel{\pars{\ell + R}}\pars{\ell - R}}{\pars{\ell + R}^{\cancel{2}}}\\
+    \pars{\ell + R} = \frac{8R\pars{\ell - R}}{\ell + R}\\
+    \ell^2 + 2\ell R + R^2 = 8\ell R - 8R^2\\
+    9R^2 - 6\ell R + \ell^2 = 0\\
+    \pars{3R - \ell}^2 = 0\\
+    R = \frac{\ell}{3} \wlor R = -\frac{\ell}{3}
+\end{gather*}
+Możliwe jest tylko pierwsze rozwiązanie, ponieważ drugie jest ujemne.
+\begin{gather*}
+    R = \frac{\ell}{3}\\
+    h
+    = \sqrt{\ell^2 - R^2}
+    = \sqrt{\ell^2 - \frac{\ell^2}{9}}
+    = \sqrt{\frac{8\ell^2}{9}}
+    = \frac{2\sqrt{2}\ell}{3}\\
+    \tan\alpha
+    = \frac{h}{R}
+    = \frac{\frac{2\sqrt{2}\cancel{\ell}}{\cancel{3}}}{\cancel{\frac{\ell}{3}}}
+    = 2\sqrt{2}
+\end{gather*}
+\subsubsection*{Zadanie~3.138}
+Rozważmy przekrój osiowy tej konfiguracji:
+\begin{mathfigure*}
+    \coordinate (A) at (-3, 0);
+    \coordinate (B) at (3, 0);
+    \coordinate (C) at (0, 6);
+    \coordinate (I) at (0, 1.85);
+    \coordinate (D) at (0, 0);
+    \drawangle*[Orange]{B--I--C}[\(\alpha\)];
+    \drawangle*[ForestGreen]{D--I--B}[\(\gamma\)];
+    \drawangle*[RoyalBlue, angle radius=1cm]{I--B--D}[\(\beta\)];
+    \drawangle*[RoyalBlue, angle radius=1cm]{C--B--I}[\(\beta\)];
+    \draw (I) circle[radius=1.85];
+    \draw (C) -- node[left]{\(h\)} (D);
+    \path (I) -- node[left]{\(r\)} (D);
+    \draw (I) -- (B);
+    \draw (A) -- node[pos=0.75, below]{\(R\)} (B) -- node[above right]{\(\ell\)} (C) -- node[above left]{\(\ell\)} cycle;
+    \drawrightangle{B--D--C};
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above];
+    \fillpoint*{I}[\(I\)][left];
+    \fillpoint*{D}[\(D\)][below];
+\end{mathfigure*}
+\noindent
+Dla \(\triangle{DBI}\) mamy:
+\begin{gather*}
+    \frac{r}{R} = \tan\beta\\
+    r = R\tan\beta
+\end{gather*}
+Ponieważ \(I\) jest środkiem okręgu wpisanego, to \(BI\) jest dwusieczną kąta \(\angle{CBD}\), czyli
+\begin{gather*}
+    \mangle{CBI} = \mangle{DBI} = \beta\\
+    \mangle{CBD} = 2\beta
+\end{gather*}
+Możemy teraz skorzystać z~tego faktu dla \(\triangle{DBC}\)
+\begin{gather*}
+    \frac{h}{R} = \tan2\beta\\
+    h = R\tan2\beta
+\end{gather*}
+Teraz możemy wyznaczyć stosunek objętości:
+\begin{equation*}
+    \frac{V_\p{kuli}}{V_\p{stożka}}
+    = \frac{\frac{4}{\cancel{3}}\cancel{\pi} r^3}{\frac{1}{\cancel{3}}\cancel{\pi} R^2h}
+    = \frac{4\pars{R\tan\beta}^3}{R^2 \cdot R\tan2\beta}
+    = \frac{4\cancel{R^2}\tan^3\beta}{\cancel{R^3}\tan2\beta}
+    = \frac{4\tan^3\beta}{\tan2\beta}
+\end{equation*}
+Zauważmy, że znamy kąt \(\beta\):
+\begin{gather*}
+    \beta = 90\degree - \gamma\\
+    \gamma = 180\degree - \alpha\\
+    \beta = \alpha - 90\degree
+\end{gather*}
+Możemy zatem wstawić:
+\begin{equation*}
+    \frac{V_\p{kuli}}{V_\p{stożka}}
+    = \frac{4\tan^3\beta}{\tan2\beta}
+    = \frac{4\tan^3\pars{\alpha - 90\degree}}{\tan\pars{2\alpha - 180\degree}}
+    = \frac{-4\cot^3\alpha}{\tan2\alpha}
+\end{equation*}
+\subsubsection*{Zadanie~3.147.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -0.4);
+    \coordinate (B) at (1, -0.4);
+    \coordinate (C) at (2, 0.4);
+    \coordinate (D) at (-1, 0.4);
+    \coordinate (S) at (0, 4);
+    \coordinate (E) at ($(A)!0.5!(B)$);
+    \coordinate (F) at ($(C)!0.5!(D)$);
+    \draw (A) -- node[below]{\(\sqrt{P}\)} (B) -- node[below, sloped]{\(\sqrt{P}\)} (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw[dashed] (S) -- (D);
+    \draw[Orange] (S) -- node[left]{\(h\)} (E);
+    \draw[Orange, dashed] (E) -- (F) -- (S);
+    \draw (S) -- (A);
+    \draw (S) -- (B);
+    \draw (S) -- (C);
+    \drawrightangle[angle radius=0.4cm]{B--E--S};
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{S}[\(S\)][above];
+    \fillpoint*{E}[\(E\)][above left];
+    \fillpoint*{F}[\(F\)][above left];
+\end{mathfigure*}
+Skoro w~podstawie jest kwadrat o~polu \(P\), to krawędź podstawy ma długość \(\sqrt{P}\). Ściany boczne są czterema trójkątami przystającymi.
+\begin{gather*}
+    Q = 4 \cdot \frac{h\sqrt{P}}{2}\\
+    Q = 2h\sqrt{P}\\
+    h = \frac{Q}{2\sqrt{P}}
+\end{gather*}
+ Teraz możemy wyliczyć wysokość ostrosłupa z~twierdzenia Pitagorasa:
+\begin{equation*}
+    H
+    = \sqrt{h^2 - \pars{\frac{\sqrt{P}}{2}}^2}
+    = \sqrt{h^2 - \frac{P}{4}}
+    = \sqrt{\frac{Q^2}{4P} - \frac{P}{4}}
+\end{equation*}
+Rozważmy przekrój przez wierzchołek \(S\) i~przekątną podstawy:
+\begin{mathfigure*}
+    \coordinate (A) at (-2, 0);
+    \coordinate (C) at (2, 0);
+    \coordinate (S) at (0, 4);
+    \coordinate (G) at (0, 0);
+    \coordinate (O) at ($(G)!0.4!(S)$);
+    \path (S) -- node[left]{\(R\)} (O);
+    \draw (S) -- node[right]{\(H\)} (G);
+    \draw (A) -- node[below]{\(\sqrt{2P}\)} (C) -- node[sloped]{\(|\)} (S) -- node[sloped]{\(|\)} cycle;
+    \draw (O) -- node[above, sloped]{\(R\)} (C);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{C}[\(C\)][below right];
+    \fillpoint*{S}[\(S\)][above];
+    \fillpoint*{G}[\(G\)][above left];
+    \fillpoint*{O}[\(O\)][left];
+\end{mathfigure*}
+\begin{gather*}
+    R^2 = GC^2 + GO^2\\
+    R^2
+    = \pars{\frac{\sqrt{2P}}{2}}^2 + \pars{\abs{H - R}}^2
+    = \frac{P}{2} + H^2 - 2HR + R^2\\
+    2HR = \frac{P}{2} + H^2\\
+    R
+    = \frac{\frac{P}{2} + H^2}{2H}
+    = \frac{\frac{P}{2} + \frac{Q^2}{4P} - \frac{P}{4}}{2\sqrt{\frac{Q^2}{4P} - \frac{P}{4}}}
+    = \frac{\frac{P}{4} + \frac{Q^2}{4P}}{2\sqrt{\frac{Q^2}{4P} - \frac{P}{4}}}
+    = \frac{P + \frac{Q^2}{P}}{4\sqrt{\frac{Q^2}{P} - P}}
+    = \frac{P^2 + Q^2}{4P\sqrt{\frac{Q^2}{P} - P}}
+    = \frac{P^2 + Q^2}{4\sqrt{PQ^2 - P^3}}
+\end{gather*}
+\subsubsection*{Zadanie~3.152.}
+Wpiszmy ten czworościan w~równoległościan. Na pewno dwie pary przeciwległych krawędzi są równe, więc ściany boczne muszą być prostokątami, ponieważ te krawędzie boczne będą ich przekątnymi, czyli będzie to graniastosłup prosty. Natomiast w~podstawie będzie równoległobok, którego jedna przekątna jest dwukrotnie dłuższa od drugiej.
+\begin{mathfigure*}
+    \coordinate (A) at (-3, -0.4);
+    \coordinate (Bprime) at (1, -0.4);
+    \coordinate (C) at (3, 0.4);
+    \coordinate (Dprime) at (-1, 0.4);
+    \coordinate (Aprime) at (-3, 3.6);
+    \coordinate (B) at (1, 3.6);
+    \coordinate (Cprime) at (3, 4.4);
+    \coordinate (D) at (-1, 4.4);
+    \coordinate (E) at ($(Aprime)!0.5!(Cprime)$);
+    \drawrightangle[angle radius=0.4cm]{B--E--Cprime};
+    \draw[dotted] (E) -- (Cprime);
+    \draw[dashed] (Dprime) -- (D);
+    \draw[dashed, Orange] (C) -- node[above, sloped]{\(a\)} (D) -- node[above, sloped]{\(a\)} (A);
+    \draw (A) -- node[below]{\(x\)} (Bprime) -- node[below, sloped]{\(z\)} (C);
+    \draw[Orange] (A)
+    -- node[below, sloped]{\(a\)} (C)
+    -- node[above, sloped]{\(a\)} (B)
+    -- node[above, sloped]{\(\frac{a}{2}\)} (D);
+    \draw[Orange] (A) -- node[above, sloped]{\(a\)} (B);
+    \draw[dashed] (C) -- (Dprime) -- (A);
+    \draw (A) -- (Aprime);
+    \draw (Bprime) -- (B);
+    \draw (C) -- node[right]{\(y\)} (Cprime);
+    \draw (Aprime) -- (B) -- (Cprime) -- (D) -- cycle;
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][above right];
+    \fillpoint*{C}[\(C\)][right];
+    \fillpoint*{D}[\(D\)][above];
+    \fillpoint*{Aprime}[\(A'\)][above left];
+    \fillpoint*{Bprime}[\(B'\)][below right];
+    \fillpoint*{Cprime}[\(C'\)][above right];
+    \fillpoint*{Dprime}[\(D'\)][above left];
+    \fillpoint*{E}[\(E\)][below left];
+\end{mathfigure*}
+\noindent
+Niech \(E\) będzie środkiem krawędzi \(BD\). Wiemy z~twierdzenia Pitagorasa, że
+\begin{gather*}
+    x^2 + y^2 = a^2 = z^2 + y^2\\
+    x^2 = z^2\\
+    x = z
+\end{gather*}
+Zatem w~podstawie jest tak naprawdę romb, a~\(\triangle{BEC'}\) jest prostokątny. Możemy zatem wyliczyć długość boku rombu jako
+\begin{equation*}
+    x
+    = \sqrt{\pars{\frac{a}{2}}^2 + \pars{\frac{a}{4}}^2}
+    = \sqrt{\frac{a^2}{4} + \frac{a^2}{16}}
+    = \sqrt{\frac{5a^2}{16}}
+    = \frac{a\sqrt{5}}{4}
+\end{equation*}
+Możemy także wyliczyć wysokość graniastosłupa:
+\begin{equation*}
+    y
+    = \sqrt{a^2 - \frac{5a^2}{16}}
+    = \sqrt{\frac{11a^2}{16}}
+    = \frac{a\sqrt{11}}{4}
+\end{equation*}
+\begin{mathfigure*}
+    \coordinate (A) at (-3, -0.4);
+    \coordinate (Bprime) at (1, -0.4);
+    \coordinate (C) at (3, 0.4);
+    \coordinate (Dprime) at (-1, 0.4);
+    \coordinate (Aprime) at (-3, 3.6);
+    \coordinate (B) at (1, 3.6);
+    \coordinate (Cprime) at (3, 4.4);
+    \coordinate (D) at (-1, 4.4);
+    \coordinate (E) at ($(Aprime)!0.5!(Cprime)$);
+    \coordinate (F) at ($(A)!0.5!(C)$);
+    \coordinate (Q) at ($(F)!0.4!(E)$);
+    \draw[dotted] (E) -- (Cprime);
+    \draw[dashed] (Dprime) -- (D);
+    \draw[dotted] (E) -- (F);
+    \draw[dashed, Orange] (C) -- node[above, sloped]{\(a\)} (D) -- node[above, sloped]{\(a\)} (A);
+    \draw (A) -- node[below]{\(\frac{a\sqrt{5}}{4}\)} (Bprime) -- node[below, sloped]{\(\frac{a\sqrt{5}}{4}\)} (C);
+    \draw[Orange] (A)
+    -- node[below, sloped]{\(a\)} (C)
+    -- node[above, sloped]{\(a\)} (B)
+    -- node[above, sloped]{\(\frac{a}{2}\)} (D);
+    \draw[Orange] (A) -- node[above, sloped]{\(a\)} (B);
+    \draw[dashed] (C) -- (Dprime) -- (A);
+    \draw (A) -- (Aprime);
+    \draw (Bprime) -- (B);
+    \draw (C) -- node[right]{\(\frac{a\sqrt{11}}{4}\)} (Cprime);
+    \draw (Aprime) -- (B) -- (Cprime) -- (D) -- cycle;
+    \fillpoint*{A}[\(A\)][below left];
+    \path (E) -- node[left]{\(q\)} (Q);
+    \fillpoint*{B}[\(B\)][above right];
+    \fillpoint*{C}[\(C\)][right];
+    \fillpoint*{D}[\(D\)][above];
+    \fillpoint*{Aprime}[\(A'\)][above left];
+    \fillpoint*{Bprime}[\(B'\)][below right];
+    \fillpoint*{Cprime}[\(C'\)][above right];
+    \fillpoint*{Dprime}[\(D'\)][above left];
+    \fillpoint*{E}[\(E\)][below left];
+    \fillpoint*{F}[\(F\)][above left];
+    \fillpoint*{Q}[\(Q\)][above left];
+\end{mathfigure*}
+\noindent
+Oznaczmy przez \(F\) środek krawędzi \(AC\). Środek sfery opisanej na czworościanie będzie leżał naprostej \(EF\), ponieważ jest to zbiór takich punktów \(Q\), że \(AQ = CQ\) i~\(BQ = DQ\), jako że zawiera prostopadłe do podstaw symetralne odcinków \(AC\) i~\(BD\). Tutaj oznaczmy przez \(Q\) środek sfery opisanej na czworościanie, a~przez \(q\) długość odcinka \(EQ\). Zauważmy, że punkt \(Q\) leży na pewno po tej stronie punktu \(E\) co punkt \(F\), ponieważ odcinek \(BD\) jest krótszy od odcinka \(AC\). Zatem \(FQ = \abs{\frac{a\sqrt{11}}{4} - q}\). Możemy zapisać równość promieni następująco:
+\begin{gather*}
+    QB = QC\\
+    QB^2 = QC^2\\
+    \pars{\frac{a}{4}}^2 + q^2 = \pars{\frac{a}{2}}^2 + \pars{\frac{a\sqrt{11}}{4} - q}^2\\
+    \frac{a^2}{16} + q^2 = \frac{a^2}{4} + \frac{11a^2}{16} - \frac{aq\sqrt{11}}{2} + q^2\\
+    \frac{aq\sqrt{11}}{2} = \frac{14a^2}{16}\\
+    q\sqrt{11} = \frac{7a}{4}\\
+    q = \frac{7a}{4\sqrt{11}}
+\end{gather*}
+Możemy teraz wyznaczyć promień:
+\begin{equation*}
+    R
+    = \sqrt{\frac{a^2}{16} + \frac{49a^2}{16 \cdot 11}}
+    = \sqrt{\frac{11a^2}{16 \cdot 11} + \frac{49a^2}{16 \cdot 11}}
+    = \sqrt{\frac{15a^2}{44}}
+    = \frac{a}{2}\sqrt{\frac{15}{11}}
+\end{equation*}
+Damy teraz radę wyznaczyć stosunek:
+\begin{equation*}
+    \frac{R}{\frac{a}{2}}
+    = \frac{\cancel{\frac{a}{2}}\sqrt{\frac{15}{11}}}{\cancel{\frac{a}{2}}}
+    = \sqrt{\frac{15}{11}}
+\end{equation*}

@@ -1,0 +1,641 @@
+\subsubsection*{Zadanie~1.20.}
+Rozważmy na początek kształt podstawy:
+\begin{mathfigure*}
+    \coordinate (B) at (0, 0);
+    \coordinate (A) at (3, 0);
+    \coordinate (C) at (5, 2*\fpeval{sqrt(3)});
+    \coordinate (X) at (5, 0);
+    \drawangle*{C--A--B}[\tiny\(120\degree\)];
+    \drawrightangle{C--X--A};
+    \drawangle*{X--A--C}[\tiny\(60\degree\)];
+    \draw[dashed] (A) -- node[below]{\(2\)} (X) -- node[right]{\(2\sqrt{3}\)} (C);
+    \draw (B) -- node[below]{\(3\)} (A) -- node[below]{\(4\)} (C) -- cycle;
+    \fillpoint*{A}[\(A\)][below];
+    \fillpoint*{B}[\(B\)][below left];
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{X}[\(X\)][below right];
+\end{mathfigure*}
+\noindent
+Możemy obliczyć pole podstawy:
+\begin{equation*}
+    P_\p{P}
+    = \frac{1}{2} \cdot AB \cdot AC \cdot \sin120\degree
+    = \frac{1}{2} \cdot 3 \cdot 4 \cdot \frac{\sqrt{3}}{2}
+    = 3\sqrt{3}
+\end{equation*}
+Możemy także obliczyć długość boku \(BC\):
+\begin{gather*}
+    BC = \sqrt{BD^2 + CD^2}
+    = \sqrt{\pars{AB + AD}^2 + CD^2}
+    = \sqrt{\pars{3 + 2}^2 + \pars{2\sqrt{3}}^2}
+    = \sqrt{25 + 12}
+    = \sqrt{37}
+\end{gather*}
+Następnie rozrysujmy już cały graniastosłup:
+\begin{mathfigure*}
+    \coordinate (C) at (0, 0);
+    \coordinate (A) at (-2, 0);
+    \coordinate (B) at (-3, 1);
+    \coordinate (Cprime) at (0, 4);
+    \coordinate (Aprime) at (-2, 4);
+    \coordinate (Bprime) at (-3, 5);
+    \drawangle*[angle radius=0.4cm]{Cprime--Aprime--Bprime}[\tiny\(120\degree\)];
+    \drawangle*{C--B--Cprime}[\tiny\(60\degree\)];
+    \drawrightangle{Cprime--C--B};
+    \draw (B) -- node[below, sloped]{\(3\)} (A) -- node[below]{\(4\)} (C);
+    \draw[dashed] (B) -- node[above, sloped]{\(\sqrt{37}\)} (C);
+    \draw (Aprime) -- (Bprime) -- (Cprime) -- cycle;
+    \draw[Orange] (Cprime) -- (B);
+    \draw (A) -- (Aprime);
+    \draw (B) -- (Bprime);
+    \draw (C) -- node[right]{\(\sqrt{111}\)} (Cprime);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][left];
+    \fillpoint*{C}[\(C\)][below right];
+    \fillpoint*{Aprime}[\(A'\)][below left];
+    \fillpoint*{Bprime}[\(B'\)][above left];
+    \fillpoint*{Cprime}[\(C'\)][above right];
+\end{mathfigure*}
+\noindent
+Trójkąt \(\triangle{C'BC}\) jest trójkątem \(30\degree\)-\(60\degree\)-\(90\degree\), więc
+\begin{equation*}
+    h = CC' = BC \cdot \sqrt{3}
+    = \sqrt{37} \cdot \sqrt{3}
+    = \sqrt{111}
+\end{equation*}
+Możemy teraz obliczyć pole powierzchni całkowitej i~objętość:
+\begin{gather*}
+    \begin{split}
+        P_\p{C}
+        &= 2 \cdot P_\p{P} + h \cdot \pars{AB + BC + CA}
+        = 2 \cdot 6\sqrt{3} + \sqrt{111} \cdot \pars{3 + 4 + \sqrt{37}}
+        = 12\sqrt{3} + 7\sqrt{111} + 37\sqrt{3}\\
+        &= 43\sqrt{3} + 7\sqrt{111}
+    \end{split}\\
+    \begin{split}
+        V
+        = P_\p{P} \cdot h
+        = 3\sqrt{3} \cdot \sqrt{111}
+        = 9\sqrt{37}
+    \end{split}
+\end{gather*}
+\subsubsection*{Zadanie~1.22.}
+Skoro znamy pole powierzchni całkowitej, to możemy obliczyć długość krawędzi sześcianu:
+\begin{gather*}
+    P_\p{C} = 6a^2\\
+    6a^2 = 96\\
+    a^2 = 16\\
+    a = 4
+\end{gather*}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -0.6);
+    \coordinate (B) at (1, -0.6);
+    \coordinate (C) at (2, 0.6);
+    \coordinate (D) at (-1, 0.6);
+    \coordinate (E) at (-2, 2.4);
+    \coordinate (F) at (1, 2.4);
+    \coordinate (G) at (2, 3.6);
+    \coordinate (H) at (-1, 3.6);
+    \coordinate (S) at ($(A)!0.5!(G)$);
+    \coordinate (T) at ($(B)!0.5!(G)$);
+    \drawrightangle[angle radius=0.3cm]{G--T--S};
+    \draw (A) -- node[below]{\(4\)} (B) -- node[below, sloped]{\(4\)} (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw[dashed, Orange] (G) -- (A);
+    \draw[Orange] (S) -- (T) -- (G);
+    \draw[dashed] (H) -- (D);
+    \draw (A) -- (E);
+    \draw (B) -- (F);
+    \draw (C) -- node[right]{\(4\)} (G);
+    \draw (E) -- (F) -- (G) -- (H) -- cycle;
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{G}[\(G\)][above right];
+    \fillpoint*{S}[\(S\)][above left];
+    \draw[dotted] (B) -- (T);
+    \fillpoint*{T}[\(T\)][below right];
+\end{mathfigure*}
+\noindent
+Niech \(S\) będzie środkiem przekątnej sześcianu, a~\(T\) środkiem ściany. Odcinek \(ST\) jest wtedy równoległy do podstawy, czyli prostopadły do ściany, której \(T\) jest środkiem. Zatem \(ST \perp GT\) Możemy wyznaczyć długości:
+\begin{gather*}
+    ST = \frac{1}{2} \cdot 4 = 2\\
+    GT = \frac{1}{2} \cdot 4\sqrt{2} = 2\sqrt{2}
+    SG = \frac{1}{2} \cdot 4\sqrt{3} = 2\sqrt{3}
+\end{gather*}
+Następnie obliczymy pole \(\triangle{STG}\):
+\begin{equation*}
+    \area{STG} = \frac{1}{2} \cdot 2 \cdot 2\sqrt{2} = 2\sqrt{2}
+\end{equation*}
+Zauważmy, że odległość \(T\) od przekątnej sześcianu to wysokość w~\(\triangle{STG}\) opuszczona z~wierzchołka \(T\). Zatem
+\begin{gather*}
+    h = \frac{2 \cdot \area{STG}}{SG}
+    = \frac{2 \cdot 2\sqrt{2}}{2\sqrt{3}}
+    = \frac{2\sqrt{2}}{\sqrt{3}}
+    = \frac{2}{3}\sqrt{6}
+\end{gather*}
+\subsubsection*{Zadanie~1.24.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -0.6);
+    \coordinate (B) at (1, -0.6);
+    \coordinate (C) at (2, 0.6);
+    \coordinate (D) at (-1, 0.6);
+    \coordinate (E) at (-2, 2.4);
+    \coordinate (F) at (1, 2.4);
+    \coordinate (G) at (2, 3.6);
+    \coordinate (H) at (-1, 3.6);
+    \coordinate (S) at (2, 0.6 + 0.5*\fpeval{sqrt(6)});
+    \coordinate (T) at ($(A)!0.5!(C)$);
+    \draw (A) -- node[below]{\(3\)} (B) -- node[below, sloped]{\(3\)} (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw[dashed] (H) -- (D);
+    \drawangle*[angle radius=0.8cm]{C--T--S}[\tiny\(30\degree\)];
+    \drawrightangle[angle radius=0.2cm]{S--T--D};
+    \draw[RoyalBlue, dashed] (S) -- (T) -- (C);
+    \draw[Orange] (B) -- (S) -- (D) -- cycle;
+    \draw (A) -- node[left]{\(3\)} (E);
+    \draw (B) -- (F);
+    \draw (C) -- (G);
+    \draw (E) -- (F) -- (G) -- (H) -- cycle;
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{S}[\(S\)][right];
+    \fillpoint*{T}[\(T\)][below left];
+\end{mathfigure*}
+Punkt \(T\) jest środkiem podstawy. W~podstawie jest kwadrat, więc \(CT = \frac{3\sqrt{2}}{2}\). Skoro kąt \(\angle{CTS}\) ma miarę \(30\degree\), to
+\begin{equation*}
+    ST = \frac{2 \cdot CT}{\sqrt{3}}
+    = \frac{2 \cdot \frac{3\sqrt{2}}{2}}{\sqrt{3}}
+    = \frac{3\sqrt{2}}{\sqrt{3}}
+    = \sqrt{3} \cdot \sqrt{2}
+    = \sqrt{6}
+\end{equation*}
+Odcinek \(BD\) jest prostopadły do \(CT\), które jest rzutem odcinka \(ST\) na płaszczyznę podstawy, więc z~twierdzenia o~trzech prostych prostopadłych wynika, że \(ST \perp BD\), czyli \(ST\) jest wysokością w~\(\triangle{BDS}\), który stanowi przekrój. Zatem
+\begin{equation*}
+    \area{BDS}
+    = \frac{1}{2} \cdot BD \cdot ST
+    = \frac{1}{2} \cdot 3\sqrt{2} \cdot \sqrt{6}
+    = \frac{1}{2} \cdot 3\sqrt{2} \cdot \sqrt{2} \cdot \sqrt{3}
+    = \frac{1}{2} \cdot 3 \cdot 2 \cdot \sqrt{3}
+    = 3\sqrt{3}
+\end{equation*}
+Na obwód natomiast składają się odcinki \(BD\) i~\(SB = SD\). Obliczmy zatem \(SD\). Ponownie, ponieważ \(\mangle{CTS} = 30\degree\), to
+\begin{equation*}
+    SC = \frac{ST}{2} = \frac{\sqrt{6}}{2}
+\end{equation*}
+Z~twierdzenia Pitagorasa w~trójkącie prostokątnym \(\triangle{SCB}\) mamy:
+\begin{equation*}
+    SB = \sqrt{3^2 + \pars{\frac{\sqrt{6}}{2}}^2}
+    = \sqrt{9 + \frac{6}{4}}
+    = \sqrt{\frac{21}{2}}
+\end{equation*}
+Zatem
+\begin{equation*}
+    \p{Obw.}_{\triangle{BDS}}
+    = BD + 2 \cdot SB
+    = 3\sqrt{2} + 2 \cdot \sqrt{\frac{21}{2}}
+    = 3\sqrt{2} + \sqrt{42}
+\end{equation*}
+\subsubsection*{Zadanie~1.26.}
+Ponieważ graniastosłup jest prawidłowy sześciokątny, to w~podstawie jest sześciokąt foremny. W~takim wielokącie najdłuższa przekątna jest średnicą okręgu opisanego na nim.
+\begin{mathfigure*}
+    \coordinate (S) at (0, 0);
+    \coordinate (A) at (-1.5, -1);
+    \coordinate (B) at (0.5, -1);
+    \coordinate (C) at (2.5, 0);
+    \coordinate (D) at (1.5, 1);
+    \coordinate (E) at (-0.5, 1);
+    \coordinate (F) at (-2.5, 0);
+    \coordinate (G) at (-1.5, 5);
+    \coordinate (H) at (0.5, 5);
+    \coordinate (I) at (2.5, 6);
+    \coordinate (J) at (1.5, 7);
+    \coordinate (K) at (-0.5, 7);
+    \coordinate (L) at (-2.5, 6);
+    \draw (F) -- (A) -- node[below]{\(2\sqrt{3}\)} (B) -- (C);
+    \draw[dashed] (C) -- (D) -- (E) -- (F);
+    \drawangle*{G--D--A}[\tiny\(60\degree\)];
+    \draw[Orange] (D) -- node[pos=0.75, above, sloped]{\(2\sqrt{3}\)} (A);
+    \draw[Orange, dotted] (E) -- (B);
+    \draw[Orange, dotted] (F) -- (C);
+    \draw[RoyalBlue, dashed] (G) -- (D);
+    \draw (A) -- (G);
+    \draw (B) -- (H);
+    \draw (C) -- (I);
+    \draw (F) -- node[left]{\(12\)} (L);
+    \draw[dashed] (E) -- (K);
+    \draw[dashed] (D) -- (J);
+    \draw (G) -- (H) -- (I) -- (J) -- (K) -- (L) -- cycle;
+    \fillpoint{S};
+\end{mathfigure*}
+\noindent
+Podstawa składa się z~sześciu przystających trójkątów równobocznych o~boku długości \(2\sqrt{3}\). Zatem
+\begin{equation*}
+    P_\p{P}
+    = 6 \cdot \frac{\pars{2\sqrt{3}}^2 \cdot \sqrt{3}}{4}
+    = 6 \cdot 3\sqrt{3}
+    = 18\sqrt{3}
+\end{equation*}
+Wysokość natomiast policzymy łatwo z~własności trójkąta \(30\degree\)-\(60\degree\)-\(90\degree\):
+\begin{equation*}
+    h = 2r \cdot \sqrt{3}
+    = 2 \cdot 2\sqrt{3} \cdot \sqrt{3}
+    = 12
+\end{equation*}
+Zatem
+\begin{equation*}
+    V = P_\p{P} \cdot h
+    = 18\sqrt{3} \cdot 12
+    = 216\sqrt{3}
+\end{equation*}
+\subsubsection*{Zadanie~1.30.}
+Przyjmijmy, że długości krawędzi tego prostopadłościanu to, w~kolejności niemalejącej, \(a\), \(aq\), \(aq^2\), gdzie \(q \geq 1\) jest ilorazem tego ciągu geometrycznego. Możemy za pomocą tych oznaczeń zapisać objętość prostopadłościanu:
+\begin{gather*}
+    V = a \cdot aq \cdot aq^2\\
+    a^3q^3 = 8
+\end{gather*}
+oraz jego pole powierzchni całkowitej:
+\begin{gather*}
+    P_\p{C}
+    = 2 \cdot \pars{a \cdot aq + aq \cdot aq^2 + aq^2 \cdot a}
+    = 2 \cdot \pars{a^2q + a^2q^3 + a^2q^2}
+    = 2 \cdot a^2\pars{q + q^2 + q^3}\\
+    2a^2\pars{q + q^2 + q^3} = 28
+    a^2\pars{q + q^2 + q^3} = 14
+\end{gather*}
+Pozostaje rozwiązać następujący układ równań:
+\begin{equation*}
+    \begin{cases}
+        a^3q^3 = 8 \implies aq = 2 \implies q = \frac{2}{a}\\
+        a^2\pars{q + q^2 + q^3} = 14
+    \end{cases}
+\end{equation*}
+Możemy podstawić \(q\) wyliczone z~pierwszego równania do drugiego równania:
+\begin{gather*}
+    a^2\pars{\frac{2}{a} + \frac{4}{a^2} + \frac{8}{a^3}} = 28\\
+    2a + 4 + \frac{8}{a} = 14\\
+    2a^2 + 4a + 8 = 14a\\
+    a^2 + 2a + 4 = 7a\\
+    a^2 - 5a + 4 = 0\\
+    \Delta = \pars{-5}^2 - 4 \cdot 1 \cdot 4 = 25 - 16 = 9\\
+    \sqrt{\Delta} = 3\\
+    a_1 = \frac{-\pars{-5} - \sqrt{\Delta}}{2} = \frac{5 - 3}{2} = 1 \implies q_1 = \frac{2}{2} = 1\\
+    a_2 = \frac{-\pars{-5} + \sqrt{\Delta}}{2} = \frac{5 + 3}{2} = 4 \implies q_2 = \frac{2}{4} = \frac{1}{2}
+\end{gather*}
+Naszemu założeniu, że \(q \geq 1\), odpowiada pierwsze rozwiązanie. Mamy zatem:
+\begin{equation*}
+    \begin{cases}
+        a = 1\\
+        b = 2\\
+        c = 4
+    \end{cases}
+\end{equation*}
+Długość przekątnej wyznaczamy z~twierdzenia Pitagorasa dla trzech wymiarów:
+\begin{equation*}
+    d = \sqrt{a^2 + b^2 + c^2}
+    = \sqrt{1^2 + 2^2 + 4^2}
+    = \sqrt{1 + 4 + 16}
+    = \sqrt{21}
+\end{equation*}
+Długość przekątnej tego prostopadłościanu wynosi \(\sqrt{21}\).
+\subsubsection*{Zadanie~1.31.}
+Oznaczmy długości krawędzi tego prostopadłościanu przez \(2n\), \(2n + 2\), \(2n + 4\), gdzie \(n \in \natural\). Wtedy
+\begin{gather*}
+    \begin{split}
+        P_\p{C}
+        &= 2 \cdot \pars{2n \cdot \pars{2n + 2} + \pars{2n + 2} \cdot \pars{2n + 4} + \pars{2n + 4} \cdot 2n}
+        = 2 \cdot \pars{4n^2 + 4n + 4n^2 + 12n + 8 + 4n^2 + 8n}\\
+        &= 2 \cdot \pars{12n^2 + 24n + 8}
+    \end{split}\\
+    592 = 2 \cdot \pars{12n^2 + 24n + 8}\\
+    12n^2 + 24n + 8 = 296\\
+    3n^2 + 6n + 2 = 74\\
+    3n^2 + 6n - 72 = 0\\
+    n^2 + 2n - 24 = 0\\
+    \Delta = 2^2 - 4 \cdot 1 \cdot \pars{-24} = 100\\
+    \sqrt{\Delta} = 10\\
+    n_1 = \frac{-2 - \sqrt{\Delta}}{2} < 0\\
+    n = n_2 = \frac{-2 + \sqrt{\Delta}}{2}
+    = \frac{-2 + 10}{2} = 4
+\end{gather*}
+Zatem długości krawędzi tego prostopadłościanu to:
+\begin{gather*}
+    a = 2n = 8\\
+    b = 2n + 2 = 10\\
+    c = 2n + 4 = 12
+\end{gather*}
+Objętość prostopadłościanu jest iloczynem długości jego krawędzi:
+\begin{equation*}
+    V = abc = 8 \cdot 10 \cdot 12 = 960
+\end{equation*}
+Długość przekątnej wyliczamy z~twierdzenia Pitagorasa dla trzech wymiarów:
+\begin{equation*}
+    d = \sqrt{a^2 + b^2 + c^2}
+    = \sqrt{8^2 + 10^2 + 12^2}
+    = \sqrt{64 + 100 + 144}
+    = \sqrt{308}
+\end{equation*}
+Objętość tego prostopadłościanu wynosi \(960\), a~długość jego przekątnej wynosi \(\sqrt{308}\).
+\subsubsection*{Zadanie~1.36.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2.5, -0.6);
+    \coordinate (B) at (1, -0.6);
+    \coordinate (C) at (2.5, 0.6);
+    \coordinate (D) at (-1, 0.6);
+    \coordinate (E) at (-2.5, 4.4);
+    \coordinate (F) at (1, 4.4);
+    \coordinate (G) at (2.5, 5.6);
+    \coordinate (H) at (-1, 5.6);
+    \draw (A) -- node[below]{\(a\)} (B) -- node[below, sloped]{\(b\)} (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \drawrightangle[angle radius=0.3cm]{C--B--A};
+    \drawrightangle[angle radius=0.3cm]{G--C--A};
+    \drawangle*[angle radius=1.2cm, ForestGreen]{C--A--G}[\(\alpha\)];
+    \drawangle*[angle radius=1.2cm, Magenta]{A--C--B}[\(\beta\)];
+    \draw[RoyalBlue] (A) -- node[above, sloped]{\(x\)} (C);
+    \draw[Orange] (G) -- node[above, sloped]{\(d\)} (A);
+    \draw[dashed] (H) -- (D);
+    \draw (A) -- (E);
+    \draw (B) -- (F);
+    \draw (C) -- node[right]{\(h\)} (G);
+    \draw (E) -- (F) -- (G) -- (H) -- cycle;
+\end{mathfigure*}
+\begin{gather*}
+    h = d\sin\alpha\\
+    x = d\cos\alpha\\
+    a = x\sin\beta = d\cos\alpha\sin\beta\\
+    b = x\cos\beta = d\cos\alpha\cos\beta\\
+    V = abh
+    = d\cos\alpha\sin\beta \cdot d\cos\alpha\cos\beta \cdot d\sin\alpha
+    = d^3\sin\alpha\cos^2\alpha\sin\beta\cos\beta
+\end{gather*}
+\subsubsection*{Zadanie~1.38.}
+W~graniastosłupie prostym ściany boczne są prostopadłe do płaszczyzn podstaw, więc kąty między ścianami bocznymi są takie same jak odpowiednie kąty w~podstawach. Dlatego w~graniastosłupie prawidłowym trójkątnym, który jest graniastosłupem prostym o~podstawie trójkąta foremnego, kąty między sąsiednimi ścianami bocznymi wynoszą \(60\degree\). Zatem cosinus tego kąta wynosi
+\begin{equation*}
+    \cos60\degree = \frac{1}{2}
+\end{equation*}
+\subsubsection*{Zadanie~1.39.}
+\begin{mathfigure*}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (1, 1);
+    \coordinate (C) at (-2, 1);
+    \coordinate (D) at (0, 4);
+    \coordinate (E) at (1, 5);
+    \coordinate (F) at (-2, 5);
+    \coordinate (P) at ($(F)!0.5!(D)$);
+    \drawrightangle[angle radius=0.2cm]{E--P--F};
+    \drawrightangle[angle radius=0.3cm]{A--P--E};
+    \drawangle*[ForestGreen, angle radius=0.9cm]{E--A--P}[\(\alpha\)];
+    \draw (C) -- node[below, sloped]{\(a\)} (A) -- node[below, sloped]{\(a\)} (B);
+    \draw[dashed] (B) -- (C);
+    \draw (D) -- (E) -- node[above]{\(a\)} (F) -- cycle;
+    \draw[dashed] (E) -- node[below, sloped]{\tiny\(\frac{a\sqrt{3}}{2}\)} (P);
+    \draw[Orange] (E) -- node[above, sloped]{\(d\)} (A);
+    \drawrightangle[angle radius=0.3cm]{E--B--A};
+    \draw[dashed] (P) -- (A);
+    \draw (A) -- (D);
+    \draw (B) -- node[right]{\(h\)} (E);
+    \draw (C) -- (F);
+    \fillpoint*{A}[\(A\)][below];
+    \fillpoint*{B}[\(B\)][right];
+    \fillpoint*{C}[\(C\)][left];
+    \fillpoint*{D}[\(D\)][below right];
+    \fillpoint*{E}[\(E\)][above right];
+    \fillpoint*{F}[\(F\)][above left];
+    \fillpoint*{P}[\(P\)][below left];
+\end{mathfigure*}
+Kąt między prostą a~płaszczyzną to kąt między tą prostą a~jej rzutem na tę płaszczyznę. Natomiast rzut prostej na płaszyznę to prosta przechodząca przez rzut dowolnego punktu wyjściowej prostej na płaszczyznę a~punktem przecięcia wyjściowej prostej z~płaszczyzną. Rzutem punktu \(E\) na~płaszczyznę \(ADFC\) jest punkt \(P\) będący środkiem odcinka \(DF\), ponieważ \(EP\) jest wysokością trójkąta równobocznego \(\triangle{DEF}\). Zatem rzutem prostej \(EA\) na płaszczyznę \(ADFC\) jest prosta \(PA\). W~związku z~tym
+\begin{equation*}
+    \alpha \coloneqq \mangle{EAP}
+\end{equation*}
+Wiemy, że \(EP = \frac{a\sqrt{3}}{2}\) ponieważ jest to wysokość trójkąta równobocznego o~boku \(a\). Możemy zapisać w~\(\triangle{EAP}\):
+\begin{gather*}
+    \frac{EP}{EA} = \sin\alpha\\
+    \frac{\frac{a\sqrt{3}}{2}}{d} = \sin\alpha\\
+    d = \frac{\frac{a\sqrt{3}}{2}}{\sin\alpha}\\
+    d = \frac{a\sqrt{3}}{2\sin\alpha}
+\end{gather*}
+Zatem z~twierdzenia Pitagorasa w~\(\triangle{ABE}\):
+\begin{equation*}
+    h = \sqrt{d^2 - a^2}
+    = \sqrt{\pars{\frac{a\sqrt{3}}{2}}^2 - a^2}
+    = \sqrt{\frac{3a^2}{4\sin^2\alpha} - a^2}
+    = a\sqrt{\frac{3}{4\sin^2\alpha} - 1}
+\end{equation*}
+Możemy teraz obliczyć objętość:
+\begin{gather*}
+    P_\p{P} = \frac{a^2\sqrt{3}}{4}\\
+    V = P_\p{P} \cdot h
+    = \frac{a^2\sqrt{3}}{4} \cdot a\sqrt{\frac{3}{4\sin^2\alpha} - 1}
+    = \frac{a^3\sqrt{\frac{9}{4\sin^2\alpha} - 3}}{4}
+\end{gather*}
+\subsubsection*{Zadanie~1.42.}
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -0.4);
+    \coordinate (B) at (1, -0.4);
+    \coordinate (C) at (2, 0.4);
+    \coordinate (D) at (-1, 0.4);
+    \coordinate (E) at (-3, 3.6);
+    \coordinate (F) at (0, 3.6);
+    \coordinate (G) at (1, 4.4);
+    \coordinate (H) at (-2, 4.4);
+    \coordinate (O) at ($(A)!0.5!(C)$);
+    \coordinate (P) at ($(A)!0.5!(B)$);
+    \drawrightangle[angle radius=0.3cm]{F--P--A};
+    \draw[dashed] (O) -- (B);
+    \draw[dashed] (O) -- (P);
+    \draw (F) -- node[right]{\(h\)} (O);
+    \draw[dashed] (D) -- (H);
+    \draw[Orange] (A) -- node[above left]{\(b\)} (F);
+    \draw[Orange] (C) -- node[above right]{\(b\)} (F);
+    \draw[Orange] (D) -- (F);
+    \draw (A) -- (B) -- (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw (E) -- (F) -- (G) -- node[above]{\(a\)} (H) -- node[above left]{\(a\)} cycle;
+    \draw (A) -- (E);
+    \draw (B) -- (F);
+    \draw (C) -- (G);
+    \draw[Orange, dashed] (B) -- (F);
+    \draw[RoyalBlue] (F) -- node[left]{\(p\)} (P);
+    \fillpoint*{A}[\(A\)][below left];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{C}[\(C\)][right];
+    \fillpoint*{D}[\(D\)][left];
+    \fillpoint*{E}[\(E\)][left];
+    \fillpoint*{F}[\(F\)][right];
+    \fillpoint*{G}[\(G\)][above right];
+    \fillpoint*{H}[\(H\)][above];
+    \fillpoint*{O}[\(O\)][above right];
+    \fillpoint*{P}[\(P\)][below];
+\end{mathfigure*}
+Na rysunku przyjąłem bez straty ogólności, że tym wierzchołkiem górnej podstawy, który jest odległy o~\(b\) od każdego z~wierzchołków dolnej podstawy, jest wierzchołek \(F\). Oznacza to, że spodek wysokości ostrosłupa \(ABCDF\), czyli punkt \(O\), jest środkiem okręgu opisanego na podstawie, czyli jest środkiem kwadratu \(ABCD\). Punkt \(P\) jest środkiem odcinka \(AB\), czyli spodkiem wysokości trójkąta równoramiennego \(ABF\) opuszczonej z~wierzchołka \(F\). Kąty \(\angle{BOF}\) i~\(\angle{POF}\) są proste. Odcinek \(BO\) jest połową przekątnej kwadratu, więc
+\begin{equation*}
+    BO = \frac{a\sqrt{2}}{2}
+\end{equation*}
+Możemy teraz obliczyć z~twierdzenia Pitagorasa dla \(\triangle{BOF}\):
+\begin{equation*}
+    h = FO = \sqrt{b^2 - BO^2}
+    = \sqrt{b^2 - \pars{\frac{a\sqrt{2}}{2}}^2}
+    = \sqrt{b^2 - \frac{a^2}{2}}
+\end{equation*}
+Możemy teraz obliczyć wysokość \(p\) ściany bocznej tego ostrosłupa z~twierdzenia Pitagorasa dla \(\triangle{POF}\):
+\begin{equation*}
+    p = FP = \sqrt{FO^2 + PO^2}
+    = \sqrt{h^2 + \pars{\frac{a}{2}}^2}
+    = \sqrt{b^2 - \frac{a^2}{2} + \frac{a^2}{4}}
+    = \sqrt{b^2 - \frac{a^2}{4}}
+\end{equation*}
+Zauważmy, że pole \(\triangle{ABF}\) stanowi \(\frac{1}{8}\) pola powierzchni bocznej równoległościanu \(ABCDEFGH\), ponieważ każda z~czterech ścian bocznych składa się z~dwóch takich trójkątów. Zatem
+\begin{equation*}
+    P_\p{B}
+    = 8 \cdot \area{ABF}
+    = 8 \cdot \frac{1}{2} \cdot AB \cdot FP
+    = 4 \cdot a \cdot \sqrt{b^2 - \frac{a^2}{4}}
+\end{equation*}
+Aby uzyskać pole powierzchni całkowitej, wystarczy dodać dwukrotność pola podstawy:
+\begin{gather*}
+    P_\p{P} = a^2\\
+    P_\p{C}
+    = P_\p{B} + 2 \cdot P_\p{P}
+    = 4a\sqrt{b^2 - \frac{a^2}{4}} + 2a^2
+    = 2a\pars{a + 2\sqrt{b^2 - \frac{a^2}{4}}}
+\end{gather*}
+\subsubsection*{Funkcja pola przekroju sześcianu wyciętego płaszczyzną przechodzącą przez przekątną podstawy}
+Niech \(T\) będzie środkiem podstawy sześcianu. Zdefiniujmy funkcję \(p\), która dla zadanego kąta \(\beta\) zwraca pole przekroju sześcianu wyciętego płaszczyzną przechodzącą przez przekątną podstawy i~nachyloną do tej podstawy pod kątem \(\beta\).
+\begin{equation*}
+    p\colon \closed{0}{\frac{\pi}{2}} \mapsto \real_+ \cup \set{0}
+\end{equation*}
+Oznaczmy przez \(\varphi\) miarę kąta, dla którego taki przekrój przechodzi przez wierzchołek sześcianu znajdujący się w~górnej podstawie --- w~taki sposób:
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -0.6);
+    \coordinate (B) at (1, -0.6);
+    \coordinate (C) at (2, 0.6);
+    \coordinate (D) at (-1, 0.6);
+    \coordinate (E) at (-2, 2.4);
+    \coordinate (F) at (1, 2.4);
+    \coordinate (G) at (2, 3.6);
+    \coordinate (H) at (-1, 3.6);
+    \coordinate (T) at ($(A)!0.5!(C)$);
+    \draw (A) -- node[below]{\(a\)} (B) -- node[below, sloped]{\(a\)} (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw[dashed] (H) -- (D);
+    \drawangle*[angle radius=0.8cm, Magenta]{C--T--G}[\(\varphi\)];
+    \drawrightangle[angle radius=0.2cm]{G--T--D};
+    \drawrightangle[angle radius=0.2cm]{G--C--T};
+    \draw[Magenta, dashed] (G) -- (T) -- (C);
+    \draw[Orange] (B) -- (G) -- (D) -- cycle;
+    \draw (A) -- node[left]{\(a\)} (E);
+    \draw (B) -- (F);
+    \draw (C) -- (G);
+    \draw (E) -- (F) -- (G) -- (H) -- cycle;
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{G}[\(G\)][above right];
+    \fillpoint*{T}[\(T\)][below left];
+\end{mathfigure*}
+\noindent
+Rozważmy na początek przypadek, gdy \(\beta \leq \varphi\) i~oznaczmy przez \(S\) punkt przecięcia płaszczyzny przekroju z~\emph{krawędzią} \(CG\).
+\begin{mathfigure*}
+    \coordinate (A) at (-2, -0.6);
+    \coordinate (B) at (1, -0.6);
+    \coordinate (C) at (2, 0.6);
+    \coordinate (D) at (-1, 0.6);
+    \coordinate (E) at (-2, 2.4);
+    \coordinate (F) at (1, 2.4);
+    \coordinate (G) at (2, 3.6);
+    \coordinate (H) at (-1, 3.6);
+    \coordinate (T) at ($(A)!0.5!(C)$);
+    \coordinate (S) at ($(C)!0.5!(G)$);
+    \draw (A) -- node[below]{\(a\)} (B) -- node[below, sloped]{\(a\)} (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw[dashed] (H) -- (D);
+    \drawangle*[angle radius=0.8cm, RoyalBlue]{C--T--S}[\(\beta\)];
+    \drawrightangle[angle radius=0.2cm]{S--T--D};
+    \drawrightangle[angle radius=0.2cm]{S--C--T};
+    \draw[RoyalBlue, dashed] (S) -- (T) -- (C);
+    \draw[Orange] (B) -- (S) -- (D) -- cycle;
+    \draw (A) -- node[left]{\(a\)} (E);
+    \draw (B) -- (F);
+    \draw (C) -- (G);
+    \draw (E) -- (F) -- (G) -- (H) -- cycle;
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{G}[\(G\)][above right];
+    \fillpoint*{T}[\(T\)][below left];
+    \fillpoint*{S}[\(S\)][right];
+\end{mathfigure*}
+\noindent
+Wtedy przekrój to po prostu \(\triangle{BDS}\). Dla \(\triangle{CTS}\) możemy zapisać
+\begin{gather*}
+    \frac{CT}{ST} = \cos\beta\\
+    ST = \frac{CT}{\cos\beta}
+\end{gather*}
+Wiemy, że \(CT = \frac{a\sqrt{2}}{2}\), ponieważ jest to połowa przekątnej. Odcinek \(CT\) jest również rzutem odcinka \(ST\) na płaszczyznę podstawy, więc skoro \(CT \perp BD\), to z~twierdzenia o~trzech prostych prostopadłych również \(ST \perp BD\). Zatem \(ST\) jest wysokością w~\(\triangle{BDS}\). Teraz obliczymy już pole przekroju:
+\begin{equation*}
+    \area{BDS} = \frac{1}{2} \cdot BD \cdot ST
+    = \frac{1}{2} \cdot BD \cdot \frac{CT}{\cos\beta}
+    = \frac{1}{2} \cdot a\sqrt{2} \cdot \frac{\frac{a\sqrt{2}}{2}}{\cos\beta}
+    = \frac{a^2}{2\cos\beta}
+\end{equation*}
+Możemy więc zapisać, że:
+\begin{equation*}
+    p\pars{\beta}
+    = \frac{a^2}{2\cos\beta} \iff \beta \leq \varphi
+\end{equation*}
+Rozważmy teraz przypadek, gdy \(\beta > \varphi\). Oznaczmy przez \(S\) punkt przecięcia płaszczyzny przekroju z~\emph{prostą} \(CG\).
+\begin{mathfigure*}
+    \def\onethird{\fpeval{1/3}}
+    \coordinate (A) at (-2, -0.6);
+    \coordinate (B) at (1, -0.6);
+    \coordinate (C) at (2, 0.6);
+    \coordinate (D) at (-1, 0.6);
+    \coordinate (E) at (-2, 2.4);
+    \coordinate (F) at (1, 2.4);
+    \coordinate (G) at (2, 3.6);
+    \coordinate (H) at (-1, 3.6);
+    \coordinate (T) at ($(A)!0.5!(C)$);
+    \coordinate (S) at ($(C)!1.5!(G)$);
+    \coordinate (Z) at ($(C)!1.7!(G)$);
+    \coordinate (P) at ($(G)!\onethird!(F)$);
+    \coordinate (Q) at ($(G)!\onethird!(H)$);
+    \coordinate (X) at ($(P)!0.5!(Q)$);
+    \draw[dashed] (G) -- (Z);
+    \draw (A) -- node[below]{\(a\)} (B) -- node[below, sloped]{\(a\)} (C);
+    \draw[dashed] (C) -- (D) -- (A);
+    \draw[dashed] (H) -- (D);
+    \drawangle*[angle radius=0.8cm, RoyalBlue]{C--T--S}[\(\beta\)];
+    \drawrightangle[angle radius=0.2cm]{S--T--D};
+    \drawrightangle[angle radius=0.2cm]{S--C--T};
+    \draw[RoyalBlue, dashed] (X) -- (T) -- (C);
+    \draw[RoyalBlue, densely dotted] (S) -- (X);
+    \draw[Orange] (B) -- (P) -- (Q) -- (D) -- cycle;
+    \draw[dashed, Orange] (P) -- (S) -- (Q);
+    \draw (A) -- node[left]{\(a\)} (E);
+    \draw (B) -- (F);
+    \draw (C) -- (G);
+    \draw (E) -- (F) -- (G) -- (H) -- cycle;
+    \fillpoint*{C}[\(C\)][above right];
+    \fillpoint*{B}[\(B\)][below right];
+    \fillpoint*{D}[\(D\)][above left];
+    \fillpoint*{G}[\(G\)][above right];
+    \fillpoint*{T}[\(T\)][below left];
+    \fillpoint*{S}[\(S\)][right];
+    \fillpoint*{P}[\(P\)][below right];
+    \fillpoint*{Q}[\(Q\)][above left];
+\end{mathfigure*}
+\noindent
+W~sposobie obliczania pola \(\triangle{BDS}\) nic się nie zmienia, jednak nie jest to już dokładnie przekrój:
+\begin{equation*}
+    \area{BDS} = \frac{a^2}{2\cos\beta}
+\end{equation*}
+Musimy od tego odjąć pole małego \(\triangle{PQS}\). Możemy je obliczyć ponieważ wiemy, że \(\triangle{PQS} \sim \triangle{BDS}\) w~skali \(\frac{SG}{SC}\). Odcinek \(CG\) to po prostu krawędź sześcianu, więc ma długość \(a\). Obliczmy teraz długość \(SG\). Dla \(\triangle{CTS}\) możemy zapisać:
+\begin{gather*}
+    \frac{SC}{TC} = \tan\beta\\
+    SC = TC \cdot \tan\beta = \frac{a\sqrt{2}}{2}\tan\beta
+\end{gather*}
+Zatem
+\begin{equation*}
+    SG = SC - CG = \frac{a\sqrt{2}}{2}\tan\beta - a
+\end{equation*}
+
